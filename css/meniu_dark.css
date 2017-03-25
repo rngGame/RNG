@@ -361,6 +361,12 @@ input[type="text"]{
     border-style: inset;
     border-color: #2f3236;
 }
+.less{
+    color:#FF0000;
+}
+.more{
+    color:#00CC00;
+}
 
 
 

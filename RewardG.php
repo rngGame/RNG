@@ -34,13 +34,22 @@ $GEM = mysqli_fetch_row($GEM);
 $LOOT = mysqli_query($db,"SELECT * FROM Gems where HASH = '$hash' ");
 $LOOT = mysqli_fetch_row($LOOT);
 
+//Compare Power
+$comaprePWR=$compareLVL="less";
+if($LOOT[5]>$GEM[5]){
+  $comaprePWR="more";
+}
+if($LOOT[4]>$GEM[4]){
+  $compareLVL="more";
+}
+
 echo "You recived gem - ";
 
 if (!$LOOT[3] == ""){
 	echo "<b style='color:#$LOOT[3]'>$LOOT[0]</b>";}
 	else{
 		echo "$LOOT[0]";}
-echo "<br><a style='color:#$LOOT[3]'><b>$LOOT[2]</b> Type. <br></a><b>Power $LOOT[5] %</b><br><b>$LOOT[4] lvl.</b>";
+echo "<br><a style='color:#$LOOT[3]'><b>$LOOT[2]</b> Type. <br></a><b><span class='$comaprePWR'>Power $LOOT[5] %</span></b><br><b><span class='$comapreLVL'>$LOOT[4] lvl</span>.</b>";
 
 
 echo "<br><hr><br>";

@@ -135,10 +135,18 @@ $_SESSION["GoldRew"] = $MoneyRew;
 $MoneySel = ($ACC[3] + $ILVL) * 10; //gold for wep
 $_SESSION["Gold"] = $MoneySel;
 
+//Compare Armor
+$compareLVL=$compareARM = "less";
+if($ILVL>$ARM[3]){
+	$compareLVL="more";
+}
+if($Dmg>$ARM[4]){
+	$compareARM="more";
+}
 
 $reward = "<b><font color='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
-Item lvl: <b>$ILVL</b><br>
-Item Armor: <b>$Dmg</b><br>
+Item lvl: <b><span class='$compareLVL'>$ILVL</span></b><br>
+Item Armor: <b><span class='$compareARM'>$Dmg</span></b><br>
 Item worth: $MoneySel Gold<br>
 <br><b>Current item:</b><br>
 Name: $Current <br>

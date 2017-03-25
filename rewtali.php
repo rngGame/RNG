@@ -166,14 +166,31 @@ $_SESSION["GoldRew"] = $MoneyRew;
 $MoneySel = ($ACC[3] + $ILVL) * 10; //gold for wep
 $_SESSION["Gold"] = $MoneySel;
 
-	
+
+//Comparing
+$compareLVL=$compareDMG=$compareHP=$compareARM=$compareXP="less";
+if($ILVL>$TAL[2]){
+	$compareLVL="more";
+}
+if($Dmg>$TAL[3]){
+	$compareDMG="more";
+}
+if($Health>$TAL[4]){
+	$compareHP="more";
+}
+if($Armor>$TAL[5]){
+	$compareARM="more";
+}
+if($xp>$TAL[6]){
+	$compareXP="more";
+}
 
 $reward = "<b><font color='lightgreen'><br> -TALISMAN !- </font><br><br>DROP:</b><br><br>Name: $new<br>
-Item lvl: <b>$ILVL</b><br>
-Item Damage: <b>$Dmg</b><br>
-Item Health: <b>$Health</b><br>
-Item Armor: <b>$Armor</b><br>
-Item Xp bonuss: <b>$xp</b><br>
+Item lvl: <b><span class='$compareLVL'>$ILVL</span></b><br>
+Item Damage: <b><span class='$compareDMG'>$Dmg</span></b><br>
+Item Health: <b><span class='$compareHP'>$Health</span></b><br>
+Item Armor: <b><span class='$compareARM'>$Armor</span></b><br>
+Item Xp bonuss: <b><span class='$compareXP'>$xp</span></b><br>
 Item worth: $MoneySel Gold<br>
 <br><b>Current item:</b><br><br>
 Name: $Current <br>

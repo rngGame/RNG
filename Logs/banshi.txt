@@ -1,0 +1,6062 @@
+banshi delt 5 dmg.
+banshi took 0 dmg.
+
+banshi delt 5 dmg.
+banshi took 0 dmg.
+
+banshi delt 5 dmg.
+banshi took 0 dmg.
+banshi killed   Weak Bat of Damping
+<>
+banshi delt 81 dmg.
+banshi took 41 dmg.
+banshi lost to  Horible  Intruder 
+<>
+banshi delt 81 dmg.
+banshi took 16 dmg.
+banshi killed  Strong Reborn Bear 
+<>
+banshi delt 93 dmg.
+banshi took 1 dmg.
+banshi killed    Fox of Darkness
+<>
+banshi delt 93 dmg.
+banshi took 1 dmg.
+banshi killed    Fox of Crime
+<>
+banshi delt 93 dmg.
+banshi took 4 dmg.
+banshi killed   Prime Slime 
+<>
+banshi delt 128 dmg.
+banshi took 38 dmg.
+
+banshi delt 128 dmg.
+banshi took 38 dmg.
+banshi killed   Green Volt 
+<>
+banshi delt 128 dmg.
+banshi took 1 dmg.
+banshi killed   Slow Wildfire 
+<>
+banshi delt 184 dmg.
+banshi took 21 dmg.
+banshi killed  Tired Exspensive Volt of Weakness
+<>
+banshi delt 184 dmg.
+banshi took 128 dmg.
+
+banshi delt 184 dmg.
+banshi took 128 dmg.
+
+banshi delt 184 dmg.
+banshi took 128 dmg.
+banshi lost to  Horible  X9-10 
+<>
+banshi delt 184 dmg.
+banshi took 1 dmg.
+banshi killed   Hyper Wirlwind 
+<>
+banshi delt 184 dmg.
+banshi took 1 dmg.
+banshi killed    Wildfire 
+<>
+banshi delt 230 dmg.
+banshi took 18 dmg.
+
+banshi delt 184 dmg.
+banshi took 18 dmg.
+
+banshi delt 184 dmg.
+banshi took 18 dmg.
+
+banshi delt 184 dmg.
+banshi took 18 dmg.
+
+banshi delt 184 dmg.
+banshi took 97 dmg.
+banshi killed <b style='color:#ff0066'>! RARE !</b>   Intruder X-2 
+<>
+banshi delt 328 dmg.
+banshi took 1 dmg.
+
+banshi delt 262 dmg.
+banshi took 1 dmg.
+
+banshi delt 262 dmg.
+banshi took 1 dmg.
+banshi killed   Slow Violet of Nothingess
+<>
+banshi delt 328 dmg.
+banshi took 37 dmg.
+
+banshi delt 262 dmg.
+banshi took 37 dmg.
+
+banshi delt 262 dmg.
+banshi took 37 dmg.
+banshi killed   Scary Vampire of Crime
+<>
+banshi delt 328 dmg.
+banshi took 1 dmg.
+
+banshi delt 262 dmg.
+banshi took 1 dmg.
+banshi killed    Violet of Ambiance
+<>
+banshi delt 262 dmg.
+banshi took 172 dmg.
+
+banshi delt 328 dmg.
+banshi took 56 dmg.
+
+banshi delt 262 dmg.
+banshi took 56 dmg.
+banshi killed  Strong Black Volt of Sparks
+<>
+banshi delt 328 dmg.
+banshi took 1 dmg.
+
+banshi delt 262 dmg.
+banshi took 1 dmg.
+banshi killed    Robot 
+<>
+banshi delt 262 dmg.
+banshi took 36 dmg.
+
+banshi delt 328 dmg.
+banshi took 133 dmg.
+banshi killed    Equinox of Darkness
+<>
+banshi delt 328 dmg.
+banshi took 1 dmg.
+banshi killed    Goblin of Wealth
+<>
+banshi delt 590 dmg.
+banshi took 125 dmg.
+
+banshi delt 472 dmg.
+banshi took 125 dmg.
+
+banshi delt 472 dmg.
+banshi took 125 dmg.
+banshi killed   Slow Singuleris 
+<>
+banshi delt 1373 dmg.
+banshi took 1 dmg.
+banshi killed    Goblin 
+<>
+banshi delt 686 dmg.
+banshi took 1 dmg.
+banshi killed   Green X7-10 
+<>
+banshi delt 686 dmg.
+banshi took 65 dmg.
+banshi killed    Valyros 
+<>
+banshi delt 1111 dmg.
+banshi took 84 dmg.
+
+banshi delt 1111 dmg.
+banshi took 84 dmg.
+
+banshi delt 1111 dmg.
+banshi took 84 dmg.
+
+banshi delt 889 dmg.
+banshi took 84 dmg.
+
+banshi delt 889 dmg.
+banshi took 84 dmg.
+
+banshi delt 889 dmg.
+banshi took 84 dmg.
+banshi lost to   Reborn Beltor The Slayer of Disapointment
+<>
+banshi delt 1111 dmg.
+banshi took 234 dmg.
+
+banshi delt 1111 dmg.
+banshi took 234 dmg.
+banshi killed    X10-20 
+<>
+banshi delt 889 dmg.
+banshi took 375 dmg.
+banshi killed  Rude Black Dekton 
+<>
+banshi delt 1308 dmg.
+banshi took 60 dmg.
+banshi killed  Gama  Egnor of Weakness
+<>
+banshi delt 1046 dmg.
+banshi took 87 dmg.
+banshi killed   Red X8-10 
+<>
+banshi delt 1046 dmg.
+banshi took 169 dmg.
+banshi killed    Dekton 
+<>
+banshi delt 1525 dmg.
+banshi took 1 dmg.
+banshi killed   Hyper Goblin of Disapointment
+<>
+banshi delt 1525 dmg.
+banshi took 44 dmg.
+banshi killed    Devoter 
+<>
+banshi delt 1220 dmg.
+banshi took 211 dmg.
+
+banshi delt 1220 dmg.
+banshi took 211 dmg.
+banshi killed    X10-20 
+<>
+banshi delt 1220 dmg.
+banshi took 155 dmg.
+banshi killed   Black Egnor 
+<>
+banshi delt 1220 dmg.
+banshi took 166 dmg.
+banshi killed   Hyper Devoter 
+<>
+banshi delt 1220 dmg.
+banshi took 115 dmg.
+
+banshi delt 2440 dmg.
+banshi took 115 dmg.
+
+banshi delt 1220 dmg.
+banshi took 115 dmg.
+
+banshi delt 1220 dmg.
+banshi took 115 dmg.
+
+banshi delt 1220 dmg.
+banshi took 115 dmg.
+banshi killed   Reborn Solaris of Nothingess
+<>
+banshi delt 2440 dmg.
+banshi took 440 dmg.
+
+banshi delt 1220 dmg.
+banshi took 440 dmg.
+
+banshi delt 1220 dmg.
+banshi took 440 dmg.
+
+banshi delt 1220 dmg.
+banshi took 440 dmg.
+banshi lost to <b style='color:#ff0066'>! RARE !</b>  Scary Valkos The Destructor 
+<>
+banshi delt 1220 dmg.
+banshi took 204 dmg.
+
+banshi delt 2440 dmg.
+banshi took 204 dmg.
+
+banshi delt 1220 dmg.
+banshi took 204 dmg.
+
+banshi delt 2440 dmg.
+banshi took 204 dmg.
+
+banshi delt 1220 dmg.
+banshi took 204 dmg.
+
+banshi delt 1220 dmg.
+banshi took 204 dmg.
+
+banshi delt 2440 dmg.
+banshi took 204 dmg.
+banshi killed   Exspensive Shiros 
+<>
+banshi delt 1220 dmg.
+banshi took 1250 dmg.
+
+banshi delt 1220 dmg.
+banshi took 590 dmg.
+banshi killed   Prime Ember 
+<>
+banshi delt 1220 dmg.
+banshi took 64 dmg.
+banshi killed    Sultan of Weakness
+<>
+banshi delt 1220 dmg.
+banshi took 1 dmg.
+banshi killed    Nectus 
+<>
+banshi delt 1220 dmg.
+banshi took 326 dmg.
+banshi killed   Slow Dekton of Stars
+<>
+banshi delt 2440 dmg.
+banshi took 1 dmg.
+banshi killed   Red X7-10 
+<>
+banshi delt 1220 dmg.
+banshi took 9 dmg.
+banshi killed   Casual Eglor 
+<>
+banshi delt 1220 dmg.
+banshi took 405 dmg.
+
+banshi delt 1220 dmg.
+banshi took 167 dmg.
+banshi killed   Slow X10-20 
+<>
+banshi delt 1220 dmg.
+banshi took 500 dmg.
+
+banshi delt 1220 dmg.
+banshi took 215 dmg.
+
+banshi delt 1525 dmg.
+banshi took 215 dmg.
+banshi killed   Slow Vertuxis of Epicness
+<>
+banshi delt 1220 dmg.
+banshi took 194 dmg.
+
+banshi delt 1220 dmg.
+banshi took 194 dmg.
+
+banshi delt 1525 dmg.
+banshi took 458 dmg.
+banshi killed   Green Solaris 
+<>
+banshi delt 2440 dmg.
+banshi took 12 dmg.
+banshi killed <b style='color:#ff0066'>! RARE !</b>  Casual X9-10 
+<>
+banshi delt 2440 dmg.
+banshi took 405 dmg.
+
+banshi delt 1220 dmg.
+banshi took 405 dmg.
+
+banshi delt 3050 dmg.
+banshi took 405 dmg.
+banshi killed  Gama Exspensive Solaris 
+<>
+banshi delt 1222 dmg.
+banshi took 302 dmg.
+
+banshi delt 1222 dmg.
+banshi took 671 dmg.
+
+banshi delt 1528 dmg.
+banshi took 302 dmg.
+
+banshi delt 2444 dmg.
+banshi took 302 dmg.
+
+banshi delt 1222 dmg.
+banshi took 302 dmg.
+
+banshi delt 1222 dmg.
+banshi took 302 dmg.
+banshi lost to    Fallen 
+<>
+banshi delt 1222 dmg.
+banshi took 179 dmg.
+
+banshi delt 1222 dmg.
+banshi took 179 dmg.
+
+banshi delt 1222 dmg.
+banshi took 425 dmg.
+
+banshi delt 1222 dmg.
+banshi took 179 dmg.
+
+banshi delt 1222 dmg.
+banshi took 179 dmg.
+
+banshi delt 2444 dmg.
+banshi took 179 dmg.
+
+banshi delt 1222 dmg.
+banshi took 179 dmg.
+banshi killed   Red Sir Iundex 
+<>
+banshi delt 1369 dmg.
+banshi took 450 dmg.
+
+banshi delt 1369 dmg.
+banshi took 967 dmg.
+
+banshi delt 2738 dmg.
+banshi took 967 dmg.
+banshi lost to   Hyper Beltor The Slayer 
+<>
+banshi delt 1222 dmg.
+banshi took 716 dmg.
+
+banshi delt 1222 dmg.
+banshi took 325 dmg.
+
+banshi delt 2444 dmg.
+banshi took 716 dmg.
+
+banshi delt 1222 dmg.
+banshi took 325 dmg.
+
+banshi delt 1222 dmg.
+banshi took 325 dmg.
+
+banshi delt 2444 dmg.
+banshi took 325 dmg.
+banshi lost to    Evangelion 
+<>
+banshi delt 1222 dmg.
+banshi took 194 dmg.
+
+banshi delt 1222 dmg.
+banshi took 194 dmg.
+
+banshi delt 1222 dmg.
+banshi took 194 dmg.
+
+banshi delt 2444 dmg.
+banshi took 194 dmg.
+
+banshi delt 1222 dmg.
+banshi took 194 dmg.
+
+banshi delt 1222 dmg.
+banshi took 455 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 2444 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 591 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+
+banshi delt 1222 dmg.
+banshi took 262 dmg.
+banshi killed  Energetic Casual Slasher 
+<>
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+
+banshi delt 2206 dmg.
+banshi took 242 dmg.
+
+banshi delt 1103 dmg.
+banshi took 242 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 1103 dmg.
+banshi took 146 dmg.
+
+banshi delt 2206 dmg.
+banshi took 146 dmg.
+banshi killed    Vertuxis 
+<>
+banshi delt 1103 dmg.
+banshi took 525 dmg.
+
+banshi delt 1103 dmg.
+banshi took 525 dmg.
+
+banshi delt 1103 dmg.
+banshi took 525 dmg.
+
+banshi delt 1103 dmg.
+banshi took 525 dmg.
+
+banshi delt 2206 dmg.
+banshi took 525 dmg.
+
+banshi delt 2206 dmg.
+banshi took 1112 dmg.
+
+banshi delt 1103 dmg.
+banshi took 525 dmg.
+banshi lost to   Black Evangelion 
+<>
+banshi delt 2206 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 135 dmg.
+
+banshi delt 1103 dmg.
+banshi took 135 dmg.
+
+banshi delt 2206 dmg.
+banshi took 333 dmg.
+
+banshi delt 1379 dmg.
+banshi took 135 dmg.
+
+banshi delt 2206 dmg.
+banshi took 135 dmg.
+banshi killed  Random Swift Valkos The Destructor 
+<>
+banshi delt 1103 dmg.
+banshi took 135 dmg.
+banshi killed  Random Swift Valkos The Destructor 
+<>
+banshi delt 1103 dmg.
+banshi took 135 dmg.
+banshi killed  Random Swift Valkos The Destructor 
+<>
+banshi delt 2206 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 2206 dmg.
+banshi took 729 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 1103 dmg.
+banshi took 333 dmg.
+
+banshi delt 2206 dmg.
+banshi took 729 dmg.
+banshi killed   Swift Valkos The Destructor 
+<>
+banshi delt 1357 dmg.
+banshi took 303 dmg.
+
+banshi delt 1357 dmg.
+banshi took 303 dmg.
+
+banshi delt 1357 dmg.
+banshi took 115 dmg.
+banshi killed    Vertuxis of Damping
+<>
+banshi delt 2714 dmg.
+banshi took 184 dmg.
+
+banshi delt 1357 dmg.
+banshi took 184 dmg.
+
+banshi delt 1357 dmg.
+banshi took 184 dmg.
+
+banshi delt 1357 dmg.
+banshi took 184 dmg.
+
+banshi delt 3393 dmg.
+banshi took 184 dmg.
+banshi killed    Shiros 
+<>
+banshi delt 1357 dmg.
+banshi took 169 dmg.
+
+banshi delt 1357 dmg.
+banshi took 169 dmg.
+
+banshi delt 1696 dmg.
+banshi took 169 dmg.
+
+banshi delt 3393 dmg.
+banshi took 169 dmg.
+
+banshi delt 1357 dmg.
+banshi took 169 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 1357 dmg.
+banshi took 753 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+
+banshi delt 2714 dmg.
+banshi took 341 dmg.
+
+banshi delt 1357 dmg.
+banshi took 341 dmg.
+banshi killed    Weol 
+<>
+banshi Fleed from    Creation God of Lazyness
+<>
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 1410 dmg.
+banshi took 328 dmg.
+
+banshi delt 2820 dmg.
+banshi took 328 dmg.
+banshi killed    Weol 
+<>
+banshi delt 1501 dmg.
+banshi took 275 dmg.
+
+banshi delt 3002 dmg.
+banshi took 275 dmg.
+
+banshi delt 1501 dmg.
+banshi took 626 dmg.
+
+banshi delt 1501 dmg.
+banshi took 275 dmg.
+
+banshi delt 3002 dmg.
+banshi took 275 dmg.
+
+banshi delt 1501 dmg.
+banshi took 626 dmg.
+
+banshi delt 1501 dmg.
+banshi took 275 dmg.
+banshi killed  Scary Red Aldrich 
+<>
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+
+banshi delt 1501 dmg.
+banshi took 431 dmg.
+
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 1501 dmg.
+banshi took 173 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 1501 dmg.
+banshi took 457 dmg.
+
+banshi delt 1501 dmg.
+banshi took 457 dmg.
+
+banshi delt 1501 dmg.
+banshi took 457 dmg.
+
+banshi delt 1501 dmg.
+banshi took 998 dmg.
+
+banshi delt 1501 dmg.
+banshi took 998 dmg.
+
+banshi delt 3002 dmg.
+banshi took 457 dmg.
+
+banshi delt 3002 dmg.
+banshi took 457 dmg.
+
+banshi delt 3002 dmg.
+banshi took 457 dmg.
+banshi killed  Gama  Valkos The Destructor 
+<>
+banshi delt 1501 dmg.
+banshi took 163 dmg.
+
+banshi delt 3002 dmg.
+banshi took 163 dmg.
+
+banshi delt 3002 dmg.
+banshi took 163 dmg.
+
+banshi delt 1501 dmg.
+banshi took 163 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 5074 dmg.
+banshi took 168 dmg.
+
+banshi delt 2537 dmg.
+banshi took 168 dmg.
+
+banshi delt 2537 dmg.
+banshi took 168 dmg.
+
+banshi delt 2537 dmg.
+banshi took 168 dmg.
+banshi killed   Slow Aldrich 
+<>
+banshi delt 2537 dmg.
+banshi took 322 dmg.
+
+banshi delt 5074 dmg.
+banshi took 322 dmg.
+
+banshi delt 2537 dmg.
+banshi took 322 dmg.
+
+banshi delt 2537 dmg.
+banshi took 322 dmg.
+banshi killed  Energetic  Valkos The Destructor 
+<>
+banshi delt 7072 dmg.
+banshi took 416 dmg.
+
+banshi delt 7072 dmg.
+banshi took 416 dmg.
+banshi killed    Slasher of Stars
+<>
+banshi delt 3536 dmg.
+banshi took 525 dmg.
+
+banshi delt 3536 dmg.
+banshi took 525 dmg.
+
+banshi delt 3536 dmg.
+banshi took 1145 dmg.
+
+banshi delt 3536 dmg.
+banshi took 525 dmg.
+
+banshi delt 7072 dmg.
+banshi took 525 dmg.
+
+banshi delt 3536 dmg.
+banshi took 525 dmg.
+
+banshi delt 3536 dmg.
+banshi took 525 dmg.
+
+banshi delt 7072 dmg.
+banshi took 1145 dmg.
+banshi killed  Burning Slow Destruction God 
+<>
+banshi delt 3536 dmg.
+banshi took 334 dmg.
+
+banshi delt 7072 dmg.
+banshi took 334 dmg.
+
+banshi delt 3536 dmg.
+banshi took 334 dmg.
+banshi killed   Weak Creation God 
+<>
+banshi delt 3613 dmg.
+banshi took 339 dmg.
+
+banshi delt 3613 dmg.
+banshi took 339 dmg.
+
+banshi delt 3613 dmg.
+banshi took 339 dmg.
+
+banshi delt 3613 dmg.
+banshi took 339 dmg.
+
+banshi delt 3613 dmg.
+banshi took 339 dmg.
+banshi killed   Radiant Shiros 
+<>
+banshi delt 3613 dmg.
+banshi took 235 dmg.
+
+banshi delt 3613 dmg.
+banshi took 578 dmg.
+
+banshi delt 7226 dmg.
+banshi took 235 dmg.
+banshi killed  Tired Exspensive Aldrich of Crime
+<>
+banshi delt 3613 dmg.
+banshi took 480 dmg.
+
+banshi delt 3613 dmg.
+banshi took 186 dmg.
+
+banshi delt 3613 dmg.
+banshi took 186 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 3613 dmg.
+banshi took 245 dmg.
+
+banshi delt 3613 dmg.
+banshi took 245 dmg.
+
+banshi delt 3613 dmg.
+banshi took 245 dmg.
+
+banshi delt 3613 dmg.
+banshi took 245 dmg.
+banshi killed    Fallen 
+<>
+banshi delt 3613 dmg.
+banshi took 480 dmg.
+
+banshi delt 7226 dmg.
+banshi took 480 dmg.
+
+banshi delt 3613 dmg.
+banshi took 480 dmg.
+
+banshi delt 3613 dmg.
+banshi took 480 dmg.
+
+banshi delt 3613 dmg.
+banshi took 480 dmg.
+banshi killed   Scary Valkos The Destructor 
+<>
+banshi delt 3613 dmg.
+banshi took 198 dmg.
+
+banshi delt 3613 dmg.
+banshi took 198 dmg.
+
+banshi delt 3613 dmg.
+banshi took 198 dmg.
+banshi killed   Reborn Sir Iundex 
+<>
+banshi delt 7226 dmg.
+banshi took 900 dmg.
+
+banshi delt 3613 dmg.
+banshi took 900 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 3613 dmg.
+banshi took 119 dmg.
+
+banshi delt 7226 dmg.
+banshi took 119 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 3613 dmg.
+banshi took 900 dmg.
+
+banshi delt 7226 dmg.
+banshi took 900 dmg.
+
+banshi delt 3613 dmg.
+banshi took 900 dmg.
+
+banshi delt 3613 dmg.
+banshi took 900 dmg.
+
+banshi delt 7226 dmg.
+banshi took 900 dmg.
+
+banshi delt 7226 dmg.
+banshi took 900 dmg.
+banshi killed    Nirvana of Crime
+<>
+banshi delt 3613 dmg.
+banshi took 1236 dmg.
+
+banshi delt 3613 dmg.
+banshi took 564 dmg.
+
+banshi delt 7226 dmg.
+banshi took 564 dmg.
+
+banshi delt 7226 dmg.
+banshi took 564 dmg.
+
+banshi delt 7226 dmg.
+banshi took 564 dmg.
+banshi killed   Red Nirvana 
+<>
+banshi delt 3613 dmg.
+banshi took 1000 dmg.
+
+banshi delt 3613 dmg.
+banshi took 1000 dmg.
+
+banshi delt 3613 dmg.
+banshi took 1000 dmg.
+
+banshi delt 3613 dmg.
+banshi took 1000 dmg.
+
+banshi delt 3613 dmg.
+banshi took 2113 dmg.
+
+banshi delt 3613 dmg.
+banshi took 1000 dmg.
+banshi lost to  Wild  Aldrich of Death
+<>
+banshi delt 3613 dmg.
+banshi took 421 dmg.
+
+banshi delt 7226 dmg.
+banshi took 421 dmg.
+
+banshi delt 3613 dmg.
+banshi took 421 dmg.
+
+banshi delt 3613 dmg.
+banshi took 421 dmg.
+
+banshi delt 3613 dmg.
+banshi took 421 dmg.
+
+banshi delt 3613 dmg.
+banshi took 421 dmg.
+banshi killed  Horible Swift Valkos The Destructor 
+<>
+banshi delt 3613 dmg.
+banshi took 403 dmg.
+
+banshi delt 3613 dmg.
+banshi took 403 dmg.
+banshi killed   Hyper Sir Iundex 
+<>
+banshi delt 5867 dmg.
+banshi took 154 dmg.
+
+banshi delt 5867 dmg.
+banshi took 422 dmg.
+
+banshi delt 11734 dmg.
+banshi took 154 dmg.
+banshi killed   Mutated Artojas 
+<>
+banshi delt 11734 dmg.
+banshi took 180 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 11734 dmg.
+banshi took 109 dmg.
+
+banshi delt 5867 dmg.
+banshi took 109 dmg.
+banshi killed   Casual Shiros 
+<>
+banshi delt 11734 dmg.
+banshi took 853 dmg.
+
+banshi delt 5867 dmg.
+banshi took 370 dmg.
+
+banshi delt 11734 dmg.
+banshi took 370 dmg.
+banshi killed   Slow Creation God 
+<>
+banshi delt 11734 dmg.
+banshi took 171 dmg.
+banshi killed    Aldrich 
+<>
+banshi delt 11734 dmg.
+banshi took 113 dmg.
+banshi killed   Exspensive Beltor The Slayer 
+<>
+banshi delt 5867 dmg.
+banshi took 2574 dmg.
+
+banshi delt 5867 dmg.
+banshi took 2574 dmg.
+
+banshi delt 5867 dmg.
+banshi took 2574 dmg.
+banshi lost to   Prime Creation God 
+<>
+banshi delt 11734 dmg.
+banshi took 289 dmg.
+banshi killed    Fiera of Disapointment
+<>
+banshi delt 6483 dmg.
+banshi took 60 dmg.
+banshi killed   Casual Devoter of Stars
+<>
+banshi delt 6483 dmg.
+banshi took 129 dmg.
+
+banshi delt 12966 dmg.
+banshi took 129 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 6483 dmg.
+banshi took 168 dmg.
+
+banshi delt 12966 dmg.
+banshi took 168 dmg.
+banshi killed  Scary  Sir Iundex 
+<>
+banshi delt 12966 dmg.
+banshi took 642 dmg.
+
+banshi delt 12966 dmg.
+banshi took 264 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 6483 dmg.
+banshi took 558 dmg.
+
+banshi delt 6483 dmg.
+banshi took 558 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 558 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 6483 dmg.
+banshi took 121 dmg.
+
+banshi delt 12966 dmg.
+banshi took 121 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 6483 dmg.
+banshi took 129 dmg.
+
+banshi delt 6483 dmg.
+banshi took 129 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 12966 dmg.
+banshi took 1133 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 12966 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 12966 dmg.
+banshi took 1133 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 12966 dmg.
+banshi took 509 dmg.
+
+banshi delt 6483 dmg.
+banshi took 509 dmg.
+
+banshi delt 8104 dmg.
+banshi took 509 dmg.
+banshi killed  Strong Godlike Destruction God of Nothingess
+<>
+banshi delt 6483 dmg.
+banshi took 257 dmg.
+
+banshi delt 6483 dmg.
+banshi took 257 dmg.
+
+banshi delt 12966 dmg.
+banshi took 629 dmg.
+banshi killed   Black Shiros 
+<>
+banshi delt 6483 dmg.
+banshi took 113 dmg.
+
+banshi delt 6483 dmg.
+banshi took 113 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 6483 dmg.
+banshi took 134 dmg.
+
+banshi delt 12966 dmg.
+banshi took 134 dmg.
+banshi killed    Shiros 
+<>
+banshi delt 12966 dmg.
+banshi took 143 dmg.
+banshi killed   Casual Aldrich 
+<>
+banshi delt 6483 dmg.
+banshi took 134 dmg.
+
+banshi delt 12966 dmg.
+banshi took 134 dmg.
+banshi killed   Green Shiros 
+<>
+banshi delt 6483 dmg.
+banshi took 203 dmg.
+
+banshi delt 6483 dmg.
+banshi took 203 dmg.
+banshi killed  Weak Green Fallen 
+<>
+banshi delt 12966 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+
+banshi delt 6483 dmg.
+banshi took 1230 dmg.
+banshi killed   Scary Nirvana 
+<>
+banshi delt 8322 dmg.
+banshi took 692 dmg.
+
+banshi delt 8322 dmg.
+banshi took 692 dmg.
+
+banshi delt 8322 dmg.
+banshi took 692 dmg.
+
+banshi delt 8322 dmg.
+banshi took 692 dmg.
+banshi killed   Prime Weol of Disapointment
+<>
+banshi delt 16644 dmg.
+banshi took 529 dmg.
+banshi killed  Infested Exspensive Artojas of Reward
+<>
+banshi delt 8322 dmg.
+banshi took 327 dmg.
+
+banshi delt 16644 dmg.
+banshi took 327 dmg.
+banshi killed   Black Valkos The Destructor 
+<>
+banshi delt 8322 dmg.
+banshi took 203 dmg.
+
+banshi delt 8322 dmg.
+banshi took 521 dmg.
+
+banshi delt 16644 dmg.
+banshi took 203 dmg.
+banshi killed   Radiant Slasher of Lazyness
+<>
+banshi delt 8322 dmg.
+banshi took 183 dmg.
+
+banshi delt 16644 dmg.
+banshi took 183 dmg.
+banshi killed  Rude  Shiros 
+<>
+banshi delt 16644 dmg.
+banshi took 1283 dmg.
+
+banshi delt 16644 dmg.
+banshi took 1283 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1283 dmg.
+
+banshi delt 16644 dmg.
+banshi took 1283 dmg.
+banshi killed   Radiant Fallen of Darkness
+<>
+banshi delt 16644 dmg.
+banshi took 599 dmg.
+
+banshi delt 8322 dmg.
+banshi took 599 dmg.
+
+banshi delt 8322 dmg.
+banshi took 599 dmg.
+
+banshi delt 8322 dmg.
+banshi took 599 dmg.
+
+banshi delt 16644 dmg.
+banshi took 599 dmg.
+banshi killed  Rude Reancarnated Shiros of Sparks
+<>
+banshi delt 16644 dmg.
+banshi took 289 dmg.
+banshi killed    Weol 
+<>
+banshi delt 8322 dmg.
+banshi took 339 dmg.
+
+banshi delt 8322 dmg.
+banshi took 113 dmg.
+banshi killed   Slow Slasher 
+<>
+banshi delt 16644 dmg.
+banshi took 97 dmg.
+banshi killed   Casual Sir Iundex 
+<>
+banshi delt 8322 dmg.
+banshi took 186 dmg.
+
+banshi delt 8322 dmg.
+banshi took 186 dmg.
+banshi killed   Scary Evangelion of Disapointment
+<>
+banshi delt 8322 dmg.
+banshi took 551 dmg.
+
+banshi delt 8322 dmg.
+banshi took 551 dmg.
+
+banshi delt 16644 dmg.
+banshi took 551 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 16644 dmg.
+banshi took 1 dmg.
+banshi killed  Random Slow Sir Iundex 
+<>
+banshi delt 8322 dmg.
+banshi took 305 dmg.
+
+banshi delt 8322 dmg.
+banshi took 305 dmg.
+banshi killed  Gama  Sir Iundex 
+<>
+banshi delt 16644 dmg.
+banshi took 86 dmg.
+banshi killed  Tired  Slasher 
+<>
+banshi delt 16644 dmg.
+banshi took 883 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+banshi killed    Weol 
+<>
+banshi delt 8322 dmg.
+banshi took 1091 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1091 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1091 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1091 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1091 dmg.
+banshi killed   Prime Artojas 
+<>
+banshi delt 8322 dmg.
+banshi took 398 dmg.
+banshi killed   Hyper Sir Iundex 
+<>
+banshi delt 8322 dmg.
+banshi took 335 dmg.
+
+banshi delt 16644 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 16644 dmg.
+banshi took 223 dmg.
+
+banshi delt 16644 dmg.
+banshi took 559 dmg.
+
+banshi delt 8322 dmg.
+banshi took 223 dmg.
+
+banshi delt 8322 dmg.
+banshi took 223 dmg.
+banshi killed   Radiant Evangelion of Nothingess
+<>
+banshi delt 8322 dmg.
+banshi took 684 dmg.
+
+banshi delt 16644 dmg.
+banshi took 684 dmg.
+banshi killed  Rude  Nirvana 
+<>
+banshi delt 8322 dmg.
+banshi took 365 dmg.
+
+banshi delt 16644 dmg.
+banshi took 365 dmg.
+banshi killed   Casual Creation God 
+<>
+banshi delt 8322 dmg.
+banshi took 1049 dmg.
+
+banshi delt 16644 dmg.
+banshi took 468 dmg.
+banshi killed    Valkos The Destructor of Greed
+<>
+banshi delt 16644 dmg.
+banshi took 380 dmg.
+
+banshi delt 16644 dmg.
+banshi took 380 dmg.
+banshi killed  Infested  Destruction God 
+<>
+banshi delt 8322 dmg.
+banshi took 5465 dmg.
+
+banshi delt 8322 dmg.
+banshi took 5465 dmg.
+banshi lost to  Horible Scary Nirvana of Epicness
+<>
+banshi delt 8322 dmg.
+banshi took 11168 dmg.
+
+banshi delt 8322 dmg.
+banshi took 22561 dmg.
+banshi killed KillArminas
+<>
+banshi delt 8322 dmg.
+banshi took 11168 dmg.
+
+banshi delt 8322 dmg.
+banshi took 22561 dmg.
+banshi killed KillArminas
+<>
+banshi delt 8322 dmg.
+banshi took 74 dmg.
+banshi killed   Little Evangelion 
+<>
+banshi delt 16644 dmg.
+banshi took 568 dmg.
+
+banshi delt 8322 dmg.
+banshi took 568 dmg.
+banshi killed    Lampartis 
+<>
+banshi delt 8322 dmg.
+banshi took 410 dmg.
+
+banshi delt 8322 dmg.
+banshi took 410 dmg.
+
+banshi delt 8322 dmg.
+banshi took 933 dmg.
+banshi killed    Fallen of Crime
+<>
+banshi delt 8322 dmg.
+banshi took 1 dmg.
+banshi killed    Nectus of Wealth
+<>
+banshi delt 16644 dmg.
+banshi took 1 dmg.
+banshi killed    Egnor 
+<>
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+banshi killed    Weol 
+<>
+banshi delt 16644 dmg.
+banshi took 395 dmg.
+
+banshi delt 8322 dmg.
+banshi took 395 dmg.
+banshi killed   Radiant Aldrich 
+<>
+banshi delt 8322 dmg.
+banshi took 120 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 8322 dmg.
+banshi took 418 dmg.
+
+banshi delt 16644 dmg.
+banshi took 418 dmg.
+banshi killed   Weak Nirvana 
+<>
+banshi delt 8322 dmg.
+banshi took 134 dmg.
+
+banshi delt 8322 dmg.
+banshi took 380 dmg.
+banshi killed  Infested  Beltor The Slayer 
+<>
+banshi delt 8322 dmg.
+banshi took 178 dmg.
+
+banshi delt 8322 dmg.
+banshi took 178 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 16644 dmg.
+banshi took 335 dmg.
+
+banshi delt 8322 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 8322 dmg.
+banshi took 499 dmg.
+
+banshi delt 8322 dmg.
+banshi took 499 dmg.
+
+banshi delt 16644 dmg.
+banshi took 499 dmg.
+banshi killed   Godlike Shiros 
+<>
+banshi delt 8322 dmg.
+banshi took 74 dmg.
+
+banshi delt 8322 dmg.
+banshi took 74 dmg.
+
+banshi delt 8322 dmg.
+banshi took 261 dmg.
+
+banshi delt 16644 dmg.
+banshi took 74 dmg.
+banshi killed    Evangelion of Nothingess
+<>
+banshi delt 8322 dmg.
+banshi took 883 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+
+banshi delt 8322 dmg.
+banshi took 286 dmg.
+banshi killed    Weol 
+<>
+banshi delt 8322 dmg.
+banshi took 1162 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1162 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1162 dmg.
+
+banshi delt 16644 dmg.
+banshi took 1162 dmg.
+banshi killed    Creation God of Reward
+<>
+banshi delt 8322 dmg.
+banshi took 1344 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1344 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1344 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1344 dmg.
+
+banshi delt 8322 dmg.
+banshi took 1344 dmg.
+
+banshi delt 20805 dmg.
+banshi took 1344 dmg.
+banshi lost to   Swift Evangelion of Death
+<>
+banshi delt 8322 dmg.
+banshi took 169 dmg.
+
+banshi delt 16644 dmg.
+banshi took 169 dmg.
+banshi killed    Aldrich 
+<>
+banshi delt 21432 dmg.
+banshi took 143 dmg.
+banshi killed  Strong  Sir Iundex 
+<>
+banshi delt 10716 dmg.
+banshi took 335 dmg.
+
+banshi delt 21432 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God of Wealth
+<>
+banshi delt 10716 dmg.
+banshi took 634 dmg.
+
+banshi delt 10716 dmg.
+banshi took 261 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 10716 dmg.
+banshi took 248 dmg.
+banshi killed   Black Artojas 
+<>
+banshi delt 21432 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 13395 dmg.
+banshi took 873 dmg.
+
+banshi delt 10716 dmg.
+banshi took 380 dmg.
+
+banshi delt 21432 dmg.
+banshi took 380 dmg.
+banshi killed   Mutated Destruction God 
+<>
+banshi delt 10716 dmg.
+banshi took 335 dmg.
+
+banshi delt 10716 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 10716 dmg.
+banshi took 107 dmg.
+
+banshi delt 10716 dmg.
+banshi took 107 dmg.
+banshi killed   Slow Shiros 
+<>
+banshi delt 10716 dmg.
+banshi took 418 dmg.
+
+banshi delt 10716 dmg.
+banshi took 418 dmg.
+banshi killed   Weak Nirvana 
+<>
+banshi delt 10716 dmg.
+banshi took 28 dmg.
+
+banshi delt 21432 dmg.
+banshi took 28 dmg.
+banshi killed    Aldrich of Nothingess
+<>
+banshi delt 10716 dmg.
+banshi took 261 dmg.
+
+banshi delt 10716 dmg.
+banshi took 261 dmg.
+banshi killed    Slasher of Epicness
+<>
+banshi delt 10716 dmg.
+banshi took 236 dmg.
+
+banshi delt 21432 dmg.
+banshi took 236 dmg.
+banshi killed    Fallen 
+<>
+banshi delt 10716 dmg.
+banshi took 551 dmg.
+
+banshi delt 10716 dmg.
+banshi took 1215 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 10716 dmg.
+banshi took 328 dmg.
+
+banshi delt 10716 dmg.
+banshi took 328 dmg.
+banshi killed    Shiros of Galaxys
+<>
+banshi delt 10716 dmg.
+banshi took 684 dmg.
+
+banshi delt 21432 dmg.
+banshi took 684 dmg.
+banshi killed   Scary Weol 
+<>
+banshi delt 21432 dmg.
+banshi took 335 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 10716 dmg.
+banshi took 169 dmg.
+banshi killed    Aldrich 
+<>
+banshi delt 10716 dmg.
+banshi took 881 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 10716 dmg.
+banshi took 333 dmg.
+
+banshi delt 21432 dmg.
+banshi took 333 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 6710 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 6710 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13154 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 21924 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 6710 dmg.
+
+banshi delt 10962 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 28502 dmg.
+banshi took 3295 dmg.
+
+banshi delt 17101 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13045 dmg.
+banshi took 3295 dmg.
+
+banshi delt 26090 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13045 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 15566 dmg.
+banshi took 3295 dmg.
+
+banshi delt 15566 dmg.
+banshi took 3295 dmg.
+
+banshi delt 15566 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 25652 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 32448 dmg.
+banshi took 3295 dmg.
+
+banshi delt 16224 dmg.
+banshi took 3295 dmg.
+
+banshi delt 32448 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12277 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12277 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12277 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 26966 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13483 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13483 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+
+banshi delt 25652 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 27844 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13922 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13922 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 24774 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12387 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12387 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 14579 dmg.
+banshi took 3295 dmg.
+
+banshi delt 19536 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 27186 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13593 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13593 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12606 dmg.
+banshi took 3295 dmg.
+
+banshi delt 25212 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12606 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+
+banshi delt 27406 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 29816 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14908 dmg.
+banshi took 3295 dmg.
+
+banshi delt 29816 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12826 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12277 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12277 dmg.
+banshi took 3295 dmg.
+
+banshi delt 24554 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 14251 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14251 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14251 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+
+banshi delt 27406 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 14579 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14579 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14579 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 15676 dmg.
+banshi took 3295 dmg.
+
+banshi delt 15676 dmg.
+banshi took 3295 dmg.
+
+banshi delt 15676 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13703 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12168 dmg.
+banshi took 3295 dmg.
+
+banshi delt 24336 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 26748 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13374 dmg.
+banshi took 3295 dmg.
+
+banshi delt 26748 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 15347 dmg.
+banshi took 3295 dmg.
+
+banshi delt 30694 dmg.
+banshi took 3295 dmg.
+
+banshi delt 30694 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 25432 dmg.
+banshi took 3295 dmg.
+
+banshi delt 25432 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12716 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12387 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 29598 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14799 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14799 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 15018 dmg.
+banshi took 3295 dmg.
+
+banshi delt 30036 dmg.
+banshi took 3295 dmg.
+
+banshi delt 30036 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 29598 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14799 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14799 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 15128 dmg.
+banshi took 3295 dmg.
+
+banshi delt 15128 dmg.
+banshi took 3295 dmg.
+
+banshi delt 30256 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 26748 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13374 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13374 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 14799 dmg.
+banshi took 3295 dmg.
+
+banshi delt 29598 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14799 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 27186 dmg.
+banshi took 3295 dmg.
+
+banshi delt 27186 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13593 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 28062 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14031 dmg.
+banshi took 3295 dmg.
+
+banshi delt 14031 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 25212 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12606 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12606 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13812 dmg.
+banshi took 3295 dmg.
+
+banshi delt 27624 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13812 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 12935 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12935 dmg.
+banshi took 3295 dmg.
+
+banshi delt 12935 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13374 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13374 dmg.
+banshi took 6710 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13264 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13264 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13264 dmg.
+banshi took 3295 dmg.
+banshi lost to  Godlike Aldrich of Darkness
+<>
+banshi delt 13045 dmg.
+banshi took 3295 dmg.
+
+banshi delt 13045 dmg.
+banshi took 3295 dmg.
+banshi killed  Godlike Aldrich of Darkness
+<>
+banshi delt 10962 dmg.
+banshi took 279 dmg.
+
+banshi delt 10962 dmg.
+banshi took 279 dmg.
+banshi killed    Weol of Ambiance
+<>
+banshi delt 10962 dmg.
+banshi took 508 dmg.
+
+banshi delt 26309 dmg.
+banshi took 508 dmg.
+banshi killed  Gama  Fallen 
+<>
+banshi delt 26309 dmg.
+banshi took 1208 dmg.
+banshi killed    Nirvana of Wealth
+<>
+banshi delt 26309 dmg.
+banshi took 20 dmg.
+banshi killed   Black Sir Iundex of Disapointment
+<>
+banshi delt 10962 dmg.
+banshi took 687 dmg.
+
+banshi delt 10962 dmg.
+banshi took 687 dmg.
+
+banshi delt 10962 dmg.
+banshi took 687 dmg.
+banshi killed   Radiant Destruction God 
+<>
+banshi delt 26309 dmg.
+banshi took 254 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 10962 dmg.
+banshi took 129 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 26309 dmg.
+banshi took 317 dmg.
+banshi killed  Omega Reborn Beltor The Slayer 
+<>
+banshi delt 26309 dmg.
+banshi took 105 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 26309 dmg.
+banshi took 929 dmg.
+
+banshi delt 10962 dmg.
+banshi took 929 dmg.
+
+banshi delt 26309 dmg.
+banshi took 929 dmg.
+banshi killed  Wild  Destruction God of Galaxys
+<>
+banshi delt 26309 dmg.
+banshi took 876 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 10962 dmg.
+banshi took 113 dmg.
+banshi killed   Green Sir Iundex 
+<>
+banshi delt 10962 dmg.
+banshi took 172 dmg.
+
+banshi delt 10962 dmg.
+banshi took 172 dmg.
+banshi killed   Swift Beltor The Slayer 
+<>
+banshi delt 26309 dmg.
+banshi took 217 dmg.
+banshi killed   Casual Evangelion 
+<>
+banshi delt 26309 dmg.
+banshi took 777 dmg.
+banshi killed    Fiera of Weakness
+<>
+banshi delt 10962 dmg.
+banshi took 1 dmg.
+banshi killed    Valkos The Destructor of Disapointment
+<>
+banshi delt 10962 dmg.
+banshi took 359 dmg.
+
+banshi delt 10962 dmg.
+banshi took 359 dmg.
+banshi killed   Casual Creation God 
+<>
+banshi delt 10962 dmg.
+banshi took 1 dmg.
+banshi killed   Green X7-10 
+<>
+banshi delt 26309 dmg.
+banshi took 60 dmg.
+banshi killed   Weak Beltor The Slayer 
+<>
+banshi delt 10962 dmg.
+banshi took 171 dmg.
+banshi killed   Exspensive Valkos The Destructor 
+<>
+banshi delt 10962 dmg.
+banshi took 1374 dmg.
+
+banshi delt 26309 dmg.
+banshi took 1374 dmg.
+banshi killed    Fiera of Epicness
+<>
+banshi delt 10962 dmg.
+banshi took 1076 dmg.
+
+banshi delt 10962 dmg.
+banshi took 1076 dmg.
+banshi killed    Fiera of Sparks
+<>
+banshi delt 26309 dmg.
+banshi took 777 dmg.
+
+banshi delt 26309 dmg.
+banshi took 777 dmg.
+banshi killed   Exspensive Destruction God of Greed
+<>
+banshi delt 10962 dmg.
+banshi took 5 dmg.
+banshi killed   Little Slasher 
+<>
+banshi delt 10962 dmg.
+banshi took 603 dmg.
+
+banshi delt 10962 dmg.
+banshi took 603 dmg.
+banshi killed  Max Black Artojas 
+<>
+banshi delt 29993 dmg.
+banshi took 334 dmg.
+banshi killed   Swift Fallen 
+<>
+banshi delt 12822 dmg.
+banshi took 162 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 12274 dmg.
+banshi took 535 dmg.
+
+banshi delt 12274 dmg.
+banshi took 535 dmg.
+banshi killed    Nirvana of Wealth
+<>
+banshi delt 12712 dmg.
+banshi took 436 dmg.
+
+banshi delt 12712 dmg.
+banshi took 436 dmg.
+banshi killed    Aldrich of Greed
+<>
+banshi delt 13151 dmg.
+banshi took 403 dmg.
+
+banshi delt 31562 dmg.
+banshi took 403 dmg.
+banshi killed    Creation God 
+<>
+banshi delt 29722 dmg.
+banshi took 154 dmg.
+banshi killed    Aldrich 
+<>
+banshi delt 27881 dmg.
+banshi took 593 dmg.
+banshi killed    Artojas of Death
+<>
+banshi delt 30509 dmg.
+banshi took 410 dmg.
+banshi killed   Red Shiros of Darkness
+<>
+banshi delt 11836 dmg.
+banshi took 210 dmg.
+
+banshi delt 12901 dmg.
+banshi took 210 dmg.
+banshi killed    Aldrich of Sparks
+<>
+banshi delt 12712 dmg.
+banshi took 535 dmg.
+
+banshi delt 14873 dmg.
+banshi took 535 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 31562 dmg.
+banshi took 1 dmg.
+banshi killed    Slasher of Nothingess
+<>
+banshi delt 29458 dmg.
+banshi took 1739 dmg.
+
+banshi delt 29458 dmg.
+banshi took 1739 dmg.
+
+banshi delt 12274 dmg.
+banshi took 1739 dmg.
+
+banshi delt 29458 dmg.
+banshi took 1739 dmg.
+banshi killed   Prime Evangelion 
+<>
+banshi delt 11836 dmg.
+banshi took 101 dmg.
+banshi killed   Green Shiros 
+<>
+banshi delt 11617 dmg.
+banshi took 205 dmg.
+
+banshi delt 11617 dmg.
+banshi took 205 dmg.
+banshi killed    Fallen 
+<>
+banshi delt 12493 dmg.
+banshi took 454 dmg.
+
+banshi delt 29983 dmg.
+banshi took 454 dmg.
+banshi killed   Slow Nirvana 
+<>
+banshi delt 12493 dmg.
+banshi took 520 dmg.
+
+banshi delt 12493 dmg.
+banshi took 520 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 11507 dmg.
+banshi took 1151 dmg.
+banshi killed  Wild  Fiera 
+<>
+banshi delt 29458 dmg.
+banshi took 297 dmg.
+banshi killed   Casual Shiros 
+<>
+banshi delt 28142 dmg.
+banshi took 317 dmg.
+
+banshi delt 11726 dmg.
+banshi took 317 dmg.
+
+banshi delt 28142 dmg.
+banshi took 317 dmg.
+banshi killed   Mutated Fallen of Sparks
+<>
+banshi delt 29194 dmg.
+banshi took 478 dmg.
+
+banshi delt 12164 dmg.
+banshi took 478 dmg.
+
+banshi delt 29194 dmg.
+banshi took 478 dmg.
+banshi killed   Swift Creation God of Damping
+<>
+banshi delt 31298 dmg.
+banshi took 169 dmg.
+banshi killed   Swift Artojas 
+<>
+banshi delt 10959 dmg.
+banshi took 176 dmg.
+
+banshi delt 10959 dmg.
+banshi took 176 dmg.
+banshi killed   Mutated Valkos The Destructor 
+<>
+banshi delt 13041 dmg.
+banshi took 81 dmg.
+banshi killed   Casual Slasher 
+<>
+banshi delt 27881 dmg.
+banshi took 89 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 12493 dmg.
+banshi took 13 dmg.
+banshi killed    Beltor The Slayer of Lazyness
+<>
+banshi delt 29458 dmg.
+banshi took 92 dmg.
+banshi killed   Slow Valkos The Destructor of Weakness
+<>
+banshi delt 29194 dmg.
+banshi took 1653 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1653 dmg.
+banshi killed   Hyper Lampartis of Sparks
+<>
+banshi delt 12603 dmg.
+banshi took 82 dmg.
+banshi killed  Tired  Aldrich 
+<>
+banshi delt 28668 dmg.
+banshi took 105 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 11507 dmg.
+banshi took 230 dmg.
+
+banshi delt 11507 dmg.
+banshi took 603 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 11507 dmg.
+banshi took 147 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 12055 dmg.
+banshi took 1828 dmg.
+
+banshi delt 28932 dmg.
+banshi took 842 dmg.
+banshi killed   Hyper Destruction God 
+<>
+banshi delt 30773 dmg.
+banshi took 101 dmg.
+banshi killed    Shiros 
+<>
+banshi delt 31037 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 31037 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 31037 dmg.
+banshi took 496 dmg.
+
+banshi delt 31037 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 496 dmg.
+
+banshi delt 12932 dmg.
+banshi took 1135 dmg.
+
+banshi delt 31037 dmg.
+banshi took 496 dmg.
+banshi lost to   Valkos The Destructor of Ambiance
+<>
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 496 dmg.
+
+banshi delt 29194 dmg.
+banshi took 496 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1135 dmg.
+banshi lost to   Valkos The Destructor of Ambiance
+<>
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 33929 dmg.
+banshi took 496 dmg.
+
+banshi delt 14137 dmg.
+banshi took 1135 dmg.
+
+banshi delt 14137 dmg.
+banshi took 496 dmg.
+banshi lost to   Valkos The Destructor of Ambiance
+<>
+banshi delt 16439 dmg.
+banshi took 496 dmg.
+
+banshi delt 39454 dmg.
+banshi took 1135 dmg.
+banshi killed   Valkos The Destructor of Ambiance
+<>
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 29294 dmg.
+banshi took 2815 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 38615 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38615 dmg.
+banshi took 2815 dmg.
+
+banshi delt 15891 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15891 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15891 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38880 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38880 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 29559 dmg.
+banshi took 2815 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 29559 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12164 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 14356 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14356 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14356 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14356 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14356 dmg.
+banshi took 1335 dmg.
+
+banshi delt 34885 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 15671 dmg.
+banshi took 2815 dmg.
+
+banshi delt 15671 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38081 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15671 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15671 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 16110 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16110 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16110 dmg.
+banshi took 2815 dmg.
+
+banshi delt 39147 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16110 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 16329 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16329 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16329 dmg.
+banshi took 1335 dmg.
+
+banshi delt 39679 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16329 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16329 dmg.
+banshi took 2815 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 35952 dmg.
+banshi took 1335 dmg.
+
+banshi delt 35952 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14795 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14795 dmg.
+banshi took 1335 dmg.
+
+banshi delt 35952 dmg.
+banshi took 1335 dmg.
+
+banshi delt 35952 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 13370 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13370 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13370 dmg.
+banshi took 1335 dmg.
+
+banshi delt 32489 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13370 dmg.
+banshi took 1335 dmg.
+
+banshi delt 32489 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 31957 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15781 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38348 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15781 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38348 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12822 dmg.
+banshi took 2815 dmg.
+
+banshi delt 15386 dmg.
+banshi took 1335 dmg.
+
+banshi delt 37389 dmg.
+banshi took 1335 dmg.
+
+banshi delt 37389 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 33289 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13699 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16439 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16439 dmg.
+banshi took 1335 dmg.
+
+banshi delt 39947 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13699 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 14466 dmg.
+banshi took 1335 dmg.
+
+banshi delt 35152 dmg.
+banshi took 2815 dmg.
+
+banshi delt 17359 dmg.
+banshi took 1335 dmg.
+
+banshi delt 42182 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17359 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 14904 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14904 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17885 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17885 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17885 dmg.
+banshi took 1335 dmg.
+
+banshi delt 34088 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14028 dmg.
+banshi took 2815 dmg.
+
+banshi delt 40905 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16834 dmg.
+banshi took 1335 dmg.
+
+banshi delt 40905 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 13918 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13918 dmg.
+banshi took 1335 dmg.
+
+banshi delt 40585 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16702 dmg.
+banshi took 2815 dmg.
+
+banshi delt 40585 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 13480 dmg.
+banshi took 1335 dmg.
+
+banshi delt 13480 dmg.
+banshi took 1335 dmg.
+
+banshi delt 39308 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16176 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16176 dmg.
+banshi took 2815 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 14247 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14247 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17096 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17096 dmg.
+banshi took 1335 dmg.
+
+banshi delt 17096 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14247 dmg.
+banshi took 2815 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 36749 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15123 dmg.
+banshi took 1335 dmg.
+
+banshi delt 18148 dmg.
+banshi took 2815 dmg.
+
+banshi delt 18148 dmg.
+banshi took 1335 dmg.
+
+banshi delt 18148 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12493 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12493 dmg.
+banshi took 1335 dmg.
+
+banshi delt 36429 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14992 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14992 dmg.
+banshi took 1335 dmg.
+
+banshi delt 30358 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16000 dmg.
+banshi took 1335 dmg.
+
+banshi delt 46656 dmg.
+banshi took 1335 dmg.
+
+banshi delt 19200 dmg.
+banshi took 1335 dmg.
+
+banshi delt 46656 dmg.
+banshi took 1335 dmg.
+
+banshi delt 38880 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14466 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14466 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14466 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12055 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12712 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12712 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15254 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15254 dmg.
+banshi took 1335 dmg.
+
+banshi delt 15254 dmg.
+banshi took 1335 dmg.
+
+banshi delt 30890 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 12384 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12384 dmg.
+banshi took 1335 dmg.
+
+banshi delt 36112 dmg.
+banshi took 1335 dmg.
+
+banshi delt 36112 dmg.
+banshi took 1335 dmg.
+
+banshi delt 36112 dmg.
+banshi took 1335 dmg.
+
+banshi delt 12384 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 34088 dmg.
+banshi took 1335 dmg.
+
+banshi delt 14028 dmg.
+banshi took 1335 dmg.
+
+banshi delt 40905 dmg.
+banshi took 1335 dmg.
+
+banshi delt 16834 dmg.
+banshi took 2815 dmg.
+
+banshi delt 16834 dmg.
+banshi took 1335 dmg.
+banshi lost to Max  Evangelion of Damping
+<>
+banshi delt 16000 dmg.
+banshi took 733 dmg.
+
+banshi delt 16000 dmg.
+banshi took 733 dmg.
+
+banshi delt 47040 dmg.
+banshi took 733 dmg.
+
+banshi delt 19200 dmg.
+banshi took 733 dmg.
+
+banshi delt 47040 dmg.
+banshi took 733 dmg.
+
+banshi delt 39200 dmg.
+banshi took 733 dmg.
+banshi killed Rude Prime X8-10 
+<>
+banshi delt 19334 dmg.
+banshi took 1135 dmg.
+
+banshi delt 19334 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23201 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23201 dmg.
+banshi took 1135 dmg.
+
+banshi delt 56842 dmg.
+banshi took 1135 dmg.
+
+banshi delt 19334 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23201 dmg.
+banshi took 1135 dmg.
+banshi lost to Max  Valkos The Destructor 
+<>
+banshi delt 19334 dmg.
+banshi took 1135 dmg.
+
+banshi delt 19334 dmg.
+banshi took 1135 dmg.
+
+banshi delt 56842 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23201 dmg.
+banshi took 1135 dmg.
+
+banshi delt 56842 dmg.
+banshi took 1135 dmg.
+
+banshi delt 24377 dmg.
+banshi took 2413 dmg.
+
+banshi delt 59724 dmg.
+banshi took 1135 dmg.
+
+banshi delt 29252 dmg.
+banshi took 1135 dmg.
+
+banshi delt 29252 dmg.
+banshi took 1135 dmg.
+
+banshi delt 29252 dmg.
+banshi took 1135 dmg.
+banshi lost to Max  Valkos The Destructor 
+<>
+banshi delt 58077 dmg.
+banshi took 1135 dmg.
+
+banshi delt 58077 dmg.
+banshi took 1135 dmg.
+
+banshi delt 69693 dmg.
+banshi took 1135 dmg.
+
+banshi delt 28446 dmg.
+banshi took 2413 dmg.
+
+banshi delt 69693 dmg.
+banshi took 1135 dmg.
+banshi lost to Max  Valkos The Destructor 
+<>
+banshi delt 20343 dmg.
+banshi took 1135 dmg.
+
+banshi delt 20343 dmg.
+banshi took 1135 dmg.
+
+banshi delt 59808 dmg.
+banshi took 1135 dmg.
+
+banshi delt 24412 dmg.
+banshi took 2413 dmg.
+
+banshi delt 24412 dmg.
+banshi took 1135 dmg.
+banshi lost to Max  Valkos The Destructor 
+<>
+banshi delt 23032 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23032 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27638 dmg.
+banshi took 1135 dmg.
+
+banshi delt 67714 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27638 dmg.
+banshi took 1135 dmg.
+
+banshi delt 23032 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27638 dmg.
+banshi took 1135 dmg.
+banshi lost to Max  Valkos The Destructor 
+<>
+banshi delt 22696 dmg.
+banshi took 1135 dmg.
+
+banshi delt 22696 dmg.
+banshi took 1135 dmg.
+
+banshi delt 66726 dmg.
+banshi took 1135 dmg.
+
+banshi delt 66726 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27235 dmg.
+banshi took 1135 dmg.
+
+banshi delt 22528 dmg.
+banshi took 1135 dmg.
+
+banshi delt 55194 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27034 dmg.
+banshi took 1135 dmg.
+
+banshi delt 27034 dmg.
+banshi took 1135 dmg.
+
+banshi delt 55194 dmg.
+banshi took 2413 dmg.
+banshi killed Max  Valkos The Destructor 
+<>
+banshi delt 46545 dmg.
+banshi took 520 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 45991 dmg.
+banshi took 226 dmg.
+banshi killed  Weak Black Slasher 
+<>
+banshi delt 17478 dmg.
+banshi took 638 dmg.
+
+banshi delt 17478 dmg.
+banshi took 1387 dmg.
+banshi killed  Infested  Lampartis 
+<>
+banshi delt 44803 dmg.
+banshi took 172 dmg.
+banshi killed    Aldrich 
+<>
+banshi delt 43612 dmg.
+banshi took 1387 dmg.
+banshi killed    Lampartis of Darkness
+<>
+banshi delt 17801 dmg.
+banshi took 151 dmg.
+banshi killed   Casual Valkos The Destructor 
+<>
+banshi delt 42027 dmg.
+banshi took 114 dmg.
+banshi killed   Little Destruction God of Wealth
+<>
+banshi delt 43216 dmg.
+banshi took 288 dmg.
+banshi killed   Green Weol 
+<>
+banshi delt 20363 dmg.
+banshi took 109 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 47376 dmg.
+banshi took 856 dmg.
+banshi killed   Green Fiera 
+<>
+banshi delt 46116 dmg.
+banshi took 100 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 50308 dmg.
+banshi took 922 dmg.
+banshi killed   Scary Creation God 
+<>
+banshi delt 47795 dmg.
+banshi took 472 dmg.
+banshi killed    Lampartis of Damping
+<>
+banshi delt 20192 dmg.
+banshi took 657 dmg.
+banshi killed    Weol of Stars
+<>
+banshi delt 47795 dmg.
+banshi took 208 dmg.
+banshi killed    Fallen 
+<>
+banshi delt 20363 dmg.
+banshi took 358 dmg.
+
+banshi delt 24436 dmg.
+banshi took 358 dmg.
+banshi killed   Reancarnated Slasher 
+<>
+banshi delt 45278 dmg.
+banshi took 793 dmg.
+banshi killed   Godlike Evangelion 
+<>
+banshi delt 19508 dmg.
+banshi took 657 dmg.
+
+banshi delt 22044 dmg.
+banshi took 657 dmg.
+banshi killed   Green Weol of Greed
+<>
+banshi delt 19165 dmg.
+banshi took 391 dmg.
+banshi killed    Creation God 
+<>
+banshi delt 19337 dmg.
+banshi took 171 dmg.
+banshi killed   Swift Artojas 
+<>
+banshi delt 20363 dmg.
+banshi took 649 dmg.
+
+banshi delt 55877 dmg.
+banshi took 649 dmg.
+banshi killed   Scary Weol 
+<>
+banshi delt 44860 dmg.
+banshi took 68 dmg.
+banshi killed   Slow Sir Iundex 
+<>
+banshi delt 19679 dmg.
+banshi took 16 dmg.
+banshi killed  Random Casual Fallen 
+<>
+banshi delt 19508 dmg.
+banshi took 168 dmg.
+banshi killed  Infested  Aldrich 
+<>
+banshi delt 47376 dmg.
+banshi took 55 dmg.
+banshi killed   Weak Shiros 
+<>
+banshi delt 22417 dmg.
+banshi took 2113 dmg.
+
+banshi delt 22417 dmg.
+banshi took 2113 dmg.
+
+banshi delt 54922 dmg.
+banshi took 2113 dmg.
+
+banshi delt 65906 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 24641 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29569 dmg.
+banshi took 2113 dmg.
+
+banshi delt 72444 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 23272 dmg.
+banshi took 4364 dmg.
+
+banshi delt 68420 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 19165 dmg.
+banshi took 4364 dmg.
+
+banshi delt 22998 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 19508 dmg.
+banshi took 2113 dmg.
+
+banshi delt 57353 dmg.
+banshi took 2113 dmg.
+
+banshi delt 57353 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 60789 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29774 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29774 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 22759 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27311 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27311 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 51568 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25258 dmg.
+banshi took 2113 dmg.
+
+banshi delt 61881 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 54503 dmg.
+banshi took 2113 dmg.
+
+banshi delt 65403 dmg.
+banshi took 2113 dmg.
+
+banshi delt 26695 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 49889 dmg.
+banshi took 2113 dmg.
+
+banshi delt 24436 dmg.
+banshi took 2113 dmg.
+
+banshi delt 24436 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 24470 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29364 dmg.
+banshi took 2113 dmg.
+
+banshi delt 71942 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 21903 dmg.
+banshi took 2113 dmg.
+
+banshi delt 26284 dmg.
+banshi took 2113 dmg.
+
+banshi delt 26284 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 46954 dmg.
+banshi took 2113 dmg.
+
+banshi delt 56345 dmg.
+banshi took 2113 dmg.
+
+banshi delt 56345 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 24470 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29364 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 23101 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27721 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27721 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 51568 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25258 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 61211 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29981 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 20706 dmg.
+banshi took 2113 dmg.
+
+banshi delt 60875 dmg.
+banshi took 2113 dmg.
+
+banshi delt 24847 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 18823 dmg.
+banshi took 2113 dmg.
+
+banshi delt 55339 dmg.
+banshi took 2113 dmg.
+
+banshi delt 22588 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 18823 dmg.
+banshi took 2113 dmg.
+
+banshi delt 55339 dmg.
+banshi took 2113 dmg.
+
+banshi delt 22588 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 19508 dmg.
+banshi took 2113 dmg.
+
+banshi delt 57353 dmg.
+banshi took 2113 dmg.
+
+banshi delt 57353 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 18139 dmg.
+banshi took 46 dmg.
+banshi killed  Random  Evangelion 
+<>
+banshi delt 51568 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25258 dmg.
+banshi took 2113 dmg.
+
+banshi delt 61881 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 46954 dmg.
+banshi took 2113 dmg.
+
+banshi delt 22998 dmg.
+banshi took 2113 dmg.
+
+banshi delt 56345 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 20534 dmg.
+banshi took 2113 dmg.
+
+banshi delt 24641 dmg.
+banshi took 2113 dmg.
+
+banshi delt 24641 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 55341 dmg.
+banshi took 4364 dmg.
+
+banshi delt 27106 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 24299 dmg.
+banshi took 2113 dmg.
+
+banshi delt 71439 dmg.
+banshi took 2113 dmg.
+
+banshi delt 29159 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 51568 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25258 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25258 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 20534 dmg.
+banshi took 2113 dmg.
+
+banshi delt 60370 dmg.
+banshi took 2113 dmg.
+
+banshi delt 60370 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 50730 dmg.
+banshi took 4364 dmg.
+
+banshi delt 24847 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 53662 dmg.
+banshi took 2113 dmg.
+
+banshi delt 64395 dmg.
+banshi took 2113 dmg.
+
+banshi delt 21903 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 25326 dmg.
+banshi took 2113 dmg.
+
+banshi delt 74458 dmg.
+banshi took 2113 dmg.
+
+banshi delt 30391 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 57435 dmg.
+banshi took 2113 dmg.
+
+banshi delt 28132 dmg.
+banshi took 2113 dmg.
+
+banshi delt 28132 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 47795 dmg.
+banshi took 2113 dmg.
+
+banshi delt 57353 dmg.
+banshi took 2113 dmg.
+
+banshi delt 23410 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 55760 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27311 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27311 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 56597 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27721 dmg.
+banshi took 2113 dmg.
+
+banshi delt 27721 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 24641 dmg.
+banshi took 4364 dmg.
+
+banshi delt 29569 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 19337 dmg.
+banshi took 2113 dmg.
+
+banshi delt 23204 dmg.
+banshi took 2113 dmg.
+
+banshi delt 23204 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 59114 dmg.
+banshi took 2113 dmg.
+
+banshi delt 70936 dmg.
+banshi took 2113 dmg.
+
+banshi delt 28954 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 59114 dmg.
+banshi took 2113 dmg.
+
+banshi delt 28954 dmg.
+banshi took 2113 dmg.
+
+banshi delt 28954 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 19850 dmg.
+banshi took 2113 dmg.
+
+banshi delt 58359 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 25497 dmg.
+banshi took 2113 dmg.
+
+banshi delt 30596 dmg.
+banshi took 2113 dmg.
+
+banshi delt 74961 dmg.
+banshi took 4364 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 21219 dmg.
+banshi took 2113 dmg.
+
+banshi delt 25463 dmg.
+banshi took 2113 dmg.
+
+banshi delt 62384 dmg.
+banshi took 2113 dmg.
+banshi lost to Omega Swift Creation God 
+<>
+banshi delt 21048 dmg.
+banshi took 2113 dmg.
+
+banshi delt 61881 dmg.
+banshi took 2113 dmg.
+banshi killed Omega Swift Creation God 
+<>
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 1032 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 57610 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 117620 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 447 dmg.
+
+banshi delt 48008 dmg.
+banshi took 1032 dmg.
+banshi lost to  Mutated Shiros 
+<>
+banshi delt 44315 dmg.
+banshi took 447 dmg.
+
+banshi delt 53178 dmg.
+banshi took 1032 dmg.
+
+banshi delt 108572 dmg.
+banshi took 447 dmg.
+
+banshi delt 53178 dmg.
+banshi took 447 dmg.
+
+banshi delt 53178 dmg.
+banshi took 447 dmg.
+
+banshi delt 44315 dmg.
+banshi took 447 dmg.
+
+banshi delt 44315 dmg.
+banshi took 1032 dmg.
+
+banshi delt 44315 dmg.
+banshi took 447 dmg.
+
+banshi delt 108572 dmg.
+banshi took 447 dmg.
+
+banshi delt 44315 dmg.
+banshi took 447 dmg.
+banshi killed  Mutated Shiros 
+<>
+banshi delt 45658 dmg.
+banshi took 12850 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 43308 dmg.
+banshi took 12850 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 33572 dmg.
+banshi took 12850 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 47001 dmg.
+banshi took 12850 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 97880 dmg.
+banshi took 304 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 37936 dmg.
+banshi took 230 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 96234 dmg.
+banshi took 12850 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 97880 dmg.
+banshi took 517 dmg.
+banshi killed   Green Nirvana 
+<>
+banshi delt 94590 dmg.
+banshi took 247 dmg.
+banshi killed   Radiant Artojas of Weakness
+<>
+banshi delt 97880 dmg.
+banshi took 845 dmg.
+banshi killed   Reancarnated Slasher of Greed
+<>
+banshi delt 96234 dmg.
+banshi took 1475 dmg.
+banshi killed    Lampartis of Reward
+<>
+banshi delt 39279 dmg.
+banshi took 148 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 39615 dmg.
+banshi took 194 dmg.
+banshi killed  Weak  Evangelion 
+<>
+banshi delt 36593 dmg.
+banshi took 107 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 39615 dmg.
+banshi took 280 dmg.
+banshi killed   Black Aldrich 
+<>
+banshi delt 89653 dmg.
+banshi took 304 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 39152 dmg.
+banshi took 545 dmg.
+banshi killed   Green Fallen 
+<>
+banshi delt 38148 dmg.
+banshi took 94 dmg.
+banshi killed   Red Artojas 
+<>
+banshi delt 90182 dmg.
+banshi took 78 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 37144 dmg.
+banshi took 299 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 86904 dmg.
+banshi took 98 dmg.
+banshi killed    Shiros 
+<>
+banshi delt 88543 dmg.
+banshi took 78 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 85985 dmg.
+banshi took 13287 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 66655 dmg.
+banshi took 13287 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 29655 dmg.
+banshi took 180 dmg.
+banshi killed    Fallen 
+<>
+banshi delt 29382 dmg.
+banshi took 270 dmg.
+banshi killed    Weol 
+<>
+banshi delt 29110 dmg.
+banshi took 427 dmg.
+banshi killed  Alpha  Fallen 
+<>
+banshi delt 45325 dmg.
+banshi took 86 dmg.
+banshi killed   Weak Nirvana of Disapointment
+<>
+banshi delt 43420 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 109179 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 47610 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 45706 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 111979 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 45706 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 25854 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 88800 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 38088 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 32647 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 32647 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 32647 dmg.
+banshi took 12865 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 33463 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 33463 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 39486 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 24286 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 40156 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi lost to Scary Prime Fiera of Ambiance
+<>
+banshi delt 98381 dmg.
+banshi took 12089 dmg.
+banshi killed Scary Prime Fiera of Ambiance
+<>
+banshi delt 54066 dmg.
+banshi took 216 dmg.
+banshi killed   Exspensive Fallen 
+<>
+banshi delt 134085 dmg.
+banshi took 178 dmg.
+banshi killed  Energetic Exspensive Shiros of Damping
+<>
+banshi delt 54066 dmg.
+banshi took 431 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 134085 dmg.
+banshi took 587 dmg.
+banshi killed   Mutated Lampartis 
+<>
+banshi delt 54066 dmg.
+banshi took 116 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 128721 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 13309 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 128721 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 128721 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 6600 dmg.
+banshi lost to  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 13309 dmg.
+banshi killed  Hyper Fiera of Epicness
+<>
+banshi delt 51904 dmg.
+banshi took 400 dmg.
+
+banshi delt 128721 dmg.
+banshi took 400 dmg.
+
+banshi delt 128721 dmg.
+banshi took 400 dmg.
+
+banshi delt 128721 dmg.
+banshi took 400 dmg.
+
+banshi delt 51904 dmg.
+banshi took 400 dmg.
+
+banshi delt 128721 dmg.
+banshi took 400 dmg.
+
+banshi delt 107267 dmg.
+banshi took 400 dmg.
+
+banshi delt 43253 dmg.
+banshi took 400 dmg.
+
+banshi delt 51904 dmg.
+banshi took 400 dmg.
+
+banshi delt 43253 dmg.
+banshi took 909 dmg.
+banshi killed   Slasher 
+<>
+banshi delt 43253 dmg.
+banshi took 655 dmg.
+
+banshi delt 43253 dmg.
+banshi took 655 dmg.
+
+banshi delt 107267 dmg.
+banshi took 655 dmg.
+banshi killed  Little X10-20 of Death
+<>
+banshi delt 51904 dmg.
+banshi took 212 dmg.
+
+banshi delt 51904 dmg.
+banshi took 212 dmg.
+banshi killed Energetic Black Vilmer of Epicness
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 154464 dmg.
+banshi took 9040 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 60554 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 119067 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 48011 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 128721 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 128721 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 128721 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 4466 dmg.
+
+banshi delt 128721 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 9040 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 9040 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 4466 dmg.
+
+banshi delt 51904 dmg.
+banshi took 4466 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 43253 dmg.
+banshi took 9040 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 107267 dmg.
+banshi took 1406 dmg.
+banshi killed  Wild  Fallen of Galaxys
+<>
+banshi delt 107267 dmg.
+banshi took 816 dmg.
+banshi killed    Nirvana of Crime
+<>
+banshi delt 134085 dmg.
+banshi took 1888 dmg.
+banshi killed   Casual Nirvana of Galaxys
+<>
+banshi delt 54066 dmg.
+banshi took 1124 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 54066 dmg.
+banshi took 976 dmg.
+banshi killed   Hyper Creation God 
+<>
+banshi delt 54066 dmg.
+banshi took 1888 dmg.
+banshi killed  Rude  Fiera of Galaxys
+<>
+banshi delt 134085 dmg.
+banshi took 724 dmg.
+banshi killed   Reancarnated Destruction God 
+<>
+banshi delt 134085 dmg.
+banshi took 1278 dmg.
+banshi killed    Fiera of Epicness
+<>
+banshi delt 54066 dmg.
+banshi took 100 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 134085 dmg.
+banshi took 1311 dmg.
+banshi killed  Alpha Radiant Creation God 
+<>
+banshi delt 54066 dmg.
+banshi took 1925 dmg.
+banshi killed  Omega Hyper Nirvana 
+<>
+banshi delt 134085 dmg.
+banshi took 8732 dmg.
+banshi lost to  Energetic Prime Lampartis 
+<>
+banshi delt 54066 dmg.
+banshi took 1155 dmg.
+
+banshi delt 54066 dmg.
+banshi took 1155 dmg.
+banshi killed   Reancarnated Lampartis 
+<>
+banshi delt 107267 dmg.
+banshi took 705 dmg.
+banshi killed   Hyper Weol of Ambiance
+<>
+banshi delt 43253 dmg.
+banshi took 801 dmg.
+banshi killed  Tired Radiant Lampartis 
+<>
+banshi delt 54066 dmg.
+banshi took 1029 dmg.
+banshi killed    Lampartis of Galaxys
+<>
+banshi delt 54066 dmg.
+banshi took 807 dmg.
+banshi killed   Hyper Destruction God 
+<>
+banshi delt 54066 dmg.
+banshi took 1740 dmg.
+banshi killed  Max  Fiera 
+<>
+banshi delt 134085 dmg.
+banshi took 839 dmg.
+banshi killed    Lampartis of Epicness
+<>
+banshi delt 43253 dmg.
+banshi took 2248 dmg.
+
+banshi delt 43253 dmg.
+banshi took 2248 dmg.
+
+banshi delt 134085 dmg.
+banshi took 2248 dmg.
+banshi killed   Prime Aldrich of Galaxys
+<>
+banshi delt 54066 dmg.
+banshi took 2061 dmg.
+banshi killed   Hyper Creation God 
+<>
+banshi delt 134085 dmg.
+banshi took 585 dmg.
+banshi killed    Evangelion 
+<>
+banshi delt 54066 dmg.
+banshi took 2115 dmg.
+
+banshi delt 54066 dmg.
+banshi took 2115 dmg.
+banshi killed  Alpha  Lampartis of Darkness
+<>
+banshi delt 134085 dmg.
+banshi took 1555 dmg.
+banshi killed  Gama Red Fiera 
+<>
+banshi delt 54066 dmg.
+banshi took 2073 dmg.
+banshi killed   Scary Shiros of Reward
+<>
+banshi delt 54066 dmg.
+banshi took 713 dmg.
+banshi killed   Reborn Lampartis 
+<>
+banshi delt 134085 dmg.
+banshi took 1155 dmg.
+banshi killed  Max  Lampartis 
+<>
+banshi delt 134085 dmg.
+banshi took 1124 dmg.
+banshi killed   Reancarnated Nirvana 
+<>
+banshi delt 134085 dmg.
+banshi took 3145 dmg.
+banshi killed   Hyper Creation God of Epicness
+<>
+banshi delt 54156 dmg.
+banshi took 95 dmg.
+banshi killed  Strong  Aldrich of Lazyness
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 134308 dmg.
+banshi took 484 dmg.
+banshi killed    Creation God of Sparks
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 9041 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi lost to  Prime Destruction God 
+<>
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+
+banshi delt 51990 dmg.
+banshi took 4467 dmg.
+banshi killed  Prime Destruction God 
+<>
+banshi delt 128935 dmg.
+banshi took 249 dmg.
+banshi killed Energetic Little X10-20 
+<>
+banshi delt 128935 dmg.
+banshi took 1540 dmg.
+
+banshi delt 51990 dmg.
+banshi took 1540 dmg.
+
+banshi delt 51990 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 151498 dmg.
+banshi took 1540 dmg.
+
+banshi delt 181798 dmg.
+banshi took 1540 dmg.
+
+banshi delt 73306 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 118192 dmg.
+banshi took 3186 dmg.
+
+banshi delt 57190 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 140755 dmg.
+banshi took 1540 dmg.
+
+banshi delt 68107 dmg.
+banshi took 1540 dmg.
+
+banshi delt 68107 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 120340 dmg.
+banshi took 1540 dmg.
+
+banshi delt 120340 dmg.
+banshi took 1540 dmg.
+
+banshi delt 144408 dmg.
+banshi took 3186 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 56323 dmg.
+banshi took 1540 dmg.
+
+banshi delt 167617 dmg.
+banshi took 1540 dmg.
+
+banshi delt 67588 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 151498 dmg.
+banshi took 1540 dmg.
+
+banshi delt 181798 dmg.
+banshi took 1540 dmg.
+
+banshi delt 73306 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 122490 dmg.
+banshi took 1540 dmg.
+
+banshi delt 59269 dmg.
+banshi took 1540 dmg.
+
+banshi delt 146987 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 137531 dmg.
+banshi took 1540 dmg.
+
+banshi delt 66547 dmg.
+banshi took 1540 dmg.
+
+banshi delt 165037 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 62388 dmg.
+banshi took 1540 dmg.
+
+banshi delt 185666 dmg.
+banshi took 1540 dmg.
+
+banshi delt 74866 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 160094 dmg.
+banshi took 1540 dmg.
+
+banshi delt 77465 dmg.
+banshi took 1540 dmg.
+
+banshi delt 192113 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 55023 dmg.
+banshi took 1540 dmg.
+
+banshi delt 66028 dmg.
+banshi took 1540 dmg.
+
+banshi delt 66028 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 133233 dmg.
+banshi took 1540 dmg.
+
+banshi delt 64468 dmg.
+banshi took 3186 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 119266 dmg.
+banshi took 1540 dmg.
+
+banshi delt 57709 dmg.
+banshi took 1540 dmg.
+
+banshi delt 143118 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 63688 dmg.
+banshi took 1540 dmg.
+
+banshi delt 76426 dmg.
+banshi took 1540 dmg.
+
+banshi delt 76426 dmg.
+banshi took 1540 dmg.
+banshi lost to Omega  Destruction God of Sparks
+<>
+banshi delt 60222 dmg.
+banshi took 1540 dmg.
+
+banshi delt 179221 dmg.
+banshi took 1540 dmg.
+
+banshi delt 179221 dmg.
+banshi took 1540 dmg.
+banshi killed Omega  Destruction God of Sparks
+<>
+banshi delt 128935 dmg.
+banshi took 462 dmg.
+
+banshi delt 128935 dmg.
+banshi took 462 dmg.
+
+banshi delt 51990 dmg.
+banshi took 462 dmg.
+
+banshi delt 128935 dmg.
+banshi took 462 dmg.
+
+banshi delt 128935 dmg.
+banshi took 462 dmg.
+
+banshi delt 51990 dmg.
+banshi took 462 dmg.
+
+banshi delt 43325 dmg.
+banshi took 462 dmg.
+
+banshi delt 43325 dmg.
+banshi took 462 dmg.
+
+banshi delt 43325 dmg.
+banshi took 462 dmg.
+
+banshi delt 107446 dmg.
+banshi took 462 dmg.
+
+banshi delt 107446 dmg.
+banshi took 462 dmg.
+banshi killed Alpha Little Sir Iundex of Crime
+<>
+banshi delt 54156 dmg.
+banshi took 162 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 54156 dmg.
+banshi took 243 dmg.
+banshi killed  Wild  Valkos The Destructor 
+<>
+banshi delt 54156 dmg.
+banshi took 75 dmg.
+banshi killed   Weak Shiros 
+<>
+banshi delt 54156 dmg.
+banshi took 216 dmg.
+banshi killed    Valkos The Destructor of Sparks
+<>
+banshi delt 134308 dmg.
+banshi took 267 dmg.
+banshi killed   Casual Destruction God 
+<>
+banshi delt 134308 dmg.
+banshi took 162 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 134308 dmg.
+banshi took 83 dmg.
+banshi killed  Strong Weak Sir Iundex 
+<>
+banshi delt 57622 dmg.
+banshi took 274 dmg.
+
+banshi delt 69146 dmg.
+banshi took 274 dmg.
+
+banshi delt 69146 dmg.
+banshi took 655 dmg.
+
+banshi delt 171483 dmg.
+banshi took 274 dmg.
+
+banshi delt 171483 dmg.
+banshi took 274 dmg.
+
+banshi delt 57622 dmg.
+banshi took 274 dmg.
+
+banshi delt 142903 dmg.
+banshi took 274 dmg.
+
+banshi delt 69146 dmg.
+banshi took 274 dmg.
+
+banshi delt 57622 dmg.
+banshi took 274 dmg.
+
+banshi delt 57622 dmg.
+banshi took 655 dmg.
+
+banshi delt 142903 dmg.
+banshi took 274 dmg.
+
+banshi delt 142903 dmg.
+banshi took 274 dmg.
+
+banshi delt 57622 dmg.
+banshi took 274 dmg.
+
+banshi delt 142903 dmg.
+banshi took 655 dmg.
+
+banshi delt 57622 dmg.
+banshi took 274 dmg.
+
+banshi delt 142903 dmg.
+banshi took 655 dmg.
+banshi lost to   Evangelion of Nothingess
+<>
+banshi delt 63255 dmg.
+banshi took 274 dmg.
+
+banshi delt 75906 dmg.
+banshi took 274 dmg.
+
+banshi delt 188247 dmg.
+banshi took 274 dmg.
+
+banshi delt 156872 dmg.
+banshi took 274 dmg.
+
+banshi delt 63255 dmg.
+banshi took 274 dmg.
+
+banshi delt 156872 dmg.
+banshi took 274 dmg.
+
+banshi delt 63255 dmg.
+banshi took 274 dmg.
+
+banshi delt 63255 dmg.
+banshi took 274 dmg.
+
+banshi delt 156872 dmg.
+banshi took 274 dmg.
+
+banshi delt 188247 dmg.
+banshi took 274 dmg.
+banshi killed   Evangelion of Nothingess
+<>
+banshi delt 132159 dmg.
+banshi took 114 dmg.
+
+banshi delt 158591 dmg.
+banshi took 335 dmg.
+
+banshi delt 63948 dmg.
+banshi took 114 dmg.
+banshi killed Weak Little Artojas 
+<>
+banshi delt 132159 dmg.
+banshi took 787 dmg.
+
+banshi delt 63948 dmg.
+banshi took 787 dmg.
+
+banshi delt 158591 dmg.
+banshi took 787 dmg.
+
+banshi delt 63948 dmg.
+banshi took 787 dmg.
+
+banshi delt 158591 dmg.
+banshi took 787 dmg.
+
+banshi delt 132159 dmg.
+banshi took 787 dmg.
+
+banshi delt 132159 dmg.
+banshi took 787 dmg.
+banshi lost to Infested Exspensive Weol of Wealth
+<>
+banshi delt 49824 dmg.
+banshi took 1682 dmg.
+
+banshi delt 148277 dmg.
+banshi took 787 dmg.
+
+banshi delt 59789 dmg.
+banshi took 1682 dmg.
+
+banshi delt 59789 dmg.
+banshi took 787 dmg.
+banshi lost to Infested Exspensive Weol of Wealth
+<>
+banshi delt 61088 dmg.
+banshi took 787 dmg.
+
+banshi delt 181798 dmg.
+banshi took 787 dmg.
+banshi killed Infested Exspensive Weol of Wealth
+<>
+banshi delt 54590 dmg.
+banshi took 747 dmg.
+
+banshi delt 65508 dmg.
+banshi took 747 dmg.
+
+banshi delt 65508 dmg.
+banshi took 747 dmg.
+
+banshi delt 65508 dmg.
+banshi took 747 dmg.
+
+banshi delt 65508 dmg.
+banshi took 747 dmg.
+
+banshi delt 134307 dmg.
+banshi took 747 dmg.
+
+banshi delt 64987 dmg.
+banshi took 747 dmg.
+
+banshi delt 64987 dmg.
+banshi took 747 dmg.
+
+banshi delt 161168 dmg.
+banshi took 747 dmg.
+
+banshi delt 64987 dmg.
+banshi took 747 dmg.
+
+banshi delt 54156 dmg.
+banshi took 747 dmg.
+
+banshi delt 54156 dmg.
+banshi took 747 dmg.
+banshi lost to Tired Radiant Valkos The Destructor 
+<>
+banshi delt 51990 dmg.
+banshi took 747 dmg.
+
+banshi delt 62388 dmg.
+banshi took 747 dmg.
+
+banshi delt 154722 dmg.
+banshi took 747 dmg.
+
+banshi delt 62388 dmg.
+banshi took 747 dmg.
+
+banshi delt 154722 dmg.
+banshi took 1601 dmg.
+banshi killed Tired Radiant Valkos The Destructor 
+<>
+banshi delt 52423 dmg.
+banshi took 625 dmg.
+
+banshi delt 62908 dmg.
+banshi took 1357 dmg.
+
+banshi delt 62908 dmg.
+banshi took 625 dmg.
+
+banshi delt 62908 dmg.
+banshi took 625 dmg.
+
+banshi delt 62908 dmg.
+banshi took 625 dmg.
+
+banshi delt 130009 dmg.
+banshi took 625 dmg.
+banshi killed  Radiant Vertuxis 
+<>
+banshi delt 53290 dmg.
+banshi took 1780 dmg.
+
+banshi delt 63948 dmg.
+banshi took 1780 dmg.
+
+banshi delt 63948 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 49824 dmg.
+banshi took 1780 dmg.
+
+banshi delt 148277 dmg.
+banshi took 3666 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 122490 dmg.
+banshi took 1780 dmg.
+
+banshi delt 146987 dmg.
+banshi took 1780 dmg.
+
+banshi delt 59269 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 161170 dmg.
+banshi took 1780 dmg.
+
+banshi delt 64988 dmg.
+banshi took 1780 dmg.
+
+banshi delt 64988 dmg.
+banshi took 1780 dmg.
+
+banshi delt 193404 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 58922 dmg.
+banshi took 3666 dmg.
+
+banshi delt 146127 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 150424 dmg.
+banshi took 1780 dmg.
+
+banshi delt 150424 dmg.
+banshi took 1780 dmg.
+
+banshi delt 180509 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 132159 dmg.
+banshi took 3666 dmg.
+
+banshi delt 53290 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 50690 dmg.
+banshi took 1780 dmg.
+
+banshi delt 50690 dmg.
+banshi took 1780 dmg.
+
+banshi delt 60828 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 47658 dmg.
+banshi took 3666 dmg.
+
+banshi delt 57190 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 152575 dmg.
+banshi took 1780 dmg.
+
+banshi delt 61522 dmg.
+banshi took 3666 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 138605 dmg.
+banshi took 1780 dmg.
+
+banshi delt 166326 dmg.
+banshi took 1780 dmg.
+
+banshi delt 67067 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 55889 dmg.
+banshi took 1780 dmg.
+
+banshi delt 67067 dmg.
+banshi took 1780 dmg.
+
+banshi delt 67067 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 51990 dmg.
+banshi took 1780 dmg.
+
+banshi delt 62388 dmg.
+banshi took 3666 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 119266 dmg.
+banshi took 3666 dmg.
+
+banshi delt 57709 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 121413 dmg.
+banshi took 1780 dmg.
+
+banshi delt 145696 dmg.
+banshi took 1780 dmg.
+
+banshi delt 58748 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 61955 dmg.
+banshi took 1780 dmg.
+
+banshi delt 61955 dmg.
+banshi took 1780 dmg.
+
+banshi delt 184378 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 133233 dmg.
+banshi took 1780 dmg.
+
+banshi delt 159879 dmg.
+banshi took 1780 dmg.
+
+banshi delt 159879 dmg.
+banshi took 1780 dmg.
+banshi lost to Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 154722 dmg.
+banshi took 1780 dmg.
+
+banshi delt 74866 dmg.
+banshi took 1780 dmg.
+banshi killed Strong Godlike Beltor The Slayer of Crime
+<>
+banshi delt 41212 dmg.
+banshi took 426 dmg.
+
+banshi delt 49454 dmg.
+banshi took 426 dmg.
+
+banshi delt 49454 dmg.
+banshi took 426 dmg.
+
+banshi delt 122647 dmg.
+banshi took 426 dmg.
+
+banshi delt 49454 dmg.
+banshi took 426 dmg.
+
+banshi delt 122647 dmg.
+banshi took 426 dmg.
+
+banshi delt 41212 dmg.
+banshi took 426 dmg.
+
+banshi delt 122647 dmg.
+banshi took 426 dmg.
+
+banshi delt 41212 dmg.
+banshi took 426 dmg.
+
+banshi delt 49454 dmg.
+banshi took 426 dmg.
+
+banshi delt 41212 dmg.
+banshi took 426 dmg.
+
+banshi delt 41212 dmg.
+banshi took 426 dmg.
+
+banshi delt 102206 dmg.
+banshi took 426 dmg.
+banshi killed Random Black Artojas of Crime
+<>
+banshi delt 44030 dmg.
+banshi took 109 dmg.
+banshi killed    Shiros 
+<>
+banshi delt 44030 dmg.
+banshi took 428 dmg.
+banshi killed    Weol of Crime
+<>
+banshi delt 109194 dmg.
+banshi took 113 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 44030 dmg.
+banshi took 56 dmg.
+banshi killed    Evangelion of Nothingess
+<>
+banshi delt 44030 dmg.
+banshi took 4112 dmg.
+
+banshi delt 87356 dmg.
+banshi took 4112 dmg.
+banshi lost to  Alpha Reancarnated Nirvana of Darkness
+<>
+banshi delt 44030 dmg.
+banshi took 576 dmg.
+banshi killed  Horible Weak Lampartis 
+<>
+banshi delt 109194 dmg.
+banshi took 219 dmg.
+banshi killed   Black Shiros 
+<>
+banshi delt 109194 dmg.
+banshi took 995 dmg.
+banshi killed   Casual Lampartis of Wealth
+<>
+banshi delt 109194 dmg.
+banshi took 665 dmg.
+banshi killed  Gama Slow Creation God 
+<>
+banshi delt 44030 dmg.
+banshi took 788 dmg.
+banshi killed   Black Nirvana 
+<>
+banshi delt 109194 dmg.
+banshi took 428 dmg.
+banshi killed  Tired  Evangelion of Greed
+<>
+banshi delt 109194 dmg.
+banshi took 330 dmg.
+banshi killed   Reancarnated Shiros 
+<>
+banshi delt 109194 dmg.
+banshi took 286 dmg.
+banshi killed    Shiros of Galaxys
+<>
+banshi delt 44030 dmg.
+banshi took 248 dmg.
+banshi killed    Weol of Ambiance
+<>
+banshi delt 109194 dmg.
+banshi took 293 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 44030 dmg.
+banshi took 1 dmg.
+banshi killed  Random Slow Valkos The Destructor of Disapointment
+<>
+banshi delt 109194 dmg.
+banshi took 90 dmg.
+banshi killed    Beltor The Slayer 
+<>
+banshi delt 109194 dmg.
+banshi took 105 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 44030 dmg.
+banshi took 150 dmg.
+banshi killed    Valkos The Destructor 
+<>
+banshi delt 44030 dmg.
+banshi took 1 dmg.
+banshi killed  Weak  Beltor The Slayer of Disapointment
+<>
+banshi delt 109194 dmg.
+banshi took 503 dmg.
+banshi killed    Lampartis 
+<>
+banshi delt 44030 dmg.
+banshi took 293 dmg.
+banshi killed    Destruction God 
+<>
+banshi delt 44030 dmg.
+banshi took 1088 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 44030 dmg.
+banshi took 98 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 109194 dmg.
+banshi took 1688 dmg.
+banshi killed    Fiera of Greed
+<>
+banshi delt 109194 dmg.
+banshi took 556 dmg.
+banshi killed  Gama Mutated Evangelion 
+<>
+banshi delt 36985 dmg.
+banshi took 2888 dmg.
+
+banshi delt 91723 dmg.
+banshi took 2888 dmg.
+banshi killed   Prime Nirvana 
+<>
+banshi delt 44030 dmg.
+banshi took 50 dmg.
+banshi killed    Destruction God of Disapointment
+<>
+banshi delt 109194 dmg.
+banshi took 98 dmg.
+banshi killed    Sir Iundex 
+<>
+banshi delt 109194 dmg.
+banshi took 788 dmg.
+banshi killed    Fiera 
+<>
+banshi delt 109194 dmg.
+banshi took 77 dmg.
+banshi killed  Weak  Sir Iundex 
+<>
+banshi delt 44030 dmg.
+banshi took 171 dmg.
+banshi killed    Destruction God of Lazyness
+<>
+banshi delt 44030 dmg.
+banshi took 368 dmg.
+banshi killed  Tired Exspensive Nirvana 
+<>
+banshi delt 109194 dmg.
+banshi took 113 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 44030 dmg.
+banshi took 758 dmg.
+banshi killed   Scary Artojas of Greed
+<>
+banshi delt 109194 dmg.
+banshi took 2462 dmg.
+banshi killed   Reborn Fiera of Darkness
+<>
+banshi delt 109194 dmg.
+banshi took 968 dmg.
+banshi killed    Weol of Epicness
+<>
+banshi delt 44030 dmg.
+banshi took 105 dmg.
+banshi killed    Artojas 
+<>
+banshi delt 44030 dmg.
+banshi took 392 dmg.
+banshi killed   Weak Valkos The Destructor of Reward
+<>
+banshi delt 44030 dmg.
+banshi took 113 dmg.
+banshi killed    Slasher 
+<>
+banshi delt 109194 dmg.
+banshi took 203 dmg.
+banshi killed   Green Fallen 
+<>
+banshi delt 44030 dmg.
+banshi took 488 dmg.
+banshi killed    Nirvana 
+<>
+banshi delt 44030 dmg.
+banshi took 581 dmg.
+banshi killed    Fallen of Darkness
+<>
+banshi delt 42269 dmg.
+banshi took 185 dmg.
+
+banshi delt 104827 dmg.
+banshi took 185 dmg.
+banshi killed   Eglor of Galaxys
+<>
+banshi delt 49314 dmg.
+banshi took 1892 dmg.
+
+banshi delt 146759 dmg.
+banshi took 1892 dmg.
+
+banshi delt 146759 dmg.
+banshi took 1892 dmg.
+
+banshi delt 146759 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>
+banshi delt 111816 dmg.
+banshi took 1892 dmg.
+
+banshi delt 54104 dmg.
+banshi took 1892 dmg.
+
+banshi delt 54104 dmg.
+banshi took 1892 dmg.
+
+banshi delt 134179 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>
+banshi delt 46848 dmg.
+banshi took 1892 dmg.
+
+banshi delt 56218 dmg.
+banshi took 3897 dmg.
+
+banshi delt 56218 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>
+banshi delt 117929 dmg.
+banshi took 1892 dmg.
+
+banshi delt 57062 dmg.
+banshi took 1892 dmg.
+
+banshi delt 57062 dmg.
+banshi took 1892 dmg.
+
+banshi delt 57062 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>
+banshi delt 46848 dmg.
+banshi took 1892 dmg.
+
+banshi delt 56218 dmg.
+banshi took 3897 dmg.
+
+banshi delt 56218 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>
+banshi delt 42973 dmg.
+banshi took 1892 dmg.
+
+banshi delt 51568 dmg.
+banshi took 1892 dmg.
+
+banshi delt 51568 dmg.
+banshi took 1892 dmg.
+
+banshi delt 51568 dmg.
+banshi took 1892 dmg.
+banshi lost to  Prime Beltor The Slayer of Damping
+<>

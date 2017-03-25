@@ -1,0 +1,313 @@
+TEST2 delt 5 dmg.
+TEST2 took 2 dmg.
+
+TEST2 delt 5 dmg.
+TEST2 took 2 dmg.
+TEST2 killed    Smoke 
+<>
+TEST2 delt 5 dmg.
+TEST2 took 2 dmg.
+
+TEST2 delt 5 dmg.
+TEST2 took 2 dmg.
+
+TEST2 delt 5 dmg.
+TEST2 took 2 dmg.
+TEST2 killed    Bee 
+<>
+TEST2 delt 51 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Burning  Frog 
+<>
+TEST2 delt 51 dmg.
+TEST2 took 26 dmg.
+
+TEST2 delt 51 dmg.
+TEST2 took 26 dmg.
+
+TEST2 delt 51 dmg.
+TEST2 took 26 dmg.
+TEST2 lost to    Vampire of Weakness
+<>
+TEST2 delt 51 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Fox 
+<>
+TEST2 delt 51 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Weak  Bee 
+<>
+TEST2 delt 60 dmg.
+TEST2 took 14 dmg.
+TEST2 killed    Cricket 
+<>
+TEST2 delt 60 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Bee 
+<>
+TEST2 delt 60 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Godlike Bandit 
+<>
+TEST2 delt 60 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Random  Slime of Epicness
+<>
+TEST2 delt 60 dmg.
+TEST2 took 39 dmg.
+
+TEST2 delt 60 dmg.
+TEST2 took 39 dmg.
+
+TEST2 delt 60 dmg.
+TEST2 took 39 dmg.
+TEST2 killed  Omega Hyper Getos 
+<>
+TEST2 delt 99 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Reancarnated Butter 
+<>
+TEST2 delt 99 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Random Black Bee of Damping
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Energetic Green Slime 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Scary ButterFly 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Getos 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Slow Whirl 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Reborn Brim 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Equinox 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Bomber 
+<>
+TEST2 delt 154 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 23 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Scary Brim 
+<>
+TEST2 delt 154 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Robot 
+<>
+TEST2 delt 123 dmg.
+TEST2 took 60 dmg.
+
+TEST2 delt 123 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Green Estor 
+<>
+TEST2 delt 174 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 139 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Vampire 
+<>
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 88 dmg.
+TEST2 took 1 dmg.
+TEST2 killed   Scary Rick of Epicness
+<>
+TEST2 delt 98 dmg.
+TEST2 took 1 dmg.
+TEST2 killed  Weak Weak Whirl 
+<>
+TEST2 delt 87 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 91 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Tiger 
+<>
+TEST2 delt 78 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Getos of Ambiance
+<>
+TEST2 delt 78 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Rick 
+<>
+TEST2 delt 78 dmg.
+TEST2 took 79 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 243 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 79 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 79 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 79 dmg.
+
+TEST2 delt 78 dmg.
+TEST2 took 79 dmg.
+TEST2 killed    Sultan 
+<>
+TEST2 delt 87 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 99 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 118 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 131 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 379 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 379 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 379 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 152 dmg.
+TEST2 took 146 dmg.
+
+TEST2 delt 176 dmg.
+TEST2 took 146 dmg.
+TEST2 killed    Vertuxis 
+<>
+TEST2 delt 138 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Navil of Nothingess
+<>
+TEST2 delt 173 dmg.
+TEST2 took 1 dmg.
+
+TEST2 delt 173 dmg.
+TEST2 took 1 dmg.
+TEST2 killed    Darkness of Galaxys
+<>
+TEST2 delt 138 dmg.
+TEST2 took 496 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 496 dmg.
+
+TEST2 delt 138 dmg.
+TEST2 took 496 dmg.
+
+TEST2 delt 338 dmg.
+TEST2 took 496 dmg.
+TEST2 killed    Dekton of Reward
+<>

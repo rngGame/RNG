@@ -1,0 +1,8 @@
+test delt 5 dmg.
+test took 64 dmg.
+test lost to Kompaslll
+<>
+test delt 5 dmg.
+test took 749 dmg.
+test killed   Dekton of Epicness
+<>

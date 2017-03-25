@@ -1,0 +1,830 @@
+armins delt 1708 dmg.
+armins took 1 dmg.
+armins killed    Goblin 
+<>
+armins delt 1708 dmg.
+armins took 69 dmg.
+armins killed    Raker of Lazyness
+<>
+armins delt 2228 dmg.
+armins took 100 dmg.
+armins killed    Estor 
+<>
+armins delt 2228 dmg.
+armins took 4.95 dmg.
+armins killed    Raven 
+<>
+armins delt 2228 dmg.
+armins took 118.8 dmg.
+armins killed    Sultan 
+<>
+armins delt 2228 dmg.
+armins took 118.8 dmg.
+armins killed    Sultan 
+<>
+armins delt 2606 dmg.
+armins took 49.5 dmg.
+armins killed    Eglor 
+<>
+armins delt 2606 dmg.
+armins took 134.26 dmg.
+armins killed   Mutated Raker 
+<>
+armins delt 2606 dmg.
+armins took 19.208 dmg.
+armins killed    Nectus of Sparks
+<>
+armins delt 2606 dmg.
+armins took 200.9 dmg.
+armins killed   Black Raker 
+<>
+armins delt 2606 dmg.
+armins took 61.25 dmg.
+armins killed  Omega  Estor 
+<>
+armins delt 2606 dmg.
+armins took 61.25 dmg.
+armins killed  Omega  Estor 
+<>
+armins delt 2606 dmg.
+armins took 61.25 dmg.
+armins killed  Omega  Estor 
+<>
+armins delt 2606 dmg.
+armins took 61.25 dmg.
+armins killed  Omega  Estor 
+<>
+Armins delt 2606 dmg.
+Armins took 245 dmg.
+
+Armins delt 2606 dmg.
+Armins took 245 dmg.
+Armins killed    Solaris 
+<>
+Armins delt 2606 dmg.
+Armins took 245 dmg.
+Armins killed    Solaris 
+<>
+Armins delt 2606 dmg.
+Armins took 245 dmg.
+
+Armins delt 2606 dmg.
+Armins took 245 dmg.
+Armins killed   Red Solaris 
+<>
+Armins delt 3127.2 dmg.
+Armins took 61.25 dmg.
+Armins killed   Black Estor 
+<>
+Armins delt 2606 dmg.
+Armins took 127.4 dmg.
+Armins killed    Evor of Greed
+<>
+Armins delt 2606 dmg.
+Armins took 217.56 dmg.
+Armins killed  Alpha  Raker 
+<>
+Armins delt 3127.2 dmg.
+Armins took 245 dmg.
+Armins killed    X10-20 
+<>
+Armins delt 2606 dmg.
+Armins took 329.8 dmg.
+Armins killed  Wild  Ember of Greed
+<>
+Armins delt 2606 dmg.
+Armins took 226.176 dmg.
+
+Armins delt 2606 dmg.
+Armins took 226.176 dmg.
+Armins killed  Beta  Vertuxis of Lazyness
+<>
+Armins delt 213 dmg.
+Armins took 226.176 dmg.
+
+Armins delt 511.2 dmg.
+Armins took 226.176 dmg.
+Armins lost to  Beta  Vertuxis of Lazyness
+<>
+Armins delt 2606 dmg.
+Armins took 240 dmg.
+Armins killed    Singuleris of Epicness
+<>
+Armins delt 5212 dmg.
+Armins took 441.6 dmg.
+Armins killed  Beta Prime Vilmer 
+<>
+Armins delt 5212 dmg.
+Armins took 220.8 dmg.
+
+Armins delt 5212 dmg.
+Armins took 220.8 dmg.
+Armins killed    Sir Iundex 
+<>
+Armins delt 2606 dmg.
+Armins took 489.6 dmg.
+
+Armins delt 2606 dmg.
+Armins took 220.8 dmg.
+
+Armins delt 2606 dmg.
+Armins took 220.8 dmg.
+
+Armins delt 3127.2 dmg.
+Armins took 220.8 dmg.
+Armins killed    Sir Iundex 
+<>
+Armins delt 2606 dmg.
+Armins took 235.6 dmg.
+
+Armins delt 2606 dmg.
+Armins took 235.6 dmg.
+
+Armins delt 2606 dmg.
+Armins took 235.6 dmg.
+
+Armins delt 2606 dmg.
+Armins took 235.6 dmg.
+Armins killed  Strong  Sir Iundex 
+<>
+Armins delt 50 dmg.
+Armins took 235.6 dmg.
+
+Armins delt 100 dmg.
+Armins took 235.6 dmg.
+
+Armins delt 50 dmg.
+Armins took 235.6 dmg.
+
+Armins Fleed from  Strong  Sir Iundex 
+<>
+Armins delt 2606 dmg.
+Armins took 228 dmg.
+
+Armins delt 2606 dmg.
+Armins took 513 dmg.
+
+Armins delt 2606 dmg.
+Armins took 228 dmg.
+
+Armins delt 6254.4 dmg.
+Armins took 228 dmg.
+Armins killed    Slasher 
+<>
+Armins delt 3258 dmg.
+Armins took 216.2 dmg.
+
+Armins delt 3258 dmg.
+Armins took 216.2 dmg.
+
+Armins delt 3258 dmg.
+Armins took 216.2 dmg.
+Armins killed   Exspensive Artojas 
+<>
+Armins delt 6410 dmg.
+Armins took 257.6 dmg.
+
+Armins delt 3846 dmg.
+Armins took 570.4 dmg.
+Armins killed    Aldrich 
+<>
+Armins delt 3648 dmg.
+Armins took 266.8 dmg.
+
+Armins delt 4377.6 dmg.
+Armins took 266.8 dmg.
+
+Armins delt 4377.6 dmg.
+Armins took 266.8 dmg.
+Armins killed    Valkos The Destructor 
+<>
+Armins delt 3977 dmg.
+Armins took 202.4 dmg.
+
+Armins delt 4772.4 dmg.
+Armins took 202.4 dmg.
+Armins killed    Sir Iundex 
+<>
+Armins delt 8940 dmg.
+Armins took 191.1 dmg.
+
+Armins delt 4470 dmg.
+Armins took 191.1 dmg.
+Armins killed   Little Destruction God 
+<>
+Armins delt 4733 dmg.
+Armins took 198 dmg.
+
+Armins delt 5443 dmg.
+Armins took 198 dmg.
+Armins killed    Sir Iundex 
+<>
+Armins delt 9400 dmg.
+Armins took 306 dmg.
+
+Armins delt 5640 dmg.
+Armins took 666 dmg.
+Armins killed  Random  Nirvana 
+<>
+Armins delt 4569 dmg.
+Armins took 161.1 dmg.
+
+Armins delt 6397 dmg.
+Armins took 161.1 dmg.
+Armins killed    Beltor The Slayer 
+<>
+Armins delt 9664 dmg.
+Armins took 177.11 dmg.
+Armins killed    Artojas 
+<>
+Armins delt 4306 dmg.
+Armins took 230.51 dmg.
+
+Armins delt 4995 dmg.
+Armins took 230.51 dmg.
+Armins killed    Valkos The Destructor 
+<>
+Armins delt 4553 dmg.
+Armins took 169.99 dmg.
+
+Armins delt 12930 dmg.
+Armins took 169.99 dmg.
+Armins killed    Slasher 
+<>
+Armins delt 10072 dmg.
+Armins took 125.84 dmg.
+Armins killed   Slow Sir Iundex 
+<>
+Armins delt 5587 dmg.
+Armins took 865.04 dmg.
+
+Armins delt 11174 dmg.
+Armins took 384.56 dmg.
+
+Armins delt 6704.4 dmg.
+Armins took 384.56 dmg.
+Armins killed   Swift Fallen 
+<>
+Armins delt 6121 dmg.
+Armins took 168.08 dmg.
+
+Armins delt 7284 dmg.
+Armins took 168.08 dmg.
+Armins killed    Slasher 
+<>
+Armins delt 4519 dmg.
+Armins took 212.08 dmg.
+
+Armins delt 4519 dmg.
+Armins took 212.08 dmg.
+Armins killed    Valkos The Destructor 
+<>
+Armins delt 5546 dmg.
+Armins took 203.28 dmg.
+
+Armins delt 5546 dmg.
+Armins took 502.48 dmg.
+Armins killed    Aldrich 
+<>
+Armins delt 11338 dmg.
+Armins took 168.08 dmg.
+Armins killed    Slasher 
+<>
+Armins delt 9694 dmg.
+Armins took 168.08 dmg.
+Armins killed    Slasher 
+<>
+Armins delt 5628 dmg.
+Armins took 203.28 dmg.
+
+Armins delt 16658 dmg.
+Armins took 203.28 dmg.
+Armins killed    Aldrich 
+<>
+Armins delt 9120 dmg.
+Armins took 273.68 dmg.
+
+Armins delt 11856 dmg.
+Armins took 273.68 dmg.
+Armins killed    Fallen 
+<>
+Armins delt 4519 dmg.
+Armins took 696.08 dmg.
+
+Armins delt 4519 dmg.
+Armins took 696.08 dmg.
+
+Armins delt 4519 dmg.
+Armins took 696.08 dmg.
+
+Armins delt 4519 dmg.
+Armins took 696.08 dmg.
+
+Armins delt 4519 dmg.
+Armins took 1488.08 dmg.
+Armins killed    Slasher of Death
+<>
+Armins delt 10270 dmg.
+Armins took 273.68 dmg.
+
+Armins delt 6162 dmg.
+Armins took 273.68 dmg.
+Armins killed    Fallen 
+<>
+Armins delt 6039 dmg.
+Armins took 273.68 dmg.
+
+Armins delt 7246.8 dmg.
+Armins took 273.68 dmg.
+Armins killed    Fallen 
+<>
+Armins delt 10434 dmg.
+Armins took 209.67 dmg.
+
+Armins delt 6260.4 dmg.
+Armins took 209.67 dmg.
+Armins killed    Valkos The Destructor of Ambiance
+<>
+Armins delt 12520.8 dmg.
+Armins took 209.67 dmg.
+Armins killed    Valkos The Destructor of Ambiance
+<>
+Armins delt 5710 dmg.
+Armins took 601.17 dmg.
+
+Armins delt 5710 dmg.
+Armins took 601.17 dmg.
+
+Armins delt 5710 dmg.
+Armins took 601.17 dmg.
+
+Armins delt 11420 dmg.
+Armins took 601.17 dmg.
+Armins killed    Nirvana 
+<>
+Armins delt 11502 dmg.
+Armins took 670.77 dmg.
+
+Armins delt 5751 dmg.
+Armins took 670.77 dmg.
+
+Armins delt 6901.2 dmg.
+Armins took 670.77 dmg.
+Armins killed  Strong  Nirvana 
+<>
+Armins delt 4889 dmg.
+Armins took 750.81 dmg.
+
+Armins delt 6845 dmg.
+Armins took 750.81 dmg.
+
+Armins delt 8214 dmg.
+Armins took 750.81 dmg.
+
+Armins delt 6845 dmg.
+Armins took 750.81 dmg.
+Armins lost to   Casual Evangelion of Reward
+<>
+Armins delt 5874 dmg.
+Armins took 618.57 dmg.
+
+Armins delt 5874 dmg.
+Armins took 618.57 dmg.
+
+Armins delt 5874 dmg.
+Armins took 618.57 dmg.
+
+Armins delt 5874 dmg.
+Armins took 618.57 dmg.
+Armins killed    Lampartis 
+<>
+Armins delt 5916 dmg.
+Armins took 1079.67 dmg.
+
+Armins delt 11832 dmg.
+Armins took 1079.67 dmg.
+
+Armins delt 11832 dmg.
+Armins took 1079.67 dmg.
+
+Armins delt 5916 dmg.
+Armins took 1079.67 dmg.
+Armins lost to   Godlike Destruction God 
+<>
+Armins delt 5747 dmg.
+Armins took 601.17 dmg.
+
+Armins delt 5747 dmg.
+Armins took 601.17 dmg.
+
+Armins delt 5747 dmg.
+Armins took 1297.17 dmg.
+
+Armins delt 5747 dmg.
+Armins took 601.17 dmg.
+Armins killed    Nirvana 
+<>
+Armins delt 10914 dmg.
+Armins took 618.57 dmg.
+
+Armins delt 6548.4 dmg.
+Armins took 618.57 dmg.
+
+Armins delt 5457 dmg.
+Armins took 618.57 dmg.
+Armins killed    Lampartis 
+<>
+Armins delt 6712 dmg.
+Armins took 1314.57 dmg.
+
+Armins delt 6712 dmg.
+Armins took 609.87 dmg.
+
+Armins delt 6712 dmg.
+Armins took 609.87 dmg.
+
+Armins delt 6712 dmg.
+Armins took 609.87 dmg.
+
+Armins delt 6712 dmg.
+Armins took 609.87 dmg.
+Armins killed    Evangelion of Galaxys
+<>
+Armins delt 6809 dmg.
+Armins took 938.73 dmg.
+
+Armins delt 13618 dmg.
+Armins took 421.95 dmg.
+
+Armins delt 6809 dmg.
+Armins took 421.95 dmg.
+
+Armins delt 13618 dmg.
+Armins took 421.95 dmg.
+Armins killed   Mutated Destruction God 
+<>
+Armins delt 6229 dmg.
+Armins took 1088.37 dmg.
+
+Armins delt 12458 dmg.
+Armins took 496.77 dmg.
+
+Armins delt 12458 dmg.
+Armins took 496.77 dmg.
+Armins killed   Scary Aldrich 
+<>
+Armins delt 11686 dmg.
+Armins took 656.85 dmg.
+
+Armins delt 7888 dmg.
+Armins took 656.85 dmg.
+
+Armins delt 7888 dmg.
+Armins took 656.85 dmg.
+
+Armins delt 7888 dmg.
+Armins took 656.85 dmg.
+Armins killed  Alpha  Destruction God of Wealth
+<>
+Armins delt 6374 dmg.
+Armins took 370.66 dmg.
+
+Armins delt 7330 dmg.
+Armins took 370.66 dmg.
+
+Armins delt 7330 dmg.
+Armins took 370.66 dmg.
+Armins killed    Destruction God 
+<>
+Armins delt 13618 dmg.
+Armins took 611.46 dmg.
+
+Armins delt 13618 dmg.
+Armins took 611.46 dmg.
+Armins killed   Red Lampartis 
+<>
+Armins delt 11976 dmg.
+Armins took 293.26 dmg.
+
+Armins delt 11976 dmg.
+Armins took 293.26 dmg.
+Armins killed    Evangelion 
+<>
+Armins delt 5457 dmg.
+Armins took 658.588 dmg.
+
+Armins delt 10914 dmg.
+Armins took 658.588 dmg.
+
+Armins delt 6821 dmg.
+Armins took 658.588 dmg.
+
+Armins delt 6821 dmg.
+Armins took 658.588 dmg.
+Armins killed  Gama  Destruction God of Weakness
+<>
+Armins delt 7147 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 7147 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 14294 dmg.
+Armins took 594.26 dmg.
+Armins killed    Nirvana 
+<>
+Armins delt 6374 dmg.
+Armins took 621.78 dmg.
+
+Armins delt 6374 dmg.
+Armins took 621.78 dmg.
+
+Armins delt 6374 dmg.
+Armins took 621.78 dmg.
+
+Armins delt 12748 dmg.
+Armins took 1337.3 dmg.
+Armins killed  Wild  Creation God 
+<>
+Armins delt 11494 dmg.
+Armins took 370.66 dmg.
+
+Armins delt 11494 dmg.
+Armins took 370.66 dmg.
+Armins killed    Destruction God 
+<>
+Armins delt 6278 dmg.
+Armins took 344.86 dmg.
+
+Armins delt 6278 dmg.
+Armins took 344.86 dmg.
+
+Armins delt 6278 dmg.
+Armins took 344.86 dmg.
+Armins killed   Black Aldrich 
+<>
+Armins delt 13714 dmg.
+Armins took 1316.66 dmg.
+
+Armins delt 6857 dmg.
+Armins took 611.46 dmg.
+
+Armins delt 6857 dmg.
+Armins took 611.46 dmg.
+Armins killed   Exspensive Lampartis of Ambiance
+<>
+Armins delt 14198 dmg.
+Armins took 643.108 dmg.
+
+Armins delt 7099 dmg.
+Armins took 643.108 dmg.
+
+Armins delt 7099 dmg.
+Armins took 643.108 dmg.
+
+Armins delt 7099 dmg.
+Armins took 643.108 dmg.
+Armins killed  Energetic  Aldrich of Galaxys
+<>
+Armins delt 7050 dmg.
+Armins took 1110.26 dmg.
+
+Armins delt 7050 dmg.
+Armins took 1110.26 dmg.
+
+Armins delt 7050 dmg.
+Armins took 1110.26 dmg.
+
+Armins Fleed from  Alpha Godlike Valkos The Destructor 
+<>
+Armins delt 6133 dmg.
+Armins took 533.2 dmg.
+
+Armins delt 12266 dmg.
+Armins took 533.2 dmg.
+
+Armins delt 12266 dmg.
+Armins took 533.2 dmg.
+Armins killed  Weak  Evangelion of Galaxys
+<>
+Armins delt 7195 dmg.
+Armins took 293.26 dmg.
+
+Armins delt 7195 dmg.
+Armins took 293.26 dmg.
+
+Armins delt 7195 dmg.
+Armins took 293.26 dmg.
+Armins killed    Evangelion 
+<>
+Armins delt 13618 dmg.
+Armins took 927.94 dmg.
+
+Armins delt 13618 dmg.
+Armins took 417.1 dmg.
+
+Armins delt 6809 dmg.
+Armins took 417.1 dmg.
+
+Armins delt 13618 dmg.
+Armins took 417.1 dmg.
+Armins killed   Mutated Destruction God 
+<>
+Armins delt 5408 dmg.
+Armins took 525.46 dmg.
+
+Armins delt 5408 dmg.
+Armins took 525.46 dmg.
+
+Armins delt 6436 dmg.
+Armins took 525.46 dmg.
+
+Armins delt 6436 dmg.
+Armins took 525.46 dmg.
+Armins killed    Nirvana of Weakness
+<>
+Armins delt 10624 dmg.
+Armins took 637.26 dmg.
+
+Armins delt 5312 dmg.
+Armins took 637.26 dmg.
+
+Armins delt 15512 dmg.
+Armins took 637.26 dmg.
+Armins killed   Godlike Aldrich 
+<>
+Armins delt 6085 dmg.
+Armins took 456.66 dmg.
+
+Armins delt 14604 dmg.
+Armins took 456.66 dmg.
+Armins killed    Creation God 
+<>
+Armins delt 6085 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 6085 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 6085 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 9067 dmg.
+Armins took 594.26 dmg.
+Armins killed    Nirvana 
+<>
+Armins delt 5505 dmg.
+Armins took 491.06 dmg.
+
+Armins delt 5505 dmg.
+Armins took 491.06 dmg.
+
+Armins delt 5505 dmg.
+Armins took 491.06 dmg.
+
+Armins delt 11010 dmg.
+Armins took 491.06 dmg.
+Armins killed   Prime Aldrich of Disapointment
+<>
+Armins delt 8823 dmg.
+Armins took 417.1 dmg.
+
+Armins delt 9794 dmg.
+Armins took 417.1 dmg.
+
+Armins delt 19588 dmg.
+Armins took 417.1 dmg.
+Armins killed   Mutated Destruction God 
+<>
+Armins delt 6924 dmg.
+Armins took 786.9 dmg.
+
+Armins delt 6924 dmg.
+Armins took 786.9 dmg.
+
+Armins delt 6924 dmg.
+Armins took 786.9 dmg.
+Armins killed  Tired  Creation God of Stars
+<>
+Armins delt 7230 dmg.
+Armins took 293.26 dmg.
+
+Armins delt 7230 dmg.
+Armins took 293.26 dmg.
+
+Armins delt 7230 dmg.
+Armins took 293.26 dmg.
+Armins killed    Evangelion 
+<>
+Armins delt 8639 dmg.
+Armins took 611.46 dmg.
+
+Armins delt 8639 dmg.
+Armins took 611.46 dmg.
+
+Armins delt 8639 dmg.
+Armins took 611.46 dmg.
+Armins killed    Lampartis 
+<>
+Armins delt 7720 dmg.
+Armins took 303.58 dmg.
+
+Armins delt 10345 dmg.
+Armins took 303.58 dmg.
+
+Armins delt 10345 dmg.
+Armins took 700.9 dmg.
+Armins killed   Mutated Fallen 
+<>
+Armins delt 8639 dmg.
+Armins took 594.26 dmg.
+
+Armins delt 17278 dmg.
+Armins took 594.26 dmg.
+Armins killed    Nirvana 
+<>
+Armins delt 7291 dmg.
+Armins took 505.75 dmg.
+
+Armins delt 8968 dmg.
+Armins took 505.75 dmg.
+
+Armins delt 17936 dmg.
+Armins took 1104.15 dmg.
+
+Armins delt 8968 dmg.
+Armins took 505.75 dmg.
+
+Armins delt 8968 dmg.
+Armins took 505.75 dmg.
+Armins killed <b style='color:#ff0066'>! RARE !</b>  Mutated Nirvana 
+<>
+Armins delt 15440 dmg.
+Armins took 595.85 dmg.
+
+Armins delt 9264 dmg.
+Armins took 595.85 dmg.
+
+Armins delt 7720 dmg.
+Armins took 595.85 dmg.
+Armins killed    Destruction God of Epicness
+<>
+Armins delt 13724 dmg.
+Armins took 519.35 dmg.
+
+Armins delt 6862 dmg.
+Armins took 519.35 dmg.
+
+Armins delt 6862 dmg.
+Armins took 519.35 dmg.
+
+Armins delt 13724 dmg.
+Armins took 519.35 dmg.
+Armins killed   Slow Nirvana of Ambiance
+<>
+Armins delt 6924 dmg.
+Armins took 2028.95 dmg.
+
+Armins delt 6924 dmg.
+Armins took 968.15 dmg.
+
+Armins delt 6924 dmg.
+Armins took 968.15 dmg.
+
+Armins delt 13848 dmg.
+Armins took 968.15 dmg.
+Armins killed  Wild Weak Nirvana of Epicness
+<>
+Armins delt 15072 dmg.
+Armins took 526.15 dmg.
+
+Armins delt 8440 dmg.
+Armins took 526.15 dmg.
+
+Armins delt 8440 dmg.
+Armins took 526.15 dmg.
+
+Armins delt 8440 dmg.
+Armins took 1144.95 dmg.
+
+Armins delt 16880 dmg.
+Armins took 526.15 dmg.
+Armins killed   Swift Nirvana of Lazyness
+<>
+Armins delt 6127 dmg.
+Armins took 672.35 dmg.
+
+Armins delt 6127 dmg.
+Armins took 289.85 dmg.
+
+Armins delt 6127 dmg.
+Armins took 289.85 dmg.
+Armins killed    Evangelion 
+<>
+Armins delt 8271 dmg.
+Armins took 587.35 dmg.
+
+Armins delt 22994 dmg.
+Armins took 1267.35 dmg.
+Armins killed    Nirvana 
+<>

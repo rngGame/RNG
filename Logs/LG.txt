@@ -1,0 +1,14 @@
+LG delt 5 dmg.
+LG took 1 dmg.
+
+LG delt 5 dmg.
+LG took 1 dmg.
+LG killed    Bat 
+<>
+LG delt 5 dmg.
+LG took 2 dmg.
+
+LG delt 5 dmg.
+LG took 2 dmg.
+LG killed    Smoke 
+<>

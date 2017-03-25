@@ -1,0 +1,454 @@
+div {
+display: block;
+}
+
+td.center{
+	text-align:center;
+}
+
+.center2{
+	text-align:center;
+	width:500px;
+}
+
+.content{
+	width: 100%;
+min-width: 1080px;
+
+}
+
+div.l{
+	margin-left:10px;
+	margin-top:5px;
+
+}
+
+div.l3{
+	margin-left:2px;
+	margin-top:5px;
+
+}
+
+div.l2{
+	position:fixed;
+	margin-left:10px;
+	margin-top:5px;
+	left:15px;
+}
+
+div.r{
+	margin-right:10px;
+		margin-top:5px;
+}
+
+div.r2{
+	margin-right:10px;
+		margin-top:-477px;
+}
+
+div.n{
+	margin-top:5px;
+	right: 300px;
+}
+
+div.slim{
+	font-size:15px;
+}
+
+div.over{
+	height:200px;
+	width:100%;
+	overflow:scroll;
+	
+}
+table.full{
+		border: solid 1px #aacded;
+		box-shadow:3px 3px 2px #999999;
+		width:55%;
+		min-width:600px;
+		float:left;
+		position:absolute;
+		top:47px;
+}
+
+table.down{
+		border: solid 1px #aacded;
+		box-shadow:3px 3px 2px #999999;
+		width:320px;
+		height:270px;
+		float:left;
+		position:absolute;
+		top:47px;
+}
+
+table.vote{
+	font-size:14px;
+	border: solid 1px #aacded;
+	box-shadow:3px 3px 2px #999999;
+	float:right;
+	width:17%;
+	min-width:200px;
+	right:10px;
+}
+
+table.full2{
+		border: solid 1px #aacded;
+		width:400px;
+		box-shadow: 3px 3px 2px #999999;
+		position:absolute;
+		top:47px;
+}
+
+.coolheadSA{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	z-index: 80;
+	width: 25%;
+	min-width:330px;
+	left:415px;
+	position:fixed;
+	float:left;
+}
+
+table.full3{
+		border: solid 1px #aacded;
+		width:500px;
+		
+}
+
+table.come{
+	border: solid 1px #aacded;
+	box-shadow: 3px 3px 2px #999999;
+	width: 22%;
+	left: 57.5%;
+	min-width:90px;
+	position:relative;
+}
+
+table.koment{
+	border: solid 1px #aacded;
+	box-shadow: 3px 3px 2px #999999;
+	width: 35%;
+	left: 415px;
+	min-width:200px;
+	position:relative;
+}
+
+.ontab{
+	width:300px;
+	border:2px solid #999999;
+	box-shadow:3px 3px 2px #999999;
+}
+
+.ontd{
+
+	border-bottom:1px solid #000000;
+	
+}
+
+.fulltd{
+	border:1px solid;
+	width:300px;
+	box-shadow:3px 3px 2px #999999;
+}
+
+.fulltdcnt{
+	position:absolute;
+	left: 282px;
+	width:260px;
+}
+
+.news{
+	width:340;
+	border:none;
+}
+
+.newstd{
+	width:310;
+	vertical-align:text-top;
+	
+}
+
+.font1{
+	font-size:10px;
+}
+
+.info{
+	float:right;
+	width:17%;
+	text-align:center;
+	min-width:200px;
+	right:10px;
+}
+
+.coolhead{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+
+}
+
+.coolhead4{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	height:10px;
+
+}
+
+.coolheadFL{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+
+}
+
+.coolheadK{
+	background-color: #e6eff6;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	width:269px;
+	min-width:260px;
+	box-shadow:3px 3px 2px #999999;
+
+}
+
+.coolheadCNT{
+	text-align:center;
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+
+}
+
+.coolheadMIN{
+	font-size:12px;
+
+}
+
+
+.coolheadEX{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	width:280px;
+	text-align:center;
+
+}
+
+.coolheadS{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	width:350px;
+	height:30px;
+	border: solid 1px #aacded;
+	box-shadow:3px 3px 2px #999999;
+}
+
+.coolheadS2{
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	width:262px;
+	min-width:260px;
+	height:30px;
+	border: solid 1px #aacded;
+	box-shadow:3px 3px 2px #999999;
+}
+
+.coolheadP{
+	background-color: #e6eff6;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	width:460px;
+	height:280px;
+	box-shadow:3px 3px 2px #999999;
+}
+
+.coolheadPS{
+	background-color: #e6eff6;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	width:500px;
+}
+
+.coolheadP2{
+	position:absolute;
+	box-shadow:3px 3px 2px #999999;
+	left:475px;
+	background-color: #e6eff6;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	color: #326288;
+	border: solid 1px #aacded;
+	width:400px;
+	height:280px;
+}
+
+
+.coolhead2{
+	text-align:center;
+	font-weight:bolder;
+	border: solid 1px #aacded;
+	width:30px;
+	padding: 1px 1px 1px 1px;
+}
+
+.coolhead3{
+	font-weight:bolder;
+	border: solid 1px #aacded;
+	width:300px;
+	padding: 1px 1px 1px 1px;
+	height:180px;
+	text-align:center;
+}
+
+.coolheadBOX{
+	font-weight:bolder;
+	border: solid 1px #aacded;
+	width:220px;
+	padding: 1px 1px 1px 1px;
+	height:80px;
+	max-width:350px;
+	max-height:150px;
+}
+
+hr.linija{
+	border:1px outset;
+	width:90%;
+}
+
+hr.line2{
+	border:1px solid rgba(177,177,177,0.3);
+	width:80%;
+}
+
+b.status{
+	font-weight:bolder;
+	color:#14F112;
+	font-size:20px;
+}
+
+.font2{
+	font-size:8px;
+}
+
+.font3{
+	font-size:13px;
+}
+
+.font4{
+	font-size:10px;
+}
+
+.font5{
+	font-size:18px;
+}
+
+input.disabled{
+	background-color:#dddddd;
+}
+
+.chatB{
+	text-align:center;
+	width:70px;
+	height:30px;
+}
+
+.cbox{
+	width:95%;
+	height:50px;
+	resize:none;
+}
+	
+.imagA{
+	border:1pt solid  #aacded;
+	width:300px;
+	height:200px;
+margin-top:2px;
+	margin-left:5px;
+	z-index:90;
+	text-align:center;
+}
+.imagB{
+	width:300px;
+	position:absolute;
+	margin-top:-48px;
+	margin-left:5px;
+	height:200px;
+	z-index:10;
+	text-align:center;
+}
+
+
+.poll{
+margin: 1px;
+font-size: 6px;
+line-height: 6px;
+height: 6px;
+background-color: #aacded;
+border: 1px solid #000000;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+.icon{
+	width:32px;
+	height:32px;
+}
+
+.small{
+	font-size:15px;
+	float:left;
+}
+
+.small2{
+	font-size:15px;
+	font-weight:100;
+	float:right;
+}
+
+.try{
+	text-align:right;
+}
+
+p{
+	line-height:0px;
+}
+.plent{
+	position: absolute;
+margin-top: 550px;
+}
+
+.page{
+   resize: none;
+}
+
+.hidden{
+	display:none;
+}
+
+iframe.kom{
+	width:100%;
+	height:274px;
+	border:none;
+}

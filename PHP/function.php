@@ -1,6 +1,5 @@
 <?php
 include_once 'config.php';
-include_once 'db.php';
  
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -83,7 +82,7 @@ function login($vardas, $password, $db) {
         }
     }
 }
-function itemDrop($drop,$MLVL){
+function itemDrop($db,$drop,$MLVL){
     if($drop=="all"){
         //$check=rand(1,1);
         $check=2;

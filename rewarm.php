@@ -111,7 +111,7 @@ if ($ILVL < $RMG and $ILVL > $RMGmin){
 
 }*/
 //creates armor function
-list($iLVL, $armor, $name, $new, $nameType) = itemDrop("armor",$MLVL);
+list($iLVL, $armor, $name, $new, $nameType) = itemDrop($db,"armor",$MLVL);
 //get User and current Armor
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);

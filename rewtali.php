@@ -60,7 +60,7 @@ if($armor>=$TAL[5]){
 }
 if($xp>=$TAL[6]){
 	$compareXP="more";
-	if($x[==$TAL[2]){
+	if($x==$TAL[2]){
 		$compareLVL="same";
 	}
 }

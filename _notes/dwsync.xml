@@ -45,17 +45,17 @@
 <file name="loseB.php" server="ftp.miniforums.org" local="131349460475747225" remote="131348083800000000" Dst="1" />
 <file name="reg.php" server="ftp.miniforums.org" local="131349460510335718" remote="131299693200000000" Dst="1" />
 <file name="reroll.php" server="ftp.miniforums.org" local="131349460515260253" remote="131308254600000000" Dst="1" />
-<file name="rewarm.php" server="ftp.miniforums.org" local="131349460538905495" remote="131347424400000000" Dst="1" />
+<file name="rewarm.php" server="ftp.miniforums.org" local="131349510061879193" remote="131349222000000000" Dst="1" />
 <file name="rewBoss.php" server="ftp.miniforums.org" local="131349460543693907" remote="131348325600000000" Dst="1" />
 <file name="rewcalc2.php" server="ftp.miniforums.org" local="131349460554012730" remote="131236829400000000" Dst="1" />
 <file name="rewcalc_old.php" server="ftp.miniforums.org" local="131349460558771125" remote="131236829400000000" Dst="1" />
-<file name="rewtali.php" server="ftp.miniforums.org" local="131349460565255740" remote="131347424400000000" Dst="1" />
+<file name="rewtali.php" server="ftp.miniforums.org" local="131349510061964253" remote="131349222000000000" Dst="1" />
 <file name="rez.php" server="ftp.miniforums.org" local="131349460568958374" remote="131299694400000000" Dst="1" />
 <file name="Sell.php" server="ftp.miniforums.org" local="131349460573856862" remote="131347505400000000" Dst="1" />
 <file name="show.php" server="ftp.miniforums.org" local="131349460595570103" remote="131347419600000000" Dst="1" />
 <file name="showold.php" server="ftp.miniforums.org" local="131349460599274825" remote="131299694400000000" Dst="1" />
 <file name="Sync.php" server="ftp.miniforums.org" local="131239489992859513" remote="131239233000000000" Dst="1" />
-<file name="Sync3.php" server="ftp.miniforums.org" local="131349460609145508" remote="131236886400000000" Dst="1" />
+<file name="Sync3.php" server="ftp.miniforums.org" local="131349514586686529" remote="131349226200000000" Dst="1" />
 <file name="test.php" server="ftp.miniforums.org" local="131349460615753328" remote="131347995000000000" Dst="1" />
 <file name="TRY.php" server="ftp.miniforums.org" local="131349460619320264" remote="131236829400000000" Dst="1" />
 <file name="vale.php" server="ftp.miniforums.org" local="131349460630659723" remote="131348114400000000" Dst="1" />
@@ -73,7 +73,7 @@
 <file name="favicon.ico" server="ftp.miniforums.org" local="131349460365180589" remote="131299688400000000" Dst="1" />
 <file name="loot.php" server="ftp.miniforums.org" local="131349460464228864" remote="131308360800000000" Dst="1" />
 <file name="GemC.php" server="ftp.miniforums.org" local="131349460292825895" remote="131310266400000000" Dst="1" />
-<file name="RewardG.php" server="ftp.miniforums.org" local="131349460530178815" remote="131308299600000000" Dst="1" />
+<file name="RewardG.php" server="ftp.miniforums.org" local="131349510061784122" remote="131349222000000000" Dst="1" />
 <file name="KeepG.php" server="ftp.miniforums.org" local="131349460435650782" remote="131308294200000000" Dst="1" />
 <file name="discard.php" server="ftp.miniforums.org" local="131349460337874941" remote="131308299000000000" Dst="1" />
 <file name="pasw.php" server="ftp.miniforums.org" local="131349460489294771" remote="131309390400000000" Dst="1" />
@@ -84,4 +84,5 @@
 <file name="points.php" server="ftp.miniforums.org" local="131349460498825388" remote="131347962600000000" Dst="1" />
 <file name="point.php" server="ftp.miniforums.org" local="131349460493924732" remote="131348046600000000" Dst="1" />
 <file name="uniqR.php" server="ftp.miniforums.org" local="131349460624170698" remote="131348242200000000" Dst="1" />
+<file name="deploy.php" server="ftp.miniforums.org" local="131349540311845329" remote="131349253800000000" Dst="1" />
 </dwsync>

@@ -46,5 +46,5 @@ $result = mysqli_query($db, $order2);
 	$_SESSION["User"] = $User;
 	
 			mysqli_close($db);
-header("location:game.php");
+header("location:sync.php");
 ?>

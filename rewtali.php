@@ -98,7 +98,7 @@ $xpTotal = $ACC[5] + $xpNew;
 $kills = $ACC[6] +1;
 $cash = ($ACC[4] - $FightFee) + $moneyRew;
 	   
-//update passives
+//update passivess
 $Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
 $Passive = mysqli_fetch_row($Passive);
 

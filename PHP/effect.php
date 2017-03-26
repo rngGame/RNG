@@ -2,15 +2,20 @@
 
 
 //life leach
-if ($WEP[13] == "LL"){
-	$leach = round($physDMG * $WEP[14] / 100);
+if ($WEP[13] == "LL"  or $SUB[6] == "LL"){
+	if ($WEP[13] == "LL"){
+		$bleds = $WEP[14];}
+	if ($SUB[6] == "LL"){
+		$bleds = $SUB[7] + $bleds;}
+	
+	$leach = round($physDMG * $bleds / 100);
 	$HPin = $HPin + $leach;
 	$leach = "$leach Health restored<br>";
 }
 
 //blead
-if ($WEP[13] == "BL" or isset($_SESSION["bleed"])){
-	if ($WEP[14] >= rand(0,100) or isset($_SESSION["bleed"])){
+if ($WEP[13] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
+	if ($WEP[14] >= rand(0,100) or isset($_SESSION["bleed"]) or $SUB[7] >= rand(0,100)){
 	$bl = rand(5,10);
 	$blee = ($monHP * $bl / 100); 
 	if ($blee > 2000){
@@ -30,8 +35,8 @@ if ($WEP[13] == "BR" or $SUB[6] == "BR"){
 }
 
 //freeze
-if ($WEP[13] == "FR"){
-	if ($WEP[14] >= rand(0,100)){
+if ($WEP[13] == "FR" or $SUB[6] == "FR"){
+	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 	$freez = rand(3,5);
 	$frz = $_SESSION["freez"];
 	if ($frz == 0){
@@ -43,15 +48,15 @@ if ($WEP[13] == "FR"){
 }
 
 //Stun
-if ($WEP[13] == "ST"){
-	if ($WEP[14] >= rand(0,100)){
+if ($WEP[13] == "ST" or $SUB[6] == "ST"){
+	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$stun = 1;	
 }
 }
 
 //Shock
-if ($WEP[13] == "SH"){
-	if ($WEP[14] >= rand(0,100)){
+if ($WEP[13] == "SH" or $SUB[6] == "SH"){
+	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$sht = 1;
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
@@ -95,6 +100,13 @@ if ($SUB[7] >= rand(0,100)){
 }
 }
 
-$effect = $blee + $burn + $freez + $shD ;
-$efftext = "$brn $bleed $leach $fre $shTE $hptex $double";
+//Reflect
+if ($SUB[6] == "RF"){
+	$refl = round($monDMG * $SUB[7] / 100);
+	$reft= "You reflected $refl damage !<br>";
+
+}
+
+$effect = $blee + $burn + $freez + $shD + $refl;
+$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $reft";
 ?>

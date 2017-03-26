@@ -462,19 +462,19 @@ if ($WEP[14]<>0){
 		$unEf = "class='awesome'";}
 
 if (!$WEP[2] == ""){
-	echo "<div class='tooltip'><b $unEf style='color:#$WEP[3]'>$WEP[1] + $WEP[15] ($WEP[2])</b>";}
+	echo "<div class='tooltip'><b $unEf class='$WEP[3]'>$WEP[1] + $WEP[15] ($WEP[2])</b>";}
 	else{
 		echo "<div class='tooltip'>$WEP[1] + $WEP[15]";}
 echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a style='color:red'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a style='color:#0066ff'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft<br></span></div><br><br>Armor: ";
 
 if (!$ARM[2] == ""){
-	echo "<div class='tooltip'><b style='color:#$ARM[5]'>$ARM[1] ($ARM[2])</b>";}
+	echo "<div class='tooltip'><b class='$ARM[5]'>$ARM[1] ($ARM[2])</b>";}
 	else{
 		echo "<div class='tooltip'>$ARM[1]";}
 echo "<br><span class='tooltiptext'><a style='color:#0066ff'><b>$ARM[4]</b> def. </a><br><b>$ARM[3] lvl.</b></span></div><br><br>Talisman: ";
 
 if (!$TAL[8] == ""){
-	echo "<div class='tooltip'><b style='color:#$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
+	echo "<div class='tooltip'><b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
 	else{
 		echo "<div class='tooltip'>$TAL[1]";}
 echo "<br><span class='tooltiptext'><a style='color:red'><b>$TAL[3]</b> dmg. </a><a style='color:#0066ff'><b>$TAL[5]</b> def. </a><a style='color:darkred'><b>$TAL[4]</b> HP. </a><a style='color:violet'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";

@@ -4,11 +4,12 @@ ob_start();
 $User = $_SESSION["User"];
 
 include_once 'PHP/db.php';
+include_once 'PHP/function.php';
 $MLVL = $_SESSION["MonsLVL"];
 $sell = $_SESSION["Sell"];
-$Drop = $_SESSION["MonsDrop"];
-$Money = $_SESSION["Money"];
-
+$Drop = $_SESSION["MonsDrop"]; //DB drop value of monster
+$FightFee = $_SESSION["Money"];
+/*
 $rel = 0;
 
 while ($rel == 0){
@@ -94,25 +95,12 @@ if($Dmg < 0){
 $Name="$N1 $N3 $N4 $NE";
 $NameO="$N1 $N3 $N4 $NE";
 
-$cash = $ILVL*$sell;
-
-$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
-$ACC = mysqli_fetch_row($ACC);
-
-$ARM = mysqli_query($db,"SELECT * FROM drops where HASH = '$ACC[7]' ");
-$ARM = mysqli_fetch_row($ARM);
 
 if (!$Class == ""){
 	$new = "<b class='$Color'>$Name ($Class)</b>";}
 	else{
 	$new = "<b>$Name</b>";}
 
-if (!$ARM[2] == ""){
-	$Current = "<b class='#$ARM[5]'>$ARM[1] ($ARM[2])</b>";}
-	else{
-	$Current = "$ARM[1]";}
-
-$time = $_SESSION["times"];
 
 $RMG = $MLVL*1.2;
 $RMGmin = $MLVL/1.5;
@@ -121,92 +109,93 @@ if ($ILVL < $RMG and $ILVL > $RMGmin){
 	$rel = 1;}
 
 
+}*/
+//creates armor function
+list($iLVL, $armor, $name, $new, $nameType) = itemDrop("armor",$MLVL);
+//get User and current Armor
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
+$ARM = mysqli_query($db,"SELECT * FROM drops where HASH = '$ACC[7]' ");
+$ARM = mysqli_fetch_row($ARM);
+//color current Armor
+if (!$ARM[2] == ""){
+	$Current = "<b class='#$ARM[5]'>$ARM[1] ($ARM[2])</b>";
 }
+else{
+	$Current = "$ARM[1]";
+}
+//money calculates
+$moneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
+$_SESSION["GoldRew"] = $moneyRew;
 
-$MoneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
-$_SESSION["GoldRew"] = $MoneyRew;
-
-$MoneySel = ($ACC[3] + $ILVL) * 10; //gold for wep
-$_SESSION["Gold"] = $MoneySel;
+$moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
+$_SESSION["Gold"] = $moneySel;
 
 //Compare Armor
 $compareLVL=$compareARM = "less";
-if($ILVL>$ARM[3]){
+if($iLVL>=$ARM[3]){
 	$compareLVL="more";
+	if($iLVL==$ARM[3]){
+		$compareLVL="same";
+	}
 }
-if($Dmg>$ARM[4]){
+if($armor>=$ARM[4]){
 	$compareARM="more";
+	if($armor==$ARM[4]){
+		$compareARM="same";
+	}
 }
-
-$reward = "<b><font color='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
-Item lvl: <b><span class='$compareLVL'>$ILVL</span></b><br>
-Item Armor: <b><span class='$compareARM'>$Dmg</span></b><br>
-Item worth: $MoneySel Gold<br>
+//create Reward Template
+$reward = "<b><font class='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
+Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
+Item Armor: <b><span class='$compareARM'>$armor</span></b><br>
+Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br>
 Name: $Current <br>
 Item lvl: <b>$ARM[3]</b><br>
 Item Armor: <b>$ARM[4]</b><br>";
-
-$_SESSION["WepName"] = "$NameO";
-$_SESSION["Type"] = "$Class";
-$_SESSION["ilvl"] = "$ILVL";
-$_SESSION["DMG"] = "$Dmg";
-$_SESSION["Color"] = "$Color";
+//save in session
+$_SESSION["WepName"] = "$name";
+$_SESSION["Type"] = "$nameType";
+$_SESSION["ilvl"] = "$iLVL";
+$_SESSION["DMG"] = "$armor";
+$_SESSION["Color"] = "$color";
 $_SESSION["Reward"] = "$reward";
-
-$XPT = $_SESSION["XPT"];
-$XPS  = $Drop * $XPT;
-$_SESSION["XPS"] = $XPS;
-$xp = $ACC[5] + $Drop * $XPT;
-	   
-$order2 = "UPDATE characters
-SET XP = '$xp'
-WHERE `User` = '$User'";
-
-$result = mysqli_query($db, $order2);	
-
+//check talisman xp bonus
+$xpTalismanMulti = $_SESSION["XPT"];
+$xpNew  = $Drop * $xpTalismanMulti;
+$_SESSION["XPS"] = $xpNew;
+//update user stats
+$xpTotal = $ACC[5] + $xpNew;
 $kills = $ACC[6] +1;
-
-$cash = ($ACC[4] - $Money) + $MoneyRew;
+$cash = ($ACC[4] - $FightFee) + $moneyRew;
 	   
-$order3 = "UPDATE characters
-SET Kills = '$kills'
+//update passives
+$Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
+$Passive = mysqli_fetch_row($Passive);
+
+$passiveXP = round($MLVL * $xpTalismanMulti);
+$_SESSION["XPPA"] = $passiveXP;
+$passiveXPTotal=round($passiveXP + $Passive[4]);
+
+$orderPassive = "UPDATE passive
+SET xp2= '$passiveXPTotal'
 WHERE `User` = '$User'";
 
-$result = mysqli_query($db, $order3);	
+$result = mysqli_query($db, $orderPassive);
 
-$order4 = "UPDATE characters
-SET Cash = '$cash'
-WHERE `User` = '$User'";
+$rngShardsChance = rand(1,100);
+$rngShardsAmmount = rand(1,15);
 
-$result = mysqli_query($db, $order4);
-
-$PAS = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
-$PAS = mysqli_fetch_row($PAS);
-
-$XPPA  = $MLVL * $XPT;
-$XPPA=round($XPPA);
-$_SESSION["XPPA"] = $XPPA;
-$XPP=($MLVL * $XPT) + $PAS[4];
-$XPP=round($XPP);
-
-$order5 = "UPDATE passive
-SET xp2= '$XPP'
-WHERE `User` = '$User'";
-
-$S1 = rand(1,100);
-$S2 = rand(1,15);
-
-if ($S1 <  10){
-$Shards = $ACC[15] + $S2;
-$order6 = "UPDATE characters
-SET Shards= '$Shards'
+if ($rngShardsChance <  10){
+$Shards = $ACC[15] + $rngShardsAmmount;
+$orderChar = "UPDATE characters
+SET Shards= '$Shards', XP = '$xpTotal', Kills = '$kills', Cash = '$cash'
 WHERE `USER` = '$User'";
-$result = mysqli_query($db, $order6);
-$_SESSION["SHD"] = $S2;
+$result = mysqli_query($db, $orderChar);
+$_SESSION["SHD"] = $rngShardsAmmount;
 }
 
-$result = mysqli_query($db, $order5);
 mysqli_close($db);
 header("location:rewardA.php");
 

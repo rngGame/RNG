@@ -113,16 +113,17 @@ WHERE `User` = '$User'";
 $result = mysqli_query($db, $orderPassive);
 
 $rngShardsChance = rand(1,100);
-$rngShardsAmmount = rand(1,15);
+$Shards = $ACC[15];
 
 if ($rngShardsChance <  10){
-$Shards = $ACC[15] + $rngShardsAmmount;
+	$rngShardsAmmount = rand(1,15);
+	$Shards += $rngShardsAmmount;
+	$_SESSION["SHD"] = $rngShardsAmmount;
+}
 $orderChar = "UPDATE characters
 SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
 WHERE `USER` = '$User'";
 $result = mysqli_query($db, $orderChar);
-$_SESSION["SHD"] = $rngShardsAmmount;
-}
 
 mysqli_close($db);
 header("location:rewardt.php");

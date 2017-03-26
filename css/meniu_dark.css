@@ -345,6 +345,13 @@ a:hover, a:active{
     text-decoration: underline !important;
 }
 
+a:-webkit-any-link {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: auto;
+}
+
+
 input[type="submit"]{
     color: #E4E4E4;
     background-color: #222427;

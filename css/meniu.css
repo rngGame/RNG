@@ -356,3 +356,45 @@ table, td, th {
 	margin: -50px 0px 0px 0px;
 }​
 
+.normal{
+    color:#888800;
+}
+.uncommon{
+    color:#42b937;
+}
+.rare{
+    color:#3760B9;
+}
+.epic{
+    color:#666699;
+}
+.legendary{
+    color:#800080;
+}
+.demonic{
+    color:#c90e0e;
+}
+.angelic{
+    color:#00e6e6;
+}
+.fake{
+    color:#b3b5b4;
+}
+.primed{
+    color:#00bfff;
+}
+.perlacent{
+    color:#888800;
+}
+.bright{
+    color:#cccc00;
+}
+.infested{
+    color:#0b610b;
+}
+.world{
+    color:#e67300;
+}
+.burning{
+    color:#cc0000;
+}

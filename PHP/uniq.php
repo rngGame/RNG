@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,7);
+$uniqRO = rand(1,8);
 
 //hash
 $HC = 0;
@@ -59,6 +59,14 @@ if ($uniqRO == 7){
 	  VALUES
 	   ('$HASH', 'One with Everyone', 'Unique', 'ff6633', '1', '9999', '9999', '100', '1', '1', '1', '1', '', '', '', '0', '200')";
 }
+
+if ($uniqRO == 8){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Health over matter', 'Unique', 'ff6633', '75', '85', '105', '5', '1', '105', '205', '95', '9', 'HT', '15', '0', '150')";
+}
+
 
 
 ?>

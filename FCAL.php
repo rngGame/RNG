@@ -72,6 +72,11 @@ $CLS = mysqli_fetch_row($CLS);
 $GEM = mysqli_query($db,"SELECT * FROM Gems where HASH = '$ACC[14]' ");
 $GEM = mysqli_fetch_row($GEM);
 
+if ($ACC[10] > 10){
+	$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$ACC[10]' ");
+	$SUB = mysqli_fetch_row($SUB);
+};
+
 //GEM dmg (mag)
 if ($GEM[0] != "None"){
 	$gemDMG = ($magDMG * $GEM[5]/100);
@@ -192,6 +197,8 @@ $finalMonsHP = $monHP;
 if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6){ //check for basic attack
 if (rand(0,100) <= $WEP[11]){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
+if ($ddam == 1){
+	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
 	}
 else{
@@ -202,6 +209,8 @@ else{
  $magick;
 if ($SKL == 31 or $SKL == 32 or $SKL == 33){
 $finalPlayerDMG = $magick + $effect + $gemDMG +  $poison;
+if ($ddam == 1){
+	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
 }
 
@@ -214,7 +223,7 @@ $finalMonsHP = $monHP - $finalPlayerDMG;
 
 //dmg to player
 
-if ($stun <> 1 and $Block <> 1){
+if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
 $finalPlayerHP = $HPin - $monDMG;
 }
 else{
@@ -232,7 +241,7 @@ $tM = $monDMG;
 if (!isset($_SESSION["LOG"])){
 $_SESSION["LOG"] = "";
 }
-	if ($stun <> 1 and $Block <> 1){
+	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
 		$mont = "Monster did $tM dmg.<br>";
 	}
 	else{
@@ -240,6 +249,8 @@ $_SESSION["LOG"] = "";
 		$mont = "Monster got sttuned !<br>";}
 		if ($Block == 1){
 		$mont = "Monster got blocked !<br>";}
+		if ($Dodge == 1){
+		$mont = "Dodged Monster !<br>";}
 	}
 	if ($mis <> 1);{
 		

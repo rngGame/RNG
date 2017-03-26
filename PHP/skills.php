@@ -152,15 +152,21 @@ if ($SKL ==32){
 if ($SKL ==33){
 	$IC = 1;
 	$xtim = 0;
+	$stic = 100;
+	if ($SUB[5] = "PRG"){
+		$stic = 150;
+	}
 	while ($IC <> 100){
-		if (rand(0,100)> 50){
+		if (rand(0,$stic)> 50){
+			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.15) + $fmagDMG;
 			$xtim = $xtim + 1;
 		}
 		$IC = $IC + 1;
 	}
 		$ene = $ene - 330;
 	$_SESSION["ENERGY"] = $ene;
-	$finallICE = $xtim * ($magDMG - ($magDMG * 85 /100));
+
+	$finallICE = (($fmagDMG ));
 	$finallICT = "<font color='lightblue'>Hit by $xtim ICE commets!</font><br>";
 };
 

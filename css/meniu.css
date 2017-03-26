@@ -398,3 +398,27 @@ table, td, th {
 .burning{
     color:#cc0000;
 }
+.physical{
+    color:#ff0000;
+}
+.magic{
+    color:#0066ff;
+}
+.health{
+    color:#8a0000;
+}
+.energy{
+    color:#4d79ff;
+}
+.defense{
+    color:#0000ff;
+}
+.gold{
+    color:#ff9900;
+}
+.shards{
+    color:#00cc99;
+}
+.experience{
+    color:#ee82ee;
+}

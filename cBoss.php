@@ -81,12 +81,12 @@ $HP = $HP * $ench[2];
 $LVL = $LVL + $ench[1];
 $DMG = $DMG * $ench[2];}
 
-$HP = $HP * 100;
-$LVL = $LVL * 2;
-$DMG = $DMG * 2.2;
+$HP = round($HP * 500);
+$LVL = round($LVL * 2);
+$DMG = round($DMG * 2.5);
 $LVL = round($LVL);
 
-if ($LVL > 120){
+if ($LVL > 160 and $HP > 50000000){
 	$rel = 1;}
 
 

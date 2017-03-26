@@ -167,9 +167,15 @@ if ($SKL ==7 or $pos == 1){
 	$pois = rand(1,5);
 	if ($CLS[6] == "POIS"){
 	$pois = rand(3,8);}
+	if ($SUB[5] == "POIS"){
+	$pois = rand(8,15);}
 	$poison = ($monHP*$pois/100); 
-	if ($poison >= 3000){
-		$poison = 3000;}
+	if ($SUB[5] == "POIS"){
+		if ($poison >= 10000){
+			$poison = 10000;}
+	}
+	else if ($poison >= 3000){
+			$poison = 3000;}
 	$poison = round($poison,0);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'POS'");
 	$ACH = mysqli_fetch_row($ACH);
@@ -197,7 +203,7 @@ if ($SKL ==7 or $pos == 1){
 //calculation dmg to mons
 $finalMonsHP = $monHP;
 
-if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34){ //check for basic attack
+if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34 or $SKL ==35){ //check for basic attack
 if (rand(0,100) <= $WEP[11]){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
 if ($ddam == 1){
@@ -210,7 +216,7 @@ else{
 	$finalMonsHP = $monHP;
 }}
  $magick;
-if ($SKL == 31 or $SKL == 32 or $SKL == 33){
+if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36){
 $finalPlayerDMG = $magick + $effect + $gemDMG +  $poison;
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}

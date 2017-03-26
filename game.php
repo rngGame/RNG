@@ -243,6 +243,9 @@ $armor = ($ARM[4] + $TAL[5])*$CLS[4];
 $ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEP[15]'");
 $ENC = mysqli_fetch_row($ENC);
 
+if ($ENC[2] <> 0){
+	$enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";}
+
 // physical dmg
 $minPdmg = round(($WEP[5] + $TAL[3])*$CLS[3]);
 $minPdmg = $minPdmg + ($minPdmg * $ENC[2] / 100) + ($minPdmg * ($PNT[2]*2)/100);
@@ -465,7 +468,7 @@ if (!$WEP[2] == ""){
 	echo "<div class='tooltip'><b $unEf class='$WEP[3]'>$WEP[1] + $WEP[15] ($WEP[2])</b>";}
 	else{
 		echo "<div class='tooltip'>$WEP[1] + $WEP[15]";}
-echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a class='physical'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a class='magic'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft<br></span></div><br><br>Armor: ";
+echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a class='physical'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a class='magic'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft$enchtex</span></div><br><br>Armor: ";
 
 if (!$ARM[2] == ""){
 	echo "<div class='tooltip'><b class='$ARM[5]'>$ARM[1] ($ARM[2])</b>";}

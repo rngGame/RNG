@@ -14,7 +14,7 @@ if ($uniqRO == 1){
 	$order2 = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', 'ff6633', '300', '200', '300', '1', '1', '200', '300', '80', '', 'LL', '30', '0', '200')";
+	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', 'ff6633', '300', '200', '300', '1', '1', '200', '300', '95', '', 'LL', '30', '0', '200')";
 }
 
 if ($uniqRO == 2){

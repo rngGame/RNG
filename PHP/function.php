@@ -157,11 +157,17 @@ function itemDrop($db,$drop,$MLVL){
                 $iLVL+=$Pre[3];
 
             }
-
+            if($rngSub<30 && $drop=="talisman"){
+                $nameSub = "and $Sub[1]";
+                $value +=$Sub[3];
+                $value2 +=$Sub[3]/3;
+                $value3 +=$value3*$Sub[3]/200;
+                $value4 *=1.2;
+                $iLVL +=$Sub[2];
+            }
             if($rngSub < 20 && $drop=="armor"){  //checks for first Sub rng
                 $nameSub ="of $Sub[1]";
                 $value += $Sub[3]/2;
-                $value2
                 $iLVL += $Sub[2];
                 if($rngSub2 < 30){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
@@ -172,13 +178,19 @@ function itemDrop($db,$drop,$MLVL){
             if($rngType < $Type[2]){ //checks for Type rng first time
                 $nameType ="$Type[1]";
                 $color = "$Type[4]";
-                $value += ($value * $Type[3] / 100)/2;
+                $value += ($value * $Type[3] / 100);
+                $value2 += ($value2 * $Type[3] / 100);
+                $value3 += ($value3 * $Type[3] / 100);
+                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type[3] / 100;
             }
             else if($rngType < $Type2[2]){ //checks for Type rng second time
                 $nameType ="$Type2[1]";
                 $color = "$Type2[4]";
-                $value += ($value * $Type2[3] / 100)/2;
+                $value += ($value * $Type2[3] / 100);
+                $value2 += ($value2 * $Type[3] / 100);
+                $value3 += ($value3 * $Type[3] / 100);
+                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type2[3] / 100;
             }
 
@@ -194,14 +206,29 @@ function itemDrop($db,$drop,$MLVL){
                 $Plius = mysqli_fetch_row($Plius);
                 $nameEnchant = "+ $enchantLVL";
                 $value += $value * $Plius[2] / 100;
+                $value2 += $value2 * $Plius[2] / 100;
+                $value3 += $value3 * $Plius[2] / 100;
+                $value4 += $value4 * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
             }
             //finnishing up values
             $iLVL = round($iLVL, 0);
             $value = round($value, 0);
+            $value2 = round($value2, 0);
+            $value3 = round($value3, 0);
+            $value4 = round($value4, 0);
 
             if($value <= 0){
                 $value = 1;
+            }
+            if($value2 <= 0){
+                $value2 = 1;
+            }
+            if($value3 <= 0){
+                $value3 = 1;
+            }
+            if($value4 <= 0){
+                $value4 = 1;
             }
 
             $name="$nameBase $nameSub $nameSub2 $nameEnchant";
@@ -222,6 +249,6 @@ function itemDrop($db,$drop,$MLVL){
                 $rel = 1;
             }
         }
-        return array ($iLVL, $value, $name,$new,$nameType);
+        return array ($iLVL, $name, $new, $nameType, $value, $value2, $value3, $value4);
     }
 }

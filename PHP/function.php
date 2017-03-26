@@ -1,6 +1,6 @@
 <?php
 include_once 'config.php';
-include_once 'PHP/db.php';
+include_once 'db.php';
  
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -138,7 +138,7 @@ function itemDrop($drop,$MLVL){
                 if ($rngSub2 < 30){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
                     $armor += $Sub2[3]/2;
-                    $ILVL += $Sub2[2];
+                    $iLVL += $Sub2[2];
                 }
             }
             if ($rngType < $Type[2]){ //checks for Type rng first time

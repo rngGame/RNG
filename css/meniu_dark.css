@@ -336,13 +336,13 @@ table, td, th {
 
 
 a:link, a:visited{
-    color: #ff5857;
-    text-decoration: none;
+    color: #ff5857 !important;
+    text-decoration: none !important;
 }
 
 a:hover, a:active{
-    color: #ff5857;
-    text-decoration: underline;
+    color: #ff5857 !important;
+    text-decoration: underline !important;
 }
 
 input[type="submit"]{

@@ -67,9 +67,22 @@ if ($SUB[5] == "FIRE"){
 	$t8 = "LVL 3";
 		$c8 = "class='cool submitBtn'";}
 		
-		if ($SUB[5] == "SWRD"){
+if ($SUB[5] == "SWRD"){
 	$t13 = "(Add crytical)";
 		$c13 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "NECR"){
+	$t14 = "(Stronger overall summon)";
+		$c14 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "TITA"){
+	$t14 = "(Stronger defence summon)";
+		$c14 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "SPELC"){
+	$t14 = "(Stronger damage summon)";
+		$c14 = "class='cool submitBtn'";}
+
 
 
 ?>

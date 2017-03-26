@@ -182,15 +182,42 @@ if ($SKL ==33){
 			$petname = mysqli_fetch_row($petname);
 			$_SESSION["PETNAME"] = $petname[0];
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
-			$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
-			$_SESSION["PETMAXDMG"] = round($maxMdmg * 10 / 100);
+			$_SESSION["PETMINDMG"] = round($minMdmg * 15 / 100);
+			$_SESSION["PETMAXDMG"] = round($maxMdmg * 20 / 100);
+			$ene = $ene - 150;
+			$_SESSION["ENERGY"] = $ene;
+				if ($SUB[5] == "NECR"){ //if necromance
+				$_SESSION["PETHP"] = $HPO * 60 / 100;
+				$_SESSION["PETMINDMG"] = round($minMdmg * 60 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 120 / 100);
+				}
+				if ($SUB[5] == "TITA"){ //if Titan
+				$_SESSION["PETHP"] = $HPO * 120 / 100;
+				$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 40 / 100);
+				}
+				if ($SUB[5] == "SPELC"){ //if Spelcaster
+				$_SESSION["PETHP"] = $HPO * 30 / 100;
+				$_SESSION["PETMINDMG"] = round($minMdmg * 90 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 150 / 100);
+				}
 			$pettext = "Pet summoned !<br>";
 			$_SESSION["PET"] = 1;
 		}
+			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
 			$pettdmgtext = "Pet did $petDMG dmg.<br>";
 			$monHP = $monHP - $petDMG;
 			$pettook = round($monDMG * 10 / 100);
+				if ($SUB[5] == "NECR"){ //if necromance
+				$pettook = round($monDMG * 35 / 100);
+				}
+				if ($SUB[5] == "TITA"){ //if Titan
+				$pettook = round($monDMG * 50 / 100);
+				}
+				if ($SUB[5] == "SPELC"){ //if Titan
+				$pettook = round($monDMG * 80 / 100);
+				}
 			$monDMG = $monDMG - $pettook; //reduct damage of mob
 			$_SESSION["PETHP"] = $_SESSION["PETHP"] - $pettook;
 			$petttanktext = "Pet tanked $pettook dmg.<br>";

@@ -286,6 +286,17 @@ left:0px;
 visibility:hidden;
 }
 
+.rightpanel2
+{        
+    background-color:#26292c;
+    width:30%;
+    height:100%;
+	margin: -120px 0px 0px 0px;
+    float:right;
+}​
+
+.what{}
+
 #wrapper:hover .text {
 visibility:visible;
 }
@@ -333,6 +344,10 @@ table, td, th {
 	margin: -50px 0px 0px 0px;
     float:right;
 }​
+
+.what{}
+
+
 a:-webkit-any-link {
     color: inherit;
     text-decoration: inherit;

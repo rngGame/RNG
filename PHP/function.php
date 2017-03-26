@@ -181,7 +181,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += ($value * $Type[3] / 100);
                 $value2 += ($value2 * $Type[3] / 100);
                 $value3 += ($value3 * $Type[3] / 100);
-                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type[3] / 100;
             }
             else if($rngType < $Type2[2]){ //checks for Type rng second time
@@ -190,7 +189,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += ($value * $Type2[3] / 100);
                 $value2 += ($value2 * $Type[3] / 100);
                 $value3 += ($value3 * $Type[3] / 100);
-                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type2[3] / 100;
             }
 
@@ -208,7 +206,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += $value * $Plius[2] / 100;
                 $value2 += $value2 * $Plius[2] / 100;
                 $value3 += $value3 * $Plius[2] / 100;
-                $value4 += $value4 * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
             }
             //finnishing up values
@@ -216,7 +213,7 @@ function itemDrop($db,$drop,$MLVL){
             $value = round($value, 0);
             $value2 = round($value2, 0);
             $value3 = round($value3, 0);
-            $value4 = round($value4, 0);
+            $value4 = round($value4, 1);
 
             if($value <= 0){
                 $value = 1;
@@ -231,7 +228,7 @@ function itemDrop($db,$drop,$MLVL){
                 $value4 = 1;
             }
 
-            $name="$nameBase $nameSub $nameSub2 $nameEnchant";
+            $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
             if(!$nameType == ""){ //coloring the name, if needed

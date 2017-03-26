@@ -24,8 +24,8 @@
 <file name="Fight2OLD.php" server="ftp.miniforums.org" local="131349460273278511" remote="131236829400000000" Dst="1" />
 <file name="FightOLD.php" server="ftp.miniforums.org" local="131349460278018006" remote="131236829400000000" Dst="1" />
 <file name="fightP.php" server="ftp.miniforums.org" local="131349460377847455" remote="131309436600000000" Dst="1" />
-<file name="FightT.php" server="ftp.miniforums.org" local="131349460282924996" remote="131348306400000000" Dst="1" />
-<file name="FightTB.php" server="ftp.miniforums.org" local="131349460288164932" remote="131348307000000000" Dst="1" />
+<file name="FightT.php" server="ftp.miniforums.org" local="131349682027165328" remote="131349357600000000" Dst="2" />
+<file name="FightTB.php" server="ftp.miniforums.org" local="131349688147955265" remote="131349363600000000" Dst="2" />
 <file name="fightTP.php" server="ftp.miniforums.org" local="131349460383101981" remote="131337154800000000" Dst="1" />
 <file name="fleed.php" server="ftp.miniforums.org" local="131349460387624348" remote="131236829400000000" Dst="1" />
 <file name="game.php" server="ftp.miniforums.org" local="131349636279275399" remote="131349312000000000" Dst="2" />
@@ -78,9 +78,9 @@
 <file name="discard.php" server="ftp.miniforums.org" local="131349460337874941" remote="131308299000000000" Dst="1" />
 <file name="pasw.php" server="ftp.miniforums.org" local="131349460489294771" remote="131309390400000000" Dst="1" />
 <file name="psw2.php" server="ftp.miniforums.org" local="131349460503856103" remote="131309506800000000" Dst="1" />
-<file name="chat_upd.php" server="ftp.miniforums.org" local="131349460313089262" remote="131309404800000000" Dst="1" />
+<file name="chat_upd.php" server="ftp.miniforums.org" local="131349698309655591" remote="131349373800000000" Dst="2" />
 <file name="newi.php" server="ftp.miniforums.org" local="131349460484470337" remote="131348381400000000" Dst="1" />
-<file name="FCAL.php" server="ftp.miniforums.org" local="131349460268204882" remote="131348211600000000" Dst="1" />
+<file name="FCAL.php" server="ftp.miniforums.org" local="131349685852834367" remote="131349361800000000" Dst="2" />
 <file name="points.php" server="ftp.miniforums.org" local="131349460498825388" remote="131347962600000000" Dst="1" />
 <file name="point.php" server="ftp.miniforums.org" local="131349460493924732" remote="131348046600000000" Dst="1" />
 <file name="uniqR.php" server="ftp.miniforums.org" local="131349460624170698" remote="131348242200000000" Dst="1" />

@@ -40,8 +40,18 @@ $datetime3 = round($datetime3,0);
 
 $USR = mysqli_query($db,"SELECT * FROM characters where user = '$TEXT[0]' ");
 $USR = mysqli_fetch_row($USR);
+
+
+if ($USR[10] < 10){
 $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$USR[10]' ");
 $CLS = mysqli_fetch_row($CLS);
+}
+if ($USR[10] > 10){
+$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$USR[10]' ");
+$SUB = mysqli_fetch_row($SUB);
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
+$CLS = mysqli_fetch_row($CLS);
+}
 
 
 if ($i % 2 == 0) {

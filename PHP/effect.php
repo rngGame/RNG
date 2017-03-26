@@ -1,5 +1,6 @@
 <?php
 
+
 //life leach
 if ($WEP[13] == "LL"){
 	$leach = round($physDMG * $WEP[14] / 100);
@@ -21,8 +22,8 @@ if ($WEP[13] == "BL" or isset($_SESSION["bleed"])){
 }
 
 //burn
-if ($WEP[13] == "BR"){
-	if ($WEP[14] >= rand(0,100)){
+if ($WEP[13] == "BR" or $SUB[6] == "BR"){
+	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 	$burn = round($mLVL * 10);
 	$brn = "Monster burned for $burn dmg.<br>";
 }
@@ -66,12 +67,34 @@ if ($WEP[13] == "SH"){
 }
 
 //Block
-if ($WEP[13] == "BK"){
-	if ($WEP[14] >= rand(0,100)){
+if ($WEP[13] == "BK" or $SUB[6] == "BK"){
+	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$Block = 1;	
 }
 }
 
-$effect = $blee + $burn + $freez + $shD;
-$efftext = "$brn $bleed $leach $fre $shTE";
+//Dodge
+if ($SUB[6] == "DG"){
+	if ($SUB[7] >= rand(0,100)){
+		$Dodge = 1;	
+}
+}
+
+//health per turn
+if ($SUB[6] == "HT" or $WEP[13] == "HT"){
+	$helsP = round(($HPin * $SUB[7]  / 100));
+	$HPin = $HPin + $helsP;
+	$hptex= "$helsP Health restored<br>";
+}
+
+//Double Damage
+if ($SUB[6] == "DD"){
+if ($SUB[7] >= rand(0,100)){
+	$ddam = 1;
+	$double= "<font color='red'><b>You did double damage !</b></font><br>";
+}
+}
+
+$effect = $blee + $burn + $freez + $shD ;
+$efftext = "$brn $bleed $leach $fre $shTE $hptex $double";
 ?>

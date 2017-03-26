@@ -118,7 +118,7 @@ $rngShardsAmmount = rand(1,15);
 if ($rngShardsChance <  10){
 $Shards = $ACC[15] + $rngShardsAmmount;
 $orderChar = "UPDATE characters
-SET Shards= '$Shards', XP = '$xpTotal', Kills = '$kills', Cash = '$cash'
+SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
 WHERE `USER` = '$User'";
 $result = mysqli_query($db, $orderChar);
 $_SESSION["SHD"] = $rngShardsAmmount;

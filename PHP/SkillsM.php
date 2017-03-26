@@ -72,7 +72,7 @@ if ($ACC[3] >= 30 and $SKL > 150 and $summ == 0){
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='FCAL.php'>
           <input type='hidden' name='skl' value='34'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c12 src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Summon kindred spirit</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c14 src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Summon kindred spirit $t14</span></p> 
       </form>
     </div>&nbsp;&nbsp;"
   ;}

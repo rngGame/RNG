@@ -113,9 +113,6 @@ if (isset($_SESSION["PET"])){
 }
 
 
-
-  $cryt = $_SESSION["crytext"];
-  $cryt2 = $_SESSION["crytext2"];
 echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';

@@ -82,7 +82,45 @@ if ($SUB[5] == "TITA"){
 if ($SUB[5] == "SPELC"){
 	$t14 = "(Stronger damage summon)";
 		$c14 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "CRYTE"){
+	$t7 = "200% and chanse 70%";
+		$c7 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "BRSK"){
+	$t16 = "To maximum !";
+		$c16 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "HEAL"){
+	$t3 = "20%";
+		$c3 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "SLASH"){
+	$t6 = "Attack up to 7 times !";
+		$c6 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "REFL"){
+	$t4 = "90 - 150%";
+		$c4 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "POIS"){
+	$t2 = "(Much stronger)";
+		$c2 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "GLAD"){
+	$t1 = "75%~125%";
+		$c1 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "SMASH"){
+	$t14 = "(Well tounded summon)";
+		$c14 = "class='cool submitBtn'";}
+		
+if ($SUB[5] == "HERO"){
+	$t17 = "(Increase Helth sacrifice)";
+		$c17 = "class='cool submitBtn'";}
 
-
+if ($SUB[5] == "CHAM"){
+	$t17 = "(Decrease Helth sacrifice)";
+		$c17 = "class='cool submitBtn'";}
 
 ?>

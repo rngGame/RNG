@@ -85,5 +85,54 @@ if ($ACC[3] >= 30 and $SKL > 150 and $summ == 0){
       </form>
     </div>&nbsp;&nbsp;"
   ;}  
+  
+  //Buff
+   $armr = 0;
+  if (isset($_SESSION["SKILL35"])){
+	  $armr = 1;}
+if ($ACC[3] >= 40 and $SKL > 100 and $armr == 0){
+ echo"
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='FCAL.php'>
+          <input type='hidden' name='skl' value='35'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c16 src='IMG/pack/Icon.1_35.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Removes defence to increse damage $t16</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}
+  else{
+	   echo"
+    <div class='tooltip'>
+	      <form id='yourFormId'  method='post' action='FCAL.php'>
+          <input hidden='' type='text' name='skl' value='35' placeholder='lvl'>
+        <p class='submit' ><img class='blur' src='IMG/pack/Icon.1_35.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}  
+  
+  //Suiced
+   $helth = 5000;
+  if ($SUB[5] == "HERO" ){
+	  $helth = 10000;}
+	if ($SUB[5] == "CHAM" ){
+	  $helth = 3000;}
+if ($ACC[3] >= 42 and $SKL > 200 and $HPin > $helth ){
+	
+ echo"
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='FCAL.php'>
+          <input type='hidden' name='skl' value='36'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c17 src='IMG/pack/Icons8_30.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>200En.<br>Sacrifice portion of health and deal masive damage $t17</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}
+  else{
+	   echo"
+    <div class='tooltip'>
+	      <form id='yourFormId'  method='post' action='FCAL.php'>
+          <input hidden='' type='text' name='skl' value='36' placeholder='lvl'>
+        <p class='submit' ><img class='blur' src='IMG/pack/Icons8_30.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}  
 
 ?>

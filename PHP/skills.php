@@ -1,10 +1,12 @@
 <?php
 //skill 1
 if ($SKL ==1){
+	$sk1v = 1.25;
 	if ($CLS[6] == "PALA"){
-	$physDMG = $physDMG * 1.50;}
-	else{
-	$physDMG = $physDMG * 1.25;}
+		$sk1v = 1.50;}
+	if ($SUB[5] == "GLAD"){
+		$sk1v = rand(1.75,2.25);}
+	$physDMG = $physDMG * $sk1v;
 	$ene = $ene - 30;
 	$_SESSION["ENERGY"] = $ene;
 };
@@ -14,9 +16,11 @@ $hpT = "";
 if ($SKL ==2){
 	$perc = 10;
 	if ($CLS[6] == "HEAL"){
-	$perc = 8;}
+	$perc = 15;}
+	if ($SUB[5] == "HEAL"){
+	$perc = 20;}
 	$HPi = $HPin;
-	$HPin = $HPin + ($HPO/$perc);
+	$HPin = $HPin + ($HPO*$perc/100);
 	$HPi = $HPin - $HPi;
 	$HPi = round($HPi,0);
 	$hpT = "Increased helth by <font color='#e6e600'>$HPi</font><br>";
@@ -61,6 +65,11 @@ if ($CLS[6] == "COMB"){
 	$r4 = rand(1,90);
 	$r5 = rand(1,95);}
 	
+if ($SUB[5] == "SLASH"){
+	$r6 = rand(1,80);
+	$r7 = rand(1,82);
+	$r8 = rand(1,85);}
+	
 	if ( $r1 < 75){
 		$skr =  1;
 		$physDMG = $physDMGc;}
@@ -76,6 +85,19 @@ if ($CLS[6] == "COMB"){
 	if ( $r5 < 75){
 		$skr = $skr + 1;
 		$physDMG = $physDMG + $physDMGc;}
+		
+	if ($SUB[5] == "SLASH"){
+	if ( $r6 < 75){
+		$skr = $skr + 1;
+		$physDMG = $physDMG + $physDMGc;}
+	if ( $r7 < 75){
+		$skr = $skr + 1;
+		$physDMG = $physDMG + $physDMGc;}
+	if ( $r8 < 75){
+		$skr = $skr + 1;
+		$physDMG = $physDMG + $physDMGc;}
+	}
+		
 		
 		
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'COM'");
@@ -99,8 +121,14 @@ if ($SKL ==5){
 	
 	if ($CLS[6] == "TANK"){
 		$mref = rand(50,80);}
+	if ($SUB[5] == "REFL"){
+		$mref = rand(90,150);}
 		
  	$monsRef = ($monDMG * $mref / 100) + $Armor;
+	if ($CLS[6] == "TANK"){
+	$monsRef = ($monDMG * $mref / 100) + $Armor*1.2;}
+	if ($SUB[5] == "REFL"){
+	$monsRef = ($monDMG * $mref / 100) + $Armor*1.5;}
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
@@ -125,6 +153,8 @@ if ($SKL ==6){
 	if ($CLS[6] == "ASSA"){
 	$CRYT = $CRYT * 1.2;
 	$CRYTD = $CRYTD + 20;}
+	if ($SUB[5] == "CRYTE"){
+	$CRYTD = $CRYTD + 80;}
 	$ene = $ene - 70;
 	$_SESSION["ENERGY"] = $ene;
 	}
@@ -201,6 +231,11 @@ if ($SKL ==33){
 				$_SESSION["PETMINDMG"] = round($minMdmg * 90 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 150 / 100);
 				}
+				if ($SUB[5] == "SMASH"){ //if smasher
+				$_SESSION["PETHP"] = $HPO * 50 / 100;
+				$_SESSION["PETMINDMG"] = round($minMdmg * 50 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 50 / 100);
+				}
 			$pettext = "Pet summoned !<br>";
 			$_SESSION["PET"] = 1;
 		}
@@ -218,6 +253,9 @@ if ($SKL ==33){
 				if ($SUB[5] == "SPELC"){ //if Titan
 				$pettook = round($monDMG * 80 / 100);
 				}
+				if ($SUB[5] == "SMASH"){ //if Smasher
+				$pettook = round($monDMG * 25 / 100);
+				}
 			$monDMG = $monDMG - $pettook; //reduct damage of mob
 			$_SESSION["PETHP"] = $_SESSION["PETHP"] - $pettook;
 			$petttanktext = "Pet tanked $pettook dmg.<br>";
@@ -229,10 +267,49 @@ if ($SKL ==33){
 				unset($_SESSION["PETMAXDMG"]);
 				$pettext = "<b>Pet Died !</b><br>";
 			}
+	}
+			
+//skill 35
+if ($SKL == 35){
+	$_SESSION["SKILL35"] = 1;
+	$bonusspower = $Armor * 2;
+	if ($SUB[5] == "BRSK"){
+	$bonusspower = $Armor * 5;
+	}
+	$_SESSION["ARM"] = 0;
+	$minPdmg = $minPdmg + $bonusspower;
+	$maxPdmg = $maxPdmg + $bonusspower;
+	$minMdmg = $minMdmg + $bonusspower;
+	$maxMdmg = $maxMdmg + $bonusspower;
+
+	$_SESSION["DMGPmin"] = $minPdmg;
+	$_SESSION["DMGPmax"] = $maxPdmg;
+	$_SESSION["DMGMmin"] = $minMdmg;
+	$_SESSION["DMGMmax"] = $maxMdmg;
+	
+	$Armortext = "<b>Armor breake !</b><br>";
+	
+	$ene = $ene - 100;
+	$_SESSION["ENERGY"] = $ene;
+
+}
 		
-		
+//skill 36
+if ($SKL == 36){	
+	$dmgsacr= 5000;
+	$sacrifrand = rand(150,200);
+	if ($SUB[5] == "CHAM"){
+		$sacrifrand = rand(200,250);
+		$dmgsacr= 3000;}
+	if ($SUB[5] == "HERO"){
+		$sacrifrand = rand(180,220);
+		$dmgsacr= 10000;}
+	$HPin = $HPin - $dmgsacr;
+	$finalsacriface = round(($physDMG + $magDMG + $dmgsacr) * $sacrifrand / 100);
+	$finaltext = "<b>You sacrificed $dmgsacr and delt $finalsacriface damage !</b><br>";
 }
 
-$magick = $fball + $comb + $finallICE;
-$magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext"  ;
+
+$magick = $fball + $comb + $finallICE + $finalsacriface;
+$magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext"  ;
 ?>

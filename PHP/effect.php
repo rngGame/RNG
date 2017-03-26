@@ -87,7 +87,10 @@ if ($SUB[6] == "DG"){
 
 //health per turn
 if ($SUB[6] == "HT" or $WEP[13] == "HT"){
-	$helsP = round(($HPin * $SUB[7]  / 100));
+	if ($SUB[6] == "HT"){
+	$helsP = round(($HPin * $SUB[7]  / 100));}
+	if ($WEP[13] == "HT"){
+	$helsP = round(($HPin * $WEP[14]  / 100));}
 	$HPin = $HPin + $helsP;
 	$hptex= "$helsP Health restored<br>";
 }
@@ -108,8 +111,11 @@ if ($SUB[6] == "RF"){
 }
 
 //Weakness
-if ($SUB[6] == "WK"){
-	$weak = round($monDMG * $SUB[7] / 100);
+if ($SUB[6] == "WK" or $WEP[13] == "WK"){
+	if ($SUB[6] == "WK"){
+	$weak = round($monDMG * $SUB[7] / 100);}
+	if ($WEP[13] == "WK"){
+	$weak = round($monDMG * $WEP[14] / 100);}
 	$monDMG = round($monDMG - $weak);
 	$weakt= "Monsted damage decreased by $weak damage !<br>";
 

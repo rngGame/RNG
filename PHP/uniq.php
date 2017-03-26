@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,8);
+$uniqRO = rand(1,10);
 
 //hash
 $HC = 0;
@@ -28,7 +28,7 @@ if ($uniqRO == 3){
 	$order2 = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Gamblers draw', 'Unique', 'ff6633', '300', '1', '1000', '1', '1', '1', '1000', '50', '', '', '', '0', '200')";
+	   ('$HASH', 'Gamblers draw', 'Unique', 'ff6633', '300', '1', '1300', '1', '1', '1', '1300', '50', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 4){
@@ -57,7 +57,7 @@ if ($uniqRO == 7){
 	$order2 = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'One with Everyone', 'Unique', 'ff6633', '1', '9999', '9999', '100', '1', '1', '1', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'One with Everyone', 'Unique', 'ff6633', '1', '99999', '99999', '100', '1', '1', '1', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 8){
@@ -67,6 +67,19 @@ if ($uniqRO == 8){
 	   ('$HASH', 'Health over matter', 'Unique', 'ff6633', '75', '85', '105', '5', '1', '105', '205', '95', '9', 'HT', '15', '0', '150')";
 }
 
+if ($uniqRO == 9){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Sleeping beauty', 'Unique', 'ff6633', '105', '250', '450', '10', '1', '75', '200', '92', '2', 'WK', '50', '0', '450')";
+}
+
+if ($uniqRO == 10){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Shiny coin picker', 'Unique', 'ff6633', '100', '90', '110', '15', '1', '65', '130', '86', '', '', '', '30', '550')";
+}
 
 
 ?>

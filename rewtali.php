@@ -125,12 +125,6 @@ if($Dmg < 0){
 $Name="$N2 $N1 $N3 $NE";
 $NameO="$N2 $N1 $N3 $NE";
 
-if (!$Class == ""){
-	$Name="<b style='color:#$Color'>$Name</b>";}
-	else{
-		$Name="<b>$Name</b>";
-		$Color = '000000';}
-
 $cash = $ILVL*$sell;
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -140,12 +134,12 @@ $TAL = mysqli_query($db,"SELECT * FROM dropst where HASH = '$ACC[8]' ");
 $TAL = mysqli_fetch_row($TAL);
 
 if (!$Class == ""){
-	$new = "<b>$Name <b style='color:#$Color'>($Class)</b></b>";}
+	$new = "<b class='$Color'>$Name ($Class)</b>";}
 	else{
 	$new = "<b>$Name</b>";}
 
 if (!$TAL[8] == ""){
-	$Current = "<b style='color:#$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
+	$Current = "<b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
 	else{
 	$Current = "$TAL[1]";}
 

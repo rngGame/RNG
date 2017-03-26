@@ -120,7 +120,7 @@ $maMIN = round($bDMG - ($bDMG*rand(1,50)/100));
 $maMAX = round($bDMG + ($bDMG*rand(1,150)/100));  
 $HIT = rand(85,100);
 $LVL = round($lvl);
-$NAME = "<b style='color:#$Color'>$Name</b>";
+$NAME = "<b class='$Color'>$Name</b>";
 
 //hash
 $HC = 0;

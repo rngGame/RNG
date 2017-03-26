@@ -333,7 +333,11 @@ table, td, th {
 	margin: -50px 0px 0px 0px;
     float:right;
 }​
-
+a:-webkit-any-link {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: auto;
+}
 
 a:link, a:visited{
     color: #ff5857 !important;
@@ -345,11 +349,6 @@ a:hover, a:active{
     text-decoration: underline !important;
 }
 
-a:-webkit-any-link {
-    color: inherit;
-    text-decoration: inherit;
-    cursor: auto;
-}
 
 
 input[type="submit"]{

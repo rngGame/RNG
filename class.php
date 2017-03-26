@@ -29,6 +29,7 @@ $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$ACC[10]' ");
 $CLS = mysqli_fetch_row($CLS);
 
 //check for class
+if ($ACC[3] > 19 and $ACC[10] == 0){ 
 echo "Select Your Class:<br>";
 
 $List = mysqli_query($db,"SELECT * FROM class order by ID asc ");
@@ -48,6 +49,7 @@ echo "<form method='post' action='Class2.php'>
 }
 
 //for subclass select
+if ($ACC[3] > 39 and $ACC[10] <> 0 and $ACC[10] < 11 ){ 
 echo "Select Your Class:<br>";
 
 $List2 = mysqli_query($db,"SELECT * FROM Subclass where Prev = '$ACC[10]' ");

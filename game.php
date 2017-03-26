@@ -422,15 +422,15 @@ echo "User: <div class='tooltip'><font color='$ACC[12]'><b>$User</b><span class=
 echo "<br>Class: <b><div class='tooltip'>$CLS[1]<span class='tooltiptext'>$CLS[9]</span></div></b><br>";
 echo "<img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'> $pasiveBut<br>";
 echo "LVL: <b>$ACC[3]</b> $leveltext<br>";
-echo "Average DMG: <b><font color='red'>~$avgP</font>/<font color='#0066ff'>~$avgM</font></b><br>";
-echo "HP: <b><font color='darkred'>$HP2</font></b><br>";
-echo "ENR: <b><font color='#4d79ff'>$ENR<font size='1'>($enr per turn)</font></font></b><br>";
-echo "DEF: <b><font color='#0066ff'>$armor</font></b><br>";
-//echo "SPD: <b><font color='#cc6699'>$Speed</font></b><br>";
-echo "Gold: <b><font color='#ff9900'>$ACC[4]</font></b><br>";
-echo "Shards: <b><font color='#00cc99'>$ACC[15]</font></b><br>";
+echo "Average DMG: <b><font class='physical'>~$avgP</font>/<font class='magic'>~$avgM</font></b><br>";
+echo "HP: <b><font class='health'>$HP2</font></b><br>";
+echo "ENR: <b><font class='energy'>$ENR<font size='1'>($enr per turn)</font></font></b><br>";
+echo "DEF: <b><font class='defense'>$armor</font></b><br>";
+//echo "SPD: <b><font class='speed'>$Speed</font></b><br>";
+echo "Gold: <b><font class='gold'>$ACC[4]</font></b><br>";
+echo "Shards: <b><font class='shards'>$ACC[15]</font></b><br>";
 echo "Item LVL: <b>$lwa</b><br>";
-echo "Points: <font color='red'>$PNT[2] STR</font> - <font color='#0066ff'>$PNT[3] INT</font><br>";
+echo "Points: <font class='physical'>$PNT[2] STR</font> - <font class='magic'>$PNT[3] INT</font><br>";
 echo "</div>";
 echo "<div id='second'>Weapon: ";
 
@@ -465,32 +465,32 @@ if (!$WEP[2] == ""){
 	echo "<div class='tooltip'><b $unEf class='$WEP[3]'>$WEP[1] + $WEP[15] ($WEP[2])</b>";}
 	else{
 		echo "<div class='tooltip'>$WEP[1] + $WEP[15]";}
-echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a style='color:red'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a style='color:#0066ff'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft<br></span></div><br><br>Armor: ";
+echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a class='physical'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a class='magic'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft<br></span></div><br><br>Armor: ";
 
 if (!$ARM[2] == ""){
 	echo "<div class='tooltip'><b class='$ARM[5]'>$ARM[1] ($ARM[2])</b>";}
 	else{
 		echo "<div class='tooltip'>$ARM[1]";}
-echo "<br><span class='tooltiptext'><a style='color:#0066ff'><b>$ARM[4]</b> def. </a><br><b>$ARM[3] lvl.</b></span></div><br><br>Talisman: ";
+echo "<br><span class='tooltiptext'><a class='defense'><b>$ARM[4]</b> def. </a><br><b>$ARM[3] lvl.</b></span></div><br><br>Talisman: ";
 
 if (!$TAL[8] == ""){
 	echo "<div class='tooltip'><b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
 	else{
 		echo "<div class='tooltip'>$TAL[1]";}
-echo "<br><span class='tooltiptext'><a style='color:red'><b>$TAL[3]</b> dmg. </a><a style='color:#0066ff'><b>$TAL[5]</b> def. </a><a style='color:darkred'><b>$TAL[4]</b> HP. </a><a style='color:violet'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
+echo "<br><span class='tooltiptext'>class='physical'><b>$TAL[3]</b> dmg. </a><a class='defense'><b>$TAL[5]</b> def. </a><a class='health'><b>$TAL[4]</b> HP. </a><a class='experience'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
 
 if (!$GEM[3] == ""){
 	echo "<div class='tooltip'><b style='color:#$GEM[3]'>$GEM[0]</b>";}
 	else{
 		echo "<div class='tooltip'>$GEM[0]";}
-echo "<br><span class='tooltiptext'><a style='color:#$GEM[3]'><b>$GEM[2]</b> Type. <br></a><b>Power $GEM[5] %</b><br><b>$GEM[4] lvl.</b></span></div>";
+echo "<br><span class='tooltiptext'><a class='$GEM[3]'><b>$GEM[2]</b> Type. <br></a><b>Power $GEM[5] %</b><br><b>$GEM[4] lvl.</b></span></div>";
 
 echo "</div>";
 
 echo "<div id='mini'>Totall Kills<br>";
 echo "<b>$ACC[6]</b><br><br>";
 echo "<b>PVP Rank:</b><br>";
-echo "<b><font color='$ACC[12]'>$ACC[11]</font></b>";
+echo "<b><font class='$ACC[12]'>$ACC[11]</font></b>";
 echo "<section class='container'>
     <p class='submit'>
     	<form method='post' action='achv.php'>
@@ -633,7 +633,7 @@ echo "<div id='mini2'>";
 	if ($WPN[3] == "ff6633"){
 		$unEfs = "class='awesome'";}
 		
-echo "Strongest item: <b $unEfs style='color:#$WPN[3]'>$WPN[1]</b><br>";
+echo "Strongest item: <b $unEfs class='$WPN[3]'>$WPN[1]</b><br>";
 echo "Highest item lvl: <b>$ILVL[9] - by <font color='$ILVL[12]'>$ILVL[0]</font></b><br>";
 echo "Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b><br>";
 echo "Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>";

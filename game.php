@@ -75,9 +75,41 @@ $plvl3 = mysqli_fetch_row($PAS2);
 $PAS2 = mysqli_query($db,"SELECT * FROM skillxp where LVL = '$pasl4' ");
 $plvl4 = mysqli_fetch_row($PAS2);
 
-
+//classes and subclasses
+if ($ACC[10] < 10){
 $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$ACC[10]' ");
 $CLS = mysqli_fetch_row($CLS);
+}
+if ($ACC[10] > 10){
+$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$ACC[10]' ");
+$SUB = mysqli_fetch_row($SUB);
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
+$CLS = mysqli_fetch_row($CLS);
+
+//change from class ->> subclass
+$CLS[1] = $SUB[1];
+$CLS[9] = $SUB[8];
+
+if ($SUB[3] == "HP"){
+	$hpsub = $SUB[4];
+	}
+if ($SUB[3] == "DMG"){
+	$dmgsub = $SUB[4];
+	}
+if ($SUB[3] == "DEF"){
+	$defsub = $SUB[4];
+	}
+if ($SUB[3] == "CRD"){
+	$crdsub = $SUB[4];
+	}
+if ($SUB[3] == "CRC"){
+	$crcsub = $SUB[4];
+	}
+if ($SUB[3] == "ENR"){
+	$enrsub = $SUB[4];
+	}
+
+}
 
 $WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
 $WEP = mysqli_fetch_row($WEP);
@@ -214,14 +246,26 @@ $ENC = mysqli_fetch_row($ENC);
 // physical dmg
 $minPdmg = round(($WEP[5] + $TAL[3])*$CLS[3]);
 $minPdmg = $minPdmg + ($minPdmg * $ENC[2] / 100) + ($minPdmg * ($PNT[2]*2)/100);
+if (isset($dmgsub)){
+	$minPdmg = round(($minPdmg*$dmgsub),0);
+}
 $maxPdmg = round(($WEP[6] + $TAL[3])*$CLS[3]);
 $maxPdmg = $maxPdmg + ($maxPdmg * $ENC[2] / 100) + ($maxPdmg * ($PNT[2]*2)/100);
+if (isset($dmgsub)){
+	$maxPdmg = round(($maxPdmg*$dmgsub),0);
+}
+
 // magical dmg
 $minMdmg = round(($WEP[9] + $TAL[3])*$CLS[3]);
 $minMdmg = $minMdmg + ($minMdmg * $ENC[2] / 100) + ($minMdmg * ($PNT[3]*3)/100);
+if (isset($dmgsub)){
+	$minMdmg = round(($minMdmg*$dmgsub),0);
+}
 $maxMdmg = round(($WEP[10] + $TAL[3])*$CLS[3]);
 $maxMdmg = $maxMdmg + ($maxMdmg * $ENC[2] / 100) + ($maxMdmg * ($PNT[3]*3)/100);
-
+if (isset($dmgsub)){
+	$maxMdmg = round(($maxMdmg*$dmgsub),0);
+}
 
 
 $HP2 = $HP + $TAL[4];
@@ -312,8 +356,14 @@ if ($datemin2 > $datemin){
 
 
 
-$HP = round($HP,0);
-$armor = round($armor,0);
+$HP = round(($HP),0);
+if (isset($hpsub)){
+	$HP = round(($HP*$hpsub),0);
+}
+$armor = round(($armor),0);
+if (isset($defsub)){
+	$armor = round(($armor*$defsub),0);
+}
 $dmg = round($dmg,0);
 $HP2 = round($HP2,0);
 
@@ -340,7 +390,13 @@ $_SESSION["ARM"] = $armor;
 $_SESSION["XPT"] = $TAL[6];
 $_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2];
+if (isset($crcsub)){
+$_SESSION["CRYT"] = $PAS[2]*$crcsub;
+}
 $_SESSION["CRYTD"] = $PAS[11];
+if (isset($crdsub)){
+$_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub;
+}
 $_SESSION["APS"] = $PAS[5];
 $_SESSION["ENG2"] = $PAS[8];
 $_SESSION["ILVL"] = $lwa;
@@ -352,7 +408,10 @@ $ENR = $ENR + ($ENR * ($PNT[3]*2)/100);
 $enr= 5+(5*$PAS[8]/100);
 $enr= $enr + ($enr * ($PNT[3]*1)/100);
 $enr=round($enr,0);
-$ENR=round($ENR,0);
+$ENR=round(($ENR),0);
+if (isset($enrsub)){
+	$ENR=round(($ENR*$enrsub),0);
+}
 
 //energy
 $_SESSION["ENERGY"] = $ENR;

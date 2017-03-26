@@ -10,7 +10,7 @@
 <file name="Bypass2.php" server="ftp.miniforums.org" local="131349460242254714" remote="131300004600000000" Dst="1" />
 <file name="check.php" server="ftp.miniforums.org" local="131349460317839118" remote="131348248200000000" Dst="1" />
 <file name="CheckP.php" server="ftp.miniforums.org" local="131349460248704561" remote="131236899600000000" Dst="1" />
-<file name="class.php" server="ftp.miniforums.org" local="131349460328124822" remote="131299691400000000" Dst="1" />
+<file name="class.php" server="ftp.miniforums.org" local="131349641597129907" remote="131349317400000000" Dst="2" />
 <file name="Class2.php" server="ftp.miniforums.org" local="131349460250392684" remote="131236923000000000" Dst="1" />
 <file name="create.php" server="ftp.miniforums.org" local="131349460332923621" remote="131348107800000000" Dst="1" />
 <file name="drops.php" server="ftp.miniforums.org" local="131349460344343703" remote="131236829400000000" Dst="1" />
@@ -28,7 +28,7 @@
 <file name="FightTB.php" server="ftp.miniforums.org" local="131349460288164932" remote="131348307000000000" Dst="1" />
 <file name="fightTP.php" server="ftp.miniforums.org" local="131349460383101981" remote="131337154800000000" Dst="1" />
 <file name="fleed.php" server="ftp.miniforums.org" local="131349460387624348" remote="131236829400000000" Dst="1" />
-<file name="game.php" server="ftp.miniforums.org" local="131349460396232166" remote="131349147000000000" Dst="1" />
+<file name="game.php" server="ftp.miniforums.org" local="131349636279275399" remote="131349312000000000" Dst="2" />
 <file name="in.php" server="ftp.miniforums.org" local="131349460400685338" remote="131236829400000000" Dst="1" />
 <file name="ind.php" server="ftp.miniforums.org" local="131349460404192838" remote="131236829400000000" Dst="1" />
 <file name="index.php" server="ftp.miniforums.org" local="131349460409164759" remote="131299692600000000" Dst="1" />
@@ -64,7 +64,7 @@
 <file name="chat.php" server="ftp.miniforums.org" local="131349460309503884" remote="131309392200000000" Dst="1" />
 <file name="message.php" server="ftp.miniforums.org" local="131349460479195108" remote="131299756800000000" Dst="1" />
 <file name="send.php" server="ftp.miniforums.org" local="131349460580591657" remote="131309406000000000" Dst="1" />
-<file name="sync.php" server="ftp.miniforums.org" local="131349460605656749" remote="131348016000000000" Dst="1" />
+<file name="sync.php" server="ftp.miniforums.org" local="131349642828270335" remote="131349318600000000" Dst="2" />
 <file name="achv.php" server="ftp.miniforums.org" local="131349460299362670" remote="131299690800000000" Dst="1" />
 <file name="chng.php" server="ftp.miniforums.org" local="131349460324365005" remote="131298291000000000" Dst="1" />
 <file name="settings.php" server="ftp.miniforums.org" local="131349460589037677" remote="131299695600000000" Dst="1" />

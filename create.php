@@ -35,7 +35,7 @@ if(!$count==1){
     if (isset($_POST['username']) && isset($_POST['password'])){
         $query = "INSERT INTO account (User, Psw, Theme) VALUES ('$username', '$hashed_password', 'meniu')";
         $result = mysqli_query($db,$query);}
-		$query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$username', '0', '0', '0')";
+		$query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$username', '1', '0', '0')";
         $result = mysqli_query($db,$query2);
         if($result){
             $msg = "User Created Successfully.";

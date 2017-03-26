@@ -1,5 +1,5 @@
 <?php
-echo "Marketplace"
+echo "Marketplace";
 include_once 'PHP/db.php';
 include_once 'PHP/function.php';
 //if($_GET["trade"]=="ashes"){

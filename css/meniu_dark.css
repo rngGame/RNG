@@ -334,17 +334,14 @@ table, td, th {
     float:right;
 }​
 
-a{
-    color: #f55;
-}
 
 a:link, a:visited{
-    /*color: #ff5857;*/
+    color: #ff5857;
     text-decoration: none;
 }
 
 a:hover, a:active{
-    /*color: #ff5857;*/
+    color: #ff5857;
     text-decoration: underline;
 }
 

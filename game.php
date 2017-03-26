@@ -729,7 +729,7 @@ if ($WEPI[12] <> 0){
 		$unEf[$eft] = "class='awesome'";}
 
 echo "<td>";
-echo "<div class='tooltip'><b $unEf[$eft] style='color:#$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
+echo "<div class='tooltip'><b $unEf[$eft] class='$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
 echo "<td>
 	      <form method='post' action='Equip.php'>
           <input hidden='' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
@@ -747,7 +747,7 @@ mysqli_close($db);
 
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.2.1)</b></a>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.2.1)</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {

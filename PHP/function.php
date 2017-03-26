@@ -231,7 +231,7 @@ function itemDrop($db,$drop,$MLVL){
                 $value4 = 1;
             }
 
-            $name="$nameBase $nameSub $nameSub2 $nameEnchant";
+            $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
             if(!$nameType == ""){ //coloring the name, if needed

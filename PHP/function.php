@@ -216,7 +216,7 @@ function itemDrop($db,$drop,$MLVL){
             $value = round($value, 0);
             $value2 = round($value2, 0);
             $value3 = round($value3, 0);
-            $value4 = round($value4, 0);
+            $value4 = round($value4, 1);
 
             if($value <= 0){
                 $value = 1;

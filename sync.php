@@ -239,9 +239,14 @@ else{
 	$_SESSION["User"] = $User;
 	
 if ($ACC[3] > 19 and $ACC[10] == 0){
-	header("location:class.php");}
+	header("location:class.php");
+	die();}
+if ($ACC[3] > 39 and $ACC[10] <> 0 and $ACC[10] < 11 ){
+	header("location:class.php");
+	die();}
 else{
 mysqli_close($db);			
 header("$send");
+die();
 };
 ?>

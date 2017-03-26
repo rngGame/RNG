@@ -55,19 +55,21 @@ if ($CLS[6] == "FIRE"){
 else { $t8 = "LVL 1";
 $c8 = "class='submitBtn'";}
 
-if ($CLS[6] == "x"){
-	$t9 = "LVL 2";
-		$c9 = "class='invert submitBtn'";}
-else { $t9 = "LVL 1";
-$c9 = "class='submitBtn'";}
+
 
 //subclassseses
 if ($SUB[5] == "PRG"){
 	$t12 = "(Bonus)";
-		$c12 = "class='invert submitBtn'";}
-else { $t12 = "";
-$c12 = "class='submitBtn'";}
+		$c12 = "class='cool submitBtn'";}
 
+
+if ($SUB[5] == "FIRE"){
+	$t8 = "LVL 3";
+		$c8 = "class='cool submitBtn'";}
+		
+		if ($SUB[5] == "SWRD"){
+	$t13 = "(Add crytical)";
+		$c13 = "class='cool submitBtn'";}
 
 
 ?>

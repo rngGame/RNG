@@ -28,7 +28,7 @@ if ($ACC[3] >= 20 and $SKL > 50){
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='FCAL.php'>
           <input type='hidden' name='skl' value='32'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c9 src='IMG/pack/Icon.7_59.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>50En.<br>Combine Magickal and Physical for a single attack</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c13 src='IMG/pack/Icon.7_59.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>50En.<br>Combine Magickal and Physical for a single attack $t13</span></p> 
       </form>
     </div>&nbsp;&nbsp;"
   ;}
@@ -57,8 +57,31 @@ if ($ACC[3] >= 30 and $SKL > 330){
 	   echo"
     <div class='tooltip'>
 	      <form id='yourFormId'  method='post' action='FCAL.php'>
-          <input hidden='' type='text' name='skl' value='32' placeholder='lvl'>
+          <input hidden='' type='text' name='skl' value='33' placeholder='lvl'>
         <p class='submit' ><img class='blur' src='IMG/pack/Icon.5_95.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}  
+  
+   //Summon
+   $summ = 0;
+  if (isset($_SESSION["PET"])){
+	  $summ = 1;}
+if ($ACC[3] >= 30 and $SKL > 150 and $summ == 0){
+ echo"
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='FCAL.php'>
+          <input type='hidden' name='skl' value='34'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c12 src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Summon kindred spirit</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}
+  else{
+	   echo"
+    <div class='tooltip'>
+	      <form id='yourFormId'  method='post' action='FCAL.php'>
+          <input hidden='' type='text' name='skl' value='34' placeholder='lvl'>
+        <p class='submit' ><img class='blur' src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
       </form>
     </div>&nbsp;&nbsp;"
   ;}  

@@ -141,9 +141,14 @@ if ($SKL ==31){
 	$_SESSION["ENERGY"] = $ene;
 };
 
-//skill 31
+//skill 32
 if ($SKL ==32){
+
 	$comb = round($magDMG + $physDMG);
+		if ($SUB[5] = "SWRD" and $CRT <= $CRYT+$WEP[7]){
+			$comb=$comb + ($comb*$CRYTD/100);
+			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
+		}
 		$ene = $ene - 50;
 	$_SESSION["ENERGY"] = $ene;
 };
@@ -170,6 +175,37 @@ if ($SKL ==33){
 	$finallICT = "<font color='lightblue'>Hit by $xtim ICE commets!</font><br>";
 };
 
+//skill 34
+	if ($SKL ==34 or $_SESSION["PET"] == 1){
+		if (!$_SESSION["PET"] == 1){ //sukuria nauja
+			$petname = mysqli_query($db,"SELECT * FROM Pets where Class = '$ACC[10]' Order by RAND() Limit 	1");
+			$petname = mysqli_fetch_row($petname);
+			$_SESSION["PETNAME"] = $petname[0];
+			$_SESSION["PETHP"] = $HPO * 20 / 100;
+			$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
+			$_SESSION["PETMAXDMG"] = round($maxMdmg * 10 / 100);
+			$pettext = "Pet summoned !<br>";
+			$_SESSION["PET"] = 1;
+		}
+			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
+			$pettdmgtext = "Pet did $petDMG dmg.<br>";
+			$monHP = $monHP - $petDMG;
+			$pettook = round($monDMG * 10 / 100);
+			$monDMG = $monDMG - $pettook; //reduct damage of mob
+			$_SESSION["PETHP"] = $_SESSION["PETHP"] - $pettook;
+			$petttanktext = "Pet tanked $pettook dmg.<br>";
+			$petHP = $_SESSION["PETHP"];
+			if ($petHP <= 0){
+				unset($_SESSION["PET"]);
+				unset($_SESSION["PETHP"]);
+				unset($_SESSION["PETMINDMG"]);
+				unset($_SESSION["PETMAXDMG"]);
+				$pettext = "<b>Pet Died !</b><br>";
+			}
+		
+		
+}
+
 $magick = $fball + $comb + $finallICE;
-$magickText = $finallICT;
+$magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext"  ;
 ?>

@@ -303,10 +303,13 @@ $ACC2 = mysqli_fetch_row($ACC2);
 $PAS = mysqli_query($db,"SELECT * FROM passive where USER = '$List1[1]' ");
 $PAS = mysqli_fetch_row($PAS);
 
-$cash = $ACC2[4] + ($List1[2] / 1000);
-$XP = $ACC2[5] + ($List1[2] * 0.9);
+$cash = $List1[2] / 1500;
+if ($cash > 200000){
+	$cash = 200000;}
+$cash = round($ACC2[4] + $cash);
+$XP = $ACC2[5] + ($List1[2] * 0.5);
 $XP = round($XP);
-$XPP = $List1[2]/2000;
+$XPP = $List1[2]/3500;
 $XPP = $XPP + $PAS[10];
 $XPP = round($XPP);
 

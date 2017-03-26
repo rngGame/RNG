@@ -84,7 +84,7 @@ if ($GEM[0] != "None"){
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 
 //skills
-if ($SKL <> "" and $SKL <> 1111){
+if ($SKL <> "" and $SKL <> 1111 or $_SESSION["PET"] == 1){
 		include 'PHP/skills.php';
 }
 
@@ -96,6 +96,7 @@ if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
 	$CRYTD = $physDMG*$CRYTD/100;
 	$CRYTD = round($CRYTD);
 	$physDMG = ($physDMG*2)+$CRYTD;
+
 	
 	if ($SKL == 4){ //cryt if combo
 	$CRYTD = $physDMGc*$CRYTD/100;
@@ -117,6 +118,12 @@ if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
 			$result = mysqli_query($db, $order);
 		}
 }
+
+//skills
+if ($WEP[14] <> 0){
+		include 'PHP/effect.php';
+}
+
 
 //monster cryt	
 $CRT2= rand(1,100);	
@@ -185,16 +192,12 @@ if ($SKL ==7 or $pos == 1){
 	$_SESSION["ENERGY"] = $ene;}
 }
 
-//skills
-if ($WEP[14] <> 0){
-		include 'PHP/effect.php';
-}
 
 
 //calculation dmg to mons
 $finalMonsHP = $monHP;
 
-if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6){ //check for basic attack
+if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34){ //check for basic attack
 if (rand(0,100) <= $WEP[11]){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
 if ($ddam == 1){
@@ -314,4 +317,4 @@ header($page2);
 die();
 
 
-?>
+?> unset

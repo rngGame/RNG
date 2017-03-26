@@ -35,7 +35,7 @@ if ($uniqRO == 4){
 	$order2 = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Lord of Magick wand', 'Unique', 'ff6633', '100', '1', '1', '1', '1', '300', '500', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'Lord of Magick wand', 'Unique', 'ff6633', '100', '1', '1', '1', '1', '700', '900', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 5){

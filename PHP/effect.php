@@ -151,6 +151,7 @@ if ($SUB[6] == "RG"){
 //double defence 
 if ($SUB[6] == "CD"){
 	$tresh = round($HPO * $SUB[7] /100);
+	if ($SUB[7] >= rand(0,100)){
 			$Armor = $Armor *2;
 			$doubart = "<font color='gold'>Double Armor !</font><br>";
 }

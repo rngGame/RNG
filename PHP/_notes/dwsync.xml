@@ -9,10 +9,11 @@
 <file name="status.php" server="ftp.miniforums.org" local="131349460233896035" remote="131236832400000000" Dst="1" />
 <file name="vote.php" server="ftp.miniforums.org" local="131349460234186237" remote="131236832400000000" Dst="1" />
 <file name="ach.php" server="ftp.miniforums.org" local="131349460214306786" remote="131307794400000000" Dst="1" />
-<file name="skills.php" server="ftp.miniforums.org" local="131349694332850971" remote="131349370200000000" Dst="2" />
-<file name="SkillsP.php" server="ftp.miniforums.org" local="131349460212379594" remote="131347450200000000" Dst="1" />
-<file name="SkillsM.php" server="ftp.miniforums.org" local="131349685550075896" remote="131349361200000000" Dst="2" />
+<file name="skills.php" server="ftp.miniforums.org" local="131350170422432340" remote="131349846000000000" Dst="2" />
+<file name="effect.php" server="ftp.miniforums.org" local="131350106554334503" remote="131349782400000000" Dst="2" />
+<file name="SkillsP.php" server="ftp.miniforums.org" local="131350163986479917" remote="131349839400000000" Dst="2" />
+<file name="SkillsM.php" server="ftp.miniforums.org" local="131350164098935808" remote="131349840000000000" Dst="2" />
 <file name="point.php" server="ftp.miniforums.org" local="131348281072395600" remote="131347992600000000" Dst="1" />
 <file name="uniq.php" server="ftp.miniforums.org" local="131349701932510257" remote="131349377400000000" Dst="2" />
-<file name="skillclas.php" server="ftp.miniforums.org" local="131349684411374248" remote="131349360000000000" Dst="2" />
+<file name="skillclas.php" server="ftp.miniforums.org" local="131350126041346957" remote="131349801600000000" Dst="2" />
 </dwsync>

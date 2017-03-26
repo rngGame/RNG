@@ -127,6 +127,9 @@ height:255px;
     width: 122px;
 }
 
+
+
+
 #mini2 {
 	width:520px;
 	border: 1px solid #ff0075;
@@ -143,6 +146,17 @@ height:255px;
 
 	
 }
+
+.rightpanel2
+{        
+    background-color:white;
+    width:30%;
+    height:100%;
+	margin: -120px 0px 0px 0px;
+    float:right;
+}​
+
+.what{}
 
 .awesome {
 	 -webkit-animation:colorchange 20s infinite alternate;
@@ -356,6 +370,8 @@ table, td, th {
     float:right;
 	margin: -50px 0px 0px 0px;
 }​
+
+.what{}
 
 .normal{
     color:#888800;

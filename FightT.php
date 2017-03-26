@@ -99,8 +99,11 @@ echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066f
 echo "ARMOR: <font size='3' color='gold'>$Armor  </font>";
 echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font></p>";
 
+$panel = "right-panel"; //set panel for log
+
 // check for pet
 if (isset($_SESSION["PET"])){
+	$panel = "rightpanel2";
 	$petname = $_SESSION["PETNAME"];
 	$petHP = round($_SESSION["PETHP"]);
 	$petminDMG = round ($_SESSION["PETMINDMG"]);
@@ -113,7 +116,7 @@ if (isset($_SESSION["PET"])){
 
   $cryt = $_SESSION["crytext"];
   $cryt2 = $_SESSION["crytext2"];
-echo ' <div class="right-panel">';
+echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 

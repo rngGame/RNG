@@ -21,6 +21,11 @@ include_once 'PHP/db.php';
 $_SESSION["PAGE2"] = "location:FightT.php";
 $_SESSION["LOSE"] = "location:lose.php";
 
+$User = $_SESSION["User"]; //user
+
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
+
 //set what type reward to get
 $type = rand(1,200);
 if ($type > 140){
@@ -29,9 +34,11 @@ else if ($type > 60){
 	$_SESSION["PAGE"] = "location:rewarm.php";} 
 	else if ($type > 1){
 		$_SESSION["PAGE"] = "location:rewtali.php";} 
-			else{
-			$_SESSION["UNQ"] = 1;
-			$_SESSION["PAGE"] = "location:uniqR.php";}
+		
+//check for uniq drop
+if ($type == 69 and $ACC[3] > 19){ 
+	$_SESSION["UNQ"] = 1;
+	$_SESSION["PAGE"] = "location:uniqR.php";}
 
 $HPin = $_SESSION["HP"];
 $Armor = $_SESSION["ARM"];
@@ -41,7 +48,7 @@ $maxPdmg = $_SESSION["DMGPmax"];
 $minMdmg = $_SESSION["DMGMmin"];
 $maxMdmg = $_SESSION["DMGMmax"];
 
-$User = $_SESSION["User"];
+
 $gold = $_SESSION["Gold1"];
 $gl = $_SESSION["Gold2"];
 $BLVL = $_SESSION["fLVL"];
@@ -69,8 +76,7 @@ $avgP = round(($minPdmg + $maxPdmg) / 2);
 $avgM = round(($minMdmg + $maxMdmg) / 2);
 $avgD = round(($avgP + $avgM) / 2);
 
-$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
-$ACC = mysqli_fetch_row($ACC);
+
 if ($ACC[10] < 10){
 $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$ACC[10]' ");
 $CLS = mysqli_fetch_row($CLS);

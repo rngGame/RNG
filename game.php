@@ -227,6 +227,7 @@ World Of RNG
 <div id="first">
 <?php
 
+$lwa = $ACC[3] + $WEP[4] + $ARM[3] +$TAL[2] + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
 $order = "UPDATE characters
 SET ILVL = '$lwa'

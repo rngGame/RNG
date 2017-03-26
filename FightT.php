@@ -99,6 +99,16 @@ echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066f
 echo "ARMOR: <font size='3' color='gold'>$Armor  </font>";
 echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font></p>";
 
+// check for pet
+if (isset($_SESSION["PET"])){
+	$petname = $_SESSION["PETNAME"];
+	$petHP = round($_SESSION["PETHP"]);
+	$petminDMG = round ($_SESSION["PETMINDMG"]);
+	$petmaxDMG = round ($_SESSION["PETMAXDMG"]);
+	echo "<div>
+	Pet Name: <b>$petname</b><br>Pet HP: <font color='Green'>$petHP</font> <br>Pet Dmg: <font size='3' color='#0066ff'>$petminDMG ~ $petmaxDMG</font><br><br>";
+}
+
 
 
   $cryt = $_SESSION["crytext"];

@@ -178,6 +178,9 @@ if ($SKL ==33){
 //skill 34
 	if ($SKL ==34 or $_SESSION["PET"] == 1){
 		if (!$_SESSION["PET"] == 1){ //sukuria nauja
+			$petname = mysqli_query($db,"SELECT * FROM Pets where Class = '$ACC[10]' Order by RAND() Limit 	1");
+			$petname = mysqli_fetch_row($petname);
+			$_SESSION["PETNAME"] = $petname[0];
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
 			$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
 			$_SESSION["PETMAXDMG"] = round($maxMdmg * 10 / 100);

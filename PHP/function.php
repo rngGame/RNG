@@ -84,101 +84,157 @@ function login($vardas, $password, $db) {
 }
 function itemDrop($db,$drop,$MLVL){
     if($drop=="all"){
-        //$check=rand(1,1);
-        $check=2;
+        $check=rand(1,2);
+        if($check==1){
+
+        }
         if($check==2){
             $drop="armor";
         }
     }
-    if($drop=="armor"){
+    if($drop=="armor"||$drop=="talisman"){
 
         $rel = 0;
 
         while ($rel == 0){
-            //get info from db
-            $Base = mysqli_query($db,"SELECT * FROM basearmor Order by RAND() Limit     1");
-            $Base = mysqli_fetch_row($Base);
+            //get info from db general
             $Sub = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit  1");
             $Sub = mysqli_fetch_row($Sub);
-            $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit     1");
-            $Sub2 = mysqli_fetch_row($Sub2);
             $Type = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit     1");
             $Type = mysqli_fetch_row($Type);
             $Type2 = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit    1");
             $Type2 = mysqli_fetch_row($Type2);
-
             $Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
+
+            //talisman specific
+            if($drop=="talisman"){
+                $Base = mysqli_query($db,"SELECT * FROM basetalis Order by RAND() Limit     1");
+                $Base = mysqli_fetch_row($Base);
+                $Pre = mysqli_query($db,"SELECT * FROM pretalis Order by RAND() Limit   1");
+                $Pre = mysqli_fetch_row($Pre);
+            }
+
+            //armor specific
+            if($drop=="armor"){
+                $Base = mysqli_query($db,"SELECT * FROM basearmor Order by RAND() Limit     1");
+                $Base = mysqli_fetch_row($Base);
+                $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit     1");
+                $Sub2 = mysqli_fetch_row($Sub2);
+            }
 
             //Nulify vars
             $nameType = "";    
             $iLVL = 0;
-            $armor = 0; //was dmg, delete comment before finnish
+            $value= $value2= $value3= $value4= 0; //was dmg, delete comment before finnish
             $enchantLVL = 0; //give + to item
 
-            /*
-            $n1 = $MLVL/1;
-            $n3 = $MLVL/1.9;
-            $n4 = $MLVL/2.4;
-            $r = $n1 *2.5;
-            */
             //rng stuff for 
+            $rngPre = rand(1,99-($MLVL/1.9));
             $rngSub = rand(1,99-($MLVL/1.9));
             $rngSub2 = rand(1,150-($MLVL/2.4));
             $rngType = rand(0,500-($MLVL*2.5));
 
-
+            //bases
             $nameBase = $Base[1]; //takes the base name for the Armor
-            $iLVL = $Base[3]; //base level
-            $armor = $Base[2]; //base armor
-            if ($rngSub < 20){  //checks for first Sub rng
+            if($drop=="armor"){
+                $iLVL = $Base[3]; //base level
+                $value = $Base[2]; //base armor
+            }
+            if($drop=="talisman"){
+                $iLVL = $Base[2];
+                $value = $Base[3];
+                $value2 = $Base[4];
+                $value3 = $Base[5];
+                $value4 = $Base[6]; 
+            }
+
+            if($rngPre<30 && $drop=="talisman"){
+                $namePre=$Pre[1];
+                $value*=$Pre[2];
+                $value2*=$Pre[2];
+                $value3*=$Pre[2];
+                $value4*=$Pre[2];
+                $iLVL+=$Pre[3];
+
+            }
+            if($rngSub<30 && $drop=="talisman"){
+                $nameSub = "and $Sub[1]";
+                $value +=$Sub[3];
+                $value2 +=$Sub[3]/3;
+                $value3 +=$value3*$Sub[3]/200;
+                $value4 *=1.2;
+                $iLVL +=$Sub[2];
+            }
+            if($rngSub < 20 && $drop=="armor"){  //checks for first Sub rng
                 $nameSub ="of $Sub[1]";
-                $armor += $Sub[3]/2;
+                $value += $Sub[3]/2;
                 $iLVL += $Sub[2];
-                if ($rngSub2 < 30){ //checks for second Sub rng
+                if($rngSub2 < 30){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
-                    $armor += $Sub2[3]/2;
+                    $value += $Sub2[3]/2;
                     $iLVL += $Sub2[2];
                 }
             }
-            if ($rngType < $Type[2]){ //checks for Type rng first time
+            if($rngType < $Type[2]){ //checks for Type rng first time
                 $nameType ="$Type[1]";
                 $color = "$Type[4]";
-                $Armor += ($armor * $Type[3] / 100)/2;
+                $value += ($value * $Type[3] / 100);
+                $value2 += ($value2 * $Type[3] / 100);
+                $value3 += ($value3 * $Type[3] / 100);
+                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type[3] / 100;
             }
-            else if ($rngType < $Type2[2]){ //checks for Type rng second time
+            else if($rngType < $Type2[2]){ //checks for Type rng second time
                 $nameType ="$Type2[1]";
                 $color = "$Type2[4]";
-                $armor += ($armor * $Type2[3] / 100)/2;
+                $value += ($value * $Type2[3] / 100);
+                $value2 += ($value2 * $Type[3] / 100);
+                $value3 += ($value3 * $Type[3] / 100);
+                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type2[3] / 100;
             }
 
             //check how many enchants rng
-            while ($Ench = mysqli_fetch_array($Enchant)) {
-                if ($Ench[1] > rand(-200,400-$MLVL)){
+            while($Ench = mysqli_fetch_array($Enchant)) {
+                if($Ench[1] > rand(-200,400-$MLVL)){
                     $enchantLVL += 1;
                     }
                 else{break;}
             }
-            if ($elvl > 0){
-                $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$elvl'");
+            if($enchantLVL > 0){
+                $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
                 $Plius = mysqli_fetch_row($Plius);
-                $nameEnchant = "+ $elvl";
-                $armor += $armor * $Plius[2] / 100;
+                $nameEnchant = "+ $enchantLVL";
+                $value += $value * $Plius[2] / 100;
+                $value2 += $value2 * $Plius[2] / 100;
+                $value3 += $value3 * $Plius[2] / 100;
+                $value4 += $value4 * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
             }
             //finnishing up values
             $iLVL = round($iLVL, 0);
-            $armor = round($armor, 0);
+            $value = round($value, 0);
+            $value2 = round($value2, 0);
+            $value3 = round($value3, 0);
+            $value4 = round($value4, 0);
 
-            if($armor <= 0){
-                $armor = 1;
+            if($value <= 0){
+                $value = 1;
+            }
+            if($value2 <= 0){
+                $value2 = 1;
+            }
+            if($value3 <= 0){
+                $value3 = 1;
+            }
+            if($value4 <= 0){
+                $value4 = 1;
             }
 
             $name="$nameBase $nameSub $nameSub2 $nameEnchant";
 
 
-            if (!$nameType == ""){ //coloring the name, if needed
+            if(!$nameType == ""){ //coloring the name, if needed
                 $new = "<b class='$color'>$name ($nameType)</b>";
             }
             else{
@@ -189,10 +245,10 @@ function itemDrop($db,$drop,$MLVL){
             $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
 
-            if ($iLVL < $rngValueMax and $iLVL > $rngValueMin){ //if weapon is okay acording to level, stop while
+            if($iLVL < $rngValueMax and $iLVL > $rngValueMin){ //if weapon is okay acording to level, stop while
                 $rel = 1;
             }
         }
-        return array ($iLVL, $armor, $name,$new,$nameType);
+        return array ($iLVL, $name, $new, $nameType, $value, $value2, $value3, $value4);
     }
 }

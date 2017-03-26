@@ -249,6 +249,6 @@ function itemDrop($db,$drop,$MLVL){
                 $rel = 1;
             }
         }
-        return array ($iLVL, $name, $new, $nameType, $value, $value2, $value3, $value4);
+        return array ($iLVL, $name, $color, $new, $nameType, $value, $value2, $value3, $value4);
     }
 }

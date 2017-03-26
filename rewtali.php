@@ -11,7 +11,7 @@ $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
 list($iLVL, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
-$cash = $ILVL*$sell;
+$cash = $iLVL*$sell;
 
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -71,7 +71,7 @@ Item Damage: <b><span class='$compareDMG'>$dmg</span></b><br>
 Item Health: <b><span class='$compareHP'>$health</span></b><br>
 Item Armor: <b><span class='$compareARM'>$armor</span></b><br>
 Item Xp bonuss: <b><span class='$compareXP'>$xp</span></b><br>
-Item worth: $MoneySel Gold<br>
+Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br><br>
 Name: $Current <br>
 Item lvl: <b>$TAL[2]</b><br>

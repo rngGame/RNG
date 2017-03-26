@@ -102,11 +102,61 @@ if ($SUB[7] >= rand(0,100)){
 
 //Reflect
 if ($SUB[6] == "RF"){
-	$refl = round($monDMG * $SUB[7] / 100);
-	$reft= "You reflected $refl damage !<br>";
+	$refcl = round($monDMG * $SUB[7] / 100);
+	$refct= "You reflected $refcl damage !<br>";
 
 }
 
-$effect = $blee + $burn + $freez + $shD + $refl;
-$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $reft";
+//Weakness
+if ($SUB[6] == "WK"){
+	$weak = round($monDMG * $SUB[7] / 100);
+	$monDMG = round($monDMG - $weak);
+	$weakt= "Monsted damage decreased by $weak damage !<br>";
+
+}
+
+//Soul leach
+if ($WEP[13] == "SL"  or $SUB[6] == "SL"){
+	if ($WEP[13] == "SL"){
+		$soull = $WEP[14];}
+	if ($SUB[6] == "SL"){
+		$soull = $SUB[7] + $soull;}
+	
+	$sleach = round($magDMG * $soull / 2000);
+	$ene = $ene + $sleach;
+	$_SESSION["ENERGY"] = $ene;
+	$sleacht = "$sleach Energy restored<br>";
+}
+
+//Bonus dmg
+if ($SUB[6] == "BD"){
+if ($SUB[7] >= rand(0,100)){
+	$bdm = rand(1,200);
+	$bdam = round($physDMG * $bdm / 100);
+	$bdamt= "You did $bdam bonus damage.<br>";
+}
+}
+
+//berserk rage
+if ($SUB[6] == "RG"){
+	$tresh = round($HPO * $SUB[7] /100);
+	$currh = $HPin;
+		if ($currh < $tresh){
+			$physDMG = $physDMG*1.5;
+			$magDMG = $magDMG*1.5;
+			$berst = "<font color='red'><b>BERSERK !!!</b></font><br>";
+		}
+}
+
+//double defence 
+if ($SUB[6] == "CD"){
+	$tresh = round($HPO * $SUB[7] /100);
+			$Armor = $Armor *2;
+			$doubart = "<font color='gold'>Double Armor !</font><br>";
+}
+
+}
+
+$effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
+$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";
 ?>

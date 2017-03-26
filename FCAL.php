@@ -118,6 +118,12 @@ if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
 		}
 }
 
+//skills
+if ($WEP[14] <> 0){
+		include 'PHP/effect.php';
+}
+
+
 //monster cryt	
 $CRT2= rand(1,100);	
 if ($CRT2 < 10){
@@ -185,10 +191,6 @@ if ($SKL ==7 or $pos == 1){
 	$_SESSION["ENERGY"] = $ene;}
 }
 
-//skills
-if ($WEP[14] <> 0){
-		include 'PHP/effect.php';
-}
 
 
 //calculation dmg to mons
@@ -315,3 +317,4 @@ die();
 
 
 ?>
+decreaseddecreased

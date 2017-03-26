@@ -351,7 +351,7 @@ a:hover, a:active{
 
 
 
-input[type="submit"]{
+input[type="submit"], button[type="submit"]{
     color: #E4E4E4;
     background-color: #222427;
     border-width: 2px;

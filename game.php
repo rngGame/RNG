@@ -477,7 +477,7 @@ if (!$TAL[8] == ""){
 	echo "<div class='tooltip'><b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
 	else{
 		echo "<div class='tooltip'>$TAL[1]";}
-echo "<br><span class='tooltiptext'>class='physical'><b>$TAL[3]</b> dmg. </a><a class='defense'><b>$TAL[5]</b> def. </a><a class='health'><b>$TAL[4]</b> HP. </a><a class='experience'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
+echo "<br><span class='tooltiptext'><a class='physical'><b>$TAL[3]</b> dmg. </a><a class='defense'><b>$TAL[5]</b> def. </a><a class='health'><b>$TAL[4]</b> HP. </a><a class='experience'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
 
 if (!$GEM[3] == ""){
 	echo "<div class='tooltip'><b style='color:#$GEM[3]'>$GEM[0]</b>";}

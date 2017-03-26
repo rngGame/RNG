@@ -181,7 +181,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += ($value * $Type[3] / 100);
                 $value2 += ($value2 * $Type[3] / 100);
                 $value3 += ($value3 * $Type[3] / 100);
-                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type[3] / 100;
             }
             else if($rngType < $Type2[2]){ //checks for Type rng second time
@@ -190,7 +189,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += ($value * $Type2[3] / 100);
                 $value2 += ($value2 * $Type[3] / 100);
                 $value3 += ($value3 * $Type[3] / 100);
-                $value4 += ($value4 * $Type[3] / 100);
                 $iLVL += $iLVL * $Type2[3] / 100;
             }
 
@@ -208,7 +206,6 @@ function itemDrop($db,$drop,$MLVL){
                 $value += $value * $Plius[2] / 100;
                 $value2 += $value2 * $Plius[2] / 100;
                 $value3 += $value3 * $Plius[2] / 100;
-                $value4 += $value4 * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
             }
             //finnishing up values

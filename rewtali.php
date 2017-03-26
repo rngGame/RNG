@@ -10,7 +10,7 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
-list($iLVL, $name, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
+list($iLVL, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
 $cash = $ILVL*$sell;
 
 
@@ -80,14 +80,14 @@ Item Health: <b>$TAL[4]</b><br>
 Item Armor: <b>$TAL[5]</b><br>
 Item Xp bonuss: <b>$TAL[6]</b><br>";
 
-$_SESSION["WepName"] = "$NameO";
-$_SESSION["Type"] = "$Class";
-$_SESSION["ilvl"] = "$ILVL";
-$_SESSION["DMG"] = "$Dmg";
-$_SESSION["ARMOR"] = "$Armor";
-$_SESSION["HEALTH"] = "$Health";
+$_SESSION["WepName"] = "$name";
+$_SESSION["Type"] = "$nameType";
+$_SESSION["ilvl"] = "$iLVL";
+$_SESSION["DMG"] = "$dmg";
+$_SESSION["ARMOR"] = "$armor";
+$_SESSION["HEALTH"] = "$health";
 $_SESSION["XP"] = "$xp";
-$_SESSION["Color"] = "$Color";
+$_SESSION["Color"] = "$color";
 $_SESSION["Reward"] = "$reward";
 
 $xpTalismanMulti = $_SESSION["XPT"];

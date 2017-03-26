@@ -11,7 +11,7 @@ $Drop = $_SESSION["MonsDrop"]; //DB drop value of monster
 $FightFee = $_SESSION["Money"];
 
 //creates armor function
-list($iLVL, $name, $new, $nameType, $armor) = itemDrop($db,"armor",$MLVL);
+list($iLVL, $name, $color, $new, $nameType, $armor) = itemDrop($db,"armor",$MLVL);
 //get User and current Armor
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);

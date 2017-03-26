@@ -138,7 +138,7 @@ if($Dmg>$ARM[4]){
 	$compareARM="more";
 }
 
-$reward = "<b><font color='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
+$reward = "<b><font class='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
 Item lvl: <b><span class='$compareLVL'>$ILVL</span></b><br>
 Item Armor: <b><span class='$compareARM'>$Dmg</span></b><br>
 Item worth: $MoneySel Gold<br>

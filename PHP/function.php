@@ -88,7 +88,7 @@ function itemDrop($drop,$MLVL){
         //$check=rand(1,1);
         $check=2;
         if($check==2){
-            $drop="armor"
+            $drop="armor";
         }
     }
     if($drop=="armor"){
@@ -194,6 +194,6 @@ function itemDrop($drop,$MLVL){
                 $rel = 1;
             }
         }
-        return array ($iLVL, $armor, $name,$new,$nameType)
+        return array ($iLVL, $armor, $name,$new,$nameType);
     }
 }

@@ -199,13 +199,10 @@ $order = "INSERT INTO weapondrops
 	  VALUES
 	   ('$HASH', '$Name', '$TYPE', '$Color', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$AS', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
 	   
-$order2 = "INSERT INTO inventor
-(User, Hash)
-VALUES
-('$User','$HASH')";	   
+
 
 $result = mysqli_query($db, $order);
-$result = mysqli_query($db, $order2);
+
 
 $MoneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
 $_SESSION["GoldRew"] = $MoneyRew;
@@ -237,10 +234,6 @@ SET `HASH` = '$HASH'
 WHERE `ID` = '$ID'";
 $result = mysqli_query($db, $order3);	
 
-$order4 = "UPDATE wboss
-SET `Killer` = '$User'
-WHERE `ID` = '$IDB'";
-$result = mysqli_query($db, $order4);	
 
 
 $BOS = mysqli_query($db,"SELECT * FROM wboss where ID = '$ID' ");
@@ -289,13 +282,23 @@ if ($BOS[6] != ""){
   </section>
 ';}
 else{
+	
+	$order4 = "UPDATE wboss
+	SET `Killer` = '$User'
+	WHERE `ID` = '$IDB'";
+	$result = mysqli_query($db, $order4);	
+
 
 $a = 0;
 
  $List = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
 while ($List1 = mysqli_fetch_array($List)){
 	if ($a == 0) {
-	$_SESSION["TOP"] = $List1[1];
+	$order2 = "INSERT INTO inventor
+	(User, Hash)
+	VALUES
+	('$User','$HASH')";	   
+	$result = mysqli_query($db, $order2);
 	$a = $a +1;};
 echo "<b>$List1[1]</b> - $List1[2] Dmg.<br>";
 $ACC2 = mysqli_query($db,"SELECT * FROM characters where user = '$List1[1]' ");

@@ -41,6 +41,10 @@ if (isset($_POST["HASH"])){
 //list item
 if ($listening == 1){
 	
+	if ($price <= 0){
+			header("location:sync.php");
+			die();
+	}
 	
 	$order = "INSERT INTO Trade
 	   (Hash, Seller, Price)
@@ -107,21 +111,21 @@ if ($WEPI[12] <> 0){
 		
 echo "<td>";	
 echo "<div class='tooltip'><b $unEf[$eft] class='$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div><br>";
-
-echo "<td     display: inline-flex;>
+ 
+echo "<div class='submit'><td     display: inline-flex;>
 Price: $List1[2]g.
 	      <form method='post' class='inventor' action='buy.php'>
           <input style='display:none' type='submit' name='Buy' value='$WEPI[0]' placeholder='lvl'>
-        <a class='submit'><button type='submit' name='Buy' value='$WEPI[0]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
+        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$WEPI[0]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
         </a>
       </form>";
 	  if ($User == $List1[1]){
 		    echo " <form method='post' class='inventor' action='buy.php'>
-        <a class='submit'><button type='submit' name='Remove' value='$WEPI[0]'><div class='tooltip'>Remove</div></button>
+        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$WEPI[0]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
         </a>
       </form>";}
 
-echo "</td></td></tr>";}
+echo "</div></td></td></tr>";}
 
 ?>
 </table>
@@ -134,3 +138,16 @@ echo "</td></td></tr>";}
     </div>
   </section>
   </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">  
+</script>
+<script type="text/javascript">
+
+  function myfunc(div) {
+  var className = div.getAttribute("class");
+  if(className=="submit") {
+    div.className = "disabled";
+  }
+  if(className=="showButon") {
+    div.className = "disabled";
+  }
+}

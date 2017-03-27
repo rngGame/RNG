@@ -121,9 +121,10 @@ Price: $List1[2]g.
         </a>
       </form>";}
 
-echo "</td></td></tr></table>";}
+echo "</td></td></tr>";}
 
 ?>
+</table>
 <div class="floating">
   <section class="container3">
     <div class="31-50">

@@ -142,7 +142,7 @@ echo "</div></td></td></tr>";}
 </script>
 <script type="text/javascript">
 
-  function myfunc(div) {
+function myfunc(div) {
   var className = div.getAttribute("class");
   if(className=="submit") {
     div.className = "disabled";
@@ -151,3 +151,9 @@ echo "</div></td></td></tr>";}
     div.className = "disabled";
   }
 }
+
+</script>
+<!--script ends here-->
+
+</body>
+</html>

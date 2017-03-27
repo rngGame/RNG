@@ -197,7 +197,7 @@ $wor = $LVL + $dMAX + $maMAX + $HIT;
 $order = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$Name', '$TYPE', '$Color', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$AS', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
+	   ('$HASH', '$Name', '$TYPE', 'World', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$AS', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
 	   
 
 

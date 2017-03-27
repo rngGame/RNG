@@ -34,7 +34,7 @@ $MOD = mysqli_fetch_row($MOD);
 $List = mysqli_query($db,"SELECT * FROM Achievments where User = '$User' ");
 while ($List1 = mysqli_fetch_array($List)){	
 echo "  <form method='post' action='chng.php'>$List1[1] - $List1[2] - 
-          <input hidden='' type='submit' name='change' value='$List1[2]' placeholder='title'>
+          <input style='display:none' type='submit' name='change' value='$List1[2]' placeholder='title'>
         <a class='submit'><button type='submit' name='change' value='$List1[2]'>Use it.</button> 
         </a> </form><br>";
 

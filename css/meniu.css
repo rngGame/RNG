@@ -111,6 +111,20 @@ height:255px;
     width: 122px;
 }
 
+.inventor{
+display:inline;	
+}
+
+.tradebutton{
+display: inline;
+}
+
+.floating{
+	    position: fixed;
+    margin: -85px 0px 0px 800px;
+}
+
+
 #veil2 {
     margin: -52px 0px 0px 28px;
     position: absolute;

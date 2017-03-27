@@ -28,7 +28,7 @@
 <file name="FightTB.php" server="ftp.miniforums.org" local="131350224081646253" remote="131349900000000000" Dst="2" />
 <file name="fightTP.php" server="ftp.miniforums.org" local="131349460383101981" remote="131337154800000000" Dst="1" />
 <file name="fleed.php" server="ftp.miniforums.org" local="131349460387624348" remote="131236829400000000" Dst="1" />
-<file name="game.php" server="ftp.miniforums.org" local="131350362284492506" remote="131350038000000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131350926489957979" remote="131350602000000000" Dst="2" />
 <file name="in.php" server="ftp.miniforums.org" local="131349460400685338" remote="131236829400000000" Dst="1" />
 <file name="ind.php" server="ftp.miniforums.org" local="131349460404192838" remote="131236829400000000" Dst="1" />
 <file name="index.php" server="ftp.miniforums.org" local="131349460409164759" remote="131299692600000000" Dst="1" />
@@ -85,4 +85,6 @@
 <file name="point.php" server="ftp.miniforums.org" local="131349460493924732" remote="131348046600000000" Dst="1" />
 <file name="uniqR.php" server="ftp.miniforums.org" local="131349460624170698" remote="131348242200000000" Dst="1" />
 <file name="deploy.php" server="ftp.miniforums.org" local="131349540311845329" remote="131349253800000000" Dst="1" />
+<file name="auctionhouse.php" server="ftp.miniforums.org" local="131350935131457591" remote="131350611000000000" Dst="2" />
+<file name="buy.php" server="ftp.miniforums.org" local="131350934213678341" remote="131350609800000000" Dst="2" />
 </dwsync>

@@ -88,6 +88,11 @@ height:255px;
     width: 125px;
 }
 
+.floating{
+	    position: fixed;
+    margin: -85px 0px 0px 800px;
+}
+
 #veilvl {
     margin: -152px 0px 0px 773px;
     position: absolute;
@@ -364,7 +369,18 @@ a:hover, a:active{
     text-decoration: underline !important;
 }
 
+.inventor{
+display:inline;	
+}
 
+.tradebutton{
+display: inline;
+	color: #E4E4E4;
+    background-color: #222427;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #2f3236;
+}
 
 input[type="submit"], button[type="submit"]{
     color: #E4E4E4;
@@ -372,6 +388,7 @@ input[type="submit"], button[type="submit"]{
     border-width: 2px;
     border-style: outset;
     border-color: #2f3236;
+	    display: inline;
 }
 
 input[type="text"]{

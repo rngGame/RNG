@@ -588,11 +588,6 @@ echo "<div id='minichat'><iframe height='100px' width='300px' src='message.php'>
           <input type="submit" name="commit" value="World Boss">
 Free.</p>
       </form>
-        <form method="post" action="auctionhouse.php">
-         <input hidden="" type="text" name="" value="" placeholder="Auction House">
-        <p class="submit">
-          <input type="submit" name="commit" value="Auction House"></p>
-      </form>
     </div>
   </section>
   <!--<section class="container5">
@@ -738,34 +733,24 @@ if ($WEPI[12] <> 0){
 
 echo "<td>";
 echo "<div class='tooltip'><b $unEf[$eft] class='$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
-echo "<td     display: inline-flex;>
-	      <form method='post' class='inventor' action='Equip.php'>
-          <input style='display:none' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
+echo "<td>
+	      <form method='post' action='Equip.php'>
+          <input hidden='' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
         <a class='submit'><button type='submit' name='Eqip' value='$WEPI[0]'>Equip</button> 
         </a>
-          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>
+          <input hidden='' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>
         <a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>
         </a>
-
       </form>
-	  
-		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
-	  
-<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
-<form >
-Asking price: <input type='number' name='price' value='0'>
-<input type='text' name='HASH' value='$WEPI[0]' style='display:none'>
- <input type='submit' value='Submit'>
-</form></form>
-
 </td>";
 echo "</td></tr>";}
 
 mysqli_close($db);
 ?>
+
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.4)</b></a><br>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.3)</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {
@@ -776,29 +761,6 @@ if(typeof(EventSource) !== "undefined") {
 } else {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
 }
-
-function hide(a)
-{
-	var id = a;
-	var tf = "asd" + (id);
-	var bt = "button" + (id);
-	
-    document.getElementById(tf).style.display="none";
-	document.getElementById(bt).onclick=function () { show(a) };
-
-
-}
-function show(a)
-{
-	var id = a;
-	var tf = "asd" + (id);
-	var bt = "button" + (id);
-	
-    document.getElementById(tf).style.display="block";
-	document.getElementById(bt).onclick=function () { hide(a) };
-
-}
-
 </script>
 </body>
 <font style="font-size:0px"> - By Kompas 2014-2017 </font>

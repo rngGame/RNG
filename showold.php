@@ -53,7 +53,7 @@ $WEP = mysqli_fetch_row($WEP);
 
 echo "<br>Droped: ";
 if (!$WEP[2] == ""){
-	echo "<b style='color:#$WEP[5]'>$WEP[1] ($WEP[2])</b>";}
+	echo "<b class='world'>$WEP[1] ($WEP[2])</b>";}
 	else{
 		echo "$WEP[1]";}
 

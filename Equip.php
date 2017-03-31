@@ -31,6 +31,14 @@ if (isset($_POST['Eqip'])) {
 	$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$new' ");
 	$WEP = mysqli_fetch_row($WEP);
 	
+	if ($WEP[3] == "ff6633"){
+		$shards = 30;
+		$shards = $ACC[15] + $shards;
+	$order0 = "UPDATE characters
+	SET Shards = '$shards'
+	WHERE `User` = '$User'";
+	$result = mysqli_query($db, $order0);}
+	
 	$sell = ($WEP[4] + $ACC[3]) *10;
 	$sell = round($ACC[4] + $sell);
 	

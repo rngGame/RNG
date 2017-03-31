@@ -754,9 +754,14 @@ echo "<td     display: inline-flex;>
           <input style='display:none' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
         <a class='submit'><button type='submit' name='Eqip' value='$WEPI[0]'>Equip</button> 
         </a>
-          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>
-        <a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>
-        </a>
+          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>";
+		if ($WEPI[3] == "ff6633"){
+        echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
+		else{
+		echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+		}
+		
+        echo "</a>
 
       </form>
 	  

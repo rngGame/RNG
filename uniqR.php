@@ -28,6 +28,9 @@ $Reward = $_SESSION["Reward"];
 $sell = $_SESSION["Sell"];
 $Gold = $_SESSION["GoldRew"];
 
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
+
 $Unq = $_SESSION["UNQ"]; //check if uniq still valid
 
 if (isset($_SESSION["SHD"])){
@@ -51,12 +54,22 @@ $result = mysqli_query($db, $order3);
 $_SESSION["UNQ"] = 1515615565465;
 }
 
+//check if its from shards
+if (isset($_SESSION["SHARDREW"])){
+	$Shard = $ACC[15] - 100;
+	$order2 = "UPDATE characters
+	SET Shards = '$Shard'
+	WHERE `User` = '$User'";
+	$result = mysqli_query($db, $order2);	
+	unset($_SESSION["SHARDREW"]);
+}
+else{
 echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";
 
 echo ' <div class="right-panel">';
 echo $_SESSION["LOG"];
 echo '</div>';
-
+}
 echo "<b><font color='gold'>You recived UNIQUE WEAPON !!!</font><b>";
 
 

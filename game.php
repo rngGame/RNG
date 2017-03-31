@@ -470,6 +470,9 @@ if ($WEP[14]<>0){
 		if ($WEP[13] == "BK"){
 	$efftype = "Block Chanse";
 	}
+		if ($WEP[13] == "SM"){
+	$efftype = "Summon increase";
+	}
 	$eft = "$efftype $WEP[14] %<br>";}
 	
 	if ($WEP[3] == "ff6633"){
@@ -733,11 +736,14 @@ if ($WEPI[14]<>0){
 		if ($WEPI[13] == "ST"){
 	$efftype[$eft] = "Stun Chanse";
 	}
-			if ($WEPI[13] == "SH"){
+		if ($WEPI[13] == "SH"){
 	$efftype = "Shock Chanse";
 	}
 		if ($WEPI[13] == "BK"){
 	$efftype = "Block Chanse";
+	}
+		if ($WEPI[13] == "SM"){
+	$efftype = "Summon increase";
 	}
 	$efto[$eft] = "$efftype[$eft] $WEPI[14] %<br>";}
 

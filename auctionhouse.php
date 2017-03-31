@@ -46,10 +46,14 @@ if ($listening == 1){
 			die();
 	}
 	
+	$WEPINF = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$hash' ");
+	$WEPINF = mysqli_fetch_row($WEPINF);
+
+	
 	$order = "INSERT INTO Trade
-	   (Hash, Seller, Price)
+	   (Hash, Seller, Price, ilvl, Worth)
 	  VALUES
-	   ('$hash', '$User', '$price')";
+	   ('$hash', '$User', '$price', '$WEPINF[4]', '$WEPINF[16]')";
 	$result = mysqli_query($db, $order);
 	
 	$sql="DELETE FROM inventor WHERE hash='$hash'";
@@ -69,7 +73,7 @@ echo "</div><br><b>Auction House:</b><table border='0' class='solid'>
 </tr>";
 
 echo "<tr>";
-$List = mysqli_query($db,"SELECT * FROM Trade");
+$List = mysqli_query($db,"SELECT * FROM Trade ORDER BY Worth DESC");
 while ($List1 = mysqli_fetch_array($List)){	
 
 $WEPI = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$List1[0]' ");

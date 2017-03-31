@@ -42,6 +42,8 @@ if ($WEP[13] == "FR" or $SUB[6] == "FR"){
 	if ($frz == 0){
 		$frz = 1;}
 	$freez = $freez * $frz;
+	if ($freez > 400000){
+		$freez = 400000;}
 	$_SESSION["freez"] = $freez;
 	$fre = "Monster freezed for $freez dmg.<br>";
 }

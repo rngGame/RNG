@@ -203,7 +203,7 @@ if ($SKL ==7 or $pos == 1){
 //calculation dmg to mons
 $finalMonsHP = $monHP;
 
-if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==2 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34 or $SKL ==35){ //check for basic attack
+if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34 or $SKL ==35){ //check for basic attack
 if (rand(0,100) <= $WEP[11]){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
 if ($ddam == 1){
@@ -215,8 +215,9 @@ else{
 	$mis = 1;
 	$finalMonsHP = $monHP;
 }}
- $magick;
-if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36){
+
+ //magick
+if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2){
 $finalPlayerDMG = $magick + $effect + $gemDMG +  $poison;
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}

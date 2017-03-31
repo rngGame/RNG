@@ -13,7 +13,7 @@ if ($SKL ==1){
 
 //skill 2
 $hpT = "";
-if ($SKL ==2){
+if ($SKL == 2){
 	$perc = 10;
 	if ($CLS[6] == "HEAL"){
 	$perc = 15;}
@@ -26,6 +26,7 @@ if ($SKL ==2){
 	$hpT = "Increased helth by <font color='#e6e600'>$HPi</font><br>";
 	$ene = $ene - 40;
 	$_SESSION["ENERGY"] = $ene;
+	$healdmg = $magDMG;
 };
 
 //skill 3
@@ -124,11 +125,18 @@ if ($SKL ==5){
 	if ($SUB[5] == "REFL"){
 		$mref = rand(90,150);}
 		
- 	$monsRef = ($monDMG * $mref / 100) + $Armor;
+		
+	$calcref = $mref / 100;
+ 	$monsRef = ($monDMG * $calcref / 100) + $Armor;
+	$dmgmitig = $calcref / 10;
 	if ($CLS[6] == "TANK"){
-	$monsRef = ($monDMG * $mref / 100) + $Armor*1.2;}
+	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.2;
+	$dmgmitig = $calcref / 9;}
 	if ($SUB[5] == "REFL"){
-	$monsRef = ($monDMG * $mref / 100) + $Armor*1.5;}
+	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.5;
+	$dmgmitig = $calcref / 8;}
+	
+	$monDMG = round($monDMG - $dmgmitig);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
@@ -310,6 +318,6 @@ if ($SKL == 36){
 }
 
 
-$magick = $fball + $comb + $finallICE + $finalsacriface;
+$magick = $fball + $comb + $finallICE + $finalsacriface + $healdmg;
 $magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext"  ;
 ?>

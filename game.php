@@ -191,14 +191,16 @@ $XPL1 = round($XPL1);
 $XPL2 = ($XPL[1] - $ACC[5]);
 $XPL2 = round($XPL2);
 
+$generatedXP = round(100*(1-(($XPL1-$XPL0)/$XPL1))) ;
+
 
 $XPLc = mysqli_query($db,"SELECT EXISTS(SELECT * FROM levels WHERE LVL = '$lvl2')");
 $XPLc = mysqli_fetch_row($XPLc);
 if ($XPLc[0] ==1){
-	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress>(XP to next LVL: $XPL2)</font>";
+	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(XP to next LVL: $XPL2)</div></font>";
 }
 else{
-	$leveltext = "<font size='1'><progress value='100' max='100'></progress>(Max level)</font>";
+	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)/div></font>";
 }
 
 ?>

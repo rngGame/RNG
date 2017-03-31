@@ -222,7 +222,7 @@ if ($SKL ==33){
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
 			$_SESSION["PETMINDMG"] = round($minMdmg * 15 / 100);
 			$_SESSION["PETMAXDMG"] = round($maxMdmg * 20 / 100);
-			$ene = $ene - 150;
+			$ene = $ene - 100;
 			$_SESSION["ENERGY"] = $ene;
 				if ($SUB[5] == "NECR"){ //if necromance
 				$_SESSION["PETHP"] = $HPO * 60 / 100;

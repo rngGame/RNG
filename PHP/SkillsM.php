@@ -62,7 +62,7 @@ if ($ACC[3] >= 20 and $SKL > 50){
 	      <form id='yourFormId' method='post' action='FCAL.php'>
           <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
         <p class='submit'><img class='blur' src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'></p> 
-      </form>
+      </form> 
     </div>&nbsp;&nbsp;
   ";}
   

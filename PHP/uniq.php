@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,11);
+$uniqRO = rand(1,12);
 
 //hash
 $HC = 0;
@@ -87,6 +87,14 @@ if ($uniqRO == 11){
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'French fries of power and confusion', 'Unique', 'ff6633', '69', '69', '169', '50', '1', '69', '69', '95', '10', 'ST', '35', '0', '350')";
+}
+
+//arminas Uniq
+if ($uniqRO == 12){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Summoners urgant wish stick', 'Unique', 'ff6633', '150', '1', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
 }
 
 

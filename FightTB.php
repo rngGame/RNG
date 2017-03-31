@@ -50,6 +50,9 @@ if (!isset($_SESSION["LOG"])){
 	$LOG = $_SESSION["LOG"];
 }
 
+if ($HPin > $_SESSION["HPO"]){
+	$HPin = $_SESSION["HPO"];}
+
 //average dmg recalculate
 $avgP = round(($minPdmg + $maxPdmg) / 2);
 $avgM = round(($minMdmg + $maxMdmg) / 2);
@@ -164,26 +167,6 @@ echo
     </div>&nbsp;&nbsp;
   ";}
   
-   if ($ACC[3] >= 20 and $SKL > 40){
- echo
-  "
-    <div class='tooltip'>
-	      <form method='post' action='FCAL.php'>
-          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
-        <p class='submit' onclick='myfunc(this)'><input img $c3 src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'><span class='tooltiptext'>40En.<br>Atack and increase helth<br>by $t3</span></p> 
-      </form>
-    </div>&nbsp;&nbsp;
-  ";}
-  else{
-	   echo
-  "
-    <div class='tooltip'>
-	      <form method='post' action='FCAL.php'>
-          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
-        <p class='submit'><img class='blur' src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'></p> 
-      </form>
-    </div>&nbsp;&nbsp;
-  ";}
   
      if ($ACC[3] >= 25 and $SKL > 30){
  echo

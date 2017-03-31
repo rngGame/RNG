@@ -84,7 +84,7 @@ if ($GEM[0] != "None"){
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 
 //skills
-if ($SKL <> "" or $_SESSION["PET"] == 1){
+if ($SKL <> "" and $SKL <> 1111 or $_SESSION["PET"] == 1){
 		include 'PHP/skills.php';
 }
 
@@ -119,8 +119,8 @@ if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
 		}
 }
 
-//Effects
-if ($WEP[14] <> 0 or $SUB[7] <> 0){
+//skills
+if ($WEP[14] <> 0){
 		include 'PHP/effect.php';
 }
 
@@ -164,7 +164,6 @@ else{
 	$pos = 1;
 }
 if ($SKL ==7 or $pos == 1){
-	$cantmiss = 1;
 	$pois = rand(1,5);
 	if ($CLS[6] == "POIS"){
 	$pois = rand(3,8);}
@@ -204,10 +203,8 @@ if ($SKL ==7 or $pos == 1){
 //calculation dmg to mons
 $finalMonsHP = $monHP;
 
-
-
-if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
-if (rand(0,100) <= $WEP[11] or $cantmiss == 1){
+if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or $SKL ==34 or $SKL ==35){ //check for basic attack
+if (rand(0,100) <= $WEP[11]){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
@@ -219,20 +216,18 @@ else{
 	$finalMonsHP = $monHP;
 }}
 
-//let use phsy dmg when pet summoned
-if ($_SESSION["PET"] == 1){
-	$finalPlayerDMGandPET = $finalPlayerDMG;
-	$petsum = 1;} 
-
  //magick
-if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = $magick + $effect + $gemDMG +  $poison + $finalPlayerDMGandPET;
+if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2){
+$finalPlayerDMG = $magick + $effect + $gemDMG +  $poison;
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
 }
 
 
+
+
+	$xDMG = $mHP - $DMGin - $monsRef   - $DMGinS;
 
 
 
@@ -281,7 +276,7 @@ $_SESSION["LOG"] = "";
 	$_SESSION["LOG"] = "$magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$magickText $User <b>Missed</b> <br><br>Monster did $tM dmg.<br><br><hr> $LOG<br>";
+		$_SESSION["LOG"] = " $User <b>Missed</b> <br><br>Monster did $tM dmg.<br><br><hr> $LOG<br>";
 	}
 
 

@@ -163,17 +163,8 @@ if ($SUB[6] == "CD"){
 			$Armor = $Armor *2;
 			$doubart = "<font color='gold'>Double Armor !</font><br>";
 }
-}
 
-//summon buff
-if ($WEP[13] == "SM" and $_SESSION["PET"] == 1){
-	$_SESSION["PET"] = 2;
-	
-	$_SESSION["PETHP"] = round($_SESSION["PETHP"] + ($_SESSION["PETHP"]  * $WEP[14] / 100));
-	$_SESSION["PETMINDMG"] = round($_SESSION["PETMINDMG"] + ($_SESSION["PETMINDMG"]  * $WEP[14]  / 100));
-	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEP[14]  / 100));
 }
-
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
 $efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";

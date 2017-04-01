@@ -104,10 +104,10 @@ $Passive = mysqli_fetch_row($Passive);
 
 $passiveXP = round($MLVL * $xpTalismanMulti);
 $_SESSION["XPPA"] = $passiveXP;
-$passiveXPTotal=round($passiveXP + $Passive[4]);
+$passiveXPTotal=round($passiveXP + $Passive[7]);
 
 $orderPassive = "UPDATE passive
-SET xp2= '$passiveXPTotal'
+SET xp3= '$passiveXPTotal'
 WHERE `User` = '$User'";
 
 $result = mysqli_query($db, $orderPassive);

@@ -126,15 +126,15 @@ if ($SKL ==5){
 		$mref = rand(90,150);}
 		
 		
-	$calcref = $mref / 100;
+	$calcref = $mref;
  	$monsRef = ($monDMG * $calcref / 100) + $Armor;
-	$dmgmitig = $calcref * 30;
+	$dmgmitig = $calcref;
 	if ($CLS[6] == "TANK"){
-	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.2;
-	$dmgmitig = $calcref * 50;}
+	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.2);
+	$dmgmitig = $calcref;}
 	if ($SUB[5] == "REFL"){
-	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.5;
-	$dmgmitig = $calcref * 100;}
+	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.5);
+	$dmgmitig = $calcref;}
 	
 	$monDMG = round($monDMG - $dmgmitig);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");

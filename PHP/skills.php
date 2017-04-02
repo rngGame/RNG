@@ -128,13 +128,13 @@ if ($SKL ==5){
 		
 	$calcref = $mref / 100;
  	$monsRef = ($monDMG * $calcref / 100) + $Armor;
-	$dmgmitig = $calcref / 10;
+	$dmgmitig = $calcref * 30;
 	if ($CLS[6] == "TANK"){
 	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.2;
-	$dmgmitig = $calcref / 9;}
+	$dmgmitig = $calcref * 50;}
 	if ($SUB[5] == "REFL"){
 	$monsRef = ($monDMG * $calcref / 100) + $Armor*1.5;
-	$dmgmitig = $calcref / 8;}
+	$dmgmitig = $calcref * 100;}
 	
 	$monDMG = round($monDMG - $dmgmitig);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");

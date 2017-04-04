@@ -35,6 +35,7 @@ $User = $_SESSION["User"];
 $gold = $_SESSION["Gold1"];
 $gl = $_SESSION["Gold2"];
 $BLVL = $_SESSION["fLVL"];
+$iLVL = $_SESSION["ILVL"];
 
 $dbs = "monster$BLVL";
 

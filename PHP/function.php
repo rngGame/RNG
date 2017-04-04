@@ -109,7 +109,6 @@ function itemDrop($db,$drop,$MLVL){
         else if($drop=="weapon"){
             $baseTable="basewep";
         }
-        $preTable=;
 
 
         $rel = 0;

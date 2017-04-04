@@ -146,19 +146,19 @@ function itemDrop($db,$drop,$MLVL){
             $rngType = rand(1,10000);
 
             //bases
-            $nameBase = $Base[1]; //takes the base name for the Armor
+            $nameBase = $baseHP; //takes the base name for the Armor
             if($drop=="armor"){
-                $iLVL = $Base[3]; //base level
-                $valueArmor = $Base[2]; //base armor
+                $iLVL = $baseDMG; //base level
+                $valueArmor = $baseLVL; //base armor
             }
             if($drop=="weapon"){
-                $iLVL = $Base[3]; //base level
-                $valueDMG = $Base[2]; //base dmg
+                $iLVL = $baseDMG; //base level
+                $valueDMG = $baseLVL; //base dmg
             }
             if($drop=="talisman"){
-                $iLVL = $Base[2];//base lvl
-                $valueDMG = $Base[3];//base dmg 
-                $valueArmor = $Base[4];//base armor
+                $iLVL = $baseLVL;//base lvl
+                $valueDMG = $baseDMG;//base dmg 
+                $valueArmor = $baseDrop;//base armor
                 $valueHP = $Base[5];//base HP
                 $valueXP = $Base[6]; //base XP
             }
@@ -367,4 +367,114 @@ function itemDrop($db,$drop,$MLVL){
         }
         return array ($iLVL, $HASH, $name, $color, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $AS, $HIT, $maMIN, $maMAX);
     }
+}
+
+function createMonster($iLVL){
+
+    $creationDone=false;
+    $timeCreated=0;
+    while(!$creationDone){
+        //Nullify vars
+        $N2 = "";   
+        $N3 = "";
+        $N4 = "";
+        $N5 = "";
+        $NE = "";
+        $Class = "";    
+        $mLVL = 0;
+        $Dmg = 0;
+        $Drop = 0;
+        $elvl = 0;
+        $baseName = "";
+        $baseHP = "";
+        $baseLVL = "";
+        $baseDMG = "";
+        $baseDrop = "";
+
+        //base range
+        $baseLow=round($iLVL*0.6/4-(5*$timeCreated),0); //Four items give lvl so we devide by four, 0.6 is 60% of your that level, -20 is for low numbers
+        $baseHigh=round($iLVL*1.4/4+(5*$timeCreated),0);
+        //get all the db info
+        $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>=$baseLow AND LVL<=$baseHigh Order by RAND() Limit  1");
+        if(mysqli_num_rows($Base)!=0 OR $timeCreated==99){
+            $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
+            $extraName="3RR0R";
+        }
+        list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);
+
+        $Pref = mysqli_query($db,"SELECT * FROM monspre Order by RAND() Limit   1");
+        list($preName, $preDrop, $preHP, $preDMG, $preLVL) = mysqli_fetch_row($Pref);
+
+        $Sub = mysqli_query($db,"SELECT * FROM monssub Order by RAND() Limit    1");
+        list($subName, $subDrop, $subHP, $subDMG, $subLVL) = mysqli_fetch_row($Sub);
+
+        $ench = mysqli_query($db,"SELECT * FROM monsenchant Order by RAND() Limit   1");
+        list($enchantName, $enchantLVL, $enchantEff) = mysqli_fetch_row($ench);
+
+        //pick picture
+        $monsterImageID=rand(1,21);
+        $_SESSION["MonsIMG"] = $monsterImageID;
+        //rng chances
+        $rngPre = rand(1,100);
+        $rngSub = rand(1,100);
+        $rngEnchant = rand(1,100);
+        $rngrare = rand(1,300);
+
+        //base set up
+        $Name = $baseName;
+        $HP = $baseHP;
+        $mLVL = $baseLVL;            
+        $DMG = $baseDMG;
+        $Drop = $baseDrop;
+
+        //Pre Set Up
+        if (rand(1,100) <= 40){
+            $namePre = $preName;
+            $HP *= $preHP;
+            $DMG *= $preDMG;
+            $mLVL += $preLVL;
+            $Drop += $preDrop * $bs;
+        }
+        //Sub Set Up
+        if (rand(1,100) <= 30){
+            $nameSub = $subName;
+            $HP *= $subHP;
+            $mLVL += $subLVL;
+            $DMG *= $subDMG;
+            $Drop *= $subDrop * $bs;
+        }
+        //Enchant Set Up
+        if (rand(1,100) <= 20){
+            $nameEnchant = $enchantName;
+            $HP *= $enchantEff;
+            $mLVL += $enchantLVL;
+            $DMG *= $enchantEff;
+            $Drop *= $enchantEff;
+        }
+
+        if (rand(1,300) == 100){
+            $nameRare = "<b style='color:#ff0066'>! RARE !</b>";
+            $HP *= 1.15;
+            $mLVL *= 1.5;
+            $DMG *= 0.8;
+            $Drop *= 10;
+            $_SESSION["MonsR"] = 1;
+        }
+        //finnish up
+        $name="$nameRare $nameEnchant $namePre $nameBase $nameSub";
+        $HP = round($HP,0);
+        $mLVL = round($LVL,0);
+        $DMG = round($DMG,0);
+        $Drop = round($Drop,0);
+        $timeCreated++;
+        //limits
+        $limitMaxLVL=$iLVL/4+30;
+        $limitMinLVL=$iLVL/4-30;
+        //check if monster is good enough
+        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100){
+            $creationDone=true;
+        }
+    }
+    return array ($name, $mLVL, $HP, $DMG, $Drop);
+
 }

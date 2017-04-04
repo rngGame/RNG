@@ -68,7 +68,8 @@ $_SESSION["Gold2"] = $gl;
 if ($Money > $glf){
 	mysqli_close($db);
 	
-header("location:fight.php");}
+	header("location:fight.php");
+}
 else{
 	session_destroy();
 	session_start();

@@ -45,6 +45,7 @@ list($name, $mLVL, $HP, $DMG, $Drop)=createMonster($iLVL);
 
 if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 	header("location:fightNew.php");}
+  die();
 	else {
 
     echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";

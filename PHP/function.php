@@ -84,116 +84,160 @@ function login($vardas, $password, $db) {
 }
 function itemDrop($db,$drop,$MLVL){
     if($drop=="all"){
-        $check=rand(1,2);
+        $check=rand(1,3);
         if($check==1){
-
+            $drop ="talisman";
         }
-        if($check==2){
+        else if($check==2){
             $drop="armor";
         }
+        else if($check==3){
+            $drop="weapon";
+        }
     }
-    if($drop=="armor"||$drop=="talisman"){
+    if($drop=="armor"||$drop=="talisman"||$drop=="weapon"){
+
+        $preTable="prefixwep";
+        //check which item
+        if($drop=="armor"){
+            $baseTable="basearmor";
+        }
+        else if($drop=="talisman"){
+            $baseTable="basetalis";
+            $preTable="pretalis";
+        }
+        else if($drop=="weapon"){
+            $baseTable="basewep";
+        }
+        $preTable=;
+
 
         $rel = 0;
 
         while ($rel == 0){
             //get info from db general
+            $Base = mysqli_query($db,"SELECT * FROM $baseTable Order by RAND() Limit     1");
+            $Base = mysqli_fetch_row($Base);
+            $Pre = mysqli_query($db,"SELECT * FROM $preTable Order by RAND() Limit   1");
+            $Pre = mysqli_fetch_row($Pre);
             $Sub = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit  1");
             $Sub = mysqli_fetch_row($Sub);
             $Type = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit     1");
             $Type = mysqli_fetch_row($Type);
             $Type2 = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit    1");
             $Type2 = mysqli_fetch_row($Type2);
+            $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit     1");
+            $Sub2 = mysqli_fetch_row($Sub2);
+            $Skill = mysqli_query($db,"SELECT * FROM iskills Order by RAND() Limit  1");
+            $Skill = mysqli_fetch_row($Skill);
             $Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
 
-            //talisman specific
-            if($drop=="talisman"){
-                $Base = mysqli_query($db,"SELECT * FROM basetalis Order by RAND() Limit     1");
-                $Base = mysqli_fetch_row($Base);
-                $Pre = mysqli_query($db,"SELECT * FROM pretalis Order by RAND() Limit   1");
-                $Pre = mysqli_fetch_row($Pre);
-            }
-
-            //armor specific
-            if($drop=="armor"){
-                $Base = mysqli_query($db,"SELECT * FROM basearmor Order by RAND() Limit     1");
-                $Base = mysqli_fetch_row($Base);
-                $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit     1");
-                $Sub2 = mysqli_fetch_row($Sub2);
-            }
-
             //Nulify vars
-            $nameType = "";    
+            $typeName = "";    
             $iLVL = 0;
-            $value= $value2= $value3= $value4= 0; //was dmg, delete comment before finnish
+            $valueDMG= $valueArmor= $valueHP= $valueXP= 0; //was dmg, delete comment before finnish
             $enchantLVL = 0; //give + to item
+            $typeBonus=1;
 
             //rng stuff for 
-            $rngPre = rand(1,99-($MLVL/1.9));
-            $rngSub = rand(1,99-($MLVL/1.9));
-            $rngSub2 = rand(1,150-($MLVL/2.4));
-            $rngType = rand(0,500-($MLVL*2.5));
+            $rngPre = rand(1,10000);
+            $rngSub = rand(1,10000);
+            $rngSkill = rand(1,10000));
+            $rngType = rand(1,10000);
 
             //bases
             $nameBase = $Base[1]; //takes the base name for the Armor
             if($drop=="armor"){
                 $iLVL = $Base[3]; //base level
-                $value = $Base[2]; //base armor
+                $valueArmor = $Base[2]; //base armor
+            }
+            if($drop=="weapon"){
+                $iLVL = $Base[3]; //base level
+                $valueDMG = $Base[2]; //base dmg
             }
             if($drop=="talisman"){
-                $iLVL = $Base[2];
-                $value = $Base[3];
-                $value2 = $Base[4];
-                $value3 = $Base[5];
-                $value4 = $Base[6]; 
+                $iLVL = $Base[2];//base lvl
+                $valueDMG = $Base[3];//base dmg 
+                $valueArmor = $Base[4];//base armor
+                $valueHP = $Base[5];//base HP
+                $valueXP = $Base[6]; //base XP
             }
-
-            if($rngPre<30 && $drop=="talisman"){
+            //Prefix for talismans
+            if($rngPre>3000 && $drop=="talisman"){
                 $namePre=$Pre[1];
-                $value*=$Pre[2];
-                $value2*=$Pre[2];
-                $value3*=$Pre[2];
-                $value4*=$Pre[2];
+                $valueDMG*=$Pre[2];
+                $valueArmor*=$Pre[2];
+                $valueHP*=$Pre[2];
+                $valueXP*=$Pre[2];
                 $iLVL+=$Pre[3];
 
             }
-            if($rngSub<30 && $drop=="talisman"){
+            //Prefix for weapons
+            if($rngPre>3000 && $drop=="weapon"){
+                $namePre=$Pre[1];
+                $valueDMG+=$Pre[3];
+                $iLVL+=$Pre[2];
+            }
+            //Subfix for talismans
+            if($rngSub>3000 && $drop=="talisman"){
                 $nameSub = "and $Sub[1]";
-                $value +=$Sub[3];
-                $value2 +=$Sub[3]/3;
-                $value3 +=$value3*$Sub[3]/200;
-                $value4 *=1.2;
+                $valueDMG +=$Sub[3];
+                $valueArmor +=$Sub[3]/3;
+                $valueHP +=$valueHP*$Sub[3]/200;
+                $valueXP *=1.2;
                 $iLVL +=$Sub[2];
             }
-            if($rngSub < 20 && $drop=="armor"){  //checks for first Sub rng
+            //Subfixes for armor
+            if($rngSub > 2000 && $drop=="armor"){  //checks for first Sub rng
                 $nameSub ="of $Sub[1]";
-                $value += $Sub[3]/2;
+                $valueArmor += $Sub[3]/2;
                 $iLVL += $Sub[2];
-                if($rngSub2 < 30){ //checks for second Sub rng
+                if($rngSub > 3000){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
-                    $value += $Sub2[3]/2;
+                    $valueArmor += $Sub2[3]/2;
                     $iLVL += $Sub2[2];
                 }
             }
-            if($rngType < $Type[2]){ //checks for Type rng first time
-                $nameType ="$Type[1]";
-                $color = "$Type[4]";
-                $value += ($value * $Type[3] / 100);
-                $value2 += ($value2 * $Type[3] / 100);
-                $value3 += ($value3 * $Type[3] / 100);
-                $iLVL += $iLVL * $Type[3] / 100;
+            //Subfixes for weapon
+            if($rngSub > 5000 && $drop=="weapon"){  //checks for first Sub rng
+                $nameSub ="of $Sub[1]";
+                $valueDMG += $Sub[3];
+                $iLVL += $Sub[2];
+                if($rngSub > 7000){ //checks for second Sub rng
+                    $nameSub2 ="and $Sub2[1]";
+                    $valueDMG += $Sub2[3];
+                    $iLVL += $Sub2[2];
+                }
             }
-            else if($rngType < $Type2[2]){ //checks for Type rng second time
-                $nameType ="$Type2[1]";
+            //Types for drops x2
+            if($rngType < $Type[2]*200){ //checks for Type rng first time
+                $typeName ="$Type[1]";
+                $color = "$Type[4]";
+                $typeBonus=$Type[3] / 100;
+                $valueDMG += $valueDMG * $typeBonus;
+                $valueArmor += $valueArmor * $$typeBonus;
+                $valueHP += $valueHP * $typeBonus;
+                $iLVL += $iLVL * $typeBonus;
+            }
+            else if($rngType < $Type2[2]*200){ //checks for Type rng second time
+                $typeName ="$Type2[1]";
                 $color = "$Type2[4]";
-                $value += ($value * $Type2[3] / 100);
-                $value2 += ($value2 * $Type[3] / 100);
-                $value3 += ($value3 * $Type[3] / 100);
-                $iLVL += $iLVL * $Type2[3] / 100;
+                $typeBonus=$Type[3] / 100;
+                $valueDMG += $valueDMG * $typeBonus;
+                $valueArmor += $valueArmor * $typeBonus;
+                $valueHP += $valueHP * $typeBonus;
+                $iLVL += $iLVL * $typeBonus;
+            }
+            //Skill for Weapon
+            if($rngSkill>9600){
+                $iLVL+=$Skill[7];
+                $skillName = $Skill[1];
+                $skillID = $Skill[0];
+                $skillText = "Skill : $Skill[1]<br>";
             }
 
             //check how many enchants rng
-            while($Ench = mysqli_fetch_array($Enchant)) {
+            while($Ench = mysqli_fetch_array($Enchant and $drop!="weapon")) {
                 if($Ench[1] > rand(-200,400-$MLVL)){
                     $enchantLVL += 1;
                     }
@@ -203,49 +247,124 @@ function itemDrop($db,$drop,$MLVL){
                 $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
                 $Plius = mysqli_fetch_row($Plius);
                 $nameEnchant = "+ $enchantLVL";
-                $value += $value * $Plius[2] / 100;
-                $value2 += $value2 * $Plius[2] / 100;
-                $value3 += $value3 * $Plius[2] / 100;
+                $valueDMG += $valueDMG * $Plius[2] / 100;
+                $valueArmor += $valueArmor * $Plius[2] / 100;
+                $valueHP += $valueHP * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
             }
+
+            //Creating weapon values
+            $valuePhysMin = round($valueDMG * rand(80,100)/100);
+            $valuePhysMax = round($valueDMG * rand(100,130)/100);
+            $CRIT = round(1 + 10*$typeBonus);
+            $AS = round(rand(80,150)/100,1);
+            $valueMagMIN = round($valueDMG *rand(1,50)/100);
+            $valueMagMAX = round($valueDMG *rand(1,150)/100);  
+            $HIT = rand(85,100);
+
             //finnishing up values
             $iLVL = round($iLVL, 0);
-            $value = round($value, 0);
-            $value2 = round($value2, 0);
-            $value3 = round($value3, 0);
-            $value4 = round($value4, 1);
+            $valueDMG = round($value, 0);
+            $valueArmor = round($valueArmor, 0);
+            $valueHP = round($valueHP, 0);
+            $valueXP = round($valueXP, 1);
 
-            if($value <= 0){
-                $value = 1;
+            if($valueDMG <= 0){
+                $valueDMG = 1;
             }
-            if($value2 <= 0){
-                $value2 = 1;
+            if($valueArmor <= 0){
+                $valueArmor = 1;
             }
-            if($value3 <= 0){
-                $value3 = 1;
+            if($valueHP <= 0){
+                $valueHP = 1;
             }
-            if($value4 <= 0){
-                $value4 = 1;
+            if($valueXP <= 0){
+                $valueXP = 1;
             }
+
+            //hashing item
+            $hashClaimed = 0;
+            $HASH = rand(-90000000,900000000);
+            $HASH = $HASH * $iLVL;
+            $HASH = $HASH + rand(-1000,1000);
+            $result = mysqli_query($db,"SELECT * FROM weapondrops WHERE HASH = '$HASH'");
+            $count = mysqli_num_rows($result);
+            if($count==1){ //if hash claimed, we will redo this
+                $hashClaimed = 1;
+            }
+
 
             $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
-            if(!$nameType == ""){ //coloring the name, if needed
-                $new = "<b class='$color'>$name ($nameType)</b>";
+            if(!$typeName == ""){ //coloring the name, if needed
+                $itemName = "<b class='$color'>$name ($typeName)</b>";
             }
             else{
-                $new = "<b>$name</b>";
+                $itemName = "<b>$name</b>";
+            }
+            //deciding on effect
+            if (rand(0,100) < 15){
+                $rngEffect = rand(1,5);
+                if ($rngEffect == 1){
+                    $effectName = "Life Leach";
+                    $effectShort = "LL";
+                    $effectChance = rand(1,7);
+                }
+                if ($rngEffect == 2){
+                    $effectName = "Bleed";
+                    $effectShort = "BL";
+                    $effectChance = rand(10,30);
+                }
+                if ($rngEffect == 3){
+                    $effectName = "Burn";
+                    $effectShort = "BR";
+                    $effectChance = rand(1,20);
+                }
+                if ($rngEffect == 4){
+                    $effectName = "Freez";
+                    $effectShort = "FR";
+                    $effectChance = rand(10,20);
+                    
+                }
+                if ($rngEffect == 5){
+                    $effectName = "Stun";
+                    $effectShort = "ST";
+                    $effectChance = rand(5,30);
+                }
+                if ($rngEffect == 6){
+                    $effectName = "Shock";
+                    $effectShort = "SH";
+                    $effectChance = rand(20,50);
+                    
+                }
+                if ($rngEffect == 7){
+                    $effectName = "Block";
+                    $effectShort = "BK";
+                    $effectChance = rand(5,20);
+                    
+                }
+                if ($rngEffect == 8){
+                    
+                }
+                if ($rngEffect == 9){
+                    
+                }
+                
+                if ($rngEffect == 10){
+                    
+                }
+                $effect = "Effect: $effectName $effectChance %<br>";
             }
 
             //creating lowest weapon, best weapon acording to level
             $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
 
-            if($iLVL < $rngValueMax and $iLVL > $rngValueMin){ //if weapon is okay acording to level, stop while
+            if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
                 $rel = 1;
             }
         }
-        return array ($iLVL, $name, $color, $new, $nameType, $value, $value2, $value3, $value4);
+        return array ($iLVL, $HASH, $name, $color, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $AS, $HIT, $maMIN, $maMAX);
     }
 }

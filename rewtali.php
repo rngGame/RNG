@@ -10,7 +10,7 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
-list($iLVL, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
+list($iLVL,, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
 $cash = $iLVL*$sell;
 
 
@@ -30,6 +30,8 @@ $_SESSION["GoldRew"] = $moneyRew;
 
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
+
+//Name Fixing
 
 
 //Comparing

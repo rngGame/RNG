@@ -368,7 +368,7 @@ function itemDrop($db,$drop,$MLVL){
     }
 }
 
-function createMonster($iLVL){
+function createMonster($db,$iLVL){
 
     $creationDone=false;
     $timeCreated=0;

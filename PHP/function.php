@@ -133,7 +133,7 @@ function itemDrop($db,$drop,$MLVL){
             $Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
 
             //Nulify vars
-            $nameType = "";    
+            $typeName = "";    
             $iLVL = 0;
             $valueDMG= $valueArmor= $valueHP= $valueXP= 0; //was dmg, delete comment before finnish
             $enchantLVL = 0; //give + to item
@@ -211,7 +211,7 @@ function itemDrop($db,$drop,$MLVL){
             }
             //Types for drops x2
             if($rngType < $Type[2]*200){ //checks for Type rng first time
-                $nameType ="$Type[1]";
+                $typeName ="$Type[1]";
                 $color = "$Type[4]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
@@ -220,7 +220,7 @@ function itemDrop($db,$drop,$MLVL){
                 $iLVL += $iLVL * $typeBonus;
             }
             else if($rngType < $Type2[2]*200){ //checks for Type rng second time
-                $nameType ="$Type2[1]";
+                $typeName ="$Type2[1]";
                 $color = "$Type2[4]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
@@ -258,8 +258,8 @@ function itemDrop($db,$drop,$MLVL){
             $valuePhysMax = round($valueDMG * rand(100,130)/100);
             $CRIT = round(1 + 10*$typeBonus);
             $AS = round(rand(80,150)/100,1);
-            $maMIN = round($valueDMG *rand(1,50)/100);
-            $maMAX = round($valueDMG *rand(1,150)/100);  
+            $valueMagMIN = round($valueDMG *rand(1,50)/100);
+            $valueMagMAX = round($valueDMG *rand(1,150)/100);  
             $HIT = rand(85,100);
 
             //finnishing up values
@@ -283,9 +283,9 @@ function itemDrop($db,$drop,$MLVL){
             }
 
             //hashing item
-            $HC = 0;
+            $hashClaimed = 0;
             $HASH = rand(-90000000,900000000);
-            $HASH = $HASH * $LVL;
+            $HASH = $HASH * $iLVL;
             $HASH = $HASH + rand(-1000,1000);
             $result = mysqli_query($db,"SELECT * FROM weapondrops WHERE HASH = '$HASH'");
             $count = mysqli_num_rows($result);
@@ -297,11 +297,11 @@ function itemDrop($db,$drop,$MLVL){
             $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
-            if(!$nameType == ""){ //coloring the name, if needed
-                $new = "<b class='$color'>$name ($nameType)</b>";
+            if(!$typeName == ""){ //coloring the name, if needed
+                $itemName = "<b class='$color'>$name ($typeName)</b>";
             }
             else{
-                $new = "<b>$name</b>";
+                $itemName = "<b>$name</b>";
             }
             //deciding on effect
             if (rand(0,100) < 15){
@@ -354,7 +354,7 @@ function itemDrop($db,$drop,$MLVL){
                 if ($rngEffect == 10){
                     
                 }
-                $ef = "Effect: $effectName $effectChance %<br>";
+                $effect = "Effect: $effectName $effectChance %<br>";
             }
 
             //creating lowest weapon, best weapon acording to level
@@ -365,6 +365,6 @@ function itemDrop($db,$drop,$MLVL){
                 $rel = 1;
             }
         }
-        return array ($iLVL, $name, $color, $new, $nameType, $valueDMG, $valueArmor, $valueHP, $valueXP);
+        return array ($iLVL, $HASH, $name, $color, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $AS, $HIT, $maMIN, $maMAX);
     }
 }

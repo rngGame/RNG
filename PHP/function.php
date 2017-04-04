@@ -282,6 +282,18 @@ function itemDrop($db,$drop,$MLVL){
                 $valueXP = 1;
             }
 
+            //hashing item
+            $HC = 0;
+            $HASH = rand(-90000000,900000000);
+            $HASH = $HASH * $LVL;
+            $HASH = $HASH + rand(-1000,1000);
+            $result = mysqli_query($db,"SELECT * FROM weapondrops WHERE HASH = '$HASH'");
+            $count = mysqli_num_rows($result);
+            if($count==1){ //if hash claimed, we will redo this
+                $hashClaimed = 1;
+            }
+
+
             $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
@@ -291,12 +303,65 @@ function itemDrop($db,$drop,$MLVL){
             else{
                 $new = "<b>$name</b>";
             }
+            //deciding on effect
+            if (rand(0,100) < 15){
+                $rngEffect = rand(1,5);
+                if ($rngEffect == 1){
+                    $effectName = "Life Leach";
+                    $effectShort = "LL";
+                    $effectChance = rand(1,7);
+                }
+                if ($rngEffect == 2){
+                    $effectName = "Bleed";
+                    $effectShort = "BL";
+                    $effectChance = rand(10,30);
+                }
+                if ($rngEffect == 3){
+                    $effectName = "Burn";
+                    $effectShort = "BR";
+                    $effectChance = rand(1,20);
+                }
+                if ($rngEffect == 4){
+                    $effectName = "Freez";
+                    $effectShort = "FR";
+                    $effectChance = rand(10,20);
+                    
+                }
+                if ($rngEffect == 5){
+                    $effectName = "Stun";
+                    $effectShort = "ST";
+                    $effectChance = rand(5,30);
+                }
+                if ($rngEffect == 6){
+                    $effectName = "Shock";
+                    $effectShort = "SH";
+                    $effectChance = rand(20,50);
+                    
+                }
+                if ($rngEffect == 7){
+                    $effectName = "Block";
+                    $effectShort = "BK";
+                    $effectChance = rand(5,20);
+                    
+                }
+                if ($rngEffect == 8){
+                    
+                }
+                if ($rngEffect == 9){
+                    
+                }
+                
+                if ($rngEffect == 10){
+                    
+                }
+                $ef = "Effect: $effectName $effectChance %<br>";
+            }
 
             //creating lowest weapon, best weapon acording to level
             $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
 
-            if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $HC != 1))){ //if weapon is okay acording to level, stop while
+            if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
                 $rel = 1;
             }
         }

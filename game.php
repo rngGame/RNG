@@ -588,11 +588,11 @@ echo "<div id='minichat'><iframe height='100px' width='300px' src='message.php'>
 <div id="box2">
   <section class="container5">
     <div class="31-50">
-        <form method="post" action="Bypass.php">
+        <form method="post" action="fightNew.php">
          <input hidden="" type="text" name="lvl" value="100" placeholder="Fight Boss">
         <p class="submit">
-          <input type="submit" name="commit" value="Badass">
-1k g.</p>
+          <input type="submit" name="commit" value="NewFight">
+1k g.</p><!--FIGHt badass-->
       </form>
     </div>
   </section>

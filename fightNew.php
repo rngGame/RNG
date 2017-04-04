@@ -43,10 +43,10 @@ $bs = $_SESSION["BOSS"];
 
 list($name, $mLVL, $HP, $DMG, $Drop)=createMonster($iLVL);
 
-if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
+/*if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 	header("location:fightNew.php");}
   die();
-	else {
+	else {*/
 
     echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
     echo "Monster Name: <b>$name</b><br>";
@@ -77,7 +77,7 @@ if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
           </form>
         </div>
       </section>";
-	};
+	//}
   ?>
   <section class="container3">
     <div class="31-50">

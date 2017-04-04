@@ -144,7 +144,7 @@ function itemDrop($db,$drop,$MLVL){
             $rngSkill = rand(1,10000);
             $rngType = rand(1,10000);
 
-            //bases
+            //bases set up
             $nameBase = $baseHP; //takes the base name for the Armor
             if($drop=="armor"){
                 $iLVL = $baseDMG; //base level

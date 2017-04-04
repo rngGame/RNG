@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,10);
+$uniqRO = rand(1,12);
 
 //hash
 $HC = 0;
@@ -50,7 +50,7 @@ if ($uniqRO == 6){
 	$order2 = "INSERT INTO weapondrops
 	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Freezing touch of Kompas', 'Unique', 'ff6633', '200', '1', '1', '1', '1', '1', '1', '50', '', 'FR', '50', '0', '200')";
+	   ('$HASH', 'Freezing touch of Kompas', 'Unique', 'ff6633', '200', '1', '1', '1', '1', '1', '1', '100', '', 'FR', '50', '0', '200')";
 }
 
 if ($uniqRO == 7){
@@ -80,6 +80,23 @@ if ($uniqRO == 10){
 	  VALUES
 	   ('$HASH', 'Shiny coin picker', 'Unique', 'ff6633', '100', '90', '110', '15', '1', '65', '130', '86', '', '', '', '30', '550')";
 }
+
+//arminas Uniq
+if ($uniqRO == 11){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'French fries of power and confusion', 'Unique', 'ff6633', '69', '69', '169', '50', '1', '69', '69', '95', '10', 'ST', '35', '0', '350')";
+}
+
+//arminas Uniq
+if ($uniqRO == 12){
+	$order2 = "INSERT INTO weapondrops
+	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Summoners urgant wish stick', 'Unique', 'ff6633', '150', '1', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
+}
+
 
 
 ?>

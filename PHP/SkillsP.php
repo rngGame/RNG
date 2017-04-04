@@ -46,30 +46,6 @@ if ($ACC[3] >= 10 and $SKL > 30){
     </div>&nbsp;&nbsp;
   ";}
   
-   if ($ACC[3] >= 20 and $SKL > 40){
- echo
-  "
-    <div class='tooltip'>
-	      <form id='yourFormId' method='post' action='FCAL.php'>
-		  		  <select hidden='' name='skl'>
-		  <option value='2' selected>2/option>
-		  </select>
-          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
-        <p class='submit' onclick='myfunc(this)'><input img $c3 src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'><span class='tooltiptext'>40En.<br>Atack and increase helth<br>by $t3</span></p> 
-      </form>
-    </div>&nbsp;&nbsp;
-  ";}
-  else{
-	   echo
-  "
-    <div class='tooltip'>
-	      <form id='yourFormId' method='post' action='FCAL.php'>
-          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
-        <p class='submit'><img class='blur' src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'></p> 
-      </form>
-    </div>&nbsp;&nbsp;
-  ";}
-  
      if ($ACC[3] >= 25 and $SKL > 30){
  echo
   "

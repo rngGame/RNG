@@ -42,6 +42,8 @@ if ($WEP[13] == "FR" or $SUB[6] == "FR"){
 	if ($frz == 0){
 		$frz = 1;}
 	$freez = $freez * $frz;
+	if ($freez > 400000){
+		$freez = 400000;}
 	$_SESSION["freez"] = $freez;
 	$fre = "Monster freezed for $freez dmg.<br>";
 }
@@ -161,8 +163,17 @@ if ($SUB[6] == "CD"){
 			$Armor = $Armor *2;
 			$doubart = "<font color='gold'>Double Armor !</font><br>";
 }
-
 }
+
+//summon buff
+if ($WEP[13] == "SM" and $_SESSION["PET"] == 1){
+	$_SESSION["PET"] = 2;
+	
+	$_SESSION["PETHP"] = round($_SESSION["PETHP"] + ($_SESSION["PETHP"]  * $WEP[14] / 100));
+	$_SESSION["PETMINDMG"] = round($_SESSION["PETMINDMG"] + ($_SESSION["PETMINDMG"]  * $WEP[14]  / 100));
+	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEP[14]  / 100));
+}
+
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
 $efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";

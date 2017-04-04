@@ -13,7 +13,7 @@ if ($SKL ==1){
 
 //skill 2
 $hpT = "";
-if ($SKL ==2){
+if ($SKL == 2){
 	$perc = 10;
 	if ($CLS[6] == "HEAL"){
 	$perc = 15;}
@@ -26,6 +26,7 @@ if ($SKL ==2){
 	$hpT = "Increased helth by <font color='#e6e600'>$HPi</font><br>";
 	$ene = $ene - 40;
 	$_SESSION["ENERGY"] = $ene;
+	$healdmg = $magDMG;
 };
 
 //skill 3
@@ -124,11 +125,18 @@ if ($SKL ==5){
 	if ($SUB[5] == "REFL"){
 		$mref = rand(90,150);}
 		
- 	$monsRef = ($monDMG * $mref / 100) + $Armor;
+		
+	$calcref = $mref;
+ 	$monsRef = ($monDMG * $calcref / 100) + $Armor;
+	$dmgmitig = $calcref;
 	if ($CLS[6] == "TANK"){
-	$monsRef = ($monDMG * $mref / 100) + $Armor*1.2;}
+	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.2);
+	$dmgmitig = $calcref;}
 	if ($SUB[5] == "REFL"){
-	$monsRef = ($monDMG * $mref / 100) + $Armor*1.5;}
+	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.5);
+	$dmgmitig = $calcref;}
+	
+	$monDMG = round($monDMG - $dmgmitig);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
@@ -206,15 +214,15 @@ if ($SKL ==33){
 };
 
 //skill 34
-	if ($SKL ==34 or $_SESSION["PET"] == 1){
-		if (!$_SESSION["PET"] == 1){ //sukuria nauja
+	if ($SKL ==34 or isset($_SESSION["PET"])){
+		if (!isset($_SESSION["PET"])){ //sukuria nauja
 			$petname = mysqli_query($db,"SELECT * FROM Pets where Class = '$ACC[10]' Order by RAND() Limit 	1");
 			$petname = mysqli_fetch_row($petname);
 			$_SESSION["PETNAME"] = $petname[0];
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
 			$_SESSION["PETMINDMG"] = round($minMdmg * 15 / 100);
 			$_SESSION["PETMAXDMG"] = round($maxMdmg * 20 / 100);
-			$ene = $ene - 150;
+			$ene = $ene - 100;
 			$_SESSION["ENERGY"] = $ene;
 				if ($SUB[5] == "NECR"){ //if necromance
 				$_SESSION["PETHP"] = $HPO * 60 / 100;
@@ -238,6 +246,7 @@ if ($SKL ==33){
 				}
 			$pettext = "Pet summoned !<br>";
 			$_SESSION["PET"] = 1;
+			$extra = $magDMG;
 		}
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
@@ -260,6 +269,39 @@ if ($SKL ==33){
 			$_SESSION["PETHP"] = $_SESSION["PETHP"] - $pettook;
 			$petttanktext = "Pet tanked $pettook dmg.<br>";
 			$petHP = $_SESSION["PETHP"];
+			
+			//pet skill 1
+			if (rand(0,100) < 20 and $petskl <> 1){
+				$petskl = 1;
+				$petExtraDMG = round($petDMG + ($petDMG * rand(150,200) / 100));
+				$petSkillText = "Pet Used <b>COOL SKILL</b> and delt extra $petExtraDMG dmg.<br>";
+			}
+			if (rand(0,100) < 15 and $petskl <> 1){
+				$petskl = 1;
+				$petheal = round($HPO * rand(3,8) / 100);
+				$HPin = round($HPin + $petheal);
+				$petSkillText = "Pet <b> Healed you </b>for $petheal health<br>";
+			}
+			if (rand(0,100) < 10 and $petskl <> 1){
+				$petskl = 1;
+				$ene = $_SESSION["ENERGY"];
+				$ene = $ene + $plvl;
+				$_SESSION["ENERGY"] = $ene;
+				$petSkillText = "Pet <b> Restored you energie </b> by $plvl points<br>";
+			}
+			//if necromancer resumon pet
+			if ($petHP <= 0 and $SUB[5] == "NECR" and $petskl <> 1){
+				if (rand(0,100) < 85){
+				$_SESSION["PETHP"] = round($HPO * 60 / 100);
+				$petHP = $_SESSION["PETHP"];
+				$_SESSION["PETMINDMG"] = round($minMdmg * 60 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 120 / 100);					
+				$petSkillText = "<b>Pet resumoned after death</b><br>";		
+				}
+			}
+			
+			
+			//when pet died
 			if ($petHP <= 0){
 				unset($_SESSION["PET"]);
 				unset($_SESSION["PETHP"]);
@@ -291,6 +333,7 @@ if ($SKL == 35){
 	
 	$ene = $ene - 100;
 	$_SESSION["ENERGY"] = $ene;
+	$extra = $magDMG;
 
 }
 		
@@ -310,6 +353,6 @@ if ($SKL == 36){
 }
 
 
-$magick = $fball + $comb + $finallICE + $finalsacriface;
-$magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext"  ;
+$magick = $fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra;
+$magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext $petSkillText"  ;
 ?>

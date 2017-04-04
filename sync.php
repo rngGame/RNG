@@ -217,7 +217,7 @@ $datetime = $datetime+300;
 $datetime = date('Y-m-d H:i:s',$datetime);
 
 
-$ONL = mysqli_query($db,"SELECT * FROM Online where user = '$User' ");
+$ONL = mysqli_query($db,"SELECT * FROM Online where user = '$User' Order by RAND() Limit 	1");
 $ONL = mysqli_fetch_row($ONL);
 
 if ($ONL[0] == "$User"){

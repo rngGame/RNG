@@ -25,7 +25,13 @@ $MODP = $_SESSION["MODP"];
 $ShardsP = $_SESSION["ShardsP"];
 
 if ($ShardsP >= 100){
-
+	
+	if (rand(0,100) > 70){
+		$_SESSION["UNQ"] = 1;
+		$_SESSION["SHARDREW"] = 1;
+		header("location:uniqR.php");
+		die();}
+		
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 

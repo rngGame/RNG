@@ -42,6 +42,52 @@ if ($ACC[3] >= 20 and $SKL > 50){
     </div>&nbsp;&nbsp;"
   ;}
   
+  if ($ACC[3] >= 20 and $SKL > 40){
+ echo
+  "
+    <div class='tooltip'>
+	      <form id='yourFormId' method='post' action='FCAL.php'>
+		  		  <select hidden='' name='skl'>
+		  <option value='2' selected>2/option>
+		  </select>
+          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
+        <p class='submit' onclick='myfunc(this)'><input img $c3 src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'><span class='tooltiptext'>40En.<br>Atack and increase helth<br>by $t3</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;
+  ";}
+  else{
+	   echo
+  "
+    <div class='tooltip'>
+	      <form id='yourFormId' method='post' action='FCAL.php'>
+          <input hidden='' type='text' name='skl' value='2' placeholder='lvl'>
+        <p class='submit'><img class='blur' src='IMG/pack/Icon.6_02.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'></p> 
+      </form> 
+    </div>&nbsp;&nbsp;
+  ";}
+  
+    //Summon
+   $summ = 0;
+  if (isset($_SESSION["PET"])){
+	  $summ = 1;}
+if ($ACC[3] >= 25 and $SKL > 100 and $summ == 0){
+ echo"
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='FCAL.php'>
+          <input type='hidden' name='skl' value='34'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c14 src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Summon kindred spirit $t14</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;}
+  else{
+	   echo"
+    <div class='tooltip'>
+	      <form id='yourFormId'  method='post' action='FCAL.php'>
+          <input hidden='' type='text' name='skl' value='34' placeholder='lvl'>
+        <p class='submit' ><img class='blur' src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
+      </form>
+    </div>&nbsp;&nbsp;"
+  ;} 
   
  //combine
 if ($ACC[3] >= 30 and $SKL > 330){
@@ -61,36 +107,13 @@ if ($ACC[3] >= 30 and $SKL > 330){
         <p class='submit' ><img class='blur' src='IMG/pack/Icon.5_95.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
       </form>
     </div>&nbsp;&nbsp;"
-  ;}  
-  
-   //Summon
-   $summ = 0;
-  if (isset($_SESSION["PET"])){
-	  $summ = 1;}
-if ($ACC[3] >= 30 and $SKL > 150 and $summ == 0){
- echo"
-    <div class='tooltip'>
-	      <form method='post' id='yourFormId' action='FCAL.php'>
-          <input type='hidden' name='skl' value='34'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c14 src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>150En.<br>Summon kindred spirit $t14</span></p> 
-      </form>
-    </div>&nbsp;&nbsp;"
-  ;}
-  else{
-	   echo"
-    <div class='tooltip'>
-	      <form id='yourFormId'  method='post' action='FCAL.php'>
-          <input hidden='' type='text' name='skl' value='34' placeholder='lvl'>
-        <p class='submit' ><img class='blur' src='IMG/pack/Icon.5_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'></p> 
-      </form>
-    </div>&nbsp;&nbsp;"
-  ;}  
+  ;}   
   
   //Buff
    $armr = 0;
   if (isset($_SESSION["SKILL35"])){
 	  $armr = 1;}
-if ($ACC[3] >= 40 and $SKL > 100 and $armr == 0){
+if ($ACC[3] >= 35 and $SKL > 100 and $armr == 0){
  echo"
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='FCAL.php'>

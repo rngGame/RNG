@@ -174,20 +174,33 @@ $TAL = mysqli_fetch_row($TAL);
 
 $lvl2 = $ACC[3] + 1;
 
+//xp to next level
 $XPL = mysqli_query($db,"SELECT * FROM levels where LVL = '$lvl2' ");
 $XPL = mysqli_fetch_row($XPL);
 
+//xp for current level
+$XPP = mysqli_query($db,"SELECT * FROM levels where LVL = '$ACC[3]' ");
+$XPP = mysqli_fetch_row($XPP);
+
+$XPL0 = ($ACC[5] - $XPP[1]);
+$XPL0 = round($XPL0);
+
+$XPL1 = ($XPL[1] - $XPP[1]);
+$XPL1 = round($XPL1);
+
 $XPL2 = ($XPL[1] - $ACC[5]);
 $XPL2 = round($XPL2);
+
+$generatedXP = round(100*(1-(($XPL1-$XPL0)/$XPL1))) ;
 
 
 $XPLc = mysqli_query($db,"SELECT EXISTS(SELECT * FROM levels WHERE LVL = '$lvl2')");
 $XPLc = mysqli_fetch_row($XPLc);
 if ($XPLc[0] ==1){
-	$leveltext = "<font size='1'><progress value='$ACC[5]' max='$XPL[1]'></progress>(XP to next LVL: $XPL2)</font>";
+	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(XP LVL: $XPL2)</div></font>";
 }
 else{
-	$leveltext = "<font size='1'><progress value='100' max='100'></progress>(Max level)</font>";
+	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)/div></font>";
 }
 
 ?>
@@ -459,6 +472,9 @@ if ($WEP[14]<>0){
 		if ($WEP[13] == "BK"){
 	$efftype = "Block Chanse";
 	}
+		if ($WEP[13] == "SM"){
+	$efftype = "Summon increase";
+	}
 	$eft = "$efftype $WEP[14] %<br>";}
 	
 	if ($WEP[3] == "ff6633"){
@@ -722,11 +738,14 @@ if ($WEPI[14]<>0){
 		if ($WEPI[13] == "ST"){
 	$efftype[$eft] = "Stun Chanse";
 	}
-			if ($WEPI[13] == "SH"){
+		if ($WEPI[13] == "SH"){
 	$efftype = "Shock Chanse";
 	}
 		if ($WEPI[13] == "BK"){
 	$efftype = "Block Chanse";
+	}
+		if ($WEPI[13] == "SM"){
+	$efftype = "Summon increase";
 	}
 	$efto[$eft] = "$efftype[$eft] $WEPI[14] %<br>";}
 
@@ -743,9 +762,14 @@ echo "<td     display: inline-flex;>
           <input style='display:none' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
         <a class='submit'><button type='submit' name='Eqip' value='$WEPI[0]'>Equip</button> 
         </a>
-          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>
-        <a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>
-        </a>
+          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>";
+		if ($WEPI[3] == "ff6633"){
+        echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
+		else{
+		echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+		}
+		
+        echo "</a>
 
       </form>
 	  
@@ -765,7 +789,7 @@ mysqli_close($db);
 ?>
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.4)</b></a><br>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.4.1)</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {

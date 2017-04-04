@@ -71,6 +71,9 @@ if (!isset($_SESSION["LOG"])){
 	$LOG = $_SESSION["LOG"];
 }
 
+if ($HPin > $_SESSION["HPO"]){
+	$HPin = $_SESSION["HPO"];} 
+
 //average dmg recalculate
 $avgP = round(($minPdmg + $maxPdmg) / 2);
 $avgM = round(($minMdmg + $maxMdmg) / 2);

@@ -456,3 +456,36 @@ table, td, th {
 .experience{
     color:#ee82ee;
 }
+
+.lvltext{
+    display: inline;
+    position: absolute;
+    margin: 3px 0px 0px 0px;
+	}
+
+progress {
+	width: 130px;
+	margin: 0px 0px 2px 0px;
+	/* Important Thing */
+	-webkit-appearance: none;
+	border: none;
+}
+
+
+/* All good till now. Now we'll style the background */
+progress::-webkit-progress-bar {
+	background: rgb(20, 30, 28);
+	border-radius: 50px;
+	padding: 2px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Now the value part */
+progress::-webkit-progress-value {
+	border-radius: 50px;
+	box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+	background:
+		-webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, rgba(0, 0, 0, 0) 66%),
+		-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+		-webkit-linear-gradient(left, #ffffff, #ff0075);
+}

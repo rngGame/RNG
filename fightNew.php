@@ -41,7 +41,7 @@ $dbs = "monster$BLVL";
 
 $bs = $_SESSION["BOSS"];
 
-list($name, $mLVL, $HP, $DMG, $Drop)=createMonster($iLVL)
+list($name, $mLVL, $HP, $DMG, $Drop)=createMonster($iLVL);
 
 if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 	header("location:fightNew.php");}

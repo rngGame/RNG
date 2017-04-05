@@ -393,7 +393,7 @@ function createMonster($db,$iLVL){
         //base range
         $baseLow=round($iLVL*0.6/4-(5*$timeCreated),0); //Four items give lvl so we devide by four, 0.6 is 60% of your that level, -20 is for low numbers
         $baseHigh=round($iLVL*1.4/4+(5*$timeCreated),0);
-        echo "$baseLow <> $baseHigh";
+        
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
         if(mysqli_num_rows($Base)==0 OR $timeCreated==99){

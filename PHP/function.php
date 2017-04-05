@@ -443,12 +443,12 @@ function createMonster($db,$iLVL){
         }
         //Sub Set Up
         if (rand(1,100) <= 30){
-            $testMessage.="Sub aprroved more than 30 <br>";
+            $testMessage.="Sub aprroved more than 30 with the Sub $subName <br>";
             $nameSub = $subName;
             $HP *= $subHP;
             $mLVL += $subLVL;
             $DMG *= $subDMG;
-            $Drop *= $subDrop;
+            $Drop += $subDrop;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //Enchant Set Up
@@ -458,7 +458,7 @@ function createMonster($db,$iLVL){
             $HP *= $enchantEff;
             $mLVL += $enchantLVL;
             $DMG *= $enchantEff;
-            $Drop *= $enchantEff;
+            $Drop += $enchantEff;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
 

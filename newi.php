@@ -16,7 +16,7 @@ World Of RNG
 </header>
 <?php
 include_once 'PHP/db.php';
-include_once 'PHP/function.php'
+include_once 'PHP/function.php';
 
 $MLVL = $_SESSION["MonsLVL"];
 $Drop = $_SESSION["MonsDrop"];

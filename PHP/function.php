@@ -372,6 +372,7 @@ function createMonster($db,$iLVL){
 
     $creationDone=false;
     $timeCreated=0;
+    $testMessage="Test Start run $timeCreated <br>";
     while(!$creationDone){
         //Nullify vars
         $N2 = "";   
@@ -393,32 +394,34 @@ function createMonster($db,$iLVL){
         //base range
         $baseLow=round($iLVL*0.6/4-(5*$timeCreated),0); //Four items give lvl so we devide by four, 0.6 is 60% of your that level, -20 is for low numbers
         $baseHigh=round($iLVL*1.4/4+(5*$timeCreated),0);
-        
+        $testMessage.="Base low $baseLow and high $baseHigh <br>";
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
         if(mysqli_num_rows($Base)==0 OR $timeCreated==99){
+            $testMessage.="could not find correct".mysqli_num_rows($Base)." or $timeCreated times runned <br>";
             $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
             $extraName="3RR0R";
         }
         list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);
+        $testMessage.="fetched bases $baseName | $baseHP | $baseLVL | $baseDMG | $baseDrop  <br>";
 
         $Pref = mysqli_query($db,"SELECT * FROM monspre Order by RAND() Limit   1");
         list($preName, $preDrop, $preHP, $preDMG, $preLVL) = mysqli_fetch_row($Pref);
+        $testMessage.="fetched Pre ... <br>";
 
         $Sub = mysqli_query($db,"SELECT * FROM monssub Order by RAND() Limit    1");
         list($subName, $subDrop, $subHP, $subDMG, $subLVL) = mysqli_fetch_row($Sub);
+        $testMessage.="fetched Sub ... <br>";
 
         $ench = mysqli_query($db,"SELECT * FROM monsenchant Order by RAND() Limit   1");
         list($enchantName, $enchantLVL, $enchantEff) = mysqli_fetch_row($ench);
+        $testMessage.="fetched Ench ... <br>";
 
         //pick picture
         $monsterImageID=rand(1,21);
         $_SESSION["MonsIMG"] = $monsterImageID;
+        $testMessage.="Got image ID $monsterImageID <br>";
         //rng chances
-        $rngPre = rand(1,100);
-        $rngSub = rand(1,100);
-        $rngEnchant = rand(1,100);
-        $rngrare = rand(1,300);
 
         //base set up
         $Name = $baseName;
@@ -429,6 +432,7 @@ function createMonster($db,$iLVL){
 
         //Pre Set Up
         if (rand(1,100) <= 40){
+            $testMessage.="Pre aprroved more than 40 <br>";
             $namePre = $preName;
             $HP *= $preHP;
             $DMG *= $preDMG;
@@ -437,6 +441,7 @@ function createMonster($db,$iLVL){
         }
         //Sub Set Up
         if (rand(1,100) <= 30){
+            $testMessage.="Sub aprroved more than 30 <br>";
             $nameSub = $subName;
             $HP *= $subHP;
             $mLVL += $subLVL;
@@ -445,6 +450,7 @@ function createMonster($db,$iLVL){
         }
         //Enchant Set Up
         if (rand(1,100) <= 20){
+            $testMessage.="enchant approved more than 20 <br>";
             $nameEnchant = $enchantName;
             $HP *= $enchantEff;
             $mLVL += $enchantLVL;
@@ -453,6 +459,7 @@ function createMonster($db,$iLVL){
         }
 
         if (rand(1,300) == 100){
+            $testMessage.="Rare approved exact at 100 <br>";
             $nameRare = "<b style='color:#ff0066'>! RARE !</b>";
             $HP *= 1.15;
             $mLVL *= 1.5;
@@ -470,11 +477,14 @@ function createMonster($db,$iLVL){
         //limits
         $limitMaxLVL=$iLVL/4+30;
         $limitMinLVL=$iLVL/4-30;
+        $testMessage.="limits are >$limitMinLVL <$limitMaxLVL <br>";
         //check if monster is good enough
         if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100){
+            $testMessage.="Found Correct monsted or $timeCreated >100 <br>";
+            $testMessage.="Monster: $name |LVL $mLVL |HP $HP |DMG $DMG |DROP $Drop <br>";
             $creationDone=true;
         }
     }
-    return array ($name, $mLVL, $HP, $DMG, $Drop);
+    return array ($name, $mLVL, $HP, $DMG, $Drop, $testMessage);
 
 }

@@ -395,7 +395,7 @@ function createMonster($db,$iLVL){
         $baseHigh=round($iLVL*1.4/4+(5*$timeCreated),0);
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
-        if(mysqli_num_rows($Base)!=0 OR $timeCreated==99){
+        if(mysqli_num_rows($Base)=0 OR $timeCreated==99){
             $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
             $extraName="3RR0R";
         }
@@ -460,7 +460,7 @@ function createMonster($db,$iLVL){
             $_SESSION["MonsR"] = 1;
         }
         //finnish up
-        $name="$nameRare $nameEnchant $namePre $nameBase $nameSub";
+        $name="$extraName $nameRare $nameEnchant $namePre $nameBase $nameSub";
         $HP = round($HP,0);
         $mLVL = round($LVL,0);
         $DMG = round($DMG,0);

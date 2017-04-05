@@ -429,6 +429,7 @@ function createMonster($db,$iLVL){
         $mLVL = $baseLVL;            
         $DMG = $baseDMG;
         $Drop = $baseDrop;
+        $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
 
         //Pre Set Up
         if (rand(1,100) <= 40){
@@ -437,7 +438,8 @@ function createMonster($db,$iLVL){
             $HP *= $preHP;
             $DMG *= $preDMG;
             $mLVL += $preLVL;
-            $Drop += $preDrop * $bs;
+            $Drop += $preDrop;
+            $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //Sub Set Up
         if (rand(1,100) <= 30){
@@ -446,7 +448,8 @@ function createMonster($db,$iLVL){
             $HP *= $subHP;
             $mLVL += $subLVL;
             $DMG *= $subDMG;
-            $Drop *= $subDrop * $bs;
+            $Drop *= $subDrop;
+            $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //Enchant Set Up
         if (rand(1,100) <= 20){
@@ -456,6 +459,7 @@ function createMonster($db,$iLVL){
             $mLVL += $enchantLVL;
             $DMG *= $enchantEff;
             $Drop *= $enchantEff;
+            $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
 
         if (rand(1,300) == 100){
@@ -466,11 +470,12 @@ function createMonster($db,$iLVL){
             $DMG *= 0.8;
             $Drop *= 10;
             $_SESSION["MonsR"] = 1;
+            $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //finnish up
         $name="$extraName $nameRare $nameEnchant $namePre $nameBase $nameSub";
         $HP = round($HP,0);
-        $mLVL = round($LVL,0);
+        $mLVL = round($mLVL,0);
         $DMG = round($DMG,0);
         $Drop = round($Drop,0);
         $timeCreated++;

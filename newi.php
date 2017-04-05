@@ -122,7 +122,7 @@ Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='
 Cryt chanse: <span class='$compareCRYT'>$weaponCrit %</span><br>
 Hit chanse: <span class='$compareHIT'>$weaponHit %</span><br>
 $weaponEffect $weaponSkillText
-Worth: $MoneySel gold<br>
+Worth: $moneySel gold<br>
 <br><b>Current item:</b><br>
 Name: $Current <br>
 Item lvl: <b>$WEP[4]</b><br>

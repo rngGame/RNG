@@ -145,19 +145,19 @@ function itemDrop($db,$drop,$MLVL){
             $rngType = rand(1,10000);
 
             //bases set up
-            $nameBase = $baseHP; //takes the base name for the Armor
+            $nameBase = $Base[1]; //takes the base name for the Armor
             if($drop=="armor"){
-                $iLVL = $baseDMG; //base level
-                $valueArmor = $baseLVL; //base armor
+                $iLVL = $Base[3]; //base level
+                $valueArmor = $Base[2]; //base armor
             }
             if($drop=="weapon"){
-                $iLVL = $baseDMG; //base level
-                $valueDMG = $baseLVL; //base dmg
+                $iLVL = $Base[2]; //base level
+                $valueDMG = $Base[3]; //base dmg
             }
             if($drop=="talisman"){
-                $iLVL = $baseLVL;//base lvl
-                $valueDMG = $baseDMG;//base dmg 
-                $valueArmor = $baseDrop;//base armor
+                $iLVL = $Base[2];//base lvl
+                $valueDMG = $Base[3];//base dmg 
+                $valueArmor = $Base[4];//base armor
                 $valueHP = $Base[5];//base HP
                 $valueXP = $Base[6]; //base XP
             }

@@ -422,7 +422,7 @@ function createMonster($db,$iLVL){
 
         //pick picture
         $monsterImageID=rand(1,21);
-        $_SESSION["MonsIMG"] = $monsterImageID;
+        //$_SESSION["MonsIMG"] = $monsterImageID;
         $testMessage.="Got image ID $monsterImageID <br>";
         //rng chances
 
@@ -496,6 +496,6 @@ function createMonster($db,$iLVL){
             $creationDone=true;
         }
     }
-    return array ($name, $mLVL, $HP, $DMG, $Drop, $testMessage);
+    return array ($name, $mLVL, $HP, $DMG, $Drop, $monsterImageID, $testMessage);
 
 }

@@ -592,7 +592,7 @@ echo "<div id='minichat'><iframe height='100px' width='300px' src='message.php'>
          <input hidden="" type="text" name="lvl" value="100" placeholder="Fight Boss">
         <p class="submit">
           <input type="submit" name="commit" value="NewFight">
-1k g.</p><!--FIGHt badass-->
+Free.</p><!--FIGHt badass-->
       </form>
     </div>
   </section>

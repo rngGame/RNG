@@ -10,7 +10,7 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
-list($iLVL,, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,"talisman",$MLVL);
+list($iLVL,, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,$User,"talisman",$MLVL);
 $cash = $iLVL*$sell;
 
 

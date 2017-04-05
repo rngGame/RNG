@@ -82,8 +82,8 @@ function login($vardas, $password, $db) {
         }
     }
 }
-function itemDrop($db,$drop,$MLVL){
-    $textMessage="Function Starts at ".date('Y-m-d H:i:s')." \r\n";
+function itemDrop($db,$user,$drop,$MLVL){
+    $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
     if($drop=="all"){
         $textMessage.="Drop not decided Choosing one at random \r\n";
         $check=rand(1,3);

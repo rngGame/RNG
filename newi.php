@@ -27,7 +27,7 @@ $ACC = mysqli_fetch_row($ACC);
 $WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
 $WEP = mysqli_fetch_row($WEP);
 
-list($iLVL, $HASH, $name, $color, $weaponName, $typeName, $weaponDMG, $weaponArmor, $weaponHP, $weaponXP, $weaponSkillText, $weaponSkill, $weaponEffect, $weaponEffectName, $weaponEffectChance, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponSpeed, $weaponHit, $weaponMagMin, $weaponMagMax)=itemDrop($db, "weapon", $MLVL);
+list($iLVL, $HASH, $name, $color, $weaponName, $typeName, $weaponDMG, $weaponArmor, $weaponHP, $weaponXP, $weaponSkillText, $weaponSkill, $weaponEffect, $weaponEffectName, $weaponEffectChance, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponSpeed, $weaponHit, $weaponMagMin, $weaponMagMax)=itemDrop($db, $User, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db

@@ -79,6 +79,7 @@ else {
         </div>
       </section>";
 	}
+	echo $testMessage;
   ?>
   <section class="container3">
     <div class="31-50">

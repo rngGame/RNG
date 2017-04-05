@@ -83,7 +83,9 @@ function login($vardas, $password, $db) {
     }
 }
 function itemDrop($db,$drop,$MLVL){
+    $textMessage="Function Starts at ".date('Y-m-d H:i:s')." \r\n";
     if($drop=="all"){
+        $textMessage.="Drop not decided Choosing one at random \r\n";
         $check=rand(1,3);
         if($check==1){
             $drop ="talisman";
@@ -94,8 +96,10 @@ function itemDrop($db,$drop,$MLVL){
         else if($check==3){
             $drop="weapon";
         }
+        $textMessage.="Chosen $drop \r\n";
     }
     if($drop=="armor"||$drop=="talisman"||$drop=="weapon"){
+        $textMessage.="Starting Process \r\n";
 
         $preTable="prefixwep";
         //check which item
@@ -109,11 +113,13 @@ function itemDrop($db,$drop,$MLVL){
         else if($drop=="weapon"){
             $baseTable="basewep";
         }
+        $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
 
 
         $rel = 0;
 
         while ($rel == 0){
+            $textMessage.="Starting While for Creation |<>|";
             //get info from db general
             $Base = mysqli_query($db,"SELECT * FROM $baseTable Order by RAND() Limit     1");
             $Base = mysqli_fetch_row($Base);
@@ -143,6 +149,7 @@ function itemDrop($db,$drop,$MLVL){
             $rngSub = rand(1,10000);
             $rngSkill = rand(1,10000);
             $rngType = rand(1,10000);
+            $textMessage.="Deecided on RNG rolls: Pre $rngPre , Sub $rngSub , Skill $rngSkill , Type $rngType \r\n";
 
             //bases set up
             $nameBase = $Base[1]; //takes the base name for the Armor
@@ -161,6 +168,7 @@ function itemDrop($db,$drop,$MLVL){
                 $valueHP = $Base[5];//base HP
                 $valueXP = $Base[6]; //base XP
             }
+            $textMessage.="Bases done for $drop Bases: Name $nameBase >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Prefix for talismans
             if($rngPre>3000 && $drop=="talisman"){
                 $namePre=$Pre[1];
@@ -177,6 +185,7 @@ function itemDrop($db,$drop,$MLVL){
                 $valueDMG+=$Pre[3];
                 $iLVL+=$Pre[2];
             }
+            $textMessage.="Prefix done for $drop Prefixes: Name $namePre >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Subfix for talismans
             if($rngSub>3000 && $drop=="talisman"){
                 $nameSub = "and $Sub[1]";
@@ -208,6 +217,7 @@ function itemDrop($db,$drop,$MLVL){
                     $iLVL += $Sub2[2];
                 }
             }
+            $textMessage.="Subfixes done for $drop Subfix: Name $nameSub >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Types for drops x2
             if($rngType < $Type[2]*200){ //checks for Type rng first time
                 $typeName ="$Type[1]";
@@ -227,6 +237,7 @@ function itemDrop($db,$drop,$MLVL){
                 $valueHP += $valueHP * $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
+            $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Skill for Weapon
             if($rngSkill>9600){
                 $iLVL+=$Skill[7];
@@ -234,15 +245,18 @@ function itemDrop($db,$drop,$MLVL){
                 $skillID = $Skill[0];
                 $skillText = "Skill : $Skill[1]<br>";
             }
+            $textMessage.="Skills done for $drop $skillName Chosen \r\n";
 
             //check how many enchants rng
-            while($Ench = mysqli_fetch_array($Enchant and $drop!="weapon")) {
+            while($Ench = mysqli_fetch_array($Enchant) and $drop!="weapon") {
+                $textMessage.="Enchanting $enchantLVL \r\n";
                 if($Ench[1] > rand(-200,400-$MLVL)){
                     $enchantLVL += 1;
                     }
                 else{break;}
             }
             if($enchantLVL > 0){
+                $textMessage.="Doing Enchant";
                 $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
                 $Plius = mysqli_fetch_row($Plius);
                 $nameEnchant = "+ $enchantLVL";
@@ -250,6 +264,7 @@ function itemDrop($db,$drop,$MLVL){
                 $valueArmor += $valueArmor * $Plius[2] / 100;
                 $valueHP += $valueHP * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
+                $textMessage.="Result of enchant : Name $nameEnchant >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             }
 
             //Creating weapon values
@@ -260,6 +275,7 @@ function itemDrop($db,$drop,$MLVL){
             $valueMagMIN = round($valueDMG *rand(1,50)/100);
             $valueMagMAX = round($valueDMG *rand(1,150)/100);  
             $HIT = rand(85,100);
+            $textMessage.="Creating Weapon Stats Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
 
             //finnishing up values
             $iLVL = round($iLVL, 0);
@@ -267,6 +283,7 @@ function itemDrop($db,$drop,$MLVL){
             $valueArmor = round($valueArmor, 0);
             $valueHP = round($valueHP, 0);
             $valueXP = round($valueXP, 1);
+            $textMessage.="Rounding Orrignal \r\n";
 
             if($valueDMG <= 0){
                 $valueDMG = 1;
@@ -280,6 +297,7 @@ function itemDrop($db,$drop,$MLVL){
             if($valueXP <= 0){
                 $valueXP = 1;
             }
+            $textMessage.="No 0 \r\n";
 
             //hashing item
             $hashClaimed = 0;
@@ -290,7 +308,9 @@ function itemDrop($db,$drop,$MLVL){
             $count = mysqli_num_rows($result);
             if($count==1){ //if hash claimed, we will redo this
                 $hashClaimed = 1;
+                $textMessage.="Hashing Failed \r\n";
             }
+            $textMessage.="Hashing Complete \r\n";
 
 
             $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
@@ -354,16 +374,24 @@ function itemDrop($db,$drop,$MLVL){
                     
                 }
                 $effect = "Effect: $effectName $effectChance %<br>";
+                $textMessage.="Choose Effect $effectName $effectChance % \r\n";
             }
 
             //creating lowest weapon, best weapon acording to level
             $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
+            $textMessage.="Limits are $rngValueMin - $rngValueMax \r\n";
+
 
             if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
                 $rel = 1;
+                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
             }
         }
+        $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "x+");
+        $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");
+        fwrite($myfile, $textMessage);
+        fclose($myfile);
         return array ($iLVL, $HASH, $name, $color, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $AS, $HIT, $valueMagMIN, $valueMagMAX);
     }
 }

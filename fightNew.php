@@ -43,7 +43,7 @@ list($name, $mLVL, $HP, $DMG, $Drop)=createMonster($db,$iLVL);
 
 if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 	//header("location:fightNew.php");
-	echo "$name || $mLVL || $HP || $DMG || $Drop || $iLVL";
+	echo "$name || MLVL: $mLVL || HP: $HP || DMG: $DMG || DROP: $Drop || iLVL: $iLVL";
   	die();
 }
 else {

@@ -424,7 +424,7 @@ function createMonster($db,$iLVL){
         //rng chances
 
         //base set up
-        $Name = $baseName;
+        $nameBase = $baseName;
         $HP = $baseHP;
         $mLVL = $baseLVL;            
         $DMG = $baseDMG;

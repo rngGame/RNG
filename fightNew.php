@@ -39,7 +39,7 @@ $iLVL = $_SESSION["ILVL"];
 
 $bs = $_SESSION["BOSS"];
 
-list($name, $mLVL, $HP, $DMG, $Drop/*, $testMessage*/)=createMonster($db,$iLVL);
+list($name, $mLVL, $HP, $DMG, $Drop, $monsterIMG/*, $testMessage*/)=createMonster($db,$iLVL);
 
 if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 	//header("location:fightNew.php");
@@ -49,7 +49,7 @@ if ($mLVL < 1 or $HP < 1 or $DMG < 1 or $Drop < 1){
 }
 else {
 
-    echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
+    echo "<img src='IMG/Mon/$monsterIMG.jpg' width='60' height='60'><br>";
     echo "Monster Name: <b>$name</b><br>";
     echo " HP: $HP, DMG: ~$DMG, XP: $Drop, Lvl: $mLVL";
     $_SESSION["MonsName"] = "$name";
@@ -57,6 +57,7 @@ else {
     $_SESSION["MonsDMG"] = $DMG;
     $_SESSION["MonsDrop"] = $Drop;
     $_SESSION["MonsLVL"] = $mLVL;
+    $_SESSION["MonsIMG"] = $monsterIMG;
 
     echo
       "<section class='container2'>

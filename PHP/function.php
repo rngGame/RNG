@@ -249,12 +249,13 @@ function itemDrop($db,$user,$drop,$MLVL){
 
             //check how many enchants rng
             while($Ench = mysqli_fetch_array($Enchant) and $drop!="weapon") {
-                $textMessage.="Enchanting $enchantLVL \r\n";
+                
                 if($Ench[1] > rand(-200,400-$MLVL)){
                     $enchantLVL += 1;
                     }
                 else{break;}
             }
+            $textMessage.="Enchanting $enchantLVL \r\n";
             if($enchantLVL > 0){
                 $textMessage.="Doing Enchant";
                 $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");

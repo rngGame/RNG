@@ -385,7 +385,7 @@ function itemDrop($db,$drop,$MLVL){
 
             if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
                 $rel = 1;
-                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
+                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n _______________________________________ \r\n";
             }
         }
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "x+");

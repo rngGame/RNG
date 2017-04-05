@@ -78,8 +78,9 @@ else {
           </form>
         </div>
       </section>";
+    echo $testMessage;
 	}
-	echo $testMessage;
+
   ?>
   <section class="container3">
     <div class="31-50">

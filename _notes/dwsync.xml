@@ -56,7 +56,7 @@
 <file name="showold.php" server="ftp.miniforums.org" local="131349460599274825" remote="131299694400000000" Dst="1" />
 <file name="Sync.php" server="ftp.miniforums.org" local="131239489992859513" remote="131239233000000000" Dst="1" />
 <file name="Sync3.php" server="ftp.miniforums.org" local="131349514586686529" remote="131349226200000000" Dst="1" />
-<file name="test.php" server="ftp.miniforums.org" local="131359454307804239" remote="131359129800000000" Dst="2" />
+<file name="test.php" server="ftp.miniforums.org" local="131359174200000000" remote="131359174200000000" Dst="2" />
 <file name="TRY.php" server="ftp.miniforums.org" local="131349460619320264" remote="131236829400000000" Dst="1" />
 <file name="vale.php" server="ftp.miniforums.org" local="131349460630659723" remote="131348114400000000" Dst="1" />
 <file name="wBoss.php" server="ftp.miniforums.org" local="131349460634220078" remote="131348307000000000" Dst="1" />
@@ -87,5 +87,5 @@
 <file name="deploy.php" server="ftp.miniforums.org" local="131349540311845329" remote="131349253800000000" Dst="1" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131350941115931610" remote="131350617000000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131350934213678341" remote="131350609800000000" Dst="2" />
-<file name="Gametest.php" server="ftp.miniforums.org" local="131359497917249467" remote="131359173600000000" Dst="2" />
+<file name="Gametest.php" server="ftp.miniforums.org" local="131359576679125858" remote="131359252200000000" Dst="2" />
 </dwsync>

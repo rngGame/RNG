@@ -27,20 +27,20 @@ $ACC = mysqli_fetch_row($ACC);
 $WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
 $WEP = mysqli_fetch_row($WEP);
 
-list($iLVL, $HASH, $name, $color, $weaponName, $typeName, $weaponDMG, $weaponArmor, $weaponHP, $weaponXP, $weaponSkillText, $weaponSkill, $weaponEffect, $weaponEffectName, $weaponEffectChance, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponSpeed, $weaponHit, $weaponMagMin, $weaponMagMax)=itemDrop($db, $User, "weapon", $MLVL);
+list($iLVL, $HASH, $name, $weaponName, $typeName, $weaponDMG, $weaponArmor, $weaponHP, $weaponXP, $weaponSkillText, $weaponSkill, $weaponEffect, $weaponEffectName, $weaponEffectChance, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponHit, $weaponMagMin, $weaponMagMax)=itemDrop($db, $User, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db
 
-$order = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+$order = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, hitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$color', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponSpeed', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$weaponEffect', '$weaponEffectChance', '0', '$worth')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$weaponEffect', '$weaponEffectChance', '0', '$worth')";
 	   
-$order2 = "INSERT INTO inventor
-(User, Hash)
+$order2 = "INSERT INTO Equiped
+(User, Part, HASH, Equiped)
 VALUES
-('$User','$HASH')";	   
+('$User', 'WEP', '$HASH', '0')";	   
 
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);

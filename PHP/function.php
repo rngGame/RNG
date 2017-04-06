@@ -221,7 +221,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             //Types for drops x2
             if($rngType < $Type[2]*200){ //checks for Type rng first time
                 $typeName ="$Type[1]";
-                $color = "$Type[4]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
                 $valueArmor += $valueArmor * $$typeBonus;
@@ -230,7 +229,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             else if($rngType < $Type2[2]*200){ //checks for Type rng second time
                 $typeName ="$Type2[1]";
-                $color = "$Type2[4]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
                 $valueArmor += $valueArmor * $typeBonus;
@@ -272,7 +270,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             $valuePhysMin = round($valueDMG * rand(80,100)/100);
             $valuePhysMax = round($valueDMG * rand(100,130)/100);
             $CRIT = round(1 + 10*$typeBonus);
-            $AS = round(rand(80,150)/100,1);
             $valueMagMIN = round($valueDMG *rand(1,50)/100);
             $valueMagMAX = round($valueDMG *rand(1,150)/100);  
             $HIT = rand(85,100);
@@ -325,7 +322,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             //deciding on effect
             if (rand(0,100) < 15){
-                $rngEffect = rand(1,5);
+                $rngEffect = rand(1,8);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
                     $effectShort = "LL";
@@ -364,7 +361,10 @@ function itemDrop($db,$user,$drop,$MLVL){
                     $effectChance = rand(5,20);
                     
                 }
-                if ($rngEffect == 8){
+                 if ($rngEffect == 8){
+                    $effectName = "Summon";
+                    $effectShort = "SM";
+                    $effectChance = rand(25,70);
                     
                 }
                 if ($rngEffect == 9){
@@ -393,7 +393,7 @@ function itemDrop($db,$user,$drop,$MLVL){
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");
         fwrite($myfile, $textMessage);
         fclose($myfile);
-        return array ($iLVL, $HASH, $name, $color, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $AS, $HIT, $valueMagMIN, $valueMagMAX);
+        return array ($iLVL, $HASH, $name, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $HIT, $valueMagMIN, $valueMagMAX);
     }
 }
 

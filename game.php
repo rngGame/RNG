@@ -973,7 +973,7 @@ Asking price: <input type='number' name='price' value='0'>
 
 </td>";
 }
-
+echo "<tr>";
 }
 
 echo "</td></tr>";
@@ -982,7 +982,7 @@ mysqli_close($db);
 ?>
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.5pre)</b></a><br>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.5pre) !!!GAME BROKEN!!</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {

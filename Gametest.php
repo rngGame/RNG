@@ -144,8 +144,10 @@ $ARMBOOTS = mysqli_fetch_assoc($ARMBOOTS); //BOOTS by colum name
 
 //armor calcultaions:
 $armorlevel = $ARMBODY["ilvl"] + $ARMGLOVES["ilvl"] + $ARMBOOTS["ilvl"];
-$tottalParmordef = round($ARMBODY["pdef"] + $ARMGLOVES["pdef"] + $ARMBOOTS["pdef"]);
-$tottalMarmordef = round($ARMBODY["mdef"] + $ARMGLOVES["mdef"] + $ARMBOOTS["mdef"]);
+$tottalParmordef = round($ARMBODY["pDEF"] + $ARMGLOVES["pDEF"] + $ARMBOOTS["pDEF"]);
+$tottalMarmordef = round($ARMBODY["mDEF"] + $ARMGLOVES["mDEF"] + $ARMBOOTS["mDEF"]);
+$tottalarmorApsorb = round($ARMBODY["Apsorb"] + $ARMGLOVES["Apsorb"] + $ARMBOOTS["Apsorb"]);
+
 
 
 
@@ -471,7 +473,7 @@ $_SESSION["CRYTD"] = $PAS[11];
 if (isset($crdsub)){
 $_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub;
 }
-$_SESSION["APS"] = $PAS[5];
+$_SESSION["APS"] = $PAS[5] + $tottalarmorApsorb;
 $_SESSION["ENG2"] = $PAS[8];
 $_SESSION["ILVL"] = $lwa;
 $_SESSION["crytext"] = 0;
@@ -765,10 +767,11 @@ $RANK = mysqli_fetch_row($RANK);
 
 <?php
 
+$apsorb = $tottalarmorApsorb + $PAS[5];
 
 echo "<div class='tooltip'><img src='IMG/cryt.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[3]<br>XP:$PAS[1]/$plvl1[1]<br>$PAS[2]% Cryt chanse</span></div>";
 echo "<div class='tooltip'><img src='IMG/crytd.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[12]<br>XP:$PAS[10]/$plvl4[1]<br>$PAS[11]% Cryt damage increase</span></div>";
-echo "<div class='tooltip'><img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[6]<br>XP:$PAS[4]/$plvl2[1]<br>$PAS[5]% Absorb</span></div>";
+echo "<div class='tooltip'><img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[6]<br>XP:$PAS[4]/$plvl2[1]<br>$apsorb% Absorb</span></div>";
 echo "<div class='tooltip'><img src='IMG/ener.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[9]<br>XP:$PAS[7]/$plvl3[1]<br>$PAS[8]% Bonus energy regen</span></div>";
 
 if ($WEPn["skill"] == 0){

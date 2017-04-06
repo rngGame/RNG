@@ -106,24 +106,19 @@ Item HP bonuss: <b>$ACSi[hpBonus] %</b><br>
 Item XP Bonus: <b>$ACSi[xpBonus] %</b><br>
 Item Apsorb: <b>$ACSi[Apsorb] %</b><br>";
 
-$_SESSION["WepName"] = "$name";
-$_SESSION["Type"] = "$nameType";
-$_SESSION["ilvl"] = "$iLVL";
-$_SESSION["DMG"] = "$dmg";
-$_SESSION["ARMOR"] = "$armor";
-$_SESSION["HEALTH"] = "$health";
-$_SESSION["XP"] = "$xp";
-$_SESSION["Color"] = "$color";
 $_SESSION["Reward"] = "$reward";
+$_SESSION["HASH"] = "$HASH";
 
+//check talisman xp bonus
 $xpTalismanMulti = $_SESSION["XPT"];
 $xpNew  = $Drop * $xpTalismanMulti;
 $_SESSION["XPS"] = $xpNew;
-
+//update user stats
 $xpTotal = $ACC[5] + $xpNew;
 $kills = $ACC[6] +1;
 $cash = ($ACC[4] - $FightFee) + $moneyRew;
-	   
+     
+
 //update passives
 $Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
 $Passive = mysqli_fetch_row($Passive);
@@ -142,9 +137,9 @@ $rngShardsChance = rand(1,100);
 $Shards = $ACC[15];
 
 if ($rngShardsChance <  10){
-	$rngShardsAmmount = rand(1,15);
-	$Shards += $rngShardsAmmount;
-	$_SESSION["SHD"] = $rngShardsAmmount;
+  $rngShardsAmmount = rand(1,15);
+  $Shards += $rngShardsAmmount;
+  $_SESSION["SHD"] = $rngShardsAmmount;
 }
 $orderChar = "UPDATE characters
 SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'

@@ -121,6 +121,9 @@ $WEPn = mysqli_fetch_assoc($WEP); //by colum name
 $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$EQPW[2]' ");
 $WEP = mysqli_fetch_row($WEP); //by colum number
 
+$_SESSION["CURRENTWHASH"] = $WEP[0];
+
+
 
 //new Armor
 $EQPar = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ARM' AND Equiped = '1' ");

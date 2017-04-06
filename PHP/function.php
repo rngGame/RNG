@@ -107,13 +107,14 @@ function itemDrop($db,$user,$drop,$MLVL){
             $baseTable="basearmor";
 
         }
-        else if($drop=="talisman"){
+        if($drop=="talisman"){
             $baseTable="basetalis";
             $preTable="pretalis";
 			$part = "ACS";
         }
-        else if($drop=="weapon"){
+        if($drop=="weapon"){
             $baseTable="basewep";
+			$preTable="prefixwep";
 			$part = "WEP";
         }
         $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
@@ -409,13 +410,33 @@ function itemDrop($db,$user,$drop,$MLVL){
             $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
             $textMessage.="Limits are $rngValueMin - $rngValueMax \r\n";
+			
+			
+
+        if($drop=="armor"){
+            if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $valueArmorP >= 1 and $valueArmorM >= 1 and $apsorb >= 1){
+				 $rel = 1;
+			}
+
+        }
+        if($drop=="talisman"){
+			if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $apsorb >= 1 and $hpBonus >= 1 and $xpBonus >= 1 and $dmgBonus >= 1){
+				 $rel = 1;
+			}
+
+        }
+        if($drop=="weapon"){
+            if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $weaponCrit >= 1){
+				 $rel = 1;
+			}
+        }
+		
 
 
-            if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
-                $rel = 1;
+
 				$textMessage.="Function FINISHED by $user at ".date('Y-m-d H:i:s')." \r\n";
                 $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Hit $HIT \r\n _______________________________________ \r\n";
-            }
+            
         }
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "x+");
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");

@@ -10,6 +10,9 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"]; //DB drop value of monster
 $FightFee = $_SESSION["Money"];
 
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
+
 //creates armor function
 list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
 
@@ -31,18 +34,23 @@ $result = mysqli_query($db, $order2);
 
 $_SESSION["REWARDTYPE"] = "ARM";
 
-//get User and current Armor
-$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
-$ACC = mysqli_fetch_row($ACC);
-$ARM = mysqli_query($db,"SELECT * FROM drops where HASH = '$ACC[7]' ");
-$ARM = mysqli_fetch_row($ARM);
-//color current Armor
-if (!$ARM[2] == ""){
-	$Current = "<b class='#$ARM[5]'>$ARM[1] ($ARM[2])</b>";
+
+if ($part == "BODY"){
+$currentHASH = $_SESSION["CURRENTARMBODY"];
 }
-else{
-	$Current = "$ARM[1]";
+
+if ($part == "GLOVES"){
+$currentHASH = $_SESSION["CURRENTARMGLOVES"];
 }
+
+if ($part == "LEGS"){
+$currentHASH = $_SESSION["CURRENTARMBOOTS"];
+}
+
+$ACS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$currentHASH' ");
+$ACSi = mysqli_fetch_assoc($ACS);
+
+
 //money calculates
 $moneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
 $_SESSION["GoldRew"] = $moneyRew;
@@ -50,36 +58,54 @@ $_SESSION["GoldRew"] = $moneyRew;
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
+
+
 //Compare Armor
-$compareLVL=$compareARM = "less";
-if($iLVL>=$ARM[3]){
+$compareLVL = $comparePDEF = $compareMDEF = $compareAPS = "less";
+if($iLVL>=$ACSi["ilvl"]){
 	$compareLVL="more";
-	if($iLVL==$ARM[3]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($armor>=$ARM[4]){
-	$compareARM="more";
-	if($armor==$ARM[4]){
-		$compareARM="same";
+if($valueArmorP>=$ACSi["pDEF"]){
+	$comparePDEF="more";
+	if($iLVL==$ACSi["pDEF"]){
+		$compareLVL="same";
+	}
+}
+if($valueArmorM>=$ACSi["mDEF"]){
+	$compareMDEF="more";
+	if($iLVL==$ACSi["mDEF"]){
+		$comparePDEF="same";
+	}
+}
+if($apsorb>=$ACSi["Apsorb"]){
+	$compareAPS="more";
+	if($armor==$ACSi["Apsorb"]){
+		$compareAPS="same";
 	}
 }
 //create Reward Template
-$reward = "<b><font class='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $new<br>
+$reward = "<b><font class='gold'><br> -ARMOR !- </font><br><br>DROP:</b><br><br>Name: $name<br>
 Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
-Item Armor: <b><span class='$compareARM'>$armor</span></b><br>
+Item Part: $part<br>
+Item P.def: <b><span class='$comparePDEF'>$valueArmorP</span></b><br>
+Item M.def: <b><span class='$compareMDEF'>$valueArmorM</span></b><br>
+Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br>
-Name: $Current <br>
-Item lvl: <b>$ARM[3]</b><br>
-Item Armor: <b>$ARM[4]</b><br>";
-//save in session
-$_SESSION["WepName"] = "$name";
-$_SESSION["Type"] = "$nameType";
-$_SESSION["ilvl"] = "$iLVL";
-$_SESSION["DMG"] = "$armor";
-$_SESSION["Color"] = "$color";
+Item Name: $ACSi[Name]<br>
+Item lvl: <b>$ACSi[ilvl]</span></b><br>
+Item Part: $part<br>
+Item P.def: <b>$ACSi[pDEF]</span></b><br>
+Item M.def: <b>$ACSi[mDEF]</span></b><br>
+Item Apsorb: <b>$ACSi[Apsorb] %</span></b><br>";
+
+
 $_SESSION["Reward"] = "$reward";
+$_SESSION["HASH"] = "$HASH";
+
 //check talisman xp bonus
 $xpTalismanMulti = $_SESSION["XPT"];
 $xpNew  = $Drop * $xpTalismanMulti;
@@ -88,7 +114,8 @@ $_SESSION["XPS"] = $xpNew;
 $xpTotal = $ACC[5] + $xpNew;
 $kills = $ACC[6] +1;
 $cash = ($ACC[4] - $FightFee) + $moneyRew;
-	   
+     
+
 //update passives
 $Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
 $Passive = mysqli_fetch_row($Passive);
@@ -107,9 +134,9 @@ $rngShardsChance = rand(1,100);
 $Shards = $ACC[15];
 
 if ($rngShardsChance <  10){
-	$rngShardsAmmount = rand(1,15);
-	$Shards += $rngShardsAmmount;
-	$_SESSION["SHD"] = $rngShardsAmmount;
+  $rngShardsAmmount = rand(1,15);
+  $Shards += $rngShardsAmmount;
+  $_SESSION["SHD"] = $rngShardsAmmount;
 }
 $orderChar = "UPDATE characters
 SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'

@@ -95,7 +95,7 @@ $sql2="DELETE FROM DropsWep WHERE HASH='$new'";
 mysqli_query($db,$sql2);}
 
 if ($Type == "ARM"){
-$sql2="DELETE FROM DropsArr WHERE HASH='$new'";
+$sql2="DELETE FROM DropsArm WHERE HASH='$new'";
 mysqli_query($db,$sql2);}
 
 if ($Type == "ACS"){

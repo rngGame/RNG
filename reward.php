@@ -28,6 +28,8 @@ $Gold = $_SESSION["GoldRew"];
 
 $rewType = $_SESSION["REWARDTYPE"];
 
+echo $_SESSION["CURRENTWHASH"];
+
 if (isset($_SESSION["SHD"])){
 $Shards = $_SESSION["SHD"];
 $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}

@@ -50,11 +50,27 @@ SET Cash = '$cash'
 WHERE `User` = '$User'";
 $result = mysqli_query($db, $order2);	
 
-$sql="DELETE FROM inventor WHERE hash='$HASH'";
+$rewType = $_SESSION["REWARDTYPE"];
+
+$sql="DELETE FROM Equiped WHERE hash='$HASH'";
 mysqli_query($db,$sql);
 
-$sql2="DELETE FROM weapondrops WHERE HASH='$HASH'";
+if($rewType == "WEP"){
+$sql2="DELETE FROM DropsWep WHERE HASH='$HASH'";
 mysqli_query($db,$sql2);
+}
+
+if($rewType == "ARM"){
+$sql2="DELETE FROM DropsArm WHERE HASH='$HASH'";
+mysqli_query($db,$sql2);
+}
+
+if($rewType == "TAL"){
+$sql2="DELETE FROM DropsAcs WHERE HASH='$HASH'";
+mysqli_query($db,$sql2);
+}
+
+
 
 $_SESSION["Money"] = "";
 header("location:sync.php");

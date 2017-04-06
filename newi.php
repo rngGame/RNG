@@ -24,8 +24,11 @@ $FightFee = $_SESSION["Money"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
-$WEP = mysqli_fetch_row($WEP);
+
+$WEPhash = $_SESSION["CURRENTWHASH"]; //current
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$WEPhash' ");
+$WEPi = mysqli_fetch_assoc($WEP);
+
 
 list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $User, "weapon", $MLVL);
 
@@ -54,59 +57,59 @@ $_SESSION["GoldRew"] = $moneyRew;
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
-if ($WEP[14]<>0){
-		if ($WEP[13] == "LL"){
+if ($WEPi["efstat"]<>0){
+		if ($WEPi["effect"] == "LL"){
 	$efftype = "Life Leach";
 	}
-		if ($WEP[13] == "BL"){
+		if ($WEPi["effect"] == "BL"){
 	$efftype = "Bleed Chanse";
 	}
-		if ($WEP[13] == "BR"){
+		if ($WEPi["effect"] == "BR"){
 	$efftype = "Burn Chanse";
 	}
-		if ($WEP[13] == "FR"){
+		if ($WEPi["effect"] == "FR"){
 	$efftype = "Freez Chanse";
 	}
-		if ($WEP[13] == "ST"){
+		if ($WEPi["effect"] == "ST"){
 	$efftype = "Stun Chanse";
 	}
-	$eft = "$efftype $WEP[14] %<br>";}
+	$eft = "$efftype $WEPi[efstat] %<br>";}
 	
-if (!$WEP[2] == ""){
-	$Current = "<b style='color:#$WEP[3]'>$WEP[1] ($WEP[2])</b>";}
+if (!$WEPi[2] == ""){
+	$Current = "<b style='color:#$WEPi[3]'>$WEPi[1] ($WEPi[2])</b>";}
 	else{
-	$Current = "$WEP[1]";}
+	$Current = "$WEPi[1]";}
 	
-if ($WEP[12] <> ""){
+if ($WEPi[12] <> ""){
 	$Skl2 = "Has Skill";}
 
 //CAlculate AVG
 $phyAVG1= round(($weaponPhysMin+$weaponPhysMax)/2);
-$phyAVG2= round(($WEP[5]+$WEP[6])/2);
+$phyAVG2= round(($WEPi["pmin"]+$WEPi["pmax"])/2);
 $magAVG1= round(($weaponMagMin+$weaponMagMax)/2);
-$magAVG2= round(($WEP[9]+$WEP[10])/2);
+$magAVG2= round(($WEPi["mmin"]+$WEPi["mmax"])/2);
 
 //Changes in COLOR--MORE OR LESS then current weapon
 $compareLVL=$comparePHYS1=$comparePHYS2=$comparePHYS=$compareMAG1=$compareMAG=$compareMAG2=$compareCRYT=$compareHIT="more";
-if($iLVL<=$WEP[4]){
+if($iLVL<=$WEPi["ilvl"]){
 	$compareLVL="less";
 }
-if($weaponPhysMin<=$WEP[5]){
+if($weaponPhysMin<=$WEPi["pmin"]){
 	$comparePHYS1="less";
 }
-if($weaponPhysMax<=$WEP[6]){
+if($weaponPhysMax<=$WEPi["pmax"]){
 	$comparePHYS2="less";
 }
-if($weaponMagMin<=$WEP[9]){
+if($weaponMagMin<=$WEPi["mmin"]){
 	$compareMAG1="less";
 }
-if($weaponMagMax<=$WEP[10]){
+if($weaponMagMax<=$WEPi["mmax"]){
 	$compareMAG2="less";
 }
-if($weaponCrit<=$WEP[7]){
+if($weaponCrit<=$WEPi["cryt"]){
 	$compareCRYT="less";
 }
-if($weaponHit<=$WEP[11]){
+if($weaponHit<=$WEPi["HitChanse"]){
 	$compareHIT="less";
 }
 if($phyAVG1<=$phyAVG2){
@@ -118,7 +121,7 @@ if($magAVG1<=$magAVG2){
 
 
 
-$reward = "<b><font color='red'><br> -WEAPON !-</font><br><br>DROP:</b><br><br>Name: $weaponName<br>
+$reward = "<b><font color='red'><br> -WEAPON !-</font><br><br>DROP:</b><br><br>Name: $name<br>
 LVL: <b><span class='$compareLVL'>$iLVL</span></b><br>
 Physical Dmg: <b><span class='$comparePHYS1'>$weaponPhysMin</span> ~ <span class='$comparePHYS2'>$weaponPhysMax</span> <font size='2'>(Avg. <span class='$comparePHYS'>$phyAVG1</span>)</font></b><br>
 Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='$compareMAG2'>$weaponMagMax</span> <font size='2'>(Avg. <span class='$compareMAG'>$magAVG1</span>)</font></b><br>
@@ -128,11 +131,11 @@ $weaponEffect $weaponSkillText
 Worth: $moneySel gold<br>
 <br><b>Current item:</b><br>
 Name: $Current <br>
-Item lvl: <b>$WEP[4]</b><br>
-Physical Dmg: <b>$WEP[5] ~ $WEP[6] <font size='2'>(Avg. $phyAVG2)</font></b><br>
-Magickal Dmg: <b>$WEP[9] ~ $WEP[10] <font size='2'>(Avg. $magAVG2)</font></b><br>
-Cryt chanse: $WEP[7] %<br>
-Hit chanse: $WEP[11] %<br>
+Item lvl: <b>$WEPi[ilvl]</b><br>
+Physical Dmg: <b>$WEPi[pmin] ~ $WEPi[pmax] <font size='2'>(Avg. $phyAVG2)</font></b><br>
+Magickal Dmg: <b>$WEPi[mmin] ~ $WEPi[mmax] <font size='2'>(Avg. $magAVG2)</font></b><br>
+Cryt chanse: $WEPi[cryt] %<br>
+Hit chanse: $WEPi[HitChanse] %<br>
 Skill: $Skl2<br>
 $eft<br>";
 
@@ -155,10 +158,10 @@ $Passive = mysqli_fetch_row($Passive);
 
 $passiveXP = round($MLVL * $xpTalismanMulti);
 $_SESSION["XPPA"] = $passiveXP;
-$passiveXPTotal=round($passiveXP + $Passive[4]);
+$passiveXPTotal=round($passiveXP + $Passive[1]);
 
 $orderPassive = "UPDATE passive
-SET xp2= '$passiveXPTotal'
+SET xp1= '$passiveXPTotal'
 WHERE `User` = '$User'";
 
 $result = mysqli_query($db, $orderPassive);

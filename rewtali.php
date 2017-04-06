@@ -35,13 +35,17 @@ $result = mysqli_query($db, $order2);
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-$TAL = mysqli_query($db,"SELECT * FROM dropst where HASH = '$ACC[8]' ");
-$TAL = mysqli_fetch_row($TAL);
 
-if (!$TAL[8] == ""){
-	$Current = "<b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
-else{
-	$Current = "$TAL[1]";}
+if ($part == "AMUL"){
+$currentHASH = $_SESSION["CURRENTACSAMULET"];
+}
+
+if ($part == "RING"){
+$currentHASH = $_SESSION["CURRENTACSRING"];
+}
+
+$ACS = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$currentHASH' ");
+$ACSi = mysqli_fetch_assoc($ACS);
 
 $moneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
 $_SESSION["GoldRew"] = $moneyRew;
@@ -53,71 +57,68 @@ $_SESSION["Gold"] = $moneySel;
 
 
 //Comparing
-$compareLVL=$compareDMG=$compareHP=$compareARM=$compareXP="less";
-if($iLVL>=$TAL[2]){
+$compareLVL=$compareDMG=$compareHP=$compareARM=$compareXP=$compareAPS="less";
+if($iLVL>=$ACSi["ilvl"]){
 	$compareLVL="more";
-	if($iLVL==$TAL[2]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($dmg>=$TAL[3]){
+if($dmgBonus>=$ACSi["dmgBonus"]){
 	$compareDMG="more";
-	if($iLVL==$TAL[2]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($health>=$TAL[4]){
+if($hpBonus>=$ACSi["hpBonus"]){
 	$compareHP="more";
-	if($iLVL==$TAL[2]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($armor>=$TAL[5]){
-	$compareARM="more";
-	if($iLVL==$TAL[2]){
-		$compareLVL="same";
-	}
-}
-if($xp>=$TAL[6]){
+if($xpBonus>=$ACSi["xpBonus"]){
 	$compareXP="more";
-	if($x==$TAL[2]){
+	if($iLVL==$ACSi["ilvl"]){
+		$compareLVL="same";
+	}
+}
+if($apsorb>=$ACSi["Apsorb"]){
+	$compareAPS="more";
+	if($x==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
 
-$reward = "<b><font color='lightgreen'><br> -TALISMAN !- </font><br><br>DROP:</b><br><br>Name: $new<br>
+$reward = "<b><font color='lightgreen'><br> -TALISMAN !- </font><br><br>DROP:</b><br><br>Name: $name<br>
 Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
-Item Damage: <b><span class='$compareDMG'>$dmg</span></b><br>
-Item Health: <b><span class='$compareHP'>$health</span></b><br>
-Item Armor: <b><span class='$compareARM'>$armor</span></b><br>
-Item Xp bonuss: <b><span class='$compareXP'>$xp</span></b><br>
+Item Part: $part<br>
+Item Dmg. Bonus: <b><span class='$compareDMG'>$dmgBonus %</span></b><br>
+Item HP Bonus <b><span class='$compareHP'>$hpBonus %</span></b><br>
+Item XP Bonus: <b><span class='$compareXP'>$xpBonus %</span></b><br>
+Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br><br>
-Name: $Current <br>
-Item lvl: <b>$TAL[2]</b><br>
-Item Damage: <b>$TAL[3]</b><br>
-Item Health: <b>$TAL[4]</b><br>
-Item Armor: <b>$TAL[5]</b><br>
-Item Xp bonuss: <b>$TAL[6]</b><br>";
+Name: $ACSi[Name]<br>
+Item lvl: <b>$ACSi[ilvl]</b><br>
+Item Part: $part<br>
+Item Dmg. Bonus: <b>$ACSi[dmgBonus] %</b><br>
+Item HP bonuss: <b>$ACSi[hpBonus] %</b><br>
+Item XP Bonus: <b>$ACSi[xpBonus] %</b><br>
+Item Apsorb: <b>$ACSi[Apsorb] %</b><br>";
 
-$_SESSION["WepName"] = "$name";
-$_SESSION["Type"] = "$nameType";
-$_SESSION["ilvl"] = "$iLVL";
-$_SESSION["DMG"] = "$dmg";
-$_SESSION["ARMOR"] = "$armor";
-$_SESSION["HEALTH"] = "$health";
-$_SESSION["XP"] = "$xp";
-$_SESSION["Color"] = "$color";
 $_SESSION["Reward"] = "$reward";
+$_SESSION["HASH"] = "$HASH";
 
+//check talisman xp bonus
 $xpTalismanMulti = $_SESSION["XPT"];
 $xpNew  = $Drop * $xpTalismanMulti;
 $_SESSION["XPS"] = $xpNew;
-
+//update user stats
 $xpTotal = $ACC[5] + $xpNew;
 $kills = $ACC[6] +1;
 $cash = ($ACC[4] - $FightFee) + $moneyRew;
-	   
+     
+
 //update passives
 $Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
 $Passive = mysqli_fetch_row($Passive);
@@ -136,9 +137,9 @@ $rngShardsChance = rand(1,100);
 $Shards = $ACC[15];
 
 if ($rngShardsChance <  10){
-	$rngShardsAmmount = rand(1,15);
-	$Shards += $rngShardsAmmount;
-	$_SESSION["SHD"] = $rngShardsAmmount;
+  $rngShardsAmmount = rand(1,15);
+  $Shards += $rngShardsAmmount;
+  $_SESSION["SHD"] = $rngShardsAmmount;
 }
 $orderChar = "UPDATE characters
 SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'

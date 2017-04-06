@@ -131,14 +131,36 @@ $ARMBODY = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND 
 $ARMBODY = mysqli_fetch_assoc($ARMBODY); //BODY by colum name
 }
 
-if (!isset($ARMBODY)){
+if (!isset($ARMGLOVES)){
 $ARMGLOVES = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'GLOVES'");
 $ARMGLOVES = mysqli_fetch_assoc($ARMGLOVES); //GLOVES by colum name
 }
 
-if (!isset($ARMBODY)){
+if (!isset($ARMBOOTS)){
 $ARMBOOTS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'LEGS' ");
 $ARMBOOTS = mysqli_fetch_assoc($ARMBOOTS); //BOOTS by colum name
+}
+}
+
+//armor calcultaions:
+$armorlevel = $ARMBODY["ilvl"] + $ARMGLOVES["ilvl"] + $ARMBOOTS["ilvl"];
+$tottalParmordef = round($ARMBODY["pdef"] + $ARMGLOVES["pdef"] + $ARMBOOTS["pdef"]);
+$tottalMarmordef = round($ARMBODY["mdef"] + $ARMGLOVES["mdef"] + $ARMBOOTS["mdef"]);
+
+
+
+//new  accesories
+$EQPacs = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ACS' AND Equiped = '1' ");
+while ($EQPAC = mysqli_fetch_array($EQPacs)){	
+
+if (!isset($ACSRING)){
+$ACSRING = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'RING' ");
+$ACSRING = mysqli_fetch_assoc($ACSRING); //BODY by colum name
+}
+
+if (!isset($ACSAMULET)){
+$ACSAMULET = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'AMUL' ");
+$ACSAMULET = mysqli_fetch_assoc($ACSAMULET); //BODY by colum name
 }
 
 }
@@ -270,7 +292,7 @@ World Of RNG
 <div id="first">
 <?php
 
-$lwa = $ACC[3] + $WEPn["ilvl"] + $ARM[3] +$TAL[2] + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
+$lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel +$TAL[2] + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
 $order = "UPDATE characters
 SET ILVL = '$lwa'
@@ -280,7 +302,8 @@ $result = mysqli_query($db, $order);
 
 $HP = $ACC[2] * $CLS[2] + ($HP * ($PNT[2])/100);
 $HP = $HP + ($HP * ($PNT[2])/100);
-$armor = ($ARM[4] + $TAL[5])*$CLS[4];
+$Parmor = round(($tottalParmordef + $TAL[5])*$CLS[4]);
+$Marmor = round(($tottalMarmordef + $TAL[5])*$CLS[4]);
 
 //enchant
 $ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEPn[plus]'");
@@ -322,7 +345,8 @@ else{
 	if ($Skil[2] == "DMG"){
 		$dmg = $dmg + ($dmg*$Skil[3]/100);}
 	if ($Skil[2] == "ARM"){
-		$armor = $armor + ($armor*$Skil[4]/100);}
+		$Parmor = $Parmor + ($Parmor*$Skil[4]/100);
+		$Marmor = $Marmor + ($Marmor*$Skil[4]/100);}
 	if ($Skil[2] == "HP"){
 		$HP2 = $HP2 + ($HP2*$Skil[5]/100);}
 }
@@ -342,7 +366,8 @@ if(isset($MODE[1])){
 		$maxMdmg = $maxMdmg+($maxMdmg*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "DEF"){
-		$armor = $armor+($armor*$MODE[$mc2]/100);
+		$Parmor = $Parmor+($Parmor*$MODE[$mc2]/100);
+		$Marmor = $Marmor+($Marmor*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "CRT"){
 		$PAS[2] = $PAS[2]+($PAS[2]*$MODE[$mc2]/100);
@@ -406,9 +431,11 @@ $HP = round(($HP),0);
 if (isset($hpsub)){
 	$HP = round(($HP*$hpsub),0);
 }
-$armor = round(($armor),0);
+$Parmor = round($Parmor);
+$Marmor = round($Marmor);
 if (isset($defsub)){
-	$armor = round(($armor*$defsub),0);
+	$Parmor = round($Parmor*$defsub);
+	$Marmor = round($Marmor*$defsub);
 }
 $dmg = round($dmg,0);
 $HP2 = round($HP2,0);
@@ -432,7 +459,8 @@ $_SESSION["DMGAVE"] =  $avgD;
 
 
 $_SESSION["plvl"] = $ACC[3];
-$_SESSION["ARM"] = $armor;
+$_SESSION["ARM"] = $Parmor;
+$_SESSION["MARM"] = $Marmor;
 $_SESSION["XPT"] = $TAL[6];
 $_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2];
@@ -471,7 +499,7 @@ echo "LVL: <b>$ACC[3]</b> $leveltext<br>";
 echo "Average DMG: <b><font class='physical'>~$avgP</font>/<font class='magic'>~$avgM</font></b><br>";
 echo "HP: <b><font class='health'>$HP2</font></b><br>";
 echo "ENR: <b><font class='energy'>$ENR<font size='1'>($enr per turn)</font></font></b><br>";
-echo "DEF: <b><font class='defense'>$armor</font></b><br>";
+echo "DEF: <b><font class='defense'>P.def: $Parmor M.Def: $Marmor</font></b><br>";
 //echo "SPD: <b><font class='speed'>$Speed</font></b><br>";
 echo "Gold: <b><font class='gold'>$ACC[4]</font></b><br>";
 echo "Shards: <b><font class='shards'>$ACC[15]</font></b><br>";
@@ -520,7 +548,7 @@ echo "<br><span class='tooltiptext'><b>$WEPn[ilvl] lvl.</b><br><a class='physica
 
 
 //new armor
-echo "Armor:";
+echo "Armor:<br>";
 
 //body
 if($ARMBODY["Name"] <> ""){
@@ -529,29 +557,53 @@ if($ARMBODY["Name"] <> ""){
 	";
 }
 else{
-	echo"<img src='IMG/pack/none.png' width='45px' height='45px'>";
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
 
 }
 
 if($ARMBOOTS["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBODY[Rarty]'>$ARMBODY[Name]<br>P.def - $ARMBODY[pDEF]<br>M.def - $ARMBODY[mDEF]<br>Apsorb: $ARMBODY[Apsorb]%<br>Enchant +$ARMBODY[plus]</span></div>
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span></div>
 	
 	";
 }
 else{
-	echo"<img src='IMG/pack/none.png' width='45px' height='45px'>";
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
 
 }
 
 if($ARMGLOVES["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBODY[Rarty]'>$ARMBODY[Name]<br>P.def - $ARMBODY[pDEF]<br>M.def - $ARMBODY[mDEF]<br>Apsorb: $ARMBODY[Apsorb]%<br>Enchant +$ARMBODY[plus]</span></div>
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span></div>
 	
 	<br>";
 }
 else{
-	echo"<img src='IMG/pack/none.png' width='45px' height='45px'>";
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
 
 }
+
+//acsesories
+echo"Accseories:<br>";
+
+if($ACSRING["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span></div>
+	
+	";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+
+}
+
+if($ACSAMULET["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_53.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span></div>
+	
+	<br>";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
+
+}
+
 
 
 
@@ -568,7 +620,12 @@ if (!$TAL[8] == ""){
 		echo "<div class='tooltip'>$TAL[1]";}
 echo "<br><span class='tooltiptext'><a class='physical'><b>$TAL[3]</b> dmg.</a> <a class='defense'><b>$TAL[5]</b> def. </a><a class='health'><b>$TAL[4]</b> HP. </a><a class='experience'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
 */
-echo "Jewel:";
+
+
+
+
+
+echo "Gem:";
 if (!$GEM[3] == ""){
 	echo "<div class='tooltip'><b style='color:#$GEM[3]'>$GEM[0]</b>";}
 	else{
@@ -861,7 +918,7 @@ mysqli_close($db);
 ?>
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.4.1)</b></a><br>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.5pre)</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {

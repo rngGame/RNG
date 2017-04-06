@@ -111,10 +111,68 @@ if ($SUB[3] == "ENR"){
 
 }
 
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
-$WEP = mysqli_fetch_row($WEP);
+
+//new wep
+$EQPW = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'WEP' AND Equiped = '1' ");
+$EQPW = mysqli_fetch_row($EQPW);
+
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$EQPW[2]' ");
+$WEPn = mysqli_fetch_assoc($WEP); //by colum name
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$EQPW[2]' ");
+$WEP = mysqli_fetch_row($WEP); //by colum number
 
 
+//new Armor
+$EQPar = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ARM' AND Equiped = '1' ");
+while ($EQPA = mysqli_fetch_array($EQPar)){	
+
+if (!isset($ARMBODY)){
+$ARMBODY = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'BODY' ");
+$ARMBODY = mysqli_fetch_assoc($ARMBODY); //BODY by colum name
+}
+
+if (!isset($ARMGLOVES)){
+$ARMGLOVES = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'GLOVES'");
+$ARMGLOVES = mysqli_fetch_assoc($ARMGLOVES); //GLOVES by colum name
+}
+
+if (!isset($ARMBOOTS)){
+$ARMBOOTS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'LEGS' ");
+$ARMBOOTS = mysqli_fetch_assoc($ARMBOOTS); //BOOTS by colum name
+}
+}
+
+//armor calcultaions:
+$armorlevel = $ARMBODY["ilvl"] + $ARMGLOVES["ilvl"] + $ARMBOOTS["ilvl"];
+$tottalParmordef = round($ARMBODY["pDEF"] + $ARMGLOVES["pDEF"] + $ARMBOOTS["pDEF"]);
+$tottalMarmordef = round($ARMBODY["mDEF"] + $ARMGLOVES["mDEF"] + $ARMBOOTS["mDEF"]);
+$tottalarmorApsorb = round($ARMBODY["Apsorb"] + $ARMGLOVES["Apsorb"] + $ARMBOOTS["Apsorb"]);
+
+
+//new  accesories
+$EQPacs = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ACS' AND Equiped = '1' ");
+while ($EQPAC = mysqli_fetch_array($EQPacs)){	
+
+if (!isset($ACSRING)){
+$ACSRING = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'RING' ");
+$ACSRING = mysqli_fetch_assoc($ACSRING); //BODY by colum name
+}
+
+if (!isset($ACSAMULET)){
+$ACSAMULET = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'AMUL' ");
+$ACSAMULET = mysqli_fetch_assoc($ACSAMULET); //BODY by colum name
+}
+}
+
+//acseosies calculation
+$acclevel = $ACSRING["ilvl"] + $ACSAMULET["ilvl"];
+$tottalACCApsorb = round($ACSRING["Apsorb"] + $ACSAMULET["Apsorb"]);
+$tottalXPBonus = round($ACSRING["xpBonus"] + $ACSAMULET["xpBonus"]);
+$tottalHPBonus = round($ACSRING["hpBonus"] + $ACSAMULET["hpBonus"]);
+$tottalDMGBonus = round($ACSRING["dmgBonus"] + $ACSAMULET["dmgBonus"]);
+
+
+//Laiko tikrinimas
 $datetime = date_create()->format('Y-m-d H:i:s');
 $ONL2 = mysqli_query($db,"SELECT * FROM Online where Time>'$datetime'");
 $ONL = mysqli_num_rows($ONL2);
@@ -136,10 +194,10 @@ if ($ONL == 1){
 if ($ONL > 1){
 	$onlineText = " <div class='tooltip'>$ONL Players Online<span class='tooltiptext'>$UsersO</span></div>";}
 
-if ($WEP[12] == 0){
+if ($WEPn["skill"] == 0){
 }
 else{
-	$Skil = mysqli_query($db,"SELECT * FROM iskills where ID = '$WEP[12]' ");
+	$Skil = mysqli_query($db,"SELECT * FROM iskills where ID = '$WEPn[skill]' ");
 	$Skil = mysqli_fetch_row($Skil);
 };
 
@@ -165,12 +223,6 @@ if ($PNT[1] >= 1){
 }
 
 
-
-$ARM = mysqli_query($db,"SELECT * FROM drops where HASH = '$ACC[7]' ");
-$ARM = mysqli_fetch_row($ARM);
-
-$TAL = mysqli_query($db,"SELECT * FROM dropst where HASH = '$ACC[8]' ");
-$TAL = mysqli_fetch_row($TAL);
 
 $lvl2 = $ACC[3] + 1;
 
@@ -240,7 +292,7 @@ World Of RNG
 <div id="first">
 <?php
 
-$lwa = $ACC[3] + $WEP[4] + $ARM[3] +$TAL[2] + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
+$lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
 $order = "UPDATE characters
 SET ILVL = '$lwa'
@@ -250,55 +302,56 @@ $result = mysqli_query($db, $order);
 
 $HP = $ACC[2] * $CLS[2] + ($HP * ($PNT[2])/100);
 $HP = $HP + ($HP * ($PNT[2])/100);
-$armor = ($ARM[4] + $TAL[5])*$CLS[4];
+$Parmor = round(($tottalParmordef )*$CLS[4]);
+$Marmor = round(($tottalMarmordef)*$CLS[4]);
 
 //enchant
-$ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEP[15]'");
+$ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEPn[plus]'");
 $ENC = mysqli_fetch_row($ENC);
 
 if ($ENC[2] <> 0){
 	$enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";}
 
+
 // physical dmg
-$minPdmg = round(($WEP[5] + $TAL[3])*$CLS[3]);
+$minPdmg = round(($WEPn["pmin"] + ($WEPn["pmin"] * $tottalDMGBonus /100 ))*$CLS[3]);
 $minPdmg = $minPdmg + ($minPdmg * $ENC[2] / 100) + ($minPdmg * ($PNT[2]*2)/100);
 if (isset($dmgsub)){
 	$minPdmg = round(($minPdmg*$dmgsub),0);
 }
-$maxPdmg = round(($WEP[6] + $TAL[3])*$CLS[3]);
+$maxPdmg = round(($WEPn["pmax"] + ($WEPn["pmax"] * $tottalDMGBonus /100 ))*$CLS[3]);
 $maxPdmg = $maxPdmg + ($maxPdmg * $ENC[2] / 100) + ($maxPdmg * ($PNT[2]*2)/100);
 if (isset($dmgsub)){
 	$maxPdmg = round(($maxPdmg*$dmgsub),0);
 }
 
 // magical dmg
-$minMdmg = round(($WEP[9] + $TAL[3])*$CLS[3]);
+$minMdmg = round(($WEPn["mmin"] + ($WEPn["mmin"] * $tottalDMGBonus /100 ))*$CLS[3]);
 $minMdmg = $minMdmg + ($minMdmg * $ENC[2] / 100) + ($minMdmg * ($PNT[3]*3)/100);
 if (isset($dmgsub)){
 	$minMdmg = round(($minMdmg*$dmgsub),0);
 }
-$maxMdmg = round(($WEP[10] + $TAL[3])*$CLS[3]);
+$maxMdmg = round(($WEPn["mmax"] + ($WEPn["mmax"] * $tottalDMGBonus /100 ))*$CLS[3]);
 $maxMdmg = $maxMdmg + ($maxMdmg * $ENC[2] / 100) + ($maxMdmg * ($PNT[3]*3)/100);
 if (isset($dmgsub)){
 	$maxMdmg = round(($maxMdmg*$dmgsub),0);
 }
 
 
-$HP2 = $HP + $TAL[4];
+$HP2 = $HP + ($HP * $tottalHPBonus / 100);
 
-if ($WEP[12] == 0){
+if ($WEPn["skill"] == 0){
 }
 else{
 	if ($Skil[2] == "DMG"){
 		$dmg = $dmg + ($dmg*$Skil[3]/100);}
 	if ($Skil[2] == "ARM"){
-		$armor = $armor + ($armor*$Skil[4]/100);}
+		$Parmor = $Parmor + ($Parmor*$Skil[4]/100);
+		$Marmor = $Marmor + ($Marmor*$Skil[4]/100);}
 	if ($Skil[2] == "HP"){
 		$HP2 = $HP2 + ($HP2*$Skil[5]/100);}
 }
 
-//$Speed = $ACC[16]+ $ACC[3];
-//$Speed = $Speed + ($Speed * $GEM[5] /100);
 
 if(isset($MODE[1])){
 
@@ -312,7 +365,8 @@ if(isset($MODE[1])){
 		$maxMdmg = $maxMdmg+($maxMdmg*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "DEF"){
-		$armor = $armor+($armor*$MODE[$mc2]/100);
+		$Parmor = $Parmor+($Parmor*$MODE[$mc2]/100);
+		$Marmor = $Marmor+($Marmor*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "CRT"){
 		$PAS[2] = $PAS[2]+($PAS[2]*$MODE[$mc2]/100);
@@ -334,14 +388,9 @@ if(isset($MODE[1])){
 		$HP2 = $HP2+($HP2*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "XP"){
-		$TAL[6] = $TAL[6]+($TAL[6]*$MODE[$mc2]/100);
-		$TAL[6] = round($TAL[6],2);
+		$tottalXPBonus = $tottalXPBonus+($tottalXPBonus*$MODE[$mc2]/100);
 		
 	}
-	//if($MODT[$mc2] == "SPD"){
-		//$Speed = $Speed+($Speed*$MODE[$mc2]/100);
-		
-	//}
 	if($MODT[$mc2] == "ABS"){
 		$PAS[5] = $PAS[5]+($PAS[5]*$MODE[$mc2]/100);	
 		$PAS[5] = round($PAS[5],0);
@@ -364,8 +413,8 @@ $datemin2 = strtotime(date($Event[4]));
 if ($datemin2 > $datemin){
 	
 		if($Event[2] == "XP"){
-		$TAL[6] = $TAL[6] * $Event[3];
-		$TAL[6] = round($TAL[6],2);
+		$tottalXPBonus = $tottalXPBonus * $Event[3];
+		
 		
 	}
 }
@@ -376,20 +425,18 @@ $HP = round(($HP),0);
 if (isset($hpsub)){
 	$HP = round(($HP*$hpsub),0);
 }
-$armor = round(($armor),0);
+$Parmor = round($Parmor);
+$Marmor = round($Marmor);
 if (isset($defsub)){
-	$armor = round(($armor*$defsub),0);
+	$Parmor = round($Parmor*$defsub);
+	$Marmor = round($Marmor*$defsub);
 }
 $dmg = round($dmg,0);
 $HP2 = round($HP2,0);
 
 
-//$Speed = round($Speed,0);
-
-
 $_SESSION["HP"] = $HP2;
 $_SESSION["GOLD"] = $ACC[4];
-//$_SESSION["SPEED"] = $Speed;
 
 //dmg
 $_SESSION["DMGPmin"] = $minPdmg;
@@ -402,8 +449,9 @@ $_SESSION["DMGAVE"] =  $avgD;
 
 
 $_SESSION["plvl"] = $ACC[3];
-$_SESSION["ARM"] = $armor;
-$_SESSION["XPT"] = $TAL[6];
+$_SESSION["ARM"] = $Parmor;
+$_SESSION["MARM"] = $Marmor;
+$_SESSION["XPT"] = 1 + (1 * $tottalXPBonus / 100); //xp bonus
 $_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2];
 if (isset($crcsub)){
@@ -413,7 +461,7 @@ $_SESSION["CRYTD"] = $PAS[11];
 if (isset($crdsub)){
 $_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub;
 }
-$_SESSION["APS"] = $PAS[5];
+$_SESSION["APS"] = $PAS[5] + $tottalarmorApsorb + $tottalACCApsorb;
 $_SESSION["ENG2"] = $PAS[8];
 $_SESSION["ILVL"] = $lwa;
 $_SESSION["crytext"] = 0;
@@ -441,8 +489,7 @@ echo "LVL: <b>$ACC[3]</b> $leveltext<br>";
 echo "Average DMG: <b><font class='physical'>~$avgP</font>/<font class='magic'>~$avgM</font></b><br>";
 echo "HP: <b><font class='health'>$HP2</font></b><br>";
 echo "ENR: <b><font class='energy'>$ENR<font size='1'>($enr per turn)</font></font></b><br>";
-echo "DEF: <b><font class='defense'>$armor</font></b><br>";
-//echo "SPD: <b><font class='speed'>$Speed</font></b><br>";
+echo "DEF: <b><font class='defense'>P.def: $Parmor M.Def: $Marmor</font></b><br>";
 echo "Gold: <b><font class='gold'>$ACC[4]</font></b><br>";
 echo "Shards: <b><font class='shards'>$ACC[15]</font></b><br>";
 echo "Item LVL: <b>$lwa</b><br>";
@@ -450,54 +497,105 @@ echo "Points: <font class='physical'>$PNT[2] STR</font> - <font class='magic'>$P
 echo "</div>";
 echo "<div id='second'>Weapon: ";
 
-if ($WEP[14]<>0){
-		if ($WEP[13] == "LL"){
+if ($WEPn["efstat"]<>0){
+		if ($WEPn["effect"] == "LL"){
 	$efftype = "Life Leach";
 	}
-		if ($WEP[13] == "BL"){
+		if ($WEPn["effect"] == "BL"){
 	$efftype = "Bleed Chanse";
 	}
-		if ($WEP[13] == "BR"){
+		if ($WEPn["effect"] == "BR"){
 	$efftype = "Burn Chanse";
 	}
-		if ($WEP[13] == "FR"){
+		if ($WEPn["effect"] == "FR"){
 	$efftype = "Freez Chanse";
 	}
-		if ($WEP[13] == "ST"){
+		if ($WEPn["effect"] == "ST"){
 	$efftype = "Stun Chanse";
 	}
-		if ($WEP[13] == "SH"){
+		if ($WEPn["effect"] == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($WEP[13] == "BK"){
+		if ($WEPn["effect"] == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($WEP[13] == "SM"){
+		if ($WEPn["effect"] == "SM"){
 	$efftype = "Summon increase";
 	}
-	$eft = "$efftype $WEP[14] %<br>";}
+	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
-	if ($WEP[3] == "ff6633"){
-		$unEf = "class='awesome'";}
+	//check for uniq
+	if ($WEPn["Rarity"] == "Unique"){
+		$unEf = "class='awesome'";
+	}
 
-if (!$WEP[2] == ""){
-	echo "<div class='tooltip'><b $unEf class='$WEP[3]'>$WEP[1] + $WEP[15] ($WEP[2])</b>";}
+if (!$WEPn["Rarity"] == ""){
+	echo "<div class='tooltip'><b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>";}
 	else{
-		echo "<div class='tooltip'>$WEP[1] + $WEP[15]";}
-echo "<br><span class='tooltiptext'><b>$WEP[4] lvl.</b><br><a class='physical'><b>P.dmg: $WEP[5] ~ $WEP[6]</b><br><a class='magic'><b>M.dmg: $WEP[9] ~ $WEP[10]</b></a><br>Cryt chanse: $WEP[7]<br>Hit Chanse: $WEP[11]<br> $eft$enchtex</span></div><br><br>Armor: ";
+		echo "<div class='tooltip'>$WEPn[Name] + $WEPn[plus]";}
+echo "<br><span class='tooltiptext'><b>$WEPn[ilvl] lvl.</b><br><a class='physical'><b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b><br><a class='magic'><b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b></a><br>Cryt chanse: $WEPn[cryt]<br>Hit Chanse: $WEPn[HitChanse]<br> $eft $enchtex</span></div><br><br>";
 
-if (!$ARM[2] == ""){
-	echo "<div class='tooltip'><b class='$ARM[5]'>$ARM[1] ($ARM[2])</b>";}
-	else{
-		echo "<div class='tooltip'>$ARM[1]";}
-echo "<br><span class='tooltiptext'><a class='defense'><b>$ARM[4]</b> def. </a><br><b>$ARM[3] lvl.</b></span></div><br><br>Talisman: ";
 
-if (!$TAL[8] == ""){
-	echo "<div class='tooltip'><b class='$TAL[9]'>$TAL[1] ($TAL[8])</b>";}
-	else{
-		echo "<div class='tooltip'>$TAL[1]";}
-echo "<br><span class='tooltiptext'><a class='physical'><b>$TAL[3]</b> dmg.</a> <a class='defense'><b>$TAL[5]</b> def. </a><a class='health'><b>$TAL[4]</b> HP. </a><a class='experience'><b>$TAL[6]</b> XP. </a><br><b>$TAL[2] lvl.</b></span></div><br><br>Gem: ";
+//new armor
+echo "Armor:<br>";
 
+//body
+if($ARMBODY["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBODY[Rarty]'>$ARMBODY[Name]</b><br>P.def - $ARMBODY[pDEF]<br>M.def - $ARMBODY[mDEF]<br>Apsorb: $ARMBODY[Apsorb]%<br>Enchant +$ARMBODY[plus]</span></div>
+	
+	";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+
+}
+
+if($ARMBOOTS["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span></div>
+	
+	";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+
+}
+
+if($ARMGLOVES["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span></div>
+	
+	<br>";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
+
+}
+
+//acsesories
+echo"Accseories:<br>";
+
+if($ACSRING["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span></div>
+	
+	";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+
+}
+
+if($ACSAMULET["Name"] <> ""){
+	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_53.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span></div>
+	
+	<br>";
+}
+else{
+	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
+
+}
+
+
+
+echo "Gem:";
 if (!$GEM[3] == ""){
 	echo "<div class='tooltip'><b style='color:#$GEM[3]'>$GEM[0]</b>";}
 	else{
@@ -518,7 +616,7 @@ echo "<section class='container'>
 echo "$onlineText";
 echo"</div>";
 
-//echo "<div id='minievent'><iframe height='570px' width='300px' scrolling='no' src='chat.php'></iframe></div>";
+
 echo "<div id='minievent'><div id='sidbar'>";
 ?>
 <div id="result"></div>
@@ -637,13 +735,14 @@ $RANK = mysqli_fetch_row($RANK);
 
 <?php
 
+$apsorb = $tottalarmorApsorb + $PAS[5] + $tottalACCApsorb;
 
 echo "<div class='tooltip'><img src='IMG/cryt.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[3]<br>XP:$PAS[1]/$plvl1[1]<br>$PAS[2]% Cryt chanse</span></div>";
 echo "<div class='tooltip'><img src='IMG/crytd.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[12]<br>XP:$PAS[10]/$plvl4[1]<br>$PAS[11]% Cryt damage increase</span></div>";
-echo "<div class='tooltip'><img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[6]<br>XP:$PAS[4]/$plvl2[1]<br>$PAS[5]% Absorb</span></div>";
+echo "<div class='tooltip'><img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[6]<br>XP:$PAS[4]/$plvl2[1]<br>$apsorb% Absorb</span></div>";
 echo "<div class='tooltip'><img src='IMG/ener.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[9]<br>XP:$PAS[7]/$plvl3[1]<br>$PAS[8]% Bonus energy regen</span></div>";
 
-if ($WEP[12] == 0){
+if ($WEPn["skill"] == 0){
 }
 else{
 	echo "&nbsp&nbsp";
@@ -713,60 +812,62 @@ echo "</div><br><b>Inventory:</b><table border='0' class='solid'>
 </tr>";
 
 echo "<tr>";
-$List = mysqli_query($db,"SELECT * FROM inventor WHERE User = '$User'");
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'");
 while ($List1 = mysqli_fetch_array($List)){	
-
-$WEPI = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$List1[1]' ");
-$WEPI = mysqli_fetch_row($WEPI);
-$sell = ($WEPI[4] + $ACC[3]) *10;
+ 
+if ($List1[1] == "WEP"){
+$WEPI = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$List1[2]' ");
+$WEPIn = mysqli_fetch_assoc($WEPI); //wepaon by colum row
+$sell = ($WEPIn["ilvl"] + $ACC[3]) *10;
 
 $eft = 1 + $eft;
 
-if ($WEPI[14]<>0){
-		if ($WEPI[13] == "LL"){
+if ($WEPIn["efstat"]<>0){
+		if ($WEPIn["effect"] == "LL"){
 	$efftype[$eft] = "Life Leach";
 	}
-		if ($WEPI[13] == "BL"){
+		if ($WEPIn["effect"] == "BL"){
 	$efftype[$eft] = "Bleed Chanse";
 	}
-		if ($WEPI[13] == "BR"){
+		if ($WEPIn["effect"] == "BR"){
 	$efftype[$eft] = "Burn Chanse";
 	}
-		if ($WEPI[13] == "FR"){
+		if ($WEPIn["effect"] == "FR"){
 	$efftype[$eft] = "Freez Chanse";
 	}
-		if ($WEPI[13] == "ST"){
+		if ($WEPIn["effect"] == "ST"){
 	$efftype[$eft] = "Stun Chanse";
 	}
-		if ($WEPI[13] == "SH"){
+		if ($WEPIn["effect"] == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($WEPI[13] == "BK"){
+		if ($WEPIn["effect"] == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($WEPI[13] == "SM"){
+		if ($WEPIn["effect"] == "SM"){
 	$efftype = "Summon increase";
 	}
-	$efto[$eft] = "$efftype[$eft] $WEPI[14] %<br>";}
+	$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
-if ($WEPI[12] <> 0){
+if ($WEPIn["skill"] <> 0){
 	$sklu[$eft] = "Has Skill!<br>";}
 	
-	if ($WEPI[3] == "ff6633"){
+	if ($WEPIn["Rarity"] == "Unique"){
 		$unEf[$eft] = "class='awesome'";}
 
 echo "<td>";
-echo "<div class='tooltip'><b $unEf[$eft] class='$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
+echo "<div class='tooltip'><b $unEf[$eft] class='$WEPIn[Rarity]'>$WEPIn[Name] + $WEPIn[plus]</b><span class='tooltiptext'>Lvl:$WEPIn[ilvl] <br>P. dmg:$WEPIn[pmin] ~ $WEPIn[pmax]<br>M. dmg:$WEPIn[mmin] ~ $WEPIn[mmax]<br>Cryt chanse: $WEPIn[cryt]<br>Hit Chanse: $WEPIn[HitChanse]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
 echo "<td     display: inline-flex;>
 	      <form method='post' class='inventor' action='Equip.php'>
-          <input style='display:none' type='submit' name='Eqip' value='$WEPI[0]' placeholder='lvl'>
-        <a class='submit'><button type='submit' name='Eqip' value='$WEPI[0]'>Equip</button> 
+          <input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
+		  <input type='text' name='TYPE' value='WEP' style='display:none'>
+        <a class='submit'><button type='submit' name='Eqip' value='$WEPIn[HASH]'>Equip</button> 
         </a>
-          <input style='display:none' type='submit' name='Sell' value='$WEPI[0]' placeholder='lvl'>";
-		if ($WEPI[3] == "ff6633"){
-        echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
+          <input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>";
+		if ($WEPIn["Rarity"] == "Unique"){
+        echo "<a class='submit'><button type='submit' name='Sell' value='$WEPIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
 		else{
-		echo "<a class='submit'><button type='submit' name='Sell' value='$WEPI[0]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+		echo "<a class='submit'><button type='submit' name='Sell' value='$WEPIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
 		}
 		
         echo "</a>
@@ -778,18 +879,110 @@ echo "<td     display: inline-flex;>
 <form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
 <form >
 Asking price: <input type='number' name='price' value='0'>
-<input type='text' name='HASH' value='$WEPI[0]' style='display:none'>
+<input type='text' name='HASH' value='$WEPIn[HASH]' style='display:none'>
+<input type='text' name='TYPE' value='WEP' style='display:none'>
  <input type='submit' value='Submit'>
 </form></form>
 
 </td>";
-echo "</td></tr>";}
+}
+
+//invetor ARMOR
+if ($List1[1] == "ARM"){
+$ARMIr = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$List1[2]' ");
+$ARMIn = mysqli_fetch_assoc($ARMIr); //armor by colum row
+$sell = ($ARMIn["ilvl"] + $ACC[3]) *10;
+
+$eft = 1 + $eft;
+	
+if ($ARMIn["Rarity"] == "Unique"){
+		$unEf[$eft] = "class='awesome'";}
+
+echo "<tr><td>";
+echo "<div class='tooltip'><b class='$ARMIn[Rarty]'>$ARMIn[Name]</b><span class='tooltiptext'>P.def - $ARMIn[pDEF]<br>M.def - $ARMIn[mDEF]<br>Apsorb: $ARMIn[Apsorb]%<br>Enchant +$ARMIn[plus]</span></div></td>";
+echo "<td     display: inline-flex;>
+	      <form method='post' class='inventor' action='Equip.php'>
+          <input style='display:none' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
+		  <input type='text' name='TYPE' value='ARM' style='display:none'>
+        <a class='submit'><button type='submit' name='Eqip' value='$ARMIn[HASH]'>Equip</button> 
+        </a>
+          <input style='display:none' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>";
+		if ($ARMIn["Rarity"] == "Unique"){
+        echo "<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
+		else{
+		echo "<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+		}
+		
+        echo "</a>
+
+      </form>
+	  
+		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
+	  
+<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+<form >
+Asking price: <input type='number' name='price' value='0'>
+<input type='text' name='HASH' value='$ARMIn[HASH]' style='display:none'>
+<input type='text' name='TYPE' value='ARM' style='display:none'>
+ <input type='submit' value='Submit'>
+</form></form>
+
+</td>";
+}
+
+
+
+if ($List1[1] == "ACS"){
+$ACSI = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$List1[2]' ");
+$ACSIn = mysqli_fetch_assoc($ACSI); //armor by colum row
+$sell = ($ACSIn["ilvl"] + $ACC[3]) *10;
+
+$eft = 1 + $eft;
+	
+if ($ACSIn["Rarity"] == "Unique"){
+		$unEf[$eft] = "class='awesome'";}
+
+echo "<tr><td>";
+echo "<div class='tooltip'><b class='$ACSIn[Rarty]'>$ACSIn[Name]</b><span class='tooltiptext'>Apsorb: $ACSIn[Apsorb]%<br>HP Bonus:  $ACSIn[hpBonus]<br>XP Bonus: $ACSIn[xpBonus]%<br>Dmg. Bonus: $ACSIn[dmgBonus]%<br>Enchant +$ACSIn[plus]</span></div></td>";
+echo "<td     display: inline-flex;>
+	      <form method='post' class='inventor' action='Equip.php'>
+          <input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
+		  <input type='text' name='TYPE' value='ACS' style='display:none'>
+        <a class='submit'><button type='submit' name='Eqip' value='$ACSIn[HASH]'>Equip</button> 
+        </a>
+          <input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>";
+		if ($ACSIn["Rarity"] == "Unique"){
+        echo "<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
+		else{
+		echo "<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+		}
+		
+        echo "</a>
+
+      </form>
+	  
+		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
+	  
+<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+<form >
+Asking price: <input type='number' name='price' value='0'>
+<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
+<input type='text' name='TYPE' value='ACS' style='display:none'>
+ <input type='submit' value='Submit'>
+</form></form>
+
+</td>";
+}
+
+}
+
+echo "</td></tr>";
 
 mysqli_close($db);
 ?>
 </table>
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.4.1)</b></a><br>
+<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.5pre)</b></a><br>
 <a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 <script>
 if(typeof(EventSource) !== "undefined") {

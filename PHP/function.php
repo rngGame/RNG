@@ -105,7 +105,7 @@ function itemDrop($db,$user,$drop,$MLVL){
         //check which item
         if($drop=="armor"){
             $baseTable="basearmor";
-			$part = "ARM";
+
         }
         else if($drop=="talisman"){
             $baseTable="basetalis";
@@ -161,6 +161,13 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueArmorP = $Base[2]; //base armor phys
 				$valueArmorM = $Base[2]; //base armor mag
 				$apsorb = rand(1,10);
+				$part = rand(1,3);
+				if ($part == 1) {
+					$part = "BODY";}
+				if ($part == 1) {
+					$part = "GLOVES";}
+				if ($part == 1) {
+					$part = "LEGS";}
             }
             if($drop=="weapon"){
                 $iLVL = $Base[2]; //base level

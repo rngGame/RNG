@@ -30,6 +30,9 @@ $WEP = mysqli_fetch_row($WEP);
 list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $User, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
+
+$_SESSION["REWARDTYPE"] = "WEP";
+
 //insert into db
 
 $order = "INSERT INTO DropsWep

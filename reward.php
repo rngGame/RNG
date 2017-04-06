@@ -26,6 +26,8 @@ $Reward = $_SESSION["Reward"];
 $sell = $_SESSION["Sell"];
 $Gold = $_SESSION["GoldRew"];
 
+$rewType = $_SESSION["REWARDTYPE"];
+
 if (isset($_SESSION["SHD"])){
 $Shards = $_SESSION["SHD"];
 $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}
@@ -33,9 +35,17 @@ $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}
 $XPS = round($XPS,0);
 $XPP = round($XPP,0);
 
-
-
+if($rewType == "WEP"){
 echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";
+}
+if($rewType == "ARM"){
+echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for apsorb pasive $Shards<br><br>";
+}
+if($rewType == "TAL"){
+echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for energie pasive $Shards<br><br>";
+}
+
+
 
 echo ' <div class="right-panel">';
 echo $_SESSION["LOG"];

@@ -29,6 +29,7 @@ VALUES
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);
 
+$_SESSION["REWARDTYPE"] = "ARM";
 
 //get User and current Armor
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -116,6 +117,6 @@ WHERE `USER` = '$User'";
 $result = mysqli_query($db, $orderChar);
 
 mysqli_close($db);
-header("location:rewardA.php");
+header("location:reward.php");
 
 ?>

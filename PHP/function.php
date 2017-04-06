@@ -176,16 +176,21 @@ function itemDrop($db,$user,$drop,$MLVL){
             if($drop=="talisman"){
                 $iLVL = $Base[2];//base lvl
                 $valueDMG = $Base[3];//base dmg 
-                $valueArmor = $Base[4];//base armor
                 $valueHP = $Base[5];//base HP
                 $valueXP = $Base[6]; //base XP
+				$apsorb = rand(1,10);
+				$part = rand(1,2);
+				if ($part == 1) {
+					$part = "RING";}
+				if ($part == 2) {
+					$part = "AMUL";}
+
             }
             $textMessage.="Bases done for $drop Bases: Name $nameBase >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Prefix for talismans
             if($rngPre>3000 && $drop=="talisman"){
                 $namePre=$Pre[1];
                 $valueDMG*=$Pre[2];
-                $valueArmor*=$Pre[2];
                 $valueHP*=$Pre[2];
                 $valueXP*=$Pre[2];
                 $iLVL+=$Pre[3];
@@ -202,7 +207,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             if($rngSub>3000 && $drop=="talisman"){
                 $nameSub = "and $Sub[1]";
                 $valueDMG +=$Sub[3];
-                $valueArmor +=$Sub[3]/3;
                 $valueHP +=$valueHP*$Sub[3]/200;
                 $valueXP *=1.2;
                 $iLVL +=$Sub[2];
@@ -293,11 +297,14 @@ function itemDrop($db,$user,$drop,$MLVL){
 
             //finnishing up values
             $iLVL = round($iLVL, 0);
-            $valueDMG = round($value, 0);
+            $dmgBonus = round($valueDMG/10);
             $valueArmorP = round($valueArmorP + ($valueArmorP * rand(-20,15) / 100));
 			$valueArmorM = round($valueArmorM + ($valueArmorM * rand(-5,30) / 100));
-            $valueHP = round($valueHP, 0);
-            $valueXP = round($valueXP, 1);
+            $hpBonus = round($valueHP/50);
+            $xpBonus = round($valueXP*10);
+			
+			
+			
             $textMessage.="Rounding Orrignal \r\n";
 
             if($valueDMG <= 0){
@@ -419,7 +426,8 @@ function itemDrop($db,$user,$drop,$MLVL){
 		if($drop=="weapon"){
 			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance);}
 		if($drop=="talisman"){ 
-		}
+			 return array ($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus);}
+		
 		
     }
 }

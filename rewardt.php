@@ -43,10 +43,12 @@ echo '</div>';
 
 echo "$Reward";
 
+
+
 echo '<section class="container">
     <div class="Keep">
-	      <form method="post" action="KeepT.php">
-        <p class="submit"><input type="submit" name="commit" value="Switch"></p>
+	      <form method="post" action="sync.php">
+        <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
     </div>
   </section>';
@@ -59,7 +61,6 @@ echo '<section class="container2">
     </div>
   </section>';
 
-mysqli_close($db);
 ?>
 </div>
 </body>

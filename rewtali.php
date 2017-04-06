@@ -10,8 +10,26 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
-list($iLVL,, $name, $color, $new, $nameType, $dmg, $armor, $health, $xp) = itemDrop($db,$User,"talisman",$MLVL);
+list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$User,"talisman",$MLVL);
 $cash = $iLVL*$sell;
+
+$_SESSION["REWARDTYPE"] = "TAL";
+
+$worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
+//insert into db
+
+$order = "INSERT INTO DropsAcs
+	   (HASH, Part, Name, Rarity, ilvl, Apsorb, hpBonus, xpBonus, dmgBonus, plus, Worth)
+	  VALUES
+	   ('$HASH', '$part', '$name', '$typeName', '$iLVL', '$apsorb', '$hpBonus', '$xpBonus', '$dmgBonus','0', '$worth')";
+	   
+$order2 = "INSERT INTO Equiped
+(User, Part, HASH, Equiped)
+VALUES
+('$User', 'ACS', '$HASH', '0')";	   
+
+$result = mysqli_query($db, $order);
+$result = mysqli_query($db, $order2);
 
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -128,6 +146,6 @@ WHERE `USER` = '$User'";
 $result = mysqli_query($db, $orderChar);
 
 mysqli_close($db);
-header("location:rewardt.php");
+header("location:reward.php");
 
 ?>

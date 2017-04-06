@@ -129,19 +129,19 @@ while ($EQPA = mysqli_fetch_array($EQPar)){
 if (!isset($ARMBODY)){
 $ARMBODY = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'BODY' ");
 $ARMBODY = mysqli_fetch_assoc($ARMBODY); //BODY by colum name
-$_SESSION["CURRENTARMBODY"] = $ARMBODY[0];
+$_SESSION["CURRENTARMBODY"] = $ARMBODY["HASH"];
 }
 
 if (!isset($ARMGLOVES)){
 $ARMGLOVES = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'GLOVES'");
 $ARMGLOVES = mysqli_fetch_assoc($ARMGLOVES); //GLOVES by colum name
-$_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES[0];
+$_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES["HASH"];
 }
 
 if (!isset($ARMBOOTS)){
 $ARMBOOTS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'LEGS' ");
 $ARMBOOTS = mysqli_fetch_assoc($ARMBOOTS); //BOOTS by colum name
-$_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS[0];
+$_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 }
 }
 
@@ -159,13 +159,13 @@ while ($EQPAC = mysqli_fetch_array($EQPacs)){
 if (!isset($ACSRING)){
 $ACSRING = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'RING' ");
 $ACSRING = mysqli_fetch_assoc($ACSRING); //BODY by colum name
-$_SESSION["CURRENTACSRING"] = $ACSRING[0];
+$_SESSION["CURRENTACSRING"] = $ACSRING["HASH"];
 }
 
 if (!isset($ACSAMULET)){
 $ACSAMULET = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$EQPAC[2]' AND Part = 'AMUL' ");
 $ACSAMULET = mysqli_fetch_assoc($ACSAMULET); //BODY by colum name
-$_SESSION["CURRENTACSAMULET"] = $ACSAMULET[0];
+$_SESSION["CURRENTACSAMULET"] = $ACSAMULET["HASH"];
 }
 }
 

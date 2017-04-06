@@ -45,7 +45,7 @@ $currentHASH = $_SESSION["CURRENTACSRING"];
 }
 
 $ACS = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$currentHASH' ");
-$ACS = mysqli_fetch_assoc($ACS);
+$ACSi = mysqli_fetch_assoc($ACS);
 
 $moneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
 $_SESSION["GoldRew"] = $moneyRew;
@@ -57,52 +57,54 @@ $_SESSION["Gold"] = $moneySel;
 
 
 //Comparing
-$compareLVL=$compareDMG=$compareHP=$compareARM=$compareXP="less";
-if($iLVL>=$ACS["iLVL"]){
+$compareLVL=$compareDMG=$compareHP=$compareARM=$compareXP=$compareAPS="less";
+if($iLVL>=$ACSi["ilvl"]){
 	$compareLVL="more";
-	if($iLVL==$ACS["iLVL"]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($dmgBonus>=$ACS["dmgBonus"]){
+if($dmgBonus>=$ACSi["dmgBonus"]){
 	$compareDMG="more";
-	if($iLVL==$ACS["iLVL"]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($hpBonus>=$ACS["hpBonus"]){
+if($hpBonus>=$ACSi["hpBonus"]){
 	$compareHP="more";
-	if($iLVL==$ACS["iLVL"]){
+	if($iLVL==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
-if($xpBonus>=$ACS["xpBonus"]){
-	$compareARM="more";
-	if($iLVL==$ACS["iLVL"]){
-		$compareLVL="same";
-	}
-}
-if($apsorb>=$ACS["Apsorb"]){
+if($xpBonus>=$ACSi["xpBonus"]){
 	$compareXP="more";
-	if($x==$ACS["iLVL"]){
+	if($iLVL==$ACSi["ilvl"]){
+		$compareLVL="same";
+	}
+}
+if($apsorb>=$ACSi["Apsorb"]){
+	$compareAPS="more";
+	if($x==$ACSi["ilvl"]){
 		$compareLVL="same";
 	}
 }
 
 $reward = "<b><font color='lightgreen'><br> -TALISMAN !- </font><br><br>DROP:</b><br><br>Name: $name<br>
 Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
-Item Dmg. Bonus: <b><span class='$compareDMG'>$dmgBonus</span></b><br>
-Item HP Bonus <b><span class='$compareHP'>$hpBonus</span></b><br>
-Item XP Bonus: <b><span class='$compareXP'>$xpBonus</span></b><br>
-Item Apsorb: <b><span class='$compareXP'>$apsorb</span></b><br>
+Item Part: $part<br>
+Item Dmg. Bonus: <b><span class='$compareDMG'>$dmgBonus %</span></b><br>
+Item HP Bonus <b><span class='$compareHP'>$hpBonus %</span></b><br>
+Item XP Bonus: <b><span class='$compareXP'>$xpBonus %</span></b><br>
+Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br><br>
-Name: $Current <br>
-Item lvl: <b>$ACS[iLVL]</b><br>
-Item Dmg. Bonus: <b>$ACS[dmgBonus]</b><br>
-Item HP bonuss: <b>$ACS[hpBonus]</b><br>
-Item XP Bonus: <b>$ACS[xpBonus]</b><br>
-Item Apsorb: <b>$ACS[Apsorb]</b><br>";
+Name: $ACSi[Name]<br>
+Item lvl: <b>$ACSi[ilvl]</b><br>
+Item Part: $part<br>
+Item Dmg. Bonus: <b>$ACSi[dmgBonus] %</b><br>
+Item HP bonuss: <b>$ACSi[hpBonus] %</b><br>
+Item XP Bonus: <b>$ACSi[xpBonus] %</b><br>
+Item Apsorb: <b>$ACSi[Apsorb] %</b><br>";
 
 $_SESSION["WepName"] = "$name";
 $_SESSION["Type"] = "$nameType";

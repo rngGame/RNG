@@ -266,14 +266,14 @@ function itemDrop($db,$user,$drop,$MLVL){
             $textMessage.="Skills done for $drop $skillName Chosen \r\n";
 
             //check how many enchants rng
-            while($Ench = mysqli_fetch_array($Enchant) and $drop!="weapon") {
+            /*while($Ench = mysqli_fetch_array($Enchant) and $drop!="weapon") {
                 
                 if($Ench[1] > rand(-200,400-$MLVL)){
                     $enchantLVL += 1;
                     }
                 else{break;}
-            }
-            $textMessage.="Enchanting $enchantLVL \r\n";
+            }*/
+            //$textMessage.="Enchanting $enchantLVL \r\n";
             /*if($enchantLVL > 0){
                 $textMessage.="Doing Enchant";
                 $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
@@ -413,7 +413,8 @@ function itemDrop($db,$user,$drop,$MLVL){
 
             if($iLVL < $rngValueMax and $iLVL > $rngValueMin and ($drop!="weapon" or ($valueDMG > 0 and $CRIT >0 and $hashClaimed != 1))){ //if weapon is okay acording to level, stop while
                 $rel = 1;
-                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n _______________________________________ \r\n";
+				$textMessage.="Function FINISHED by $user at ".date('Y-m-d H:i:s')." \r\n";
+                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Hit $HIT \r\n _______________________________________ \r\n";
             }
         }
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "x+");

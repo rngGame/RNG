@@ -11,7 +11,25 @@ $Drop = $_SESSION["MonsDrop"]; //DB drop value of monster
 $FightFee = $_SESSION["Money"];
 
 //creates armor function
-list($iLVL,, $name, $color, $new, $nameType,, $armor) = itemDrop($db,$User,"armor",$MLVL);
+list($iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
+
+$worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
+//insert into db
+
+$order = "INSERT INTO DropsArm
+	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part)
+	  VALUES
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part')";
+	   
+$order2 = "INSERT INTO Equiped
+(User, Part, HASH, Equiped)
+VALUES
+('$User', 'ARM', '$HASH', '0')";	   
+
+$result = mysqli_query($db, $order);
+$result = mysqli_query($db, $order2);
+
+
 //get User and current Armor
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);

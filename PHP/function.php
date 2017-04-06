@@ -105,13 +105,16 @@ function itemDrop($db,$user,$drop,$MLVL){
         //check which item
         if($drop=="armor"){
             $baseTable="basearmor";
+			$part = "ARM";
         }
         else if($drop=="talisman"){
             $baseTable="basetalis";
             $preTable="pretalis";
+			$part = "ACS";
         }
         else if($drop=="weapon"){
             $baseTable="basewep";
+			$part = "WEP";
         }
         $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
 
@@ -155,7 +158,9 @@ function itemDrop($db,$user,$drop,$MLVL){
             $nameBase = $Base[1]; //takes the base name for the Armor
             if($drop=="armor"){
                 $iLVL = $Base[3]; //base level
-                $valueArmor = $Base[2]; //base armor
+                $valueArmorP = $Base[2]; //base armor phys
+				$valueArmorM = $Base[2]; //base armor mag
+				$apsorb = rand(1,10);
             }
             if($drop=="weapon"){
                 $iLVL = $Base[2]; //base level
@@ -198,11 +203,13 @@ function itemDrop($db,$user,$drop,$MLVL){
             //Subfixes for armor
             if($rngSub > 2000 && $drop=="armor"){  //checks for first Sub rng
                 $nameSub ="of $Sub[1]";
-                $valueArmor += $Sub[3]/2;
+                $valueArmorP += $Sub[3]/2;
+				$valueArmorM += $Sub[3]/2;
                 $iLVL += $Sub[2];
                 if($rngSub > 3000){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
-                    $valueArmor += $Sub2[3]/2;
+                    $valueArmorP += $Sub2[3]/2;
+					$valueArmorM += $Sub2[3]/2;
                     $iLVL += $Sub2[2];
                 }
             }
@@ -223,7 +230,8 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $typeName ="$Type[1]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
-                $valueArmor += $valueArmor * $$typeBonus;
+                $valueArmorP += $valueArmorP * $typeBonus;
+				$valueArmorM += $valueArmorM * $typeBonus;
                 $valueHP += $valueHP * $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
@@ -231,7 +239,8 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $typeName ="$Type2[1]";
                 $typeBonus=$Type[3] / 100;
                 $valueDMG += $valueDMG * $typeBonus;
-                $valueArmor += $valueArmor * $typeBonus;
+                $valueArmorP += $valueArmorP * $typeBonus;
+				$valueArmorM += $valueArmorM * $typeBonus;
                 $valueHP += $valueHP * $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
@@ -254,7 +263,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 else{break;}
             }
             $textMessage.="Enchanting $enchantLVL \r\n";
-            if($enchantLVL > 0){
+            /*if($enchantLVL > 0){
                 $textMessage.="Doing Enchant";
                 $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
                 $Plius = mysqli_fetch_row($Plius);
@@ -264,7 +273,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueHP += $valueHP * $Plius[2] / 100;
                 $iLVL += $iLVL * $Plius[2] / 100;
                 $textMessage.="Result of enchant : Name $nameEnchant >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
-            }
+            }*/
 
             //Creating weapon values
             $valuePhysMin = round($valueDMG * rand(80,100)/100);
@@ -278,7 +287,8 @@ function itemDrop($db,$user,$drop,$MLVL){
             //finnishing up values
             $iLVL = round($iLVL, 0);
             $valueDMG = round($value, 0);
-            $valueArmor = round($valueArmor, 0);
+            $valueArmorP = round($valueArmorP, 0);
+			$valueArmorM = round($valueArmorM, 0);
             $valueHP = round($valueHP, 0);
             $valueXP = round($valueXP, 1);
             $textMessage.="Rounding Orrignal \r\n";
@@ -286,8 +296,11 @@ function itemDrop($db,$user,$drop,$MLVL){
             if($valueDMG <= 0){
                 $valueDMG = 1;
             }
-            if($valueArmor <= 0){
-                $valueArmor = 1;
+            if($valueArmorP <= 0){
+                $valueArmorP = 1;
+            }
+			if($valueArmorM <= 0){
+                $valueArmorM = 1;
             }
             if($valueHP <= 0){
                 $valueHP = 1;
@@ -393,7 +406,7 @@ function itemDrop($db,$user,$drop,$MLVL){
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");
         fwrite($myfile, $textMessage);
         fclose($myfile);
-        return array ($iLVL, $HASH, $name, $itemName, $typeName, $valueDMG, $valueArmor, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $HIT, $valueMagMIN, $valueMagMAX);
+        return array ($iLVL, $HASH, $part, $apsorb, $name, $itemName, $typeName, $valueDMG, $valueArmorP, $valueArmorM, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $HIT, $valueMagMIN, $valueMagMAX);
     }
 }
 

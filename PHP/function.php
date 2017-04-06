@@ -164,9 +164,9 @@ function itemDrop($db,$user,$drop,$MLVL){
 				$part = rand(1,3);
 				if ($part == 1) {
 					$part = "BODY";}
-				if ($part == 1) {
+				if ($part == 2) {
 					$part = "GLOVES";}
-				if ($part == 1) {
+				if ($part == 3) {
 					$part = "LEGS";}
             }
             if($drop=="weapon"){
@@ -256,7 +256,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             if($rngSkill>9600){
                 $iLVL+=$Skill[7];
                 $skillName = $Skill[1];
-                $skillID = $Skill[0];
+                $weaponSkill = $Skill[0];
                 $skillText = "Skill : $Skill[1]<br>";
             }
             $textMessage.="Skills done for $drop $skillName Chosen \r\n";
@@ -283,19 +283,19 @@ function itemDrop($db,$user,$drop,$MLVL){
             }*/
 
             //Creating weapon values
-            $valuePhysMin = round($valueDMG * rand(80,100)/100);
-            $valuePhysMax = round($valueDMG * rand(100,130)/100);
-            $CRIT = round(1 + 10*$typeBonus);
-            $valueMagMIN = round($valueDMG *rand(1,50)/100);
-            $valueMagMAX = round($valueDMG *rand(1,150)/100);  
-            $HIT = rand(85,100);
+            $weaponPhysMin = round($valueDMG * rand(80,100)/100);
+            $weaponPhysMax = round($valueDMG * rand(100,130)/100);
+            $weaponCrit = round(1 + 10*$typeBonus);
+            $weaponMagMin = round($valueDMG *rand(1,50)/100);
+            $weaponMagMax = round($valueDMG *rand(1,150)/100);  
+            $weaponHit = rand(85,100);
             $textMessage.="Creating Weapon Stats Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
 
             //finnishing up values
             $iLVL = round($iLVL, 0);
             $valueDMG = round($value, 0);
-            $valueArmorP = round($valueArmorP, 0);
-			$valueArmorM = round($valueArmorM, 0);
+            $valueArmorP = round($valueArmorP + ($valueArmorP * rand(-20,15) / 100));
+			$valueArmorM = round($valueArmorM + ($valueArmorM * rand(-5,30) / 100));
             $valueHP = round($valueHP, 0);
             $valueXP = round($valueXP, 1);
             $textMessage.="Rounding Orrignal \r\n";
@@ -345,46 +345,46 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $rngEffect = rand(1,8);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
-                    $effectShort = "LL";
-                    $effectChance = rand(1,7);
+                    $weaponEffect = "LL";
+                    $weaponEffectChance = rand(1,7);
                 }
                 if ($rngEffect == 2){
-                    $effectName = "Bleed";
+                    $weaponEffect = "Bleed";
                     $effectShort = "BL";
-                    $effectChance = rand(10,30);
+                    $weaponEffectChance = rand(10,30);
                 }
                 if ($rngEffect == 3){
                     $effectName = "Burn";
-                    $effectShort = "BR";
-                    $effectChance = rand(1,20);
+                    $weaponEffect = "BR";
+                    $weaponEffectChance = rand(1,20);
                 }
                 if ($rngEffect == 4){
                     $effectName = "Freez";
-                    $effectShort = "FR";
-                    $effectChance = rand(10,20);
+                    $weaponEffect = "FR";
+                    $weaponEffectChance = rand(10,20);
                     
                 }
                 if ($rngEffect == 5){
                     $effectName = "Stun";
-                    $effectShort = "ST";
-                    $effectChance = rand(5,30);
+                    $weaponEffect = "ST";
+                    $weaponEffectChance = rand(5,30);
                 }
                 if ($rngEffect == 6){
                     $effectName = "Shock";
-                    $effectShort = "SH";
-                    $effectChance = rand(20,50);
+                    $weaponEffect = "SH";
+                    $weaponEffectChance = rand(20,50);
                     
                 }
                 if ($rngEffect == 7){
                     $effectName = "Block";
-                    $effectShort = "BK";
-                    $effectChance = rand(5,20);
+                    $weaponEffect = "BK";
+                    $weaponEffectChance = rand(5,20);
                     
                 }
                  if ($rngEffect == 8){
                     $effectName = "Summon";
-                    $effectShort = "SM";
-                    $effectChance = rand(25,70);
+                    $weaponEffect = "SM";
+                    $weaponEffectChance = rand(25,70);
                     
                 }
                 if ($rngEffect == 9){
@@ -395,7 +395,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                     
                 }
                 $effect = "Effect: $effectName $effectChance %<br>";
-                $textMessage.="Choose Effect $effectName $effectChance % \r\n";
+                $textMessage.="Choose Effect $effectName $weaponEffectChance % \r\n";
             }
 
             //creating lowest weapon, best weapon acording to level
@@ -413,7 +413,14 @@ function itemDrop($db,$user,$drop,$MLVL){
         $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");
         fwrite($myfile, $textMessage);
         fclose($myfile);
-        return array ($iLVL, $HASH, $part, $apsorb, $name, $itemName, $typeName, $valueDMG, $valueArmorP, $valueArmorM, $valueHP, $valueXP, $skillText, $skillID, $effect, $effectShort, $effectChance, $valuePhysMin, $valuePhysMax, $CRIT, $HIT, $valueMagMIN, $valueMagMAX);
+		//select what aarray to transfer
+		 if($drop=="armor"){
+			  return array ($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb);}
+		if($drop=="weapon"){
+			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance);}
+		if($drop=="talisman"){ 
+		}
+		
     }
 }
 

@@ -11,15 +11,15 @@ $Drop = $_SESSION["MonsDrop"]; //DB drop value of monster
 $FightFee = $_SESSION["Money"];
 
 //creates armor function
-list($iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
+list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db
 
 $order = "INSERT INTO DropsArm
-	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part)
+	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part, plus)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part' ,'0')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)

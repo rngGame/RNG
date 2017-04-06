@@ -42,10 +42,12 @@ echo '</div>';
 
 echo "$Reward";
 
+
+
 echo '<section class="container">
     <div class="Keep">
-	      <form method="post" action="KeepA.php">
-        <p class="submit"><input type="submit" name="commit" value="Switch"></p>
+	      <form method="post" action="sync.php">
+        <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
     </div>
   </section>';
@@ -57,7 +59,6 @@ echo '<section class="container2">
       </form>
     </div>
   </section>';
-
 
 ?>
 </div>

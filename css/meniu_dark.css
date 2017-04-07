@@ -80,13 +80,7 @@ height:255px;
     position: absolute;
 }
 
-#veil {
-	margin: -55px 0px 0px 660px;
-    position: absolute;
-    color: #E4E4E4;
-    font-size: small;
-    width: 125px;
-}
+
 
 .floating{
 	    position: fixed;
@@ -542,6 +536,13 @@ progress::-webkit-progress-value {
 #mini3 {
     width: 180px;
       
+}
+#veil {
+
+    position: relative;
+    color: #E4E4E4;
+    font-size: small;
+    width: 125px;
 }
 #veilvl {
 

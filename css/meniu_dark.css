@@ -550,6 +550,7 @@ progress::-webkit-progress-value {
     color: #E4E4E4;
     font-size: small;
     width: 125px;
+    top: 10px;
 }
 #veilvl {
 

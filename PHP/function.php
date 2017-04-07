@@ -565,7 +565,8 @@ function createMonster($db,$iLVL){
         $name="$extraName $nameRare $nameEnchant $namePre $nameBase $nameSub";
         $HP = round($HP,0);
         $mLVL = round($mLVL,0);
-        $DMG = round($DMG,0);
+        $PDMG = round($DMG*rand(80,120)/100,0);
+		$MDMG = round($DMG*rand(60,150)/100,0);
         $Drop = round($Drop,0);
         $timeCreated++;
         //limits
@@ -582,6 +583,6 @@ function createMonster($db,$iLVL){
             $creationDone=true;
         }
     }
-    return array ($name, $mLVL, $HP, $DMG, $Drop, $monsterImageID, $testMessage);
+    return array ($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterImageID, $testMessage);
 
 }

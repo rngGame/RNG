@@ -183,7 +183,7 @@ if ($SKL ==31){
 if ($SKL ==32){
 
 	$comb = round($magDMG + $physDMG);
-		if ($SUB[5] = "SWRD" and $CRT <= $CRYT+$WEP[7]){
+		if ($SUB[5] = "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
 			$comb=$comb + ($comb*$CRYTD/100);
 			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
 		}

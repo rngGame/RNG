@@ -2,9 +2,9 @@
 
 
 //life leach
-if ($WEP[13] == "LL"  or $SUB[6] == "LL"){
-	if ($WEP[13] == "LL"){
-		$bleds = $WEP[14];}
+if ($WEPn["effect"] == "LL"  or $SUB[6] == "LL"){
+	if ($WEPn["effect"] == "LL"){
+		$bleds = $WEPn["efstat"];}
 	if ($SUB[6] == "LL"){
 		$bleds = $SUB[7] + $bleds;}
 	
@@ -14,8 +14,8 @@ if ($WEP[13] == "LL"  or $SUB[6] == "LL"){
 }
 
 //blead
-if ($WEP[13] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
-	if ($WEP[14] >= rand(0,100) or isset($_SESSION["bleed"]) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
+	if ($WEPn["efstat"] >= rand(0,100) or isset($_SESSION["bleed"]) or $SUB[7] >= rand(0,100)){
 	$bl = rand(5,10);
 	$blee = ($monHP * $bl / 100); 
 	if ($blee > 2000){
@@ -27,16 +27,16 @@ if ($WEP[13] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 }
 
 //burn
-if ($WEP[13] == "BR" or $SUB[6] == "BR"){
-	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "BR" or $SUB[6] == "BR"){
+	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 	$burn = round($mLVL * 10);
 	$brn = "Monster burned for $burn dmg.<br>";
 }
 }
 
 //freeze
-if ($WEP[13] == "FR" or $SUB[6] == "FR"){
-	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "FR" or $SUB[6] == "FR"){
+	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 	$freez = rand(3,5);
 	$frz = $_SESSION["freez"];
 	if ($frz == 0){
@@ -50,15 +50,15 @@ if ($WEP[13] == "FR" or $SUB[6] == "FR"){
 }
 
 //Stun
-if ($WEP[13] == "ST" or $SUB[6] == "ST"){
-	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "ST" or $SUB[6] == "ST"){
+	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$stun = 1;	
 }
 }
 
 //Shock
-if ($WEP[13] == "SH" or $SUB[6] == "SH"){
-	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
+	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$sht = 1;
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
@@ -74,8 +74,8 @@ if ($WEP[13] == "SH" or $SUB[6] == "SH"){
 }
 
 //Block
-if ($WEP[13] == "BK" or $SUB[6] == "BK"){
-	if ($WEP[14] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+if ($WEPn["effect"] == "BK" or $SUB[6] == "BK"){
+	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
 		$Block = 1;	
 }
 }
@@ -88,11 +88,11 @@ if ($SUB[6] == "DG"){
 }
 
 //health per turn
-if ($SUB[6] == "HT" or $WEP[13] == "HT"){
+if ($SUB[6] == "HT" or $WEPn["effect"] == "HT"){
 	if ($SUB[6] == "HT"){
 	$helsP = round(($HPin * $SUB[7]  / 100));}
-	if ($WEP[13] == "HT"){
-	$helsP = round(($HPin * $WEP[14]  / 100));}
+	if ($WEPn["effect"] == "HT"){
+	$helsP = round(($HPin * $WEPn["efstat"]  / 100));}
 	$HPin = $HPin + $helsP;
 	$hptex= "$helsP Health restored<br>";
 }
@@ -113,20 +113,20 @@ if ($SUB[6] == "RF"){
 }
 
 //Weakness
-if ($SUB[6] == "WK" or $WEP[13] == "WK"){
+if ($SUB[6] == "WK" or $WEPn["effect"] == "WK"){
 	if ($SUB[6] == "WK"){
 	$weak = round($monDMG * $SUB[7] / 100);}
-	if ($WEP[13] == "WK"){
-	$weak = round($monDMG * $WEP[14] / 100);}
+	if ($WEPn["effect"] == "WK"){
+	$weak = round($monDMG * $WEPn["efstat"] / 100);}
 	$monDMG = round($monDMG - $weak);
 	$weakt= "Monsted damage decreased by $weak damage !<br>";
 
 }
 
 //Soul leach
-if ($WEP[13] == "SL"  or $SUB[6] == "SL"){
-	if ($WEP[13] == "SL"){
-		$soull = $WEP[14];}
+if ($WEPn["effect"] == "SL"  or $SUB[6] == "SL"){
+	if ($WEPn["effect"] == "SL"){
+		$soull = $WEPn["efstat"];}
 	if ($SUB[6] == "SL"){
 		$soull = $SUB[7] + $soull;}
 	
@@ -166,12 +166,12 @@ if ($SUB[6] == "CD"){
 }
 
 //summon buff
-if ($WEP[13] == "SM" and $_SESSION["PET"] == 1){
+if ($WEPn["effect"] == "SM" and $_SESSION["PET"] == 1){
 	$_SESSION["PET"] = 2;
 	
-	$_SESSION["PETHP"] = round($_SESSION["PETHP"] + ($_SESSION["PETHP"]  * $WEP[14] / 100));
-	$_SESSION["PETMINDMG"] = round($_SESSION["PETMINDMG"] + ($_SESSION["PETMINDMG"]  * $WEP[14]  / 100));
-	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEP[14]  / 100));
+	$_SESSION["PETHP"] = round($_SESSION["PETHP"] + ($_SESSION["PETHP"]  * $WEPn["efstat"] / 100));
+	$_SESSION["PETMINDMG"] = round($_SESSION["PETMINDMG"] + ($_SESSION["PETMINDMG"]  * $WEPn["efstat"]  / 100));
+	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEPn["efstat"]  / 100));
 }
 
 

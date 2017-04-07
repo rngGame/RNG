@@ -35,10 +35,17 @@ $magDMG = rand($minMdmg,$maxMdmg);
 
 //set monster dmg for turn
 $monDMG = $_SESSION["MonsDMG"]; 
+$monDMGmagick = $_SESSION["MonsDMGm"]; 
+
+
 $minMondmg = $monDMG - ($monDMG * 20 / 100);
 $maxMondmg = $monDMG + ($monDMG * 20 / 100);
 
-$monDMG = rand($minMondmg,$maxMondmg);
+$minMagMondmg = $monDMGmagick - ($monDMGmagick * 20 / 100);
+$maxMAgMondmg = $monDMGmagick + ($monDMGmagick * 20 / 100);
+
+$monDMG = rand($minMondmg,$maxMondmg); //monster p dmg
+$monDMGmag = rand($minMagMondmg,$maxMAgMondmg); //monter m dmg
 
 $monHP = $_SESSION["MonsHP"]; //monster hp
 $mLVL = $_SESSION["MonsLVL"]; //monster lvl
@@ -56,6 +63,8 @@ $HPO = $_SESSION["HPO"]; //base hp of player
 
 $SKL = $_POST["skl"]; //skill ID
 
+$wepHASH = $_SESSION["CURRENTWHASH"]; //get weapon hash
+
 $CRT= rand(1,100); //cryt ccalc
 
 
@@ -65,8 +74,8 @@ $CRT= rand(1,100); //cryt ccalc
 //DB
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
-$WEP = mysqli_fetch_row($WEP);
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$wepHASH' ");
+$WEPn = mysqli_fetch_assoc($WEP);
 $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$ACC[10]' ");
 $CLS = mysqli_fetch_row($CLS);
 $GEM = mysqli_query($db,"SELECT * FROM Gems where HASH = '$ACC[14]' ");
@@ -91,7 +100,7 @@ if ($SKL <> "" or $_SESSION["PET"] == 1){
 
 
 //cryt calc
-if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
+if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0){
 	$citP = 1;
 	$CRYTD = $physDMG*$CRYTD/100;
 	$CRYTD = round($CRYTD);
@@ -120,7 +129,7 @@ if ($CRT <= $CRYT+$WEP[7] and $magick == 0){
 }
 
 //Effects
-if ($WEP[14] <> 0 or $SUB[7] <> 0){
+if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
 		include 'PHP/effect.php';
 }
 
@@ -207,7 +216,7 @@ $finalMonsHP = $monHP;
 
 
 if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
-if (rand(0,100) <= $WEP[11] or $cantmiss == 1){
+if (rand(0,100) <= $WEPn["HitChanse"] or $cantmiss == 1){
 $finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
@@ -236,11 +245,28 @@ $finalMonsHP = $monHP - $finalPlayerDMG;
 
 
 
-//dmg to player
+//dmg to player----------------------------------
 
 if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
-$finalPlayerHP = $HPin - $monDMG;
+
+//monster skill
+if (rand(1,100) >= 75){
+	$monDMGmag = round($monDMGmag * rand(110,150) /100);
+	$finalPlayerHP = $HPin - $monDMGmag;
+	$tM = $monDMGmag ;
+	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b><br>";
 }
+// if no skill used by mob
+else{
+$finalPlayerHP = $HPin - $monDMG;
+$BasicAtackByMob = "Monster did $monDMG dmg.<br>";
+}
+
+$monSkillText="$mobmagskill $BasicAtackByMob" ;
+
+}
+
+//if monster coulcn't atack
 else{
 	$finalPlayerHP = $HPin ;
 }
@@ -249,7 +275,7 @@ $finalPlayerDMG= round($finalPlayerDMG,0);
 $finalPlayerHP= round($finalPlayerHP,0);
 $monsRef= round($monsRef,0);
 $tP = "tottal of $finalPlayerDMG";
-$tM = $monDMG;
+
 
 
 //logas
@@ -257,7 +283,7 @@ if (!isset($_SESSION["LOG"])){
 $_SESSION["LOG"] = "";
 }
 	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
-		$mont = "Monster did $tM dmg.<br>";
+		$mont = "$monSkillText";
 	}
 	else{
 		if ($stun == 1){
@@ -281,7 +307,7 @@ $_SESSION["LOG"] = "";
 	$_SESSION["LOG"] = "$magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$magickText $User <b>Missed</b> <br><br>Monster did $tM dmg.<br><br><hr> $LOG<br>";
+		$_SESSION["LOG"] = "$magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
 	}
 
 
@@ -329,4 +355,4 @@ header($page2);
 die();
 
 
-?> unset
+?>

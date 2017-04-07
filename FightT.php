@@ -56,6 +56,7 @@ $BLVL = $_SESSION["fLVL"];
 $mName = $_SESSION["MonsName"];
 $mHP = $_SESSION["MonsHP"];
 $mDMG = $_SESSION["MonsDMG"];
+$mDMGm = $_SESSION["MonsDMGm"];
 $mDRP = $_SESSION["MonsDrop"];
 $mLVL = $_SESSION["MonsLVL"];
 
@@ -122,7 +123,7 @@ echo '</div>';
 
 echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
 echo "Monster Name: <b>$mName</b><br>";
-echo " HP: $mHP, DMG: ~$mDMG, XP: $mDRP, Lvl: $mLVL";
+echo " HP: $mHP, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>, XP: $mDRP, Lvl: $mLVL";
 
 	
 $_SESSION["MonsHP"] = $mHP;

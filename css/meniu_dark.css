@@ -592,4 +592,6 @@ progress::-webkit-progress-value {
     position: absolute;
     height: 320px;
     width: 255px;
+    top:0px;
+    left: 0px;
 }

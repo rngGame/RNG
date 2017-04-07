@@ -1181,26 +1181,7 @@ $leveltext
 ";
 $equipTemplate ="
 <div id='equipWeapon' class='tooltip'>
-	<b><img src='' style='width:50px;height:50px;'></b>
-	<span class='tooltiptext'>
-		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
-		<br>
-		<b>$WEPn[ilvl] lvl.</b>
-		<br>
-		<a class='physical'>
-			<b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b>
-		</a>
-		<br>
-		<a class='magic'>
-			<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
-		</a>
-		<br>
-		Cryt chanse: $WEPn[cryt]
-		<br>
-		Hit Chanse: $WEPn[HitChanse]
-		<br>
-		$eft $enchtex
-	</span>
+	$weaponTemplate
 </div>
 <div id='equipBody' class='tooltip'>
 	$bodyTemplate

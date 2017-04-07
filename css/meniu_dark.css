@@ -93,6 +93,29 @@ height:255px;
     margin: -85px 0px 0px 800px;
 }
 
+#veilvl {
+    margin: -152px 0px 0px 773px;
+    position: absolute;
+    color: #E4E4E4;
+    font-size: small;
+    width: 122px;
+}
+
+#veil2 {
+    margin: -52px 0px 0px 28px;
+    position: absolute;
+    color: #E4E4E4;
+    font-size: small;
+    width: 125px;
+}
+
+#veilvl2 {
+    margin: -152px 0px 0px 140px;
+    position: absolute;
+    color: #E4E4E4;
+    font-size: small;
+    width: 122px;
+}
 
 #mini2 {
 	width:520px;
@@ -542,30 +565,5 @@ progress::-webkit-progress-value {
 }
 #mini3 {
     width: 180px;
-    height: 232px;
       
 }
-#veilvl {
-
-    position: relative;
-    color: #E4E4E4;
-    font-size: small;
-    width: 122px;
-}
-
-#veil2 {
-
-    position: relative;
-    color: #E4E4E4;
-    font-size: small;
-    width: 125px;
-}
-
-#veilvl2 {
-
-    position: relative;
-    color: #E4E4E4;
-    font-size: small;
-    width: 122px;
-}
-

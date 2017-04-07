@@ -527,7 +527,7 @@ else{
 }
 
 if($ARMBOOTS["Name"] <> ""){
-	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
+	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]<br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
 	
 	";
 }
@@ -537,7 +537,7 @@ else{
 }
 
 if($ARMGLOVES["Name"] <> ""){
-	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
+	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]<br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
 	
 	";
 }
@@ -549,7 +549,7 @@ else{
 //acsesories
 
 if($ACSRING["Name"] <> ""){
-	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
+	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]<br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
 	
 	";
 }

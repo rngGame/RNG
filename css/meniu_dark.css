@@ -522,6 +522,7 @@ progress::-webkit-progress-value {
 		-webkit-linear-gradient(left, #5e9edc, #00ff99);
 }
 #stats {
+    float:left;
     position: absolute;
     top:50px;
     left:0px;

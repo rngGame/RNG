@@ -564,7 +564,7 @@ if($ACSAMULET["Name"] <> ""){
 	";
 }
 else{
-	$amuletTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+	$amuletTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
 
 }
 

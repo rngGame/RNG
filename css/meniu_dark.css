@@ -537,6 +537,8 @@ progress::-webkit-progress-value {
     position: absolute;
     width: 145px;
     height: 205px;
+    bottom: 0px;
+    right: 0px;
 }
 #mini3 {
     width: 145px;
@@ -550,7 +552,7 @@ progress::-webkit-progress-value {
     color: #E4E4E4;
     font-size: small;
     width: 125px;
-    bottom: 10px;
+    top: 100px;
 }
 #veilvl {
 

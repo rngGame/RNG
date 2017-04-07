@@ -301,8 +301,13 @@ if (isset($dmgsub)){
 $HP2 = $HP + ($HP * $tottalHPBonus / 100);
 
 if ($WEPn["skill"] == 0){
+	$skillTemplate="";
 }
 else{
+	$skillTemplate="<div class='tooltip'>
+	<img src='IMG/$Skil[6]' style='width:45px'> 
+	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
+</div>";
 	if ($Skil[2] == "DMG"){
 		$dmg = $dmg + ($dmg*$Skil[3]/100);}
 	if ($Skil[2] == "ARM"){
@@ -1109,6 +1114,7 @@ $leveltext
 <font class='stats'>DEF:</font> 
 <b>
 	<font class='physical'>$Parmor</font>
+	/
 	<font class='magic'>$Marmor</font>
 </b>
 <br>
@@ -1173,11 +1179,7 @@ $leveltext
 		$PAS[8]% Bonus energy regen
 	</span>
 </div>
-<div class='tooltip'>
-	<img src='IMG/$Skil[6]' style='width:45px'> 
-	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
-</div>
-
+$skillTemplate
 ";
 $equipTemplate ="
 <div id='equipWeapon' class='tooltip'>

@@ -552,18 +552,18 @@ progress::-webkit-progress-value {
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 115px;
-    top: 105px;
-    left:15px;
+    width: 109px;
+    top: 107px;
+    left:18px;
 }
 #veilvl {
 
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 35px;
+    width: 100%;
     bottom: 1px;
-    left: 55px;
+    text-align: center;
 }
 
 #veil2 {

@@ -1237,6 +1237,22 @@ $onlineText
 </div>
 ";
 $actionsTemplate="
+<section class='action4'>
+	<form method='post' action='fightNew.php'>
+		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
+		<p class='submit'>
+			<input type='submit' name='commit' value='NewFight'>
+		</p>
+	</form>
+</section>
+<section class='action5'>
+	<form method='post' action='wBoss.php'>
+		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
+		<p class='submit'>
+			<input type='submit' name='commit' value='World Boss'>
+		</p>
+	</form>
+</section>
 <section class='action1'>
 	<form method='post' action='Enchant.php'>
 		<input hidden='' type='text' name='lvl2' value='Enchant' placeholder='Upgarde Weapon'>
@@ -1260,24 +1276,6 @@ $actionsTemplate="
   				<input type='submit' name='commit2' value='Loot Shards'>
   			</p>
   	</form>
-</section>
-<section class='action4'>
-	<form method='post' action='fightNew.php'>
-		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
-		<p class='submit'>
-			<input type='submit' name='commit' value='NewFight'>
-			Free.
-		</p>
-	</form>
-</section>
-<section class='action5'>
-	<form method='post' action='wBoss.php'>
-		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
-		<p class='submit'>
-			<input type='submit' name='commit' value='World Boss'>
-			Free.
-		</p>
-	</form>
 </section>
 <section class='action6'>
 	<form method='post' action='auctionhouse.php'>

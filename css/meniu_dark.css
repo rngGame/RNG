@@ -534,12 +534,14 @@ progress::-webkit-progress-value {
     border:1px solid black;
 }
 #equipMod{
-    position: relative;
-    width: 180px;
+    position: absolute;
+    width: 145px;
+    height: 210px;
 }
 #mini3 {
-    width: 180px;
+    width: 145px;
     position: absolute;
+    height: 210px;
       
 }
 #veil {

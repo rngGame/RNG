@@ -1113,9 +1113,9 @@ $leveltext
 <br>
 <font class='stats'>DEF:</font> 
 <b>
-	<font class='physical'>$Parmor</font>
+	<font class='physicalArmor'>$Parmor</font>
 	/
-	<font class='magic'>$Marmor</font>
+	<font class='magicArmor'>$Marmor</font>
 </b>
 <br>
 <font class='stats'>Gold:</font> 
@@ -1205,6 +1205,9 @@ $equipTemplate ="
 </div>
 <div id='equipMod'>
 	$modTemplate
+</div>
+<div id='equipShadow'>
+	<img src='IMG/abody.png' style='width:255px;height:255px;'>
 </div>
 ";
 $socialTemplate="

@@ -289,10 +289,10 @@ function itemDrop($db,$user,$drop,$MLVL){
 
             //Creating weapon values
             $weaponPhysMin = round($valueDMG * rand(80,100)/100);
-            $weaponPhysMax = round($valueDMG * rand(100,130)/100);
+            $weaponPhysMax = round($valueDMG * rand(101,130)/100);
             $weaponCrit = round(1 + 10*$typeBonus);
-            $weaponMagMin = round($valueDMG *rand(1,50)/100);
-            $weaponMagMax = round($valueDMG *rand(1,150)/100);  
+            $weaponMagMin = round($valueDMG *rand(50,100)/100);
+            $weaponMagMax = round($valueDMG *rand(150,200)/100);  
             $weaponHit = rand(85,100);
             $textMessage.="Creating Weapon Stats Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
 

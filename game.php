@@ -5,19 +5,6 @@ ob_start();
 include_once 'PHP/db.php';
 $User = $_SESSION["User"];
 
-?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>World of RNG</title>
-<?php
-echo "<link rel='stylesheet' type='text/css' href='css/$_COOKIE[Theme].css'>";
-?>
-<link rel="icon" href="favicon.png">
-</head>
-<header>
-<?php
 
 
 if ($User == ""){
@@ -214,7 +201,7 @@ $PNT = mysqli_fetch_row($PNT); //pasive points
 
 
 if ($PNT[1] >= 1){
-	$poinT = "<b><font color='red'>You have $PNT[1] unspend points!</font></b>";
+	$pointsLvlUp = "<b><font color='red'>You have $PNT[1] unspend points!</font></b>";
 	$pasiveBut = " <div class='newt'>       <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='point.php'>
           <input type='hidden' name='STAT' value='STR'>
@@ -263,42 +250,7 @@ else{
 	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)/div></font>";
 }
 
-?>
-World Of RNG
-</header>
-<body>
 
-
-<div id="settings">
- <section class="container">
- <p class="submit">
-    	<form method="post" action="settings.php">
-          <input type="submit" name="commit3" value="Settings">
-     	 </form></p></section>
-         </div>
-
-<div id="refresh">
-	<section class="container">
-    <p class="submit">
-    	<form method="post" action="log.php">
-          <input type="submit" name="commit3" value="Logout">
-     	 </form></p></section></div>
-        
-   
-<div id="refresh2">
-	<section class="container">
-    <p class="submit">    
-	      <form method="post" action="sync.php">
-          <input type="submit" name="commit4" value="Refresh">
-          </form></p>
-          
-          </form>
-
-  </section>
-      </div>
-<div id="wrapper">
-<div id="first">
-<?php
 
 $lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
@@ -490,21 +442,6 @@ $_SESSION["ENERGY"] = $ENR;
 $_SESSION["ENERGYM"] = $ENR;
 $_SESSION["ENREGEN"] = $enr;
 
-echo "User: <div class='tooltip'><font color='$ACC[12]'><b>$User</b><span class='tooltiptext'>$ACC[13]</span></div></font> $poinT";
-echo "<br>Class: <b><div class='tooltip'>$CLS[1]<span class='tooltiptext'>$CLS[9]</span></div></b><br>";
-echo "<img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'> $pasiveBut<br>";
-echo "LVL: <b>$ACC[3]</b> $leveltext<br>";
-echo "Average DMG: <b><font class='physical'>~$avgP</font>/<font class='magic'>~$avgM</font></b><br>";
-echo "HP: <b><font class='health'>$HP2</font></b><br>";
-echo "ENR: <b><font class='energy'>$ENR<font size='1'>($enr per turn)</font></font></b><br>";
-echo "DEF: <b><font class='defense'>P.def: $Parmor M.Def: $Marmor</font></b><br>";
-echo "Gold: <b><font class='gold'>$ACC[4]</font></b><br>";
-echo "Shards: <b><font class='shards'>$ACC[15]</font></b><br>";
-echo "Item LVL: <b>$lwa</b><br>";
-echo "Points: <font class='physical'>$PNT[2] STR</font> - <font class='magic'>$PNT[3] INT</font><br>";
-echo "</div>";
-echo "<div id='second'>Weapon: ";
-
 if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "LL"){
 	$efftype = "Life Leach";
@@ -537,197 +474,121 @@ if ($WEPn["efstat"]<>0){
 		$unEf = "class='awesome'";
 	}
 
-if (!$WEPn["Rarity"] == ""){
-	echo "<div class='tooltip'><b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>";}
+if ($WEPn["Name"] != ""){
+	$weaponTemplate="<b><img src='' style='width:50px;height:50px;'></b>
+	<span class='tooltiptext'>
+		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
+		<br>
+		<b>$WEPn[ilvl] lvl.</b>
+		<br>
+		<a class='physical'>
+			<b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b>
+		</a>
+		<br>
+		<a class='magic'>
+			<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
+		</a>
+		<br>
+		Cryt chanse: $WEPn[cryt]
+		<br>
+		Hit Chanse: $WEPn[HitChanse]
+		<br>
+		$eft $enchtex
+	</span>";}
 	else{
-		echo "<div class='tooltip'>$WEPn[Name] + $WEPn[plus]";}
-echo "<br><span class='tooltiptext'><b>$WEPn[ilvl] lvl.</b><br><a class='physical'><b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b><br><a class='magic'><b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b></a><br>Cryt chanse: $WEPn[cryt]<br>Hit Chanse: $WEPn[HitChanse]<br> $eft $enchtex</span></div><br><br>";
+		$weaponTemplate= "<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";}
 
 
-//new armor
-echo "Armor:<br>";
+
 
 //body
 if($ARMBODY["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBODY[Rarty]'>$ARMBODY[Name]</b><br>P.def - $ARMBODY[pDEF]<br>M.def - $ARMBODY[mDEF]<br>Apsorb: $ARMBODY[Apsorb]%<br>Enchant +$ARMBODY[plus]</span></div>
+	$bodyTemplate= "
+	<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+	<span class='tooltiptext'>
+		<b class='$ARMBODY[Rarty]'>$ARMBODY[Name]</b>
+		<br>
+		Lvl: $ARMBODY[ilvl]
+		<br>
+		P.def - $ARMBODY[pDEF]
+		<br>
+		M.def - $ARMBODY[mDEF]
+		<br>
+		Apsorb: $ARMBODY[Apsorb]%
+		<br>
+		Enchant +$ARMBODY[plus]
+	</span>
 	
 	";
 }
 else{
-	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+	$bodyTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
 
 }
 
 if($ARMBOOTS["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span></div>
+	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]<br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
 	
 	";
 }
 else{
-	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+	$legsTemplate= "<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
 
 }
 
 if($ARMGLOVES["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span></div>
-	
-	<br>";
-}
-else{
-	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
-
-}
-
-//acsesories
-echo"Accseories:<br>";
-
-if($ACSRING["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span></div>
+	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]<br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
 	
 	";
 }
 else{
-	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
+	$armsTemplate= "<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
+
+}
+
+//acsesories
+
+if($ACSRING["Name"] <> ""){
+	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]<br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
+	
+	";
+}
+else{
+	$ringTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
 
 }
 
 if($ACSAMULET["Name"] <> ""){
-	echo " <div class='tooltip'><img src='IMG/pack/Icon.6_53.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span></div>
+	$amuletTemplate= "<img src='IMG/pack/Icon.6_53.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span>
 	
-	<br>";
+	";
 }
 else{
-	echo"<div class='tooltip'><img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div><br>";
+	$amuletTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span></div>";
 
 }
 
 
 
-echo "Gem:";
 if (!$GEM[3] == ""){
-	echo "<div class='tooltip'><b style='color:#$GEM[3]'>$GEM[0]</b>";}
+	$gemTemplate="<img src='' width='45px' height='45px'>
+		<span class='tooltiptext'>
+			<b class='#$GEM[3]'>
+				$GEM[0]
+				<br>
+				$GEM[2] Type.
+				<br>
+			</b>
+			<b>Power $GEM[5] %</b>
+			<br>
+			<b>$GEM[4] lvl.</b>
+		</span>
+
+			";}
 	else{
-		echo "<div class='tooltip'>$GEM[0]";}
-echo "<br><span class='tooltiptext'><a class='$GEM[3]'><b>$GEM[2]</b> Type. <br></a><b>Power $GEM[5] %</b><br><b>$GEM[4] lvl.</b></span></div>";
-
-echo "</div>";
-
-echo "<div id='mini'>Totall Kills<br>";
-echo "<b>$ACC[6]</b><br><br>";
-echo "<b>PVP Rank:</b><br>";
-echo "<b><font class='$ACC[12]'>$ACC[11]</font></b>";
-echo "<section class='container'>
-    <p class='submit'>
-    	<form method='post' action='achv.php'>
-          <input type='submit' name='commit3' value='Achievments'>
-     	 </form></p></section>";
-echo "$onlineText";
-echo"</div>";
+		$gemTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";}
 
 
-echo "<div id='minievent'><div id='sidbar'>";
-?>
-<div id="result"></div>
-<?
-echo "</div>";
-echo "<div id='minichat'><iframe height='100px' width='300px' src='message.php'></iframe></div>";
-
-?>
-</div>
-<div id="wrapper2">
-  <div id="Style1"><strong>Choose ILVL class to fight: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Meniu:</strong></div>
-<div id="box1">
-<section class="container1">
-    <div class="1-10">
-	      <form method="post" action="Bypass.php">
-          <input hidden="" type="text" name="lvl" value="10" placeholder="lvl">
-        <p class="submit"><input type="submit" name="commit" value="1-50"> 
-        10g.</p>
-      </form>
-    </div>
-  </section>
-  <section class="container2">
-    <div class="11-30">
-	      <form method="post" action="Bypass.php">
-          <input hidden="" type="text" name="lvl" value="30" placeholder="lvl">
-        <p class="submit"><input type="submit" name="commit" value="51-200"> 
-        100g.</p>
-      </form>
-    </div>
-  </section>
-  <section class="container3">
-    <div class="31-50">
-	      <form method="post" action="Bypass.php">
-         <input hidden="" type="text" name="lvl" value="50" placeholder="lvl">
-        <p class="submit"><input type="submit" name="commit" value="201-500"> 
-        500g.</p>
-      </form>
-    </div>
-  </section>
-</div>
-<div id="box1">
-<section class="container4">
-<form method="post" action="Enchant.php">
-<input hidden="" type="text" name="lvl2" value="Enchant" placeholder="Upgarde Weapon">
-<p class="submit">
-  <input type="submit" name="commit2" value="Upgrade Weapon">
-  </form>
-</p>
-</section>
-<section class="container4">
-<form method="post" action="vale.php">
-<input hidden="" type="text" name="lvl2" value="Upgrade" placeholder="Reroll Mod">
-<p class="submit">
-  <input type="submit" name="commit2" value="Reroll Mod">
-  </form>
-</p>
-</section>
-<section class="container4">
-<form method="post" action="loot.php">
-<input hidden="" type="text" name="lvl2" value="Upgrade" placeholder="Reroll Mod">
-<p class="submit">
-  <input type="submit" name="commit2" value="Loot Shards">
-  </form>
-</p>
-</section>
-</div>
-<div id="box2">
-  <section class="container5">
-    <div class="31-50">
-        <form method="post" action="fightNew.php">
-         <input hidden="" type="text" name="lvl" value="100" placeholder="Fight Boss">
-        <p class="submit">
-          <input type="submit" name="commit" value="NewFight">
-Free.</p><!--FIGHt badass-->
-      </form>
-    </div>
-  </section>
-  <section class="container5">
-    <div class="31-50">
-        <form method="post" action="wBoss.php">
-         <input hidden="" type="text" name="lvl" value="100" placeholder="Fight Boss">
-        <p class="submit">
-          <input type="submit" name="commit" value="World Boss">
-Free.</p>
-      </form>
-        <form method="post" action="auctionhouse.php">
-         <input hidden="" type="text" name="" value="" placeholder="Auction House">
-        <p class="submit">
-          <input type="submit" name="commit" value="Auction House"></p>
-      </form>
-    </div>
-  </section>
-  <!--<section class="container5">
-    <div class="31-50">
-        <form method="post" action="fightP.php">
-         <input hidden="" type="text" name="lvl" value="100" placeholder="Fight Boss">
-        <p class="submit">
-          <input type="submit" name="commit" value="PVP"></p>
-      </form>
-    </div>
-  </section>-->
-</div></div>
-<?php
 
 $WPN = mysqli_query($db,"SELECT * from weapondrops ORDER BY Worth DESC LIMIT 1");
 $WPN = mysqli_fetch_row($WPN);
@@ -738,38 +599,16 @@ $ILVL = mysqli_fetch_row($ILVL);
 $RANK = mysqli_query($db,"SELECT * from characters ORDER BY Rank DESC LIMIT 1");
 $RANK = mysqli_fetch_row($RANK);
 
-?>
-<div id="wrapper3">
-
-<?php
-
 $apsorb = $tottalarmorApsorb + $PAS[5] + $tottalACCApsorb;
 
-echo "<div class='tooltip'><img src='IMG/cryt.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[3]<br>XP:$PAS[1]/$plvl1[1]<br>$PAS[2]% Cryt chanse</span></div>";
-echo "<div class='tooltip'><img src='IMG/crytd.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[12]<br>XP:$PAS[10]/$plvl4[1]<br>$PAS[11]% Cryt damage increase</span></div>";
-echo "<div class='tooltip'><img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[6]<br>XP:$PAS[4]/$plvl2[1]<br>$apsorb% Absorb</span></div>";
-echo "<div class='tooltip'><img src='IMG/ener.jpg' style='width:45px;height:45px;'> <span class='tooltiptext'>LVL: $PAS[9]<br>XP:$PAS[7]/$plvl3[1]<br>$PAS[8]% Bonus energy regen</span></div>";
 
-if ($WEPn["skill"] == 0){
-}
-else{
-	echo "&nbsp&nbsp";
-	echo "<b>Wep. skill - </b>";
-	echo "<div class='tooltip'><img src='IMG/$Skil[6]' style='width:45px'> <span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span></div>";
-};
 
-echo "<div id='mini2'>";
+
 
 	
-	if ($WPN[3] == "ff6633"){
-		$unEfs = "class='awesome'";}
-		
-echo "Strongest item: <b $unEfs class='$WPN[3]'>$WPN[1]</b><br>";
-echo "Highest item lvl: <b>$ILVL[9] - by <font color='$ILVL[12]'>$ILVL[0]</font></b><br>";
-echo "Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b><br>";
-echo "Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>";
+if ($WPN[3] == "ff6633"){
+	$WPN[3] = "awesome";}
 
-echo "</div>";
 
 if(isset($mc2)){
 $img = $mc2 - 2;}
@@ -779,252 +618,698 @@ if ($img < 1){
 	$img = 1;}
 
 
-echo "<div id='mini3'><img src='IMG/$img.png'></div>";
+$modTemplate= "<div id='mini3'><img src='IMG/$img.png'></div>";
 
-echo "<div id='veilvl'>$MOD[9]</div>";
+$modTemplate.= "<div id='veilvl'>$MOD[9]</div>";
 
-echo "<div id='veil'>";
+
+$modTemplate.=  "<div id='veil'>";
 if(isset($MODN[1])){
 
 if(isset($MODN[1])){
 	$n1 = $MODN[1];
 	$e1 = $MODE[1];
-	echo "$e1% $n1<br>";
+	$modTemplate.= "$e1% $n1<br>";
 }
 if(isset($MODN[3])){
 	$n2 = $MODN[3];
 	$e2 = $MODE[3];
-	echo "$e2% $n2<br>";
+	$modTemplate.= "$e2% $n2<br>";
 }
 if(isset($MODN[5])){
 	$n3 = $MODN[5];
 	$e3 = $MODE[5];
-	echo "$e3% $n3<br>";
+	$modTemplate.= "$e3% $n3<br>";
 }
 if(isset($MODN[7])){
 	$n4 = $MODN[7];
 	$e4 = $MODE[7];
-	echo "$e4% $n4<br>";
+	$modTemplate.= "$e4% $n4<br>";
 }
-echo "</div>";
+$modTemplate.= "</div>";
 }
 else {
-	echo "No mod equiped</div>";
+	$modTemplate.= "No mod equiped</div>";
 }
 
 
-echo "</div><br><b>Inventory:</b><table border='0' class='solid'>
-<tr>
-<td>Name</td>
-
-</tr>";
-
-echo "<tr>";
+$inventoryNumber=0;
 $List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'");
 while ($List1 = mysqli_fetch_array($List)){	
- 
-if ($List1[1] == "WEP"){
-$WEPI = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$List1[2]' ");
-$WEPIn = mysqli_fetch_assoc($WEPI); //wepaon by colum row
-$sell = ($WEPIn["ilvl"] + $ACC[3]) *10;
-
-$eft = 1 + $eft;
-
-if ($WEPIn["efstat"]<>0){
-		if ($WEPIn["effect"] == "LL"){
-	$efftype[$eft] = "Life Leach";
+	if($inventoryNumber/6==floor($inventoryNumber/6)){//every X make a new line
+		$backpackTemplate.="<br>";
 	}
-		if ($WEPIn["effect"] == "BL"){
-	$efftype[$eft] = "Bleed Chanse";
-	}
-		if ($WEPIn["effect"] == "BR"){
-	$efftype[$eft] = "Burn Chanse";
-	}
-		if ($WEPIn["effect"] == "FR"){
-	$efftype[$eft] = "Freez Chanse";
-	}
-		if ($WEPIn["effect"] == "ST"){
-	$efftype[$eft] = "Stun Chanse";
-	}
-		if ($WEPIn["effect"] == "SH"){
-	$efftype = "Shock Chanse";
-	}
-		if ($WEPIn["effect"] == "BK"){
-	$efftype = "Block Chanse";
-	}
-		if ($WEPIn["effect"] == "SM"){
-	$efftype = "Summon increase";
-	}
-	$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
-
-if ($WEPIn["skill"] <> 0){
-	$sklu[$eft] = "Has Skill!<br>";}
-	
-	if ($WEPIn["Rarity"] == "Unique"){
-		$unEf[$eft] = "class='awesome'";}
-
-echo "<td>";
-echo "<div class='tooltip'><b $unEf[$eft] class='$WEPIn[Rarity]'>$WEPIn[Name] + $WEPIn[plus]</b><span class='tooltiptext'>Lvl:$WEPIn[ilvl] <br>P. dmg:$WEPIn[pmin] ~ $WEPIn[pmax]<br>M. dmg:$WEPIn[mmin] ~ $WEPIn[mmax]<br>Cryt chanse: $WEPIn[cryt]<br>Hit Chanse: $WEPIn[HitChanse]<br>$efto[$eft] $sklu[$eft]</span></div></td>";
-echo "<td     display: inline-flex;>
-	      <form method='post' class='inventor' action='Equip.php'>
-          <input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
-		  <input type='text' name='TYPE' value='WEP' style='display:none'>
-        <a class='submit'><button type='submit' name='Eqip' value='$WEPIn[HASH]'>Equip</button> 
-        </a>
-          <input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>";
+	$inventoryNumber++;
+	if ($List1[1] == "WEP"){
+		$WEPI = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$List1[2]' ");
+		$WEPIn = mysqli_fetch_assoc($WEPI); //wepaon by colum row
+		$sell = ($WEPIn["ilvl"] + $ACC[3]) *10;
 		if ($WEPIn["Rarity"] == "Unique"){
-        echo "<a class='submit'><button type='submit' name='Sell' value='$WEPIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
-		else{
-		echo "<a class='submit'><button type='submit' name='Sell' value='$WEPIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+			$sellText="$sell Gold and 30 Shards.";
 		}
-		
-        echo "</a>
+		else{
+			$sellText="$sell Gold.";
+		}
 
-      </form>
-	  
-		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
-	  
-<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
-<form >
-Asking price: <input type='number' name='price' value='0'>
-<input type='text' name='HASH' value='$WEPIn[HASH]' style='display:none'>
-<input type='text' name='TYPE' value='WEP' style='display:none'>
- <input type='submit' value='Submit'>
-</form></form>
 
-</td>";
-}
+		$eft = 1 + $eft;
 
-//invetor ARMOR
-if ($List1[1] == "ARM"){
-$ARMIr = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$List1[2]' ");
-$ARMIn = mysqli_fetch_assoc($ARMIr); //armor by colum row
-$sell = ($ARMIn["ilvl"] + $ACC[3]) *10;
+		if ($WEPIn["efstat"]<>0){
+				if ($WEPIn["effect"] == "LL"){
+			$efftype[$eft] = "Life Leach";
+			}
+				if ($WEPIn["effect"] == "BL"){
+			$efftype[$eft] = "Bleed Chanse";
+			}
+				if ($WEPIn["effect"] == "BR"){
+			$efftype[$eft] = "Burn Chanse";
+			}
+				if ($WEPIn["effect"] == "FR"){
+			$efftype[$eft] = "Freez Chanse";
+			}
+				if ($WEPIn["effect"] == "ST"){
+			$efftype[$eft] = "Stun Chanse";
+			}
+				if ($WEPIn["effect"] == "SH"){
+			$efftype = "Shock Chanse";
+			}
+				if ($WEPIn["effect"] == "BK"){
+			$efftype = "Block Chanse";
+			}
+				if ($WEPIn["effect"] == "SM"){
+			$efftype = "Summon increase";
+			}
+			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
-$eft = 1 + $eft;
-	
-if ($ARMIn["Rarity"] == "Unique"){
-		$unEf[$eft] = "class='awesome'";}
+		if ($WEPIn["skill"] <> 0){
+			$sklu[$eft] = "Has Skill!<br>";
+		}
+			
+		if ($WEPIn["Rarity"] == "Unique"){
+			$unEf[$eft] = "class='awesome'";
+		}
+		$wepCompLvl=$wepCompPhyMin=$wepCompPhyMax=$wepCompMagMin=$wepCompMagMax=$wepCompCryt=$wepCompHit="less";
 
-echo "<tr><td>";
-echo "<div class='tooltip'><b class='$ARMIn[Rarty]'>$ARMIn[Name]</b><span class='tooltiptext'>P.def - $ARMIn[pDEF]<br>M.def - $ARMIn[mDEF]<br>Apsorb: $ARMIn[Apsorb]%<br>Enchant +$ARMIn[plus]</span></div></td>";
-echo "<td     display: inline-flex;>
-	      <form method='post' class='inventor' action='Equip.php'>
-          <input style='display:none' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
-		  <input type='text' name='TYPE' value='ARM' style='display:none'>
-        <a class='submit'><button type='submit' name='Eqip' value='$ARMIn[HASH]'>Equip</button> 
-        </a>
-          <input style='display:none' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>";
+		if($WEPIn[ilvl]>=$WEPn[ilvl]){
+			$wepCompLvl="more";
+			if($WEPIn[ilvl]==$WEPn[ilvl]){
+				$wepCompLvl="same";
+			}
+		}
+		if($WEPIn[pmin]>=$WEPn[pmin]){
+			$wepCompPhyMin="more";
+			if($WEPIn[pmin]==$WEPn[pmin]){
+				$wepCompPhyMin="same";
+			}
+		}
+		if($WEPIn[pmax]>=$WEPn[pmax]){
+			$wepCompPhyMax="more";
+			if($WEPIn[pmax]==$WEPn[pmax]){
+				$wepCompPhyMax="same";
+			}
+		}
+		if($WEPIn[mmin]>=$WEPn[mmin]){
+			$wepCompMagMin="more";
+			if($WEPIn[mmin]==$WEPn[mmin]){
+				$wepCompMagMin="same";
+			}
+		}
+		if($WEPIn[mmax]>=$WEPn[mmax]){
+			$wepCompMagMax="more";
+			if($WEPIn[mmax]==$WEPn[mmax]){
+				$wepCompMagMax="same";
+			}
+		}
+		if($WEPIn[cryt]>=$WEPn[cryt]){
+			$wepCompCryt="more";
+			if($WEPIn[cryt]==$WEPn[cryt]){
+				$wepCompCryt="same";
+			}
+		}
+		if($WEPIn[HitChanse]>=$WEPn[HitChanse]){
+			$wepCompHit="more";
+			if($WEPIn[HitChanse]==$WEPn[HitChanse]){
+				$wepCompHit="same";
+			}
+		}
+		$backpackTemplate.= "
+			<div class='tooltip'>
+				<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+				<span class='tooltiptext'>
+					<div class='inventoryStats'>
+						<b $unEf[$eft] class='$WEPIn[Rarity]'>$WEPIn[Name] + $WEPIn[plus] ($WEPIn[Rarity])</b>
+						<br>
+						Lvl: <span class='$wepCompLvl'>$WEPIn[ilvl]</span>
+						<br>
+						P. dmg: <span class='$wepCompPhyMin'>$WEPIn[pmin]</span> ~ <span class='$wepCompPhyMax'>$WEPIn[pmax]</span>
+						<br>
+						M. dmg: <span class='$wepCompMagMin'>$WEPIn[mmin]</span> ~ <span class='$wepCompMagMax'>$WEPIn[mmax]</span>
+						<br>
+						Cryt chanse: <span class='$wepCompCryt'>$WEPIn[cryt]</span>
+						<br>
+						Hit Chanse: <span class='$wepCompHit'>$WEPIn[HitChanse]</span>
+						<br>
+						$efto[$eft] $sklu[$eft]
+					</div>
+					<div class='equipStats'>
+						<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
+						<br>
+						<b>$WEPn[ilvl] lvl.</b>
+						<br>
+						<a class='physical'>
+							<b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b>
+						</a>
+						<br>
+						<a class='magic'>
+							<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
+						</a>
+						<br>
+						Cryt chanse: $WEPn[cryt]
+						<br>
+						Hit Chanse: $WEPn[HitChanse]
+						<br>
+						$eft $enchtex
+					</div>
+				</span>
+			</div>
+			<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+					<input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
+					<input type='text' name='TYPE' value='WEP' style='display:none'>
+		        	<a class='submit'>
+		        		<button type='submit' name='Eqip' value='$WEPIn[HASH]'>Equip</button> 
+					
+					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
+					<a class='submit'>
+						<button type='submit' name='Sell' value='$WEPIn[HASH]'>
+							<div class='tooltip'>
+								Sell
+								<span class='tooltiptext'>$sellText</span>
+							</div>
+						</button>
+					</a>
+				</form>
+				<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>			  
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+					Asking price: <input type='number' name='price' value='0'>
+					<input type='text' name='HASH' value='$WEPIn[HASH]' style='display:none'>
+					<input type='text' name='TYPE' value='WEP' style='display:none'>
+		 			<input type='submit' value='Submit'>
+				</form>
+			</div>
+					";
+	}
+
+	//invetor ARMOR
+	if ($List1[1] == "ARM"){
+		$ARMIr = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$List1[2]' ");
+		$ARMIn = mysqli_fetch_assoc($ARMIr); //armor by colum row
+		$sell = ($ARMIn["ilvl"] + $ACC[3]) *10;
+
+		$eft = 1 + $eft;
+			
 		if ($ARMIn["Rarity"] == "Unique"){
-        echo "<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
-		else{
-		echo "<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+			$unEf[$eft] = "class='awesome'";
+			$sellText="$sell Gold and 30 Shards.";
 		}
+		else{
+			$unEf[$eft] ="";
+			$sellText="$sell Gold.";
+		}
+		if($ARMIn["Part"]=="BODY"){
+			$ARMEQUIP=$ARMBODY;
+		}
+		else if($ARMIn["Part"]=="LEGS"){
+			$ARMEQUIP=$ARMBOOTS;
+		}
+		else if($ARMIn["Part"]=="GLOVES"){
+			$ARMEQUIP=$ARMGLOVES;
+		}
+		$armCompLvl=$armCompPhy=$armCompMag=$armCompAbs=$armCompEnch="less";
+
+		if($ARMIn[ilvl]>=$ARMEQUIP[ilvl]){
+			$armCompLvl="more";
+			if($ARMIn[ilvl]==$ARMEQUIP[ilvl]){
+				$armCompLvl="same";
+			}
+		}
+		if($ARMIn[pDEF]>=$ARMEQUIP[pDEF]){
+			$armCompLvl="more";
+			if($ARMIn[pDEF]==$ARMEQUIP[pDEF]){
+				$armCompPhy="same";
+			}
+		}
+		if($ARMIn[mDEF]>=$ARMEQUIP[mDEF]){
+			$armCompMag="more";
+			if($ARMIn[mDEF]==$ARMEQUIP[mDEF]){
+				$armCompMag="same";
+			}
+		}
+		if($ARMIn[Apsorb]>=$ARMEQUIP[Apsorb]){
+			$armCompArb="more";
+			if($ARMIn[Apsorb]==$ARMEQUIP[Apsorb]){
+				$armCompArb="same";
+			}
+		}
+		if($ARMIn[plus]>=$ARMEQUIP[plus]){
+			$armCompEnch="more";
+			if($ARMIn[plus]==$ARMEQUIP[plus]){
+				$armCompEnch="same";
+			}
+		}
+
 		
-        echo "</a>
+		$backpackTemplate.= "
+			<div class='tooltip'>
+				<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+				<span class='tooltiptext'>
+					<div class='inventoryStats'>
+						<b class='$ARMIn[Rarty]'>$ARMIn[Name]</b>
+						<br>
+						Lvl: <span class='$armCompLvl'>$ARMIn[ilvl]</span>
+						<br>
+						P.def - <span class='$armCompPhy'>$ARMIn[pDEF]</span>
+						<br>
+						M.def - <span class='$armCompMag'>$ARMIn[mDEF]</span>
+						<br>
+						Absorb: <span class='$armCompArb'>$ARMIn[Apsorb]%</span>
+						<br>
+						Enchant +<span class='$armCompEnch'>$ARMIn[plus]</span>
+					</div>
+					<div class='equipStats'>
+						<b class='$ARMEQUIP[Rarty]'>$ARMEQUIP[Name]
+						<br>
+						Lvl: $ARMEQUIP[ilvl]
+						<br>
+						P.def - $ARMEQUIP[pDEF]
+						<br
+						>M.def - $ARMEQUIP[mDEF]
+						<br>
+						Apsorb: $ARMEQUIP[Apsorb]%
+						<br>
+						Enchant +$ARMEQUIP[plus]
+					</div>
+				</span>
+			</div>
+			<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+					<input style='display:none' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
+					<input type='text' name='TYPE' value='ARM' style='display:none'>
+		        	<a class='submit'>
+		        		<button type='submit' name='Eqip' value='$ARMIn[HASH]'>Equip</button> 
+		        	</a>
+					<input style='display:none' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>
+					<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sellText</span></div></button>
+					</a>
 
-      </form>
-	  
-		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
-	  
-<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
-<form >
-Asking price: <input type='number' name='price' value='0'>
-<input type='text' name='HASH' value='$ARMIn[HASH]' style='display:none'>
-<input type='text' name='TYPE' value='ARM' style='display:none'>
- <input type='submit' value='Submit'>
-</form></form>
-
-</td>";
-}
+				</form>
+			  
+				<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+					Asking price: <input type='number' name='price' value='0'>
+					<input type='text' name='HASH' value='$ARMIn[HASH]' style='display:none'>
+					<input type='text' name='TYPE' value='ARM' style='display:none'>
+					<input type='submit' value='Submit'>
+				</form>
+			</div>";
+	}
 
 
 
-if ($List1[1] == "ACS"){
-$ACSI = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$List1[2]' ");
-$ACSIn = mysqli_fetch_assoc($ACSI); //armor by colum row
-$sell = ($ACSIn["ilvl"] + $ACC[3]) *10;
+	if ($List1[1] == "ACS"){
+		$ACSI = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$List1[2]' ");
+		$ACSIn = mysqli_fetch_assoc($ACSI); //armor by colum row
+		$sell = ($ACSIn["ilvl"] + $ACC[3]) *10;
 
-$eft = 1 + $eft;
-	
-if ($ACSIn["Rarity"] == "Unique"){
-		$unEf[$eft] = "class='awesome'";}
-
-echo "<tr><td>";
-echo "<div class='tooltip'><b class='$ACSIn[Rarty]'>$ACSIn[Name]</b><span class='tooltiptext'>Apsorb: $ACSIn[Apsorb]%<br>HP Bonus:  $ACSIn[hpBonus]<br>XP Bonus: $ACSIn[xpBonus]%<br>Dmg. Bonus: $ACSIn[dmgBonus]%<br>Enchant +$ACSIn[plus]</span></div></td>";
-echo "<td     display: inline-flex;>
-	      <form method='post' class='inventor' action='Equip.php'>
-          <input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
-		  <input type='text' name='TYPE' value='ACS' style='display:none'>
-        <a class='submit'><button type='submit' name='Eqip' value='$ACSIn[HASH]'>Equip</button> 
-        </a>
-          <input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>";
+		$eft = 1 + $eft;
+			
 		if ($ACSIn["Rarity"] == "Unique"){
-        echo "<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold and 30 Shards</span></div></button>";}
-		else{
-		echo "<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sell Gold.</span></div></button>";
+			$unEf[$eft] = "class='awesome'";
+			$sellText="$sell Gold and 30 Shards.";
 		}
-		
-        echo "</a>
+		else{
+			$unEf[$eft] ="";
+			$sellText="$sell Gold.";
+		}
+		if ($ACSIn["Part"] == "AMUL"){
+			$ACSEQUIP=$ACSAMULET;
+		}
+		else if ($ACSIn["Part"] == "RING"){
+			$ACSEQUIP=$ACSRING;
+		}
+		$acsCompLvl=$acsCompHp=$acsCompXp=$acsCompAbs=$acsCompEnch=$acsCompDmg="less";
 
-      </form>
-	  
-		<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
-	  
-<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
-<form >
-Asking price: <input type='number' name='price' value='0'>
-<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
-<input type='text' name='TYPE' value='ACS' style='display:none'>
- <input type='submit' value='Submit'>
-</form></form>
+		if($ACSIn[ilvl]>=$ACSEQUIP[ilvl]){
+			$acsCompLvl="more";
+			if($ACSIn[ilvl]==$ACSEQUIP[ilvl]){
+				$acsCompLvl="same";
+			}
+		}
+		if($ACSIn[Apsorb]>=$ACSEQUIP[Apsorb]){
+			$acsCompAbs="more";
+			if($ACSIn[Apsorb]==$ACSEQUIP[Apsorb]){
+				$acsCompAbs="same";
+			}
+		}
+		if($ACSIn[hpBonus]>=$ACSEQUIP[hpBonus]){
+			$acsCompHp="more";
+			if($ACSIn[hpBonus]==$ACSEQUIP[hpBonus]){
+				$acsCompHp="same";
+			}
+		}
+		if($ACSIn[xpBonus]>=$ACSEQUIP[xpBonus]){
+			$acsCompXp="more";
+			if($ACSIn[xpBonus]==$ACSEQUIP[xpBonus]){
+				$acsCompXp="same";
+			}
+		}
+		if($ACSIn[dmgBonus]>=$ACSEQUIP[dmgBonus]){
+			$acsCompDmg="more";
+			if($ACSIn[dmgBonus]==$ACSEQUIP[dmgBonus]){
+				$acsCompDmg="same";
+			}
+		}
+		if($ACSIn[plus]>=$ACSEQUIP[plus]){
+			$acsCompEnch="more";
+			if($ACSIn[plus]==$ACSEQUIP[plus]){
+				$acsCompEnch="same";
+			}
+		}
 
-</td>";
+		$backpackTemplate.=  "
+		<div class='tooltip'>
+			<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'>
+			<span class='tooltiptext'>
+				<div class='inventoryStats'>
+					<b class='$ACSIn[Rarty]'>$ACSIn[Name]</b>
+					<br>
+					Lvl: <span class='$acsCompLvl'>$ACSIn[ilvl]</span>
+					<br>
+					Apsorb: <span class='$acsCompAbs'>$ACSIn[Apsorb]%</span>
+					<br>
+					HP Bonus:  <span class='$acsCompHp'>$ACSIn[hpBonus]</span>
+					<br>
+					XP Bonus: <span class='$acsCompXp'>$ACSIn[xpBonus]%</span>
+					<br>
+					Dmg. Bonus: <span class='$acsCompDmg'>$ACSIn[dmgBonus]%</span>
+					<br>
+					Enchant +<span class='$acsCompEnch'>$ACSIn[plus]</span>
+				</div>
+				<div class='equipStats'>
+					<b class='$ACSEQUIP[Rarty]'>$ACSEQUIP[Name]</b>
+					<br>
+					Lvl: $ACSEQUIP[ilvl]
+					<br>
+					Apsorb: $ACSEQUIP[Apsorb]%
+					<br>
+					HP Bonus:  $ACSEQUIP[hpBonus]
+					<br>
+					XP Bonus: $ACSEQUIP[xpBonus]%
+					<br>
+					Dmg. Bonus: $ACSEQUIP[dmgBonus]%
+					<br>
+					Enchant +$ACSEQUIP[plus]
+				</div>
+			</span>
+		</div>
+		<div class='inventoryActions'>
+			<form method='post' class='inventor' action='Equip.php'>
+				<input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
+				<input type='text' name='TYPE' value='ACS' style='display:none'>
+				<a class='submit'>
+					<button type='submit' name='Eqip' value='$ACSIn[HASH]'>Equip</button> 
+				</a>
+				<input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>
+				<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sellText</span></div></button>
+				</a>
+
+			</form>
+			<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
+			<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+				Asking price: <input type='number' name='price' value='0'>
+				<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
+				<input type='text' name='TYPE' value='ACS' style='display:none'>
+				<input type='submit' value='Submit'>
+			</form>
+		</div>";
+	}
+	
 }
-echo "<tr>";
-}
 
-echo "</td></tr>";
 
 mysqli_close($db);
-?>
-</table>
+$statsTemplate = "
+<font class='stats'>User:</font>
+<div class='tooltip'>
+	<font color='$ACC[12]'>
+		<b>$User</b>
+		<span class='tooltiptext'>$ACC[13]</span>
+	</font>
+</div> 
+$pointsLvlUp
 <br>
-<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.5pre) !!!GAME BROKEN!!</b></a><br>
-<a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
-<script>
-if(typeof(EventSource) !== "undefined") {
-    var source = new EventSource("chat_upd.php");
-    source.onmessage = function(event) {
-        document.getElementById("result").innerHTML = event.data ;
-    };
-} else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
-}
+<font class='stats'>Class:</font>
+<div class='tooltip'>
+	<b>$CLS[1]</b>
+	<span class='tooltiptext'>$CLS[9]</span>
+</div>
+<br>
+<div id='picture'>
+	<img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'>
+	$pasiveBut
+</div>
+<br>
+<font class='stats'>LVL:</font> 
+<b>$ACC[3]</b>
+$leveltext
+<br>
+<font class='stats'>Average DMG:</font>
+<b>
+	<font class='physical'>~$avgP</font>
+	/
+	<font class='magic'>~$avgM</font>
+</b>
+<br>
+<font class='stats'>HP:</font> 
+<font class='health'><b>$HP2</b></font>
+<br>
+<font class='stats'>ENR:</font> 
+<b>
+	<font class='energy'>
+		$ENR
+		<font size='1'>($enr per turn)</font>
+	</font>
+</b>
+<br>
+<font class='stats'>DEF:</font> 
+<b>
+	<font class='physical'>$Parmor</font>
+	<font class='magic'>$Marmor</font>
+</b>
+<br>
+<font class='stats'>Gold:</font> 
+<b>
+	<font class='gold'>$ACC[4]</font>
+</b>
+<br>
+<font class='stats'>Shards:</font>
+<b>
+	<font class='shards'>$ACC[15]</font>
+</b>
+<br>
+<font class='stats'>Item LVL:</font> 
+<b>$lwa</b>
+<br>
+<b>
+	<font class='stats'>Points:</font>
+	<font class='physical'>$PNT[2] STR</font>
+	- 
+	<font class='magic'>$PNT[3] INT</font>
+</b>
+<br>
 
-function hide(a)
-{
-	var id = a;
-	var tf = "asd" + (id);
-	var bt = "button" + (id);
-	
-    document.getElementById(tf).style.display="none";
-	document.getElementById(bt).onclick=function () { show(a) };
+<div class='tooltip'>
+	<img src='IMG/cryt.jpg' style='width:45px;height:45px;'> 
+	<span class='tooltiptext'>
+		LVL: $PAS[3]
+		<br>
+		XP: $PAS[1]/$plvl1[1]
+		<br>
+		$PAS[2]% Cryt chanse
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/crytd.jpg' style='width:45px;height:45px;'>
+	<span class='tooltiptext'>
+		LVL: $PAS[12]
+		<br>
+		XP: $PAS[10]/$plvl4[1]
+		<br>
+		$PAS[11]% Cryt damage increase
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> 
+	<span class='tooltiptext'>
+		LVL: $PAS[6]
+		<br>
+		XP: $PAS[4]/$plvl2[1]
+		<br>
+		$apsorb% Absorb
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/ener.jpg' style='width:45px;height:45px;'> 
+	<span class='tooltiptext'>
+		LVL: $PAS[9]
+		<br>
+		XP: $PAS[7]/$plvl3[1]
+		<br>
+		$PAS[8]% Bonus energy regen
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/$Skil[6]' style='width:45px'> 
+	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
+</div>
 
+";
+$equipTemplate ="
+<div id='equipWeapon' class='tooltip'>
+	<b><img src='' style='width:50px;height:50px;'></b>
+	<span class='tooltiptext'>
+		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
+		<br>
+		<b>$WEPn[ilvl] lvl.</b>
+		<br>
+		<a class='physical'>
+			<b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b>
+		</a>
+		<br>
+		<a class='magic'>
+			<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
+		</a>
+		<br>
+		Cryt chanse: $WEPn[cryt]
+		<br>
+		Hit Chanse: $WEPn[HitChanse]
+		<br>
+		$eft $enchtex
+	</span>
+</div>
+<div id='equipBody' class='tooltip'>
+	$bodyTemplate
+</div>
+<div id='equipLegs' class='tooltip'>
+	$legsTemplate
+</div>
+<div id='equipArms' class='tooltip'>
+	$armsTemplate
+</div>
+<div id='equipAmulet' class='tooltip'>
+	$amuletTemplate
+</div>
+<div id='equipRing' class='tooltip'>
+	$ringTemplate
+</div>
+<div id='equipGem' class='tooltip'>
+	$gemTemplate
+</div>
+<div id='equipMod'>
+	$modTemplate
+</div>
+";
+$socialTemplate="
+<div id='personal'>
+Totall Kills
+<br>
+<b>$ACC[6]</b>
+<br>
+<br>
+<b>PVP Rank:</b>
+<br>
+<b><font class='$ACC[12]'>$ACC[11]</font></b>
+<section class='container'>
+    <p class='submit'>
+    	<form method='post' action='achv.php'>
+          <input type='submit' name='commit3' value='Achievments'>
+     	 </form></p></section>
+$onlineText
 
-}
-function show(a)
-{
-	var id = a;
-	var tf = "asd" + (id);
-	var bt = "button" + (id);
-	
-    document.getElementById(tf).style.display="block";
-	document.getElementById(bt).onclick=function () { hide(a) };
+</div>
+<div id='leaderboard'>
+	Strongest item: <b $unEfs class='$WPN[3]'>$WPN[1]</b>
+	<br>
+	Highest item lvl: <b>$ILVL[9] - by <font color='$ILVL[12]'>$ILVL[0]</font></b>
+	<br>
+	Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b>
+	<br>
+	Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>
+</div>
+<div id='chat'>
+	<iframe height='100px' width='300px' src='message.php'></iframe>
+</div>
+";
+$actionsTemplate="
+<section class='action1'>
+	<form method='post' action='Enchant.php'>
+		<input hidden='' type='text' name='lvl2' value='Enchant' placeholder='Upgarde Weapon'>
+		<p class='submit'>
+  			<input type='submit' name='commit2' value='Upgrade Weapon'>
+  		</p>
+  	</form>
+</section>
+<section class='action2'>
+	<form method='post' action='vale.php'>
+		<input hidden='' type='text' name='lvl2' value='Upgrade' placeholder='Reroll Mod'>
+		<p class='submit'>
+  			<input type='submit' name='commit2' value='Reroll Mod'>
+  		</p>
+  	</form>
+</section>
+<section class='action3'>
+	<form method='post' action='loot.php'>
+		<input hidden='' type='text' name='lvl2' value='Upgrade' placeholder='Reroll Mod'>
+			<p class='submit'>
+  				<input type='submit' name='commit2' value='Loot Shards'>
+  			</p>
+  	</form>
+</section>
+<section class='action4'>
+	<form method='post' action='fightNew.php'>
+		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
+		<p class='submit'>
+			<input type='submit' name='commit' value='NewFight'>
+			Free.
+		</p>
+	</form>
+</section>
+<section class='action5'>
+	<form method='post' action='wBoss.php'>
+		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
+		<p class='submit'>
+			<input type='submit' name='commit' value='World Boss'>
+			Free.
+		</p>
+	</form>
+</section>
+<section class='action6'>
+	<form method='post' action='auctionhouse.php'>
+		<input hidden='' type='text' name='' value='' placeholder='Auction House'>
+		<p class='submit'>
+			<input type='submit' name='commit' value='Auction House'>
+		</p>
+	</form>
+</section>
+";
+$inventoryTemplate="
+<div id='inventoryHead'>
+<font class='sectionTitle'>Backpack:</font>
+</div>
+<div id='backpack'>
+	$backpackTemplate
+</div>
+";
+include('template.php');
+?>
 
-}
-
-</script>
-</body>
-<font style="font-size:0px"> - By Kompas 2014-2017 </font>
-</html>

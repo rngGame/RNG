@@ -1,11 +1,11 @@
+<!doctype html>
 <?php
 echo '
-<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>World of RNG</title>
-		<link rel="stylesheet" type="text/css" href="css/$_COOKIE[Theme].css">;
+		<link rel="stylesheet" type="text/css" href="css/'.$_COOKIE[Theme].'.css">;
 		<link rel="icon" href="favicon.png">
 	</head>
 	<body>
@@ -43,19 +43,19 @@ echo '
 			</div>
 		</header>
 		<div id="stats">
-			$statsTemplate
+			'.$statsTemplate.'
 		</div>
 		<div id="equip">
-			$equipTemplate
+			'.$equipTemplate.'
 		</div>
 		<div id="social">
-			$socialTemplate
+			'.$socialTemplate.'
 		</div>
 		<div id="actions">
-			$actionsTemplate
+			'.$actionsTemplate.'
 		</div>
 		<div id="inventory">
-			$inventoryTemplate
+			'.$inventoryTemplate.'
 		</div>
 	</body>
 	<footer>

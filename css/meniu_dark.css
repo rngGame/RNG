@@ -567,3 +567,26 @@ progress::-webkit-progress-value {
     width: 180px;
       
 }
+#veilvl {
+
+    position: relative;
+    color: #E4E4E4;
+    font-size: small;
+    width: 122px;
+}
+
+#veil2 {
+
+    position: relative;
+    color: #E4E4E4;
+    font-size: small;
+    width: 125px;
+}
+
+#veilvl2 {
+
+    position: relative;
+    color: #E4E4E4;
+    font-size: small;
+    width: 122px;
+}

@@ -1066,7 +1066,7 @@ $statsTemplate = "
 		<span class='tooltiptext'>$ACC[13]</span>
 	</font>
 </div> 
-$pointsLvlUp;
+$pointsLvlUp
 <br>
 <font class='stats'>Class:</font>
 <div class='tooltip'>

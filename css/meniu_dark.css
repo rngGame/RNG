@@ -521,3 +521,9 @@ progress::-webkit-progress-value {
 		-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
 		-webkit-linear-gradient(left, #5e9edc, #00ff99);
 }
+.stats {
+    float: left;
+    width: 300px;
+    height: 255px;
+    background-color: #26292c;
+}

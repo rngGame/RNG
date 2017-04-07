@@ -524,45 +524,50 @@ progress::-webkit-progress-value {
 #stats {
     float:left;
     position: absolute;
-    top:50px;
+    top:36px;
     left:0px;
     width: 300px;
-    height: 255px;
+    height: 355px;
     background-color: #26292c;
+    border:1px;
 }
 #equip {
     float:left;
     position: absolute;
-    top:50px;
+    top:36px;
     left:350px;
     width: 300px;
     height: 255px;
     background-color: #26292c;
+    border:1px;
 }
 #social {
     float:left;
     position: absolute;
-    top:50px;
+    top:36px;
     left:700px;
     width: 300px;
     height: 255px;
     background-color: #26292c;
+    border:1px;
 }
 #actions {
     float:left;
     position: absolute;
-    top:350px;
+    top:450px;
     left:0px;
     width: 300px;
     height: 255px;
     background-color: #26292c;
+    border:1px;
 }
 #inventory {
     float:left;
     position: absolute;
-    top:350px;
+    top:450px;
     left:350px;
     width: 300px;
     height: 255px;
     background-color: #26292c;
+    border:1px;
 }

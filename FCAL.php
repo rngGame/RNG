@@ -53,6 +53,7 @@ $mLVL = $_SESSION["MonsLVL"]; //monster lvl
 $HPin = $_SESSION["HP"]; //player hp
 $plvl = $_SESSION["plvl"]; //player lvl
 $Armor = $_SESSION["ARM"]; //player armor
+$ArmorM = $_SESSION["MARM"]; //magick player armor
 $ene = $_SESSION["ENERGY"]; //player energy
 $SKLm = $_SESSION["ENERGYM"]; //current player energy
 $CRYT = $_SESSION["CRYT"]; // cryt  chanse
@@ -142,6 +143,7 @@ $monDMG = $monDMG*2;}
 
 //monster dmg to playerr
 $monDMG = ($monDMG - $Armor);
+$monDMGmag = ($monDMGmag - $ArmorM);
 if ($monDMG < 0){
 	$monDMG = 1;}
 	
@@ -150,6 +152,10 @@ if ($monDMG < 0){
 $apsv = ($monDMG*$APS/100);
 $apsv = round($apsv,0);
 $monDMG = $monDMG - $apsv;
+$apsvM = ($monDMGmag*$APS/100);
+$apsvM = round($apsvM,0);
+$monDMGmag = $monDMGmag - $apsv;
+
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'APS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
@@ -157,7 +163,7 @@ $monDMG = $monDMG - $apsv;
 	VALUES ('$User', 'APS', '$apsv')";
 	$result = mysqli_query($db, $order);}
 		else{
-			$CCount = $ACH[2] + $apsv;
+			$CCount = $ACH[2] + $apsv + $apsvM;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
 			WHERE `User` = '$User' and `Name` = 'APS'";
@@ -254,7 +260,7 @@ if (rand(1,100) >= 75){
 	$monDMGmag = round($monDMGmag * rand(110,150) /100);
 	$finalPlayerHP = $HPin - $monDMGmag;
 	$tM = $monDMGmag ;
-	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b><br>";
+	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag dmg.</b><br>";
 }
 // if no skill used by mob
 else{

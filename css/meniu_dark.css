@@ -536,12 +536,12 @@ progress::-webkit-progress-value {
 #equipMod{
     position: absolute;
     width: 145px;
-    height: 210px;
+    height: 205px;
 }
 #mini3 {
     width: 145px;
     position: absolute;
-    height: 210px;
+    height: 205px;
       
 }
 #veil {
@@ -550,7 +550,7 @@ progress::-webkit-progress-value {
     color: #E4E4E4;
     font-size: small;
     width: 125px;
-    top: 10px;
+    bottom: 10px;
 }
 #veilvl {
 

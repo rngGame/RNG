@@ -475,7 +475,7 @@ if ($WEPn["efstat"]<>0){
 	}
 
 if ($WEPn["Name"] != ""){
-	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' style='width:45px;height:45px;'></b>
+	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'></b>
 	<span class='tooltiptext'>
 		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
 		<br>

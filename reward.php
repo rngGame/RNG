@@ -28,7 +28,7 @@ $Gold = $_SESSION["GoldRew"];
 
 $rewType = $_SESSION["REWARDTYPE"];
 
-echo $_SESSION["CURRENTWHASH"];
+$_SESSION["CURRENTWHASH"];
 
 if (isset($_SESSION["SHD"])){
 $Shards = $_SESSION["SHD"];

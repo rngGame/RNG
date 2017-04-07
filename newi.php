@@ -73,6 +73,15 @@ if ($WEPi["efstat"]<>0){
 		if ($WEPi["effect"] == "ST"){
 	$efftype = "Stun Chanse";
 	}
+		if ($WEPi["effect"] == "SH"){
+	$efftype = "Shock Chanse";
+	}
+		if ($WEPi["effect"] == "BK"){
+	$efftype = "Block Chanse";
+	}
+		if ($WEPi["effect"] == "SM"){
+	$efftype = "Summon increase";
+	}
 	$eft = "$efftype $WEPi[efstat] %<br>";}
 	
 if (!$WEPi[2] == ""){

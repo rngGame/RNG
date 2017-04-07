@@ -258,6 +258,8 @@ if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
 //monster skill
 if (rand(1,100) >= 75){
 	$monDMGmag = round($monDMGmag * rand(110,150) /100);
+	if ($monDMGmag <= 0){
+		$monDMGmag = 0;}
 	$finalPlayerHP = $HPin - $monDMGmag;
 	$tM = $monDMGmag ;
 	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag dmg.</b><br>";

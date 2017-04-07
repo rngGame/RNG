@@ -1182,6 +1182,7 @@ $leveltext
 $skillTemplate
 ";
 $equipTemplate ="
+<img src='IMG/body.png' id='equipShadow'>
 <div id='equipWeapon' class='tooltip'>
 	$weaponTemplate
 </div>
@@ -1205,9 +1206,6 @@ $equipTemplate ="
 </div>
 <div id='equipMod'>
 	$modTemplate
-</div>
-<div id='equipShadow'>
-	<img src='IMG/abody.png' style='width:255px;height:255px;'>
 </div>
 ";
 $socialTemplate="

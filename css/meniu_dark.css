@@ -587,3 +587,9 @@ progress::-webkit-progress-value {
     font-size: small;
     width: 122px;
 }
+
+#equipShadow{
+    position: absolute;
+    height: 320px;
+    width: 255px;
+}

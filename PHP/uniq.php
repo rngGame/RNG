@@ -4,97 +4,97 @@
 $uniqRO = rand(1,12);
 
 //hash
-$HC = 0;
+$HitChanse = 0;
 $HASH = rand(-90000000,900000000);
 $HASH = $HASH + rand(-1000,1000);
 $HASH = "$HASH UNI"; 
 
 //Lapiukas uniq
 if ($uniqRO == 1){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', 'ff6633', '300', '200', '300', '1', '1', '200', '300', '95', '', 'LL', '30', '0', '200')";
+	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', '300', '200', '300', '1', '200', '300', '95', '', 'LL', '30', '0', '200')";
 }
 
 if ($uniqRO == 2){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Shame of Discord', 'Unique', 'ff6633', '1', '1', '1', '100', '1', '1', '1', '100', '9', 'BK', '10', '0', '200')";
+	   ('$HASH', 'Shame of Discord', 'Unique','1', '1', '100', '1', '1', '1', '100', '9', 'BK', '10', '0', '200')";
 }
 
 if ($uniqRO == 3){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt,mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Gamblers draw', 'Unique', 'ff6633', '300', '1', '1300', '1', '1', '1', '1300', '50', '', '', '', '0', '200')";
+	   ('$HASH', 'Gamblers draw', 'Unique','300', '1', '1300', '1','1', '1300', '50', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 4){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt,mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Lord of Magick wand', 'Unique', 'ff6633', '100', '1', '1', '1', '1', '700', '900', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'Lord of Magick wand','ff6633', '100', '1', '1','1', '700', '900', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 5){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Ringed Warrior Great Sword', 'Unique', 'ff6633', '100', '300', '500', '10', '1', '1', '1', '100', '10', 'LL', '5', '0', '200')";
+	   ('$HASH', 'Ringed Warrior Great Sword', 'Unique','100', '300', '500', '10','1', '1', '100', '10', 'LL', '5', '0', '200')";
 }
 
 //Kompas uniq
 if ($uniqRO == 6){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Freezing touch of Kompas', 'Unique', 'ff6633', '200', '1', '1', '1', '1', '1', '1', '100', '', 'FR', '50', '0', '200')";
+	   ('$HASH', 'Freezing touch of Kompas', 'Unique', '200', '1', '1','1', '1', '1', '100', '', 'FR', '50', '0', '200')";
 }
 
 if ($uniqRO == 7){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'One with Everyone', 'Unique', 'ff6633', '1', '99999', '99999', '100', '1', '1', '1', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'One with Everyone', 'Unique', '1', '99999', '99999', '100', '1', '1', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 8){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Health over matter', 'Unique', 'ff6633', '75', '85', '105', '5', '1', '105', '205', '95', '9', 'HT', '15', '0', '150')";
+	   ('$HASH', 'Health over matter', 'Unique', '75', '85', '105', '5', '105', '205', '95', '9', 'HT', '15', '0', '150')";
 }
 
 if ($uniqRO == 9){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Sleeping beauty', 'Unique', 'ff6633', '105', '250', '450', '10', '1', '75', '200', '92', '2', 'WK', '50', '0', '450')";
+	   ('$HASH', 'Sleeping beauty', 'Unique', '105', '250', '450', '10', '75', '200', '92', '2', 'WK', '50', '0', '450')";
 }
 
 if ($uniqRO == 10){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Shiny coin picker', 'Unique', 'ff6633', '100', '90', '110', '15', '1', '65', '130', '86', '', '', '', '30', '550')";
+	   ('$HASH', 'Shiny coin picker', 'Unique', '100', '90', '110', '15', '65', '130', '86', '', '', '', '30', '550')";
 }
 
 //arminas Uniq
 if ($uniqRO == 11){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'French fries of power and confusion', 'Unique', 'ff6633', '69', '69', '169', '50', '1', '69', '69', '95', '10', 'ST', '35', '0', '350')";
+	   ('$HASH', 'French fries of power yet confusion', 'Unique', '69', '69', '169', '50', '69', '69', '95', '10', 'ST', '35', '0', '350')";
 }
 
-//arminas Uniq
+
 if ($uniqRO == 12){
-	$order2 = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Summoners urgant wish stick', 'Unique', 'ff6633', '150', '1', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
+	   ('$HASH', 'Summoners urgant wish stick', 'Unique','150', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
 }
 
 

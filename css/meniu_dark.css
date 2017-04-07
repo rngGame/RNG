@@ -513,9 +513,9 @@ progress::-webkit-progress-value {
     float:left;
     position: absolute;
     top:35px;
-    left:702px;
-    width: 300px;
-    height: 255px;
+    right:0px;
+    width: 500px;
+    height: 800px;
     background-color: #26292c;
     border:1px solid black;
 }
@@ -630,3 +630,25 @@ progress::-webkit-progress-value {
     top: 55px;
     left: 20px;
 }
+#personal{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height:200px;
+    width: 250px;
+}
+#leaderboard{
+    position: absolute;
+    top: 0px;
+    left: 250px;
+    height:200px;
+    width: 250px;
+}
+#chat{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    height:600px;
+    width: 500px;
+}
+

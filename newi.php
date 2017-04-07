@@ -57,39 +57,39 @@ $_SESSION["GoldRew"] = $moneyRew;
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
-if ($WEPi["efstat"]<>0){
-		if ($WEPi["effect"] == "LL"){
+if ($weaponEffectChance <> 0){
+		if ($weaponEffect == "LL"){
 	$efftype = "Life Leach";
 	}
-		if ($WEPi["effect"] == "BL"){
+		if ($weaponEffect == "BL"){
 	$efftype = "Bleed Chanse";
 	}
-		if ($WEPi["effect"] == "BR"){
+		if ($weaponEffect == "BR"){
 	$efftype = "Burn Chanse";
 	}
-		if ($WEPi["effect"] == "FR"){
+		if ($weaponEffect == "FR"){
 	$efftype = "Freez Chanse";
 	}
-		if ($WEPi["effect"] == "ST"){
+		if ($weaponEffect == "ST"){
 	$efftype = "Stun Chanse";
 	}
-		if ($WEPi["effect"] == "SH"){
+		if ($weaponEffect == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($WEPi["effect"] == "BK"){
+		if ($weaponEffect == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($WEPi["effect"] == "SM"){
+		if ($weaponEffect == "SM"){
 	$efftype = "Summon increase";
 	}
-	$eft = "$efftype $WEPi[efstat] %<br>";}
+	$eft = "$efftype $weaponEffectChance %<br>";}
 	
-if (!$WEPi[2] == ""){
-	$Current = "<b style='color:#$WEPi[3]'>$WEPi[1] ($WEPi[2])</b>";}
+if (!$WEPi["Name"] == ""){
+	$Current = "<b class='$WEPi[Rarity]'>$WEPi[Name] ($WEPi[Rarity])</b>";}
 	else{
-	$Current = "$WEPi[1]";}
+	$Current = "$WEPi[Name]";}
 	
-if ($WEPi[12] <> ""){
+if ($WEPi["skill"] <> ""){
 	$Skl2 = "Has Skill";}
 
 //CAlculate AVG
@@ -136,9 +136,9 @@ Physical Dmg: <b><span class='$comparePHYS1'>$weaponPhysMin</span> ~ <span class
 Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='$compareMAG2'>$weaponMagMax</span> <font size='2'>(Avg. <span class='$compareMAG'>$magAVG1</span>)</font></b><br>
 Cryt chanse: <span class='$compareCRYT'>$weaponCrit %</span><br>
 Hit chanse: <span class='$compareHIT'>$weaponHit %</span><br>
-$weaponEffect $weaponSkillText
+$eft
 Worth: $moneySel gold<br>
-<br><b>Current item:</b><br>
+<br><b>Current item:</b><br><br>
 Name: $Current <br>
 Item lvl: <b>$WEPi[ilvl]</b><br>
 Physical Dmg: <b>$WEPi[pmin] ~ $WEPi[pmax] <font size='2'>(Avg. $phyAVG2)</font></b><br>

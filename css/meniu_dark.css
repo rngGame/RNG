@@ -603,5 +603,30 @@ progress::-webkit-progress-value {
 #equipArms{
     position: absolute;
     top: 130px;
+    left: 205px;
+}
+#equipLegs{
+    position: absolute;
+    bottom: 10px;
+    left: 105px;
+}
+#equipRing{
+    position: absolute;
+    top: 140px;
+    left: 105px;
+}
+#equipAmulet{
+    position: absolute;
+    top: 30px;
+    left: 105px;
+}
+#equipBody{
+    position: absolute;
+    top: 70px;
+    left: 105px;
+}
+#equipGem{
+    position: absolute;
+    top: 10px;
     left: 105px;
 }

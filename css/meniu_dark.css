@@ -595,3 +595,8 @@ progress::-webkit-progress-value {
     top:0px;
     left: 0px;
 }
+#equipWeapon{
+    position: absolute;
+    top:50px;
+    left: 0px;
+}

@@ -475,7 +475,7 @@ if ($WEPn["efstat"]<>0){
 	}
 
 if ($WEPn["Name"] != ""){
-	$weaponTemplate="<b><img src='' style='width:50px;height:50px;'></b>
+	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' style='width:50px;height:50px;'></b>
 	<span class='tooltiptext'>
 		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
 		<br>
@@ -571,7 +571,7 @@ else{
 
 
 if (!$GEM[3] == ""){
-	$gemTemplate="<img src='' width='45px' height='45px'>
+	$gemTemplate="<img src='IMG/pack/Icon.4_32.png' width='45px' height='45px'>
 		<span class='tooltiptext'>
 			<b class='#$GEM[3]'>
 				$GEM[0]
@@ -754,7 +754,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 		$backpackTemplate.= "
 			<div class='tooltip'>
-				<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'>
 				<span class='tooltiptext'>
 					<div class='inventoryStats'>
 						<b $unEf[$eft] class='$WEPIn[Rarity]'>$WEPIn[Name] + $WEPIn[plus] ($WEPIn[Rarity])</b>
@@ -838,12 +838,15 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 		if($ARMIn["Part"]=="BODY"){
 			$ARMEQUIP=$ARMBODY;
+			$armIcon="5_67";
 		}
 		else if($ARMIn["Part"]=="LEGS"){
 			$ARMEQUIP=$ARMBOOTS;
+			$armIcon="3_84";
 		}
 		else if($ARMIn["Part"]=="GLOVES"){
 			$ARMEQUIP=$ARMGLOVES;
+			$armIcon="2_24";
 		}
 		$armCompLvl=$armCompPhy=$armCompMag=$armCompAbs=$armCompEnch="less";
 
@@ -881,7 +884,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		
 		$backpackTemplate.= "
 			<div class='tooltip'>
-				<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+				<img src='IMG/pack/Icon.".$armIcon.".png' width='45px' height='45px'>
 				<span class='tooltiptext'>
 					<div class='inventoryStats'>
 						<b class='$ARMIn[Rarty]'>$ARMIn[Name]</b>
@@ -953,9 +956,11 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 		if ($ACSIn["Part"] == "AMUL"){
 			$ACSEQUIP=$ACSAMULET;
+			$acsIcon="6_53";
 		}
 		else if ($ACSIn["Part"] == "RING"){
 			$ACSEQUIP=$ACSRING;
+			$acsIcon="6_75";
 		}
 		$acsCompLvl=$acsCompHp=$acsCompXp=$acsCompAbs=$acsCompEnch=$acsCompDmg="less";
 
@@ -998,7 +1003,7 @@ while ($List1 = mysqli_fetch_array($List)){
 
 		$backpackTemplate.=  "
 		<div class='tooltip'>
-			<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'>
+			<img src='IMG/pack/Icon.".$acsIcon.".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
 					<b class='$ACSIn[Rarty]'>$ACSIn[Name]</b>

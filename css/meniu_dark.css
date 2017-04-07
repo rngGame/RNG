@@ -533,9 +533,13 @@ progress::-webkit-progress-value {
     background-color: #26292c;
     border:1px solid black;
 }
+#equipMod{
+    position: relative;
+    width: 180px;
+}
 #mini3 {
     width: 180px;
-    position: relative;
+    position: absolute;
       
 }
 #veil {

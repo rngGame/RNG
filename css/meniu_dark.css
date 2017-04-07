@@ -535,6 +535,7 @@ progress::-webkit-progress-value {
 }
 #mini3 {
     width: 180px;
+    position: relative;
       
 }
 #veil {

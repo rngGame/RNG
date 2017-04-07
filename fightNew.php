@@ -22,13 +22,14 @@ $HPin = $_SESSION["HP"];
 $DMGp = $_SESSION["DMGPAVE"];
 $DMGm = $_SESSION["DMGMAVE"];
 $Armor = $_SESSION["ARM"];
+$ArmorM = $_SESSION["MARM"];
 $eng = $_SESSION["ENG"];
 
 echo "World Of RNG";
 echo "</header>";
 echo "<p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$DMGp</font>/<font size='3' color='#0066ff'>~$DMGm  </font>";
-echo "ARMOR: <font size='3' color='gold'>$Armor  </font></p>";
+echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> </p>";
 
 
 $User = $_SESSION["User"];

@@ -314,11 +314,12 @@ if ($SKL ==33){
 //skill 35
 if ($SKL == 35){
 	$_SESSION["SKILL35"] = 1;
-	$bonusspower = $Armor * 2;
+	$bonusspower = $Armor + $ArmorM;
 	if ($SUB[5] == "BRSK"){
-	$bonusspower = $Armor * 5;
+	$bonusspower =( $Armor + $ArmorM )* 2.5;
 	}
 	$_SESSION["ARM"] = 0;
+	$_SESSION["MARM"] = 0;
 	$minPdmg = $minPdmg + $bonusspower;
 	$maxPdmg = $maxPdmg + $bonusspower;
 	$minMdmg = $minMdmg + $bonusspower;

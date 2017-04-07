@@ -42,6 +42,7 @@ if ($type == 69 and $ACC[3] > 19){
 
 $HPin = $_SESSION["HP"];
 $Armor = $_SESSION["ARM"];
+$ArmorM = $_SESSION["MARM"];
 
 $minPdmg = $_SESSION["DMGPmin"];
 $maxPdmg = $_SESSION["DMGPmax"];
@@ -100,7 +101,7 @@ echo "World Of RNG";
 echo "</header>";
 echo "<p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066ff'>~$avgM  </font>";
-echo "ARMOR: <font size='3' color='gold'>$Armor  </font>";
+echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> ";
 echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font></p>";
 
 $panel = "right-panel"; //set panel for log

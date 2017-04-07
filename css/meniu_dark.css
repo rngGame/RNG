@@ -532,10 +532,10 @@ progress::-webkit-progress-value {
 #inventory {
     float:left;
     position: absolute;
-    top:450px;
-    left:350px;
-    width: 300px;
-    height: 255px;
+    top:356px;
+    left:301px;
+    width: 350px;
+    height: 320px;
     background-color: #26292c;
     border:1px solid black;
 }

@@ -758,6 +758,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 		}
 		$backpackTemplate.= "
+		<div class='items'>
 			<div class='tooltip'>
 				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'>
 				<span class='tooltiptext'>
@@ -822,6 +823,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		 			<input type='submit' value='Submit'>
 				</form>
 			</div>
+		</div>
 					";
 	}
 
@@ -888,6 +890,7 @@ while ($List1 = mysqli_fetch_array($List)){
 
 		
 		$backpackTemplate.= "
+		<div class='items'>
 			<div class='tooltip'>
 				<img src='IMG/pack/Icon.".$armIcon.".png' width='45px' height='45px'>
 				<span class='tooltiptext'>
@@ -939,7 +942,8 @@ while ($List1 = mysqli_fetch_array($List)){
 					<input type='text' name='TYPE' value='ARM' style='display:none'>
 					<input type='submit' value='Submit'>
 				</form>
-			</div>";
+			</div>
+		</div>";
 	}
 
 
@@ -1007,6 +1011,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 
 		$backpackTemplate.=  "
+		<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/Icon.".$acsIcon.".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
@@ -1061,7 +1066,8 @@ while ($List1 = mysqli_fetch_array($List)){
 				<input type='text' name='TYPE' value='ACS' style='display:none'>
 				<input type='submit' value='Submit'>
 			</form>
-		</div>";
+		</div>
+	</div>";
 	}
 	
 }

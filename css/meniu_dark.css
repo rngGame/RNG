@@ -643,6 +643,7 @@ progress::-webkit-progress-value {
     left: 250px;
     height:200px;
     width: 250px;
+
 }
 #chat{
     position: absolute;
@@ -650,5 +651,19 @@ progress::-webkit-progress-value {
     left: 0px;
     height:600px;
     width: 500px;
+    border-top:1px solid black;
+}
+#inventoryHead{
+    position: absolute;
+    top: 0px;
+    height: 30px;
+    border-bottom:1px solid black;
+}
+#backpack{
+    position: absolute;
+    top: 31px;
+}
+.items{
+    float:left;
 }
 

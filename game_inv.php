@@ -1310,6 +1310,6 @@ $inventoryTemplate="
 	$backpackTemplate
 </div>
 ";
-include_once 'template.php';
+include('template.php');
 ?>
 

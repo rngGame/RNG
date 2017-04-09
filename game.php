@@ -802,15 +802,12 @@ while ($List1 = mysqli_fetch_array($List)){
 				<form method='post' class='inventor' action='Equip.php'>
 					<input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='WEP' style='display:none'>
-		        	<a class='submit'>
-		        		<input type='image' class='inventoryButton' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
-					
+		        	<input type='image' class='inventoryButton' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
 					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
-							<div class='tooltip'>
-								<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$WEPIn[HASH]'>
-				
-								<span class='tooltiptext'>$sellText</span>
-							</div>
+						<div class='tooltip'>
+							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$WEPIn[HASH]'>
+							<span class='tooltiptext'>$sellText</span>
+						</div>
 				</form>
 				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
 				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>

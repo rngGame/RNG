@@ -271,7 +271,7 @@ visibility:visible;
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted #222427;
+    /*border-bottom: 1px dotted #222427;*/
 }
 
 .tooltip .tooltiptext, .tooltip .tooltipskills {

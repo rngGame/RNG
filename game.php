@@ -806,15 +806,13 @@ while ($List1 = mysqli_fetch_array($List)){
 		        		<input type='image' class='inventoryButton' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
 					
 					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
-					<a class='submit'>
 							<div class='tooltip'>
 								<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$WEPIn[HASH]'>
 				
 								<span class='tooltiptext'>$sellText</span>
 							</div>
-					</a>
 				</form>
-				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TARDE.png' onclick='show($eft)'>			  
+				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
 				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
 					Asking price: <input type='number' name='price' value='0'>
 					<input type='text' name='HASH' value='$WEPIn[HASH]' style='display:none'>

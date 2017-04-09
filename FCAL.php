@@ -335,6 +335,21 @@ $_SESSION["ENERGY"] = $ene;
 $_SESSION["MonsHP"] = $finalMonsHP;	
 $_SESSION["HP"] = $finalPlayerHP;
 
+
+//???????????????????????????????
+if (isset($_SESSION["Party"])){
+	$op1 = "UPDATE PartyMonsters
+	SET MonsterHP= '$finalMonsHP'
+	WHERE `PatyID` = '1'";
+	
+	$op2 = "UPDATE PartyMonsters
+	SET Master= '$tP'
+	WHERE `PatyID` = '1'";
+	
+$result = mysqli_query($db, $op1);
+$result = mysqli_query($db, $op2);
+}
+
 //mons has <0hp
 if ($finalMonsHP <= 0){	
 	if (isset($_SESSION["MonsR"])){

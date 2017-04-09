@@ -677,5 +677,7 @@ progress::-webkit-progress-value {
 	height: 15px;
 	float: left;
 }
-
+.inventoryActions{
+	height: 15px;
+}
 

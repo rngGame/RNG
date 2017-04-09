@@ -670,4 +670,9 @@ progress::-webkit-progress-value {
     width: 50px;
     border: 1px solid white;
 }
+.inventoryButton{
+	width:5px;
+	height: 5px;
+}
+
 

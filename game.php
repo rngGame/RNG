@@ -803,7 +803,7 @@ while ($List1 = mysqli_fetch_array($List)){
 					<input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='WEP' style='display:none'>
 		        	<a class='submit'>
-		        		<input type='image' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>Equip</button> 
+		        		<input type='image' class='inventoryButton' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>Equip</button> 
 					
 					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
 					<a class='submit'>

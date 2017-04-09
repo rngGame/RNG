@@ -680,7 +680,7 @@ progress::-webkit-progress-value {
 .inventoryActions{
 	height: 15px;
 }
-.inventoryIcons{
+#inventoryIcons{
 	height: 45px;
 }
 

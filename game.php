@@ -902,7 +902,7 @@ while ($List1 = mysqli_fetch_array($List)){
 						Enchant +<span class='$armCompEnch'>$ARMIn[plus]</span>
 					</div>
 					<div class='equipStats'>
-						<b class='$ARMEQUIP[Rarty]'>$ARMEQUIP[Name]
+						<b class='$ARMEQUIP[Rarty]'>$ARMEQUIP[Name]</b>
 						<br>
 						Lvl: $ARMEQUIP[ilvl]
 						<br>

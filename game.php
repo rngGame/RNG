@@ -802,7 +802,7 @@ while ($List1 = mysqli_fetch_array($List)){
 				<form method='post' class='inventor' action='Equip.php'>
 					<input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='WEP' style='display:none'>
-		        	<input type='image' class='inventoryButton' id='equipButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
+		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
 					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
 						<div class='tooltip'>
 							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$WEPIn[HASH]'>
@@ -920,21 +920,19 @@ while ($List1 = mysqli_fetch_array($List)){
 				<form method='post' class='inventor' action='Equip.php'>
 					<input style='display:none' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='ARM' style='display:none'>
-		        	<a class='submit'>
-		        		<button type='submit' name='Eqip' value='$ARMIn[HASH]'>Equip</button> 
-		        	</a>
+		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$ARMIn[HASH]'>
 					<input style='display:none' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>
-					<a class='submit'><button type='submit' name='Sell' value='$ARMIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sellText</span></div></button>
-					</a>
-
+						<div class='tooltip'>
+							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ARMIn[HASH]'>
+							<span class='tooltiptext'>$sellText</span>
+						</div>
 				</form>
-			  
-				<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
+				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
 				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
 					Asking price: <input type='number' name='price' value='0'>
 					<input type='text' name='HASH' value='$ARMIn[HASH]' style='display:none'>
 					<input type='text' name='TYPE' value='ARM' style='display:none'>
-					<input type='submit' value='Submit'>
+		 			<input type='submit' value='Submit'>
 				</form>
 			</div>
 		</div>";
@@ -1042,25 +1040,24 @@ while ($List1 = mysqli_fetch_array($List)){
 			</span>
 		</div>
 		<div class='inventoryActions'>
-			<form method='post' class='inventor' action='Equip.php'>
-				<input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
-				<input type='text' name='TYPE' value='ACS' style='display:none'>
-				<a class='submit'>
-					<button type='submit' name='Eqip' value='$ACSIn[HASH]'>Equip</button> 
-				</a>
-				<input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>
-				<a class='submit'><button type='submit' name='Sell' value='$ACSIn[HASH]'><div class='tooltip'>Sell<span class='tooltiptext'>$sellText</span></div></button>
-				</a>
-
-			</form>
-			<button id ='button$eft' class='tradebutton' onclick='show($eft)'>Trade</button>
-			<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
-				Asking price: <input type='number' name='price' value='0'>
-				<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
-				<input type='text' name='TYPE' value='ACS' style='display:none'>
-				<input type='submit' value='Submit'>
-			</form>
-		</div>
+				<form method='post' class='inventor' action='Equip.php'>
+					<input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
+					<input type='text' name='TYPE' value='ACS' style='display:none'>
+		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$ACSIn[HASH]'>
+					<input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>
+						<div class='tooltip'>
+							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ACSIn[HASH]'>
+							<span class='tooltiptext'>$sellText</span>
+						</div>
+				</form>
+				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+					Asking price: <input type='number' name='price' value='0'>
+					<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
+					<input type='text' name='TYPE' value='ACS' style='display:none'>
+		 			<input type='submit' value='Submit'>
+				</form>
+			</div>
 	</div>";
 	}
 	

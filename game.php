@@ -858,7 +858,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 		}
 		if($ARMIn[pDEF]>=$ARMEQUIP[pDEF]){
-			$armCompLvl="more";
+			$armCompPhy="more";
 			if($ARMIn[pDEF]==$ARMEQUIP[pDEF]){
 				$armCompPhy="same";
 			}

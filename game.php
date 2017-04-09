@@ -661,9 +661,9 @@ else {
 $inventoryNumber=0;
 $List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'");
 while ($List1 = mysqli_fetch_array($List)){	
-	if($inventoryNumber/12==floor($inventoryNumber/12)&&$inventoryNumber!=0){//every X make a new line
+	/*if($inventoryNumber/12==floor($inventoryNumber/12)&&$inventoryNumber!=0){//every X make a new line
 		$backpackTemplate.="<br>";
-	}
+	}*/
 	$inventoryNumber++;
 	if ($List1[1] == "WEP"){
 		$WEPI = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$List1[2]' ");

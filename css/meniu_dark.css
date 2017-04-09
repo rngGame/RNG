@@ -672,6 +672,7 @@ progress::-webkit-progress-value {
     width: 45px;
     border: 1px solid white;
     height: 60px;
+    position: relative;
 }
 .inventoryButton{
 	width:15px;

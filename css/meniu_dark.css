@@ -667,13 +667,12 @@ progress::-webkit-progress-value {
 }
 .items{
     float:left;
-    width: 50px;
+    width: 45px;
     border: 1px solid white;
 }
 .inventoryButton{
 	width:15px;
 	height: 15px;
-	border: 1px solid black;
 	float: left;
 }
 

@@ -759,7 +759,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 		$backpackTemplate.= "
 		<div class='items'>
-			<div class='tooltip'>
+			<div id= 'inventoryIcons' class='tooltip'>
 				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'>
 				<span class='tooltiptext'>
 					<div class='inventoryStats'>

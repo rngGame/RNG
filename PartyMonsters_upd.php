@@ -16,7 +16,7 @@ $MonsterS = mysqli_fetch_assoc($Monster); //GLOVES by colum name
 if ($MonsterS["PL1"] > 0){ //plasyer 1
 	$PL1 = mysqli_query($db,"SELECT * FROM Party where ID = '1' ");
 	$PL1s = mysqli_fetch_assoc($PL1); //GLOVES by colum name
-	$playersDMG .= "$PL1s[Master] did $MonsterS[PL1] dmg. ";}
+	$playersDMG .= "$PL1s[PL1] did $MonsterS[PL1] dmg. ";}
 	
 if ($MonsterS["PL2"] > 0){ //player 2
 	$PL2 = mysqli_query($db,"SELECT * FROM Party where ID = '1' ");

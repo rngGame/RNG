@@ -338,13 +338,20 @@ $_SESSION["HP"] = $finalPlayerHP;
 
 //???????????????????????????????
 if (isset($_SESSION["Party"])){
+	
+	$PL = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '1' ");
+	$PLs = mysqli_fetch_assoc($PL); 
+	
+	echo $dmgdoneParty = $PLs["PL1"] + $finalPlayerDMG;
+	
+	
 	$op1 = "UPDATE PartyMonsters
 	SET MonsterHP= '$finalMonsHP'
-	WHERE `PatyID` = '1'";
+	WHERE `PartyID` = '1'";
 	
 	$op2 = "UPDATE PartyMonsters
-	SET Master= '$tP'
-	WHERE `PatyID` = '1'";
+	SET PL1= '$dmgdoneParty'
+	WHERE `PartyID` = '1'";
 	
 $result = mysqli_query($db, $op1);
 $result = mysqli_query($db, $op2);

@@ -57,6 +57,9 @@ echo '
 		<div id="inventory">
 			'.$inventoryTemplate.'
 		</div>
+		<div id="party">
+			'.$PartyTemplate.'
+		</div>
 	</body>
 	<footer>
 		<br>

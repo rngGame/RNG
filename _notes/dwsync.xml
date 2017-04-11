@@ -86,7 +86,8 @@
 <file name="deploy.php" server="ftp.miniforums.org" local="131349540311845329" remote="131349253800000000" Dst="1" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131350941115931610" remote="131350617000000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131350934213678341" remote="131350609800000000" Dst="2" />
-<file name="game.php" server="ftp.miniforums.org" local="131360539348486827" remote="131360215200000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131363899754335661" remote="131363575200000000" Dst="2" />
 <file name="fightNew.php" server="ftp.miniforums.org" local="131360681035379757" remote="131360356800000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131363866363841633" remote="131363542200000000" Dst="2" />
+<file name="template.php" server="ftp.miniforums.org" local="131363891081970462" remote="131363566800000000" Dst="2" />
 </dwsync>

@@ -23,6 +23,8 @@ $MOD = mysqli_fetch_row($MOD);
 $GEM = mysqli_query($db,"SELECT * FROM Gems where HASH = '$ACC[14]' ");
 $GEM = mysqli_fetch_row($GEM);
 
+
+
 if ($MOD[0] == ""){
 	echo "";
 	}
@@ -1064,7 +1066,7 @@ while ($List1 = mysqli_fetch_array($List)){
 }
 
 
-mysqli_close($db);
+
 $statsTemplate = "
 <font class='stats'>User:</font>
 <div class='tooltip'>
@@ -1236,6 +1238,65 @@ $onlineText
 	<iframe height='100px' width='300px' src='message.php'></iframe>
 </div>
 ";
+
+ //Party
+$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+$Party = mysqli_fetch_assoc($PartyS);
+
+$PartyMons = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
+$PartyMonsF = mysqli_fetch_assoc($PartyMons);
+
+if ($Party["PL1"] == $User){
+	$PLnr = "PL1";}
+if ($Party["PL2"] == $User){
+	$PLnr = "PL2";}
+if ($Party["PL3"] == $User){
+	$PLnr = "PL3";}
+if ($Party["PL4"] == $User){
+	$PLnr = "PL4";}
+	
+	//Party Narei
+if ( $PLnr == "PL1" or $PLnr == "PL2" or $PLnr == "PL3" or $PLnr == "PL4"){
+	
+	$inPArty = "In Party: $Party[PL1] $Party[PL2] $Party[PL3] $Party[PL4]<br>";}
+else {
+	$inPArty = "Not in party.";}
+
+//tikrina ar yra party mobas
+if ($PartyMonsF["ID"] <> 0){
+
+	//FIGHT MOB
+	$partyButton = "<section class='actionP'>
+		<form method='post' action='temp.php'>
+			<input hidden='' type='text' name='lvl' value='100' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='NewFight'>
+			</p>
+		</form>
+	</section>";}
+else {
+	//CREATE MOB
+	$partyButton = "<section class='actionP'>
+		<form method='post' action='temp.php'>
+			<input hidden='' type='text' name='lvl' value='100' placeholder='Start Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='NewFight'>
+			</p>
+		</form>
+	</section>";
+}
+	
+$PartyTemplate="
+	$inPArty
+	$partyButton
+";
+
+
+
+
+
+
+//ACTIONS TEMP
 $actionsTemplate="
 <section class='action4'>
 	<form method='post' action='fightNew.php'>
@@ -1294,6 +1355,7 @@ $inventoryTemplate="
 	$backpackTemplate
 </div>
 ";
+mysqli_close($db);
 include('template.php');
 ?>
 

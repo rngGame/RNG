@@ -344,14 +344,16 @@ if (isset($_SESSION["Party"])){
 	
 	echo $dmgdoneParty = $PLs["PL1"] + $finalPlayerDMG;
 	
+	$PartyID  = $_SESSION["Party"]; //Party ID
+	$PLnr = $_SESSION["PlayerNR"]; //Player ID
 	
 	$op1 = "UPDATE PartyMonsters
 	SET MonsterHP= '$finalMonsHP'
-	WHERE `PartyID` = '1'";
+	WHERE `PartyID` = '$PartyID'";
 	
 	$op2 = "UPDATE PartyMonsters
-	SET PL1= '$dmgdoneParty'
-	WHERE `PartyID` = '1'";
+	SET $PLnr= '$dmgdoneParty'
+	WHERE `PartyID` = '$PartyID'";
 	
 $result = mysqli_query($db, $op1);
 $result = mysqli_query($db, $op2);

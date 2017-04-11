@@ -24,6 +24,38 @@ $_SESSION["LOSE"] = "location:lose.php";
 
 $User = $_SESSION["User"]; //user
 
+$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+$Party = mysqli_fetch_assoc($PartyS); //Party
+
+$PLS= mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+$PL = mysqli_fetch_assoc($PLS);
+
+if ($PL["PL1"] == $User){
+	$PLnr = "PL1";}
+if ($PL["PL2"] == $User){
+	$PLnr = "PL2";}
+if ($PL["PL3"] == $User){
+	$PLnr = "PL3";}
+if ($PL["PL4"] == $User){
+	$PLnr = "PL4";}
+
+$_SESSION["Party"] = $Party["ID"];
+$_SESSION["PlayerNR"] = $PLnr;
+
+//set what type reward to get
+$type = rand(1,200);
+if ($type > 140){
+	$_SESSION["PAGE"] = "location:newi.php";}
+else if ($type > 60){
+	$_SESSION["PAGE"] = "location:rewarm.php";} 
+	else if ($type > 1){
+		$_SESSION["PAGE"] = "location:rewtali.php";} 
+		
+//check for uniq drop
+if ($type == 69 and $ACC[3] > 19){ 
+	$_SESSION["UNQ"] = 1;
+	$_SESSION["PAGE"] = "location:uniqR.php";}
+
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
@@ -52,8 +84,11 @@ if ($type == 69 and $ACC[3] > 19){
 	$_SESSION["UNQ"] = 1;
 	$_SESSION["PAGE"] = "location:uniqR.php";}
 	
+//check what skill get bonusses
+include 'PHP/skillclas.php';
+	
 	//mosnter stats
-$Monster = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '1' ");
+$Monster = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
 $MonsterS = mysqli_fetch_assoc($Monster); 
 	
 $HPin = $_SESSION["HP"];

@@ -491,6 +491,26 @@ progress::-webkit-progress-value {
 		-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
 		-webkit-linear-gradient(left, #5e9edc, #00ff99);
 }
+#left{
+    float:right;
+    position:relative;
+    height: 642px;
+    background-color: #26292c;
+}
+#right{
+    float:left;
+    position:relative;
+    height: 642px;
+    background-color: #26292c;
+}
+#middle{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 642px;
+    background-color: #26292c;
+    border:1px solid black;
+}
 #stats {
     float:left;
     display: inline-block;
@@ -509,14 +529,7 @@ progress::-webkit-progress-value {
     background-color: #26292c;
     border:1px solid black;
 }
-#middle{
-    display: block;
-    overflow: hidden;
-    position: relative;
-    height: 642px;
-    background-color: #26292c;
-    border:1px solid black;
-}
+
 #social {
 	float: right;
     display: inline-block;

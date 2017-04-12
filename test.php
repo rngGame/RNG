@@ -62,6 +62,17 @@ if (isset($_POST["JP"])){
 	
 	
 	}
+	?>
+      <section class="container3">
+    <div class="31-50">
+	      <form method="post" action="sync.php">
+        <p class="submit"><input type="submit" name="commit" value="Back"></p>
+      </form>
+    </div>
+  </section>
+  <?php
+	
+	
 	die();
 }
 

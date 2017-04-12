@@ -4,6 +4,33 @@ ob_start();
 
 include_once 'PHP/db.php';
 $User = $_SESSION["User"];
+$IDP = $_SESSION["PartyID"];
+$PTS = $_SESSION["PartySpot"];
+
+//leave party
+if(isset($_POST["LP"])){
+	
+$PT = "PL$PTS";
+
+$orderChar = "UPDATE Party
+SET $PT= null
+WHERE `ID` = '$IDP'";
+$result = mysqli_query($db, $orderChar);
+	
+}
+
+
+//disamble party
+if(isset($_POST["PD"])){
+
+	$sql2="DELETE FROM Party WHERE ID='$IDP'";
+mysqli_query($db,$sql2);
+	
+	
+header("location:sync.php");
+die();
+	
+}
 
 
 $Slot = $_POST["Slot"] + 1;

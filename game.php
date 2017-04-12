@@ -1257,13 +1257,13 @@ if ($Party["PL4"] == $User){
 		
 
 		$countPL = 0;
+	if ($Party["PL1"] <> ""){
+		$countPL += 1 ;}
 	if ($Party["PL2"] <> ""){
 		$countPL += 1 ;}
 	if ($Party["PL3"] <> ""){
 		$countPL += 1 ;}
 	if ($Party["PL4"] <> ""){
-		$countPL += 1 ;}
-	if ($Party["PL5"] <> ""){
 		$countPL += 1 ;}
 
 	
@@ -1293,8 +1293,9 @@ if ($inPArty == "Not in party."){
 			</p>
 		</form>
 	</section>";
-	
 }
+	
+
 
 
 
@@ -1323,13 +1324,37 @@ else if ($countPL >= 2){
 else {
 	$partyTEXT = "Need more people in party";
 }
+
+if ($countPL >=1){
+	if ($Party["PL1"] != "$User"){
+			$partyButtonL = "<section class='actionP'>
+		<form method='post' action='party.php'>
+			<input hidden='' type='text' name='LP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Leave Party'>
+			</p>
+		</form>
+	</section>";}
 	
+		else{
+				$partyButtonL = "<section class='actionP'>
+		<form method='post' action='party.php'>
+			<input hidden='' type='text' name='PD' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Disasmble Party'>
+			</p>
+		</form>
+	</section>";}
+}
+$_SESSION["PartySpot"] = $countPL;
+$_SESSION["PartyID"] = $Party["ID"];
 $PartyTemplate="
 	$inPArty
 	$partyTEXT
 	$partyButton
 	$partyButtonC
 	$partyButtonJ
+	$partyButtonL
 ";
 
 

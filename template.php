@@ -42,24 +42,26 @@ echo '
 				</section>
 			</div>
 		</header>
-		<div id="stats">
-			'.$statsTemplate.'
-		</div>
-		<div id="equip">
-			'.$equipTemplate.'
-		</div>
-		<div id="middle">
-			
-		</div>
-		<div id="social">
-			'.$socialTemplate.'
-			<div id="result"></div>
-		</div>
-		<div id="actions">
-			'.$actionsTemplate.'
-		</div>
-		<div id="inventory">
-			'.$inventoryTemplate.'
+		<div id="gameScreen">
+			<div id="stats">
+				'.$statsTemplate.'
+			</div>
+			<div id="equip">
+				'.$equipTemplate.'
+			</div>
+			<div id="middle">
+				
+			</div>
+			<div id="social">
+				'.$socialTemplate.'
+				<div id="result"></div>
+			</div>
+			<div id="actions">
+				'.$actionsTemplate.'
+			</div>
+			<div id="inventory">
+				'.$inventoryTemplate.'
+			</div>
 		</div>
 	</body>
 	<footer class="linksB">

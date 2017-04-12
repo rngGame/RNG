@@ -53,12 +53,13 @@ echo '
 				'.$socialTemplate.'
 				<div id="result"></div>
 			</div>
-			<div id="inventory">
-				'.$inventoryTemplate.'
-			</div>
 			<div id="middle">
 				
 			</div>
+			<div id="inventory">
+				'.$inventoryTemplate.'
+			</div>
+			
 			<div id="actions">
 				'.$actionsTemplate.'
 			</div>

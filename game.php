@@ -1365,48 +1365,42 @@ $onlineText
 ";
 
 $actionsTemplate="
-<section class='action4'>
+<section class='actionButtons'>
 	<form method='post' action='fightNew.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
 		<input type='submit' name='commit' value='NewFight'>
 	</form>
 </section>
-<section class='action5'>
+<section class='actionButtons'>
 	<form method='post' action='wBoss.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
 		<input type='submit' name='commit' value='World Boss'>
 	</form>
 </section>
-<section class='action1'>
+<section class='actionButtons'>
 	<form method='post' action='Enchant.php'>
 		<input hidden='' type='text' name='lvl2' value='Enchant' placeholder='Upgarde Weapon'>
-		<p class='submit'>
-  			<input type='submit' name='commit2' value='Upgrade Weapon'>
-  		</p>
+  		<input type='submit' name='commit2' value='Upgrade Weapon'>
   	</form>
 </section>
-<section class='action2'>
+<section class='actionButtons'>
 	<form method='post' action='vale.php'>
 		<input hidden='' type='text' name='lvl2' value='Upgrade' placeholder='Reroll Mod'>
-		<p class='submit'>
-  			<input type='submit' name='commit2' value='Reroll Mod'>
-  		</p>
+		<input type='submit' name='commit2' value='Reroll Mod'>
+
   	</form>
 </section>
-<section class='action3'>
+<section class='actionButtons'>
 	<form method='post' action='loot.php'>
 		<input hidden='' type='text' name='lvl2' value='Upgrade' placeholder='Reroll Mod'>
-			<p class='submit'>
-  				<input type='submit' name='commit2' value='Loot Shards'>
-  			</p>
+		<input type='submit' name='commit2' value='Loot Shards'>
+
   	</form>
 </section>
-<section class='action6'>
+<section class='actionButtons'>
 	<form method='post' action='auctionhouse.php'>
 		<input hidden='' type='text' name='' value='' placeholder='Auction House'>
-		<p class='submit'>
-			<input type='submit' name='commit' value='Auction House'>
-		</p>
+		<input type='submit' name='commit' value='Auction House'>
 	</form>
 </section>
 ";

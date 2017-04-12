@@ -705,3 +705,6 @@ progress::-webkit-progress-value {
 	position: absolute;
     bottom: 0%;
 }
+.actionButtons{
+    float: left;
+}

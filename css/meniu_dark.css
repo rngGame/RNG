@@ -522,7 +522,8 @@ progress::-webkit-progress-value {
     border:1px solid black;
 }
 #actions {
-    float: left;
+    display: flex;
+    justify-content: space-around;
     position: absolute;
     top: 678px;
     width: 100%;
@@ -707,4 +708,14 @@ progress::-webkit-progress-value {
 }
 .actionButtons{
     float: left;
+}
+#middle{
+    float:left;
+    position: absolute;
+    top:35px;
+    left:622px;
+    width: 350px;
+    height: 320px;
+    background-color: #26292c;
+    border:1px solid black;
 }

@@ -48,6 +48,9 @@ echo '
 		<div id="equip">
 			'.$equipTemplate.'
 		</div>
+		<div id="middle">
+			
+		</div>
 		<div id="social">
 			'.$socialTemplate.'
 			<div id="result"></div>

@@ -22,11 +22,14 @@ $MLVL = $_SESSION["MonsLVL"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
+
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
 $PartID = $_SESSION["Party"];
 $PlayerNR = $_SESSION["PlayerNR"];
+
+
 
 $PartyS = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$PartID' ");
 $Party = mysqli_fetch_assoc($PartyS); //Party
@@ -35,24 +38,24 @@ if ( $PlayerNR == 1){
 	//vieno playerio negali but
 }
 if ( $PlayerNR == 2){
-	$PL1 = $Party["PL1"] / $Party["MonsterRew"];
-	$PL2 = $Party["PL2"] / $Party["MonsterRew"];
+	$PL1 = $Party["PL1"] / $Party["StartingHP"];
+	$PL2 = $Party["PL2"] / $Party["StartingHP"];
 	$PL1 *= 100;
 	$PL2 *= 100;
 }
 if ( $PlayerNR == 3){
-	$PL1 = $Party["PL1"] / $Party["MonsterRew"];
-	$PL2 = $Party["PL2"] / $Party["MonsterRew"];
-	$PL3 = $Party["PL3"] / $Party["MonsterRew"];
+	$PL1 = $Party["PL1"] / $Party["StartingHP"];
+	$PL2 = $Party["PL2"] / $Party["StartingHP"];
+	$PL3 = $Party["PL3"] / $Party["StartingHP"];
 	$PL1 *= 100;
 	$PL2 *= 100;
 	$PL3 *= 100;
 }
 if ( $PlayerNR == 4){
-	$PL1 = $Party["PL1"] / $Party["MonsterRew"];
-	$PL2 = $Party["PL2"] / $Party["MonsterRew"];
-	$PL3 = $Party["PL3"] / $Party["MonsterRew"];
-	$PL4 = $Party["PL4"] / $Party["MonsterRew"];
+	$PL1 = $Party["PL1"] / $Party["StartingHP"];
+	$PL2 = $Party["PL2"] / $Party["StartingHP"];
+	$PL3 = $Party["PL3"] / $Party["StartingHP"];
+	$PL4 = $Party["PL4"] / $Party["StartingHP"];
 	$PL1 *= 100;
 	$PL2 *= 100;
 	$PL3 *= 100;
@@ -60,24 +63,23 @@ if ( $PlayerNR == 4){
 }
 
 //give reward to players
-$i = 1;
-while ($i <> $PlayerNR){
+$i = 0;
+while ($i < $PlayerNR){
+	
+	$i = $i + 1;	
 	
 	$PL = "PL$i";
 	
-	$PartyA = mysqli_query($db,"SELECT * FROM Party where ID = '$PartID' ");
-	$Partysu = mysqli_fetch_assoc($PartyA); //Party
-	
-	$UserC = mysqli_query($db,"SELECT * FROM characters where User = '$Partysu[$PL]' ");
+	$UserC = mysqli_query($db,"SELECT * FROM characters where User = '$Party[$PL]' ");
 	$UserChar = mysqli_fetch_assoc($UserC); //Party
 	
 	echo "$UserChar[User]";
 	
-	$i += 1;
+
 }
 
 
-	
+	die();
 
 
 

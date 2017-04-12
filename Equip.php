@@ -90,7 +90,7 @@ if ($Type == "ACS"){
 $sql="DELETE FROM Equiped WHERE hash='$new'";
 mysqli_query($db,$sql);
 
-if ($Type == "WEP"){
+if ($Type == "WEP" and $new <> 0001){
 $sql2="DELETE FROM DropsWep WHERE HASH='$new'";
 mysqli_query($db,$sql2);}
 

@@ -74,9 +74,9 @@ if ($checkForParty == 1){
 	$MobDrop= $Drop + ($Drop * ($plCount * 10) / 100);
 	
 	$order = "INSERT INTO PartyMonsters
-	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew)
+	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew, StartingHP)
 	VALUES
-	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '$DEF', '$MobDrop')";	   
+	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '$DEF', '$MobDrop', '$MobHP')";	   
 
 $result = mysqli_query($db, $order);
 	header("location:sync.php");

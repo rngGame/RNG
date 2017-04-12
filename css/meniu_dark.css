@@ -492,16 +492,18 @@ progress::-webkit-progress-value {
 		-webkit-linear-gradient(left, #5e9edc, #00ff99);
 }
 #left{
-    float:right;
-    position:relative;
-    height: 642px;
-    background-color: #26292c;
-}
-#right{
     float:left;
     position:relative;
     height: 642px;
     background-color: #26292c;
+    width: 651px;
+}
+#right{
+    float:right;
+    position:relative;
+    height: 642px;
+    background-color: #26292c;
+    width: 500px;
 }
 #middle{
     display: block;

@@ -16,7 +16,7 @@
 <file name="drops.php" server="ftp.miniforums.org" local="131349460344343703" remote="131236829400000000" Dst="1" />
 <file name="Enchant.php" server="ftp.miniforums.org" local="131349460253601425" remote="131347369200000000" Dst="1" />
 <file name="Enchant2.php" server="ftp.miniforums.org" local="131349460258470850" remote="131347368600000000" Dst="1" />
-<file name="Equip.php" server="ftp.miniforums.org" local="131364981367148435" remote="131364657000000000" Dst="2" />
+<file name="Equip.php" server="ftp.miniforums.org" local="131365086211450357" remote="131364762000000000" Dst="2" />
 <file name="fcalc.php" server="ftp.miniforums.org" local="131349460358227902" remote="131337142200000000" Dst="1" />
 <file name="fcalcB.php" server="ftp.miniforums.org" local="131349460365025478" remote="131308354200000000" Dst="1" />
 <file name="fcalcp.php" server="ftp.miniforums.org" local="131349460368223201" remote="131308354200000000" Dst="1" />
@@ -54,7 +54,7 @@
 <file name="showold.php" server="ftp.miniforums.org" local="131349460599274825" remote="131299694400000000" Dst="1" />
 <file name="Sync.php" server="ftp.miniforums.org" local="131239489992859513" remote="131239233000000000" Dst="1" />
 <file name="Sync3.php" server="ftp.miniforums.org" local="131349514586686529" remote="131349226200000000" Dst="1" />
-<file name="test.php" server="ftp.miniforums.org" local="131365076368738541" remote="131364751800000000" Dst="2" />
+<file name="test.php" server="ftp.miniforums.org" local="131365094712651388" remote="131364770400000000" Dst="2" />
 <file name="TRY.php" server="ftp.miniforums.org" local="131349460619320264" remote="131236829400000000" Dst="1" />
 <file name="vale.php" server="ftp.miniforums.org" local="131349460630659723" remote="131348114400000000" Dst="1" />
 <file name="wBoss.php" server="ftp.miniforums.org" local="131349460634220078" remote="131348307000000000" Dst="1" />
@@ -78,7 +78,7 @@
 <file name="psw2.php" server="ftp.miniforums.org" local="131349460503856103" remote="131309506800000000" Dst="1" />
 <file name="chat_upd.php" server="ftp.miniforums.org" local="131349698309655591" remote="131349373800000000" Dst="2" />
 <file name="newi.php" server="ftp.miniforums.org" local="131360714688507750" remote="131360390400000000" Dst="2" />
-<file name="FCAL.php" server="ftp.miniforums.org" local="131365080071732002" remote="131364756000000000" Dst="2" />
+<file name="FCAL.php" server="ftp.miniforums.org" local="131365095592417950" remote="131364771000000000" Dst="2" />
 <file name="points.php" server="ftp.miniforums.org" local="131349460498825388" remote="131347962600000000" Dst="1" />
 <file name="point.php" server="ftp.miniforums.org" local="131349460493924732" remote="131348046600000000" Dst="1" />
 <file name="uniqR.php" server="ftp.miniforums.org" local="131349460624170698" remote="131348242200000000" Dst="1" />
@@ -90,5 +90,5 @@
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131363866363841633" remote="131363542200000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131364585793068384" remote="131364261600000000" Dst="2" />
 <file name="party.php" server="ftp.miniforums.org" local="131364778187716270" remote="131364453600000000" Dst="2" />
-<file name="newiP.php" server="ftp.miniforums.org" local="131365067467554078" remote="131364743400000000" Dst="2" />
+<file name="newiP.php" server="ftp.miniforums.org" local="131365098476007719" remote="131364774000000000" Dst="2" />
 </dwsync>

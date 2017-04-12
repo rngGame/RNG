@@ -289,6 +289,11 @@ $_SESSION["Party"] = 1;
 //check if still exist
 $MobHP = $MonsterS["MonsterHP"];
 if ($MobHP < 0 or !isset($MonsterS["MonsterHP"])){
+	
+	$sql2="DELETE FROM PartyMonsters WHERE PartyID='$Party[ID]'";
+mysqli_query($db,$sql2);
+
+	
 	header("location:sync.php");  
 	die();}
 

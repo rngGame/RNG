@@ -107,7 +107,7 @@ while ($i < $PlayerNR and $i <> 100){
 	$UserC = mysqli_fetch_row($UserC);
 	
 	//chanse for reward
-	if(rand(1,100) > 70){
+	if(rand(1,1000) > 850){
 		$UserWin = $UserC[0];
 	}
 	

@@ -351,7 +351,9 @@ if (isset($_SESSION["Party2"])){
 	
 	$PartyMobHP = $PLs["MonsterHP"] - $finalPlayerDMG;
 	
-	
+	if ($PartyMobHP <= 0){
+		$PartyMobHP =0;
+	}
 	
 	$dmgddone =	$PLs["$PLnr"] + $finalPlayerDMG;
 	

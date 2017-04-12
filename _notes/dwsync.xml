@@ -37,7 +37,6 @@
 <file name="keepB.php" server="ftp.miniforums.org" local="131349460429153962" remote="131236886400000000" Dst="1" />
 <file name="KeepT.php" server="ftp.miniforums.org" local="131349460439193008" remote="131236886400000000" Dst="1" />
 <file name="log.php" server="ftp.miniforums.org" local="131349460445620076" remote="131236829400000000" Dst="1" />
-<file name="log.txt" server="ftp.miniforums.org" local="131349460449300188" remote="131236829400000000" Dst="1" />
 <file name="logs.php" server="ftp.miniforums.org" local="131349460455657975" remote="131236829400000000" Dst="1" />
 <file name="looseP.php" server="ftp.miniforums.org" local="131349460459716361" remote="131299692600000000" Dst="1" />
 <file name="lose.php" server="ftp.miniforums.org" local="131349460469186120" remote="131307793800000000" Dst="1" />
@@ -91,4 +90,5 @@
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131363866363841633" remote="131363542200000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131364585793068384" remote="131364261600000000" Dst="2" />
 <file name="party.php" server="ftp.miniforums.org" local="131364778187716270" remote="131364453600000000" Dst="2" />
+<file name="newiP.php" server="ftp.miniforums.org" local="131364977711439697" remote="131364653400000000" Dst="2" />
 </dwsync>

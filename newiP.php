@@ -27,12 +27,25 @@ $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
 $PartID = $_SESSION["Party"];
-$PlayerNR = $_SESSION["PlayerNR"];
-
 
 
 $PartyS = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$PartID' ");
 $Party = mysqli_fetch_assoc($PartyS); //Party
+
+$FreeParty = mysqli_query($db,"SELECT * FROM Party where PL2 IS NULL or PL3 IS NULL or PL4 IS NULL  ");
+$FreeParty = mysqli_fetch_row($FreeParty);
+
+	
+		$PlayerNR = 0;
+	if ($FreeParty[1] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[2] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[3] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[4] <> ""){
+		$PlayerNR += 1 ;}
+
 
 if ( $PlayerNR == 1){
 	//vieno playerio negali but
@@ -40,52 +53,110 @@ if ( $PlayerNR == 1){
 if ( $PlayerNR == 2){
 	$PL1 = $Party["PL1"] / $Party["StartingHP"];
 	$PL2 = $Party["PL2"] / $Party["StartingHP"];
-	$PL1 *= 100;
-	$PL2 *= 100;
+	$PL[1] = round($PL1,2);
+	$PL[2] = round($PL2,2);
 }
 if ( $PlayerNR == 3){
 	$PL1 = $Party["PL1"] / $Party["StartingHP"];
 	$PL2 = $Party["PL2"] / $Party["StartingHP"];
 	$PL3 = $Party["PL3"] / $Party["StartingHP"];
-	$PL1 *= 100;
-	$PL2 *= 100;
-	$PL3 *= 100;
+	$PL[1] = round($PL1,2);
+	$PL[2] = round($PL2,2);
+	$PL[3] = round($PL3,2);
 }
 if ( $PlayerNR == 4){
 	$PL1 = $Party["PL1"] / $Party["StartingHP"];
 	$PL2 = $Party["PL2"] / $Party["StartingHP"];
 	$PL3 = $Party["PL3"] / $Party["StartingHP"];
 	$PL4 = $Party["PL4"] / $Party["StartingHP"];
-	$PL1 *= 100;
-	$PL2 *= 100;
-	$PL3 *= 100;
-	$PL4 *= 100;
+	$PL[1] = round($PL1,2);
+	$PL[2] = round($PL2,2);
+	$PL[3] = round($PL3,2);
+	$PL[4] = round($PL4,2);
 }
+
+
+
 
 //give reward to players
 $i = 0;
-while ($i < $PlayerNR){
+
+while ($i < $PlayerNR and $i <> 100){
 	
 	$i = $i + 1;	
 	
-	$PL = "PL$i";
+	//echo "$PL[2]<br>";
 	
-	$UserC = mysqli_query($db,"SELECT * FROM characters where User = '$Party[$PL]' ");
-	$UserChar = mysqli_fetch_assoc($UserC); //Party
+	 $PLS = "PL$i";
+	 
+
 	
-	echo "$UserChar[User]";
+	 
+	$chk1 = mysqli_query($db,"SELECT * FROM Party where ID = '$PartID' ");
+	$chk = mysqli_fetch_assoc($chk1); //Party
 	
+	
+	$UserC = mysqli_query($db,"SELECT * FROM characters where User = '$chk[$PLS]' ");
+	$UserC = mysqli_fetch_row($UserC);
+	
+	//chanse for reward
+	if(rand(1,100) > 70){
+		$UserWin = $UserC[0];
+	}
+	
+	
+	 $PL[$i];
+	
+	
+	$Drop = $Party["MonsterRew"] * $PL[$i];
+	
+	
+	
+	$xpTalismanMulti = $_SESSION["XPT"];
+	$xpNew  = $Drop * $xpTalismanMulti;
+	$_SESSION["XPS"] = $xpNew;
+	
+	//update user stats
+	$xpTotal = $UserC[5] + $xpNew;
+	$kills = $UserC[6] +1;
+	$cash = $UserC[4]  + (($MLVL * $UserC[3])/10);
+	
+	$Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$UserC[0]' ");
+	$Passive = mysqli_fetch_row($Passive);
+
+	$passiveXP = round(($MLVL * $xpTalismanMulti)/10);
+	$_SESSION["XPPA"] = $passiveXP;
+	echo $passiveXPTotal=round($passiveXP + $Passive[10]);
+	
+	$orderPassive = "UPDATE passive
+	SET xp4= '$passiveXPTotal'
+	WHERE `User` = '$UserC[0]'";
+
+	$result = mysqli_query($db, $orderPassive);
+	
+	
+	$rngShardsChance = rand(1,100);
+	$Shards = $ACC[15];
+
+	if ($rngShardsChance <  10){
+	  $rngShardsAmmount = rand(1,15);
+	  $Shards += $rngShardsAmmount;
+	  $_SESSION["SHD"] = $rngShardsAmmount;
+	}
+	$orderChar = "UPDATE characters
+	SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
+	WHERE `USER` = '$UserC[0]'";
+	$result = mysqli_query($db, $orderChar);
 
 }
 
+$sql2="DELETE FROM PartyMonsters WHERE PartyID='$PartID'";
+mysqli_query($db,$sql2);
 
-	die();
+	
 
 
 
-
-
-/*
 
 $selectpart = rand(1,3);
 
@@ -106,7 +177,7 @@ $order = "INSERT INTO DropsWep
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
 VALUES
-('$User', 'WEP', '$HASH', '0')";	   
+('$UserWin', 'WEP', '$HASH', '0')";	   
 
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);
@@ -202,7 +273,7 @@ $order = "INSERT INTO DropsArm
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
 VALUES
-('$User', 'ARM', '$HASH', '0')";	   
+('$UserWin', 'ARM', '$HASH', '0')";	   
 
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);} //Armor 
@@ -223,54 +294,22 @@ $order = "INSERT INTO DropsAcs
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
 VALUES
-('$User', 'ACS', '$HASH', '0')";	   
+('$UserWin', 'ACS', '$HASH', '0')";	   
 
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);
 } //Acsesory
 
 
+$_SESSION["NewMob"] = 1;
+$_SESSION["TEST"] = 1;
 
-//check talisman xp bonus
-$xpTalismanMulti = $_SESSION["XPT"];
-$xpNew  = $Drop * $xpTalismanMulti;
-$_SESSION["XPS"] = $xpNew;
-//update user stats
-$xpTotal = $ACC[5] + $xpNew;
-$kills = $ACC[6] +1;
-$cash = ($ACC[4] - $FightFee) + $moneyRew;
-     
-
-//update passives
-$Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$User' ");
-$Passive = mysqli_fetch_row($Passive);
-
-$passiveXP = round($MLVL * $xpTalismanMulti);
-$_SESSION["XPPA"] = $passiveXP;
-$passiveXPTotal=round($passiveXP + $Passive[1]);
-
-$orderPassive = "UPDATE passive
-SET xp1= '$passiveXPTotal'
-WHERE `User` = '$User'";
-
-$result = mysqli_query($db, $orderPassive);
-
-$rngShardsChance = rand(1,100);
-$Shards = $ACC[15];
-
-if ($rngShardsChance <  10){
-  $rngShardsAmmount = rand(1,15);
-  $Shards += $rngShardsAmmount;
-  $_SESSION["SHD"] = $rngShardsAmmount;
-}
-$orderChar = "UPDATE characters
-SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
-WHERE `USER` = '$User'";
-$result = mysqli_query($db, $orderChar);
 
 mysqli_close($db);
-header("location:reward.php");  */
 
+header("location:sync.php");  
+
+die();
 
 
 //TABLE

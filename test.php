@@ -93,8 +93,9 @@ die();
 
 
 //mob create
-if (isset($_POST["CRT"])){
+if (isset($_POST["CRT"]) or isset($_SESSION["NewMob"])){
 	
+	unset($_SESSION["NewMob"]);
 	$_SESSION["PartCreatMOB"] = 1;
 	
 	$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
@@ -277,6 +278,7 @@ echo"<div id='result'></div>";
 $_SESSION["MonsHP"] = $MonsterS["MonsterHP"];
 $_SESSION["MonsDMG"] = $MonsterS["MonsterPhyDMG"];
 $_SESSION["MonsDMGm"] = $MonsterS["MonsterMagDMG"];
+$_SESSION["MonsLVL"] = $MonsterS["MonsterLVL"];
 $_SESSION["Party"] = 1;
 
 //basic attack

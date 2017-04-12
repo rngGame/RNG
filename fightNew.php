@@ -78,6 +78,8 @@ if ($checkForParty == 1){
 	VALUES
 	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '$DEF', '$MobDrop', '$MobHP')";	   
 
+
+
 $result = mysqli_query($db, $order);
 	header("location:sync.php");
 

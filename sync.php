@@ -22,6 +22,7 @@ else{
 $send="location:game.php";
 }
 
+
 $insert = mysqli_query($db,"SELECT EXISTS(SELECT * FROM passive where USER = '$User') ");
 $insert = mysqli_fetch_row($insert);
 

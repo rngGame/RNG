@@ -459,6 +459,7 @@ function createMonster($db,$iLVL){
     $creationDone=false;
     $timeCreated=0;
     $testMessage="Test Start run $timeCreated <br>";
+    $equipableItems=7; //how many items give iLVL
     while(!$creationDone){
         //Nullify vars
         $N2 = "";   
@@ -478,8 +479,8 @@ function createMonster($db,$iLVL){
         $baseDrop = "";
 
         //base range
-        $baseLow=round($iLVL*0.6/4-(5*$timeCreated),0); //Four items give lvl so we devide by four, 0.6 is 60% of your that level, -20 is for low numbers
-        $baseHigh=round($iLVL*1.4/4+(5*$timeCreated),0);
+        $baseLow=round($iLVL*0.6/$equipableItems-(5*$timeCreated),0); //Four items give lvl so we devide by four, 0.6 is 60% of your that level, -20 is for low numbers
+        $baseHigh=round($iLVL*1.4/$equipableItems+(5*$timeCreated),0);
         if($baseLow<1){
             $baseLow=1;
         }
@@ -570,8 +571,8 @@ function createMonster($db,$iLVL){
         $Drop = round($Drop,0);
         $timeCreated++;
         //limits
-        $limitMaxLVL=$iLVL/4+30;
-        $limitMinLVL=$iLVL/4-30;
+        $limitMaxLVL=$iLVL/$equipableItems+30;
+        $limitMinLVL=$iLVL/$equipableItems-30;
         if($limitMinLVL<1){
             $limitMinLVL=1;
         }

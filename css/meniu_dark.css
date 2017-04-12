@@ -717,3 +717,6 @@ progress::-webkit-progress-value {
     background-color: #26292c;
     border:1px solid black;
 }
+#gameScreen{
+    display: inline;
+}

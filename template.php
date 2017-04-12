@@ -53,14 +53,14 @@ echo '
 				'.$socialTemplate.'
 				<div id="result"></div>
 			</div>
-			<div id="actions">
-				'.$actionsTemplate.'
-			</div>
 			<div id="inventory">
 				'.$inventoryTemplate.'
 			</div>
 			<div id="middle">
 				
+			</div>
+			<div id="actions">
+				'.$actionsTemplate.'
 			</div>
 		</div>
 	</body>

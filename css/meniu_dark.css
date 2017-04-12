@@ -510,11 +510,10 @@ progress::-webkit-progress-value {
     border:1px solid black;
 }
 #middle{
-    float:left;
     display: block;
+    overflow: hidden;
     position: relative;
-    width: 350px;
-    height: 320px;
+    height: 642px;
     background-color: #26292c;
     border:1px solid black;
 }
@@ -523,24 +522,21 @@ progress::-webkit-progress-value {
     display: inline-block;
     position: relative;
     width: 500px;
-    height: 640px;
+    height: 642px;
     background-color: #26292c;
     border:1px solid black;
 }
 #actions {
     display: flex;
     justify-content: space-around;
-    position: absolute;
-    top: 678px;
+    position: relative;
     width: 100%;
     background-color: #26292c;
     border:1px solid black;
 }
 #inventory {
     float:left;
-    position: absolute;
-    top:356px;
-    left:0px;
+    position: relative;
     width: 651px;
     height: 320px;
     background-color: #26292c;
@@ -714,10 +710,4 @@ progress::-webkit-progress-value {
 }
 .actionButtons{
     float: left;
-}
-
-#gameScreen{
-    display: inline;
-    height: 320px;
-    width: 100%;
 }

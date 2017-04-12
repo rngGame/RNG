@@ -482,7 +482,7 @@ if ($WEPn["efstat"]<>0){
 	}
 
 if ($WEPn["Name"] != ""){
-	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'></b>
+	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$WEPn['Rarity']."'></b>
 	<span class='tooltiptext'>
 		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
 		<br>
@@ -511,7 +511,7 @@ if ($WEPn["Name"] != ""){
 //body
 if($ARMBODY["Name"] <> ""){
 	$bodyTemplate= "
-	<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px'>
+	<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px' class='item".$ARMBODY['Rarity']."'>
 	<span class='tooltiptext'>
 		<b class='$ARMBODY[Rarty]'>$ARMBODY[Name]</b>
 		<br>
@@ -534,7 +534,7 @@ else{
 }
 
 if($ARMBOOTS["Name"] <> ""){
-	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
+	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px' class='item".$ARMBOOTS['Rarity']."'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
 	
 	";
 }
@@ -544,7 +544,7 @@ else{
 }
 
 if($ARMGLOVES["Name"] <> ""){
-	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
+	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px' class='item".$ARMGLOVES['Rarity']."'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
 	
 	";
 }
@@ -556,7 +556,7 @@ else{
 //acsesories
 
 if($ACSRING["Name"] <> ""){
-	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
+	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px' class='item".$ACSRING['Rarity']."'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
 	
 	";
 }
@@ -566,7 +566,7 @@ else{
 }
 
 if($ACSAMULET["Name"] <> ""){
-	$amuletTemplate= "<img src='IMG/pack/Icon.6_53.png' width='45px' height='45px'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span>
+	$amuletTemplate= "<img src='IMG/pack/Icon.6_53.png' width='45px' height='45px' class='item".$ACSAMULET['Rarity']."'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span>
 	
 	";
 }
@@ -578,7 +578,7 @@ else{
 
 
 if (!$GEM[3] == ""){
-	$gemTemplate="<img src='IMG/pack/Icon.4_32.png' width='45px' height='45px'>
+	$gemTemplate="<img src='IMG/pack/Icon.4_32.png' width='45px' height='45px' class='item".$GEM[3]."'>
 		<span class='tooltiptext'>
 			<b class='#$GEM[3]'>
 				$GEM[0]
@@ -762,7 +762,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$backpackTemplate.= "
 		<div class='items'>
 			<div id= 'inventoryIcons' class='tooltip'>
-				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px'>
+				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$WEPIn['Rarity']."'>
 				<span class='tooltiptext'>
 					<div class='inventoryStats'>
 						<b $unEf[$eft] class='$WEPIn[Rarity]'>$WEPIn[Name] + $WEPIn[plus] ($WEPIn[Rarity])</b>
@@ -888,7 +888,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$backpackTemplate.= "
 		<div class='items'>
 			<div class='tooltip'>
-				<img src='IMG/pack/Icon.".$armIcon.".png' width='45px' height='45px'>
+				<img src='IMG/pack/Icon.".$armIcon.".png' width='45px' height='45px' class='item".$ARMIn['Rarity']."'>
 				<span class='tooltiptext'>
 					<div class='inventoryStats'>
 						<b class='$ARMIn[Rarty]'>$ARMIn[Name]</b>
@@ -1007,7 +1007,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$backpackTemplate.=  "
 		<div class='items'>
 		<div class='tooltip'>
-			<img src='IMG/pack/Icon.".$acsIcon.".png' width='45px' height='45px'>
+			<img src='IMG/pack/Icon.".$acsIcon.".png' width='45px' height='45px' class='item".$ACSIn['Rarity']."'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
 					<b class='$ACSIn[Rarty]'>$ACSIn[Name]</b>

@@ -8,6 +8,7 @@ header {
     font-variant: small-caps;
 	font-family: fantasy;
     text-shadow: 6px -1px 8px #00bff8;
+    border-bottom: 1px solid black;
  }
  
 .disabled {
@@ -496,14 +497,14 @@ progress::-webkit-progress-value {
     position:relative;
     height: 642px;
     background-color: #26292c;
-    width: 651px;
+    width: 654px;
 }
 #right{
     float:right;
     position:relative;
     height: 642px;
     background-color: #26292c;
-    width: 500px;
+    width: 502px;
 }
 #middle{
     display: block;
@@ -548,11 +549,12 @@ progress::-webkit-progress-value {
     width: 100%;
     background-color: #26292c;
     border:1px solid black;
+    border-bottom: 2px solid black;
 }
 #inventory {
     float:left;
     position: relative;
-    width: 651px;
+    width: 652px;
     height: 320px;
     background-color: #26292c;
     border:1px solid black;
@@ -725,4 +727,8 @@ progress::-webkit-progress-value {
 }
 .actionButtons{
     float: left;
+}
+.itemEpic{
+    filter: sepia(100%);
+    -webkit-filter: sepia(100%); 
 }

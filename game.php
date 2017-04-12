@@ -1235,7 +1235,7 @@ $onlineText
 	Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>
 </div>
 <div id='chat'>
-	<iframe height='100px' width='300px' src='message.php'></iframe>
+	<iframe height='45px' width='176px' src='message.php'></iframe>
 </div>
 ";
 
@@ -1267,7 +1267,7 @@ if ($PartyMonsF["ID"] <> 0){
 
 	//FIGHT MOB
 	$partyButton = "<section class='actionP'>
-		<form method='post' action='temp.php'>
+		<form method='post' action='test.php'>
 			<input hidden='' type='text' name='lvl' value='100' placeholder='Continue Fight'>
 			<p class='submit'>
 				<input type='submit' name='commit' value='NewFight'>
@@ -1277,8 +1277,8 @@ if ($PartyMonsF["ID"] <> 0){
 else {
 	//CREATE MOB
 	$partyButton = "<section class='actionP'>
-		<form method='post' action='temp.php'>
-			<input hidden='' type='text' name='lvl' value='100' placeholder='Start Fight'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='CRT' value='1' placeholder='Start Fight'>
 			<p class='submit'>
 				<input type='submit' name='commit' value='NewFight'>
 			</p>

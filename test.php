@@ -22,6 +22,41 @@ $_SESSION["PAGE2"] = "location:test.php";
 $_SESSION["LOSE"] = "location:lose.php";
 
 
+//mob create
+if (isset($_POST["CRT"])){
+	
+	$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+$Party = mysqli_fetch_assoc($PartyS); //Party
+
+//get  lvl
+if ( $Party["PL1"] <> ""){
+	$Pl1= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL1]' ");
+	$Pl1L = mysqli_fetch_assoc($Pl1);
+	
+}
+if ( $Party["PL2"] <> ""){
+	$Pl2= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL2]' ");
+	$Pl2L = mysqli_fetch_assoc($Pl2);
+	
+}
+if ( $Party["PL3"] <> ""){
+	$Pl3= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL3]' ");
+	$Pl3L = mysqli_fetch_assoc($Pl3);
+	
+}
+if ( $Party["PL4"] <> ""){
+	$Pl4= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL4]' ");
+	$Pl4L = mysqli_fetch_assoc($Pl4);
+}
+
+
+$mobCount =  10 * (1 + $TimesKilled);
+$mobLVL = ($mobCount + $Pl1L["ILLVL"] + $Pl2L["ILLVL"] + $Pl3L["ILLVL"] + $Pl4L["ILLVL"]) / 4; 
+	
+	
+}
+
+
 $User = $_SESSION["User"]; //user
 
 $PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");

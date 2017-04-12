@@ -512,23 +512,22 @@ progress::-webkit-progress-value {
     border:1px solid black;
 }
 #social {
-    float:left;
-    position: absolute;
-    top:35px;
-    right:0px;
+	float: left;
+    position: relative;
+    top: 0px;
+    right: -790px;
     width: 500px;
-    height: 800px;
+    height: 640px;
     background-color: #26292c;
     border:1px solid black;
 }
 #actions {
-    float:left;
-    position: absolute;
-    top:450px;
-    left:660px;
-    width: 300px;
-    height: 255px;
-    background-color: #26292c;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 150px;
+    width: 137px;
+    height: 255px;    background-color: #26292c;
     border:1px solid black;
 }
 #inventory {
@@ -641,18 +640,18 @@ progress::-webkit-progress-value {
 }
 #leaderboard{
     position: absolute;
-    top: 0px;
-    left: 250px;
+    top: 164px;
+    left: 0px;
     height:200px;
-    width: 250px;
-
+    width: 200px;
+	border-bottom: 1px solid black;
 }
 #chat{
     position: absolute;
-    top: 200px;
-    left: 0px;
-    height:600px;
-    width: 500px;
+    top: 487px;
+    left: 201px;
+    height:30px;
+    width: 20px;
     border-top:1px solid black;
 }
 #inventoryHead{
@@ -688,3 +687,25 @@ progress::-webkit-progress-value {
 	height: 45px;
 }
 
+#party{
+	float: left;
+    position: relative;
+    top: 369px;
+    left: 151px;
+    width: 170px;
+    height: 258px;
+    background-color: #26292c;
+}
+
+#result {
+    position: absolute;
+    left: 201px;
+    top: -1px;
+	border: 1px solid black;
+}
+
+.linksB {
+	    position: relative;
+    top: 623px;
+    left: -809px;
+}

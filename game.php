@@ -1064,6 +1064,128 @@ while ($List1 = mysqli_fetch_array($List)){
 	}
 	
 }
+ //Party
+$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+$Party = mysqli_fetch_assoc($PartyS);
+
+$PartyMons = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
+$PartyMonsF = mysqli_fetch_assoc($PartyMons);
+
+if ($Party["PL1"] == $User){
+	$PLnr = "PL1";}
+if ($Party["PL2"] == $User){
+	$PLnr = "PL2";}
+if ($Party["PL3"] == $User){
+	$PLnr = "PL3";;}
+if ($Party["PL4"] == $User){
+	$PLnr = "PL4";}
+		
+
+		$countPL = 0;
+	if ($Party["PL1"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL2"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL3"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL4"] <> ""){
+		$countPL += 1 ;}
+
+	
+	//Party Narei
+if ( $PLnr == "PL1" or $PLnr == "PL2" or $PLnr == "PL3" or $PLnr == "PL4"){
+	
+	$inPArty = "In Party: $Party[PL1], $Party[PL2], $Party[PL3], $Party[PL4]<br>";}
+else {
+	$inPArty = "Not in party.";}
+	
+if ($inPArty == "Not in party."){
+	
+		$partyButtonC = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='CP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Create Party'>
+			</p>
+		</form>
+	</section>";
+	
+		$partyButtonJ = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='JP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Join Party'>
+			</p>
+		</form>
+	</section>";
+}
+	
+
+
+
+
+//tikrina ar yra party mobas ir ar užtenka žmoniu 
+else if ($PartyMonsF["ID"] <> 0 and $countPL >= 2){
+
+	//FIGHT MOB
+	$partyButton = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='lvl' value='100' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Continue Fight'>
+			</p>
+		</form>
+	</section>";}
+else if ($countPL >= 2){
+	//CREATE MOB
+	$partyButton = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='CRT' value='1' placeholder='Start Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Start Fight'>
+			</p>
+		</form>
+	</section>";}
+else {
+	$partyTEXT = "Need more people in party";
+}
+
+if ($countPL >=1){
+	if ($Party["PL1"] != "$User"){
+			$partyButtonL = "<section class='actionP'>
+		<form method='post' action='party.php'>
+			<input hidden='' type='text' name='LP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Leave Party'>
+			</p>
+		</form>
+	</section>";}
+	
+		else{
+				$partyButtonL = "<section class='actionP'>
+		<form method='post' action='party.php'>
+			<input hidden='' type='text' name='PD' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Disasmble Party'>
+			</p>
+		</form>
+	</section>";}
+}
+$_SESSION["PartySpot"] = $countPL;
+$_SESSION["PartyID"] = $Party["ID"];
+$PartyTemplate="
+	$inPArty
+	$partyTEXT
+	$partyButton
+	$partyButtonC
+	$partyButtonJ
+	$partyButtonL
+";
+
+
+
+
+
 
 
 
@@ -1237,132 +1359,11 @@ $onlineText
 <div id='chat'>
 	<iframe height='45px' width='176px' src='message.php'></iframe>
 </div>
+<div id='party'>
+	$PartyTemplate
+</div>
 ";
 
- //Party
-$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
-$Party = mysqli_fetch_assoc($PartyS);
-
-$PartyMons = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
-$PartyMonsF = mysqli_fetch_assoc($PartyMons);
-
-if ($Party["PL1"] == $User){
-	$PLnr = "PL1";}
-if ($Party["PL2"] == $User){
-	$PLnr = "PL2";}
-if ($Party["PL3"] == $User){
-	$PLnr = "PL3";;}
-if ($Party["PL4"] == $User){
-	$PLnr = "PL4";}
-		
-
-		$countPL = 0;
-	if ($Party["PL1"] <> ""){
-		$countPL += 1 ;}
-	if ($Party["PL2"] <> ""){
-		$countPL += 1 ;}
-	if ($Party["PL3"] <> ""){
-		$countPL += 1 ;}
-	if ($Party["PL4"] <> ""){
-		$countPL += 1 ;}
-
-	
-	//Party Narei
-if ( $PLnr == "PL1" or $PLnr == "PL2" or $PLnr == "PL3" or $PLnr == "PL4"){
-	
-	$inPArty = "In Party: $Party[PL1], $Party[PL2], $Party[PL3], $Party[PL4]<br>";}
-else {
-	$inPArty = "Not in party.";}
-	
-if ($inPArty == "Not in party."){
-	
-		$partyButtonC = "<section class='actionP'>
-		<form method='post' action='test.php'>
-			<input hidden='' type='text' name='CP' value='1' placeholder='Continue Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Create Party'>
-			</p>
-		</form>
-	</section>";
-	
-		$partyButtonJ = "<section class='actionP'>
-		<form method='post' action='test.php'>
-			<input hidden='' type='text' name='JP' value='1' placeholder='Continue Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Join Party'>
-			</p>
-		</form>
-	</section>";
-}
-	
-
-
-
-
-//tikrina ar yra party mobas ir ar užtenka žmoniu 
-else if ($PartyMonsF["ID"] <> 0 and $countPL >= 2){
-
-	//FIGHT MOB
-	$partyButton = "<section class='actionP'>
-		<form method='post' action='test.php'>
-			<input hidden='' type='text' name='lvl' value='100' placeholder='Continue Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Continue Fight'>
-			</p>
-		</form>
-	</section>";}
-else if ($countPL >= 2){
-	//CREATE MOB
-	$partyButton = "<section class='actionP'>
-		<form method='post' action='test.php'>
-			<input hidden='' type='text' name='CRT' value='1' placeholder='Start Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Start Fight'>
-			</p>
-		</form>
-	</section>";}
-else {
-	$partyTEXT = "Need more people in party";
-}
-
-if ($countPL >=1){
-	if ($Party["PL1"] != "$User"){
-			$partyButtonL = "<section class='actionP'>
-		<form method='post' action='party.php'>
-			<input hidden='' type='text' name='LP' value='1' placeholder='Continue Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Leave Party'>
-			</p>
-		</form>
-	</section>";}
-	
-		else{
-				$partyButtonL = "<section class='actionP'>
-		<form method='post' action='party.php'>
-			<input hidden='' type='text' name='PD' value='1' placeholder='Continue Fight'>
-			<p class='submit'>
-				<input type='submit' name='commit' value='Disasmble Party'>
-			</p>
-		</form>
-	</section>";}
-}
-$_SESSION["PartySpot"] = $countPL;
-$_SESSION["PartyID"] = $Party["ID"];
-$PartyTemplate="
-	$inPArty
-	$partyTEXT
-	$partyButton
-	$partyButtonC
-	$partyButtonJ
-	$partyButtonL
-";
-
-
-
-
-
-
-//ACTIONS TEMP
 $actionsTemplate="
 <section class='action4'>
 	<form method='post' action='fightNew.php'>

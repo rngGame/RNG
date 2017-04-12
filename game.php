@@ -1368,17 +1368,13 @@ $actionsTemplate="
 <section class='action4'>
 	<form method='post' action='fightNew.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
-		<p class='submit'>
-			<input type='submit' name='commit' value='NewFight'>
-		</p>
+		<input type='submit' name='commit' value='NewFight'>
 	</form>
 </section>
 <section class='action5'>
 	<form method='post' action='wBoss.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
-		<p class='submit'>
-			<input type='submit' name='commit' value='World Boss'>
-		</p>
+		<input type='submit' name='commit' value='World Boss'>
 	</form>
 </section>
 <section class='action1'>

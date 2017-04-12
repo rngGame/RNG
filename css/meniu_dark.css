@@ -513,9 +513,9 @@ progress::-webkit-progress-value {
 }
 #social {
 	float: left;
-    position: relative;
-    top: 0px;
-    right: -790px;
+    position: absolute;
+    top: 35px;
+    right: 0px;
     width: 500px;
     height: 640px;
     background-color: #26292c;
@@ -523,11 +523,10 @@ progress::-webkit-progress-value {
 }
 #actions {
     float: left;
-    position: relative;
-    top: 0px;
-    left: 150px;
-    width: 137px;
-    height: 255px;    background-color: #26292c;
+    position: absolute;
+    top: 678px;
+    width: 100%;
+    background-color: #26292c;
     border:1px solid black;
 }
 #inventory {
@@ -690,11 +689,9 @@ progress::-webkit-progress-value {
 #party{
 	float: left;
     position: relative;
-    top: 369px;
-    left: 151px;
+    top: 365px;
     width: 170px;
     height: 258px;
-    background-color: #26292c;
 }
 
 #result {
@@ -705,7 +702,6 @@ progress::-webkit-progress-value {
 }
 
 .linksB {
-	    position: relative;
-    top: 623px;
-    left: -809px;
+	position: absolute;
+    bottom: 0%;
 }

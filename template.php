@@ -49,9 +49,6 @@ echo '
 			<div id="equip">
 				'.$equipTemplate.'
 			</div>
-			<div id="middle">
-				
-			</div>
 			<div id="social">
 				'.$socialTemplate.'
 				<div id="result"></div>
@@ -61,6 +58,9 @@ echo '
 			</div>
 			<div id="inventory">
 				'.$inventoryTemplate.'
+			</div>
+			<div id="middle">
+				
 			</div>
 		</div>
 	</body>

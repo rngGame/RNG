@@ -37,6 +37,7 @@ $gold = $_SESSION["Gold1"];
 $gl = $_SESSION["Gold2"];
 $BLVL = $_SESSION["fLVL"];
 $iLVL = $_SESSION["ILVL"];
+$checkForParty = $_SESSION["PartCreatMOB"];
 
 $bs = $_SESSION["BOSS"];
 
@@ -60,6 +61,28 @@ else {
     $_SESSION["MonsDrop"] = $Drop;
     $_SESSION["MonsLVL"] = $mLVL;
     $_SESSION["MonsIMG"] = $monsterIMG;
+	
+//create for party
+if ($checkForParty == 1){
+	
+	$PartyID = $_SESSION["PartyID"];
+	$plCount = $_SESSION["PLCount"];
+	
+	$DEF = $iLVL / 10;
+	
+	$MobHP= $HP + ($HP * ($plCount * 10) / 100);
+	$MobDrop= $Drop + ($Drop * ($plCount * 10) / 100);
+	
+	$order = "INSERT INTO PartyMonsters
+	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew)
+	VALUES
+	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '$DEF', '$MobDrop')";	   
+
+$result = mysqli_query($db, $order);
+	header("location:sync.php");
+
+die();
+}
 
     echo
       "<section class='container2'>

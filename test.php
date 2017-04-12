@@ -18,46 +18,115 @@ echo "<link rel='stylesheet' type='text/css' href='css/$_COOKIE[Theme].css'>";
 session_start();
 include_once 'PHP/db.php';
 
+$User = $_SESSION["User"]; //user
+
 $_SESSION["PAGE2"] = "location:test.php";
 $_SESSION["LOSE"] = "location:lose.php";
+
+echo "World Of RNG";
+echo "</header>";
+
+//Party join list
+if (isset($_POST["JP"])){
+	$FreeParty = mysqli_query($db,"SELECT * FROM Party where PL2 IS NULL or PL3 IS NULL or PL4 IS NULL  ");
+	while ($FreeParty1 = mysqli_fetch_array($FreeParty)){	
+	
+		$countPL = 0;
+	if ($FreeParty1["1"] == ""){
+		$countPL += 1 ;}
+	if ($FreeParty1["2"] == ""){
+		$countPL += 1 ;}
+	if ($FreeParty1["3"] == ""){
+		$countPL += 1 ;}
+	if ($FreeParty1["4"] == ""){
+		$countPL += 1 ;}
+	$countPL = 4 - $countPL;
+	
+	
+	
+	echo "Party:<br>Master - $FreeParty1[1]<br>Players: $countPL/4 - Monsters killed:$FreeParty1[5] 
+	<section class='action2'>
+	<form method='post' action='party.php'>
+		<input hidden='' type='text' name='Party' value='$FreeParty1[1]' placeholder='Reroll Mod'>
+		<p class='submit'>
+		<input hidden='' type='text' name='Slot' value='$countPL' placeholder='Reroll Mod'>
+		<p class='submit'>
+  			<input type='submit' name='commit2' value='Join Party'>
+  		</p>
+  	</form>
+</section>
+<hr width='100px' style='position:fixed' >
+	
+	<br><br>";
+	
+	
+	
+	}
+	die();
+}
+
+//Party create
+if (isset($_POST["CP"])){
+	
+$order = "INSERT INTO Party
+	(PL1, MobsKilled)
+	VALUES
+	('$User', '0')";	   
+
+$result = mysqli_query($db, $order);
+
+header("location:sync.php");
+die();
+	
+}
 
 
 //mob create
 if (isset($_POST["CRT"])){
 	
+	$_SESSION["PartCreatMOB"] = 1;
+	
 	$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
-$Party = mysqli_fetch_assoc($PartyS); //Party
+	$Party = mysqli_fetch_assoc($PartyS); //Party
+	
 
 //get  lvl
 if ( $Party["PL1"] <> ""){
 	$Pl1= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL1]' ");
 	$Pl1L = mysqli_fetch_assoc($Pl1);
+	$plcount  = 1;
 	
 }
 if ( $Party["PL2"] <> ""){
 	$Pl2= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL2]' ");
 	$Pl2L = mysqli_fetch_assoc($Pl2);
+	$plcount  += 1;
 	
 }
 if ( $Party["PL3"] <> ""){
 	$Pl3= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL3]' ");
 	$Pl3L = mysqli_fetch_assoc($Pl3);
+	$plcount  += 1;
 	
 }
 if ( $Party["PL4"] <> ""){
 	$Pl4= mysqli_query($db,"SELECT * FROM characters where User = '$Party[PL4]' ");
 	$Pl4L = mysqli_fetch_assoc($Pl4);
+	$plcount  += 1;
 }
 
 
-$mobCount =  10 * (1 + $TimesKilled);
-$mobLVL = ($mobCount + $Pl1L["ILLVL"] + $Pl2L["ILLVL"] + $Pl3L["ILLVL"] + $Pl4L["ILLVL"]) / 4; 
+$mobCount =  10  + $Party["MobsKilled"];
+$mobLVL = round(($mobCount + $Pl1L["ILVL"] + $Pl2L["ILVL"] + $Pl3L["ILVL"] + $Pl4L["ILVL"]) / $plcount); 
 	
+	$_SESSION["ILVL"] = $mobLVL;
+	$_SESSION["PartyID"] = $Party["ID"];
+	$_SESSION["PLCount"] = $plcount;
+	echo $mobLVL;
+	header("location:fightNew.php");
+	die();
 	
 }
-
-
-$User = $_SESSION["User"]; //user
 
 $PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
 $Party = mysqli_fetch_assoc($PartyS); //Party
@@ -167,8 +236,7 @@ $avgP = round(($minPdmg + $maxPdmg) / 2);
 $avgM = round(($minMdmg + $maxMdmg) / 2);
 $avgD = round(($avgP + $avgM) / 2);
 	
-echo "World Of RNG";
-echo "</header>";
+
 echo "<p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066ff'>~$avgM  </font>";
 echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> ";

@@ -1251,44 +1251,85 @@ if ($Party["PL1"] == $User){
 if ($Party["PL2"] == $User){
 	$PLnr = "PL2";}
 if ($Party["PL3"] == $User){
-	$PLnr = "PL3";}
+	$PLnr = "PL3";;}
 if ($Party["PL4"] == $User){
 	$PLnr = "PL4";}
+		
+
+		$countPL = 0;
+	if ($Party["PL2"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL3"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL4"] <> ""){
+		$countPL += 1 ;}
+	if ($Party["PL5"] <> ""){
+		$countPL += 1 ;}
+
 	
 	//Party Narei
 if ( $PLnr == "PL1" or $PLnr == "PL2" or $PLnr == "PL3" or $PLnr == "PL4"){
 	
-	$inPArty = "In Party: $Party[PL1] $Party[PL2] $Party[PL3] $Party[PL4]<br>";}
+	$inPArty = "In Party: $Party[PL1], $Party[PL2], $Party[PL3], $Party[PL4]<br>";}
 else {
 	$inPArty = "Not in party.";}
+	
+if ($inPArty == "Not in party."){
+	
+		$partyButtonC = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='CP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Create Party'>
+			</p>
+		</form>
+	</section>";
+	
+		$partyButtonJ = "<section class='actionP'>
+		<form method='post' action='test.php'>
+			<input hidden='' type='text' name='JP' value='1' placeholder='Continue Fight'>
+			<p class='submit'>
+				<input type='submit' name='commit' value='Join Party'>
+			</p>
+		</form>
+	</section>";
+	
+}
 
-//tikrina ar yra party mobas
-if ($PartyMonsF["ID"] <> 0){
+
+
+//tikrina ar yra party mobas ir ar užtenka žmoniu 
+else if ($PartyMonsF["ID"] <> 0 and $countPL >= 2){
 
 	//FIGHT MOB
 	$partyButton = "<section class='actionP'>
 		<form method='post' action='test.php'>
 			<input hidden='' type='text' name='lvl' value='100' placeholder='Continue Fight'>
 			<p class='submit'>
-				<input type='submit' name='commit' value='NewFight'>
+				<input type='submit' name='commit' value='Continue Fight'>
 			</p>
 		</form>
 	</section>";}
-else {
+else if ($countPL >= 2){
 	//CREATE MOB
 	$partyButton = "<section class='actionP'>
 		<form method='post' action='test.php'>
 			<input hidden='' type='text' name='CRT' value='1' placeholder='Start Fight'>
 			<p class='submit'>
-				<input type='submit' name='commit' value='NewFight'>
+				<input type='submit' name='commit' value='Start Fight'>
 			</p>
 		</form>
-	</section>";
+	</section>";}
+else {
+	$partyTEXT = "Need more people in party";
 }
 	
 $PartyTemplate="
 	$inPArty
+	$partyTEXT
 	$partyButton
+	$partyButtonC
+	$partyButtonJ
 ";
 
 

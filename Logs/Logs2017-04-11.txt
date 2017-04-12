@@ -1,0 +1,67 @@
+Function Starts by Tankas at 2017-04-11 07:34:33 
+Starting Process 
+Chosen Tables basearmor and prefixwep 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 3519 , Sub 3988 , Skill 7331 , Type 4527 
+Bases done for armor Bases: Name Leefs >> LVL 1 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 1 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Envy >> LVL 3 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Types done for armor Type: Name  >> LVL 3 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Creating Weapon Stats Phys  ~  >> Mag  ~  >> Crit  >> Speed  >> Hit  
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 34 - 61.2 
+Function FINISHED by Tankas at 2017-04-11 07:34:33 
+Succesfully completed item 
+ Name  Leefs of Envy and Morning  >> LVL 3 >> DMG 1 >> Armor 0 >> HP 1 >> XP 1 
+ Phys  ~  >> Mag  ~  >> Crit  >> Hit  
+ _______________________________________ 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 6256 , Sub 3310 , Skill 6679 , Type 8118 
+Bases done for armor Bases: Name Necklase >> LVL 2 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 2 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Nomad >> LVL 34 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Types done for armor Type: Name  >> LVL 34 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Creating Weapon Stats Phys  ~  >> Mag  ~  >> Crit  >> Speed  >> Hit  
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 34 - 61.2 
+Function FINISHED by Tankas at 2017-04-11 07:34:33 
+Succesfully completed item 
+ Name  Necklase of Nomad and Enchantment  >> LVL 34 >> DMG 1 >> Armor 0 >> HP 1 >> XP 1 
+ Phys  ~  >> Mag  ~  >> Crit  >> Hit  
+ _______________________________________ 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 3127 , Sub 4470 , Skill 6312 , Type 1767 
+Bases done for armor Bases: Name Bracelet >> LVL 2 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 2 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Envy >> LVL 5 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Types done for armor Type: Name Fake >> LVL 2.5 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Creating Weapon Stats Phys  ~  >> Mag  ~  >> Crit  >> Speed  >> Hit  
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 34 - 61.2 
+Function FINISHED by Tankas at 2017-04-11 07:34:33 
+Succesfully completed item 
+ Name  Bracelet of Envy and Nomad  >> LVL 3 >> DMG 1 >> Armor 0 >> HP 1 >> XP 1 
+ Phys  ~  >> Mag  ~  >> Crit  >> Hit  
+ _______________________________________ 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 1177 , Sub 4999 , Skill 3819 , Type 4155 
+Bases done for armor Bases: Name Shoes >> LVL 1 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 1 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Worshiper >> LVL 10 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Types done for armor Type: Name Epic >> LVL 35 >> DMG 0 >> Armor 0 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Creating Weapon Stats Phys  ~  >> Mag  ~  >> Crit  >> Speed  >> Hit  
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 34 - 61.2 
+Function FINISHED by Tankas at 2017-04-11 07:34:33 
+Succesfully completed item 
+ Name  Shoes of Worshiper and Salt  >> LVL 35 >> DMG 1 >> Armor 0 >> HP 1 >> XP 1 
+ Phys  ~  >> Mag  ~  >> Crit  >> Hit  
+ _______________________________________ 

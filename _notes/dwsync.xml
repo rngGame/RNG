@@ -55,7 +55,7 @@
 <file name="showold.php" server="ftp.miniforums.org" local="131349460599274825" remote="131299694400000000" Dst="1" />
 <file name="Sync.php" server="ftp.miniforums.org" local="131239489992859513" remote="131239233000000000" Dst="1" />
 <file name="Sync3.php" server="ftp.miniforums.org" local="131349514586686529" remote="131349226200000000" Dst="1" />
-<file name="test.php" server="ftp.miniforums.org" local="131364605782589078" remote="131364281400000000" Dst="2" />
+<file name="test.php" server="ftp.miniforums.org" local="131364744149616134" remote="131364420000000000" Dst="2" />
 <file name="TRY.php" server="ftp.miniforums.org" local="131349460619320264" remote="131236829400000000" Dst="1" />
 <file name="vale.php" server="ftp.miniforums.org" local="131349460630659723" remote="131348114400000000" Dst="1" />
 <file name="wBoss.php" server="ftp.miniforums.org" local="131349460634220078" remote="131348307000000000" Dst="1" />
@@ -86,8 +86,9 @@
 <file name="deploy.php" server="ftp.miniforums.org" local="131349540311845329" remote="131349253800000000" Dst="1" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131350941115931610" remote="131350617000000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131350934213678341" remote="131350609800000000" Dst="2" />
-<file name="game.php" server="ftp.miniforums.org" local="131364590406882896" remote="131364265800000000" Dst="2" />
-<file name="fightNew.php" server="ftp.miniforums.org" local="131360681035379757" remote="131360356800000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131364760880245306" remote="131364436200000000" Dst="2" />
+<file name="fightNew.php" server="ftp.miniforums.org" local="131364634731193144" remote="131364310200000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131363866363841633" remote="131363542200000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131364585793068384" remote="131364261600000000" Dst="2" />
+<file name="party.php" server="ftp.miniforums.org" local="131364744785260012" remote="131364420600000000" Dst="2" />
 </dwsync>

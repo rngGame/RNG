@@ -1,0 +1,269 @@
+Function Starts at 2017-04-05 15:51:42 
+Starting Process 
+Chosen Tables basearmor and prefixwep 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 6895 , Sub 7361 , Skill 6044 , Type 8709 
+Bases done for armor Bases: Name Wywern Skin >> LVL 20 >> DMG 0 >> Armor 25 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 20 >> DMG 0 >> Armor 25 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Kiro >> LVL 36 >> DMG 0 >> Armor 53 >> HP 0 >> XP 0 
+Types done for armor Type: Name Bright >> LVL 46.8 >> DMG 0 >> Armor 53 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Enchanting 0 
+Creating Weapon Stats Phys 0 ~ 0 >> Mag 0 ~ 0 >> Crit 4 >> Speed 1.3 >> Hit 86 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 101.333333333 - 182.4 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 8863 , Sub 3273 , Skill 3632 , Type 1167 
+Bases done for armor Bases: Name Lightning Skin >> LVL 30 >> DMG 0 >> Armor 25 >> HP 0 >> XP 0 
+Prefix done for armor Prefixes: Name  >> LVL 30 >> DMG 0 >> Armor 25 >> HP 0 >> XP 0 
+Subfixes done for armor Subfix: Name of Prime Slayer >> LVL 58 >> DMG 0 >> Armor 62 >> HP 0 >> XP 0 
+Types done for armor Type: Name Legendary >> LVL 116 >> DMG 0 >> Armor 62 >> HP 0 >> XP 0 
+Skills done for armor  Chosen 
+Enchanting 0 
+Enchanting 1 
+Doing EnchantResult of enchant : Name + 1 >> LVL 117.16 >> DMG 0 >> Armor 62.62 >> HP 0 >> XP 0 
+Creating Weapon Stats Phys 0 ~ 0 >> Mag 0 ~ 0 >> Crit 11 >> Speed 1.3 >> Hit 100 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 101.333333333 - 182.4 
+Succesfully completed item 
+ Name  Lightning Skin of Prime Slayer and Cats + 1 >> LVL 117 >> DMG 1 >> Armor 63 >> HP 1 >> XP 1 
+ Phys 0 ~ 0 >> Mag 0 ~ 0 >> Crit 11 >> Speed 1.3 >> Hit 100 
+Function Starts by Kompas at 2017-04-05 16:02:46 
+Starting Process 
+Chosen Tables basetalis and pretalis 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 9317 , Sub 3420 , Skill 6568 , Type 7139 
+Bases done for talisman Bases: Name Galaxy >> LVL 30 >> DMG 40 >> Armor 8 >> HP 110 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Lightning of >> LVL 42 >> DMG 52 >> Armor 10.4 >> HP 143 >> XP 1.69 
+Subfixes done for talisman Subfix: Name and Envy >> LVL 43 >> DMG 36 >> Armor 5.06666666667 >> HP 131.56 >> XP 2.028 
+Types done for talisman Type: Name Normal >> LVL 150.5 >> DMG 126 >> Armor 17.7333333333 >> HP 460.46 >> XP 2.028 
+Skills done for talisman  Chosen 
+Enchanting 0 
+Enchanting 1 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 158.025 >> DMG 132.3 >> Armor 18.62 >> HP 483.483 >> XP 2.028 
+Creating Weapon Stats Phys 120 ~ 138 >> Mag 34 ~ 112 >> Crit 26 >> Speed 1.1 >> Hit 97 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 82.6666666667 - 148.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 4838 , Sub 6135 , Skill 7793 , Type 7686 
+Bases done for talisman Bases: Name Wind >> LVL 10 >> DMG 15 >> Armor 2 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Blood of >> LVL 15 >> DMG 16.5 >> Armor 2.2 >> HP 66 >> XP 1.43 
+Subfixes done for talisman Subfix: Name and Enchantment >> LVL 45 >> DMG 111.5 >> Armor 33.8666666667 >> HP 97.35 >> XP 1.716 
+Types done for talisman Type: Name Rare >> LVL 72 >> DMG 178.4 >> Armor 33.8666666667 >> HP 155.76 >> XP 1.716 
+Skills done for talisman  Chosen 
+Enchanting 0 
+Enchanting 1 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 75.6 >> DMG 187.32 >> Armor 35.56 >> HP 163.548 >> XP 1.716 
+Creating Weapon Stats Phys 187 ~ 221 >> Mag 67 ~ 200 >> Crit 7 >> Speed 1.2 >> Hit 93 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 82.6666666667 - 148.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 7677 , Sub 5819 , Skill 1572 , Type 697 
+Bases done for talisman Bases: Name Starfurry >> LVL 40 >> DMG 45 >> Armor 20 >> HP 210 >> XP 1.4 
+Prefix done for talisman Prefixes: Name Darkness of >> LVL 60 >> DMG 63 >> Armor 28 >> HP 294 >> XP 1.96 
+Subfixes done for talisman Subfix: Name and Trash >> LVL 63 >> DMG 43 >> Armor 21.3333333333 >> HP 264.6 >> XP 2.352 
+Types done for talisman Type: Name Uncomon >> LVL 88.2 >> DMG 60.2 >> Armor 21.3333333333 >> HP 370.44 >> XP 2.352 
+Skills done for talisman  Chosen 
+Enchanting 0 
+Creating Weapon Stats Phys 58 ~ 72 >> Mag 7 ~ 13 >> Crit 5 >> Speed 0.8 >> Hit 94 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 82.6666666667 - 148.8 
+Succesfully completed item 
+ Name Darkness of Starfurry and Trash  + 2 >> LVL 88 >> DMG 1 >> Armor 21 >> HP 370 >> XP 2.4 
+ Phys 58 ~ 72 >> Mag 7 ~ 13 >> Crit 5 >> Speed 0.8 >> Hit 94 
+ _______________________________________ 
+Function Starts by Algraud at 2017-04-05 16:23:43 
+Starting Process 
+Chosen Tables basetalis and pretalis 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 8238 , Sub 7610 , Skill 4963 , Type 5585 
+Bases done for talisman Bases: Name Wind >> LVL 10 >> DMG 15 >> Armor 2 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Blood of >> LVL 15 >> DMG 16.5 >> Armor 2.2 >> HP 66 >> XP 1.43 
+Subfixes done for talisman Subfix: Name and Ground >> LVL 22 >> DMG 26.5 >> Armor 5.53333333333 >> HP 69.3 >> XP 1.716 
+Types done for talisman Type: Name Fake >> LVL 11 >> DMG 13.25 >> Armor 5.53333333333 >> HP 34.65 >> XP 1.716 
+Skills done for talisman  Chosen 
+Enchanting 0 
+Creating Weapon Stats Phys 12 ~ 14 >> Mag 0 ~ 2 >> Crit -4 >> Speed 0.8 >> Hit 90 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 6201 , Sub 7685 , Skill 5842 , Type 3147 
+Bases done for talisman Bases: Name Moon >> LVL 10 >> DMG 20 >> Armor 5 >> HP 40 >> XP 1.2 
+Prefix done for talisman Prefixes: Name Shine of >> LVL 25 >> DMG 26 >> Armor 6.5 >> HP 52 >> XP 1.56 
+Subfixes done for talisman Subfix: Name and Challenge >> LVL 30 >> DMG 52 >> Armor 15.1666666667 >> HP 58.76 >> XP 1.872 
+Types done for talisman Type: Name Fake >> LVL 105 >> DMG 182 >> Armor 53.0833333333 >> HP 205.66 >> XP 1.872 
+Skills done for talisman  Chosen 
+Enchanting 1 
+Doing EnchantResult of enchant : Name + 1 >> LVL 106.05 >> DMG 183.82 >> Armor 53.6141666667 >> HP 207.7166 >> XP 1.872 
+Creating Weapon Stats Phys 147 ~ 210 >> Mag 4 ~ 66 >> Crit 26 >> Speed 1.2 >> Hit 93 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 7892 , Sub 2065 , Skill 5014 , Type 5502 
+Bases done for talisman Bases: Name Moon >> LVL 10 >> DMG 20 >> Armor 5 >> HP 40 >> XP 1.2 
+Prefix done for talisman Prefixes: Name Shine of >> LVL 25 >> DMG 26 >> Armor 6.5 >> HP 52 >> XP 1.56 
+Subfixes done for talisman Subfix: Name and Challenge >> LVL 25 >> DMG 26 >> Armor 6.5 >> HP 52 >> XP 1.56 
+Types done for talisman Type: Name Epic >> LVL 70 >> DMG 72.8 >> Armor 18.2 >> HP 145.6 >> XP 1.56 
+Skills done for talisman  Chosen 
+Enchanting 8 
+Doing EnchantResult of enchant : Name + 8 >> LVL 98 >> DMG 101.92 >> Armor 25.48 >> HP 203.84 >> XP 1.56 
+Creating Weapon Stats Phys 92 ~ 118 >> Mag 8 ~ 47 >> Crit 19 >> Speed 1 >> Hit 98 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 4560 , Sub 8434 , Skill 1283 , Type 4915 
+Bases done for talisman Bases: Name Earth >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Shine of >> LVL 35 >> DMG 39 >> Armor 6.5 >> HP 78 >> XP 1.69 
+Subfixes done for talisman Subfix: Name and Prime >> LVL 50 >> DMG 89 >> Armor 23.1666666667 >> HP 97.5 >> XP 2.028 
+Types done for talisman Type: Name Bright >> LVL 65 >> DMG 115.7 >> Armor 23.1666666667 >> HP 126.75 >> XP 2.028 
+Skills done for talisman  Chosen 
+Enchanting 3 
+Doing EnchantResult of enchant : Name + 3 >> LVL 71.5 >> DMG 127.27 >> Armor 25.4833333333 >> HP 139.425 >> XP 2.028 
+Creating Weapon Stats Phys 109 ~ 158 >> Mag 52 ~ 66 >> Crit 4 >> Speed 0.9 >> Hit 98 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 191 , Sub 2916 , Skill 5176 , Type 2613 
+Bases done for talisman Bases: Name Earth >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Shine of >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Subfixes done for talisman Subfix: Name and Prime >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Types done for talisman Type: Name Infested >> LVL 14 >> DMG 21 >> Armor 5 >> HP 42 >> XP 1.3 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 14.7 >> DMG 22.05 >> Armor 5.25 >> HP 44.1 >> XP 1.3 
+Creating Weapon Stats Phys 19 ~ 23 >> Mag 3 ~ 21 >> Crit -2 >> Speed 0.9 >> Hit 92 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 9513 , Sub 5826 , Skill 3873 , Type 5803 
+Bases done for talisman Bases: Name Wind >> LVL 10 >> DMG 15 >> Armor 2 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Darkness of >> LVL 30 >> DMG 21 >> Armor 2.8 >> HP 84 >> XP 1.82 
+Subfixes done for talisman Subfix: Name and Envy >> LVL 31 >> DMG 5 >> Armor -2.53333333333 >> HP 77.28 >> XP 2.184 
+Types done for talisman Type: Name Epic >> LVL 55.8 >> DMG 9 >> Armor -2.53333333333 >> HP 139.104 >> XP 2.184 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 58.59 >> DMG 9.45 >> Armor -2.66 >> HP 146.0592 >> XP 2.184 
+Creating Weapon Stats Phys 8 ~ 11 >> Mag 3 ~ 6 >> Crit 9 >> Speed 1.3 >> Hit 94 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 8270 , Sub 933 , Skill 8430 , Type 9747 
+Bases done for talisman Bases: Name Lucky Toe >> LVL 40 >> DMG 10 >> Armor 2 >> HP 20 >> XP 2.0 
+Prefix done for talisman Prefixes: Name Sweetness of >> LVL 44 >> DMG 11 >> Armor 2.2 >> HP 22 >> XP 2.2 
+Subfixes done for talisman Subfix: Name and Envy >> LVL 44 >> DMG 11 >> Armor 2.2 >> HP 22 >> XP 2.2 
+Types done for talisman Type: Name Rare >> LVL 88 >> DMG 22 >> Armor 4.4 >> HP 44 >> XP 2.2 
+Skills done for talisman  Chosen 
+Enchanting 4 
+Doing EnchantResult of enchant : Name + 4 >> LVL 105.6 >> DMG 26.4 >> Armor 5.28 >> HP 52.8 >> XP 2.2 
+Creating Weapon Stats Phys 25 ~ 34 >> Mag 6 ~ 2 >> Crit 11 >> Speed 0.9 >> Hit 93 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 9898 , Sub 2103 , Skill 2407 , Type 8766 
+Bases done for talisman Bases: Name Frisk >> LVL 1 >> DMG 0 >> Armor 0 >> HP 40 >> XP 1 
+Prefix done for talisman Prefixes: Name Prime of >> LVL 26 >> DMG 0 >> Armor 0 >> HP 60 >> XP 1.5 
+Subfixes done for talisman Subfix: Name and Envy >> LVL 26 >> DMG 0 >> Armor 0 >> HP 60 >> XP 1.5 
+Types done for talisman Type: Name Uncomon >> LVL 36.4 >> DMG 0 >> Armor 0 >> HP 84 >> XP 1.5 
+Skills done for talisman  Chosen 
+Enchanting 1 
+Doing EnchantResult of enchant : Name + 1 >> LVL 36.764 >> DMG 0 >> Armor 0 >> HP 84.84 >> XP 1.5 
+Creating Weapon Stats Phys 0 ~ 0 >> Mag 0 ~ 0 >> Crit 5 >> Speed 0.9 >> Hit 96 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 5589 , Sub 6667 , Skill 9445 , Type 1958 
+Bases done for talisman Bases: Name Sun >> LVL 10 >> DMG 25 >> Armor 2 >> HP 45 >> XP 1.1 
+Prefix done for talisman Prefixes: Name Wind of >> LVL 20 >> DMG 30 >> Armor 2.4 >> HP 54 >> XP 1.32 
+Subfixes done for talisman Subfix: Name and Rime >> LVL 26 >> DMG 40 >> Armor 5.73333333333 >> HP 56.7 >> XP 1.584 
+Types done for talisman Type: Name Normal >> LVL 31.2 >> DMG 48 >> Armor 5.73333333333 >> HP 68.04 >> XP 1.584 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 32.76 >> DMG 50.4 >> Armor 6.02 >> HP 71.442 >> XP 1.584 
+Creating Weapon Stats Phys 47 ~ 53 >> Mag 4 ~ 19 >> Crit 3 >> Speed 0.9 >> Hit 95 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 5420 , Sub 706 , Skill 7622 , Type 4185 
+Bases done for talisman Bases: Name Sun >> LVL 10 >> DMG 25 >> Armor 2 >> HP 45 >> XP 1.1 
+Prefix done for talisman Prefixes: Name Wind of >> LVL 20 >> DMG 30 >> Armor 2.4 >> HP 54 >> XP 1.32 
+Subfixes done for talisman Subfix: Name and Rime >> LVL 20 >> DMG 30 >> Armor 2.4 >> HP 54 >> XP 1.32 
+Types done for talisman Type: Name  >> LVL 20 >> DMG 30 >> Armor 2.4 >> HP 54 >> XP 1.32 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 21 >> DMG 31.5 >> Armor 2.52 >> HP 56.7 >> XP 1.32 
+Creating Weapon Stats Phys 32 ~ 38 >> Mag 14 ~ 18 >> Crit 11 >> Speed 0.9 >> Hit 98 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 2207 , Sub 1398 , Skill 5945 , Type 2700 
+Bases done for talisman Bases: Name Lucky Toe >> LVL 40 >> DMG 10 >> Armor 2 >> HP 20 >> XP 2.0 
+Prefix done for talisman Prefixes: Name Wind of >> LVL 40 >> DMG 10 >> Armor 2 >> HP 20 >> XP 2.0 
+Subfixes done for talisman Subfix: Name and Rime >> LVL 40 >> DMG 10 >> Armor 2 >> HP 20 >> XP 2.0 
+Types done for talisman Type: Name Infested >> LVL 28 >> DMG 7 >> Armor 2 >> HP 14 >> XP 2.0 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 29.4 >> DMG 7.35 >> Armor 2.1 >> HP 14.7 >> XP 2.0 
+Creating Weapon Stats Phys 7 ~ 9 >> Mag 3 ~ 3 >> Crit -2 >> Speed 0.9 >> Hit 95 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 7689 , Sub 5603 , Skill 6099 , Type 4361 
+Bases done for talisman Bases: Name Earth >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Prime of >> LVL 45 >> DMG 45 >> Armor 7.5 >> HP 90 >> XP 1.95 
+Subfixes done for talisman Subfix: Name and Salt >> LVL 50 >> DMG 37 >> Armor 4.83333333333 >> HP 86.4 >> XP 2.34 
+Types done for talisman Type: Name Infested >> LVL 35 >> DMG 25.9 >> Armor 4.83333333333 >> HP 60.48 >> XP 2.34 
+Skills done for talisman  Chosen 
+Enchanting 3 
+Doing EnchantResult of enchant : Name + 3 >> LVL 38.5 >> DMG 28.49 >> Armor 5.31666666667 >> HP 66.528 >> XP 2.34 
+Creating Weapon Stats Phys 27 ~ 31 >> Mag 8 ~ 36 >> Crit -2 >> Speed 0.9 >> Hit 90 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 5568 , Sub 3396 , Skill 8557 , Type 792 
+Bases done for talisman Bases: Name Earth >> LVL 20 >> DMG 30 >> Armor 5 >> HP 60 >> XP 1.3 
+Prefix done for talisman Prefixes: Name Blood of >> LVL 25 >> DMG 33 >> Armor 5.5 >> HP 66 >> XP 1.43 
+Subfixes done for talisman Subfix: Name and Demon >> LVL 29 >> DMG 49 >> Armor 10.8333333333 >> HP 71.28 >> XP 1.716 
+Types done for talisman Type: Name Perlacent >> LVL 63.8 >> DMG 107.8 >> Armor 10.8333333333 >> HP 156.816 >> XP 1.716 
+Skills done for talisman  Chosen 
+Enchanting 2 
+Doing EnchantResult of enchant : Name + 2 >> LVL 66.99 >> DMG 113.19 >> Armor 11.375 >> HP 164.6568 >> XP 1.716 
+Creating Weapon Stats Phys 100 ~ 123 >> Mag 3 ~ 169 >> Crit 13 >> Speed 0.8 >> Hit 97 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Starting While for Creation |<>|Deecided on RNG rolls: Pre 8422 , Sub 1945 , Skill 4405 , Type 4420 
+Bases done for talisman Bases: Name Infinyte >> LVL 40 >> DMG 10 >> Armor 20 >> HP 250 >> XP 1 
+Prefix done for talisman Prefixes: Name Sweetness of >> LVL 44 >> DMG 11 >> Armor 22 >> HP 275 >> XP 1.1 
+Subfixes done for talisman Subfix: Name and Demon >> LVL 44 >> DMG 11 >> Armor 22 >> HP 275 >> XP 1.1 
+Types done for talisman Type: Name Uncomon >> LVL 154 >> DMG 38.5 >> Armor 77 >> HP 962.5 >> XP 1.1 
+Skills done for talisman  Chosen 
+Enchanting 3 
+Doing EnchantResult of enchant : Name + 3 >> LVL 169.4 >> DMG 42.35 >> Armor 84.7 >> HP 1058.75 >> XP 1.1 
+Creating Weapon Stats Phys 36 ~ 52 >> Mag 14 ~ 44 >> Crit 26 >> Speed 1.3 >> Hit 98 
+Rounding Orrignal 
+No 0 
+Hashing Complete 
+Limits are 122.666666667 - 220.8 
+Succesfully completed item 
+ Name Sweetness of Infinyte and Demon  + 3 >> LVL 169 >> DMG 1 >> Armor 85 >> HP 1059 >> XP 1.1 
+ Phys 36 ~ 52 >> Mag 14 ~ 44 >> Crit 26 >> Speed 1.3 >> Hit 98 
+ _______________________________________ 

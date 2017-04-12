@@ -5,7 +5,7 @@ echo '
 	<head>
 		<meta charset="utf-8">
 		<title>World of RNG</title>
-		<link rel="stylesheet" type="text/css" href="css/'.$_COOKIE[Theme].'.css">
+		<link rel="stylesheet" type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
 		<link rel="icon" href="favicon.png">
 	</head>
 	<body>

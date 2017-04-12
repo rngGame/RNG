@@ -510,10 +510,9 @@ progress::-webkit-progress-value {
     border:1px solid black;
 }
 #social {
-	float: left;
-    position: absolute;
-    top: 35px;
-    right: 0px;
+	float: right;
+    display: inline-block;
+    position: relative;
     width: 500px;
     height: 640px;
     background-color: #26292c;
@@ -709,9 +708,8 @@ progress::-webkit-progress-value {
 }
 #middle{
     float:left;
-    position: absolute;
-    top:35px;
-    left:652px;
+    display: block;
+    position: relative;
     width: 350px;
     height: 320px;
     background-color: #26292c;
@@ -719,4 +717,6 @@ progress::-webkit-progress-value {
 }
 #gameScreen{
     display: inline;
+    height: 320px;
+    width: 100%;
 }

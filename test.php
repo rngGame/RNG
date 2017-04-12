@@ -101,6 +101,12 @@ if (isset($_POST["CRT"]) or isset($_SESSION["NewMob"])){
 	$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
 	$Party = mysqli_fetch_assoc($PartyS); //Party
 	
+	//if exist already
+	$PartyMons = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
+	$PartyMonsF = mysqli_fetch_assoc($PartyMons);
+	
+if ($PartyMonsF["ID"] == 0){
+	
 
 //get  lvl
 if ( $Party["PL1"] <> ""){
@@ -137,6 +143,11 @@ $mobLVL = round(($mobCount + $Pl1L["ILVL"] + $Pl2L["ILVL"] + $Pl3L["ILVL"] + $Pl
 	echo $mobLVL;
 	header("location:fightNew.php");
 	die();
+}
+else{
+	header("location:sync.php");
+	die();	
+}
 	
 }
 
@@ -154,23 +165,30 @@ if ($PL["PL3"] == $User){
 	$PLnr = "PL3";}
 if ($PL["PL4"] == $User){
 	$PLnr = "PL4";}
+	
+	
+$FreeParty = mysqli_query($db,"SELECT * FROM Party where ID =  '$Party[ID]'  ");
+$FreeParty = mysqli_fetch_row($FreeParty);
 
-$_SESSION["Party"] = $Party["ID"];
-$_SESSION["PlayerNR"] = $PLnr;
+	
+		$PlayerNR = 0;
+	if ($FreeParty[1] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[2] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[3] <> ""){
+		$PlayerNR += 1 ;}
+	if ($FreeParty[4] <> ""){
+		$PlayerNR += 1 ;}
+
+$_SESSION["Party2"] = $Party["ID"];
+ $_SESSION["PlayerNR"] = $PLnr;
+ $_SESSION["PartySK"] = $PlayerNR;
 
 //set what type reward to get
-$type = rand(1,200);
-if ($type > 140){
-	$_SESSION["PAGE"] = "location:newi.php";}
-else if ($type > 60){
-	$_SESSION["PAGE"] = "location:rewarm.php";} 
-	else if ($type > 1){
-		$_SESSION["PAGE"] = "location:rewtali.php";} 
-		
-//check for uniq drop
-if ($type == 69 and $ACC[3] > 19){ 
-	$_SESSION["UNQ"] = 1;
-	$_SESSION["PAGE"] = "location:uniqR.php";}
+
+$_SESSION["PAGE"] = "location:newiP.php";
+
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
@@ -186,19 +204,6 @@ $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
 $CLS = mysqli_fetch_row($CLS);
 }
 
-//set what type reward to get
-$type = rand(1,200);
-if ($type > 140){
-	$_SESSION["PAGE"] = "location:newi.php";}
-else if ($type > 60){
-	$_SESSION["PAGE"] = "location:rewarm.php";} 
-	else if ($type > 1){
-		$_SESSION["PAGE"] = "location:rewtali.php";} 
-		
-//check for uniq drop
-if ($type == 69 and $ACC[3] > 19){ 
-	$_SESSION["UNQ"] = 1;
-	$_SESSION["PAGE"] = "location:uniqR.php";}
 	
 //check what skill get bonusses
 include 'PHP/skillclas.php';
@@ -272,7 +277,7 @@ echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 
-echo"<div id='result'></div>";
+echo"<div id='result2'></div>";
 
 
 $_SESSION["MonsHP"] = $MonsterS["MonsterHP"];
@@ -280,6 +285,12 @@ $_SESSION["MonsDMG"] = $MonsterS["MonsterPhyDMG"];
 $_SESSION["MonsDMGm"] = $MonsterS["MonsterMagDMG"];
 $_SESSION["MonsLVL"] = $MonsterS["MonsterLVL"];
 $_SESSION["Party"] = 1;
+
+//check if still exist
+$MobHP = $MonsterS["MonsterHP"];
+if ($MobHP < 0 or !isset($MonsterS["MonsterHP"])){
+	header("location:sync.php");  
+	die();}
 
 //basic attack
 echo
@@ -335,10 +346,10 @@ function myfunc(div) {
 if(typeof(EventSource) !== "undefined") {
     var source = new EventSource("PartyMonsters_upd.php");
     source.onmessage = function(event) {
-        document.getElementById("result").innerHTML = event.data ;
+        document.getElementById("result2").innerHTML = event.data ;
     };
 } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+    document.getElementById("result2").innerHTML = "Sorry, your browser does not support server-sent events...";
 }
 </script>
 </header>

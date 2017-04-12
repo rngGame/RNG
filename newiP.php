@@ -26,13 +26,20 @@ $FightFee = $_SESSION["Money"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-$PartID = $_SESSION["Party"];
+$PartID = $_SESSION["Party2"];
 
 
 $PartyS = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$PartID' ");
 $Party = mysqli_fetch_assoc($PartyS); //Party
 
-$FreeParty = mysqli_query($db,"SELECT * FROM Party where PL2 IS NULL or PL3 IS NULL or PL4 IS NULL  ");
+//if dead
+if ($Party["ID"] == 0){
+	echo $PartID;
+	header("location:sync.php");  
+	die();
+}
+
+$FreeParty = mysqli_query($db,"SELECT * FROM Party where ID =  '$PartID'  ");
 $FreeParty = mysqli_fetch_row($FreeParty);
 
 	
@@ -153,7 +160,12 @@ while ($i < $PlayerNR and $i <> 100){
 $sql2="DELETE FROM PartyMonsters WHERE PartyID='$PartID'";
 mysqli_query($db,$sql2);
 
-	
+$Killsu = $FreeParty[5] +1;
+
+	$killcount = "UPDATE Party
+	SET MobsKilled= '$Killsu'
+	WHERE `ID` = '$PartID'";
+	$result = mysqli_query($db, $killcount);
 
 
 

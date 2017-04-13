@@ -493,7 +493,7 @@ function createMonster($db,$iLVL){
             $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
             $extraName="3RR0R";
         }
-        else if(mysqli_num_rows($Base)==0){
+        else if(mysqli_num_rows($Base)==0 AND $timeCreated<100){
             continue;
         }
         list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);

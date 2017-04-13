@@ -488,10 +488,13 @@ function createMonster($db,$iLVL){
         $extraName="";
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
-        if(mysqli_num_rows($Base)==0 OR $timeCreated==99){
+        if(mysqli_num_rows($Base)==0 AND $timeCreated>90){
             $testMessage.="could not find correct".mysqli_num_rows($Base)." or $timeCreated times runned <br>";
             $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
             $extraName="3RR0R";
+        }
+        else if(mysqli_num_rows($Base)==0){
+            continue;
         }
         list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);
         $testMessage.="fetched bases $baseName | $baseHP | $baseLVL | $baseDMG | $baseDrop  <br>";

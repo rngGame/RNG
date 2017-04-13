@@ -246,7 +246,7 @@ if ($_SESSION["PET"] == 1){
 
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) +  ($poison-$MonDEF);
+$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) +  ($poison-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF);
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;

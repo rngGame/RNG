@@ -494,7 +494,7 @@ function createMonster($db,$iLVL){
             $extraName="3RR0R";
         }
         else if(mysqli_num_rows($Base)==0){
-            continue;
+            //continue;
         }
         list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);
         $testMessage.="fetched bases $baseName | $baseHP | $baseLVL | $baseDMG | $baseDrop  <br>";

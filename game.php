@@ -137,11 +137,6 @@ $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 }
 }
 
-//armor calcultaions:
-$armorlevel = $ARMBODY["ilvl"] + $ARMGLOVES["ilvl"] + $ARMBOOTS["ilvl"];
-$tottalParmordef = round($ARMBODY["pDEF"] + $ARMGLOVES["pDEF"] + $ARMBOOTS["pDEF"]);
-$tottalMarmordef = round($ARMBODY["mDEF"] + $ARMGLOVES["mDEF"] + $ARMBOOTS["mDEF"]);
-$tottalarmorApsorb = round($ARMBODY["Apsorb"] + $ARMGLOVES["Apsorb"] + $ARMBOOTS["Apsorb"]);
 
 
 //new  accesories
@@ -161,12 +156,7 @@ $_SESSION["CURRENTACSAMULET"] = $ACSAMULET["HASH"];
 }
 }
 
-//acseosies calculation
-$acclevel = $ACSRING["ilvl"] + $ACSAMULET["ilvl"];
-$tottalACCApsorb = round($ACSRING["Apsorb"] + $ACSAMULET["Apsorb"]);
-$tottalXPBonus = round($ACSRING["xpBonus"] + $ACSAMULET["xpBonus"]);
-$tottalHPBonus = round($ACSRING["hpBonus"] + $ACSAMULET["hpBonus"]);
-$tottalDMGBonus = round($ACSRING["dmgBonus"] + $ACSAMULET["dmgBonus"]);
+
 
 
 //Laiko tikrinimas
@@ -253,26 +243,76 @@ else{
 }
 
 
-
-$lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
-
-$order = "UPDATE characters
-SET ILVL = '$lwa'
-WHERE `User` = '$User'";
-
-$result = mysqli_query($db, $order);
-
-$HP = $ACC[2] * $CLS[2] + ($HP * ($PNT[2])/100);
-$HP = $HP + ($HP * ($PNT[2])/100);
-$Parmor = round(($tottalParmordef )*$CLS[4]);
-$Marmor = round(($tottalMarmordef)*$CLS[4]);
-
 //enchant
+//weapon
 $ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEPn[plus]'");
 $ENC = mysqli_fetch_row($ENC);
+if ($ENC[2] > 0){
+$enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";
+}
 
-if ($ENC[2] <> 0){
-	$enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";}
+//body
+$ENCAB = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ARMBODY[plus]'");
+$ENCAB = mysqli_fetch_row($ENCAB);
+if ($ENCAB[2] > 0){
+$enchtexAB = "<font color='#F59100'>Ench. power: <b>$ENCAB[2] %</b></font>";
+$ARMBODYlvl = round($ARMBODY["ilvl"]* $ENCAB[2]/100);
+$ARMBODYp = round($ARMBODY["pDEF"]* $ENCAB[2]/100);
+$ARMBODYm = round($ARMBODY["mDEF"]* $ENCAB[2]/100);
+}
+
+//Gloves
+$ENCAG = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ARMGLOVES[plus]'");
+$ENCAG = mysqli_fetch_row($ENCAG);
+if ($ENCAG[2] > 0){
+$enchtexAG = "<font color='#F59100'>Ench. power: <b>$ENCAG[2] %</b></font>";
+$ARMGLOVESlvl = round($ARMGLOVES["ilvl"]* $ENCAG[2]/100);
+$ARMGLOVESp = round($ARMGLOVES["pDEF"]* $ENCAG[2]/100);
+$ARMGLOVESm = round($ARMGLOVES["mDEF"]* $ENCAG[2]/100);
+}
+
+//legs
+$ENCAL = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ARMBOOTS[plus]'");
+$ENCAL = mysqli_fetch_row($ENCAL);
+if ($ENCAL[2] > 0){
+$enchtexAL = "<font color='#F59100'>Ench. power: <b>$ENCAL[2] %</b></font>";
+$ARMBOOTSlvl = round($ARMBOOTS["ilvl"]* $ENCAL[2]/100);
+$ARMBOOTSp = round($ARMBOOTS["pDEF"]* $ENCAA[2]/100);
+$ARMBOOTSm = round($ARMBOOTS["mDEF"]* $ENCAA[2]/100);
+}
+
+//amuLet
+$ENCAA = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ACSAMULET[plus]'");
+$ENCAA = mysqli_fetch_row($ENCAA);
+if ($ENCAA[2] > 0){
+$enchtexAA = "<font color='#F59100'>Ench. power: <b>$ENCAA[2] %</b></font>";
+$ACSAMULETlvlEN = round($ACSAMULET["ilvl"]* $ENCAA[2]/100);
+$ACSAMULEThpBN = round($ACSAMULET["hpBonus"]* $ENCAA[2]/100);
+$ACSAMULETdmgBN = round($ACSAMULET["dmgBonus"]* $ENCAA[2]/100);
+}
+
+//RING
+$ENCAR = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ACSRING[plus]'");
+$ENCAR = mysqli_fetch_row($ENCAR);
+if ($ENCAR[2] > 0){
+$enchtexAR = "<font color='#F59100'>Ench. power: <b>$ENCAR[2] %</b></font>";
+$ACSRINGlvlEN = round($ACSRING["ilvl"]* $ENCAR[2]/100);
+$ACSRINGhpBN = round($ACSRING["hpBonus"]* $ENCAR[2]/100);
+$ACSRINGdmgBN = round($ACSRING["dmgBonus"]* $ENCAR[2]/100);
+}
+
+//stats ACS/ARM
+$armorlevel = $ARMBODY["ilvl"] + $ARMGLOVES["ilvl"] + $ARMBOOTS["ilvl"] + $ARMBODYlvl + $ARMBOOTSlvl + $ARMGLOVESlvl;
+$tottalParmordef = round($ARMBODY["pDEF"] + $ARMGLOVES["pDEF"] + $ARMBOOTS["pDEF"]+ $ARMBODYp + $ARMBOOTSp + $ARMGLOVESp);
+$tottalMarmordef = round($ARMBODY["mDEF"] + $ARMGLOVES["mDEF"] + $ARMBOOTS["mDEF"]+ $ARMBODYm + $ARMBOOTSm + $ARMGLOVESm);
+$tottalarmorApsorb = round($ARMBODY["Apsorb"] + $ARMGLOVES["Apsorb"] + $ARMBOOTS["Apsorb"]);
+
+$acclevel = $ACSRING["ilvl"] + $ACSAMULET["ilvl"] + $ACSRINGlvlEN + $ACSAMULETlvlEN;
+$tottalACCApsorb = round($ACSRING["Apsorb"] + $ACSAMULET["Apsorb"]);
+$tottalXPBonus = round($ACSRING["xpBonus"] + $ACSAMULET["xpBonus"]);
+$tottalHPBonus = round($ACSRING["hpBonus"] + $ACSAMULET["hpBonus"]) + $ACSRINGhpBN + $ACSAMULEThpBN;
+$tottalDMGBonus = round($ACSRING["dmgBonus"] + $ACSAMULET["dmgBonus"]) + $ACSRINGdmgBN + $ACSAMULETdmgBN;
+
 
 
 // physical dmg
@@ -298,6 +338,20 @@ $maxMdmg = $maxMdmg + ($maxMdmg * $ENC[2] / 100) + ($maxMdmg * ($PNT[3]*3)/100);
 if (isset($dmgsub)){
 	$maxMdmg = round(($maxMdmg*$dmgsub),0);
 }
+
+$lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
+
+$order = "UPDATE characters
+SET ILVL = '$lwa'
+WHERE `User` = '$User'";
+
+$result = mysqli_query($db, $order);
+
+$HP = $ACC[2] * $CLS[2] + ($HP * ($PNT[2])/100);
+$HP = $HP + ($HP * ($PNT[2])/100);
+$Parmor = round(($tottalParmordef )*$CLS[4]);
+$Marmor = round(($tottalMarmordef)*$CLS[4]);
+
 
 
 $HP2 = $HP + ($HP * $tottalHPBonus / 100);
@@ -482,7 +536,11 @@ if ($WEPn["efstat"]<>0){
 	}
 
 if ($WEPn["Name"] != ""){
-	$weaponTemplate="<b><img src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$WEPn['Rarity']."'></b>
+	$weaponTemplate="
+	<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$WEPn[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='WEP' style='display:none'>
+	<b><input type='image' src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$WEPn['Rarity']."'></b>
 	<span class='tooltiptext'>
 		<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
 		<br>
@@ -501,7 +559,7 @@ if ($WEPn["Name"] != ""){
 		Hit Chanse: $WEPn[HitChanse]
 		<br>
 		$eft $enchtex
-	</span>";}
+	</span></form>";}
 	else{
 		$weaponTemplate= "<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";}
 
@@ -511,7 +569,10 @@ if ($WEPn["Name"] != ""){
 //body
 if($ARMBODY["Name"] <> ""){
 	$bodyTemplate= "
-	<img src='IMG/pack/Icon.5_67.png' width='45px' height='45px' class='item".$ARMBODY['Rarity']."'>
+	<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$ARMBODY[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='ARM' style='display:none'>
+	<input type='image' src='IMG/pack/Icon.5_67.png' width='45px' height='45px' class='item".$ARMBODY['Rarity']."'>
 	<span class='tooltiptext'>
 		<b class='$ARMBODY[Rarty]'>$ARMBODY[Name]</b>
 		<br>
@@ -523,9 +584,10 @@ if($ARMBODY["Name"] <> ""){
 		<br>
 		Apsorb: $ARMBODY[Apsorb]%
 		<br>
-		Enchant +$ARMBODY[plus]
+		Enchant +$ARMBODY[plus]<br>
+		$enchtexAB
 	</span>
-	
+	</form>
 	";
 }
 else{
@@ -534,8 +596,11 @@ else{
 }
 
 if($ARMBOOTS["Name"] <> ""){
-	$legsTemplate= " <img src='IMG/pack/Icon.3_84.png' width='45px' height='45px' class='item".$ARMBOOTS['Rarity']."'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]</span>
-	
+	$legsTemplate= "<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$ARMBOOTS[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='ARM' style='display:none'>
+	<input type='image' src='IMG/pack/Icon.3_84.png' width='45px' height='45px' class='item".$ARMBOOTS['Rarity']."'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]<br>$enchtexAL</span>
+	</form>
 	";
 }
 else{
@@ -544,8 +609,11 @@ else{
 }
 
 if($ARMGLOVES["Name"] <> ""){
-	$armsTemplate= "<img src='IMG/pack/Icon.2_24.png' width='45px' height='45px' class='item".$ARMGLOVES['Rarity']."'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]</span>
-	
+	$armsTemplate= "<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$ARMGLOVES[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='ARM' style='display:none'>
+	<input type='image'  src='IMG/pack/Icon.2_24.png' width='45px' height='45px' class='item".$ARMGLOVES['Rarity']."'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]<br>$enchtexAG</span>
+	</form>
 	";
 }
 else{
@@ -556,8 +624,11 @@ else{
 //acsesories
 
 if($ACSRING["Name"] <> ""){
-	$ringTemplate= "<img src='IMG/pack/Icon.6_75.png' width='45px' height='45px' class='item".$ACSRING['Rarity']."'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]</span>
-	
+	$ringTemplate= "<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$ACSRING[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='ACS' style='display:none'>
+	<input type='image'   src='IMG/pack/Icon.6_75.png' width='45px' height='45px' class='item".$ACSRING['Rarity']."'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]<br>$enchtexAR</span>
+	</form>
 	";
 }
 else{
@@ -566,8 +637,11 @@ else{
 }
 
 if($ACSAMULET["Name"] <> ""){
-	$amuletTemplate= "<img src='IMG/pack/Icon.6_53.png' width='45px' height='45px' class='item".$ACSAMULET['Rarity']."'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]</span>
-	
+	$amuletTemplate= "<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$ACSAMULET[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='ACS' style='display:none'>
+	<input type='image'   src='IMG/pack/Icon.6_53.png' width='45px' height='45px' class='item".$ACSAMULET['Rarity']."'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]<br>$enchtexAA</span>
+	</form>
 	";
 }
 else{
@@ -1376,12 +1450,6 @@ $actionsTemplate="
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
 		<input type='submit' name='commit' value='World Boss'>
 	</form>
-</section>
-<section class='actionButtons'>
-	<form method='post' action='Enchant.php'>
-		<input hidden='' type='text' name='lvl2' value='Enchant' placeholder='Upgarde Weapon'>
-  		<input type='submit' name='commit2' value='Upgrade Weapon'>
-  	</form>
 </section>
 <section class='actionButtons'>
 	<form method='post' action='vale.php'>

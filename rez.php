@@ -29,15 +29,16 @@ if ($rez == 1){
 }
 else{
 	echo "<b>Upgrade Failed</b>";
+	
+}
 	echo "<section class='container'>
     <div class='Back'>
 	      <form method='post' action='Enchant.php'>
-        <p class='submit'><input type='submit' name='commit' value='Try Again'></p>
+        <p class='submit'><input type='submit' name='commit' value='Enchant Again'></p>
       </form>
     </div>
   </section>";
-}
-
+  
 echo "<section class='container'>
     <div class='Back'>
 	      <form method='post' action='sync.php'>

@@ -25,22 +25,48 @@ $Chanse = $_SESSION["Chanse"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
-$WEP = mysqli_fetch_row($WEP);
+$HASH = $_SESSION["HASH"];
+$TYPE = $_SESSION["TYPE"];
+
+if ($TYPE == "WEP"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
+if ($TYPE == "ARM"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
+if ($TYPE == "ACS"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
 
 $c1 = rand(1,100);
  
 if ( $c1 <= $Chanse){
 	
-$enc = $WEP[15] + 1;
+$enc = $ITM["plus"] + 1;
 	
-$order2 = "UPDATE weapondrops
+if ($TYPE == "WEP"){
+$order2 = "UPDATE DropsWep
 SET plus = '$enc'
-WHERE `HASH` = '$ACC[1]'";
+WHERE `HASH` = '$HASH'";
+}
+if ($TYPE == "ARM"){
+$order2 = "UPDATE DropsArm
+SET plus = '$enc'
+WHERE `HASH` = '$HASH'";
+}
+if ($TYPE == "ACS"){
+$order2 = "UPDATE DropsAcs
+SET plus = '$enc'
+WHERE `HASH` = '$HASH'";
+}
+
+
 
 $result = mysqli_query($db, $order2);	
 
-$result = mysqli_query($db, $order3);	
 mysqli_close($db);
 $_SESSION["rezult"] = 1;
 header("location:rez.php");	

@@ -70,7 +70,13 @@ if ($checkForParty == 1){
 	
 	$DEF = $iLVL / 10;
 	
-	$MobHP= $HP + ($HP * ($plCount * 10) / 100);
+	if ($plCount == 2){
+	$MobHP= $HP + ($HP * (50) / 100);}
+	if ($plCount == 3){
+	$MobHP= $HP + ($HP * (100) / 100);}
+	if ($plCount == 4){
+	$MobHP= $HP + ($HP * (300) / 100);}
+	
 	$MobDrop= $Drop + ($Drop * ($plCount * 10) / 100);
 	
 	$order = "INSERT INTO PartyMonsters

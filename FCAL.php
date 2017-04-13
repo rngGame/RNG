@@ -355,7 +355,7 @@ if (isset($_SESSION["Party2"])){
 		$PartyMobHP =0;
 	}
 	
-	$dmgddone =	$PLs["$PLnr"] + $finalPlayerDMG;
+	$dmgddone =	$PLs["$PLnr"] + $finalPlayerDMG + $petDMG;
 	
 	$op1 = "UPDATE PartyMonsters
 	SET MonsterHP= '$PartyMobHP'

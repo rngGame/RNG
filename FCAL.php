@@ -88,7 +88,7 @@ if ($ACC[10] > 10){
 };
 
 //GEM dmg (mag)
-if ($GEM[0] != ""){
+if ($GEM[1] <> ""){
 	$gemDMG = ($magDMG * $GEM[5]/100);
 	$gemDMG  = round($gemDMG,0);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}

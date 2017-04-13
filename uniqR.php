@@ -51,17 +51,20 @@ VALUES
 ('$User','$HASH')";	   
 
 $result = mysqli_query($db, $order3);
-$_SESSION["UNQ"] = 1515615565465;
-}
 
-//check if its from shards
-if (isset($_SESSION["SHARDREW"])){
 	$Shard = $ACC[15] - 100;
 	$order2 = "UPDATE characters
 	SET Shards = '$Shard'
 	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order2);	
-	unset($_SESSION["SHARDREW"]);
+
+	
+$_SESSION["UNQ"] = 1515615565465;
+}
+
+//check if its from shards
+if (isset($_SESSION["SHARDREW"])){
+
 }
 else{
 echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";

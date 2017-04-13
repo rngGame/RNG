@@ -1169,7 +1169,7 @@ if ($Party["PL4"] == $User){
 	//Party Narei
 if ( $PLnr == "PL1" or $PLnr == "PL2" or $PLnr == "PL3" or $PLnr == "PL4"){
 	
-	$inPArty = "In Party: $Party[PL1], $Party[PL2], $Party[PL3], $Party[PL4]<br>";}
+	$inPArty = "In Party: $Party[PL1], $Party[PL2], $Party[PL3], $Party[PL4]<br>Killed: <b>$Party[MobsKilled] monsters.</b> <br>";}
 else {
 	$inPArty = "Not in party.";}
 	

@@ -117,7 +117,10 @@ die();
           </form>
         </div>
       </section>";
-    echo $testMessage;
+	  
+	  //Algio keistas stuff !!!!
+	  if ($User == "Algraud"){ 
+    echo $testMessage;}
 	}
 
   ?>

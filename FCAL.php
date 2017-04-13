@@ -227,8 +227,8 @@ if (isset($_SESSION["MonsDEF"])){
 
 //calculation dmg to mons
 if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
-if (rand(0,100) <= $WEPn["HitChanse"] or $cantmiss == 1){
-$finalPlayerDMG = ($poison-$MonDEF) + ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
+if (rand(0,100) <= $WEPn["HitChanse"] ){
+$finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
@@ -246,15 +246,15 @@ if ($_SESSION["PET"] == 1){
 
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) +  ($poison-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF);
+$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF);
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
 }
 
-
-
-
+//poision
+$finalMonsHP = $finalMonsHP - $poison;
+$finalPlayerDMG = $finalPlayerDMG + $poison;
 
 //dmg to player----------------------------------
 
@@ -320,7 +320,7 @@ $_SESSION["LOG"] = "";
 	$_SESSION["LOG"] = "$magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
+		$_SESSION["LOG"] = "$poisT $magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
 	}
 
 

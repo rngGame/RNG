@@ -485,6 +485,7 @@ function createMonster($db,$iLVL){
             $baseLow=1;
         }
         $testMessage.="Base low $baseLow and high $baseHigh <br>";
+        $extraName="";
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
         if(mysqli_num_rows($Base)==0 OR $timeCreated==99){

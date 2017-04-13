@@ -488,12 +488,12 @@ function createMonster($db,$iLVL){
         $extraName="";
         //get all the db info
         $Base = mysqli_query($db,"SELECT * FROM monsters WHERE LVL>='$baseLow' AND LVL<='$baseHigh' Order by RAND() Limit  1");
-        if(mysqli_num_rows($Base)==0 AND $timeCreated>90){
+        if(mysqli_num_rows($Base)==0 AND $timeCreated>40){
             $testMessage.="could not find correct".mysqli_num_rows($Base)." or $timeCreated times runned <br>";
             $Base = mysqli_query($db,"SELECT * FROM monsters Order by RAND() Limit  1");
             $extraName="3RR0R";
         }
-        else if(mysqli_num_rows($Base)==0 AND $timeCreated<100){
+        else if(mysqli_num_rows($Base)==0){
             continue;
         }
         list($baseName, $baseHP, $baseLVL, $baseDMG, $baseDrop) = mysqli_fetch_row($Base);
@@ -582,7 +582,7 @@ function createMonster($db,$iLVL){
         }
         $testMessage.="limits are >$limitMinLVL <$limitMaxLVL <br>";
         //check if monster is good enough
-        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100){
+        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>50){
             $testMessage.="Found Correct monsted or $timeCreated >100 <br>";
             $testMessage.="Monster: $name |LVL $mLVL |HP $HP |DMG $DMG |DROP $Drop <br>";
             $creationDone=true;

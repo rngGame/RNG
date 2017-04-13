@@ -46,7 +46,7 @@ $shitwep = $_SESSION["CURRENTWHASH"];
 if ($shitwep == 0001){
 	$iLVL = 1;}
 
-list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG/*, $testMessage*/)=createMonster($db,$iLVL);
+list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMonster($db,$iLVL);
 
 if ($mLVL < 1 or $HP < 1 or $PDMG < 1 or $Drop < 1){
 	//header("location:fightNew.php");

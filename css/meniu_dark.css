@@ -597,7 +597,9 @@ progress::-webkit-progress-value {
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 125px;
+    width: 123px;
+    top: 107px;
+    left: 15px;
 }
 
 #veilvl2 {
@@ -605,7 +607,9 @@ progress::-webkit-progress-value {
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 122px;
+    width: 145px;
+    top: 186px;
+    text-align: center;
 }
 
 #equipShadow{

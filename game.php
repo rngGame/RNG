@@ -671,7 +671,7 @@ if (!$GEM[3] == ""){
 
 
 
-$WPN = mysqli_query($db,"SELECT * from weapondrops ORDER BY Worth DESC LIMIT 1");
+$WPN = mysqli_query($db,"SELECT * from DropsWep ORDER BY Worth DESC LIMIT 1");
 $WPN = mysqli_fetch_row($WPN);
 $KIL = mysqli_query($db,"SELECT * from characters ORDER BY kills DESC LIMIT 1");
 $KIL = mysqli_fetch_row($KIL);

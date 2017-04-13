@@ -284,6 +284,7 @@ $_SESSION["MonsHP"] = $MonsterS["MonsterHP"];
 $_SESSION["MonsDMG"] = $MonsterS["MonsterPhyDMG"];
 $_SESSION["MonsDMGm"] = $MonsterS["MonsterMagDMG"];
 $_SESSION["MonsLVL"] = $MonsterS["MonsterLVL"];
+$_SESSION["MonsDEF"] = $MonsterS["MonsterDEF"];
 $_SESSION["Party"] = 1;
 
 //check if still exist

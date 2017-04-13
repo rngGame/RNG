@@ -88,7 +88,7 @@ if ($ACC[10] > 10){
 };
 
 //GEM dmg (mag)
-if ($GEM[0] != "None"){
+if ($GEM[0] != ""){
 	$gemDMG = ($magDMG * $GEM[5]/100);
 	$gemDMG  = round($gemDMG,0);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
@@ -216,14 +216,19 @@ if ($SKL ==7 or $pos == 1){
 
 
 
-//calculation dmg to mons
+
 $finalMonsHP = $monHP;
 
+//if have armor
+if (isset($_SESSION["MonsDEF"])){
+	$MonDEF = $_SESSION["MonsDEF"];
+}
 
 
+//calculation dmg to mons
 if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
 if (rand(0,100) <= $WEPn["HitChanse"] or $cantmiss == 1){
-$finalPlayerDMG = $poison + $physDMG + $gemDMG + $monsRef + $effect;
+$finalPlayerDMG = ($poison-$MonDEF) + ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
@@ -241,7 +246,7 @@ if ($_SESSION["PET"] == 1){
 
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = $magick + $effect + $gemDMG +  $poison + $finalPlayerDMGandPET;
+$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) +  ($poison-$MonDEF);
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;

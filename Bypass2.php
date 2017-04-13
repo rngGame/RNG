@@ -26,8 +26,9 @@ $ACC = mysqli_fetch_row($ACC);
 
 $Money = $ACC[4];
 $price = $_SESSION["Price"];
+$HASH = $_SESSION["HASH"];
 
-if ($Money > $price and $ACC[1] != '0001'){
+if ($Money > $price and $HASH != '0001'){
 	$cash = $Money - $price;
 	   
 $order3 = "UPDATE characters

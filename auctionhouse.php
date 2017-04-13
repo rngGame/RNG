@@ -35,7 +35,9 @@ $ACC = mysqli_fetch_row($ACC);
 //check if creating listening
 if (isset($_POST["HASH"])){
 	$price = $_POST["price"];
-	$hash = $_POST["HASH"];
+	
+	$TYPE = $_POST["TYPE"];
+	$HASH = $_POST["HASH"];
 	$listening = 1;}
 	
 //list item
@@ -46,17 +48,27 @@ if ($listening == 1){
 			die();
 	}
 	
-	$WEPINF = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$hash' ");
-	$WEPINF = mysqli_fetch_row($WEPINF);
+if ($TYPE == "WEP"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
+if ($TYPE == "ARM"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
+if ($TYPE == "ACS"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
 
 	
 	$order = "INSERT INTO Trade
-	   (Hash, Seller, Price, ilvl, Worth)
+	   (Hash, Seller, Price, ilvl, Worth, Type)
 	  VALUES
-	   ('$hash', '$User', '$price', '$WEPINF[4]', '$WEPINF[16]')";
+	   ('$HASH', '$User', '$price', '$ITM[ilvl]', '$ITM[Worth]', '$TYPE')";
 	$result = mysqli_query($db, $order);
 	
-	$sql="DELETE FROM inventor WHERE hash='$hash'";
+	$sql="DELETE FROM Equiped where  HASH='$HASH'";
 	mysqli_query($db,$sql);	
 	
 
@@ -76,64 +88,131 @@ echo "<tr>";
 $List = mysqli_query($db,"SELECT * FROM Trade ORDER BY Worth DESC");
 while ($List1 = mysqli_fetch_array($List)){	
 
-$WEPI = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$List1[0]' ");
-$WEPI = mysqli_fetch_row($WEPI);
+if ($List1[5] == "WEP"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$List1[0]' ");
+$ITM = mysqli_fetch_assoc($WEP);
+
 
 $eft = 1 + $eft;
 
-if ($WEPI[14]<>0){
-		if ($WEPI[13] == "LL"){
+if ($ITM["efstat"]<>0){
+		if ($ITM["effect"] == "LL"){
 	$efftype[$eft] = "Life Leach";
 	}
-		if ($WEPI[13] == "BL"){
+		if ($ITM["effect"] == "BL"){
 	$efftype[$eft] = "Bleed Chanse";
 	}
-		if ($WEPI[13] == "BR"){
+		if ($ITM["effect"] == "BR"){
 	$efftype[$eft] = "Burn Chanse";
 	}
-		if ($WEPI[13] == "FR"){
+		if ($ITM["effect"] == "FR"){
 	$efftype[$eft] = "Freez Chanse";
 	}
-		if ($WEPI[13] == "ST"){
+		if ($ITM["effect"] == "ST"){
 	$efftype[$eft] = "Stun Chanse";
 	}
-			if ($WEPI[13] == "SH"){
+		if ($ITM["effect"] == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($WEPI[13] == "BK"){
+		if ($ITM["effect"] == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($WEPI[13] == "SM"){
+		if ($ITM["effect"] == "SM"){
 	$efftype = "Summon increase";
 	}
 	
-	$efto[$eft] = "$efftype[$eft] $WEPI[14] %<br>";}
+	$efto[$eft] = "$efftype[$eft] $ITM[efstat] %<br>";}
 
-if ($WEPI[12] <> 0){
+if ($ITM["skill"] <> 0){
 	$sklu[$eft] = "Has Skill!<br>";}
 	
-	if ($WEPI[3] == "ff6633"){
-		$unEf[$eft] = "class='awesome'";}
 		
 		$List1[2] = $List1[2] + ($List1[2] * 2 / 100);
 		
 echo "<td>";	
-echo "<div class='tooltip'><b $unEf[$eft] class='$WEPI[3]'>$WEPI[1] + $WEPI[15]</b><span class='tooltiptext'>Lvl:$WEPI[4] <br>P. dmg:$WEPI[5] ~ $WEPI[6]<br>M. dmg:$WEPI[9] ~ $WEPI[10]<br>Cryt chanse: $WEPI[7]<br>Hit Chanse: $WEPI[11]<br>$efto[$eft] $sklu[$eft]</span></div><br>";
+echo "<div class='tooltip'><img src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b $unEf[$eft] class='$ITM[Rarity]'>$ITM[Name] + $ITM[plus]</b>Lvl:$ITM[ilvl] <br>P. dmg:$ITM[pmin] ~ $ITM[pmax]<br>M. dmg:$ITM[mmin] ~ $ITM[mmax]<br>Cryt chanse: $ITM[cryt]<br>Hit Chanse: $ITM[HitChanse]<br>$efto[$eft] $sklu[$eft]</span></div><br>";
  
 echo "<div class='submit'><td     display: inline-flex;>
 Price: $List1[2]g.
 	      <form method='post' class='inventor' action='buy.php'>
-          <input style='display:none' type='submit' name='Buy' value='$WEPI[0]' placeholder='lvl'>
-        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$WEPI[0]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
+          <input style='display:none' type='submit' name='Buy' value='$ITM[HASH]' placeholder='lvl'>
+        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$ITM[HASH]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
         </a>
       </form>";
 	  if ($User == $List1[1]){
 		    echo " <form method='post' class='inventor' action='buy.php'>
-        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$WEPI[0]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
+        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$ITM[HASH]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
         </a>
       </form>";}
 
-echo "</div></td></td></tr>";}
+echo "</div></td></td></tr>";
+}
+if ($List1[5] == "ARM"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$List1[0]' ");
+$ITM = mysqli_fetch_assoc($WEP);
+
+$List1[2] = $List1[2] + ($List1[2] * 2 / 100);
+
+if ($ITM["Part"] == "BODY"){
+$icon = "IMG/pack/Icon.5_67.png";
+}
+if ($ITM["Part"] == "GLOVES"){
+$icon = "IMG/pack/Icon.2_24.png";
+}
+if ($ITM["Part"] == "LEGS"){
+$icon = "IMG/pack/Icon.3_84.png";
+}
+		
+echo "<td>";	
+echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>P.def - $ITM[pDEF]<br>M.def - $ITM[mDEF]<br>Apsorb: $ITM[Apsorb]%<br>Enchant +$ITM[plus]<br></span></div><br>";
+ 
+echo "<div class='submit'><td     display: inline-flex;>
+Price: $List1[2]g.
+	      <form method='post' class='inventor' action='buy.php'>
+          <input style='display:none' type='submit' name='Buy' value='$ITM[HASH]' placeholder='lvl'>
+        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$ITM[HASH]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
+        </a>
+      </form>";
+	  if ($User == $List1[1]){
+		    echo " <form method='post' class='inventor' action='buy.php'>
+        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$ITM[HASH]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
+        </a>
+      </form>";}
+
+echo "</div></td></td></tr>";
+
+}
+if ($List1[5] == "ACS"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$List1[0]' ");
+$ITM = mysqli_fetch_assoc($WEP);
+$List1[2] = $List1[2] + ($List1[2] * 2 / 100);
+
+if ($ITM["Part"] == "RING"){
+$icon = "IMG/pack/Icon.6_75.png";
+}
+if ($ITM["Part"] == "AMUL"){
+$icon = "IMG/pack/Icon.6_53.png";
+}
+		
+echo "<td>";	
+echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>Apsorb: $ITM[Apsorb]%<br>HP Bonus:  $ITM[hpBonus]%<br>XP Bonus: $ITM[xpBonus]%<br>Dmg. Bonus: $ITM[dmgBonus]%<br>Enchant +$ITM[plus]<br></span></div><br>";
+ 
+echo "<div class='submit'><td     display: inline-flex;>
+Price: $List1[2]g.
+	      <form method='post' class='inventor' action='buy.php'>
+          <input style='display:none' type='submit' name='Buy' value='$ITM[HASH]' placeholder='lvl'>
+        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$ITM[HASH]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
+        </a>
+      </form>";
+	  if ($User == $List1[1]){
+		    echo " <form method='post' class='inventor' action='buy.php'>
+        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$ITM[HASH]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
+        </a>
+      </form>";}
+
+echo "</div></td></td></tr>";
+}
+} //while end
 
 ?>
 </table>

@@ -87,6 +87,7 @@ if ( $PlayerNR == 4){
 
 //give reward to players
 $i = 0;
+$UserWin = "";
 
 while ($i < $PlayerNR and $i <> 100){
 	
@@ -107,7 +108,7 @@ while ($i < $PlayerNR and $i <> 100){
 	$UserC = mysqli_fetch_row($UserC);
 	
 	//chanse for reward
-	if(rand(1,1000) > 850){
+	if(rand(1,1000) > 850 and $UserWin == ""){
 		$UserWin = $UserC[0];
 	}
 	

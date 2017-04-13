@@ -18,10 +18,10 @@ if (isset($_POST['Buy'])) {
 	if ($ITEM[2] <= $ACC[4]){
 		
 		//give to new player
-		$order = "INSERT INTO inventor 
-		(User, Hash)
+		$order = "INSERT INTO Equiped 
+		(User, Hash, Part, Equiped)
 		VALUES
-		('$User','$hash')";	 
+		('$User','$hash' ,'$ITEM[5]' ,'0')";	 
 		$result = mysqli_query($db, $order);
 		
 		$sell = $ACC[4] - $ITEM[2];
@@ -56,10 +56,14 @@ if (isset($_POST['Buy'])) {
 //remove listening
 if (isset($_POST['Remove'])) {
 		$hash = $_POST["Remove"];
-	$order = "INSERT INTO inventor 
-		(User, Hash)
+
+	$ITEM = mysqli_query($db,"SELECT * FROM Trade where Hash = '$hash' ");
+	$ITEM = mysqli_fetch_row($ITEM);
+		
+	$order = "INSERT INTO Equiped
+		(User, Hash, Part, Equiped)
 		VALUES
-		('$User','$hash')";	 
+		('$User','$hash', '$ITEM[5]' , '0' )";	 
 		$result = mysqli_query($db, $order);
 		
 		$sql="DELETE FROM Trade WHERE Hash='$hash'";

@@ -40,6 +40,11 @@ $iLVL = $_SESSION["ILVL"];
 $checkForParty = $_SESSION["PartCreatMOB"];
 
 $bs = $_SESSION["BOSS"];
+$shitwep = $_SESSION["CURRENTWHASH"];
+
+//if basic wep
+if ($shitwep == 0001){
+	$iLVL = 1;}
 
 list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG/*, $testMessage*/)=createMonster($db,$iLVL);
 

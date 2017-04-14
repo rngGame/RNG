@@ -403,7 +403,7 @@ input[type="text"]{
     color:#00bfff;
 }
 .perlacent{
-    color:#888800;
+    color:#008888;
 }
 .bright{
     color:#cccc00;
@@ -495,14 +495,14 @@ progress::-webkit-progress-value {
 #left{
     float:left;
     position:relative;
-    height: 642px;
+    height: 572px;
     background-color: #26292c;
     width: 654px;
 }
 #right{
     float:right;
     position:relative;
-    height: 642px;
+    height: 572px;
     background-color: #26292c;
     width: 502px;
 }
@@ -510,7 +510,7 @@ progress::-webkit-progress-value {
     display: block;
     overflow: hidden;
     position: relative;
-    height: 642px;
+    height: 572px;
     background-color: #26292c;
     border:1px solid black;
 }
@@ -538,7 +538,7 @@ progress::-webkit-progress-value {
     display: inline-block;
     position: relative;
     width: 500px;
-    height: 642px;
+    height: 572px;
     background-color: #26292c;
     border:1px solid black;
 }
@@ -555,7 +555,7 @@ progress::-webkit-progress-value {
     float:left;
     position: relative;
     width: 652px;
-    height: 320px;
+    height: 250px;
     background-color: #26292c;
     border:1px solid black;
 }
@@ -597,7 +597,9 @@ progress::-webkit-progress-value {
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 125px;
+    width: 123px;
+    top: 107px;
+    left: 15px;
 }
 
 #veilvl2 {
@@ -605,7 +607,9 @@ progress::-webkit-progress-value {
     position: absolute;
     color: #E4E4E4;
     font-size: small;
-    width: 122px;
+    width: 145px;
+    top: 186px;
+    text-align: center;
 }
 
 #equipShadow{
@@ -656,6 +660,8 @@ progress::-webkit-progress-value {
     left: 0px;
     height:200px;
     width: 250px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 #leaderboard{
     position: absolute;
@@ -671,7 +677,8 @@ progress::-webkit-progress-value {
     left: 201px;
     height:30px;
     width: 20px;
-    border-top:1px solid black;
+    border:1px solid black;
+
 }
 #inventoryHead{
     position: absolute;
@@ -732,7 +739,51 @@ progress::-webkit-progress-value {
 .actionButtons{
     float: left;
 }
-.itemEpic{
-    filter: sepia(100%);
-    -webkit-filter: sepia(100%); 
-}
+/*
+http://stackoverflow.com/questions/29037023/how-to-calculate-required-hue-rotate-to-generate-specific-colour
+how to define color
+brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
+*/
+.itemNormal{
+    filter: brightness(50%) sepia(1) hue-rotate(22deg) saturate(176%) brightness(70%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(22deg) saturate(176%) brightness(70%); 
+}.itemUncomon{
+    filter: brightness(50%) sepia(1) hue-rotate(77deg) saturate(130%) brightness(90%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(77deg) saturate(130%) brightness(90%); 
+}.itemRare{
+    filter: brightness(50%) sepia(1) hue-rotate(183deg) saturate(130%) brightness(90%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(183deg) saturate(130%) brightness(90%); 
+}.itemEpic{
+    filter: brightness(50%) sepia(1) hue-rotate(202deg) saturate(96%) brightness(93%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(202deg) saturate(96%) brightness(93%); 
+}.itemLegendary{
+    filter: brightness(50%) sepia(1) hue-rotate(242deg) saturate(176%) brightness(68%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(132deg) saturate(103.2%) brightness(91.2%); 
+}.itemDemonic{
+    filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(163%) brightness(85%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(163%) brightness(85%); 
+}.itemAngelic{
+    filter: brightness(50%) sepia(1) hue-rotate(142deg) saturate(176%) brightness(88%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(142deg) saturate(176%) brightness(88%); 
+}.itemFake{
+    filter: brightness(50%) sepia(1) hue-rotate(112deg) saturate(77%) brightness(114%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(112deg) saturate(77%) brightness(114%); 
+}.itemPrimed{
+    filter: brightness(50%) sepia(1) hue-rotate(157deg) saturate(176%) brightness(93%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(157deg) saturate(176%) brightness(93%); 
+}.itemPerlacent{
+    filter: brightness(50%) sepia(1) hue-rotate(142deg) saturate(176%) brightness(70%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(142deg) saturate(176%) brightness(70%); 
+}.itemBright{
+    filter: brightness(50%) sepia(1) hue-rotate(22deg) saturate(176%) brightness(83%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(22deg) saturate(176%) brightness(83%); 
+}.itemInfested{
+    filter: brightness(50%) sepia(1) hue-rotate(82deg) saturate(156%) brightness(105%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(82deg) saturate(156%) brightness(105%); 
+}.itemWorld{
+    filter: brightness(50%) sepia(1) hue-rotate(-8deg) saturate(176%) brightness(88%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(-8deg) saturate(176%) brightness(88%); 
+}.itemBurning{
+    filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(176%) brightness(83%);
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(176%) brightness(83%); 
+

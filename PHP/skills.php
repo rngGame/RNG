@@ -182,10 +182,14 @@ if ($SKL ==31){
 //skill 32
 if ($SKL ==32){
 
-	$comb = round($magDMG + $physDMG);
+	$comb = round(($magDMG*1.8) + ($physDMG*0.2));
 		if ($SUB[5] = "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
 			$comb=$comb + ($comb*$CRYTD/100);
 			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
+		}
+		if ($comb > 30000){
+			$comb = $comb * rand(1,10) /100;
+			$combtex="<b>POWER WAS SO GREAT TO HANDLE !</font></b><br>";
 		}
 		$ene = $ene - 50;
 	$_SESSION["ENERGY"] = $ene;
@@ -201,7 +205,7 @@ if ($SKL ==33){
 	}
 	while ($IC <> 100){
 		if (rand(0,$stic)> 50){
-			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.15) + $fmagDMG;
+			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.10) + $fmagDMG;
 			$xtim = $xtim + 1;
 		}
 		$IC = $IC + 1;
@@ -354,6 +358,6 @@ if ($SKL == 36){
 }
 
 
-$magick = $fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra;
+$magick = round($fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra);
 $magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext $petSkillText"  ;
 ?>

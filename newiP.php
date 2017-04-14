@@ -93,12 +93,8 @@ while ($i < $PlayerNR and $i <> 100){
 	
 	$i = $i + 1;	
 	
-	//echo "$PL[2]<br>";
-	
 	 $PLS = "PL$i";
 	 
-
-	
 	 
 	$chk1 = mysqli_query($db,"SELECT * FROM Party where ID = '$PartID' ");
 	$chk = mysqli_fetch_assoc($chk1); //Party
@@ -108,7 +104,7 @@ while ($i < $PlayerNR and $i <> 100){
 	$UserC = mysqli_fetch_row($UserC);
 	
 	//chanse for reward
-	if(rand(1,1000) > 850 and $UserWin == ""){
+	if(rand(1,1000) > 800 and $UserWin == ""){
 		$UserWin = $UserC[0];
 	}
 	
@@ -170,7 +166,7 @@ $Killsu = $FreeParty[5] +1;
 
 
 
-
+if ($UserWin <> ""){
 $selectpart = rand(1,3);
 
 if ($selectpart == 1){
@@ -312,7 +308,7 @@ VALUES
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);
 } //Acsesory
-
+}
 
 $_SESSION["NewMob"] = 1;
 $_SESSION["TEST"] = 1;

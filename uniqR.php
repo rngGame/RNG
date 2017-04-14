@@ -45,10 +45,10 @@ include 'PHP/uniq.php';
 
 $result = mysqli_query($db, $order2);
 
-$order3 = "INSERT INTO inventor
-(User, Hash)
+$order3 = "INSERT INTO Equiped
+(User, Hash, Part, Equiped)
 VALUES
-('$User','$HASH')";	   
+('$User','$HASH', 'WEP', '0')";	   
 
 $result = mysqli_query($db, $order3);
 $_SESSION["UNQ"] = 1515615565465;

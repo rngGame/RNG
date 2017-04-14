@@ -14,7 +14,7 @@ if ($uniqRO == 1){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', '300', '200', '300', '1', '200', '300', '95', '', 'LL', '30', '0', '200')";
+	   ('$HASH', 'The legendary destruction Scythe of the Deathgod Kiro', 'Unique', '150', '200', '300', '1', '200', '300', '95', '', 'LL', '30', '0', '200')";
 }
 
 if ($uniqRO == 2){
@@ -28,7 +28,7 @@ if ($uniqRO == 3){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt,mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Gamblers draw', 'Unique','300', '1', '1300', '1','1', '1300', '50', '', '', '', '0', '200')";
+	   ('$HASH', 'Gamblers draw', 'Unique','150', '1', '1300', '1','1', '1300', '50', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 4){
@@ -50,14 +50,14 @@ if ($uniqRO == 6){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Freezing touch of Kompas', 'Unique', '200', '1', '1','1', '1', '1', '100', '', 'FR', '50', '0', '200')";
+	   ('$HASH', 'Freezing touch of Kompas', 'Unique', '150', '1', '1','1', '1', '1', '100', '', 'FR', '50', '0', '200')";
 }
 
 if ($uniqRO == 7){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'One with Everyone', 'Unique', '1', '99999', '99999', '100', '1', '1', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'One with Everyone', 'Unique', '1', '99999', '99999', '150', '1', '1', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 8){

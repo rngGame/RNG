@@ -46,7 +46,7 @@ include 'PHP/uniq.php';
 $result = mysqli_query($db, $order2);
 
 $order3 = "INSERT INTO Equiped
-(User, Hash, Part, Equiped)
+(User, HASH, Part, Equiped)
 VALUES
 ('$User','$HASH', 'WEP', '0')";	   
 

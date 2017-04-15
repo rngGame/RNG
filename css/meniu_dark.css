@@ -792,8 +792,8 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	 -webkit-animation-duration: 10s;
 	}
 @-webkit-keyframes example {
-    from {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(-360deg) saturate(176%) brightness(83%);	}
-    to {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(360deg) saturate(176%) brightness(83%);	}
+    from {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(-360deg) saturate(176%) brightness(100%);	}
+    to {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(360deg) saturate(176%) brightness(100%);	}
 }
 
 

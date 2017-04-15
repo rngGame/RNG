@@ -125,6 +125,8 @@ while ($i < $PlayerNR and $i <> 100){
 	$Drop = $Party["MonsterRew"] * $PL[$i];
 	
 	$Bonussrew = $PL[$i] * 10;
+	if ($Bonussrew >= 10){
+		$Bonussrew = 9;}
 	
 	$xpTalismanMulti = $_SESSION["XPT"];
 	$xpNew  = $Drop * $xpTalismanMulti;

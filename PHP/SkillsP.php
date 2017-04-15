@@ -95,7 +95,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
     </div>&nbsp;&nbsp;
   ";}
   
-   if ($ACC[3] >= 35 and $SKL > 60){
+   if ($ACC[3] >= 32 and $SKL > 60){
  echo
   "
     <div class='tooltip'>
@@ -119,7 +119,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
     </div>&nbsp;&nbsp;
   ";}
   
-    if ($ACC[3] >= 40 and $SKL > 70){
+    if ($ACC[3] >= 36 and $SKL > 70){
  echo
   "
     <div class='tooltip'>

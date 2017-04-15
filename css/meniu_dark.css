@@ -785,5 +785,15 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     -webkit-filter: brightness(50%) sepia(1) hue-rotate(-8deg) saturate(176%) brightness(88%); 
 }.itemBurning{
     filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(176%) brightness(83%);
-    -webkit-filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(176%) brightness(83%); 
+    -webkit-filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(176%) brightness(83%); }
+.itemUnique{
+	 -webkit-animation-name: example;
+	-webkit-animation-iteration-count: infinite;
+	 -webkit-animation-duration: 10s;
+	}
+@-webkit-keyframes example {
+    from {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(-360deg) saturate(176%) brightness(83%);	}
+    to {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(360deg) saturate(176%) brightness(83%);	}
+}
+
 

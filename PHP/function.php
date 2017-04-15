@@ -330,7 +330,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             $HASH = rand(-90000000,900000000);
             $HASH = $HASH * $iLVL;
             $HASH = $HASH + rand(-1000,1000);
-            $result = mysqli_query($db,"SELECT * FROM weapondrops WHERE HASH = '$HASH'");
+            $result = mysqli_query($db,"SELECT * FROM Equiped WHERE HASH = '$HASH'");
             $count = mysqli_num_rows($result);
             if($count==1){ //if hash claimed, we will redo this
                 $hashClaimed = 1;

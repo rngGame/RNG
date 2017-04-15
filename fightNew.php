@@ -82,12 +82,15 @@ if ($checkForParty == 1){
 	if ($plCount == 4){
 	$MobHP= $HP + ($HP * (300) / 100);}
 	
-	$MobDrop= $Drop + ($Drop * ($plCount * 30) / 100);
+	$MobDrop = round($Drop + ($Drop * ($plCount * 50) / 100));
+	$MobDMGP = round($PDMG + ($PDMG * ($plCount * 10) / 100));
+	$MobDMGM = round($MDMG + ($MDMG * ($plCount * 10) / 100));
+	$DEF = round($DEF + ($DEF * ($plCount * 30) / 100));
 	
 	$order = "INSERT INTO PartyMonsters
 	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew, StartingHP)
 	VALUES
-	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '$DEF', '$MobDrop', '$MobHP')";	   
+	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '', '$MobDrop', '$MobHP')";	   
 
 
 

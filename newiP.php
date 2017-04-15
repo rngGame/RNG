@@ -39,8 +39,11 @@ if ($Party["ID"] == 0){
 	die();
 }
 
+$UserWin = "";
+
 $FreeParty = mysqli_query($db,"SELECT * FROM Party where ID =  '$PartID'  ");
 $FreeParty = mysqli_fetch_row($FreeParty);
+
 
 	
 		$PlayerNR = 0;
@@ -62,7 +65,7 @@ if ( $PlayerNR == 2){
 	$PL2 = $Party["PL2"] / $Party["StartingHP"];
 	$PL[1] = round($PL1,2);
 	$PL[2] = round($PL2,2);
-	$RewardPL = rand(1,3);
+	$RewardPL = rand(1,2);
 	if ($RewardPL <= 2){
 		$UserWin = $FreeParty[$RewardPL];
 	}
@@ -74,7 +77,7 @@ if ( $PlayerNR == 3){
 	$PL[1] = round($PL1,2);
 	$PL[2] = round($PL2,2);
 	$PL[3] = round($PL3,2);
-	$RewardPL = rand(1,4);
+	$RewardPL = rand(1,3);
 	if ($RewardPL <= 3){
 		$UserWin = $FreeParty[$RewardPL];
 	}
@@ -88,7 +91,7 @@ if ( $PlayerNR == 4){
 	$PL[2] = round($PL2,2);
 	$PL[3] = round($PL3,2);
 	$PL[4] = round($PL4,2);
-	$RewardPL = rand(1,5);
+	$RewardPL = rand(1,4);
 	if ($RewardPL <= 4){
 		$UserWin = $FreeParty[$RewardPL];
 	}
@@ -99,7 +102,7 @@ if ( $PlayerNR == 4){
 
 //give reward to players
 $i = 0;
-$UserWin = "";
+
 
 while ($i < $PlayerNR and $i <> 100){
 	
@@ -121,7 +124,7 @@ while ($i < $PlayerNR and $i <> 100){
 	
 	$Drop = $Party["MonsterRew"] * $PL[$i];
 	
-	
+	$Bonussrew = $PL[$i] * 10;
 	
 	$xpTalismanMulti = $_SESSION["XPT"];
 	$xpNew  = $Drop * $xpTalismanMulti;
@@ -130,14 +133,14 @@ while ($i < $PlayerNR and $i <> 100){
 	//update user stats
 	$xpTotal = $UserC[5] + $xpNew;
 	$kills = $UserC[6] +1;
-	$cash = round($UserC[4]  + (($MLVL * $UserC[3])/10));
+	$cash = round($UserC[4]  + (($MLVL * $UserC[3])/(10-$Bonussrew)));
 	
 	$Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$UserC[0]' ");
 	$Passive = mysqli_fetch_row($Passive);
 
 	$passiveXP = round(($MLVL * $xpTalismanMulti)/10);
 	$_SESSION["XPPA"] = $passiveXP;
-	echo $passiveXPTotal=round($passiveXP + $Passive[10]);
+	$passiveXPTotal=round($passiveXP + $Passive[10]);
 	
 	$orderPassive = "UPDATE passive
 	SET xp4= '$passiveXPTotal'
@@ -147,12 +150,11 @@ while ($i < $PlayerNR and $i <> 100){
 	
 	
 	$rngShardsChance = rand(1,100);
-	$Shards = $ACC[15];
+	$Shards = $UserC[15];
 
 	if ($rngShardsChance <  10){
 	  $rngShardsAmmount = rand(1,15);
 	  $Shards += $rngShardsAmmount;
-	  $_SESSION["SHD"] = $rngShardsAmmount;
 	}
 	$orderChar = "UPDATE characters
 	SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
@@ -173,11 +175,12 @@ $Killsu = $FreeParty[5] +1;
 
 
 
+
 if ($UserWin <> ""){
 $selectpart = rand(1,3);
 
 if ($selectpart == 1){
-list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $User, "weapon", $MLVL);
+list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $UserWin, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 
@@ -276,7 +279,7 @@ if($magAVG1<=$magAVG2){
 }
 } //Weapon
 if ($selectpart == 2){
-list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
+list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$UserWin,"armor",$MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db
@@ -294,7 +297,7 @@ VALUES
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);} //Armor 
 if ($selectpart == 3){
-	list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$User,"talisman",$MLVL);
+	list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$UserWin,"talisman",$MLVL);
 $cash = $iLVL*$sell;
 
 $_SESSION["REWARDTYPE"] = "TAL";

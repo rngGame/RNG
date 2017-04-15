@@ -3,7 +3,7 @@
 
 
 //test functions
-function testItemDrop(){
+function testItemDrop($db){
 	for($mlvl=1;$mlvl <=5000;$mlvl++){
 		list($HASH, $weaponName, $weaponType, $weaponLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance) = itemDrop($db,,"weapon",$MLVL, "LVL DESC", "Bonus DESC" );
 		list($HASH, $armorLVL, $armorName, $armorType, $valueArmorP, $valueArmorM, $armorPart, $armorAbsorb) = itemDrop($db,,"armor",$MLVL, "LVL DESC", "Bonus DESC" );

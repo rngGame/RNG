@@ -62,6 +62,10 @@ if ( $PlayerNR == 2){
 	$PL2 = $Party["PL2"] / $Party["StartingHP"];
 	$PL[1] = round($PL1,2);
 	$PL[2] = round($PL2,2);
+	$RewardPL = rand(1,3);
+	if ($RewardPL <= 2){
+		$UserWin = $FreeParty[$RewardPL];
+	}
 }
 if ( $PlayerNR == 3){
 	$PL1 = $Party["PL1"] / $Party["StartingHP"];
@@ -70,6 +74,10 @@ if ( $PlayerNR == 3){
 	$PL[1] = round($PL1,2);
 	$PL[2] = round($PL2,2);
 	$PL[3] = round($PL3,2);
+	$RewardPL = rand(1,4);
+	if ($RewardPL <= 3){
+		$UserWin = $FreeParty[$RewardPL];
+	}
 }
 if ( $PlayerNR == 4){
 	$PL1 = $Party["PL1"] / $Party["StartingHP"];
@@ -80,6 +88,10 @@ if ( $PlayerNR == 4){
 	$PL[2] = round($PL2,2);
 	$PL[3] = round($PL3,2);
 	$PL[4] = round($PL4,2);
+	$RewardPL = rand(1,5);
+	if ($RewardPL <= 4){
+		$UserWin = $FreeParty[$RewardPL];
+	}
 }
 
 
@@ -102,11 +114,6 @@ while ($i < $PlayerNR and $i <> 100){
 	
 	$UserC = mysqli_query($db,"SELECT * FROM characters where User = '$chk[$PLS]' ");
 	$UserC = mysqli_fetch_row($UserC);
-	
-	//chanse for reward
-	if(rand(1,1000) > 800 and $UserWin == ""){
-		$UserWin = $UserC[0];
-	}
 	
 	
 	 $PL[$i];

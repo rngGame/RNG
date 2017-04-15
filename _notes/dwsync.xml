@@ -16,7 +16,7 @@
 <file name="drops.php" server="ftp.miniforums.org" local="131349460344343703" remote="131236829400000000" Dst="1" />
 <file name="Enchant.php" server="ftp.miniforums.org" local="131365478360291578" remote="131365153800000000" Dst="2" />
 <file name="Enchant2.php" server="ftp.miniforums.org" local="131365480310204464" remote="131365156200000000" Dst="2" />
-<file name="Equip.php" server="ftp.miniforums.org" local="131365086211450357" remote="131364762000000000" Dst="2" />
+<file name="Equip.php" server="ftp.miniforums.org" local="131367363289166234" remote="131367039000000000" Dst="2" />
 <file name="fcalc.php" server="ftp.miniforums.org" local="131349460358227902" remote="131337142200000000" Dst="1" />
 <file name="fcalcB.php" server="ftp.miniforums.org" local="131349460365025478" remote="131308354200000000" Dst="1" />
 <file name="fcalcp.php" server="ftp.miniforums.org" local="131349460368223201" remote="131308354200000000" Dst="1" />
@@ -86,9 +86,9 @@
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131365554025897464" remote="131365229400000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131365555071502557" remote="131365230600000000" Dst="2" />
 <file name="game.php" server="ftp.miniforums.org" local="131365594222280659" remote="131365269600000000" Dst="2" />
-<file name="fightNew.php" server="ftp.miniforums.org" local="131365606501949158" remote="131365282200000000" Dst="2" />
+<file name="fightNew.php" server="ftp.miniforums.org" local="131367354628128651" remote="131367030600000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131363866363841633" remote="131363542200000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131367335171644392" remote="131367010800000000" Dst="2" />
 <file name="party.php" server="ftp.miniforums.org" local="131364778187716270" remote="131364453600000000" Dst="2" />
-<file name="newiP.php" server="ftp.miniforums.org" local="131365570058693183" remote="131365245600000000" Dst="2" />
+<file name="newiP.php" server="ftp.miniforums.org" local="131367357986048504" remote="131367033600000000" Dst="2" />
 </dwsync>

@@ -68,10 +68,10 @@ if ($Type == "ACS"){
 	$new = $_POST['Sell'];
 	$Type = $_POST['TYPE'];
 	
-	$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$new' ");
+	$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$new' ");
 	$WEP = mysqli_fetch_row($WEP);
 	
-	if ($WEP[3] == "ff6633"){
+	if ($WEP[2] == "Rarity"){
 		$shards = 30;
 		$shards = $ACC[15] + $shards;
 	$order0 = "UPDATE characters

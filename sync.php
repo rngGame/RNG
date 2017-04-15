@@ -39,6 +39,13 @@ if ($insert[0] ==0){
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
+//of shards 0
+if ($ACC[15] < 0 ) {
+	$shard = 0;	   
+$checkmonSH = "UPDATE characters SET Shards = '$shard' WHERE `User` = '$User'";
+$checkmonSH = mysqli_query($db, $checkmonSH);	
+};
+
 
 
 if ($ACC[4] < 10) {

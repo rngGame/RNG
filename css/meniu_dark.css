@@ -733,7 +733,7 @@ progress::-webkit-progress-value {
 }
 
 .linksB {
-	position: absolute;
+	position: relative;
     bottom: 0%;
 }
 .actionButtons{

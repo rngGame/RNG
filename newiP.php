@@ -135,7 +135,7 @@ while ($i < $PlayerNR and $i <> 100){
 	//update user stats
 	$xpTotal = $UserC[5] + $xpNew;
 	$kills = $UserC[6] +1;
-	$cash = round($UserC[4]  + (($MLVL * $UserC[3])/(10-$Bonussrew)));
+	$cash = round($UserC[4]  + ((($MLVL * $UserC[3])/(10-$Bonussrew)) * 1.8));
 	
 	$Passive = mysqli_query($db,"SELECT * FROM passive where USER = '$UserC[0]' ");
 	$Passive = mysqli_fetch_row($Passive);

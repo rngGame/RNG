@@ -47,7 +47,7 @@ echo "<br>Most damage delt by - $top[0]<br>";
 else {
 	echo "No Info";}
 
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$BOS2[5]' ");
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$BOS2[5]' ");
 $WEP = mysqli_fetch_row($WEP);
 
 

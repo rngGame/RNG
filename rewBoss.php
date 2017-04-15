@@ -127,7 +127,7 @@ $Base = mysqli_fetch_row($Base);
 $HASH = rand(-90000000,900000000);
 $HASH = $HASH * $LVL;
 $HASH = $HASH + rand(-1000,1000);
-$result = mysqli_query($db,"SELECT * FROM weapondrops WHERE HASH = '$HASH'");
+$result = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '$HASH'");
 $count = mysqli_num_rows($result);
 if($count==1){
 	$HC = 1;
@@ -194,10 +194,10 @@ $wor = $LVL + $dMAX + $maMAX + $HIT;
 
 //insert into db
 
-$order = "INSERT INTO weapondrops
-	   (HASH, Name, Type, Color, ilvl, pmin, pmax, cryt, ats, mmin, mmax, hc, skill, effect, efstat, plus, Worth)
+$order = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$Name', '$TYPE', 'World', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$AS', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
+	   ('$HASH', '$Name', 'World', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
 	   
 
 

@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,12);
+$uniqRO = rand(1,13);
 
 //hash
 $HitChanse = 0;
@@ -95,6 +95,13 @@ if ($uniqRO == 12){
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'Summoners urgant wish stick', 'Unique','150', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
+}
+
+if ($uniqRO == 13){
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Whip of the sick burn', 'Unique','150', '300', '500', '25', '150', '300', '95', '1', 'BR', '90', '5', '550')";
 }
 
 

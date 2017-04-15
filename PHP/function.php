@@ -82,8 +82,14 @@ function login($vardas, $password, $db) {
         }
     }
 }
-function itemDrop($db,$user,$drop,$MLVL){
+function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
     $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
+    if(!$orderBy){
+        $orderBy="RAND()";
+    }
+    if(!$orderByType){
+        $orderByType="RAND()";
+    }
     if($drop=="all"){
         $textMessage.="Drop not decided Choosing one at random \r\n";
         $check=rand(1,3);
@@ -125,19 +131,19 @@ function itemDrop($db,$user,$drop,$MLVL){
         while ($rel == 0){
             $textMessage.="Starting While for Creation |<>|";
             //get info from db general
-            $Base = mysqli_query($db,"SELECT * FROM $baseTable Order by RAND() Limit     1");
+            $Base = mysqli_query($db,"SELECT * FROM $baseTable Order by $orderBy Limit     1");
             $Base = mysqli_fetch_row($Base);
-            $Pre = mysqli_query($db,"SELECT * FROM $preTable Order by RAND() Limit   1");
+            $Pre = mysqli_query($db,"SELECT * FROM $preTable Order by $orderBy Limit   1");
             $Pre = mysqli_fetch_row($Pre);
-            $Sub = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit  1");
+            $Sub = mysqli_query($db,"SELECT * FROM subfixwep Order by $orderBy Limit  1");
             $Sub = mysqli_fetch_row($Sub);
-            $Type = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit     1");
+            $Type = mysqli_query($db,"SELECT * FROM types Order by $orderByType Limit     1");
             $Type = mysqli_fetch_row($Type);
-            $Type2 = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit    1");
+            $Type2 = mysqli_query($db,"SELECT * FROM types Order by $orderByType Limit    1");
             $Type2 = mysqli_fetch_row($Type2);
-            $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit     1");
+            $Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by $orderBy Limit     1");
             $Sub2 = mysqli_fetch_row($Sub2);
-            $Skill = mysqli_query($db,"SELECT * FROM iskills Order by RAND() Limit  1");
+            $Skill = mysqli_query($db,"SELECT * FROM iskills Order by $orderBy Limit  1");
             $Skill = mysqli_fetch_row($Skill);
             $Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
 

@@ -130,6 +130,7 @@ $Shard = $ACC[15] - 100;
 
 
 header("location:RewardG.php");
+die();
 
 }
 }

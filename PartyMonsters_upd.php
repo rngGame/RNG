@@ -62,6 +62,6 @@ $Chat = "<img src='IMG/Mon/2.jpg' width='60' height='60'><br>Monster Name: <b>$M
 
 
 echo "data: $Chat\n\n";
-echo "retry: 1000\n\n";
+echo "retry: 100\n\n";
 flush();
 ?>

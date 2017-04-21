@@ -136,50 +136,64 @@ if($count==1){
 
 //Bonus stat
 
-if (rand(0,100) < 3){
-	$efn = rand(1,5);
-	if ($efn == 1){
-		$EFNAME = "Life Leach";
-		$EFT = "LL";
-		$EFC = rand(1,7);
-	}
-	if ($efn == 2){
-		$EFNAME = "Bleed";
-		$EFT = "BL";
-		$EFC = rand(10,30);
-	}
-	if ($efn == 3){
-		$EFNAME = "Burn";
-		$EFT = "BR";
-		$EFC = rand(1,20);
-	}
-	if ($efn == 4){
-		$EFNAME = "Freez";
-		$EFT = "FR";
-		$EFC = rand(10,20);
-		
-	}
-	if ($efn == 5){
-		$EFNAME = "Stun";
-		$EFT = "ST";
-		$EFC = rand(5,30);
-	}
-	if ($efn == 6){
-		
-	}
-	if ($efn == 7){
-		
-	}
-	if ($efn == 8){
-		
-	}
-	if ($efn == 9){
-		
-	}
-	
-	if ($efn == 10){
-		
-	}
+if (rand(0,100) < 55){
+                $rngEffect = rand(1,10);
+                if ($rngEffect == 1){
+                    $effectName = "Life Leach";
+                    $weaponEffect = "LL";
+                    $weaponEffectChance = rand(1,7);
+                }
+                if ($rngEffect == 2){
+                    $weaponEffect = "Bleed";
+                    $effectShort = "BL";
+                    $weaponEffectChance = rand(10,30);
+                }
+                if ($rngEffect == 3){
+                    $effectName = "Burn";
+                    $weaponEffect = "BR";
+                    $weaponEffectChance = rand(1,20);
+                }
+                if ($rngEffect == 4){
+                    $effectName = "Freez";
+                    $weaponEffect = "FR";
+                    $weaponEffectChance = rand(10,20);
+                    
+                }
+                if ($rngEffect == 5){
+                    $effectName = "Stun";
+                    $weaponEffect = "ST";
+                    $weaponEffectChance = rand(5,30);
+                }
+                if ($rngEffect == 6){
+                    $effectName = "Shock";
+                    $weaponEffect = "SH";
+                    $weaponEffectChance = rand(20,50);
+                    
+                }
+                if ($rngEffect == 7){
+                    $effectName = "Block";
+                    $weaponEffect = "BK";
+                    $weaponEffectChance = rand(5,20);
+                    
+                }
+                 if ($rngEffect == 8){
+                    $effectName = "Summon";
+                    $weaponEffect = "SM";
+                    $weaponEffectChance = rand(25,70);
+                    
+                }
+                if ($rngEffect == 9){
+					 $effectName = "Poision buff";
+                    $weaponEffect = "PS";
+                    $weaponEffectChance = rand(5,45);
+                    
+                }
+                
+                if ($rngEffect == 10){
+					$effectName = "Confusion chanse";
+                    $weaponEffect = "CF";
+                    $weaponEffectChance = rand(5,15);                 
+                }
 	$ef = "Effect: $EFNAME $EFC %<br>";
 }
 

@@ -7,15 +7,7 @@ $rel = 0;
 
 while ($rel == 0){
 
-$dbs = rand(0,100);
-if ($dbs < 25){
-	$dbs = "monster10";}
-	else if  ($dbs < 50){
-	$dbs = "monster50";}
-		else if ($dbs < 75){
-		$dbs = "monster10";}
-			else {
-			$dbs = "monster100";}
+$dbs = "monsters";
 	
 $N1 = "";	
 $N2 = "";	

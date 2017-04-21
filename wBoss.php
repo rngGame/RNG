@@ -97,6 +97,7 @@ echo
 }
 	else{
 		header("location:cBoss.php");
+		die();
 	}
  ?>
 

@@ -19,5 +19,5 @@ if (isset($_POST['change'])) {
 	$result = mysqli_query($db, $order);	}
 	
 
-header("location:game.php");
+header("location:sync.php");
 ?>

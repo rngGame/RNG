@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>World of RNG</title>
-<link rel="stylesheet" type="text/css" href="css/meniu.css">
+<link rel="stylesheet" type="text/css" href="css/meniu_dark.css">
 <link rel="icon" href="favicon.png">
 </head>
 <body>

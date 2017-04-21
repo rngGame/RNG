@@ -24,13 +24,6 @@ $LOOT = mysqli_fetch_row($LOOT);
 
 mysqli_close($db);
 header("location:sync.php");
-
-
-
-
-
-
-
-//header("location:keep.php");
+die();
 
 ?>

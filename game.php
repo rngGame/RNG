@@ -230,13 +230,24 @@ $XPL1 = round($XPL1);
 $XPL2 = ($XPL[1] - $ACC[5]);
 $XPL2 = round($XPL2);
 
+//xp rounding
+if ($XPL2 >= 1000){
+$XPL2r = round($XPL2/1000,1);
+$XPL2r .= "k.";}
+if ($XPL2 >= 1000000){
+$XPL2r = round($XPL2/1000000,1);
+$XPL2r .= "kk.";}
+if ($XPL2 >= 1000000000){
+$XPL2r = round($XPL2/1000000000,1);
+$XPL2r .= "kkk.";}
+
 $generatedXP = round(100*(1-(($XPL1-$XPL0)/$XPL1))) ;
 
 
 $XPLc = mysqli_query($db,"SELECT EXISTS(SELECT * FROM levels WHERE LVL = '$lvl2')");
 $XPLc = mysqli_fetch_row($XPLc);
 if ($XPLc[0] ==1){
-	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(XP LVL: $XPL2)</div></font>";
+	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(Till next lvl: $XPL2r)</div></font>";
 }
 else{
 	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)/div></font>";
@@ -783,6 +794,9 @@ while ($List1 = mysqli_fetch_array($List)){
 				if ($WEPIn["effect"] == "SM"){
 			$efftype = "Summon increase";
 			}
+				if ($WEPIn["effect"] == "PS"){
+			$efftype = "Poision increase";
+			}
 			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
 		if ($WEPIn["skill"] <> 0){
@@ -1261,7 +1275,16 @@ $PartyTemplate="
 
 
 
-
+//gold rounding
+if ($ACC[4] >= 1000){
+$gold = round($ACC[4]/1000,1);
+$gold .= "k.";}
+if ($ACC[4] >= 1000000){
+$gold = round($ACC[4]/1000000,1);
+$gold .= "kk.";}
+if ($ACC[4] >= 1000000000){
+$gold = round($ACC[4]/1000000000,1);
+$gold .= "kkk.";}
 
 
 
@@ -1318,7 +1341,7 @@ $leveltext
 <br>
 <font class='stats'>Gold:</font> 
 <b>
-	<font class='gold'>$ACC[4]</font>
+	<font class='gold'>$gold</font>
 </b>
 <br>
 <font class='stats'>Shards:</font>

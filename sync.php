@@ -206,11 +206,12 @@ $result = mysqli_query($db, $order3);
 
 	include 'PHP/ach.php';
 
-
-
+//stuff for ranks
+$achCount = mysqli_query($db,"SELECT count(*) from Achievments WHERE User = '$User' ");
+$achCount = mysqli_fetch_row($achCount);
 $RNK = mysqli_query($db,"SELECT * FROM Ranks order by Nr desc ");
 while ( $RNKs = mysqli_fetch_array($RNK)){
-	if ($RNKs[1] < $ACC[11] and $ACC[11] < $RNKs[2]){
+	if ($RNKs[1] < $achCount[0] and $achCount[0] < $RNKs[2]){
 		$order = "UPDATE characters
 		SET Color = '$RNKs[3]'
 		WHERE `User` = '$User'";

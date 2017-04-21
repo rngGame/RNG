@@ -98,7 +98,7 @@ if ($GEM[1] <> ""){
 
 
 //cryt calc
-if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0){
+if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0 and $SKL < 20 and $SKL <> 2){
 	$citP = 1;
 	$CRYTD = $physDMG*$CRYTD/100;
 	$CRYTD = round($CRYTD);
@@ -231,7 +231,7 @@ if (isset($_SESSION["MonsDEF"])){
 
 
 //calculation dmg to mons
-if ($SKL == 1111 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
+if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
 if (rand(0,100) <= $WEPn["HitChanse"] ){
 $finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
 if ($ddam == 1){
@@ -261,9 +261,16 @@ $finalMonsHP = $monHP - $finalPlayerDMG;
 $finalMonsHP = $finalMonsHP - $poison;
 $finalPlayerDMG = $finalPlayerDMG + $poison;
 
+//Confusion
+if ($Confusion == 1){
+	$finalMonsHP = $finalMonsHP - $CFdmg;
+	$finalPlayerDMG = $finalPlayerDMG + $CFdmg;
+}
+
+
 //dmg to player----------------------------------
 
-if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
+if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
 
 //monster skill
 if (rand(1,100) >= 75){
@@ -284,6 +291,8 @@ $monSkillText="$mobmagskill $BasicAtackByMob" ;
 
 }
 
+
+
 //if monster coulcn't atack
 else{
 	$finalPlayerHP = $HPin ;
@@ -300,7 +309,7 @@ $tP = "tottal of $finalPlayerDMG";
 if (!isset($_SESSION["LOG"])){
 $_SESSION["LOG"] = "";
 }
-	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1){
+	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
 		$mont = "$monSkillText";
 	}
 	else{
@@ -310,6 +319,8 @@ $_SESSION["LOG"] = "";
 		$mont = "Monster got blocked !<br>";}
 		if ($Dodge == 1){
 		$mont = "Dodged Monster !<br>";}
+		if ($Confusion == 1){
+		$mont = "Monster confused and hitted it self for $CFdmg!<br>";}
 	}
 	if ($mis <> 1);{
 		
@@ -346,7 +357,7 @@ $_SESSION["MonsHP"] = $finalMonsHP;
 $_SESSION["HP"] = $finalPlayerHP;
 
 
-//???????????????????????????????
+//party stuff
 if (isset($_SESSION["Party2"])){
 	
 	$PartyNRSK = $_SESSION["PartySK"];
@@ -377,6 +388,16 @@ if (isset($_SESSION["Party2"])){
 	
 $result = mysqli_query($db, $op1);
 $result = mysqli_query($db, $op2);
+}
+
+//for 100k dmg achiev
+if ($finalPlayerDMG >= 100000){
+$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = '100K'");
+$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){
+	$order = "INSERT INTO aStatus (User, Name, Status)
+	VALUES ('$User', '100K', '1')";
+	$result = mysqli_query($db, $order);}
 }
 
 //mons has <0hp

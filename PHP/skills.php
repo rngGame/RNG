@@ -227,8 +227,8 @@ if ($SKL ==33){
 			$petname = mysqli_fetch_row($petname);
 			$_SESSION["PETNAME"] = $petname[0];
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
-			$_SESSION["PETMINDMG"] = round($minMdmg * 15 / 100);
-			$_SESSION["PETMAXDMG"] = round($maxMdmg * 20 / 100);
+			$_SESSION["PETMINDMG"] = round((($minMdmg * 15 / 100)*0.7)+(($minPdmg * 20 / 100)*0.3));
+			$_SESSION["PETMAXDMG"] = round((($maxMdmg * 20 / 100)*0.7)+(($maxPdmg * 25 / 100)*0.3));
 			$ene = $ene - 100;
 			$_SESSION["ENERGY"] = $ene;
 				if ($SUB[5] == "NECR"){ //if necromance

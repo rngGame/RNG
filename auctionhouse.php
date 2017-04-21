@@ -120,6 +120,12 @@ if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "SM"){
 	$efftype = "Summon increase";
 	}
+		if ($ITM["effect"] == "PS"){
+	$efftype = "Poision increase";
+	}
+		if ($ITM["effect"] == "CF"){
+	$efftype = "Confusion chanse";
+	}
 	
 	$efto[$eft] = "$efftype[$eft] $ITM[efstat] %<br>";}
 

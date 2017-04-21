@@ -57,6 +57,7 @@ $_SESSION["GoldRew"] = $moneyRew;
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
+//for new weapon
 if ($weaponEffectChance <> 0){
 		if ($weaponEffect == "LL"){
 	$efftype = "Life Leach";
@@ -82,7 +83,53 @@ if ($weaponEffectChance <> 0){
 		if ($weaponEffect == "SM"){
 	$efftype = "Summon increase";
 	}
-	$eft = "$efftype $weaponEffectChance %<br>";}
+		if ($weaponEffect == "PS"){
+	$efftype = "Poision increase";
+	}
+		if ($weaponEffect == "CF"){
+	$efftype = "Confusion chanse";
+	}
+	
+	$eft = "Skill: $efftype $weaponEffectChance %<br>";}
+	
+//for old 
+if ($WEPi["efstat"]<>0){
+		if ($WEPi["effect"] == "LL"){
+	$efftype = "Life Leach";
+	}
+		if ($WEPi["effect"] == "BL"){
+	$efftype = "Bleed Chanse";
+	}
+		if ($WEPi["effect"] == "BR"){
+	$efftype = "Burn Chanse";
+	}
+		if ($WEPi["effect"] == "FR"){
+	$efftype = "Freez Chanse";
+	}
+		if ($WEPi["effect"] == "ST"){
+	$efftype = "Stun Chanse";
+	}
+		if ($WEPi["effect"] == "SH"){
+	$efftype = "Shock Chanse";
+	}
+		if ($WEPi["effect"] == "BK"){
+	$efftype = "Block Chanse";
+	}
+		if ($WEPi["effect"] == "SM"){
+	$efftype = "Summon increase";
+	}
+		if ($WEPi["effect"] == "PS"){
+	$efftype = "Poision increase";
+	}
+		if ($WEPi["effect"] == "CF"){
+	$efftype = "Confusion chanse";
+	}
+	$eft2 = "Skill: $efftype $WEPi[efstat] %<br>";}
+	
+	//check for uniq
+	if ($WEPn["Rarity"] == "Unique"){
+		$unEf = "class='awesome'";
+	}
 	
 if (!$WEPi["Name"] == ""){
 	$Current = "<b class='$WEPi[Rarity]'>$WEPi[Name] ($WEPi[Rarity])</b>";}
@@ -145,8 +192,7 @@ Physical Dmg: <b>$WEPi[pmin] ~ $WEPi[pmax] <font size='2'>(Avg. $phyAVG2)</font>
 Magickal Dmg: <b>$WEPi[mmin] ~ $WEPi[mmax] <font size='2'>(Avg. $magAVG2)</font></b><br>
 Cryt chanse: $WEPi[cryt] %<br>
 Hit chanse: $WEPi[HitChanse] %<br>
-Skill: $Skl2<br>
-$eft<br>";
+$eft2<br>";
 
 $_SESSION["Reward"] = "$reward";
 $_SESSION["HASH"] = "$HASH";

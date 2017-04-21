@@ -355,8 +355,8 @@ function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
                 $itemName = "<b>$name</b>";
             }
             //deciding on effect
-            if (rand(0,100) < 20){
-                $rngEffect = rand(1,9);
+            if (rand(0,100) < 22){
+                $rngEffect = rand(1,10);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
                     $weaponEffect = "LL";
@@ -409,6 +409,10 @@ function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
                 }
                 
                 if ($rngEffect == 10){
+					$effectName = "Confusion chanse";
+                    $weaponEffect = "CF";
+                    $weaponEffectChance = rand(5,15);
+                    
                     
                 }
                 $effect = "Effect: $effectName $effectChance %<br>";

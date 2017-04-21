@@ -174,6 +174,14 @@ if ($WEPn["effect"] == "SM" and $_SESSION["PET"] == 1){
 	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEPn["efstat"]  / 100));
 }
 
+//Confusion
+if ($WEPn["effect"] == "CF"){
+	if ($WEPn["efstat"] >= rand(0,100)){
+		$Confusion = 1;	
+		$CFdmg = $monDMG; 
+}
+}
+
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
 $efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";

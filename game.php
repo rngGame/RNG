@@ -231,6 +231,9 @@ $XPL2 = ($XPL[1] - $ACC[5]);
 $XPL2 = round($XPL2);
 
 //xp rounding
+if ($XPL2 < 1000){
+$XPL2r = round($XPL2);
+}
 if ($XPL2 >= 1000){
 $XPL2r = round($XPL2/1000,1);
 $XPL2r .= "k.";}
@@ -542,6 +545,9 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "PS"){
 	$efftype = "Poision increase";
 	}
+		if ($WEPn["effect"] == "CF"){
+	$efftype = "Confusion chanse";
+	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
 	//check for uniq
@@ -796,6 +802,9 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 				if ($WEPIn["effect"] == "PS"){
 			$efftype = "Poision increase";
+			}
+				if ($WEPIn["effect"] == "CF"){
+			$efftype = "Confusion chanse";
 			}
 			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
@@ -1276,6 +1285,9 @@ $PartyTemplate="
 
 
 //gold rounding
+if ($ACC[4] < 1000){
+$gold = round($ACC[4]);
+}
 if ($ACC[4] >= 1000){
 $gold = round($ACC[4]/1000,1);
 $gold .= "k.";}
@@ -1286,14 +1298,17 @@ if ($ACC[4] >= 1000000000){
 $gold = round($ACC[4]/1000000000,1);
 $gold .= "kkk.";}
 
-
+//check for uniq name
+if ($ACC[12] == "itemUnique"){
+	$uniqCLS = "awesome";
+	$ACC[12] = "#33ccff";}
 
 
 $statsTemplate = "
 <font class='stats'>User:</font>
 <div class='tooltip'>
 	<font color='$ACC[12]'>
-		<b>$User</b>
+		<b class='$uniqCLS'>$User</b>
 		<span class='tooltiptext'>$ACC[13]</span>
 	</font>
 </div> 
@@ -1429,6 +1444,11 @@ $equipTemplate ="
 	$modTemplate
 </div>
 ";
+
+
+//old PVP rank
+/*Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>*/
+
 $socialTemplate="
 <div id='personal'>
 Totall Kills
@@ -1452,7 +1472,7 @@ $onlineText
 	<br>
 	Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b>
 	<br>
-	Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>
+	
 </div>
 <div id='chat'>
 	<iframe height='45px' width='176px' src='message.php'></iframe>

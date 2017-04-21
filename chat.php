@@ -9,7 +9,9 @@ include_once 'PHP/db.php';
 
 ?>
 
-<div id="result"></div>
+<div class="awesome" id="result"></div>
+
+
 
 <script>
 if(typeof(EventSource) !== "undefined") {

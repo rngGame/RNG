@@ -2,6 +2,7 @@
 header('Content-Type: text/event-stream');
 header('Cache-Control: no-cache');
 
+
 include_once 'PHP/db.php';
 
 $datemin = strtotime(date_create()->format('Y-m-d'));
@@ -53,12 +54,18 @@ $CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
 $CLS = mysqli_fetch_row($CLS);
 }
 
+//check for uniq name
+if ($USR[12] == "itemUnique"){
+	$uniqCLS = "awesome";
+	$USR[12] = "#33ccff";}
+else{
+	$uniqCLS ="";}
 
 if ($i % 2 == 0) {
-	$Chat = "$Chat <div id='chatbox'><div class='tooltip'><font color='$USR[12]'><b>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
+	$Chat = "$Chat <div id='chatbox'><div class='tooltip'><font color='$USR[12]'><b class='$uniqCLS'>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
 	}
 	else{
-		$Chat = "$Chat <div id='chatbox2'><div class='tooltip'><font color='$USR[12]'><b>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
+		$Chat = "$Chat <div id='chatbox2'><div class='tooltip'><font color='$USR[12]'><b class='$uniqCLS'>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
 	}
 	$i++;
 }
@@ -66,7 +73,7 @@ if ($i % 2 == 0) {
 
 
 echo "data: $Chat \n\n";
-echo "retry: 1000\n\n";
+echo "retry: 11000\n\n";
 flush();
 
 ?>

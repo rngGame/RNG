@@ -303,8 +303,8 @@ echo
   "<section class='container2'>
     <div class='11-30'>
 	      <form id='yourFormId' method='post' action='FCAL.php'>
-		   <input type='hidden' name='skl' value='1111'>
-           <button name='Basic Attack' type='submit' class='showButon' value='11111' onclick='myfunc(this)'>Basic Attack</button>
+		   <input type='hidden' name='skl' value='11'>
+           <button name='Basic Attack' type='submit' class='showButon' value='11' onclick='myfunc(this)'>Basic Attack</button>
       </form>
     </div>
   </section>";

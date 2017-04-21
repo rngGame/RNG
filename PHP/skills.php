@@ -182,11 +182,14 @@ if ($SKL ==31){
 //skill 32
 if ($SKL ==32){
 
-	$comb = round(($magDMG*1.8) + ($physDMG*0.2));
-		if ($SUB[5] = "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
-			$comb=$comb + ($comb*$CRYTD/100);
+	$comb = round(($magDMG*1.7) + ($physDMG*0.3));
+	
+		if ($SUB[5] == "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
+			$comb +=($comb*$CRYTD/100);
 			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
 		}
+		
+		//if dmgg exceds 30k
 		if ($comb > 30000){
 			$comb = $comb * rand(1,10) /100;
 			$combtex="<b>POWER WAS SO GREAT TO HANDLE !</font></b><br>";

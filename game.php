@@ -528,6 +528,9 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "SM"){
 	$efftype = "Summon increase";
 	}
+		if ($WEPn["effect"] == "PS"){
+	$efftype = "Poision increase";
+	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
 	//check for uniq
@@ -1422,8 +1425,6 @@ $onlineText
 
 </div>
 <div id='leaderboard'>
-	Strongest item: <b $unEfs class='$WPN[3]'>$WPN[1]</b>
-	<br>
 	Highest item lvl: <b>$ILVL[9] - by <font color='$ILVL[12]'>$ILVL[0]</font></b>
 	<br>
 	Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b>

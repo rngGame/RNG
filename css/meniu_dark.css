@@ -548,9 +548,10 @@ progress::-webkit-progress-value {
     position: relative;
     width: 100%;
     background-color: #26292c;
-    border-top: :1px solid black;
+    border-top: 1px solid black;
     border-bottom: 2px solid black;
 }
+
 #inventory {
     float:left;
     position: relative;
@@ -665,9 +666,9 @@ progress::-webkit-progress-value {
 }
 #leaderboard{
     position: absolute;
-    top: 164px;
+    top: 203px;
     left: 0px;
-    height:200px;
+   /* height:200px; */
     width: 200px;
 	border-bottom: 1px solid black;
 }

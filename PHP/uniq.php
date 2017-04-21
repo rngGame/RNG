@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,13);
+$uniqRO = rand(1,14);
 
 //hash
 $HitChanse = 0;
@@ -104,6 +104,11 @@ if ($uniqRO == 13){
 	   ('$HASH', 'Whip of the sick burn', 'Unique','150', '300', '500', '25', '150', '300', '95', '1', 'BR', '90', '5', '550')";
 }
 
-
+if ($uniqRO == 14){
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Sound blaster', 'Unique','150', '50', '150', '1', '600', '600', '95', '9', 'PS', '50', '0', '550')";
+}
 
 ?>

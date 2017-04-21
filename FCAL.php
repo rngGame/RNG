@@ -93,10 +93,7 @@ if ($GEM[1] <> ""){
 	$gemDMG  = round($gemDMG,0);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 
-//skills
-if ($SKL <> "" or $_SESSION["PET"] == 1){
-		include 'PHP/skills.php';
-}
+
 
 
 
@@ -127,6 +124,11 @@ if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0){
 			WHERE `User` = '$User' and `Name` = 'CRYT'";
 			$result = mysqli_query($db, $order);
 		}
+}
+
+//skills
+if ($SKL <> "" or $_SESSION["PET"] == 1){
+		include 'PHP/skills.php';
 }
 
 //Effects
@@ -192,6 +194,9 @@ if ($SKL ==7 or $pos == 1){
 	}
 	else if ($poison >= 3000){
 			$poison = 3000;}
+	if ($WEPn["effect"] == "PS"){ //is stat buffs poision
+		$poison += ($poison * $WEPn["efstat"] / 100);} 
+		
 	$poison = round($poison,0);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'POS'");
 	$ACH = mysqli_fetch_row($ACH);

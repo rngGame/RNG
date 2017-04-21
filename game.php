@@ -1163,6 +1163,55 @@ while ($List1 = mysqli_fetch_array($List)){
 	</div>";
 	}
 	
+	if ($List1[1] == "ITM"){
+		$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$List1[2]' ");
+		$ITMn = mysqli_fetch_assoc($ITM); //item by colum row
+		
+		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
+		
+		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD"){ //if usable item
+		$backpackTemplate.=  "<div class='items'>
+		<div class='tooltip'>
+			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
+			<span class='tooltiptext'>
+				<div class='inventoryStats'>
+					<b> $ITMn[Name]</b>
+					</div>
+			</span>
+		</div>
+		<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+						<div class='tooltip'>
+							<input type='text' name='TYPE' value='ITM' style='display:none'>
+							<input type='image' class='inventoryButton' src='IMG/pack/USE.png' name='Sell' value='$ITMn[HASH]'>
+							<span class='tooltiptext'>$sell</span>
+						</div>
+				</form>
+			</div>
+	</div>";}
+	else{
+		$backpackTemplate.=  "<div class='items'>
+		<div class='tooltip'>
+			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
+			<span class='tooltiptext'>
+				<div class='inventoryStats'>
+					<b> $ITMn[Name]</b>
+					</div>
+			</span>
+		</div>
+		<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+						<div class='tooltip'>
+							<input type='text' name='TYPE' value='ITM' style='display:none'>
+							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
+							<span class='tooltiptext'>$sell</span>
+						</div>
+				</form>
+			</div>
+	</div>";}
+		
+	}
+	
 }
  //Party
 $PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");

@@ -472,7 +472,7 @@ function createMonster($db,$iLVL){
     $creationDone=false;
     $timeCreated=0;
     $testMessage="Test Start run $timeCreated <br>";
-    $equipableItems=7; //how many items give iLVL
+    $equipableItems=8; //how many items give iLVL
     while(!$creationDone){
         //Nullify vars
         $timeCreated++;

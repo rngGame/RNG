@@ -1,6 +1,8 @@
 <?php
 session_start();
 ob_start();
+$User = $_SESSION["User"];
+include_once 'PHP/db.php';
 ?>
 <!doctype html>
 <html>
@@ -34,9 +36,37 @@ if (isset($_SESSION["SHD"])){
 $Shards = $_SESSION["SHD"];
 $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}
 
+
+//item reward
+if (rand(1,1000) > 900){
+	if (isset($_SESSION["ITEM"])){
+	unset($_SESSION["ITEM"]);
+	include 'PHP/items.php';
+	
+	$order = "INSERT INTO DropsItm
+	(HASH, Name, EFT, Value, Icon )
+	VALUES
+	('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
+	   
+	$order2 = "INSERT INTO Equiped
+	(User, Part, HASH, Equiped)
+	VALUES
+	('$User', 'ITM', '$HASHIT', '0')";	   
+
+	$result = mysqli_query($db, $order);
+	$result = mysqli_query($db, $order2);	
+	
+	$text ="<b>You recived extra: $Name !!!</b><br>";
+}
+else{
+	unset($_SESSION["ITEM"]);
+}
+}
+
 $XPS = round($XPS,0);
 $XPP = round($XPP,0);
 
+echo $text;
 if($rewType == "WEP"){
 echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";
 }

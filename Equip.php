@@ -68,10 +68,20 @@ if ($Type == "ACS"){
 	$new = $_POST['Sell'];
 	$Type = $_POST['TYPE'];
 	
+	if ($Type == "WEP"){
 	$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$new' ");
-	$WEP = mysqli_fetch_row($WEP);
+	$WEPn = mysqli_fetch_assoc($WEP);}
+	if ($Type == "ARM"){
+	$WEP = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$new' ");
+	$WEPn = mysqli_fetch_assoc($WEP);}
+	if ($Type == "ACS"){
+	$WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$new' ");
+	$WEPn = mysqli_fetch_assoc($WEP);}
+	if ($Type == "ITM"){
+	$WEP = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$new' ");
+	$WEPn = mysqli_fetch_assoc($WEP);}
 	
-	if ($WEP[2] == "Rarity"){
+	if ($WEPn["Rarity"] == "Unique"){
 		$shards = 30;
 		$shards = $ACC[15] + $shards;
 	$order0 = "UPDATE characters
@@ -79,7 +89,12 @@ if ($Type == "ACS"){
 	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order0);}
 	
-	$sell = ($WEP[4] + $ACC[3]) *10;
+	$sell = ($WEPn["ilvl"] + $ACC[3]) *10;
+
+	if ($Type == "ITM"){
+		$sell = ($WEPn["Value"] * $ACC[3]) * 5;
+	}
+	
 	$sell = round($ACC[4] + $sell);
 	
 	$order = "UPDATE characters
@@ -104,6 +119,10 @@ mysqli_query($db,$sql2);}
 
 if ($Type == "ACS"){
 $sql2="DELETE FROM DropsAcs WHERE HASH='$new'";
+mysqli_query($db,$sql2);}
+
+if ($Type == "ITM"){
+$sql2="DELETE FROM DropsItm WHERE HASH='$new'";
 mysqli_query($db,$sql2);}
 
 } else {

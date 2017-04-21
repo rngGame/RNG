@@ -1169,7 +1169,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		
 		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
 		
-		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD"){ //if usable item
+		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD"){ //if usable item
 		$backpackTemplate.=  "<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
@@ -1183,7 +1183,15 @@ while ($List1 = mysqli_fetch_array($List)){
 				<form method='post' class='inventor' action='Equip.php'>
 						<div class='tooltip'>
 							<input type='text' name='TYPE' value='ITM' style='display:none'>
-							<input type='image' class='inventoryButton' src='IMG/pack/USE.png' name='Sell' value='$ITMn[HASH]'>
+							<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]'>
+						</div>
+				</form>
+			</div>
+			<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+						<div class='tooltip'>
+							<input type='text' name='TYPE' value='ITM' style='display:none'>
+							<input type='image'  class='sell' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
 							<span class='tooltiptext'>$sell</span>
 						</div>
 				</form>

@@ -9,10 +9,58 @@ $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
 
+if (isset($_POST['ITMS'])) {
+	
+	
+	$newU = $_POST['ITMS'];
+	$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$newU'"); //Item Usega
+	$ITM = mysqli_fetch_row($ITM);
+	
+	if ($ITM[2] == "XP"){
+		$XPS = $ACC[5] + ($ACC[5]  *  ($ITM[3]/2) /100);
+			$order = "UPDATE characters
+			SET XP = '$XPS'
+			WHERE `User` = '$User'";
+			$result = mysqli_query($db, $order);
+	}
+	if ($ITM[2] == "GOLD"){
+		$XPS = $ACC[4] + ($ITM[3] * $ACC[3]) * 5;
+			$order = "UPDATE characters
+			SET Cash = '$XPS'
+			WHERE `User` = '$User'";
+			$result = mysqli_query($db, $order);
+	}
+	if ($ITM[2] == "SHRD"){
+		$XPS = $ACC[15] + $ITM[3];
+			$order = "UPDATE characters
+			SET Shards = '$XPS'
+			WHERE `User` = '$User'";
+			$result = mysqli_query($db, $order);
+	}	
+	if ($ITM[2] == "MOD"){
+		$_SESSION["MODLVL"] = $ITM[3];
+		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
+		mysqli_query($db,$sql);
+		$sql2="DELETE FROM DropsItm WHERE HASH='$newU'";
+		mysqli_query($db,$sql2);
+		header("location:reroll.php");
+		die();
+		
+	}
+	
+		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
+		mysqli_query($db,$sql);
+		$sql2="DELETE FROM DropsItm WHERE HASH='$newU'";
+		mysqli_query($db,$sql2);
+}
+
+
 if (isset($_POST['Eqip'])) {
 	
-	$new = $_POST['Eqip'];
+
 	$Type = $_POST['TYPE'];
+	$new = $_POST['Eqip'];
+
 	
 if ($Type == "WEP"){
 	$EQP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$new'"); //select new wep item

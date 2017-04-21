@@ -26,7 +26,12 @@ $MODP = $_SESSION["MODP"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-if ($ACC[4] > $MODP){
+$GOLD = $ACC[4];
+
+if (isset($_SESSION["MODLVL"])){
+	$GOLD = 100000000000000;}
+
+if ($GOLD > $MODP){
 	
 
 
@@ -89,7 +94,13 @@ $LVL = $LVL + ($E4r / $MOD4[5]);
 
 $LVL = round($LVL,0);
 
-if ($LVL >= 1 ){
+$minLVL = 1;
+
+if(isset($_SESSION["MODLVL"])){
+	$minLVL = $_SESSION["MODLVL"];
+}
+
+if ($LVL >= $minLVL ){
 	$rel = 1;}
 }
 
@@ -124,6 +135,9 @@ $result = mysqli_query($db, $order);
 
 echo " $MOD1[2] , $MOD2[2] , $MOD3[2] , $MOD4[2]";
 
+if (isset($_SESSION["MODLVL"])){
+}
+else{
 $cash = $ACC[4] - $MODP;
 
 $order1 = "UPDATE characters
@@ -131,7 +145,7 @@ SET Cash = '$cash'
 WHERE `User` = '$User'";
 
 $result = mysqli_query($db, $order1);
-
+}
 
 header("location:vale.php");
 

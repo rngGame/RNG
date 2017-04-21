@@ -69,8 +69,9 @@ $icon = "Icon.6_37";
 		$value = rand(5,15);
 	}
 	if ($sub[$subn] == "Mod"){
-		$Name = "$base[$baseN] of $sub[$subn]";
-		$EFT = "DEF";
+		$icon = "Icon.1_48";
+		$Name = "Draw of $sub[$subn]";
+		$EFT = "MOD";
 		$value = rand(15,50);}
 }
 

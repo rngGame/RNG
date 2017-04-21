@@ -797,4 +797,8 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     to {	 -webkit-filter: brightness(50%) sepia(1) hue-rotate(360deg) saturate(176%) brightness(100%);	}
 }
 
+.sell{
+	padding-left: 30px;
+    height: 15px;
+}
 

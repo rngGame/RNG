@@ -1186,8 +1186,6 @@ while ($List1 = mysqli_fetch_array($List)){
 							<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]'>
 						</div>
 				</form>
-			</div>
-			<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
 						<div class='tooltip'>
 							<input type='text' name='TYPE' value='ITM' style='display:none'>

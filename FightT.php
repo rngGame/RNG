@@ -157,6 +157,16 @@ include 'PHP/SkillsM.php';
 
   
   echo "</div>";
+  
+  echo "</div>";
+    echo "<div id='mini2'>Items:";
+  
+//ITEMS
+//include 'PHP/SkillsM.php';
+echo "WORKING ON!";
+  
+  echo "</div>";
+  
   mysqli_close($db);
   ?>
 &nbsp;

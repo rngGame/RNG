@@ -36,6 +36,7 @@ if ($EFT == "HURT"){
 	$MHP -= $BN;
 	$_SESSION["MonsHP"] = $MHP;
 	$text = "Potion did $BN damage to monster<br>";
+	$_SESSION["PARTYPOTIONDMG"] = $BN;
 }
 if ($EFT == "ENER"){
 	$SKL = $_SESSION["ENERGY"];

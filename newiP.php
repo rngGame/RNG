@@ -133,7 +133,7 @@ while ($i < $PlayerNR and $i <> 100){
 	$order8 = "INSERT INTO Equiped
 	(User, Part, HASH, Equiped)
 	VALUES
-	('UserC[0]', 'ITM', '$HASHIT', '0')";	   
+	('$UserC[0]', 'ITM', '$HASHIT', '0')";	   
 
 	$result = mysqli_query($db, $order7);
 	$result = mysqli_query($db, $order8);	

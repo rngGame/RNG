@@ -185,6 +185,7 @@ if ($SKL ==32){
 	$comb = round(($magDMG*1.7) + ($physDMG*0.3));
 	
 		if ($SUB[5] == "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
+			$comb = round(($magDMG*2.2) + ($physDMG*1.2));
 			$comb +=($comb*$CRYTD/100);
 			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
 		}
@@ -237,17 +238,17 @@ if ($SKL ==33){
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 120 / 100);
 				}
 				if ($SUB[5] == "TITA"){ //if Titan
-				$_SESSION["PETHP"] = $HPO * 120 / 100;
+				$_SESSION["PETHP"] = $HPO * 220 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 40 / 100);
 				}
 				if ($SUB[5] == "SPELC"){ //if Spelcaster
-				$_SESSION["PETHP"] = $HPO * 30 / 100;
+				$_SESSION["PETHP"] = $HPO * 130 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 90 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 150 / 100);
 				}
 				if ($SUB[5] == "SMASH"){ //if smasher
-				$_SESSION["PETHP"] = $HPO * 50 / 100;
+				$_SESSION["PETHP"] = $HPO * 150 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 50 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 50 / 100);
 				}
@@ -266,7 +267,7 @@ if ($SKL ==33){
 				if ($SUB[5] == "TITA"){ //if Titan
 				$pettook = round($monDMG * 50 / 100);
 				}
-				if ($SUB[5] == "SPELC"){ //if Titan
+				if ($SUB[5] == "SPELC"){ //if Spelcaster
 				$pettook = round($monDMG * 80 / 100);
 				}
 				if ($SUB[5] == "SMASH"){ //if Smasher
@@ -280,7 +281,7 @@ if ($SKL ==33){
 			//pet skill 1
 			if (rand(0,100) < 20 and $petskl <> 1){
 				$petskl = 1;
-				$petExtraDMG = round($petDMG + ($petDMG * rand(150,200) / 100));
+				$petExtraDMG = round($petDMG + ($petDMG * rand(140,220) / 100));
 				$petSkillText = "Pet Used <b>COOL SKILL</b> and delt extra $petExtraDMG dmg.<br>";
 			}
 			if (rand(0,100) < 15 and $petskl <> 1){

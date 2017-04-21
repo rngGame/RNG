@@ -10,10 +10,10 @@ $Event = mysqli_query($db,"SELECT * FROM Events order by Nr DESC LIMIT 1");
 $Event = mysqli_fetch_row($Event);
 $datemin2 = strtotime(date($Event[4]));
 if ($datemin2 > $datemin){
-	$Chat = "<b><font size='2' color='red'><center>EVENT! - $Event[1]</center></font></b>";
+	$Chat = "<b><font size='2' color='red'><center>EVENT!!! $Event[1]</center></font></b>";
 }
 
-$Chat = "<hr>";
+$Chat .= "<hr>";
 
 $i = 1;
 

@@ -62,7 +62,7 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 		$sht = 1;
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
-		$shD = round($shD + ($minMdmg * 10 /100));
+		$shD = round($shD + ($minMdmg * rand(7,30) /100) + ($minPdmg * rand(7,30) /100));
 		$shDT = $shDT + 1;
 		}
 		$sht = $sht + 1;

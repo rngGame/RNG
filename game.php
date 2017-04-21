@@ -440,6 +440,9 @@ $avgM = round(($minMdmg + $maxMdmg) / 2);
 $avgD = round(($avgP + $avgM) / 2);
 
 
+//event stuff
+$EventBonus = 1;
+
 $datemin = strtotime(date_create()->format('Y-m-d'));
 
 $Event = mysqli_query($db,"SELECT * FROM Events order by Nr DESC LIMIT 1");
@@ -448,7 +451,7 @@ $datemin2 = strtotime(date($Event[4]));
 if ($datemin2 > $datemin){
 	
 		if($Event[2] == "XP"){
-		$tottalXPBonus = $tottalXPBonus * $Event[3];
+		$EventBonus = $Event[3];
 		
 		
 	}
@@ -486,7 +489,7 @@ $_SESSION["DMGAVE"] =  $avgD;
 $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;
 $_SESSION["MARM"] = $Marmor;
-$_SESSION["XPT"] = 1 + (1 * $tottalXPBonus / 100); //xp bonus
+$_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
 $_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2];
 if (isset($crcsub)){

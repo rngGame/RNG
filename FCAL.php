@@ -371,13 +371,17 @@ if (isset($_SESSION["Party2"])){
 	$PL = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$PartyID' ");
 	$PLs = mysqli_fetch_assoc($PL);
 	
-	$PartyMobHP = $PLs["MonsterHP"] - $finalPlayerDMG;
+	if (isset($_SESSION["PARTYPOTIONDMG"])){
+		$potionDMG = $_SESSION["PARTYPOTIONDMG"];
+	}
+	
+	$PartyMobHP = $PLs["MonsterHP"] - $finalPlayerDMG - $potionDMG;
 	
 	if ($PartyMobHP <= 0){
 		$PartyMobHP =0;
 	}
 	
-	$dmgddone =	$PLs["$PLnr"] + $finalPlayerDMG + $petDMG;
+	$dmgddone =	$PLs["$PLnr"] + $finalPlayerDMG + $petDMG +$potionDMG;
 	
 	$op1 = "UPDATE PartyMonsters
 	SET MonsterHP= '$PartyMobHP'

@@ -1181,17 +1181,13 @@ while ($List1 = mysqli_fetch_array($List)){
 		</div>
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
-						<div class='tooltip'>
-							<input type='text' name='TYPE' value='ITM' style='display:none'>
-							<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]'>
-						</div>
-				</form>
-				<form method='post' class='inventor' action='Equip.php'>
-						<div class='tooltip'>
-							<input type='text' name='TYPE' value='ITM' style='display:none'>
-							<input type='image'  class='sell' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
-							<span class='tooltiptext'>$sell</span>
-						</div>
+					<input type='text' name='TYPE' value='ITM' style='display:none'>
+					<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]'>
+					<div class='tooltip'>
+						<input type='text' name='TYPE' value='ITM' style='display:none'>
+						<input type='image'  class='sell' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
+						<span class='tooltiptext'>$sell</span>
+					</div>
 				</form>
 			</div>
 	</div>";}

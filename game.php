@@ -1182,10 +1182,10 @@ while ($List1 = mysqli_fetch_array($List)){
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
 					<input type='text' name='TYPE' value='ITM' style='display:none'>
-					<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]'>
+					<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]' class='inventoryButton2'>
 					<div class='tooltip'>
 						<input type='text' name='TYPE' value='ITM' style='display:none'>
-						<input type='image'  class='sell' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
+						<input type='image'  class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
 						<span class='tooltiptext'>$sell</span>
 					</div>
 				</form>

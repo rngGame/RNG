@@ -705,6 +705,11 @@ progress::-webkit-progress-value {
 	height: 15px;
 	float: left;
 }
+.inventoryButton2{
+    width:30px;
+    height: 15px;
+    float: left;
+}
 .inventoryActions{
 	height: 15px;
 	position: absolute;

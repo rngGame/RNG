@@ -56,7 +56,7 @@ if (rand(1,1000) > 700){
 	$result = mysqli_query($db, $order);
 	$result = mysqli_query($db, $order2);	
 	
-	$text ="<b>You recived extra: $Name !!!</b><br>";
+	$text ="<b style='color:#00e600'>You recived extra: $Name !!!</b><br>";
 }
 else{
 	unset($_SESSION["ITEM"]);

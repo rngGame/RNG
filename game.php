@@ -1175,7 +1175,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
-					<b> $ITMn[Name]</b>
+					<b> $ITMn[Name] - $ITMn[Value]</b>
 					</div>
 			</span>
 		</div>
@@ -1197,7 +1197,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
-					<b> $ITMn[Name]</b>
+					<b> $ITMn[Name] - $ITMn[Value]%</b>
 					</div>
 			</span>
 		</div>

@@ -17,7 +17,7 @@ echo "
           <input type='hidden' name='ITM' value='$ITMn[HASH]'>
 		  <input type='hidden' name='TYP' value='$ITMn[EFT]'>
 		  <input type='hidden' name='VAL' value='$ITMn[Value]'>
-        <p class='submit' onclick='myfunc(this)'><input  img src='IMG/pack/$ITMn[Icon].png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>$ITMn[Name] for $ITMn[Value]%</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img src='IMG/pack/$ITMn[Icon].png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>$ITMn[Name] - $ITMn[Value]%</span></p> 
       </form>
     </div>&nbsp;&nbsp;";
 	}

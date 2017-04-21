@@ -324,6 +324,15 @@ include 'PHP/SkillsM.php';
 
   
   echo "</div>";
+  
+   echo "</div>";
+    echo "<div id='mini2'>Items:";
+  
+//ITEMS
+include 'PHP/ItemsFight.php';
+
+  
+  echo "</div>";
   mysqli_close($db);
   ?>
 &nbsp;

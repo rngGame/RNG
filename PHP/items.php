@@ -56,12 +56,12 @@ $icon = "Icon.6_37";
 	if ($sub[$subn] == "Gold"){
 		$Name = "$base[$baseN] of $sub[$subn]";
 		$EFT = "GOLD";
-		$value = rand(10,1000);
+		$value = rand(100,1000);
 	}
 	if ($sub[$subn] == "Shards"){
 		$Name = "$base[$baseN] of $sub[$subn]";
 		$EFT = "SHRD";
-		$value = rand(10,90);
+		$value = rand(10,30);
 	}
 	if ($sub[$subn] == "XP"){
 		$Name = "$base[$baseN] of $sub[$subn]";

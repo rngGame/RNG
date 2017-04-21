@@ -120,6 +120,27 @@ while ($i < $PlayerNR and $i <> 100){
 	
 	
 	 $PL[$i];
+	 
+	 
+	if (rand(1,1000) > 800){
+	include 'PHP/items.php';
+	
+	$order7 = "INSERT INTO DropsItm
+	(HASH, Name, EFT, Value, Icon )
+	VALUES
+	('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
+	   
+	$order8 = "INSERT INTO Equiped
+	(User, Part, HASH, Equiped)
+	VALUES
+	('UserC[0]', 'ITM', '$HASHIT', '0')";	   
+
+	$result = mysqli_query($db, $order7);
+	$result = mysqli_query($db, $order8);	
+	
+	}
+	
+	 
 	
 	
 	$Drop = $Party["MonsterRew"] * $PL[$i];

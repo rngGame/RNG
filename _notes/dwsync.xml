@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="reward.php" server="ftp.miniforums.org" local="131372839487293783" remote="131372515200000000" Dst="2" />
+<file name="reward.php" server="ftp.miniforums.org" local="131372842980819799" remote="131372518800000000" Dst="2" />
 <file name="cBoss.php" server="ftp.miniforums.org" local="131372650061369520" remote="131372325600000000" Dst="2" />
 <file name=".ftpquota" server="ftp.miniforums.org" local="131349460242154639" remote="131343459000000000" Dst="1" />
 <file name="Bypass.php" server="ftp.miniforums.org" local="131349460240535233" remote="131347509000000000" Dst="1" />
@@ -36,7 +36,7 @@
 <file name="showold.php" server="ftp.miniforums.org" local="131367339030655717" remote="131367015000000000" Dst="2" />
 <file name="Sync.php" server="ftp.miniforums.org" local="131239489992859513" remote="131239233000000000" Dst="1" />
 <file name="Sync3.php" server="ftp.miniforums.org" local="131349514586686529" remote="131349226200000000" Dst="1" />
-<file name="test.php" server="ftp.miniforums.org" local="131372520813587984" remote="131372196600000000" Dst="2" />
+<file name="test.php" server="ftp.miniforums.org" local="131372849555237546" remote="131372525400000000" Dst="2" />
 <file name="vale.php" server="ftp.miniforums.org" local="131349460630659723" remote="131348114400000000" Dst="1" />
 <file name="wBoss.php" server="ftp.miniforums.org" local="131372649332554217" remote="131372325000000000" Dst="2" />
 <file name="winP.php" server="ftp.miniforums.org" local="131349460640880214" remote="131299695000000000" Dst="1" />
@@ -62,12 +62,12 @@
 <file name="uniqR.php" server="ftp.miniforums.org" local="131367344406685220" remote="131367019800000000" Dst="2" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131372532262162451" remote="131372208000000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131365555071502557" remote="131365230600000000" Dst="2" />
-<file name="game.php" server="ftp.miniforums.org" local="131372768316969782" remote="131372443800000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131372843803470601" remote="131372519400000000" Dst="2" />
 <file name="fightNew.php" server="ftp.miniforums.org" local="131367379001049884" remote="131367054600000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131372659232184847" remote="131372334600000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131372406615919579" remote="131372082600000000" Dst="2" />
 <file name="party.php" server="ftp.miniforums.org" local="131364778187716270" remote="131364453600000000" Dst="2" />
-<file name="newiP.php" server="ftp.miniforums.org" local="131367428496631239" remote="131367104400000000" Dst="2" />
+<file name="newiP.php" server="ftp.miniforums.org" local="131372851072605541" remote="131372526600000000" Dst="2" />
 <file name="testing.php" server="ftp.miniforums.org" local="131369269073220862" remote="131368944600000000" Dst="2" />
 <file name="ItemPass.php" server="ftp.miniforums.org" local="131372837806719579" remote="131372513400000000" Dst="2" />
 </dwsync>

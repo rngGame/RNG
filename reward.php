@@ -38,7 +38,7 @@ $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}
 
 
 //item reward
-if (rand(1,1000) > 900){
+if (rand(1,1000) > 700){
 	if (isset($_SESSION["ITEM"])){
 	unset($_SESSION["ITEM"]);
 	include 'PHP/items.php';

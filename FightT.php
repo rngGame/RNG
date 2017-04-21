@@ -162,8 +162,8 @@ include 'PHP/SkillsM.php';
     echo "<div id='mini2'>Items:";
   
 //ITEMS
-//include 'PHP/SkillsM.php';
-echo "WORKING ON!";
+include 'PHP/ItemsFight.php';
+
   
   echo "</div>";
   

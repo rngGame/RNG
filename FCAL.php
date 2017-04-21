@@ -231,7 +231,8 @@ if (isset($_SESSION["MonsDEF"])){
 
 
 //calculation dmg to mons
-if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 ){ //check for physical dmg
+if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or isset($_SESSION["ATTACK"]) ){ //check for physical dmg
+unset($_SESSION["ATTACK"]); 
 if (rand(0,100) <= $WEPn["HitChanse"] ){
 $finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
 if ($ddam == 1){

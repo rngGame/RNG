@@ -1170,12 +1170,15 @@ while ($List1 = mysqli_fetch_array($List)){
 		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
 		
 		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD"){ //if usable item
+		if ($ITMn["EFT"] == "MOD"){
+			$extratxt = "min mod lvl";}
+			
 		$backpackTemplate.=  "<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
-					<b> $ITMn[Name] - $ITMn[Value]</b>
+					<b> $ITMn[Name] - $extratxt $ITMn[Value]</b>
 					</div>
 			</span>
 		</div>

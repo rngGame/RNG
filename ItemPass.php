@@ -12,34 +12,40 @@ $VALUE = $_POST["VAL"];
 
 if ($EFT == "HEAL"){
 	$HP = $_SESSION["HP"];
-	echo $HP += $HP * $VALUE /100;
+	$RES = round($HP * $VALUE /100);
+	$HP += $RES;
 	$HPMAX = $_SESSION["HPO"];
 	if($HP > $HPMAX){
 		$HP = $HPMAX;}
 	$_SESSION["HP"] = round($HP);	
-	$text = "Potion restored Health<br>";
+	$text = "Potion restored $RES health<br>";
 	
 }
 if ($EFT == "LUCK"){
 	$CRYT = $_SESSION["CRYT"];
-	$CRYT += $CRYT * $VALUE /100; 
+	$BN = round($CRYT * $VALUE /100);
+	$CRYT +=  $BN;
 	$_SESSION["CRYT"] = round($CRYT);
-	$text = "Potion Increased Cryt chanse<br>";
+	$text = "Potion Increased Cryt by $BN %<br>";
 }
 if ($EFT == "HURT"){
 	$MHP = $_SESSION["MonsHP"];
-	$MHP -= $MHP * $VALUE /100;
+	$BN = round($MHP * $VALUE /100);
+	if ($BN >= 100000){
+		$BN = 100000;}
+	$MHP -= $BN;
 	$_SESSION["MonsHP"] = $MHP;
-	$text = "Potion did damage to monster<br>";
+	$text = "Potion did $BN damage to monster<br>";
 }
 if ($EFT == "ENER"){
 	$SKL = $_SESSION["ENERGY"];
 	$SKLm = $_SESSION["ENERGYM"];
-	$SKL += $SKL * $VALUE / 100;
+	$BN = round($SKL * $VALUE / 100);
+	$SKL += $BN;
 	 if($SKL > $SKLm){
 		$SKL = $SKLm;}
 	$_SESSION["ENERGY"] = round($SKL);
-	$text = "Potion restored Energie<br>";
+	$text = "Potion restored $BN energie<br>";
 	
 }
 if ($EFT == "DEF"){
@@ -49,7 +55,7 @@ if ($EFT == "DEF"){
 	$ArmorM += $ArmorM * $VALUE /100; 
 	$_SESSION["ARM"] = round($Armor);
 	$_SESSION["MARM"] = round($ArmorM);
-	$text = "Potion increased armor<br>";
+	$text = "Potion increased armor by $VALUE % <br>";
 	
 }
 if ($EFT == "DMG"){
@@ -65,7 +71,7 @@ if ($EFT == "DMG"){
 	$_SESSION["DMGPmax"] = round($maxPdmg);
 	$_SESSION["DMGMmin"] = round($maxMdmg);
 	$_SESSION["DMGMmax"] = round($maxMdmg);
-	$text = "Potion increased damage<br>";
+	$text = "Potion increased damage by $VALUE % <br>";
 	
 }
 

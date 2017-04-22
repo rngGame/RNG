@@ -28,6 +28,14 @@ $ACC = mysqli_fetch_row($ACC);
 $HASH = $_SESSION["HASH"];
 $TYPE = $_SESSION["TYPE"];
 
+$c1 = rand(1,100);
+
+//stuff for enchant dust
+if (isset($_SESSION["ENCt"])){
+	$c1 = 5;
+}
+	
+
 if ($TYPE == "WEP"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
@@ -41,7 +49,10 @@ $WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
 }
 
-$c1 = rand(1,100);
+if (isset($_SESSION["ENCt"])){
+$_SESSION["ENname"] = $ITM["Name"];
+unset($_SESSION["ENCt"]);
+}
  
 if ( $c1 <= $Chanse){
 	
@@ -67,6 +78,7 @@ WHERE `HASH` = '$HASH'";
 
 $result = mysqli_query($db, $order2);	
 
+
 mysqli_close($db);
 $_SESSION["rezult"] = 1;
 header("location:rez.php");	
@@ -75,5 +87,6 @@ header("location:rez.php");
 else{
 	$_SESSION["rezult"] = 0;
 	header("location:rez.php");
+
 }
 ?>

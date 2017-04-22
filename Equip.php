@@ -47,6 +47,15 @@ if (isset($_POST['ITMS'])) {
 		die();
 		
 	}
+	if ($ITM[2] == "ENC"){
+		$_SESSION["ENCt"] = $ITM[3];
+		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
+		mysqli_query($db,$sql);
+		$sql2="DELETE FROM DropsItm WHERE HASH='$newU'";
+		mysqli_query($db,$sql2);
+		header("location:Enchant.php");
+		die();
+	}
 	
 		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
 		mysqli_query($db,$sql);

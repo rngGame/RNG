@@ -23,14 +23,26 @@ $User = $_SESSION["User"];
 
 $rez = $_SESSION["rezult"];
 
+if(isset($_SESSION["ENname"])){
+	$Name = $_SESSION["ENname"];
+	$Name = "$Name <br>";
+	
+}
+
 if ($rez == 1){
+	echo $Name;
 	echo "<b style='color:red'>! Upgrade Succses !</b>";
 	
 }
 else{
+	echo $Name;
 	echo "<b>Upgrade Failed</b>";
 	
 }
+if(isset($_SESSION["ENname"])){
+	unset($_SESSION["ENname"]);
+}
+else{
 	echo "<section class='container'>
     <div class='Back'>
 	      <form method='post' action='Enchant.php'>
@@ -38,6 +50,7 @@ else{
       </form>
     </div>
   </section>";
+}
   
 echo "<section class='container'>
     <div class='Back'>

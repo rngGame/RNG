@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,15);
+$uniqRO = rand(1,16);
 
 //hash
 $HitChanse = 0;
@@ -92,30 +92,36 @@ if ($uniqRO == 11){
 
 if ($uniqRO == 12){
 	$order2 = "INSERT INTO DropsWep
-	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'Summoners urgant wish stick', 'Unique','150', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
 }
 
 if ($uniqRO == 13){
 	$order2 = "INSERT INTO DropsWep
-	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'Whip of the sick burn', 'Unique','150', '300', '500', '25', '150', '300', '95', '1', 'BR', '90', '5', '550')";
 }
 
 if ($uniqRO == 14){
 	$order2 = "INSERT INTO DropsWep
-	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'Sound blaster', 'Unique','150', '50', '150', '1', '600', '600', '95', '9', 'PS', '50', '0', '550')";
 }
 
 if ($uniqRO == 15){
 	$order2 = "INSERT INTO DropsWep
-	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', '/Shrug', 'Unique','150', '1', '10', '1', '1', '10', '100', '', 'CF', '90', '0', '550')";
+}
+if ($uniqRO == 16){
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'Blade of mad warrior', 'Unique','200', '400', '700', '10', '300', '400', '95', '10', 'CS', '100', '0', '550')";
 }
 
 ?>

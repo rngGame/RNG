@@ -126,15 +126,17 @@ if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0 and $SKL < 20 and $SKL <> 2){
 		}
 }
 
+//Effects
+if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
+		include 'PHP/effect.php';
+}
+
+
 //skills
 if ($SKL <> "" or $_SESSION["PET"] == 1){
 		include 'PHP/skills.php';
 }
 
-//Effects
-if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
-		include 'PHP/effect.php';
-}
 
 
 //monster cryt	

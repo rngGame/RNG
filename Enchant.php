@@ -34,6 +34,43 @@ $_SESSION["TYPE"] = $TYPE;}
 $HASH = $_SESSION["HASH"];
 $TYPE = $_SESSION["TYPE"];
 
+//stuff for enchant dust
+if (isset($_SESSION["ENCt"])){
+
+$ts1 = array("WEP", "ARM", "ACS");
+$ts2 = array_rand($ts1,1);
+$TYPE = $ts1[$ts2];
+
+if ($TYPE == "WEP"){
+$_SESSION["CURRENTWHASH"];
+}
+if ($TYPE == "ARM"){
+	$so = rand (1,3);
+	if ($so == 1){
+		$HASH = $_SESSION["CURRENTARMBODY"];
+	}
+	if ($so == 2){
+		$HASH = $_SESSION["CURRENTARMGLOVES"];
+	}
+	if ($so == 3){
+		$HASH = $_SESSION["CURRENTARMBOOTS"];
+	}
+}
+if ($TYPE == "ACS"){
+	$so = rand (1,2);
+	if ($so == 1){
+		$HASH = $_SESSION["CURRENTACSRING"];
+	}
+	if ($so == 2){
+		$HASH = $_SESSION["CURRENTACSAMULET"];
+	}
+}
+
+$_SESSION["HASH"] = $HASH;
+$_SESSION["TYPE"] = $TYPE;
+
+}
+
 if ($TYPE == "WEP"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
@@ -87,6 +124,11 @@ $price = $ITM["ilvl"] * $ENC2[2];
  $_SESSION["Name"]= $ENC2[0];
  $_SESSION["Bonus"]= $ENC2[2];
  $_SESSION["Chanse"]= $ENC2[1];	
+ 
+ if (isset($_SESSION["ENCt"])){
+	header("location:Enchant2.php");
+	die(); 
+ }
  
 
  echo" <section class='container3'>

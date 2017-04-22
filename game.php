@@ -551,6 +551,9 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "CF"){
 	$efftype = "Confusion chanse";
 	}
+		if ($WEPn["effect"] == "CS"){
+	$efftype = "Cursed Soul";
+	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
 	//check for uniq
@@ -808,6 +811,9 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 				if ($WEPIn["effect"] == "CF"){
 			$efftype = "Confusion chanse";
+			}
+			if ($WEPIn["effect"] == "CS"){
+			$efftype = "Cursed Soul";
 			}
 			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
@@ -1172,7 +1178,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		
 		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
 		
-		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD"){ //if usable item
+		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD" or $ITMn["EFT"] == "ENC"){ //if usable item
 		if ($ITMn["EFT"] == "MOD"){
 			$extratxt = "min mod lvl";}
 			

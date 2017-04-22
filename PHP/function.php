@@ -355,16 +355,16 @@ function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
                 $itemName = "<b>$name</b>";
             }
             //deciding on effect
-            if (rand(0,100) < 22){
-                $rngEffect = rand(1,10);
+            if (rand(0,100) < 23){
+                $rngEffect = rand(1,11);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
                     $weaponEffect = "LL";
                     $weaponEffectChance = rand(1,7);
                 }
                 if ($rngEffect == 2){
-                    $weaponEffect = "Bleed";
-                    $effectShort = "BL";
+                    $effectName = "Bleed";
+                    $weaponEffect = "BL";
                     $weaponEffectChance = rand(10,30);
                 }
                 if ($rngEffect == 3){
@@ -412,8 +412,13 @@ function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
 					$effectName = "Confusion chanse";
                     $weaponEffect = "CF";
                     $weaponEffectChance = rand(5,15);
-                    
-                    
+
+                }
+				if ($rngEffect == 11){
+					$effectName = "Cursed Soul";
+                    $weaponEffect = "CS";
+                    $weaponEffectChance = rand(10,50);
+
                 }
                 $effect = "Effect: $effectName $effectChance %<br>";
                 $textMessage.="Choose Effect $effectName $weaponEffectChance % \r\n";

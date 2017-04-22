@@ -51,7 +51,7 @@ if ($base[$baseN] == "Potion"){
 //bags
 if ($base[$baseN] == "Bag"){
 $icon = "Icon.6_37";
-	$sub = array("Gold", "Shards", "XP", "Mod");
+	$sub = array("Gold", "Shards", "XP", "Mod" ,"Enchant");
 	$subn = array_rand($sub,1);
 	if ($sub[$subn] == "Gold"){
 		$Name = "$base[$baseN] of $sub[$subn]";
@@ -73,6 +73,11 @@ $icon = "Icon.6_37";
 		$Name = "Draw of $sub[$subn]";
 		$EFT = "MOD";
 		$value = rand(15,50);}
+	if ($sub[$subn] == "Enchant"){
+		$icon = "Icon.7_82";
+		$Name = "Powder of random $sub[$subn]";
+		$EFT = "ENC";
+		$value = 1;}
 }
 
 

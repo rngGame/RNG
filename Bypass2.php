@@ -38,8 +38,9 @@ WHERE `User` = '$User'";
 
 $result = mysqli_query($db, $order3);
 mysqli_close($db);
-header("location:Enchant2.php")
-;}
+header("location:Enchant2.php");
+die();
+}
 else{
 	session_destroy();
 	session_start();

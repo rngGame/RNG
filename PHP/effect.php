@@ -182,19 +182,9 @@ if ($WEPn["effect"] == "CF"){
 }
 }
 
-//Cusrsed Soul
-if ($WEPn["effect"] == "CS"){
-	$pbon = round($physDMG * $WEPn["efstat"] /100);
-	$mbon = round($magDMG * $WEPn["efstat"] /100);
-	$hpdmg = round($HPO * ($WEPn["efstat"] / 10) /100);
-	$physDMG += $pbon;
-	$magDMG += $mbon;
-	$HPin -= $hpdmg;
-	$cursedtext = "Dmg increased by <font color='red'>$pbon</font>/<font color='#0066ff'>$mbon</font><br>But cursed soul consumed <b>$hpdmg</b> your health<br>";
-}
 
 
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
-$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart $cursedtext";
+$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";
 ?>

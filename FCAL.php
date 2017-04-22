@@ -126,9 +126,15 @@ if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0 and $SKL < 20 and $SKL <> 2){
 		}
 }
 
-//Effects
-if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
-		include 'PHP/effect.php';
+//Cusrsed Soul
+if ($WEPn["effect"] == "CS"){
+	$pbon = round($physDMG * $WEPn["efstat"] /100);
+	$mbon = round($magDMG * $WEPn["efstat"] /100);
+	$hpdmg = round($HPO * ($WEPn["efstat"] / 10) /100);
+	$physDMG += $pbon;
+	$magDMG += $mbon;
+	$HPin -= $hpdmg;
+	$CursedText= "Dmg increased by <font color='red'>$pbon</font>/<font color='#0066ff'>$mbon</font><br>But cursed soul consumed <b>$hpdmg</b> your health<br>";
 }
 
 
@@ -137,6 +143,10 @@ if ($SKL <> "" or $_SESSION["PET"] == 1){
 		include 'PHP/skills.php';
 }
 
+//Effects
+if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
+		include 'PHP/effect.php';
+}
 
 
 //monster cryt	
@@ -336,10 +346,10 @@ $_SESSION["LOG"] = "";
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$poisT $magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
+		$_SESSION["LOG"] = "$poisT $CursedText $magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
 	}
 
 

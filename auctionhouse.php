@@ -126,6 +126,9 @@ if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "CF"){
 	$efftype = "Confusion chanse";
 	}
+		if ($ITM["effect"] == "CS"){
+	$efftype = "Cursed Soul";
+	}
 	
 	$efto[$eft] = "$efftype[$eft] $ITM[efstat] %<br>";}
 

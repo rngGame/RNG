@@ -32,7 +32,7 @@ $c1 = rand(1,100);
 
 //stuff for enchant dust
 if (isset($_SESSION["ENCt"])){
-	$c1 = 5;
+	$c1 = 1;
 }
 	
 

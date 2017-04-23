@@ -8,6 +8,8 @@ $User = $_SESSION["User"];
 include_once 'PHP/function.php';
 //button
 
+echo $_SESSION["CURRENTWHASH"];
+
 
 //test functions
 //function testItemDrop($db){

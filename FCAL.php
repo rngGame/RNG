@@ -94,11 +94,15 @@ if ($GEM[1] <> ""){
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 
 
+//add some bonus dmg to cryt skill
+if ($SKL == 4){
+	$physDMG += $physDMG * rand(10,30) / 100;
+}
 
 
 
 //cryt calc
-if ($CRT <= $CRYT+$WEPn["Cryt"] and $magick == 0 and $SKL < 20 and $SKL <> 2){
+if ($CRT <= $CRYT+$WEPn["Cryt"] and $SKL < 20 and $SKL <> 2){
 	$citP = 1;
 	$CRYTD = $physDMG*$CRYTD/100;
 	$CRYTD = round($CRYTD);

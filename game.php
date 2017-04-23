@@ -491,7 +491,7 @@ $_SESSION["ARM"] = $Parmor;
 $_SESSION["MARM"] = $Marmor;
 $_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
 $_SESSION["ENG"] = $CLS[5];
-$_SESSION["CRYT"] = $PAS[2];
+$_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"];
 if (isset($crcsub)){
 $_SESSION["CRYT"] = $PAS[2]*$crcsub;
 }

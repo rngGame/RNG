@@ -41,7 +41,7 @@ if ($EFT == "HURT"){
 if ($EFT == "ENER"){
 	$SKL = $_SESSION["ENERGY"];
 	$SKLm = $_SESSION["ENERGYM"];
-	$BN = round($SKL * $VALUE / 100);
+	$BN = round($SKLm * $VALUE / 100);
 	$SKL += $BN;
 	 if($SKL > $SKLm){
 		$SKL = $SKLm;}

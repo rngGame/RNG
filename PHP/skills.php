@@ -191,7 +191,7 @@ if ($SKL ==32){
 		}
 		
 		//if dmgg exceds 30k
-		if ($comb > 30000){
+		if ($comb > 150000){
 			$comb = $comb * rand(1,10) /100;
 			$combtex="<b>POWER WAS SO GREAT TO HANDLE !</font></b><br>";
 		}

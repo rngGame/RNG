@@ -41,8 +41,16 @@ $ts1 = array("WEP", "ARM", "ACS");
 $ts2 = array_rand($ts1,1);
 $TYPE = $ts1[$ts2];
 
+$HASH == "";
+
+$l = 1;
+
+while ($HASH == "" and $l <> 100){
+	
+	$l += 1;
+
 if ($TYPE == "WEP"){
-$_SESSION["CURRENTWHASH"];
+	$HASH = $_SESSION["CURRENTWHASH"];
 }
 if ($TYPE == "ARM"){
 	$so = rand (1,3);
@@ -64,6 +72,7 @@ if ($TYPE == "ACS"){
 	if ($so == 2){
 		$HASH = $_SESSION["CURRENTACSAMULET"];
 	}
+}
 }
 
 $_SESSION["HASH"] = $HASH;

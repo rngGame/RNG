@@ -128,7 +128,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
 		  <option value='6' selected>6/option>
 		  </select>
           <input hidden='' type='text' name='skl' value='6' placeholder='lvl'>
-       <p class='submit' onclick='myfunc(this)'><input img $c7 src='IMG/pack/Icons8_40.png' style='width:45px;height:45px;' type='image' name='commit' value='(50)Dmg Boost'><span class='tooltiptext'>70En.<br>Increase cryt dmg $t7.</span></p> 
+       <p class='submit' onclick='myfunc(this)'><input img $c7 src='IMG/pack/Icons8_40.png' style='width:45px;height:45px;' type='image' name='commit' value='(50)Dmg Boost'><span class='tooltiptext'>70En.<br>Boost slightly phys. dmg and increase cryt dmg $t7.</span></p> 
       </form>
     </div>
   </section>";}

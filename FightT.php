@@ -39,6 +39,7 @@ else if ($type > 60){
 //check for uniq drop
 if ($type == 69 and $ACC[3] > 19){ 
 	$_SESSION["UNQ"] = 1;
+	$_SESSION["NOSHARDS"] = 1;
 	$_SESSION["PAGE"] = "location:uniqR.php";}
 
 $HPin = $_SESSION["HP"];

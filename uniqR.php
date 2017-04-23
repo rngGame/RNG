@@ -52,11 +52,17 @@ VALUES
 
 $result = mysqli_query($db, $order3);
 
+//check if with shards or not
+if (isset($_SESSION["NOSHARDS"])){
+}
+else{
+
 	$Shard = $ACC[15] - 100;
 	$order2 = "UPDATE characters
 	SET Shards = '$Shard'
 	WHERE `User` = '$User'";
-	$result = mysqli_query($db, $order2);	
+	$result = mysqli_query($db, $order2);
+}
 
 	
 $_SESSION["UNQ"] = 1515615565465;
@@ -67,7 +73,7 @@ if (isset($_SESSION["SHARDREW"])){
 
 }
 else{
-echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";
+//echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. chanse pasive $Shards<br><br>";
 
 echo ' <div class="right-panel">';
 echo $_SESSION["LOG"];

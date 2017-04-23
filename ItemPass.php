@@ -12,9 +12,9 @@ $VALUE = $_POST["VAL"];
 
 if ($EFT == "HEAL"){
 	$HP = $_SESSION["HP"];
-	$RES = round($HP * $VALUE /100);
-	$HP += $RES;
 	$HPMAX = $_SESSION["HPO"];
+	$RES = round($HPMAX * $VALUE /100);
+	$HP += $RES;
 	if($HP > $HPMAX){
 		$HP = $HPMAX;}
 	$_SESSION["HP"] = round($HP);	

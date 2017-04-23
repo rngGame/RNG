@@ -1178,7 +1178,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		
 		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
 		
-		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD" or $ITMn["EFT"] == "ENC"){ //if usable item
+		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD" or $ITMn["EFT"] == "ENC" or $ITMn["EFT"] == "JOKE"){ //if usable item
 		if ($ITMn["EFT"] == "MOD"){
 			$extratxt = "min mod lvl";}
 			

@@ -2,6 +2,7 @@
 session_start();
 ob_start();
 include_once 'PHP/db.php';
+include_once 'PHP/function.php';
 
 $User = $_SESSION["User"];
 
@@ -55,6 +56,50 @@ if (isset($_POST['ITMS'])) {
 		mysqli_query($db,$sql2);
 		header("location:Enchant.php");
 		die();
+	}
+	//joker
+	if ($ITM[2] == "JOKE"){
+		
+
+		if (rand(1,1000) >= 900){ //create mosnter
+		
+				$iLVL = $_SESSION["ILVL"];
+				$iLvL = $iLVL + rand(150,300);
+				
+			list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMonster($db,$iLVL);
+			
+	$_SESSION["MonsName"] = "$name";
+   	$_SESSION["MonsHP"] = $HP;
+    $_SESSION["MonsDMG"] = $PDMG;
+	$_SESSION["MonsDMGm"] = $MDMG;
+    $_SESSION["MonsDrop"] = round($Drop*3);
+    $_SESSION["MonsLVL"] = round($mLVL*1.5);
+    $_SESSION["MonsIMG"] = $monsterIMG;
+	
+		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
+		mysqli_query($db,$sql);
+		$sql2="DELETE FROM DropsItm WHERE HASH='$newU'";
+		mysqli_query($db,$sql2);
+		
+			header("location:FightT.php");
+			die();
+		}
+		else{
+		include 'PHP/items.php';
+	
+		$order = "INSERT INTO DropsItm
+		(HASH, Name, EFT, Value, Icon )
+		VALUES
+		('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
+	   
+		$order2 = "INSERT INTO Equiped
+		(User, Part, HASH, Equiped)
+		VALUES
+		('$User', 'ITM', '$HASHIT', '0')";	   
+
+		$result = mysqli_query($db, $order);
+		$result = mysqli_query($db, $order2);	}
+
 	}
 	
 		$sql="DELETE FROM Equiped WHERE HASH='$newU'";

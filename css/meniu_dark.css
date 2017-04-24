@@ -285,7 +285,7 @@ visibility:visible;
     padding: 5px 0;
 
     /* Position the tooltip */
-    position: absolute;
+    position: fixed;
     z-index: 1;
 }
 .tooltipskills{

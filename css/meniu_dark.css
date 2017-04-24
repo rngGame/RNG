@@ -689,8 +689,8 @@ progress::-webkit-progress-value {
     width: 100%;
 }
 .backpack{
-    position: absolute;
-    top: 31px;
+    position: relative;
+    height: 220px;
     width: 100%;
     overflow-x: hidden;
 }

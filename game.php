@@ -1591,6 +1591,8 @@ $actionsTemplate="
 //read last selected
 if (isset($_COOKIE["backpack"])){
 	$selected = $_COOKIE["backpack"];}
+else{
+	$selected = 0;}
 
 if ($selected == 0){
 	$opt = "<option value='0'selected>No sorting</option>

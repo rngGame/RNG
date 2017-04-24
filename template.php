@@ -8,7 +8,7 @@ echo '
 		<link rel="stylesheet" type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
 		<link rel="icon" href="favicon.png">
 	</head>
-	<body>
+	<body onload="callFunction()">
 		<header>
 			<div id="title">World of RNG</div>
 			<div id="settings">
@@ -72,6 +72,9 @@ echo '
 		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.6.3)</b></a><br>
 		<a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 		<script>
+		
+
+		
 			if(typeof(EventSource) !== "undefined") {
 			    var source = new EventSource("chat_upd.php");
 			    source.onmessage = function(event) {
@@ -102,11 +105,78 @@ echo '
 				document.getElementById(bt).onclick=function () { hide(a) };
 
 			}
+			function showDiv(elem){
+			if(elem.value == 0){
+     		document.getElementById("backpackWP").style.display = "block";
+			document.getElementById("backpackAR").style.display = "block";
+			document.getElementById("backpackAC").style.display = "block";
+			document.getElementById("backpackIT").style.display = "block";
+			document.cookie = "backpack=0";}
+  			if(elem.value == 1){
+     		document.getElementById("backpackWP").style.display = "block";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";
+			document.cookie = "backpack=1";}
+			if(elem.value == 2){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "block";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";
+			document.cookie = "backpack=2";}
+			if(elem.value == 3){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "block";
+			document.getElementById("backpackIT").style.display = "none";
+			document.cookie = "backpack=3";}
+			if(elem.value == 4){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "block";
+			document.cookie = "backpack=4";}
+}
+
+		window.onload = function() {
+   		 if(document.getElementById("test").value == 1){
+     		document.getElementById("backpackWP").style.display = "block";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";
+			}
+		 if(document.getElementById("test").value == 2){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "block";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";}
+		 if(document.getElementById("test").value == 3){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "block";
+			document.getElementById("backpackIT").style.display = "none";}
+		 if(document.getElementById("test").value == 4){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "block";}
+};
+   		
 
 		</script>
+		
+		
+
 	</footer>
+
 </html>
 
 
-
 ';
+?>
+
+		
+
+
+	
+

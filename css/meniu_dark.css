@@ -682,7 +682,7 @@ progress::-webkit-progress-value {
 
 }
 #inventoryHead{
-    position: absolute;
+    position: relative;
     top: 0px;
     height: 30px;
     border-bottom:1px solid black;

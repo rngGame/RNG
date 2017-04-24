@@ -761,7 +761,7 @@ else {
 
 
 $inventoryNumber=0;
-$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'");
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='WEP'");
 while ($List1 = mysqli_fetch_array($List)){	
 	/*if($inventoryNumber/12==floor($inventoryNumber/12)&&$inventoryNumber!=0){//every X make a new line
 		$backpackTemplate.="<br>";
@@ -868,7 +868,7 @@ while ($List1 = mysqli_fetch_array($List)){
 				$wepCompHit="same";
 			}
 		}
-		$backpackTemplate.= "
+		$backpackTemplateWP.= "
 		<div class='items'>
 			<div id= 'inventoryIcons' class='tooltip'>
 				<img src='IMG/pack/Icon.4_79.png' width='45px' height='45px' class='item".$WEPIn['Rarity']."'>
@@ -931,8 +931,10 @@ while ($List1 = mysqli_fetch_array($List)){
 		</div>
 					";
 	}
-
-	//invetor ARMOR
+}
+//invetor ARMOR
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='ARM'");
+while ($List1 = mysqli_fetch_array($List)){	
 	if ($List1[1] == "ARM"){
 		$ARMIr = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$List1[2]' ");
 		$ARMIn = mysqli_fetch_assoc($ARMIr); //armor by colum row
@@ -994,7 +996,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 
 		
-		$backpackTemplate.= "
+		$backpackTemplateAR.= "
 		<div class='items'>
 			<div class='tooltip'>
 				<img src='IMG/pack/Icon.".$armIcon.".png' width='45px' height='45px' class='item".$ARMIn['Rarity']."'>
@@ -1049,8 +1051,10 @@ while ($List1 = mysqli_fetch_array($List)){
 		</div>";
 	}
 
-
-
+}
+//ACSESORYS
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='ACS'");
+while ($List1 = mysqli_fetch_array($List)){	
 	if ($List1[1] == "ACS"){
 		$ACSI = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$List1[2]' ");
 		$ACSIn = mysqli_fetch_assoc($ACSI); //armor by colum row
@@ -1113,7 +1117,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 		}
 
-		$backpackTemplate.=  "
+		$backpackTemplateAC.=  "
 		<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/Icon.".$acsIcon.".png' width='45px' height='45px' class='item".$ACSIn['Rarity']."'>
@@ -1172,6 +1176,9 @@ while ($List1 = mysqli_fetch_array($List)){
 	</div>";
 	}
 	
+}
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='ITM'");
+while ($List1 = mysqli_fetch_array($List)){	
 	if ($List1[1] == "ITM"){
 		$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$List1[2]' ");
 		$ITMn = mysqli_fetch_assoc($ITM); //item by colum row
@@ -1182,7 +1189,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		if ($ITMn["EFT"] == "MOD"){
 			$extratxt = "min mod lvl";}
 			
-		$backpackTemplate.=  "<div class='items'>
+		$backpackTemplateIT.=  "<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
@@ -1204,7 +1211,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			</div>
 	</div>";}
 	else{
-		$backpackTemplate.=  "<div class='items'>
+		$backpackTemplateIT.=  "<div class='items'>
 		<div class='tooltip'>
 			<img src='IMG/pack/".$ITMn[Icon].".png' width='45px' height='45px'>
 			<span class='tooltiptext'>
@@ -1227,6 +1234,7 @@ while ($List1 = mysqli_fetch_array($List)){
 	}
 	
 }
+
  //Party
 $PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
 $Party = mysqli_fetch_assoc($PartyS);
@@ -1579,13 +1587,65 @@ $actionsTemplate="
 	</form>
 </section>
 ";
+
+//read last selected
+if (isset($_COOKIE["backpack"])){
+	$selected = $_COOKIE["backpack"];}
+
+if ($selected == 0){
+	$opt = "<option value='0'selected>No sorting</option>
+<option value='1'>Weapons</option>
+<option value='2'>Armors</option>
+<option value='3'>Acsesories</option>
+<option value='4'>Items</option>";}
+if ($selected == 1){
+	$opt = "<option value='0'>No sorting</option>
+<option value='1' selected>Weapons</option>
+<option value='2'>Armors</option>
+<option value='3'>Acsesories</option>
+<option value='4'>Items</option>";}
+if ($selected == 2){
+	$opt = "<option value='0'>No sorting</option>
+<option value='1'>Weapons</option>
+<option value='2' selected>Armors</option>
+<option value='3'>Acsesories</option>
+<option value='4'>Items</option>";}
+if ($selected == 3){
+	$opt = "<option value='0'>No sorting</option>
+<option value='1'>Weapons</option>
+<option value='2'>Armors</option>
+<option value='3' selected>Acsesories</option>
+<option value='4'>Items</option>";}
+if ($selected == 4){
+	$opt = "<option value='0'>No sorting</option>
+<option value='1'>Weapons</option>
+<option value='2'>Armors</option>
+<option value='3'>Acsesories</option>
+<option value='4' selected>Items</option>";}
+	
+
 $inventoryTemplate="
 <div id='inventoryHead'>
-<font class='sectionTitle'>Backpack:</font>
+<font class='sectionTitle'>Backpack: </font>
+
+<select id='test' name='form_select' onchange='showDiv(this)' >
+$opt
+</select>
+
+
 </div>
-<div id='backpack'>
-	$backpackTemplate
+<div style='display:block;' id='backpackWP' >
+	$backpackTemplateWP
 </div>
+<div id='backpackAR' style='display:block;'>
+	$backpackTemplateAR
+</div>
+<div id='backpackAC' style='display:block;'>
+	$backpackTemplateAC
+</div>
+<div id='backpackIT' style='display:block;'>
+	$backpackTemplateIT
+</div>	
 ";
 mysqli_close($db);
 include('template.php');

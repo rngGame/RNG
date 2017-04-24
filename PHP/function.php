@@ -472,12 +472,43 @@ function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
     }
 }
 
+
+//MONTERS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function createMonster($db,$iLVL){
 
     $creationDone=false;
     $timeCreated=0;
     $testMessage="Test Start run $timeCreated <br>";
-    $equipableItems=8; //how many items give iLVL
+    $equipableItems=5; //how many items give iLVL
+	
+	//limits by level:
+	if ($iLVL <= 100){
+	$limitbonus = 10;}
+	if ($iLVL <= 300){
+	$limitbonus = 20;}
+	if ($iLVL <= 800){
+	$limitbonus = 30;}
+	if ($iLVL <= 1000){
+	$equipableItems=6;	
+	$limitbonus = 40;}
+	if ($iLVL <= 1300){
+	$limitbonus = 50;}
+	if ($iLVL <= 1500){
+	$equipableItems=7;
+	$limitbonus = 60;}
+	if ($iLVL <= 1800){
+	$limitbonus = 70;}
+	if ($iLVL <= 2000){
+	$equipableItems=8;
+	$limitbonus = 80;}
+	if ($iLVL <= 2200){
+	$limitbonus = 90;}
+	
+	
+	
+	
+	
+	
     while(!$creationDone){
         //Nullify vars
         $timeCreated++;
@@ -551,7 +582,7 @@ function createMonster($db,$iLVL){
             $HP *= $preHP;
             $DMG *= $preDMG;
             $mLVL += $preLVL;
-            $Drop += $preDrop;
+            $Drop += $Drop * $preDrop /100;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //Sub Set Up
@@ -561,7 +592,7 @@ function createMonster($db,$iLVL){
             $HP *= $subHP;
             $mLVL += $subLVL;
             $DMG *= $subDMG;
-            $Drop += $subDrop;
+            $Drop += $Drop * $subDrop / 100;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
         //Enchant Set Up
@@ -569,18 +600,18 @@ function createMonster($db,$iLVL){
             $testMessage.="enchant approved more than 20 <br>";
             $nameEnchant = $enchantName;
             $HP *= $enchantEff;
-            $mLVL += $enchantLVL;
+            $mLVL *= $enchantEff; //$monsterLVL -> $enchantEff
             $DMG *= $enchantEff;
-            $Drop += $enchantEff;
+            $Drop *= $enchantEff;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
         }
 
         if (rand(1,300) == 100){
             $testMessage.="Rare approved exact at 100 <br>";
             $nameRare = "<b style='color:#ff0066'>! RARE !</b>";
-            $HP *= 1.15;
+            $HP *= 1.35;
             $mLVL *= 1.5;
-            $DMG *= 0.8;
+            $DMG *= 1.2;
             $Drop *= 10;
             $_SESSION["MonsR"] = 1;
             $testMessage.="Current Stats $Name | $mLVL | $HP | $DMG | $Drop <br>";
@@ -594,18 +625,19 @@ function createMonster($db,$iLVL){
         $Drop = round($Drop,0);
         
         //limits
-        $limitMaxLVL=$iLVL/$equipableItems+30;
-        $limitMinLVL=$iLVL/$equipableItems-30;
+        $limitMaxLVL=$iLVL/$equipableItems+$limitbonus;
+        $limitMinLVL=$iLVL/$equipableItems-(10+$limitbonus/10);
         if($limitMinLVL<1){
             $limitMinLVL=1;
         }
         $testMessage.="limits are >$limitMinLVL <$limitMaxLVL <br>";
         //check if monster is good enough
-        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>50){
+        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100){
             $testMessage.="Found Correct monsted or $timeCreated >100 <br>";
             $testMessage.="Monster: $name |LVL $mLVL |HP $HP |DMG $DMG |DROP $Drop <br>";
             $creationDone=true;
         }
+
     }
     return array ($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterImageID, $testMessage);
 

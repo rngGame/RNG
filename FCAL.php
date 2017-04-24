@@ -205,13 +205,17 @@ if ($SKL ==7 or $pos == 1){
 	$pois = rand(8,15);}
 	$poison = ($monHP*$pois/100); 
 	if ($SUB[5] == "POIS"){
-		if ($poison >= 10000){
-			$poison = 10000;}
+		if ($poison >= 50000){
+			$poison = 50000;}
 	}
-	else if ($poison >= 3000){
-			$poison = 3000;}
+	else if ($poison >= 10000){
+			$poison = 10000;}
 	if ($WEPn["effect"] == "PS"){ //is stat buffs poision
 		$poison += ($poison * $WEPn["efstat"] / 100);} 
+		
+	//if poison dmg <0
+	if ($poison <= 0){
+		$poison = 0;}
 		
 	$poison = round($poison,0);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'POS'");

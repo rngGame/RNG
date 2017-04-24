@@ -40,6 +40,7 @@ if ($Party["ID"] == 0){
 }
 
 $UserWin = "";
+$log .= "<br>";
 
 $FreeParty = mysqli_query($db,"SELECT * FROM Party where ID =  '$PartID'  ");
 $FreeParty = mysqli_fetch_row($FreeParty);
@@ -138,6 +139,8 @@ while ($i < $PlayerNR and $i <> 100){
 	$result = mysqli_query($db, $order7);
 	$result = mysqli_query($db, $order8);	
 	
+	$log .= "<b>$UserC[0]</b> recived $Name<br>";
+	
 	}
 	
 	 
@@ -178,13 +181,18 @@ while ($i < $PlayerNR and $i <> 100){
 	if ($rngShardsChance <  10){
 	  $rngShardsAmmount = rand(1,15);
 	  $Shards += $rngShardsAmmount;
+	  $log .= "<b>$UserC[0]</b> recived <font class='shards'>$rngShardsAmmount</font> shards.<br>";
 	}
 	$orderChar = "UPDATE characters
 	SET Shards= '".$Shards."', XP = '".$xpTotal."', Kills = '".$kills."', Cash = '".$cash."'
 	WHERE `USER` = '$UserC[0]'";
 	$result = mysqli_query($db, $orderChar);
+	
+
 
 }
+
+
 
 $sql2="DELETE FROM PartyMonsters WHERE PartyID='$PartID'";
 mysqli_query($db,$sql2);
@@ -300,6 +308,8 @@ if($phyAVG1<=$phyAVG2){
 if($magAVG1<=$magAVG2){
 	$compareMAG="less";
 }
+
+$log .="<br><b>$UserWin</b> Recived equipment - $name<br>";
 } //Weapon
 if ($selectpart == 2){
 list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$UserWin,"armor",$MLVL);
@@ -318,7 +328,11 @@ VALUES
 ('$UserWin', 'ARM', '$HASH', '0')";	   
 
 $result = mysqli_query($db, $order);
-$result = mysqli_query($db, $order2);} //Armor 
+$result = mysqli_query($db, $order2);
+
+$log .="<br><b>$UserWin</b> Recived equipment - $name<br>";
+
+} //Armor 
 if ($selectpart == 3){
 	list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$UserWin,"talisman",$MLVL);
 $cash = $iLVL*$sell;
@@ -340,6 +354,8 @@ VALUES
 
 $result = mysqli_query($db, $order);
 $result = mysqli_query($db, $order2);
+
+$log .="<br><b>$UserWin</b> Recived equipment - $name<br>";
 } //Acsesory
 }
 
@@ -349,7 +365,11 @@ $_SESSION["TEST"] = 1;
 
 mysqli_close($db);
 
-header("location:sync.php");  
+
+
+$_SESSION["LOGPARTY"] = "$log";
+
+header("location:reward.php");  
 
 die();
 

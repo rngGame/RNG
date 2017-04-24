@@ -48,6 +48,16 @@ if ($shitwep == 0001){
 
 list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMonster($db,$iLVL);
 
+//if monster P damage lower then player defence
+if ($Armor > $PDMG){
+	$PDMG = round($Armor + ($Armor * rand(-10,10) / 100));}
+	
+//if monster M damage lower then player defence
+if ($ArmorM > $MDMG){
+	$MDMG = round($ArmorM + ($ArmorM * rand(-20,20) / 100));}
+
+
+
 if ($mLVL < 1 or $HP < 1 or $PDMG < 1 or $Drop < 1){
 	//header("location:fightNew.php");
 	echo "$name || MLVL: $mLVL || HP: $HP || DMG: $DMG || DROP: $Drop || iLVL: $iLVL";

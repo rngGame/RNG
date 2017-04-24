@@ -30,8 +30,13 @@ $Gold = $_SESSION["GoldRew"];
 
 $rewType = $_SESSION["REWARDTYPE"];
 
-$_SESSION["CURRENTWHASH"];
+//if party monster
+if (isset($_SESSION["LOGPARTY"])){
+	$log = $_SESSION["LOGPARTY"];
+	echo "<b>Party mob killed</b><br>$log";
+}
 
+else{
 if (isset($_SESSION["SHD"])){
 $Shards = $_SESSION["SHD"];
 $Shards = ", also gained <b style='color:#00cc99'>$Shards</b> shards.";}
@@ -85,7 +90,7 @@ echo '</div>';
 
 echo "$Reward";
 
-
+}
 
 echo '<section class="container">
     <div class="Keep">
@@ -94,7 +99,10 @@ echo '<section class="container">
       </form>
     </div>
   </section>';
-
+  
+if (isset($_SESSION["LOGPARTY"])){
+}
+else{
 echo '<section class="container2">
     <div class="Sell">
 	      <form method="post" action="Sell.php">
@@ -102,7 +110,7 @@ echo '<section class="container2">
       </form>
     </div>
   </section>';
-
+}
 ?>
 </div>
 </body>

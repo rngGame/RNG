@@ -76,17 +76,11 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 
 //Block WEP
 if ($WEPn["effect"] == "BK"){
-	if ($WEPn["efstat"] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BK") or ($SUB[7] >= rand(0,100) and $SUB[6] == "BK")){
 		$Block = 1;	
 }
 }
 
-//Block CLS
-if ($SUB[6] == "BK"){
-	if ($SUB[7] >= rand(0,100)){
-		$Block = 1;	
-}
-}
 
 //Dodge
 if ($SUB[6] == "DG"){

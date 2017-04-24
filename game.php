@@ -1645,17 +1645,19 @@ $opt
 
 
 </div>
-<div style='display:none;' id='backpackWP' class='backpack' >
-	$backpackTemplateWP
-</div>
-<div id='backpackAR' style='display:none;' class='backpack'>
-	$backpackTemplateAR
-</div>
-<div id='backpackAC' style='display:none;' class='backpack'>
-	$backpackTemplateAC
-</div>
-<div id='backpackIT' style='display:none;' class='backpack'>
-	$backpackTemplateIT
+<div class='backpack'>
+	<div style='display:none;' id='backpackWP'>
+		$backpackTemplateWP
+	</div>
+	<div id='backpackAR' style='display:none;'>
+		$backpackTemplateAR
+	</div>
+	<div id='backpackAC' style='display:none;'>
+		$backpackTemplateAC
+	</div>
+	<div id='backpackIT' style='display:none;'>
+		$backpackTemplateIT
+	</div>
 </div>	
 ";
 mysqli_close($db);

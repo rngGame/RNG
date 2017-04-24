@@ -147,8 +147,8 @@ if ($ACC[9] > 100){
 		VALUES ('Get ilvl over 100', 'Not bad', '$User')";
 		$result = mysqli_query($db, $order);}}
 		
-	//iLVL 420 (10achv)
-if ($ACC[9] == 420){
+	//iLVL 420/1420/2420 (10achv)
+if ($ACC[9] == 420 or $ACC[9] == 1420 or $ACC[9] == 2420 or $ACC[4] == 420 or $ACC[2] == 420){
 		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'Blaze it!'");
 	$ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){
@@ -160,7 +160,7 @@ if ($ACC[9] == 420){
 			
 			$result = mysqli_query($db, $order3);
 		$order = "INSERT INTO Achievments (Name, Title, User)
-		VALUES ('Get ilvl over 100', 'Blaze it!', '$User')";
+		VALUES ('420 \o/', 'Blaze it!', '$User')";
 		$result = mysqli_query($db, $order);}}
 
 	//iLVL > 500
@@ -541,4 +541,40 @@ if ($ran[15] >= 200){
 		$order = "INSERT INTO Achievments (Name, Title, User)
 		VALUES ('Keep 200 shards without spending', 'Shardeded', '$User')";
 		$result = mysqli_query($db, $order);}}
+		
+//iLVL > 2000
+if ($ACC[9] >= 2000){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'MLG PRO'");
+	$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){
+				$newP = $PNT[1] + 1;
+		
+			$order3 = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$User'";
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Get ilvl over 2000', 'MLG PRO', '$User')";
+		$result = mysqli_query($db, $order);}}
+		
+//Change title fr first time
+
+	$rar = mysqli_query($db,"SELECT * FROM aStatus where User = '$User' and Name = 'CHACH' ");
+	$rar = mysqli_fetch_row($rar);
+if ($rar[2] == 1){
+	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'First time'");
+	$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){
+				$newP = $PNT[1] + 1;
+		
+			$order3 = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$User'";
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Change tittle for the first time', 'First time', '$User')";
+		$result = mysqli_query($db, $order);}}	
+
 ?>

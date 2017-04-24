@@ -18,6 +18,15 @@ if (isset($_POST['change'])) {
 	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order);	}
 	
+	
+	//get achievment
+$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'CHACH'");
+	$ACH = mysqli_fetch_row($ACH);
+		if ($ACH[1]==""){
+	$order = "INSERT INTO aStatus (User, Name, Status)
+	VALUES ('$User', 'CHACH', '1')";
+	$result = mysqli_query($db, $order);}
+	
 
 header("location:sync.php");
 ?>

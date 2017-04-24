@@ -45,7 +45,7 @@
 <file name="send.php" server="ftp.miniforums.org" local="131349460580591657" remote="131309406000000000" Dst="1" />
 <file name="sync.php" server="ftp.miniforums.org" local="131372441169066353" remote="131372116800000000" Dst="2" />
 <file name="achv.php" server="ftp.miniforums.org" local="131372431544152972" remote="131372107200000000" Dst="2" />
-<file name="chng.php" server="ftp.miniforums.org" local="131372662333799277" remote="131372338200000000" Dst="2" />
+<file name="chng.php" server="ftp.miniforums.org" local="131375032104614105" remote="131374707600000000" Dst="2" />
 <file name="settings.php" server="ftp.miniforums.org" local="131349460589037677" remote="131299695600000000" Dst="1" />
 <file name="sett.php" server="ftp.miniforums.org" local="131349460585295015" remote="131299588800000000" Dst="1" />
 <file name="favicon.png" server="ftp.miniforums.org" local="131349460356376588" remote="131299687800000000" Dst="1" />

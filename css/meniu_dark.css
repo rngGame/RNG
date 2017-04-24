@@ -688,7 +688,7 @@ progress::-webkit-progress-value {
     border-bottom:1px solid black;
     width: 100%;
 }
-#backpack{
+.backpack{
     position: absolute;
     top: 31px;
     width: 100%;

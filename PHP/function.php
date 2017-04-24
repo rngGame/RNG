@@ -486,25 +486,31 @@ function createMonster($db,$iLVL){
 	
 	//limits by level:
 	if ($iLVL <= 100){
+	$equipableItems=6;
 	$limitbonus = 10;}
 	if ($iLVL <= 300){
+	$equipableItems=6;
 	$limitbonus = 20;}
 	if ($iLVL <= 800){
+	$equipableItems=6;		
 	$limitbonus = 30;}
 	if ($iLVL <= 1000){
 	$equipableItems=6;	
 	$limitbonus = 40;}
 	if ($iLVL <= 1300){
+	$equipableItems=6;
 	$limitbonus = 50;}
 	if ($iLVL <= 1500){
 	$equipableItems=7;
 	$limitbonus = 60;}
 	if ($iLVL <= 1800){
+	$equipableItems=7;
 	$limitbonus = 70;}
 	if ($iLVL <= 2000){
 	$equipableItems=8;
 	$limitbonus = 80;}
 	if ($iLVL >= 2200){
+	$equipableItems=8;		
 	$limitbonus = 90;}
 	
 	

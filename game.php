@@ -554,6 +554,9 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "CS"){
 	$efftype = "Cursed Soul";
 	}
+		if ($WEPn["effect"] == "HT"){
+	$efftype = "Health per turn";
+	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
 	//check for uniq
@@ -812,9 +815,12 @@ while ($List1 = mysqli_fetch_array($List)){
 				if ($WEPIn["effect"] == "CF"){
 			$efftype = "Confusion chanse";
 			}
-			if ($WEPIn["effect"] == "CS"){
+				if ($WEPIn["effect"] == "CS"){
 			$efftype = "Cursed Soul";
 			}
+				if ($WEPIn["effect"] == "HT"){
+			$efftype = "Health per turn";
+			}	
 			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
 
 		if ($WEPIn["skill"] <> 0){

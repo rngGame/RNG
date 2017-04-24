@@ -50,11 +50,11 @@ list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMo
 
 //if monster P damage lower then player defence
 if ($Armor > $PDMG){
-	$PDMG = round($Armor + ($Armor * rand(-10,10) / 100));}
+	$PDMG = round($Armor + ($Armor * rand(-10,30) / 100));}
 	
 //if monster M damage lower then player defence
 if ($ArmorM > $MDMG){
-	$MDMG = round($ArmorM + ($ArmorM * rand(-20,20) / 100));}
+	$MDMG = round($ArmorM + ($ArmorM * rand(-10,30) / 100));}
 
 
 

@@ -129,6 +129,9 @@ if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "CS"){
 	$efftype = "Cursed Soul";
 	}
+		if ($ITM["effect"] == "HT"){
+	$efftype = "Health per turn";
+	}	
 	
 	$efto[$eft] = "$efftype[$eft] $ITM[efstat] %<br>";}
 

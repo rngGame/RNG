@@ -35,7 +35,7 @@ if ($uniqRO == 4){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt,mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Lord of Magick wand','ff6633', '100', '1', '1','1', '700', '900', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'Lord of Magick wand','Unique', '100', '1', '1','1', '800', '1000', '1', '', '', '', '0', '200')";
 }
 
 if ($uniqRO == 5){
@@ -94,7 +94,7 @@ if ($uniqRO == 12){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Summoners urgant wish stick', 'Unique','150', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
+	   ('$HASH', 'Summoners Urgent Wish Stick', 'Unique','150', '1', '1', '1', '450', '850', '80', '', 'SM', '150', '0', '550')";
 }
 
 if ($uniqRO == 13){

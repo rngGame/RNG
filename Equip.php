@@ -4,6 +4,30 @@ ob_start();
 include_once 'PHP/db.php';
 include_once 'PHP/function.php';
 
+?>
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>World of RNG</title>
+<?php
+echo "<link rel='stylesheet' type='text/css' href='css/$_COOKIE[Theme].css'>";
+?>
+<link rel="icon" href="favicon.png">
+</head>
+<header>
+World Of RNG
+</header>
+<body>
+
+
+<?php
+
 $User = $_SESSION["User"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -61,7 +85,7 @@ if (isset($_POST['ITMS'])) {
 	if ($ITM[2] == "JOKE"){
 		
 
-		if (rand(1,1000) >= 900){ //create mosnter
+		if (rand(1,1000) <= 100){ //create mosnter
 		
 				$iLVL = $_SESSION["ILVL"];
 				$iLvL = $iLVL + rand(150,300);
@@ -98,7 +122,26 @@ if (isset($_POST['ITMS'])) {
 		('$User', 'ITM', '$HASHIT', '0')";	   
 
 		$result = mysqli_query($db, $order);
-		$result = mysqli_query($db, $order2);	}
+		$result = mysqli_query($db, $order2);	
+		
+		echo "You got: <br><div class='tooltip'><input $c1 src='IMG/pack/$icon.png' style='width:45px;height:45px;' type='image' name='commit'><span class='tooltiptext'>$Name - $value</span><br>by using joker</div>";
+		
+		$sql="DELETE FROM Equiped WHERE HASH='$newU'";
+		mysqli_query($db,$sql);
+		$sql2="DELETE FROM DropsItm WHERE HASH='$newU'";
+		mysqli_query($db,$sql2);
+		
+		echo " <section class='container3'>
+    <div class='31-50'>
+	      <form method='post' action='sync.php'>
+        <p class='submit'><input type='submit' name='commit' value='Back'></p>
+      </form>
+    </div>
+  </section>";
+		
+		die();
+		
+		}
 
 	}
 	

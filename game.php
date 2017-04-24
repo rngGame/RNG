@@ -927,7 +927,7 @@ while ($List1 = mysqli_fetch_array($List)){
 						</div>
 				</form>
 				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
-				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php' class='auctionbox'>
 					Asking price: <input type='number' name='price' value='0'>
 					<input type='text' name='HASH' value='$WEPIn[HASH]' style='display:none'>
 					<input type='text' name='TYPE' value='WEP' style='display:none'>
@@ -1047,7 +1047,7 @@ while ($List1 = mysqli_fetch_array($List)){
 						</div>
 				</form>
 				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
-				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php' class='auctionbox'>
 					Asking price: <input type='number' name='price' value='0'>
 					<input type='text' name='HASH' value='$ARMIn[HASH]' style='display:none'>
 					<input type='text' name='TYPE' value='ARM' style='display:none'>
@@ -1172,7 +1172,7 @@ while ($List1 = mysqli_fetch_array($List)){
 						</div>
 				</form>
 				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
-				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php'>
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php' class='auctionbox'>
 					Asking price: <input type='number' name='price' value='0'>
 					<input type='text' name='HASH' value='$ACSIn[HASH]' style='display:none'>
 					<input type='text' name='TYPE' value='ACS' style='display:none'>

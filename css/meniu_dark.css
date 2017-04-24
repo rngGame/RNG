@@ -807,4 +807,9 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	padding-left: 30px;
     height: 15px;
 }
+.auctionbox{
+    border: 1px solid black;
+    border-radius: 6px;
+    z-index: 1;
+}
 

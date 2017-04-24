@@ -154,18 +154,7 @@ if ($SKL ==5){
 	$_SESSION["ENERGY"] = $ene;
 };
 
-//skill 6 
-if ($SKL ==6){
-	$CRYT = $CRYT * 2;
-	$CRYTD = $CRYTD + 100;
-	if ($CLS[6] == "ASSA"){
-	$CRYT = $CRYT * 1.2;
-	$CRYTD = $CRYTD + 20;}
-	if ($SUB[5] == "CRYTE"){
-	$CRYTD = $CRYTD + 80;}
-	$ene = $ene - 70;
-	$_SESSION["ENERGY"] = $ene;
-	}
+
 
 //MAGICK//
 

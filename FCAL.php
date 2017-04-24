@@ -66,11 +66,6 @@ $SKL = $_POST["skl"]; //skill ID
 
 $wepHASH = $_SESSION["CURRENTWHASH"]; //get weapon hash
 
-$CRT= rand(1,100); //cryt ccalc
-
-
-
-
 	
 //DB
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -99,19 +94,30 @@ if ($SKL == 4){
 	$physDMG += $physDMG * rand(10,30) / 100;
 }
 
+//skill 6 
+if ($SKL == 6){
+	$CRYT = $CRYT * 2;
+	$CRYTD = $CRYTD + 100;
+	if ($CLS[6] == "ASSA"){
+	$CRYT = $CRYT * 1.2;
+	$CRYTD = $CRYTD + 20;}
+	if ($SUB[5] == "CRYTE"){
+	$CRYTD = $CRYTD + 80;}
+	$ene = $ene - 70;
+	$_SESSION["ENERGY"] = $ene;
+	}
 
 
 //cryt calc
-if ($CRT <= $CRYT+$WEPn["Cryt"] and $SKL < 20 and $SKL <> 2){
+if (rand(1,100) <= $CRYT and $SKL < 20 and $SKL <> 2){
 	$citP = 1;
-	$CRYTD = $physDMG*$CRYTD/100;
-	$CRYTD = round($CRYTD);
+	
+	$CRYTD = round($physDMG*$CRYTD/100);
 	$physDMG = ($physDMG*2)+$CRYTD;
 
 	
 	if ($SKL == 4){ //cryt if combo
-	$CRYTD = $physDMGc*$CRYTD/100;
-	$CRYTD = round($CRYTD);
+	$CRYTD = round($physDMG*$CRYTD/100);
 	$physDMGc = ($physDMGc*2)+$CRYTD;
 }
 	

@@ -82,7 +82,7 @@ function login($vardas, $password, $db) {
         }
     }
 }
-function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType){
+function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType, $isTest){
     $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
     if(!$orderBy){
         $orderBy="RAND()";
@@ -632,7 +632,7 @@ function createMonster($db,$iLVL){
         }
         $testMessage.="limits are >$limitMinLVL <$limitMaxLVL <br>";
         //check if monster is good enough
-        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100){
+        if(($mLVL<=$limitMaxLVL AND $mLVL>=$limitMinLVL) OR $timeCreated>100 OR $isTest){
             $testMessage.="Found Correct monsted or $timeCreated >100 <br>";
             $testMessage.="Monster: $name |LVL $mLVL |HP $HP |DMG $DMG |DROP $Drop <br>";
             $creationDone=true;

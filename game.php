@@ -253,7 +253,7 @@ if ($XPLc[0] ==1){
 	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(Till next lvl: $XPL2r)</div></font>";
 }
 else{
-	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)/div></font>";
+	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)</div></font>";
 }
 
 

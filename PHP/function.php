@@ -82,14 +82,17 @@ function login($vardas, $password, $db) {
         }
     }
 }
-function itemDrop($db,$user,$drop,$MLVL, $orderBy, $orderByType, $isTest){
+function itemDrop($db,$user,$drop,$MLVL, $isTest){
     $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
-    if(!$orderBy){
+    if(!$isTest){
         $orderBy="RAND()";
-    }
-    if(!$orderByType){
         $orderByType="RAND()";
     }
+    else{
+        $orderBy="LVL DESC";
+        $orderByType="Bonus DESC";
+    }
+    
     if($drop=="all"){
         $textMessage.="Drop not decided Choosing one at random \r\n";
         $check=rand(1,3);

@@ -64,7 +64,8 @@ if ($CLS[6] == "COMB"){
 	$r2 = rand(1,80);
 	$r3 = rand(1,85);
 	$r4 = rand(1,90);
-	$r5 = rand(1,95);}
+	$r5 = rand(1,95);
+	$r5c= rand(1,95);}
 	
 if ($SUB[5] == "SLASH"){
 	$r6 = rand(1,80);
@@ -86,6 +87,12 @@ if ($SUB[5] == "SLASH"){
 	if ( $r5 < 75){
 		$skr = $skr + 1;
 		$physDMG = $physDMG + $physDMGc;}
+		
+	if ($SUB[5] == "COMB"){
+	if ( $r5c < 75){
+		$skr = $skr + 1;
+		$physDMG = $physDMG + $physDMGc;}
+	}
 		
 	if ($SUB[5] == "SLASH"){
 	if ( $r6 < 75){
@@ -127,13 +134,13 @@ if ($SKL ==5){
 		
 		
 	$calcref = $mref;
- 	$monsRef = ($monDMG * $calcref / 100) + $Armor;
+ 	$monsRef = ($monDMG * $calcref / 100) + $Armor + $ArmorM;
 	$dmgmitig = $calcref;
 	if ($CLS[6] == "TANK"){
-	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.2);
+	$monsRef = ($monDMG * $calcref / 100) + (($Armor + $ArmorM) *1.1);
 	$dmgmitig = $calcref;}
 	if ($SUB[5] == "REFL"){
-	$monsRef = ($monDMG * $calcref / 100) + ($Armor*1.5);
+	$monsRef = ($monDMG * $calcref / 100) + (($Armor + $ArmorM) *1.3);
 	$dmgmitig = $calcref;}
 	
 	$monDMG = round($monDMG - $dmgmitig);
@@ -160,9 +167,9 @@ if ($SKL ==5){
 
 //skill 31
 if ($SKL ==31){
-	$fB = 60;
+	$fB = rand(50,70);
 		if ($CLS[6] == "FIRE"){
-		$fB = 120;}
+		$fB = rand(100,140);}
 	$fball = round($magDMG + ($magDMG *  $fB /100));
 		$ene = $ene - 30;
 	$_SESSION["ENERGY"] = $ene;
@@ -198,7 +205,7 @@ if ($SKL ==33){
 	}
 	while ($IC <> 100){
 		if (rand(0,$stic)> 50){
-			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.10) + $fmagDMG;
+			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.11) + $fmagDMG;
 			$xtim = $xtim + 1;
 		}
 		$IC = $IC + 1;
@@ -311,16 +318,18 @@ if ($SKL ==33){
 //skill 35
 if ($SKL == 35){
 	$_SESSION["SKILL35"] = 1;
-	$bonusspower = $Armor + $ArmorM;
+	$bonusspowerP = $Armor;
+	$bonusspowerM = $ArmorM;
 	if ($SUB[5] == "BRSK"){
-	$bonusspower =( $Armor + $ArmorM )* 2.5;
+	$bonusspowerP = $Armor * 2.5;
+	$bonusspowerM = $ArmorM * 2.5;
 	}
 	$_SESSION["ARM"] = 0;
 	$_SESSION["MARM"] = 0;
-	$minPdmg = $minPdmg + $bonusspower;
-	$maxPdmg = $maxPdmg + $bonusspower;
-	$minMdmg = $minMdmg + $bonusspower;
-	$maxMdmg = $maxMdmg + $bonusspower;
+	$minPdmg = $minPdmg + $bonusspowerP;
+	$maxPdmg = $maxPdmg + $bonusspowerP;
+	$minMdmg = $minMdmg + $bonusspowerM;
+	$maxMdmg = $maxMdmg + $bonusspowerM;
 
 	$_SESSION["DMGPmin"] = $minPdmg;
 	$_SESSION["DMGPmax"] = $maxPdmg;
@@ -346,7 +355,7 @@ if ($SKL == 36){
 		$sacrifrand = rand(180,220);
 		$dmgsacr= 10000;}
 	$HPin = $HPin - $dmgsacr;
-	$finalsacriface = round(($physDMG + $magDMG + $dmgsacr) * $sacrifrand / 100);
+	$finalsacriface = round(($physDMG + $magDMG + $dmgsacr + $HPin + $dmgsacr) * $sacrifrand / 100);
 	$finaltext = "<b>You sacrificed $dmgsacr and delt $finalsacriface damage !</b><br>";
 }
 

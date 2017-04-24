@@ -15,7 +15,7 @@ if ($WEPn["effect"] == "LL"  or $SUB[6] == "LL"){
 
 //blead
 if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
-	if ($WEPn["efstat"] >= rand(0,100) or isset($_SESSION["bleed"]) or $SUB[7] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BL") or isset($_SESSION["bleed"]) or ($SUB[7] >= rand(0,100) and $SUB[6] == "BL")){
 	$bl = rand(5,10);
 	$blee = ($monHP * $bl / 100); 
 	if ($blee > 2000){
@@ -28,7 +28,7 @@ if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 
 //burn
 if ($WEPn["effect"] == "BR" or $SUB[6] == "BR"){
-	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BR") or ($SUB[7] >= rand(0,100) and $SUB[6] == "BR")){
 	$burn = round($mLVL * 10);
 	$brn = "Monster burned for $burn dmg.<br>";
 }
@@ -36,7 +36,7 @@ if ($WEPn["effect"] == "BR" or $SUB[6] == "BR"){
 
 //freeze
 if ($WEPn["effect"] == "FR" or $SUB[6] == "FR"){
-	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "FR") or ($SUB[7] >= rand(0,100) and $SUB[6] == "FR")){
 	$freez = rand(3,5);
 	$frz = $_SESSION["freez"];
 	if ($frz == 0){
@@ -51,15 +51,16 @@ if ($WEPn["effect"] == "FR" or $SUB[6] == "FR"){
 
 //Stun
 if ($WEPn["effect"] == "ST" or $SUB[6] == "ST"){
-	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "ST") or ($SUB[7] >= rand(0,100) and $SUB[6] == "ST")){
 		$stun = 1;	
 }
 }
 
 //Shock
 if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
-	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "SH") or ($SUB[7] >= rand(0,100) and $SUB[6] == "SH")){
 		$sht = 1;
+	
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
 		$shD = round($shD + ($minMdmg * rand(7,30) /100) + ($minPdmg * rand(7,30) /100));
@@ -73,9 +74,16 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 }
 }
 
-//Block
-if ($WEPn["effect"] == "BK" or $SUB[6] == "BK"){
-	if ($WEPn["efstat"] >= rand(0,100) or $SUB[7] >= rand(0,100)){
+//Block WEP
+if ($WEPn["effect"] == "BK"){
+	if ($WEPn["efstat"] >= rand(0,100)){
+		$Block = 1;	
+}
+}
+
+//Block CLS
+if ($SUB[6] == "BK"){
+	if ($SUB[7] >= rand(0,100)){
 		$Block = 1;	
 }
 }

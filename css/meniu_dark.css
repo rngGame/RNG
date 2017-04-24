@@ -558,8 +558,7 @@ progress::-webkit-progress-value {
     width: 652px;
     height: 250px;
     background-color: #26292c;
-    border:1px solid black;
-    overflow-x: hidden; 
+    border:1px solid black; 
 }
 #equipMod{
     position: absolute;
@@ -692,7 +691,8 @@ progress::-webkit-progress-value {
 #backpack{
     position: absolute;
     top: 31px;
-    width: 100%
+    width: 100%;
+    overflow-x: hidden;
 }
 .items{
     float:left;

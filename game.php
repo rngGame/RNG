@@ -1645,16 +1645,16 @@ $opt
 
 
 </div>
-<div style='display:none;' id='backpackWP' >
+<div style='display:none;' id='backpackWP' class='backpack' >
 	$backpackTemplateWP
 </div>
-<div id='backpackAR' style='display:none;'>
+<div id='backpackAR' style='display:none;' class='backpack'>
 	$backpackTemplateAR
 </div>
-<div id='backpackAC' style='display:none;'>
+<div id='backpackAC' style='display:none;' class='backpack'>
 	$backpackTemplateAC
 </div>
-<div id='backpackIT' style='display:none;'>
+<div id='backpackIT' style='display:none;' class='backpack'>
 	$backpackTemplateIT
 </div>	
 ";

@@ -139,6 +139,12 @@ echo '
 }
 
 		window.onload = function() {
+		if(document.getElementById("test").value == 0){
+     		document.getElementById("backpackWP").style.display = "block";
+			document.getElementById("backpackAR").style.display = "block";
+			document.getElementById("backpackAC").style.display = "block";
+			document.getElementById("backpackIT").style.display = "block";
+			}
    		 if(document.getElementById("test").value == 1){
      		document.getElementById("backpackWP").style.display = "block";
 			document.getElementById("backpackAR").style.display = "none";

@@ -14,9 +14,9 @@ echo $_SESSION["CURRENTWHASH"];
 //test functions
 //function testItemDrop($db){
 	for($MLVL=400;$MLVL <=500;$MLVL++){
-		list($HASH, $weaponName, $weaponType, $weaponLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance) = itemDrop($db, $User, "weapon", $MLVL);
-		list($HASH, $armorLVL, $armorName, $armorType, $valueArmorP, $valueArmorM, $armorPart, $armorAbsorb) = itemDrop($db, $User, "armor", $MLVL);
-		list($HASH, $accesoryPart, $accesoryName, $accesoryType, $accesoryLVL, $accesoryAbsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db, $User, "talisman", $MLVL);
+		list($HASH, $weaponName, $weaponType, $weaponLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance) = itemDrop($db, $User, "weapon", $MLVL, "LVL DEC", "Bonus DEC");
+		list($HASH, $armorLVL, $armorName, $armorType, $valueArmorP, $valueArmorM, $armorPart, $armorAbsorb) = itemDrop($db, $User, "armor", $MLVL, "LVL DEC", "Bonus DEC");
+		list($HASH, $accesoryPart, $accesoryName, $accesoryType, $accesoryLVL, $accesoryAbsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db, $User, "talisman", $MLVL, "LVL DEC", "Bonus DEC");
 		echo "_______________________<br>
 		<b>Items for Monster LVL $MLVL</b> <br>
 		Weapon: $weaponLVL $weaponName ($weaponType) $weaponPhysMin ~ $weaponPhysMax, $weaponCrit%, $weaponMagMin ~ $weaponMagMax, $weaponHit% | $weaponSkill, $weaponEffect, $weaponEffectChance %<br>

@@ -509,6 +509,9 @@ function createMonster($db,$iLVL){
 	if ($iLVL <= 2000){
 	$equipableItems=8;
 	$limitbonus = 80;}
+	if ($iLVL <= 2199){
+	$equipableItems=8;
+	$limitbonus = 85;}
 	if ($iLVL >= 2200){
 	$equipableItems=8;		
 	$limitbonus = 90;}

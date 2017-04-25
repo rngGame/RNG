@@ -33,6 +33,80 @@ $User = $_SESSION["User"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
+//selling all
+if (isset($_POST['bagsell'])) {
+	$part = $_POST['bagsell'];
+	
+	$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Part = '$part' AND Equiped = '0'");
+	while ($ListS = mysqli_fetch_array($List)){	
+	
+	$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+	$ACC = mysqli_fetch_row($ACC);
+	
+	if ($ListS[1] == "WEP"){
+	$ITM = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$ListS[2]'"); //Item Usega
+	$ITMs = mysqli_fetch_assoc($ITM);}
+	if ($ListS[1] == "ARM"){
+	$ITM = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$ListS[2]'"); //Item Usega
+	$ITMs = mysqli_fetch_assoc($ITM);}
+	if ($ListS[1] == "ACS"){
+	$ITM = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$ListS[2]'"); //Item Usega
+	$ITMs = mysqli_fetch_assoc($ITM);}
+	if ($ListS[1] == "ITM"){
+	$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$ListS[2]'"); //Item Usega
+	$ITMs = mysqli_fetch_assoc($ITM);}	
+	
+	if ($ITMs["Rarity"] == "Unique"){
+		$shards = 30;
+		$shards = $ACC[15] + $shards;
+		$order0 = "UPDATE characters
+		SET Shards = '$shards'
+		WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order0);
+	}
+		
+	if ($ITMs["ilvl"] > 1){
+
+	$gold = ($ITMs["ilvl"] + $ACC[3]) * 10;
+	$tottalGold = $gold + $ACC[4];
+	
+	$order = "UPDATE characters
+	SET Cash = '$tottalGold'
+	WHERE `User` = '$User'";
+	$result = mysqli_query($db, $order);
+	}
+	else if ($ITMs["Value"] >= 1){
+	$gold = ($ITMs["Value"] * $ACC[3]) * 5;
+	$tottalGold = $gold + $ACC[4];
+	
+	$order = "UPDATE characters
+	SET Cash = '$tottalGold'
+	WHERE `User` = '$User'";
+	$result = mysqli_query($db, $order);
+	}
+	
+	$sql="DELETE FROM Equiped WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql);
+	
+	if ($ListS[1] == "WEP"){
+	$sql2="DELETE FROM DropsWep WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql2);}
+	if ($ListS[1] == "ARM"){
+	$sql2="DELETE FROM DropsArm WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql2);}
+	if ($ListS[1] == "ACS"){
+	$sql2="DELETE FROM DropsAcs WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql2);}
+	if ($ListS[1] == "ITM"){
+	$sql2="DELETE FROM DropsItm WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql2);}
+
+	} //while endas !
+
+	header("location:sync.php");
+	die();
+}
+
 
 if (isset($_POST['ITMS'])) {
 	

@@ -69,7 +69,7 @@ echo '
 	</body>
 	<footer class="linksB">
 		<br>
-		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.6.3)</b></a><br>
+		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.6.4)</b></a><br>
 		<a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 		<script>
 		
@@ -111,30 +111,50 @@ echo '
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";
 			document.cookie = "backpack=0";}
   			if(elem.value == 1){
      		document.getElementById("backpackWP").style.display = "block";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("sellWP").style.display = "inline";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";
 			document.cookie = "backpack=1";}
 			if(elem.value == 2){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "inline";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";
 			document.cookie = "backpack=2";}
 			if(elem.value == 3){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "inline";
+			document.getElementById("sellIT").style.display = "none";
 			document.cookie = "backpack=3";}
 			if(elem.value == 4){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "inline";
 			document.cookie = "backpack=4";}
 }
 
@@ -144,30 +164,55 @@ echo '
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "block";
-			}
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";}
    		 if(document.getElementById("test").value == 1){
      		document.getElementById("backpackWP").style.display = "block";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
-			}
+			document.getElementById("sellWP").style.display = "inline";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";}
 		 if(document.getElementById("test").value == 2){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "none";
-			document.getElementById("backpackIT").style.display = "none";}
+			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "inline";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";}
 		 if(document.getElementById("test").value == 3){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "block";
-			document.getElementById("backpackIT").style.display = "none";}
+			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "inline";
+			document.getElementById("sellIT").style.display = "none";}
 		 if(document.getElementById("test").value == 4){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
-			document.getElementById("backpackIT").style.display = "block";}
+			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "inline";}
 };
-   		
+
+   		function submitResult() {
+   if ( confirm("Are you sure you wish to sell all selected ?") == false ) {
+      return false ;
+   } else {
+      return true ;
+   }
+}
 
 		</script>
 		

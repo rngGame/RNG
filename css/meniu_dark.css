@@ -812,4 +812,10 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     border-radius: 6px;
     z-index: 1;
 }
+.sellall{
+    position: absolute;
+    padding-top: 3px;
+    border: solid 1px red;
+    margin: 2px 0px 0px 364px;
+}
 

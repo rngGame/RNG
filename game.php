@@ -1615,6 +1615,7 @@ if ($selected == 1){
 <option value='2'>Armors</option>
 <option value='3'>Acsesories</option>
 <option value='4'>Items</option>";}
+
 if ($selected == 2){
 	$opt = "<option value='0'>No sorting</option>
 <option value='1'>Weapons</option>
@@ -1633,6 +1634,39 @@ if ($selected == 4){
 <option value='2'>Armors</option>
 <option value='3'>Acsesories</option>
 <option value='4' selected>Items</option>";}
+
+//sell all buttons
+$sellBut = "<section class='actionButtons'>
+	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
+		<input hidden='' type='text' name='bagsell' value='WEP' placeholder=''>
+		<input type='submit' name='commit' value='Sell all selected'>
+	</form>
+</section>
+";
+
+$sellBut1 = "<section class='actionButtons'>
+	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
+		<input hidden='' type='text' name='bagsell' value='ARM' placeholder=''>
+		<input type='submit' name='commit' value='Sell all selected'>
+	</form>
+</section>
+";
+
+$sellBut2 = "<section class='actionButtons'>
+	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
+		<input hidden='' type='text' name='bagsell' value='ACS' placeholder=''>
+		<input type='submit' name='commit' value='Sell all selected'>
+	</form>
+</section>
+";
+
+$sellBut3 = "<section class='actionButtons'>
+	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
+		<input hidden='' type='text' name='bagsell' value='ITM' placeholder=''>
+		<input type='submit' name='commit' value='Sell all selected'>
+	</form>
+</section>
+";
 	
 
 $inventoryTemplate="
@@ -1643,14 +1677,26 @@ $inventoryTemplate="
 $opt
 </select>
 
-
+		<div id='sellWP' style='display:none;' class='sellall''>
+			$sellBut
+		</div>
+		<div id='sellAR' style='display:none;' class='sellall''>
+			$sellBut1
+		</div>
+		<div id='sellAC' style='display:none;' class='sellall''>
+			$sellBut2
+		</div>
+		<div id='sellIT' style='display:none;' class='sellall''>
+			$sellBut3
+		</div>
+		
 </div>
 <div class='backpack'>
 	<div style='display:none;' id='backpackWP'>
-		$backpackTemplateWP
+		$backpackTemplateWP 
 	</div>
 	<div id='backpackAR' style='display:none;'>
-		$backpackTemplateAR
+		$backpackTemplateAR 
 	</div>
 	<div id='backpackAC' style='display:none;'>
 		$backpackTemplateAC

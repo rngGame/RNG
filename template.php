@@ -13,32 +13,27 @@ echo '
 			<div id="title">World of RNG</div>
 			<div id="settings">
 				<section class="container">
-				 	<p class="submit">
-				    	<form method="post" action="settings.php">
-				        	<input type="submit" name="commit3" value="Settings">
-				     	</form>
-				    </p>
+				    <form method="post" action="settings.php">
+				    	<input type="submit" name="commit3" value="Settings">
+					</form>
 				</section>
 			</div>
 
 			<div id="refresh">
 				<section class="container">
-				    <p class="submit">
-				    	<form method="post" action="log.php">
-				        	<input type="submit" name="commit3" value="Logout">
-				     	</form>
-				    </p>
+				    <form method="post" action="log.php">
+				       	<input type="submit" name="commit3" value="Logout">
+				  	</form>
 				</section>
 			</div>
 				        
 				   
 			<div id="refresh2">
-				<section class="container">
-					<p class="submit">    
-						<form method="post" action="sync.php">
-							<input type="submit" name="commit4" value="Refresh">
-						</form>
-					</p>
+				<section class="container">   
+					<form method="post" action="sync.php">
+						<input type="submit" name="commit4" value="Refresh">
+					</form>
+					
 				</section>
 			</div>
 		</header>

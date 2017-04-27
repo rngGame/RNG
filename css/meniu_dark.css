@@ -9,6 +9,8 @@ header {
 	font-family: fantasy;
     text-shadow: 6px -1px 8px #00bff8;
     border-bottom: 1px solid black;
+    width: 100%;
+    float: left;
  }
  
 .disabled {
@@ -67,23 +69,26 @@ height:255px;
 }
 
 #title{
-    float:left;
     position: relative;
+    display: inline;
 }
 
 #refresh {
-    margin: -43px 0px 0px 1305px;
-    position: absolute;
+    position: relative;
+    float: right;
+    display: inline;
 }
 
 #refresh2 {
-    margin: -43px 0px 0px 1232px;
-    position: absolute;
+    position: relative;
+    float:right;
+    display: inline;
 }
 
 #settings{
-    margin: -43px 0px 0px 1159px;
-    position: absolute;
+    position: relative;
+    float: right;
+    display: inline;
 }
 
 

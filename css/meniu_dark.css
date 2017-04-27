@@ -66,6 +66,11 @@ height:255px;
     background-color: #2f3236;
 }
 
+#title{
+    float:left;
+    position: relative;
+}
+
 #refresh {
     margin: -43px 0px 0px 1305px;
     position: absolute;

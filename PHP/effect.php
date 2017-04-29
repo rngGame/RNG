@@ -8,7 +8,7 @@ if ($WEPn["effect"] == "LL"  or $SUB[6] == "LL"){
 	if ($SUB[6] == "LL"){
 		$bleds = $SUB[7] + $bleds;}
 	
-	$leach = round($physDMG * $bleds / 100);
+	$leach = round($physDMG * $bleds / 200);
 	$HPin = $HPin + $leach;
 	$leach = "$leach Health restored<br>";
 }
@@ -16,10 +16,10 @@ if ($WEPn["effect"] == "LL"  or $SUB[6] == "LL"){
 //blead
 if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BL") or isset($_SESSION["bleed"]) or ($SUB[7] >= rand(0,100) and $SUB[6] == "BL")){
-	$bl = rand(5,10);
+	$bl = rand(3,8);
 	$blee = ($monHP * $bl / 100); 
-	if ($blee > 2000){
-		$blee = 2000;}
+	if ($blee > 35000){
+		$blee = 35000;}
 	$blee = round($blee,0);
 	$bleed = "Monster bleeds for $blee dmg.<br>";
 	$_SESSION["bleed"] = 1;
@@ -29,7 +29,7 @@ if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 //burn
 if ($WEPn["effect"] == "BR" or $SUB[6] == "BR"){
 	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BR") or ($SUB[7] >= rand(0,100) and $SUB[6] == "BR")){
-	$burn = round($mLVL * 10);
+	$burn = round(($mLVL + $WEPn["ilvl"]) * 10);
 	$brn = "Monster burned for $burn dmg.<br>";
 }
 }
@@ -63,7 +63,10 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 	
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
-		$shD = round($shD + ($minMdmg * rand(7,30) /100) + ($minPdmg * rand(7,30) /100));
+		$shDplus = ($minMdmg * rand(7,30) /100) + ($minPdmg * rand(7,30) /100);
+		if ($shDplus > 15000){
+			$shDplus = 15000;}
+		$shD += round($shDplus);
 		$shDT = $shDT + 1;
 		}
 		$sht = $sht + 1;

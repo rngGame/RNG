@@ -254,7 +254,13 @@ if ($SKL ==33){
 		}
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
-			$pettdmgtext = "Pet did $petDMG dmg.<br>";
+			//if really low acuarayci
+			if ($WEPn["HitChanse"] <= 10){
+				$petDMG = 0;
+				$pettdmgtext = "Pet missed !<br>";
+			}
+			else{
+			$pettdmgtext = "Pet did $petDMG dmg.<br>";}
 			$monHP = $monHP - $petDMG;
 			$pettook = round($monDMG * 10 / 100);
 				if ($SUB[5] == "NECR"){ //if necromance
@@ -355,7 +361,7 @@ if ($SKL == 36){
 		$sacrifrand = rand(180,220);
 		$dmgsacr= 10000;}
 	$HPin = $HPin - $dmgsacr;
-	$finalsacriface = round(($physDMG + $magDMG + $dmgsacr + $HPin + $dmgsacr) * $sacrifrand / 100);
+	$finalsacriface = round(($dmgsacr + $HPin + $dmgsacr) * $sacrifrand / 50);
 	$finaltext = "<b>You sacrificed $dmgsacr and delt $finalsacriface damage !</b><br>";
 }
 

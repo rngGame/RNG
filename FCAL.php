@@ -65,6 +65,8 @@ $HPO = $_SESSION["HPO"]; //base hp of player
 $SKL = $_POST["skl"]; //skill ID
 
 $wepHASH = $_SESSION["CURRENTWHASH"]; //get weapon hash
+	
+$finalPlayerDMG = 0;
 
 	
 //DB
@@ -268,6 +270,8 @@ if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $
 unset($_SESSION["ATTACK"]); 
 if (rand(0,100) <= $WEPn["HitChanse"] ){
 $finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
+	if ($finalPlayerDMG < 1 ){
+	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
 $finalMonsHP = $monHP - $finalPlayerDMG;
@@ -276,6 +280,7 @@ else{
 	$miss = "Missed<br>";
 	$mis = 1;
 	$finalMonsHP = $monHP;
+	$finalPlayerDMG = 0;
 }}
 
 //let use phsy dmg when pet summoned
@@ -286,8 +291,11 @@ if ($_SESSION["PET"] == 1){
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
 $finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF);
+if ($finalPlayerDMG < 1 ){
+	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
+
 $finalMonsHP = $monHP - $finalPlayerDMG;
 }
 
@@ -370,7 +378,7 @@ $_SESSION["LOG"] = "";
 	$_SESSION["LOG"] = "$CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$poisT $CursedText $magickText $User <b>Missed</b> <br><br>$mont<br><br><hr> $LOG<br>";
+		$_SESSION["LOG"] = "$poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$finalPlayerDMG - CHECK<hr> $LOG<br>";
 	}
 
 

@@ -205,17 +205,24 @@ else{
 if ($SKL ==7 or $pos == 1){
 	$cantmiss = 1;
 	$pois = rand(1,5);
+	
 	if ($CLS[6] == "POIS"){
 	$pois = rand(3,8);}
+	
 	if ($SUB[5] == "POIS"){
 	$pois = rand(8,15);}
+	
 	$poison = ($monHP*$pois/100); 
+	
 	if ($SUB[5] == "POIS"){
-		if ($poison >= 50000){
-			$poison = 50000;}
+		if ($poison > (400*$mLVL)){
+			$poison = (400*$mLVL);
+		}
 	}
-	else if ($poison >= 10000){
-			$poison = 10000;}
+	else if ($poison > (100*$mLVL)){
+			$poison = (100*$mLVL);
+	}
+	
 	if ($WEPn["effect"] == "PS"){ //is stat buffs poision
 		$poison += ($poison * $WEPn["efstat"] / 100);} 
 		

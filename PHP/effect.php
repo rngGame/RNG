@@ -18,8 +18,8 @@ if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BL") or isset($_SESSION["bleed"]) or ($SUB[7] >= rand(0,100) and $SUB[6] == "BL")){
 	$bl = rand(3,8);
 	$blee = ($monHP * $bl / 100); 
-	if ($blee > 35000){
-		$blee = 35000;}
+	if ($blee > (300*$mLVL)){
+		$blee = 300*$mLVL;}
 	$blee = round($blee,0);
 	$bleed = "Monster bleeds for $blee dmg.<br>";
 	$_SESSION["bleed"] = 1;
@@ -42,8 +42,8 @@ if ($WEPn["effect"] == "FR" or $SUB[6] == "FR"){
 	if ($frz == 0){
 		$frz = 1;}
 	$freez = $freez * $frz;
-	if ($freez > 400000){
-		$freez = 400000;}
+	if ($freez > (2000*$mLVL)){
+		$freez = (2000*$mLVL);}
 	$_SESSION["freez"] = $freez;
 	$fre = "Monster freezed for $freez dmg.<br>";
 }
@@ -64,8 +64,8 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 	while( $sht <> 10){
 		if (10 >= rand(0,100)){
 		$shDplus = ($minMdmg * rand(7,30) /100) + ($minPdmg * rand(7,30) /100);
-		if ($shDplus > 15000){
-			$shDplus = 15000;}
+		if ($shDplus > (220*$mLVL)){
+			$shDplus = (220*$mLVL);}
 		$shD += round($shDplus);
 		$shDT = $shDT + 1;
 		}
@@ -146,8 +146,8 @@ if ($SUB[6] == "BD"){
 if ($SUB[7] >= rand(0,100)){
 	$bdm = rand(1,50	);
 	$bdam = round($physDMG * $bdm / 100);
-	if ($bdam > 100000){
-		$bdam = 100000;
+	if ($bdam > (1000*$mLVL)){
+		$bdam = (1000*$mLVL);
 	}
 	$bdamt= "You did $bdam bonus damage.<br>";
 }
@@ -177,9 +177,9 @@ if ($SUB[6] == "CD"){
 if ($WEPn["effect"] == "SM" and $_SESSION["PET"] == 1){
 	$_SESSION["PET"] = 2;
 	
-	$_SESSION["PETHP"] = round($_SESSION["PETHP"] + ($_SESSION["PETHP"]  * $WEPn["efstat"] / 100));
-	$_SESSION["PETMINDMG"] = round($_SESSION["PETMINDMG"] + ($_SESSION["PETMINDMG"]  * $WEPn["efstat"]  / 100));
-	$_SESSION["PETMAXDMG"] = round($_SESSION["PETMAXDMG"] + ($_SESSION["PETMAXDMG"]  * $WEPn["efstat"]  / 100));
+	$_SESSION["PETHP"] += round($_SESSION["PETHP"]  * $WEPn["efstat"] / 100);
+	$_SESSION["PETMINDMG"] += round($_SESSION["PETMINDMG"]  * $WEPn["efstat"]  / 100);
+	$_SESSION["PETMAXDMG"] += round($_SESSION["PETMAXDMG"]  * $WEPn["efstat"]  / 100);
 }
 
 //Confusion
@@ -190,9 +190,9 @@ if ($WEPn["effect"] == "CF"){
 }
 }
 
-
-
+//Damage and text
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
 $efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";
+
 ?>

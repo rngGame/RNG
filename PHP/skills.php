@@ -256,21 +256,31 @@ if ($SKL ==33){
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
 			$pettdmgtext = "Pet did $petDMG dmg.<br>";
 			$monHP = $monHP - $petDMG;
-			$pettook = round($monDMG * 10 / 100);
+		
+				$pettook = round($monDMG * 10 / 100);
+				$pettookM = round($monDMGmag * 20 / 100);
 				if ($SUB[5] == "NECR"){ //if necromance
 				$pettook = round($monDMG * 35 / 100);
+				$pettookM = round($monDMGmag * 50 / 100);
 				}
 				if ($SUB[5] == "TITA"){ //if Titan
-				$pettook = round($monDMG * 50 / 100);
+				$pettook = round($monDMG * 40 / 100);
+				$pettookM = round($monDMGmag * 40 / 100);
 				}
 				if ($SUB[5] == "SPELC"){ //if Spelcaster
-				$pettook = round($monDMG * 80 / 100);
+				$pettook = round($monDMG * 50 / 100);
+				$pettookM = round($monDMGmag * 75 / 100);
 				}
 				if ($SUB[5] == "SMASH"){ //if Smasher
-				$pettook = round($monDMG * 25 / 100);
+				$pettook = round($monDMG * 35 / 100);
+				$pettookM = round($monDMGmag * 15 / 100);
 				}
-			$monDMG = $monDMG - $pettook; //reduct damage of mob
-			$_SESSION["PETHP"] = $_SESSION["PETHP"] - $pettook;
+		
+		
+			$monDMG = round($monDMG - ($pettook / 10)); //reduct damage of mob
+			$monDMGmag = round($monDMGmag - ($pettookM / 10)); //reduct damage of mob
+		
+			$_SESSION["PETHP"] = $_SESSION["PETHP"] - ($pettook + $pettookM/2);
 			$petttanktext = "Pet tanked $pettook dmg.<br>";
 			$petHP = $_SESSION["PETHP"];
 			

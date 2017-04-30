@@ -144,8 +144,11 @@ if ($WEPn["effect"] == "SL"  or $SUB[6] == "SL"){
 //Bonus dmg
 if ($SUB[6] == "BD"){
 if ($SUB[7] >= rand(0,100)){
-	$bdm = rand(1,200);
+	$bdm = rand(1,50	);
 	$bdam = round($physDMG * $bdm / 100);
+	if ($bdam > 100000){
+		$bdam = 100000;
+	}
 	$bdamt= "You did $bdam bonus damage.<br>";
 }
 }

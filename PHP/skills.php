@@ -254,13 +254,7 @@ if ($SKL ==33){
 		}
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
-			//if really low acuarayci
-			if ($WEPn["HitChanse"] <= 10){
-				$petDMG = 0;
-				$pettdmgtext = "Pet missed !<br>";
-			}
-			else{
-			$pettdmgtext = "Pet did $petDMG dmg.<br>";}
+			$pettdmgtext = "Pet did $petDMG dmg.<br>";
 			$monHP = $monHP - $petDMG;
 			$pettook = round($monDMG * 10 / 100);
 				if ($SUB[5] == "NECR"){ //if necromance

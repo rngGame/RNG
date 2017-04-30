@@ -55,7 +55,7 @@ if ($MonsterS["PL3"] > 0){ //player 3
 if ($MonsterS["PL4"] > 0){ //player 4
 	$PL4 = mysqli_query($db,"SELECT * FROM  Party where ID = '$Party[ID]' ");
 	$PL4s = mysqli_fetch_assoc($PL4); //GLOVES by colum name
-	$playersDMG .= "/ $PL4s[Master] did $MonsterS[PL4] dmg. ";}
+	$playersDMG .= "/ $PL4s[PL4] did $MonsterS[PL4] dmg. ";}
 
 $Chat = "<img src='IMG/Mon/2.jpg' width='60' height='60'><br>Monster Name: <b>$MonsterS[MonsterName]</b><br>HP: $MonsterS[MonsterHP], DMG: <font color='red'>~$MonsterS[MonsterPhyDMG]</font>/<font color='0066ff'>~$MonsterS[MonsterMagDMG]</font>, XP: $MonsterS[MonsterRew], Lvl: $MonsterS[MonsterLVL]<br><br>$playersDMG";
 

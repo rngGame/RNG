@@ -10,7 +10,6 @@ header {
     text-shadow: 6px -1px 8px #00bff8;
     border-bottom: 1px solid black;
     width: 100%;
-    float: left;
  }
  
 .disabled {

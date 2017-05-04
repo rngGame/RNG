@@ -274,7 +274,6 @@ $finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + 
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
 	$finalPlayerDMG = $finalPlayerDMG * 2;}
-$finalMonsHP = $monHP - $finalPlayerDMG;
 	}
 else{
 	$miss = "Missed<br>";
@@ -294,20 +293,49 @@ $finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) + ($
 if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
-	$finalPlayerDMG = $finalPlayerDMG * 2;}
-
-$finalMonsHP = $monHP - $finalPlayerDMG;
+	$finalPlayerDMG = $finalPlayerDMG * 2;
+	}
 }
 
 //poision
-$finalMonsHP = $finalMonsHP - $poison;
 $finalPlayerDMG = $finalPlayerDMG + $poison;
 
 //Confusion
 if ($Confusion == 1){
-	$finalMonsHP = $finalMonsHP - $CFdmg;
 	$finalPlayerDMG = $finalPlayerDMG + $CFdmg;
 }
+
+//add combo dmg
+if (!isset($_SESSION["Combo"])){
+	$finalPlayerDMG += $finalPlayerDMG * ($_SESSION["Combo"] / 10);
+}
+
+//final dmg to monster
+$finalMonsHP = $monHP - $finalPlayerDMG;
+
+//combo calculation
+if ($mis <> 1){
+	if (!isset($_SESSION["Combo"])){
+		$_SESSION["Combo"] = 1;
+	}
+	else{
+		$com = $_SESSION["Combo"];
+		$com += 0.2;
+		$_SESSION["Combo"] = $com;
+		if ($com >= 10 ){
+			$_SESSION["Combo"] == 10;
+		}
+	}
+}
+else {
+	if (isset($_SESSION["Combo"])){
+		$comBR = $_SESSION["Combo"];
+		if ($comBR > 1){
+			unset($_SESSION["Combo"]);
+		}
+	}
+}
+
 
 
 //dmg to player----------------------------------
@@ -335,7 +363,7 @@ $monSkillText="$mobmagskill $BasicAtackByMob" ;
 
 
 
-//if monster coulcn't atack
+//if monster couldn't atack
 else{
 	$finalPlayerHP = $HPin ;
 }
@@ -378,7 +406,7 @@ $_SESSION["LOG"] = "";
 	$_SESSION["LOG"] = "$CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$finalPlayerDMG - CHECK<hr> $LOG<br>";
+		$_SESSION["LOG"] = "$poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
 	}
 
 

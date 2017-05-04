@@ -828,3 +828,77 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     margin: 2px 0px 0px 364px;
 }
 
+.Combo1{
+	position: absolute;
+	margin-left: 185px;
+    margin-top: -13px;
+	color: white;
+	font-size:20px;
+	-webkit-animation-name: combo1;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 3s;
+}
+@-webkit-keyframes combo1 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 0px blue, 0 0 5px darkblue;	}
+    50% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px blue, 0 0 5px darkblue;	}
+}
+
+.Combo2{
+	position: absolute;
+	margin-left: 185px;
+    margin-top: -13px;
+	color: white;
+	font-size:23px;
+	-webkit-animation-name: combo2;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 3s;
+}
+@-webkit-keyframes combo2 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	}
+    50% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	}
+}
+
+.Combo3{
+	position: absolute;
+	margin-left: 185px;
+    margin-top: -13px;
+	color: white;
+	font-size:25px;
+	-webkit-animation-name: combo3;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 3s;
+}
+@-webkit-keyframes combo3 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}
+	70% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+}
+
+.Combo4{
+	position: absolute;
+	margin-left: 185px;
+    margin-top: -13px;
+	color: white;
+	font-size:28px;
+	-webkit-animation-name: combo4;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-direction: alternate;
+}
+@-webkit-keyframes combo4 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+	15% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
+	45% {	 text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;	}
+	60% {	 text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkyellow;	}
+	75% {	 text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px darkblue;	}
+	90% {	 text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px grey;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+}
+
+
+
+

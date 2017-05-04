@@ -128,6 +128,22 @@ echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
 echo "Monster Name: <b>$mName</b><br>";
 echo " HP: $mHP, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>, XP: $mDRP, Lvl: $mLVL";
 
+
+//combo showing
+$combo = $_SESSION["Combo"];
+if ($combo >= 1){
+	$combtest = "<div class='Combo1'>$combo x Combo !</div>";}
+if ($combo >= 3){
+	$combtest = "<div class='Combo2'>$combo x Combo !</div>";}
+if ($combo >= 5){
+	$combtest = "<div class='Combo3'>$combo x Combo !</div>";}
+if ($combo == 10){
+	$combtest = "<div class='Combo4'>$combo x Combo !</div>";}
+if ($combo < 1){
+	$combtest = "";}
+	
+
+
 	
 $_SESSION["MonsHP"] = $mHP;
 $_SESSION["MonsDMG"] = $mDMG;
@@ -143,6 +159,7 @@ echo
     </div>
   </section>";
   
+  echo $combtest;
 
   echo "<div id='mini2'>Physical Skills:";
   

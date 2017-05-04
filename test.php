@@ -297,6 +297,21 @@ mysqli_query($db,$sql2);
 	
 	header("location:sync.php");  
 	die();}
+	
+	//combo showing
+$combo = $_SESSION["Combo"];
+if ($combo >= 1){
+	$combtest = "<div class='Combo1'>$combo x Combo !</div>";}
+if ($combo >= 3){
+	$combtest = "<div class='Combo2'>$combo x Combo !</div>";}
+if ($combo >= 5){
+	$combtest = "<div class='Combo3'>$combo x Combo !</div>";}
+if ($combo == 10){
+	$combtest = "<div class='Combo4'>$combo x Combo !</div>";}
+if ($combo < 1){
+	$combtest = "";}
+	
+
 
 //basic attack
 echo
@@ -309,6 +324,7 @@ echo
     </div>
   </section>";
   
+  echo $combtest;
 
   echo "<div id='mini2'>Physical Skills:";
   

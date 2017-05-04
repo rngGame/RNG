@@ -98,8 +98,8 @@ height:255px;
 
 
 .floating{
-	    position: fixed;
-    margin: -85px 0px 0px 800px;
+	position: absolute;
+    left: 800px;
 }
 
 #mini2 {
@@ -299,7 +299,7 @@ visibility:visible;
     padding: 5px 0;
 
     /* Position the tooltip */
-    position: fixed;
+    position: absolute;
     z-index: 1;
 }
 .tooltipskills{
@@ -323,9 +323,10 @@ table, td, th {
     background-color:#26292c;
     width:30%;
     height:100%;
-	margin: -50px 0px 0px 0px;
     float:right;
-}​
+	position: relative;
+	top: -50px;
+}
 
 .what{}
 
@@ -561,13 +562,20 @@ position: absolute;
     border-bottom: 2px solid black;
 }
 
+#fightNewBut {
+	position: absolute;
+    width: 105px;
+	left: 650px;
+	top: -11px; 
+}
+
 .actionButtons{
     float: left;
 	margin-top: 60px;
 	transform:scale(2.2);
 }
 
-	.actionButtons2{
+.actionButtons2{
     float: left;
 	margin-top: 60px;
 	transform:scale(2.2);
@@ -602,7 +610,7 @@ position: absolute;
 	
 	.actionButtons2{
     float: left;
-	margin-top: 60px;
+	margin-top: 0px;
 	transform:scale(1);
 	}
 	
@@ -611,8 +619,16 @@ position: absolute;
     position:relative;
     height: 572px;
     background-color: #26292c;
+	}
+	 
+	#fightNewBut {
+	position: absolute;
+    width: 105px;
+	left: 0px;	
+	top: 200px;
+		
 }
-  }
+}
 
 
 #inventory {

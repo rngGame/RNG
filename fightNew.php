@@ -50,11 +50,11 @@ list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMo
 
 //if monster P damage lower then player defence
 if ($Armor > $PDMG){
-	$PDMG = round($Armor + (($mLVL + $Armor) * rand(-10,30) / 100));}
+	$PDMG = round($Armor + (($mLVL + $Armor) * rand(-5,40) / 100));}
 	
 //if monster M damage lower then player defence
 if ($ArmorM > $MDMG){
-	$MDMG = round($ArmorM + (($mLVL + $ArmorM) * rand(-10,50) / 100));}
+	$MDMG = round($ArmorM + (($mLVL + $ArmorM) * rand(-5,60) / 100));}
 	
 //if rare
 if (rand(1,300) == 100){
@@ -123,25 +123,21 @@ die();
 }
 
     echo
-      "<div class='test'><section class='container2'>
-        <div class='actionButtons'>
+      "<div id='fightNewBut'>
+	  	<section class='actionButtons2'>
     	      <form method='post' action='FightT.php'>
               <input hidden='' type='text' name='lvl' value='30' placeholder='lvl'>
             <p class='submit'><input type='submit' name='commit' value='Fight'></p> 
           </form>
-        </div>
       </section>
-	  <br>
       
 
 
-    <section class='container1'>
-        <div class='actionButtons'>
+    <section class='actionButtons2'>
     	      <form method='post' action='fightNew.php'>
               <input hidden='' type='text' name='lvl' value='$BLVL' placeholder='Try another Monster'>
             <p class='submit'><input type='submit' name='commit' value='Try another Monster'> </p>
           </form>
-        </div>
       </section>
 	  ";
 	  
@@ -151,11 +147,9 @@ die();
 	}
 
   ?>
-  <section class="container3">
-    <div class="actionButtons">
+  <section class="actionButtons2">
 	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
-    </div>
   </section>
   </div>

@@ -174,9 +174,22 @@ $icon = "IMG/pack/Icon.2_24.png";
 if ($ITM["Part"] == "LEGS"){
 $icon = "IMG/pack/Icon.3_84.png";
 }
+	
+	if ($ARMIn["effect"] == "HP"){
+		$eftBOTS = "Bonus HP: $ARMIn[efstat]<br>";
+	}
+	if ($ARMIn["effect"] == "EN"){
+		$eftBOTS = "Helth per turn $ARMIn[efstat]<br>";
+	}
+	if ($ARMIn["effect"] == "HL"){
+		$eftBOTS = "Helth per turn $ARMIn[efstat]<br>";
+	}
+	if ($ARMIn["effect"] == "NO"){
+		$eftBOTS = "Chanse not die: $ARMIn[efstat] %<br>";
+	}
 		
 echo "<td>";	
-echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>P.def - $ITM[pDEF]<br>M.def - $ITM[mDEF]<br>Apsorb: $ITM[Apsorb]%<br>Enchant +$ITM[plus]<br></span></div><br>";
+echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>P.def - $ITM[pDEF]<br>M.def - $ITM[mDEF]<br>Apsorb: $ITM[Apsorb]%<br>$eftBOTS Enchant +$ITM[plus]<br></span></div><br>";
  
 echo "<div class='submit'><td     display: inline-flex;>
 Price: $List1[2]g.
@@ -225,9 +238,9 @@ Price: $List1[2]g.
 echo "</div></td></td></tr>";
 }
 } //while end
-
 ?>
 </table>
+<br><br><br><br><br><br><br><br><br>
 <div class="floating">
   <section class="container3">
     <div class="31-50">

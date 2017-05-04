@@ -113,6 +113,8 @@ $WEP = mysqli_fetch_row($WEP); //by colum number
 $_SESSION["CURRENTWHASH"] = $WEP[0];
 
 
+$bonusHL = 0;
+$bonusNO = 0;
 
 //new Armor
 $EQPar = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ARM' AND Equiped = '1' ");
@@ -122,20 +124,76 @@ if (!isset($ARMBODY)){
 $ARMBODY = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'BODY' ");
 $ARMBODY = mysqli_fetch_assoc($ARMBODY); //BODY by colum name
 $_SESSION["CURRENTARMBODY"] = $ARMBODY["HASH"];
+		//effects
+	if ($ARMBODY["effect"] == "HP"){
+		$bonusHP += $ARMBODY["efstat"];
+		$eftBODY = "Bonus HP: $ARMBODY[efstat]";
+	}
+	if ($ARMBODY["effect"] == "EN"){
+		$bonusEN += $ARMBODY["efstat"];
+		$eftBODY = "Bonus EN: $ARMBODY[efstat]";
+	}
+	if ($ARMBODY["effect"] == "HL"){
+		$bonusHL += $ARMBODY["efstat"];
+		$eftBODY = "Helth per turn $ARMBODY[efstat]";
+	}
+	if ($ARMBODY["effect"] == "NO"){
+		$bonusNO += $ARMBODY["efstat"];
+		$eftBODY = "Chanse not die: $ARMBODY[efstat] %";
+	}
 }
 
 if (!isset($ARMGLOVES)){
 $ARMGLOVES = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'GLOVES'");
 $ARMGLOVES = mysqli_fetch_assoc($ARMGLOVES); //GLOVES by colum name
 $_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES["HASH"];
+		//effects
+	if ($ARMGLOVES["effect"] == "HP"){
+		$bonusHP += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Bonus HP: $ARMGLOVES[efstat]";
+	}
+	if ($ARMGLOVES["effect"] == "EN"){
+		$bonusEN += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Bonus EN: $ARMGLOVES[efstat]";
+	}
+	if ($ARMGLOVES["effect"] == "HL"){
+		$bonusHL += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Helth per turn $ARMGLOVES[efstat]";
+	}
+	if ($ARMGLOVES["effect"] == "NO"){
+		$bonusNO += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Chanse not die: $ARMGLOVES[efstat] %";
+	}
 }
 
 if (!isset($ARMBOOTS)){
 $ARMBOOTS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$EQPA[2]' AND Part = 'LEGS' ");
 $ARMBOOTS = mysqli_fetch_assoc($ARMBOOTS); //BOOTS by colum name
 $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
+
+		//effects
+	if ($ARMBOOTS["effect"] == "HP"){
+		$bonusHP += $ARMBOOTS["efstat"];
+		$eftBOTS = "Bonus HP: $ARMBOOTS[efstat]";
+	}
+	if ($ARMBOOTS["effect"] == "EN"){
+		$bonusEN += $ARMBOOTS["efstat"];
+		$eftBOTS = "Helth per turn $ARMBOOTS[efstat]";
+	}
+	if ($ARMBOOTS["effect"] == "HL"){
+		$bonusHL += $ARMBOOTS["efstat"];
+		$eftBOTS = "Helth per turn $ARMBOOTS[efstat]";
+	}
+	if ($ARMBOOTS["effect"] == "NO"){
+		$bonusNO += $ARMBOOTS["efstat"];
+		$eftBOTS = "Chanse not die: $ARMBOOTS[efstat] %";
+	}
 }
+
 }
+
+$_SESSION["HealthTurn"] = $bonusHL;
+$_SESSION["Undeadth"] = $bonusNO;
 
 
 
@@ -273,6 +331,7 @@ $enchtexAB = "<font color='#F59100'>Ench. power: <b>$ENCAB[2] %</b></font>";
 $ARMBODYlvl = round($ARMBODY["ilvl"]* $ENCAB[2]/100);
 $ARMBODYp = round($ARMBODY["pDEF"]* $ENCAB[2]/100);
 $ARMBODYm = round($ARMBODY["mDEF"]* $ENCAB[2]/100);
+
 }
 
 //Gloves
@@ -470,7 +529,7 @@ if (isset($defsub)){
 	$Marmor = round($Marmor*$defsub);
 }
 $dmg = round($dmg,0);
-$HP2 = round($HP2,0);
+$HP2 = round($HP2,0)+$bonusHP;
 
 
 $_SESSION["HP"] = $HP2;
@@ -490,7 +549,7 @@ $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;
 $_SESSION["MARM"] = $Marmor;
 $_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
-$_SESSION["ENG"] = $CLS[5];
+$_SESSION["ENG"] = $CLS[5]+$bonusEN;
 $_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"];
 if (isset($crcsub)){
 $_SESSION["CRYT"] = $PAS[2]*$crcsub;
@@ -613,6 +672,8 @@ if($ARMBODY["Name"] <> ""){
 		<br>
 		Apsorb: $ARMBODY[Apsorb]%
 		<br>
+		$eftBODY
+		<br>
 		Enchant +$ARMBODY[plus]<br>
 		$enchtexAB
 	</span>
@@ -628,7 +689,7 @@ if($ARMBOOTS["Name"] <> ""){
 	$legsTemplate= "<form method='post' action='Enchant.php'>
 		<input type='text' name='HASH' value='$ARMBOOTS[HASH]' style='display:none'>
 		<input type='text' name='TYPE' value='ARM' style='display:none'>
-	<input type='image' src='IMG/pack/Icon.3_84.png' width='45px' height='45px' class='item".$ARMBOOTS['Rarity']."'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]<br>$enchtexAL</span>
+	<input type='image' src='IMG/pack/Icon.3_84.png' width='45px' height='45px' class='item".$ARMBOOTS['Rarity']."'><span class='tooltiptext'><b class='$ARMBOOTS[Rarty]'>$ARMBOOTS[Name]</b><br>Lvl: $ARMBOOTS[ilvl]<br>P.def - $ARMBOOTS[pDEF]<br>M.def - $ARMBOOTS[mDEF]<br>Apsorb: $ARMBOOTS[Apsorb]%<br>Enchant +$ARMBOOTS[plus]<br>$eftBOTS<br>$enchtexAL</span>
 	</form>
 	";
 }
@@ -641,7 +702,7 @@ if($ARMGLOVES["Name"] <> ""){
 	$armsTemplate= "<form method='post' action='Enchant.php'>
 		<input type='text' name='HASH' value='$ARMGLOVES[HASH]' style='display:none'>
 		<input type='text' name='TYPE' value='ARM' style='display:none'>
-	<input type='image'  src='IMG/pack/Icon.2_24.png' width='45px' height='45px' class='item".$ARMGLOVES['Rarity']."'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>Enchant +$ARMGLOVES[plus]<br>$enchtexAG</span>
+	<input type='image'  src='IMG/pack/Icon.2_24.png' width='45px' height='45px' class='item".$ARMGLOVES['Rarity']."'><span class='tooltiptext'><b class='$ARMGLOVES[Rarty]'>$ARMGLOVES[Name]</b><br> $ARMGLOVES[ilvl]<br>P.def - $ARMGLOVES[pDEF]<br>M.def - $ARMGLOVES[mDEF]<br>Apsorb: $ARMGLOVES[Apsorb]%<br>$eftGLOVES<br>Enchant +$ARMGLOVES[plus]<br>$enchtexAG</span>
 	</form>
 	";
 }
@@ -894,25 +955,6 @@ while ($List1 = mysqli_fetch_array($List)){
 						<br>
 						$efto[$eft] $sklu[$eft]
 					</div>
-					<div class='equipStats'>
-						<b $unEf class='$WEPn[Rarity]'>$WEPn[Name] + $WEPn[plus] ($WEPn[Rarity])</b>
-						<br>
-						<b>$WEPn[ilvl] lvl.</b>
-						<br>
-						<a class='physical'>
-							<b>P.dmg: $WEPn[pmin] ~ $WEPn[pmax]</b>
-						</a>
-						<br>
-						<a class='magic'>
-							<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
-						</a>
-						<br>
-						Cryt chanse: $WEPn[cryt]
-						<br>
-						Hit Chanse: $WEPn[HitChanse]
-						<br>
-						$eft $enchtex
-					</div>
 				</span>
 			</div>
 			<div class='inventoryActions'>
@@ -1000,6 +1042,19 @@ while ($List1 = mysqli_fetch_array($List)){
 				$armCompEnch="same";
 			}
 		}
+		
+	if ($ARMIn["effect"] == "HP"){
+		$eftBOTS = "Bonus HP: $ARMIn[efstat]";
+	}
+	if ($ARMIn["effect"] == "EN"){
+		$eftBOTS = "Helth per turn $ARMIn[efstat]";
+	}
+	if ($ARMIn["effect"] == "HL"){
+		$eftBOTS = "Helth per turn $ARMIn[efstat]";
+	}
+	if ($ARMIn["effect"] == "NO"){
+		$eftBOTS = "Chanse not die: $ARMIn[efstat] %";
+	}
 
 		
 		$backpackTemplateAR.= "
@@ -1018,20 +1073,9 @@ while ($List1 = mysqli_fetch_array($List)){
 						<br>
 						Absorb: <span class='$armCompArb'>$ARMIn[Apsorb]%</span>
 						<br>
+						$eftBOTS
+						<br>
 						Enchant +<span class='$armCompEnch'>$ARMIn[plus]</span>
-					</div>
-					<div class='equipStats'>
-						<b class='$ARMEQUIP[Rarty]'>$ARMEQUIP[Name]</b>
-						<br>
-						Lvl: $ARMEQUIP[ilvl]
-						<br>
-						P.def - $ARMEQUIP[pDEF]
-						<br
-						>M.def - $ARMEQUIP[mDEF]
-						<br>
-						Apsorb: $ARMEQUIP[Apsorb]%
-						<br>
-						Enchant +$ARMEQUIP[plus]
 					</div>
 				</span>
 			</div>
@@ -1143,22 +1187,7 @@ while ($List1 = mysqli_fetch_array($List)){
 					<br>
 					Enchant +<span class='$acsCompEnch'>$ACSIn[plus]</span>
 				</div>
-				<div class='equipStats'>
-					<b class='$ACSEQUIP[Rarty]'>$ACSEQUIP[Name]</b>
-					<br>
-					Lvl: $ACSEQUIP[ilvl]
-					<br>
-					Apsorb: $ACSEQUIP[Apsorb]%
-					<br>
-					HP Bonus:  $ACSEQUIP[hpBonus]
-					<br>
-					XP Bonus: $ACSEQUIP[xpBonus]%
-					<br>
-					Dmg. Bonus: $ACSEQUIP[dmgBonus]%
-					<br>
-					Enchant +$ACSEQUIP[plus]
-				</div>
-			</span>
+				</span>
 		</div>
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>

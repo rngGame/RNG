@@ -14,15 +14,15 @@ $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
 //creates armor function
-list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$User,"armor",$MLVL);
+list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb, $Effect, $EffectChance) = itemDrop($db,$User,"armor",$MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db
 
 $order = "INSERT INTO DropsArm
-	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part, plus)
+	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part, effect, efstat, plus)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part' ,'0')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part', '$Effect', '$EffectChance' ,'0')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
@@ -34,7 +34,7 @@ $result = mysqli_query($db, $order2);
 
 $_SESSION["REWARDTYPE"] = "ARM";
 
-
+//curent amrmor
 if ($part == "BODY"){
 $currentHASH = $_SESSION["CURRENTARMBODY"];
 }
@@ -50,6 +50,19 @@ $currentHASH = $_SESSION["CURRENTARMBOOTS"];
 $ACS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$currentHASH' ");
 $ACSi = mysqli_fetch_assoc($ACS);
 
+	if ($ACSi["effect"] == "HP"){
+		$eftCur = "Bonus HP: $ACSi[efstat]";
+	}
+	if ($ACSi["effect"] == "EN"){
+		$eftCur = "Helth per turn $ACSi[efstat]";
+	}
+	if ($ACSi["effect"] == "HL"){
+		$eftCur = "Helth per turn $ACSi[efstat]";
+	}
+	if ($ACSi["effect"] == "NO"){
+		$eftCur = "Chanse not die: $ACSi[efstat] %";
+	}
+
 
 //money calculates
 $moneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
@@ -59,6 +72,20 @@ $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
 
+if ($EffectChance <> 0){
+		if ($Effect == "HP"){
+	$efftype = "Bonus Health";
+	}
+		if ($Effect == "EN"){
+	$efftype = "Bonus Energie";
+	}
+		if ($Effect == "HL"){
+	$efftype = "Helth rec. / turn";
+	}
+		if ($Effect == "NO"){
+	$efftype = "Chanse not to die";
+	}
+	$eft = "Effect: $efftype $EffectChance <span><br>";}
 
 //Compare Armor
 $compareLVL = $comparePDEF = $compareMDEF = $compareAPS = "less";
@@ -93,6 +120,7 @@ Item Part: $part<br>
 Item P.def: <b><span class='$comparePDEF'>$valueArmorP</span></b><br>
 Item M.def: <b><span class='$compareMDEF'>$valueArmorM</span></b><br>
 Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
+$eft
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br>
 Item Name: $ACSi[Name]<br>
@@ -100,7 +128,9 @@ Item lvl: <b>$ACSi[ilvl]</span></b><br>
 Item Part: $part<br>
 Item P.def: <b>$ACSi[pDEF]</span></b><br>
 Item M.def: <b>$ACSi[mDEF]</span></b><br>
-Item Apsorb: <b>$ACSi[Apsorb] %</span></b><br>";
+Item Apsorb: <b>$ACSi[Apsorb] %</span><br>
+$eftCur
+</b><br>";
 
 
 $_SESSION["Reward"] = "$reward";

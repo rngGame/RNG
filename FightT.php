@@ -124,11 +124,13 @@ echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 
+
 echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
 echo "Monster Name: <b>$mName</b><br>";
 echo " HP: $mHP, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>, XP: $mDRP, Lvl: $mLVL";
 
 
+	
 //combo showing
 $combo = $_SESSION["Combo"];
 if ($combo >= 1){

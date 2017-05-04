@@ -48,6 +48,12 @@ $result = mysqli_query($db, $order3);
 			$result = mysqli_query($db, $order);
 		}
 	
+$panel = "right-panel"; //set panel for log
+	
+	echo " <div class='$panel'>";
+echo $_SESSION["LOG"];
+echo '</div>';
+	
 echo 'Lose
 <section class="container">
     <div class="Back">

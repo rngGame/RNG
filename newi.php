@@ -30,7 +30,7 @@ $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$WEPhash' ");
 $WEPi = mysqli_fetch_assoc($WEP);
 
 
-list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $User, "weapon", $MLVL);
+list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $Effect, $EffectChance)=itemDrop($db, $User, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 
@@ -41,7 +41,7 @@ $_SESSION["REWARDTYPE"] = "WEP";
 $order = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, hitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$weaponEffect', '$weaponEffectChance', '0', '$worth')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$Effect', '$EffectChance', '0', '$worth')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
@@ -58,39 +58,39 @@ $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
 //for new weapon
-if ($weaponEffectChance <> 0){
-		if ($weaponEffect == "LL"){
+if ($EffectChance <> 0){
+		if ($Effect == "LL"){
 	$efftype = "Life Leach";
 	}
-		if ($weaponEffect == "BL"){
+		if ($Effect == "BL"){
 	$efftype = "Bleed Chanse";
 	}
-		if ($weaponEffect == "BR"){
+		if ($Effect == "BR"){
 	$efftype = "Burn Chanse";
 	}
-		if ($weaponEffect == "FR"){
+		if ($Effect == "FR"){
 	$efftype = "Freez Chanse";
 	}
-		if ($weaponEffect == "ST"){
+		if ($Effect == "ST"){
 	$efftype = "Stun Chanse";
 	}
-		if ($weaponEffect == "SH"){
+		if ($Effect == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($weaponEffect == "BK"){
+		if ($Effect == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($weaponEffect == "SM"){
+		if ($Effect == "SM"){
 	$efftype = "Summon increase";
 	}
-		if ($weaponEffect == "PS"){
+		if ($Effect == "PS"){
 	$efftype = "Poision increase";
 	}
-		if ($weaponEffect == "CF"){
+		if ($Effect == "CF"){
 	$efftype = "Confusion chanse";
 	}
 	
-	$eft = "Skill: $efftype $weaponEffectChance %<br>";}
+	$eft = "Skill: $efftype $EffectChance %<br>";}
 	
 //for old 
 if ($WEPi["efstat"]<>0){
@@ -274,7 +274,7 @@ header("location:reward.php");
   </tr>
   <tr>
     <td>$EFNAME</td>
-<td colspan='2'>$weaponEffectChance</td>
+<td colspan='2'>$EffectChance</td>
   </tr>
 
 </table>";*/

@@ -24,64 +24,6 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
-function login($vardas, $password, $db) {
-    // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $db->prepare("SELECT id, username, password, salt 
-        FROM members
-       WHERE email = ?
-        LIMIT 1")) {
-        $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
-        $stmt->execute();    // Execute the prepared query.
-        $stmt->store_result();
- 
-        // get variables from result.
-        $stmt->bind_result($user_id, $username, $db_password, $salt);
-        $stmt->fetch();
- 
-        // hash the password with the unique salt.
-        $password = hash('sha512', $password . $salt);
-        if ($stmt->num_rows == 1) {
-            // If the user exists we check if the account is locked
-            // from too many login attempts 
- 
-            if (checkbrute($user_id, $mysqli) == true) {
-                // Account is locked 
-                // Send an email to user saying their account is locked
-                return false;
-            } else {
-                // Check if the password in the database matches
-                // the password the user submitted.
-                if ($db_password == $password) {
-                    // Password is correct!
-                    // Get the user-agent string of the user.
-                    $user_browser = $_SERVER['HTTP_USER_AGENT'];
-                    // XSS protection as we might print this value
-                    $user_id = preg_replace("/[^0-9]+/", "", $user_id);
-                    $_SESSION['user_id'] = $user_id;
-                    // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", 
-                                                                "", 
-                                                                $username);
-                    $_SESSION['username'] = $username;
-                    $_SESSION['login_string'] = hash('sha512', 
-                              $password . $user_browser);
-                    // Login successful.
-                    return true;
-                } else {
-                    // Password is not correct
-                    // We record this attempt in the database
-                    $now = time();
-                    $mysqli->query("INSERT INTO login_attempts(user_id, time)
-                                    VALUES ('$user_id', '$now')");
-                    return false;
-                }
-            }
-        } else {
-            // No user exists.
-            return false;
-        }
-    }
-}
 function itemDrop($db,$user,$drop,$MLVL, $isTest){
     $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
     if(!$isTest){
@@ -357,75 +299,104 @@ function itemDrop($db,$user,$drop,$MLVL, $isTest){
             else{
                 $itemName = "<b>$name</b>";
             }
-            //deciding on effect
-            if (rand(0,100) < 23){
+			
+            //deciding on effect WEAPON
+            if (rand(0,100) < 23 and $drop=="weapon"){
                 $rngEffect = rand(1,11);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
-                    $weaponEffect = "LL";
-                    $weaponEffectChance = rand(1,7);
+                    $Effect = "LL";
+                    $EffectChance = rand(1,7);
                 }
                 if ($rngEffect == 2){
                     $effectName = "Bleed";
-                    $weaponEffect = "BL";
-                    $weaponEffectChance = rand(10,30);
+                    $Effect = "BL";
+                    $EffectChance = rand(10,30);
                 }
                 if ($rngEffect == 3){
                     $effectName = "Burn";
-                    $weaponEffect = "BR";
-                    $weaponEffectChance = rand(1,20);
+                    $Effect = "BR";
+                    $EffectChance = rand(1,20);
                 }
                 if ($rngEffect == 4){
                     $effectName = "Freez";
-                    $weaponEffect = "FR";
-                    $weaponEffectChance = rand(10,20);
+                    $Effect = "FR";
+                    $EffectChance = rand(10,20);
                     
                 }
                 if ($rngEffect == 5){
                     $effectName = "Stun";
-                    $weaponEffect = "ST";
-                    $weaponEffectChance = rand(5,30);
+                    $Effect = "ST";
+                    $EffectChance = rand(5,30);
                 }
                 if ($rngEffect == 6){
                     $effectName = "Shock";
-                    $weaponEffect = "SH";
-                    $weaponEffectChance = rand(20,50);
+                    $Effect = "SH";
+                    $EffectChance = rand(20,50);
                     
                 }
                 if ($rngEffect == 7){
                     $effectName = "Block";
-                    $weaponEffect = "BK";
-                    $weaponEffectChance = rand(5,20);
+                    $Effect = "BK";
+                    $EffectChance = rand(5,20);
                     
                 }
                  if ($rngEffect == 8){
                     $effectName = "Summon";
-                    $weaponEffect = "SM";
-                    $weaponEffectChance = rand(25,70);
+                    $Effect = "SM";
+                    $EffectChance = rand(25,70);
                     
                 }
                 if ($rngEffect == 9){
 					 $effectName = "Poision buff";
-                    $weaponEffect = "PS";
-                    $weaponEffectChance = rand(5,45);
+                    $Effect = "PS";
+                    $EffectChance = rand(5,45);
                     
                 }
                 
                 if ($rngEffect == 10){
 					$effectName = "Confusion chanse";
-                    $weaponEffect = "CF";
-                    $weaponEffectChance = rand(5,15);
+                    $Effect = "CF";
+                    $EffectChance = rand(5,15);
 
                 }
 				if ($rngEffect == 11){
 					$effectName = "Cursed Soul";
-                    $weaponEffect = "CS";
-                    $weaponEffectChance = rand(10,50);
+                    $Effect = "CS";
+                    $EffectChance = rand(10,50);
 
                 }
-                $effect = "Effect: $effectName $effectChance %<br>";
-                $textMessage.="Choose Effect $effectName $weaponEffectChance % \r\n";
+                $effect = "Effect: $effectName $EffectChance %<br>";
+                $textMessage.="Choose Effect $effectName $EffectChance % \r\n";
             }
+			
+			
+			//deciding on effect ARMOR
+            if (rand(0,100) < 20 and $drop=="armor"){
+                $rngEffect = rand(1,4);
+                if ($rngEffect == 1){
+                    $effectName = "HP Bonuss";
+                    $Effect = "HP";
+                    $EffectChance = round(rand($MLVL,($MLVL*1.5)));
+                }
+				if ($rngEffect == 2){
+                    $effectName = "EN Bonuss";
+                    $Effect = "EN";
+                    $EffectChance = round(rand($MLVL/10,($MLVL/6)));
+                }
+				if ($rngEffect == 3){
+                    $effectName = "Heal per turn";
+                    $Effect = "HL";
+                    $EffectChance = round(rand($MLVL/10,($MLVL/6)));
+                }
+				if ($rngEffect == 4){
+                    $effectName = "Chanse not die";
+                    $Effect = "NO";
+                    $EffectChance = round(rand(1,5));
+                }
+				$effect = "Effect: $effectName $EffectChance <br>";
+                $textMessage.="Choose Effect $effectName $EffectChance \r\n";
+			}
 
             //creating lowest weapon, best weapon acording to level
             $rngValueMax = $MLVL*1.2;
@@ -465,9 +436,9 @@ function itemDrop($db,$user,$drop,$MLVL, $isTest){
         fclose($myfile);
 		//select what aarray to transfer
 		 if($drop=="armor"){
-			  return array ($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb);}
+			  return array ($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb, $Effect, $EffectChance);}
 		if($drop=="weapon"){
-			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance);}
+			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $Effect, $EffectChance);}
 		if($drop=="talisman"){ 
 			 return array ($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus);}
 		

@@ -914,12 +914,18 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 
 
 .Kompas{
+	font-family: myFirstFont;
 	position:absolute;
-	color: -webkit-linear-gradient(left top, red, yellow);
+	color: white;
 	font-size:28px;
 	-webkit-animation-name: Kompas;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-duration: 5s;
+}
+
+@font-face {
+	font-family: myFirstFont;
+    src: url(Fonts/ABeeZee-Regular.tff);
 }
 @-webkit-keyframes Kompas {
     0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	top: 10px; left: 0px;}

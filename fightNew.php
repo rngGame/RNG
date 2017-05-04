@@ -55,6 +55,18 @@ if ($Armor > $PDMG){
 //if monster M damage lower then player defence
 if ($ArmorM > $MDMG){
 	$MDMG = round($ArmorM + (($mLVL + $ArmorM) * rand(-10,50) / 100));}
+	
+//if rare
+if (rand(1,300) == 100){
+       $testMessage.="Rare approved exact at 100 <br>";
+       $name = "<b style='color:#ff0066'>! RARE </b>$name<b style='color:#ff0066'> RARE !</b>";
+       $HP *= 1.45;
+       $mLVL *= 1.5;
+       $PDMG *= 1.2;
+	   $MDMG *= 1.3;
+       $Drop *= rand(5,15);
+       $_SESSION["MonsR"] = 1;
+}
 
 
 
@@ -70,11 +82,11 @@ else {
     echo "Monster Name: <b>$name</b><br>";
     echo " HP: $HP, DMG: <font color='red'>~$PDMG</font>/<font color='0066ff'>~$MDMG</font>, XP: $Drop, Lvl: $mLVL";
     $_SESSION["MonsName"] = "$name";
-    $_SESSION["MonsHP"] = $HP;
-    $_SESSION["MonsDMG"] = $PDMG;
-	$_SESSION["MonsDMGm"] = $MDMG;
-    $_SESSION["MonsDrop"] = $Drop;
-    $_SESSION["MonsLVL"] = $mLVL;
+    $_SESSION["MonsHP"] = round($HP);
+    $_SESSION["MonsDMG"] = round($PDMG);
+	$_SESSION["MonsDMGm"] = round($MDMG);
+    $_SESSION["MonsDrop"] = round($Drop);
+    $_SESSION["MonsLVL"] = round($mLVL);
     $_SESSION["MonsIMG"] = $monsterIMG;
 	
 //create for party

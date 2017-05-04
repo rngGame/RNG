@@ -782,46 +782,46 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 
 
-		$eft = 1 + $eft;
+		$eft += 1;
 
 		if ($WEPIn["efstat"]<>0){
 				if ($WEPIn["effect"] == "LL"){
-			$efftype[$eft] = "Life Leach";
+			$efapras[$eft] = "Life Leach";
 			}
 				if ($WEPIn["effect"] == "BL"){
-			$efftype[$eft] = "Bleed Chanse";
+			$efapras[$eft] = "Bleed Chanse";
 			}
 				if ($WEPIn["effect"] == "BR"){
-			$efftype[$eft] = "Burn Chanse";
+			$efapras[$eft] = "Burn Chanse";
 			}
 				if ($WEPIn["effect"] == "FR"){
-			$efftype[$eft] = "Freez Chanse";
+			$efapras[$eft] = "Freez Chanse";
 			}
 				if ($WEPIn["effect"] == "ST"){
-			$efftype[$eft] = "Stun Chanse";
+			$efapras[$eft] = "Stun Chanse";
 			}
 				if ($WEPIn["effect"] == "SH"){
-			$efftype = "Shock Chanse";
+			$efapras[$eft] = "Shock Chanse";
 			}
 				if ($WEPIn["effect"] == "BK"){
-			$efftype = "Block Chanse";
+			$efapras[$eft] = "Block Chanse";
 			}
 				if ($WEPIn["effect"] == "SM"){
-			$efftype = "Summon increase";
+			$efapras[$eft] = "Summon increase";
 			}
 				if ($WEPIn["effect"] == "PS"){
-			$efftype = "Poision increase";
+			$efapras[$eft] = "Poision increase";
 			}
 				if ($WEPIn["effect"] == "CF"){
-			$efftype = "Confusion chanse";
+			$efapras[$eft] = "Confusion chanse";
 			}
 				if ($WEPIn["effect"] == "CS"){
-			$efftype = "Cursed Soul";
+			$efapras[$eft] = "Cursed Soul";
 			}
 				if ($WEPIn["effect"] == "HT"){
-			$efftype = "Health per turn";
+			$efapras[$eft] = "Health per turn";
 			}	
-			$efto[$eft] = "$efftype[$eft] $WEPIn[efstat] %<br>";}
+			$efto[$eft] = "$efapras[$eft] $WEPIn[efstat] %<br>";}
 
 		if ($WEPIn["skill"] <> 0){
 			$sklu[$eft] = "Has Skill!<br>";

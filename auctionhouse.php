@@ -97,43 +97,43 @@ $eft = 1 + $eft;
 
 if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "LL"){
-	$efftype[$eft] = "Life Leach";
+	$effapras[$eft] = "Life Leach";
 	}
 		if ($ITM["effect"] == "BL"){
-	$efftype[$eft] = "Bleed Chanse";
+	$effapras[$eft] = "Bleed Chanse";
 	}
 		if ($ITM["effect"] == "BR"){
-	$efftype[$eft] = "Burn Chanse";
+	$effapras[$eft] = "Burn Chanse";
 	}
 		if ($ITM["effect"] == "FR"){
-	$efftype[$eft] = "Freez Chanse";
+	$effapras[$eft] = "Freez Chanse";
 	}
 		if ($ITM["effect"] == "ST"){
-	$efftype[$eft] = "Stun Chanse";
+	$effapras[$eft] = "Stun Chanse";
 	}
 		if ($ITM["effect"] == "SH"){
-	$efftype = "Shock Chanse";
+	$effapras[$eft] = "Shock Chanse";
 	}
 		if ($ITM["effect"] == "BK"){
-	$efftype = "Block Chanse";
+	$effapras[$eft] = "Block Chanse";
 	}
 		if ($ITM["effect"] == "SM"){
-	$efftype = "Summon increase";
+	$effapras[$eft] = "Summon increase";
 	}
 		if ($ITM["effect"] == "PS"){
-	$efftype = "Poision increase";
+	$effapras[$eft] = "Poision increase";
 	}
 		if ($ITM["effect"] == "CF"){
-	$efftype = "Confusion chanse";
+	$effapras[$eft] = "Confusion chanse";
 	}
 		if ($ITM["effect"] == "CS"){
-	$efftype = "Cursed Soul";
+	$effapras[$eft] = "Cursed Soul";
 	}
 		if ($ITM["effect"] == "HT"){
-	$efftype = "Health per turn";
+	$effapras[$eft] = "Health per turn";
 	}	
 	
-	$efto[$eft] = "$efftype[$eft] $ITM[efstat] %<br>";}
+	$efto[$eft] = "$effapras[$eft] $ITM[efstat] %<br>";}
 
 if ($ITM["skill"] <> 0){
 	$sklu[$eft] = "Has Skill!<br>";}

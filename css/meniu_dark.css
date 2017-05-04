@@ -771,7 +771,7 @@ position: absolute;
     position: relative;
     height: 220px;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .items{
     float:left;

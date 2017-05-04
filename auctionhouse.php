@@ -176,20 +176,23 @@ $icon = "IMG/pack/Icon.3_84.png";
 }
 	
 	if ($ITM["effect"] == "HP"){
-		$eftBOTS = "Bonus HP: $ITM[efstat]<br>";
+		$eftchk[$eft] = "Bonus HP: $ITM[efstat]<br>";
 	}
 	if ($ITM["effect"] == "EN"){
-		$eftBOTS = "Helth per turn $ITM[efstat]<br>";
+		$eftchk[$eft] = "Helth per turn $ITM[efstat]<br>";
 	}
 	if ($ITM["effect"] == "HL"){
-		$eftBOTS = "Helth per turn $ITM[efstat]<br>";
+		$eftchk[$eft] = "Helth per turn $ITM[efstat]<br>";
 	}
 	if ($ITM["effect"] == "NO"){
-		$eftBOTS = "Chanse not die: $ITM[efstat] %<br>";
+		$eftchk[$eft] = "Chanse not die: $ITM[efstat] %<br>";
+	}
+	if ($ITM["effect"] == ""){
+		$eftchk[$eft] ="";
 	}
 		
 echo "<td>";	
-echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>P.def - $ITM[pDEF]<br>M.def - $ITM[mDEF]<br>Apsorb: $ITM[Apsorb]%<br>$eftBOTS Enchant +$ITM[plus]<br></span></div><br>";
+echo "<div class='tooltip'><img src='$icon' width='45px' height='45px' class='item".$ITM['Rarity']."'><span class='tooltiptext'><b class='$ITM[Rarty]'>$ITM[Name]</b>Lvl: $ITM[ilvl]<br>P.def - $ITM[pDEF]<br>M.def - $ITM[mDEF]<br>Apsorb: $ITM[Apsorb]%<br>$eftchk[$eft] Enchant +$ITM[plus]<br></span></div><br>";
  
 echo "<div class='submit'><td     display: inline-flex;>
 Price: $List1[2]g.

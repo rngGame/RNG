@@ -1044,16 +1044,16 @@ while ($List1 = mysqli_fetch_array($List)){
 		}
 		
 	if ($ARMIn["effect"] == "HP"){
-		$eftBOTS = "Bonus HP: $ARMIn[efstat]";
+		$eftchek[$eft]  = "Bonus HP: $ARMIn[efstat]<br>";
 	}
 	if ($ARMIn["effect"] == "EN"){
-		$eftBOTS = "Helth per turn $ARMIn[efstat]";
+		$eftchek[$eft]  = "Helth per turn $ARMIn[efstat]<br>";
 	}
 	if ($ARMIn["effect"] == "HL"){
-		$eftBOTS = "Helth per turn $ARMIn[efstat]";
+		$eftchek[$eft]  = "Helth per turn $ARMIn[efstat]<br>";
 	}
 	if ($ARMIn["effect"] == "NO"){
-		$eftBOTS = "Chanse not die: $ARMIn[efstat] %";
+		$eftchek[$eft] = "Chanse not die: $ARMIn[efstat] %<br>";
 	}
 
 		
@@ -1073,8 +1073,7 @@ while ($List1 = mysqli_fetch_array($List)){
 						<br>
 						Absorb: <span class='$armCompArb'>$ARMIn[Apsorb]%</span>
 						<br>
-						$eftBOTS
-						<br>
+						$eftchek[$eft] 
 						Enchant +<span class='$armCompEnch'>$ARMIn[plus]</span>
 					</div>
 				</span>

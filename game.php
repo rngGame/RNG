@@ -1404,7 +1404,6 @@ $pointsLvlUp
 	<img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'>
 	$pasiveBut
 </div>
-<br>
 <font class='stats'>LVL:</font> 
 <b>$ACC[3]</b>
 $leveltext

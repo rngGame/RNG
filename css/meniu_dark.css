@@ -1,4 +1,9 @@
-html,body{width:100%;height:100%;padding:0;background:#2f3236;margin:0;color:#E4E4E4;}
+@font-face {
+	font-family: myFirstFont;
+    src: url(Fonts/ABeeZee.ttf);
+}
+
+html,body{width:100%;height:100%;padding:0;background:#2f3236;margin:0;color:#E4E4E4; font-family: myFirstFont;}
 
 header {
     background-color: #222427;
@@ -508,15 +513,9 @@ progress::-webkit-progress-value {
     background-color: #26292c;
     width: 654px;
 }
-#right{
-    float:right;
-    position:relative;
-    height: 572px;
-    background-color: #26292c;
-    width: 502px;
-}
+
 #middle{
-    display: block;
+    display: none;
     overflow: hidden;
     position: relative;
     height: 572px;
@@ -546,20 +545,63 @@ progress::-webkit-progress-value {
 	float: right;
     display: inline-block;
     position: relative;
-    width: 500px;
+    width: 452px;
     height: 572px;
     background-color: #26292c;
     border:1px solid black;
 }
+
+
 #actions {
+position: absolute;
+    width: 105px;
+    left: 750px;
+    background-color: none;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+.actionButtons{
+    float: left;
+	margin-top: 60px;
+	transform:scale(2.2);
+}
+
+#right{
+    float:left;
+    position:relative;
+    height: 572px;
+    background-color: #26292c;
+}
+
+/* EKRONO DIDIZO KEITIMAS */
+ @media screen and (min-width: 1120px) {
+  #actions {
     display: flex;
     justify-content: space-around;
     position: relative;
     width: 100%;
+	left: 0px;
     background-color: #26292c;
     border-top: 1px solid black;
     border-bottom: 2px solid black;
+		  
+      }
+	  
+	.actionButtons{
+    	float: left;
+		margin-top: 0px;
+		transform:scale(1);
+	}
+	
+	#right{
+    float:right;
+    position:relative;
+    height: 572px;
+    background-color: #26292c;
 }
+  }
+
 
 #inventory {
     float:left;
@@ -749,12 +791,10 @@ progress::-webkit-progress-value {
 }
 
 .linksB {
-	position: relative;
+	position: fixed;
     bottom: 0%;
 }
-.actionButtons{
-    float: left;
-}
+
 /*
 http://stackoverflow.com/questions/29037023/how-to-calculate-required-hue-rotate-to-generate-specific-colour
 how to define color
@@ -913,8 +953,22 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* TEST */
+
 .Kompas{
-	font-family: myFirstFont;
+	
 	position:absolute;
 	color: white;
 	font-size:28px;
@@ -923,10 +977,6 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	-webkit-animation-duration: 5s;
 }
 
-@font-face {
-	font-family: myFirstFont;
-    src: url(Fonts/ABeeZee.tff);
-}
 @-webkit-keyframes Kompas {
     0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	top: 10px; left: 0px;}
 	15% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}

@@ -3,9 +3,9 @@
 echo '
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 		<title>World of RNG</title>
-		<link rel="stylesheet" type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
+		<link rel="stylesheet" "type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
 		<link rel="icon" href="favicon.png">
 	</head>
 	<body onload="callFunction()">

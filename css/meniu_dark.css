@@ -275,7 +275,7 @@ visibility:hidden;
     height:100%;
 	margin: -120px 0px 0px 0px;
     float:right;
-}​
+}
 
 .what{}
 
@@ -296,8 +296,7 @@ visibility:visible;
     color: #E4E4E4;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
-
+	
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
@@ -771,7 +770,7 @@ position: absolute;
     position: relative;
     height: 220px;
     width: 100%;
-    overflow: hidden;
+
 }
 .items{
     float:left;

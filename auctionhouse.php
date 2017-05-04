@@ -175,17 +175,17 @@ if ($ITM["Part"] == "LEGS"){
 $icon = "IMG/pack/Icon.3_84.png";
 }
 	
-	if ($ARMIn["effect"] == "HP"){
-		$eftBOTS = "Bonus HP: $ARMIn[efstat]<br>";
+	if ($ITM["effect"] == "HP"){
+		$eftBOTS = "Bonus HP: $ITM[efstat]<br>";
 	}
-	if ($ARMIn["effect"] == "EN"){
-		$eftBOTS = "Helth per turn $ARMIn[efstat]<br>";
+	if ($ITM["effect"] == "EN"){
+		$eftBOTS = "Helth per turn $ITM[efstat]<br>";
 	}
-	if ($ARMIn["effect"] == "HL"){
-		$eftBOTS = "Helth per turn $ARMIn[efstat]<br>";
+	if ($ITM["effect"] == "HL"){
+		$eftBOTS = "Helth per turn $ITM[efstat]<br>";
 	}
-	if ($ARMIn["effect"] == "NO"){
-		$eftBOTS = "Chanse not die: $ARMIn[efstat] %<br>";
+	if ($ITM["effect"] == "NO"){
+		$eftBOTS = "Chanse not die: $ITM[efstat] %<br>";
 	}
 		
 echo "<td>";	
@@ -240,7 +240,7 @@ echo "</div></td></td></tr>";
 } //while end
 ?>
 </table>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <div class="floating">
   <section class="container3">
     <div class="31-50">

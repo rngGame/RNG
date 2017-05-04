@@ -1672,7 +1672,7 @@ if ($selected == 4){
 <option value='4' selected>Items</option>";}
 
 //sell all buttons
-$sellBut = "<section class='actionButtons'>
+$sellBut = "<section class='actionButtonsSE'>
 	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
 		<input hidden='' type='text' name='bagsell' value='WEP' placeholder=''>
 		<input type='submit' name='commit' value='Sell all selected'>
@@ -1680,7 +1680,7 @@ $sellBut = "<section class='actionButtons'>
 </section>
 ";
 
-$sellBut1 = "<section class='actionButtons'>
+$sellBut1 = "<section class='actionButtonsSE'>
 	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
 		<input hidden='' type='text' name='bagsell' value='ARM' placeholder=''>
 		<input type='submit' name='commit' value='Sell all selected'>
@@ -1688,7 +1688,7 @@ $sellBut1 = "<section class='actionButtons'>
 </section>
 ";
 
-$sellBut2 = "<section class='actionButtons'>
+$sellBut2 = "<section class='actionButtonsSE'>
 	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
 		<input hidden='' type='text' name='bagsell' value='ACS' placeholder=''>
 		<input type='submit' name='commit' value='Sell all selected'>
@@ -1696,7 +1696,7 @@ $sellBut2 = "<section class='actionButtons'>
 </section>
 ";
 
-$sellBut3 = "<section class='actionButtons'>
+$sellBut3 = "<section class='actionButtonsSE'>
 	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
 		<input hidden='' type='text' name='bagsell' value='ITM' placeholder=''>
 		<input type='submit' name='commit' value='Sell all selected'>

@@ -92,24 +92,22 @@ echo "$Reward";
 
 }
 
-echo '<section class="container">
-    <div class="Keep">
-	      <form method="post" action="sync.php">
+echo '<div id="fightNewBut">
+	<section class="actionButtons2">
+	  <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
-    </div>
   </section>';
   
 if (isset($_SESSION["LOGPARTY"])){
 }
 else{
-echo '<section class="container2">
-    <div class="Sell">
-	      <form method="post" action="Sell.php">
+echo '<section class="actionButtons2">
+	   <form method="post" action="Sell.php">
         <p class="submit"><input type="submit" name="commit" value="Sell"></p>
       </form>
-    </div>
-  </section>';
+  </section></div>'
+	;
 }
 ?>
 </div>

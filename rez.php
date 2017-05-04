@@ -41,23 +41,22 @@ else{
 }
 if(isset($_SESSION["ENname"])){
 	unset($_SESSION["ENname"]);
+	echo "<div id='fightNewBut'>";
 }
 else{
-	echo "<section class='container'>
-    <div class='Back'>
+	echo " <div id='fightNewBut'>
+		<section class='actionButtons2'>
 	      <form method='post' action='Enchant.php'>
         <p class='submit'><input type='submit' name='commit' value='Enchant Again'></p>
       </form>
-    </div>
   </section>";
 }
   
-echo "<section class='container'>
-    <div class='Back'>
+echo "<section class='actionButtons2'>
 	      <form method='post' action='sync.php'>
         <p class='submit'><input type='submit' name='commit' value='Back'></p>
       </form>
-    </div>
-  </section>";
+  </section>
+  </div>";
   
 ?>

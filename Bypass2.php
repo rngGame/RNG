@@ -46,11 +46,11 @@ else{
 	session_start();
 	$_SESSION["User"] = $User;
 	echo "<b>Not Enought Money or you can't enchant this weapon</b>";
-	echo"<section class='container3'>
-    <div class='31-50'>
+	echo"<div id='fightNewBut'>
+		<section class='actionButtons2'>
 	      <form method='post' action='sync.php'>
         <p class='submit'><input type='submit' name='commit' value='Back'></p>
       </form>
-    </div>
-  </section>";}
+  </section>
+  </div>";}
 ?>

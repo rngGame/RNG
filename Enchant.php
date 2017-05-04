@@ -107,13 +107,12 @@ $IDM = mysqli_fetch_row($IDM);
 if ($IDM[0] ==1){
 }
 else{
-	echo" <section class='container3'>
-    <div class='Enhcant'>
+	echo" <div id='fightNewBut'>
+	<section class='actionButtons2'>
 	      <form method='post' action='sync.php'> 
         <p class='submit'><input type='submit' name='commit' value='Max Upgrade (Back)'></p>
       </form>
-    </div>
-  </section>";
+  </section></div>";
 	exit;
 }
 
@@ -140,19 +139,17 @@ $price = $ITM["ilvl"] * $ENC2[2];
  }
  
 
- echo" <section class='container3'>
-    <div class='Enhcant'>
+ echo" <div id='fightNewBut'>
+ 	<section class='actionButtons2'>
 	      <form method='post' action='Bypass2.php'> 
         <p class='submit'><input type='submit' name='commit' value='Upgrade for $price g.'></p>
       </form>
-    </div>
-  </section>";
+  	</section>";
   mysqli_close($db);
     ?>
-	  <section class="container3">
-    <div class="31-50">
+	  <section class="actionButtons2">
 	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
-    </div>
   </section>
+	</div>

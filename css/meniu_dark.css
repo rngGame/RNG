@@ -320,7 +320,7 @@ table, td, th {
 .right-panel
 {        
     background-color:#26292c;
-    width:30%;
+    width:25%;
     height:100%;
     float:right;
 	position: relative;
@@ -563,7 +563,7 @@ position: absolute;
 
 #fightNewBut {
 	position: absolute;
-    width: 105px;
+    width: 50px;
 	left: 650px;
 	top: -11px; 
 }
@@ -621,10 +621,10 @@ position: absolute;
 	}
 	 
 	#fightNewBut {
-	position: absolute;
-    width: 105px;
+	position: sticky;
+    width: 50px;
 	left: 0px;	
-	top: 200px;
+	top: 0px;
 		
 }
 }

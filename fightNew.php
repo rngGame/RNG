@@ -123,25 +123,27 @@ die();
 }
 
     echo
-      "<section class='container2'>
-        <div class='11-30'>
+      "<div class='test'><section class='container2'>
+        <div class='actionButtons'>
     	      <form method='post' action='FightT.php'>
               <input hidden='' type='text' name='lvl' value='30' placeholder='lvl'>
             <p class='submit'><input type='submit' name='commit' value='Fight'></p> 
           </form>
         </div>
       </section>
+	  <br>
       
 
 
     <section class='container1'>
-        <div class='1-10'>
+        <div class='actionButtons'>
     	      <form method='post' action='fightNew.php'>
               <input hidden='' type='text' name='lvl' value='$BLVL' placeholder='Try another Monster'>
             <p class='submit'><input type='submit' name='commit' value='Try another Monster'> </p>
           </form>
         </div>
-      </section>";
+      </section>
+	  ";
 	  
 	  //Algio keistas stuff !!!!
 	  if ($User == "Algraud"){ 
@@ -150,9 +152,10 @@ die();
 
   ?>
   <section class="container3">
-    <div class="31-50">
+    <div class="actionButtons">
 	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
     </div>
   </section>
+  </div>

@@ -899,6 +899,17 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
 }
 
-
+.achiev{
+	
+	font-size:17px;
+	-webkit-animation-name: achiev;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 5s;
+}
+@-webkit-keyframes achiev {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
+	50% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	color: white;}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
+}
 
 

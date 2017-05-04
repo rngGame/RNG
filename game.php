@@ -193,7 +193,7 @@ $PNT = mysqli_fetch_row($PNT); //pasive points
 
 
 if ($PNT[1] >= 1){
-	$pointsLvlUp = "<b><font color='red'>You have $PNT[1] unspend points!</font></b>";
+	$pointsLvlUp = "<b class='achiev'>You have $PNT[1] unspend point(-s)</b>";
 	$pasiveBut = " <div class='newt'>       <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='point.php'>
           <input type='hidden' name='STAT' value='STR'>
@@ -1529,6 +1529,14 @@ $equipTemplate ="
 //old PVP rank
 /*Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>*/
 
+//achievment check
+$result = mysqli_query($db, "SELECT * FROM Achievments where User = '$User' AND Seen is null");
+$unseen = mysqli_num_rows($result);
+
+if ($unseen >= 1){
+	$AchTezt = "<div class='achiev' >You have $unseen new Achiev!</div><br>";
+}
+
 $socialTemplate="
 <div id='personal'>
 Totall Kills
@@ -1544,6 +1552,7 @@ Totall Kills
     	<form method='post' action='achv.php'>
           <input type='submit' name='commit3' value='Achievments'>
      	 </form></p></section>
+		 $AchTezt
 $onlineText
 
 </div>

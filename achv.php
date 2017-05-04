@@ -29,6 +29,17 @@ $ACC = mysqli_fetch_row($ACC);
 $MOD = mysqli_query($db,"SELECT * FROM modlist where User = '$User' ");
 $MOD = mysqli_fetch_row($MOD);
 
+//make "seen"
+$Lists = mysqli_query($db,"SELECT * FROM Achievments where User = '$User' and Seen is null ");
+while ($ListA = mysqli_fetch_array($Lists)){	
+	
+	$order1 = "UPDATE Achievments
+	SET Seen = '1'
+	WHERE `USER` = '$User' and Seen is null";   
+
+	$result = mysqli_query($db, $order1);
+
+}
 
 
 $List = mysqli_query($db,"SELECT * FROM Achievments where User = '$User' ");
@@ -37,6 +48,8 @@ echo "  <form method='post' action='chng.php'>$List1[1] - $List1[2] -
           <input style='display:none' type='submit' name='change' value='$List1[2]' placeholder='title'>
         <a class='submit'><button type='submit' name='change' value='$List1[2]'>Use it.</button> 
         </a> </form><br>";
+		
+
 
 
 ;}

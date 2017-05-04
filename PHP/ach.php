@@ -67,8 +67,8 @@ if ($ACC[3] > 19){
 		VALUES ('Take your new class', 'Classy~', '$User')";
 		$result = mysqli_query($db, $order);}}
 
-	//Reach LVL 45
-if ($ACC[3] == 45){
+	//Reach LVL 50
+if ($ACC[3] == 50){
 		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'Get On My Level'");
 	$ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){

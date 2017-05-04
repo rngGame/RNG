@@ -913,3 +913,22 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 }
 
 
+.Kompas{
+	position:absolute;
+	color: -webkit-linear-gradient(left top, red, yellow);
+	font-size:28px;
+	-webkit-animation-name: Kompas;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 5s;
+}
+@-webkit-keyframes Kompas {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	top: 10px; left: 0px;}
+	15% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
+	45% {	 text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;		top: 150px; left: 150px;  transform: rotate(180deg) scale(2);}
+	60% {	 text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkyellow;	}
+	75% {	 text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px darkblue;	top: 150px; left: 0px;	 transform: rotate(0deg) scale(1);}
+	90% {	 text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px grey;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;		top: 10px; left: 0px; transform: rotate(360deg) scale(1);}
+}
+

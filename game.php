@@ -1234,7 +1234,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$List1[2]' ");
 		$ITMn = mysqli_fetch_assoc($ITM); //item by colum row
 		
-		$sell = ($ITMn["Value"] * $ACC[3]) * 5;
+		$sell = ($ITMn["Value"] * $ACC[3]);
 		
 		if ($ITMn["EFT"] == "XP" or $ITMn["EFT"] == "GOLD" or $ITMn["EFT"] == "SHRD" or $ITMn["EFT"] == "MOD" or $ITMn["EFT"] == "ENC" or $ITMn["EFT"] == "JOKE"){ //if usable item
 		

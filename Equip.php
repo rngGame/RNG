@@ -123,7 +123,7 @@ if (isset($_POST['ITMS'])) {
 			$result = mysqli_query($db, $order);
 	}
 	if ($ITM[2] == "GOLD"){
-		$XPS = $ACC[4] + ($ITM[3] * $ACC[3]) * 5;
+		$XPS = $ACC[4] + ($ITM[3] * $ACC[3]);
 			$order = "UPDATE characters
 			SET Cash = '$XPS'
 			WHERE `User` = '$User'";

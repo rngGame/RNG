@@ -372,7 +372,7 @@ function itemDrop($db,$user,$drop,$MLVL, $isTest){
 			
 			
 			//deciding on effect ARMOR
-            if (rand(0,100) < 22 and $drop=="armor"){
+            if (rand(0,100) < 25 and $drop=="armor"){
                 $rngEffect = rand(1,5);
                 if ($rngEffect == 1){
                     $effectName = "HP Bonuss";

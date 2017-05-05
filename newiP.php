@@ -211,7 +211,7 @@ if ($UserWin <> ""){
 $selectpart = rand(1,3);
 
 if ($selectpart == 1){
-list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $weaponEffect, $weaponEffectChance)=itemDrop($db, $UserWin, "weapon", $MLVL);
+list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill,  $Effect, $EffectChance)=itemDrop($db, $UserWin, "weapon", $MLVL);
 
 $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 
@@ -222,7 +222,7 @@ $_SESSION["REWARDTYPE"] = "WEP";
 $order = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, hitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$weaponEffect', '$weaponEffectChance', '0', '$worth')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$Effect', '$EffectChance', '0', '$worth')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
@@ -239,31 +239,31 @@ $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
 if ($weaponEffectChance <> 0){
-		if ($weaponEffect == "LL"){
+		if ($Effect == "LL"){
 	$efftype = "Life Leach";
 	}
-		if ($weaponEffect == "BL"){
+		if ($Effect == "BL"){
 	$efftype = "Bleed Chanse";
 	}
-		if ($weaponEffect == "BR"){
+		if ($Effect == "BR"){
 	$efftype = "Burn Chanse";
 	}
-		if ($weaponEffect == "FR"){
+		if ($Effect == "FR"){
 	$efftype = "Freez Chanse";
 	}
-		if ($weaponEffect == "ST"){
+		if ($Effect == "ST"){
 	$efftype = "Stun Chanse";
 	}
-		if ($weaponEffect == "SH"){
+		if ($Effect == "SH"){
 	$efftype = "Shock Chanse";
 	}
-		if ($weaponEffect == "BK"){
+		if ($Effect == "BK"){
 	$efftype = "Block Chanse";
 	}
-		if ($weaponEffect == "SM"){
+		if ($Effect == "SM"){
 	$efftype = "Summon increase";
 	}
-	$eft = "$efftype $weaponEffectChance %<br>";}
+	$eft = "$efftype $EffectChance %<br>";}
 	
 if (!$WEPi["Name"] == ""){
 	$Current = "<b class='$WEPi[Rarity]'>$WEPi[Name] ($WEPi[Rarity])</b>";}
@@ -311,16 +311,17 @@ if($magAVG1<=$magAVG2){
 
 $log .="<br><b>$UserWin</b> Recived equipment - $name<br>";
 } //Weapon
-if ($selectpart == 2){
-list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb) = itemDrop($db,$UserWin,"armor",$MLVL);
 
-$worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
+if ($selectpart == 2){
+list($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb, $Effect, $EffectChance) = itemDrop($db,$UserWin,"armor",$MLVL);
+
+$worth = $iLVL + $valueArmorP + $valueArmorM + $apsorb;
 //insert into db
 
 $order = "INSERT INTO DropsArm
-	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part, plus)
+	   (HASH, Name, Rarity, ilvl, pDEF, mDEF, Apsorb, Part, plus, effect, efstat)
 	  VALUES
-	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part' ,'0')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$valueArmorP', '$valueArmorM', '$apsorb', '$part', '$Effect', '$EffectChance' ,'0')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
@@ -333,6 +334,7 @@ $result = mysqli_query($db, $order2);
 $log .="<br><b>$UserWin</b> Recived equipment - $name<br>";
 
 } //Armor 
+
 if ($selectpart == 3){
 	list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$UserWin,"talisman",$MLVL);
 $cash = $iLVL*$sell;

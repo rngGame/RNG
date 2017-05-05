@@ -23,7 +23,7 @@
 <file name="jquery-3.1.1.min.js" server="ftp.miniforums.org" local="131349460424009985" remote="131236829400000000" Dst="1" />
 <file name="log.php" server="ftp.miniforums.org" local="131372663846074166" remote="131372339400000000" Dst="2" />
 <file name="looseP.php" server="ftp.miniforums.org" local="131349460459716361" remote="131299692600000000" Dst="1" />
-<file name="lose.php" server="ftp.miniforums.org" local="131383846705371232" remote="131383522200000000" Dst="2" />
+<file name="lose.php" server="ftp.miniforums.org" local="131384508913658489" remote="131384184600000000" Dst="2" />
 <file name="loseB.php" server="ftp.miniforums.org" local="131349460475747225" remote="131348083800000000" Dst="1" />
 <file name="reg.php" server="ftp.miniforums.org" local="131372658338186921" remote="131372334000000000" Dst="2" />
 <file name="reroll.php" server="ftp.miniforums.org" local="131372749756490244" remote="131372425200000000" Dst="2" />
@@ -62,7 +62,7 @@
 <file name="uniqR.php" server="ftp.miniforums.org" local="131374589948622784" remote="131374265400000000" Dst="2" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131384104964253922" remote="131383780800000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131365555071502557" remote="131365230600000000" Dst="2" />
-<file name="game.php" server="ftp.miniforums.org" local="131384471355371355" remote="131384147400000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131384504913989574" remote="131384181000000000" Dst="2" />
 <file name="fightNew.php" server="ftp.miniforums.org" local="131383848172694245" remote="131383524000000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131380489920687341" remote="131380165800000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131384471461661780" remote="131384147400000000" Dst="2" />

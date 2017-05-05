@@ -188,7 +188,7 @@ $icon = "IMG/pack/Icon.3_84.png";
 		$eftchk[$eft] = "Chanse not die: $ITM[efstat] %<br>";
 	}
 	if ($ITM["effect"] == "TR"){
-		$eftchk[$eft] = "Thorns Damage: $ITM[efstat] %<br>";
+		$eftchk[$eft] = "Thorns Damage: $ITM[efstat]<br>";
 	}
 	if ($ITM["effect"] == ""){
 		$eftchk[$eft] ="";

@@ -1070,7 +1070,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$eftchek[$eft] = "Chanse not die: $ARMIn[efstat] %<br>";
 	}
 	if ($ARMIn["effect"] == "TR"){
-		$eftchek[$eft] = "Thorns Damage: $ARMIn[efstat] %<br>";
+		$eftchek[$eft] = "Thorns Damage: $ARMIn[efstat]<br>";
 	}
 
 		

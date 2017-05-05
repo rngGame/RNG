@@ -63,7 +63,7 @@ $ACSi = mysqli_fetch_assoc($ACS);
 		$eftCur = "Chanse not die: $ACSi[efstat] %";
 	}
 	if ($ACSi["effect"] == "TR"){
-		$eftCur = "Thorns damage: $ACSi[efstat] %";
+		$eftCur = "Thorns damage: $ACSi[efstat]";
 	}
 
 

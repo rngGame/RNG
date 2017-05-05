@@ -26,11 +26,6 @@ $Money = $_SESSION["Money"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-$cash = $ACC[4] - $Money;
-	   
-$order3 = "UPDATE characters
-SET Cash = '$cash'
-WHERE `User` = '$User'";
 
 $result = mysqli_query($db, $order3);	
 
@@ -50,7 +45,7 @@ $result = mysqli_query($db, $order3);
 	
 $panel = "right-panel"; //set panel for log
 	
-	echo " <div class='$panel'>";
+	echo " <br><br><br><div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 	

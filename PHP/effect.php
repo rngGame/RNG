@@ -72,7 +72,7 @@ if ($WEPn["effect"] == "SH" or $SUB[6] == "SH"){
 		$sht = $sht + 1;
 	}
 	if ($shDT >= 1){
-	$shTE = "Monster shocked $shDT time(s) fot a tottal $shD dmg.<br>";
+	$shTE = "Monster shocked <b>$shDT</b> time(s) for <font color='#8134ED'>$shD</font> dmg.<br>";
 	}
 }
 }

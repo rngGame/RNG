@@ -68,9 +68,16 @@ $SKLm = $_SESSION["ENERGYM"];
 
 $imgm = $_SESSION["MonsIMG"];
 
+//player straing  HP
 if (!isset($_SESSION["HPO"])){
 	$_SESSION["HPO"]=$HPin;
 }
+
+//monster starting HP
+if (!isset($_SESSION["HPM"])){
+	$_SESSION["HPM"]=$mHP;
+}
+
 if (!isset($_SESSION["LOG"])){
 	$LOG = $_SESSION["LOG"];
 }

@@ -116,7 +116,7 @@ if (isset($_POST['ITMS'])) {
 	$ITM = mysqli_fetch_row($ITM);
 	
 	if ($ITM[2] == "XP"){
-		$XPS = $ACC[5] + ($ACC[5]  *  ($ITM[3]/2) /100);
+		$XPS = $ACC[5] + ($ACC[5]  *  $ITM[3] / (10 * $ACC[3]));
 			$order = "UPDATE characters
 			SET XP = '$XPS'
 			WHERE `User` = '$User'";

@@ -322,7 +322,7 @@ $generatedXP = round(100*(1-(($XPL1-$XPL0)/$XPL1))) ;
 $XPLc = mysqli_query($db,"SELECT EXISTS(SELECT * FROM levels WHERE LVL = '$lvl2')");
 $XPLc = mysqli_fetch_row($XPLc);
 if ($XPLc[0] ==1){
-	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(Till next lvl: $XPL2r)</div></font>";
+	$leveltext = "<font size='1'><progress value='$XPL0' max='$XPL1'></progress><div class='lvltext'>(Next lvl: $XPL2r)</div></font>";
 }
 else{
 	$leveltext = "<font size='1'><progress value='100' max='100'></progress><div class='lvltext'>(Max level)</div></font>";

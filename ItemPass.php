@@ -29,12 +29,14 @@ if ($EFT == "LUCK"){
 	$text = "Potion Increased Cryt by $BN %<br>";
 }
 if ($EFT == "HURT"){
-	$MHP = $_SESSION["MonsHP"];
+	$MHP = $_SESSION["HPM"]; //startin HP
+	$MHPnow = $_SESSION["MonsHP"];
 	$BN = round($MHP * $VALUE /100);
-	if ($BN >= 100000){
-		$BN = 100000;}
-	$MHP -= $BN;
-	$_SESSION["MonsHP"] = $MHP;
+	$mLVL = $_SESSION["MonsLVL"];
+	if ($BN >= ($mLVL * 500)){
+		$BN = $mLVL * 500;}
+	$MHPnow -= $BN;
+	$_SESSION["MonsHP"] = $MHPnow;
 	$text = "Potion did $BN damage to monster<br>";
 	$_SESSION["PARTYPOTIONDMG"] = $BN;
 }

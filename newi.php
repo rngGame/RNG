@@ -127,7 +127,7 @@ if ($WEPi["efstat"]<>0){
 		if ($WEPi["effect"] == "CF"){
 	$efftype = "Confusion chanse";
 	}
-	$eft2 = "Skill: $efftype $WEPi[efstat] %<br>";}
+	$eft2 = "Effect: $efftype $WEPi[efstat] %<br>";}
 	
 	//check for uniq
 	if ($WEPn["Rarity"] == "Unique"){

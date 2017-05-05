@@ -177,8 +177,7 @@ if ($_SESSION["HealthTurn"] >= 1){
 
 
 //monster cryt	
-$CRT2= rand(1,100);	
-if ($CRT2 < 10){
+if (rand(1,100) < 10){
 	$citM = 1;
 $monDMG = $monDMG*2;}
 
@@ -408,14 +407,14 @@ $_SESSION["LOG"] = "";
 		
 	if ($SKL ==5){
 		$refT = "$User reflected <font color='#cc6600'>$monsRef dmg. ($mref %)</font><br>";}
-	if ($SKL ==4){
-		$tP = "$xt <font color='#3366ff'>$skr x $physDMGc</font>";}
 	if ($citP == 1){
-		$tP = "$xt <font color='red'>$tP cryt.</font>";}
+		$tP = "$xt tottal of <font color='red'><b>$finalPlayerDMG cryt.</b></font> ";}
+	if ($SKL ==4){
+		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
 		$_SESSION["LOG"] = "$ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";

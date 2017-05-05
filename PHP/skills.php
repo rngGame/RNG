@@ -125,13 +125,13 @@ if ($SUB[5] == "SLASH"){
 
 //skill 5
 if ($SKL ==5){
+	$citP = 0;
 	$mref = rand(30,60);
 	
 	if ($CLS[6] == "TANK"){
 		$mref = rand(50,80);}
 	if ($SUB[5] == "REFL"){
 		$mref = rand(90,150);}
-		
 		
 	$calcref = $mref;
  	$monsRef = ($monDMG * $calcref / 100) + $Armor + $ArmorM;

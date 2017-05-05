@@ -27,7 +27,7 @@
 <file name="loseB.php" server="ftp.miniforums.org" local="131349460475747225" remote="131348083800000000" Dst="1" />
 <file name="reg.php" server="ftp.miniforums.org" local="131372658338186921" remote="131372334000000000" Dst="2" />
 <file name="reroll.php" server="ftp.miniforums.org" local="131372749756490244" remote="131372425200000000" Dst="2" />
-<file name="rewarm.php" server="ftp.miniforums.org" local="131384526360639928" remote="131384202000000000" Dst="2" />
+<file name="rewarm.php" server="ftp.miniforums.org" local="131384541413992600" remote="131384217000000000" Dst="2" />
 <file name="rewBoss.php" server="ftp.miniforums.org" local="131372657111144460" remote="131372332800000000" Dst="2" />
 <file name="rewtali.php" server="ftp.miniforums.org" local="131359923797314737" remote="131359599600000000" Dst="2" />
 <file name="rez.php" server="ftp.miniforums.org" local="131384126539023523" remote="131383802400000000" Dst="2" />
@@ -56,8 +56,8 @@
 <file name="KeepG.php" server="ftp.miniforums.org" local="131372660189129574" remote="131372335800000000" Dst="2" />
 <file name="discard.php" server="ftp.miniforums.org" local="131349460337874941" remote="131308299000000000" Dst="1" />
 <file name="chat_upd.php" server="ftp.miniforums.org" local="131372878547985902" remote="131372554200000000" Dst="2" />
-<file name="newi.php" server="ftp.miniforums.org" local="131383879893048747" remote="131383555800000000" Dst="2" />
-<file name="FCAL.php" server="ftp.miniforums.org" local="131384523861857115" remote="131384199600000000" Dst="2" />
+<file name="newi.php" server="ftp.miniforums.org" local="131384535802898802" remote="131384211600000000" Dst="2" />
+<file name="FCAL.php" server="ftp.miniforums.org" local="131384542466246687" remote="131384218200000000" Dst="2" />
 <file name="point.php" server="ftp.miniforums.org" local="131349460493924732" remote="131348046600000000" Dst="1" />
 <file name="uniqR.php" server="ftp.miniforums.org" local="131374589948622784" remote="131374265400000000" Dst="2" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131384104964253922" remote="131383780800000000" Dst="2" />

@@ -89,8 +89,11 @@ if ($EffectChance <> 0){
 		if ($Effect == "CF"){
 	$efftype = "Confusion chanse";
 	}
+		if ($Effect == "CS"){
+	$efftype = "Cursed Soul";
+	}
 	
-	$eft = "Skill: $efftype $EffectChance %<br>";}
+	$eft = "Effect: $efftype <b>$EffectChance %</b><br>";}
 	
 //for old 
 if ($WEPi["efstat"]<>0){

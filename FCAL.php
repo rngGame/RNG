@@ -73,7 +73,7 @@ if (isset($_SESSION["Thorns"])){
 	$Thorns = $_SESSION["Thorns"];
 	$Thorns +=  $Thorns * ($Armor + $ArmorM + $mLVL + ($plvl*15)) /1000; //thorns scales with armor+lvl+monter lvl
 	$Thorns = round($Thorns);
-	$ThorText = "Monster took $Thorns of Thorns dmg.<br>";
+	$ThorText = "Monster took <font color='#99cc00'>$Thorns </font>of Thorns dmg.<br>";
 }
 
 	
@@ -172,7 +172,7 @@ if ($WEPn["efstat"] <> 0 or $SUB[7] <> 0){
 if ($_SESSION["HealthTurn"] >= 1){
 	$HPin += $_SESSION["HealthTurn"];
 	$hresr = $_SESSION["HealthTurn"];
-	$restoreFromArmor = "<b>Restored $hresr health.</b><br>";
+	$restoreFromArmor = "<b>Restored <font color='#ffcc00'>$hresr </font>health.</b><br>";
 }
 
 
@@ -382,7 +382,7 @@ else{
 $finalPlayerDMG= round($finalPlayerDMG,0);
 $finalPlayerHP= round($finalPlayerHP,0);
 $monsRef= round($monsRef,0);
-$tP = "tottal of $finalPlayerDMG";
+$tP = "tottal of <b>$finalPlayerDMG </b>";
 
 
 

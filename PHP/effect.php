@@ -21,7 +21,7 @@ if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 	if ($blee > (300*$mLVL)){
 		$blee = 300*$mLVL;}
 	$blee = round($blee,0);
-	$bleed = "Monster bleeds for $blee dmg.<br>";
+	$bleed = "Monster bleeds for <font color='#e60000'>$blee</font> dmg.<br>";
 	$_SESSION["bleed"] = 1;
 }
 }

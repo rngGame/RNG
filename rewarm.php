@@ -77,19 +77,19 @@ $_SESSION["Gold"] = $moneySel;
 
 if ($EffectChance <> 0){
 		if ($Effect == "HP"){
-	$efftype = "Bonus HP";
+	$efftype = "Bonus HP:";
 	}
 		if ($Effect == "EN"){
-	$efftype = "Bonus EN";
+	$efftype = "Bonus EN:";
 	}
 		if ($Effect == "HL"){
-	$efftype = "Helth per turn";
+	$efftype = "Helth per turn:";
 	}
 		if ($Effect == "NO"){
-	$efftype = "Chanse not to die";
+	$efftype = "Chanse not to die:";
 	}
 		if ($Effect == "TR"){
-	$efftype = "Thorns damage";
+	$efftype = "Thorns damage:";
 	}
 	$eft = "Effect: $efftype <b>$EffectChance </b> <span><br>";}
 

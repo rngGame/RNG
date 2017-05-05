@@ -254,7 +254,7 @@ if ($SKL ==33){
 		}
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
-			$pettdmgtext = "Pet did $petDMG dmg.<br>";
+			$pettdmgtext = "Pet did <b>$petDMG</b> dmg.<br>";
 		
 				$pettook = round($monDMG * 10 / 100);
 				$pettookM = round($monDMGmag * 20 / 100);
@@ -287,20 +287,20 @@ if ($SKL ==33){
 			if (rand(0,100) < 20 and $petskl <> 1){
 				$petskl = 1;
 				$petExtraDMG = round($petDMG + ($petDMG * rand(140,220) / 100));
-				$petSkillText = "Pet Used <b>COOL SKILL</b> and delt extra $petExtraDMG dmg.<br>";
+				$petSkillText = "Pet Used <b>COOL SKILL</b> and delt extra <font color='#34F0ED'>$petExtraDMG </font> dmg.<br>";
 			}
 			if (rand(0,100) < 15 and $petskl <> 1){
 				$petskl = 1;
 				$petheal = round($HPO * rand(3,8) / 100);
 				$HPin = round($HPin + $petheal);
-				$petSkillText = "Pet <b> Healed you </b>for $petheal health<br>";
+				$petSkillText = "Pet <b> Healed you </b>for <font color='#ffcc00'>$petheal</font> health<br>";
 			}
 			if (rand(0,100) < 10 and $petskl <> 1){
 				$petskl = 1;
 				$ene = $_SESSION["ENERGY"];
 				$ene = $ene + $plvl;
 				$_SESSION["ENERGY"] = $ene;
-				$petSkillText = "Pet <b> Restored you energie </b> by $plvl points<br>";
+				$petSkillText = "Pet <b> Restored you energie </b> by <font color='#0066ff'>$plvl</font> points<br>";
 			}
 			//if necromancer resumon pet
 			if ($petHP <= 0 and $SUB[5] == "NECR" and $petskl <> 1){

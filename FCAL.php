@@ -68,6 +68,14 @@ $wepHASH = $_SESSION["CURRENTWHASH"]; //get weapon hash
 	
 $finalPlayerDMG = 0;
 
+//thorns
+if (isset($_SESSION["Thorns"])){
+	$Thorns = $_SESSION["Thorns"];
+	$Thorns +=  $Thorns * ($Armor + $ArmorM + $mLVL + ($plvl*15)) /1000; //thorns scales with armor+lvl+monter lvl
+	$Thorns = round($Thorns);
+	$ThorText = "Monster took $Thorns of Thorns dmg.<br>";
+}
+
 	
 //DB
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
@@ -276,7 +284,7 @@ if (isset($_SESSION["MonsDEF"])){
 if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or isset($_SESSION["ATTACK"]) ){ //check for physical dmg
 unset($_SESSION["ATTACK"]); 
 if (rand(0,100) <= $WEPn["HitChanse"] ){
-$finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF);
+$finalPlayerDMG = ($physDMG-$MonDEF) + ($gemDMG-$MonDEF) + ($monsRef-$MonDEF) + ($effect-$MonDEF) + $Thorns;
 	if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -296,7 +304,7 @@ if ($_SESSION["PET"] == 1){
 
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF);
+$finalPlayerDMG = ($magick-$MonDEF) + ($effect-$MonDEF) + ($gemDMG-$MonDEF) + ($finalPlayerDMGandPET -$MonDEF) + $Thorns;
 if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -410,10 +418,10 @@ $_SESSION["LOG"] = "";
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
 	}
 
 

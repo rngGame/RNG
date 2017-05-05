@@ -62,6 +62,9 @@ $ACSi = mysqli_fetch_assoc($ACS);
 	if ($ACSi["effect"] == "NO"){
 		$eftCur = "Chanse not die: $ACSi[efstat] %";
 	}
+	if ($ACSi["effect"] == "TR"){
+		$eftCur = "Thorns damage: $ACSi[efstat] %";
+	}
 
 
 //money calculates
@@ -80,10 +83,13 @@ if ($EffectChance <> 0){
 	$efftype = "Bonus Energie";
 	}
 		if ($Effect == "HL"){
-	$efftype = "Helth rec. / turn";
+	$efftype = "Helth per turn";
 	}
 		if ($Effect == "NO"){
 	$efftype = "Chanse not to die";
+	}
+		if ($Effect == "TR"){
+	$efftype = "Thorns damage";
 	}
 	$eft = "Effect: $efftype $EffectChance <span><br>";}
 

@@ -141,6 +141,10 @@ $_SESSION["CURRENTARMBODY"] = $ARMBODY["HASH"];
 		$bonusNO += $ARMBODY["efstat"];
 		$eftBODY = "Chanse not die: $ARMBODY[efstat] %";
 	}
+	if ($ARMBODY["effect"] == "TR"){
+		$bonusTR += $ARMBODY["efstat"];
+		$eftBODY = "Thorns damage: $ARMBODY[efstat]";
+	}
 }
 
 if (!isset($ARMGLOVES)){
@@ -163,6 +167,10 @@ $_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES["HASH"];
 	if ($ARMGLOVES["effect"] == "NO"){
 		$bonusNO += $ARMGLOVES["efstat"];
 		$eftGLOVES = "Chanse not die: $ARMGLOVES[efstat] %";
+	}
+	if ($ARMGLOVES["effect"] == "TR"){
+		$bonusTR += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Thorns damage: $ARMGLOVES[efstat]";
 	}
 }
 
@@ -188,12 +196,18 @@ $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 		$bonusNO += $ARMBOOTS["efstat"];
 		$eftBOTS = "Chanse not die: $ARMBOOTS[efstat] %";
 	}
+	if ($ARMBOOTS["effect"] == "TR"){
+		$bonusTR += $ARMBOOTS["efstat"];
+		$eftBOTS = "Thorns damage: $ARMBOOTS[efstat]";
+	}
 }
 
 }
 
+//effects  to FCALC ->
 $_SESSION["HealthTurn"] = $bonusHL;
 $_SESSION["Undeadth"] = $bonusNO;
+$_SESSION["Thorns"] = $bonusTR;
 
 
 
@@ -549,7 +563,7 @@ $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;
 $_SESSION["MARM"] = $Marmor;
 $_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
-$_SESSION["ENG"] = $CLS[5]+$bonusEN;
+$_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"];
 if (isset($crcsub)){
 $_SESSION["CRYT"] = $PAS[2]*$crcsub;
@@ -565,7 +579,7 @@ $_SESSION["crytext"] = 0;
 $_SESSION["crytext2"] = 0;
 
 $ENR = ($ACC[3]*3)+$CLS[5];
-$ENR = $ENR + ($ENR * ($PNT[3]*2)/100);
+$ENR = $ENR + ($ENR * ($PNT[3]*2)/100)+ $bonusEN;
 $enr= 5+(5*$PAS[8]/100);
 $enr= $enr + ($enr * ($PNT[3]*1)/100);
 $enr=round($enr,0);
@@ -1054,6 +1068,9 @@ while ($List1 = mysqli_fetch_array($List)){
 	}
 	if ($ARMIn["effect"] == "NO"){
 		$eftchek[$eft] = "Chanse not die: $ARMIn[efstat] %<br>";
+	}
+	if ($ARMIn["effect"] == "TR"){
+		$eftchek[$eft] = "Thorns Damage: $ARMIn[efstat] %<br>";
 	}
 
 		

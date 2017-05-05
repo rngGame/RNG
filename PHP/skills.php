@@ -255,7 +255,6 @@ if ($SKL ==33){
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
 			$pettdmgtext = "Pet did $petDMG dmg.<br>";
-			$monHP = $monHP - $petDMG;
 		
 				$pettook = round($monDMG * 10 / 100);
 				$pettookM = round($monDMGmag * 20 / 100);

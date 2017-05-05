@@ -263,6 +263,12 @@ if ($weaponEffectChance <> 0){
 		if ($Effect == "SM"){
 	$efftype = "Summon increase";
 	}
+		if ($Effect == "PS"){
+	$efftype = "Poision increase";
+	}
+		if ($Effect == "CF"){
+	$efftype = "Confusion chanse";
+	}
 	$eft = "$efftype $EffectChance %<br>";}
 	
 if (!$WEPi["Name"] == ""){

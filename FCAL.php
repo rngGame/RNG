@@ -284,7 +284,7 @@ if (isset($_SESSION["MonsDEF"])){
 if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or isset($_SESSION["ATTACK"]) ){ //check for physical dmg
 unset($_SESSION["ATTACK"]); 
 if (rand(0,100) <= $WEPn["HitChanse"] ){
-$finalPlayerDMG = ($physDMG + $gemDMG + $monsRef + $effect + $Thorns) - $MonDEF;
+$finalPlayerDMG = ($physDMG + $gemDMG + $monsRef + $effect) - $MonDEF;
 	if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -297,14 +297,10 @@ else{
 	$finalPlayerDMG = 0;
 }}
 
-//let use phsy dmg when pet summoned
-if ($_SESSION["PET"] == 1){
-	$finalPlayerDMGandPET = $finalPlayerDMG;
-	$petsum = 1;}
 
  //magick
-if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35 or $petsum == 1){ //check for magick dmg
-$finalPlayerDMG = ($magick + $effect + $gemDMG + $finalPlayerDMGandPET + $Thorns) - $MonDEF;
+if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35){ //check for magick dmg
+$finalPlayerDMG = ($magick + $effect + $gemDMG + $finalPlayerDMGandPET) - $MonDEF;
 if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -312,8 +308,8 @@ if ($ddam == 1){
 	}
 }
 
-//poision
-$finalPlayerDMG = $finalPlayerDMG + $poison;
+//poision + thorns + petdmg
+$finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG;
 
 //Confusion
 if ($Confusion == 1){

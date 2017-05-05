@@ -27,8 +27,6 @@ $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
 
-$result = mysqli_query($db, $order3);	
-
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'LOS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
@@ -45,18 +43,20 @@ $result = mysqli_query($db, $order3);
 	
 $panel = "right-panel"; //set panel for log
 	
-	echo " <br><br><br><div class='$panel'>";
+
+	
+echo 'Lose<br>';
+
+echo " <br><br><div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
-	
-echo 'Lose
-<section class="container">
-    <div class="Back">
+
+echo '<div id="fightNewBut">
+	<section class="actionButtons2">
 	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>
-    </div>
   </section>
+  </div>
 ';
-
 ?>

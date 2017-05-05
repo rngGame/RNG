@@ -60,7 +60,9 @@ if (!$BOS[4] <= 0){
 	$_SESSION["MonsHP"] = $BOS[4];
 	$_SESSION["MonsHP2"] = $BOS[4];
 $_SESSION["MonsDMG"] = $BOS[3];
+$_SESSION["MonsDMGm"] = $BOS[3];
 $_SESSION["MonsLVL"] = $BOS[2];
+$_SESSION["MonsDEF"] = $BOS[2];
 $_SESSION["IDB"] = $BOS[0];
 
 

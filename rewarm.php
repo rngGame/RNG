@@ -51,19 +51,19 @@ $ACS = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$currentHASH' ");
 $ACSi = mysqli_fetch_assoc($ACS);
 
 	if ($ACSi["effect"] == "HP"){
-		$eftCur = "Bonus HP: $ACSi[efstat]";
+		$eftCur = "Bonus HP: <b>$ACSi[efstat] </b>";
 	}
 	if ($ACSi["effect"] == "EN"){
-		$eftCur = "Helth per turn $ACSi[efstat]";
+		$eftCur = "Bonus EN: <b>$ACSi[efstat] </b>";
 	}
 	if ($ACSi["effect"] == "HL"){
-		$eftCur = "Helth per turn $ACSi[efstat]";
+		$eftCur = "Helth per turn <b>$ACSi[efstat] </b>";
 	}
 	if ($ACSi["effect"] == "NO"){
-		$eftCur = "Chanse not die: $ACSi[efstat] %";
+		$eftCur = "Chanse not die: <b>$ACSi[efstat] % </b>";
 	}
 	if ($ACSi["effect"] == "TR"){
-		$eftCur = "Thorns damage: $ACSi[efstat]";
+		$eftCur = "Thorns damage: <b>$ACSi[efstat] </b>";
 	}
 
 
@@ -77,10 +77,10 @@ $_SESSION["Gold"] = $moneySel;
 
 if ($EffectChance <> 0){
 		if ($Effect == "HP"){
-	$efftype = "Bonus Health";
+	$efftype = "Bonus HP";
 	}
 		if ($Effect == "EN"){
-	$efftype = "Bonus Energie";
+	$efftype = "Bonus EN";
 	}
 		if ($Effect == "HL"){
 	$efftype = "Helth per turn";
@@ -91,7 +91,7 @@ if ($EffectChance <> 0){
 		if ($Effect == "TR"){
 	$efftype = "Thorns damage";
 	}
-	$eft = "Effect: $efftype $EffectChance <span><br>";}
+	$eft = "Effect: $efftype <b>$EffectChance </b> <span><br>";}
 
 //Compare Armor
 $compareLVL = $comparePDEF = $compareMDEF = $compareAPS = "less";
@@ -134,9 +134,9 @@ Item lvl: <b>$ACSi[ilvl]</span></b><br>
 Item Part: $part<br>
 Item P.def: <b>$ACSi[pDEF]</span></b><br>
 Item M.def: <b>$ACSi[mDEF]</span></b><br>
-Item Apsorb: <b>$ACSi[Apsorb] %</span><br>
+Item Apsorb: <b>$ACSi[Apsorb] %</span></b><br>
 $eftCur
-</b><br>";
+<br>";
 
 
 $_SESSION["Reward"] = "$reward";

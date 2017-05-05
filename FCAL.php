@@ -316,22 +316,18 @@ if ($Confusion == 1){
 	$finalPlayerDMG = $finalPlayerDMG + $CFdmg;
 }
 
-//add combo dmg
-if (!isset($_SESSION["Combo"])){
-	$finalPlayerDMG += $finalPlayerDMG * ($_SESSION["Combo"] / 10);
-}
-
 //final dmg to monster
 $finalMonsHP = $monHP - $finalPlayerDMG;
 
 //combo calculation
 if ($mis <> 1){
 	if (!isset($_SESSION["Combo"])){
-		$_SESSION["Combo"] = 1;
+		
+		$_SESSION["Combo"] = 1+($skr/10);
 	}
 	else{
 		$com = $_SESSION["Combo"];
-		$com += 0.2;
+		$com += 0.2+($skr / 10);
 		$_SESSION["Combo"] = $com;
 		if ($com >= 10 ){
 			$_SESSION["Combo"] == 10;
@@ -345,6 +341,11 @@ else {
 			unset($_SESSION["Combo"]);
 		}
 	}
+}
+
+//add combo dmg
+if (!isset($_SESSION["Combo"])){
+	$finalPlayerDMG += $finalPlayerDMG * ($_SESSION["Combo"] / 10);
 }
 
 

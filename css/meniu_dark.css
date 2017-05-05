@@ -946,8 +946,7 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 
 .Combo4{
 	position: absolute;
-	margin-left: 185px;
-    margin-top: -13px;
+
 	color: white;
 	font-size:28px;
 	-webkit-animation-name: combo4;
@@ -956,14 +955,18 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	-webkit-animation-direction: alternate;
 }
 @-webkit-keyframes combo4 {
-    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
-	15% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}
-	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
-	45% {	 text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;	}
-	60% {	 text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkyellow;	}
-	75% {	 text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px darkblue;	}
-	90% {	 text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px grey;	}
-	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred; margin-left: 185px; margin-top: -13px;}
+	10% {	 text-shadow: 1px 1px 2px black, 0 0 25px pink, 0 0 5px pink; margin-left: 192px; margin-top: -22px;	}
+	15% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange; margin-left: 183px; margin-top: -15px;	}
+	22% {	 text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkgreen; margin-left: 175px; margin-top: -2px;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; margin-left: 181px; margin-top: -10px;	}
+	45% {	 text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen; margin-left: 186px; margin-top: -14px;	}
+	50% {	 text-shadow: 1px 1px 2px black, 0 0 25px lightgreen, 0 0 5px darkgreen; margin-left: 179px; margin-top: -18px;	}	
+	60% {	 text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkyellow; margin-left: 187px; margin-top: -9px;	}
+	75% {	 text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px darkblue; margin-left: 190px; margin-top: -5px;	}
+	82% {	 text-shadow: 1px 1px 2px black, 0 0 25px #66ffff, 0 0 5px #009999; margin-left: 170px; margin-top: 0px;	}
+	90% {	 text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px grey; margin-left: 191px; margin-top: -20px;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred; margin-left: 182px; margin-top: -18px;	}
 }
 
 .achiev{

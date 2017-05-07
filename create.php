@@ -20,6 +20,13 @@ include_once 'PHP/db.php';
 	    $username = $_POST['username'];
         $password = $_POST['password'];
 		
+	//hardcore char
+	$hc = 0;
+	if(isset($_POST['Hardcore'])){
+		$hc = 1;
+	}
+		
+		
 $hashed_password = crypt($password); // let the salt be automatically generated
 		
 $result = mysqli_query($db,"SELECT * FROM account WHERE user = '$username'");
@@ -62,9 +69,9 @@ $result = mysqli_query($db, $order3);
 
 
 $order2 = "INSERT INTO characters
-	   (User, wep_h, HP, LVL, Cash, XP, Arm_h, Tali_h, Class, Rank, Gem_h, Shards, Speed)
+	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Tali_h, Class, Rank, Gem_h, Shards )
 	  VALUES
-	   ('$username','','5','1', '100', '1', '', '', '0', '1000', '0004', '0', '100')";
+	   ('$username','$hc','5','1', '100', '1', '', '', '0', '1000', '0004', '0')";
 	   
 $result = mysqli_query($db, $order2);		
 			

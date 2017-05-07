@@ -60,12 +60,20 @@ if ($USR[12] == "itemUnique"){
 	$USR[12] = "#33ccff";}
 else{
 	$uniqCLS ="";}
+	
+//for hardcore
+if ($USR[1] == 1){
+	$hardcore = "<font color='red' size='2px'><b>(Hard.)</b></font>";
+}
+else {
+		$hardcore = "";
+}
 
 if ($i % 2 == 0) {
-	$Chat = "$Chat <div id='chatbox'><div class='tooltip'><font color='$USR[12]'><b class='$uniqCLS'>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
+	$Chat = "$Chat <div id='chatbox'><div class='tooltip'><font color='$USR[12] '><b class='$uniqCLS'>$TEXT[0]$hardcore:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
 	}
 	else{
-		$Chat = "$Chat <div id='chatbox2'><div class='tooltip'><font color='$USR[12]'><b class='$uniqCLS'>$TEXT[0]:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
+		$Chat = "$Chat <div id='chatbox2'><div class='tooltip'><font color='$USR[12]'><b class='$uniqCLS'>$TEXT[0]$hardcore:<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$USR[13]</span></div> </b></font>$TEXT[2] <font size='1'> <br>$datetime3 $typ ago.</font></div> ";
 	}
 	$i++;
 }

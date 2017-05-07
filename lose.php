@@ -25,6 +25,14 @@ $Money = $_SESSION["Money"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
+	
+//death count
+$dedNr = $ACC[7] + 1;
+	
+$order2 = "UPDATE characters
+		SET Deaths = '$dedNr'
+		WHERE `User` = '$User'";
+$result = mysqli_query($db, $order2);
 
 
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'LOS'");

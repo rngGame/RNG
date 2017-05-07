@@ -41,6 +41,14 @@ $result = mysqli_query($db, $order3);
 $dmg = $MHP2 - $MHP;
 $HPL = $MHP2 - $dmg;
 	
+//death count
+$dedNr = $ACC[7] + 1;
+	
+$order2 = "UPDATE characters
+		SET Deaths = '$dedNr'
+		WHERE `User` = '$User'";
+$result = mysqli_query($db, $order2);
+	
 echo "You did <font color='#ff0000'>$dmg dmg. </font><br>";
 echo '
 <section class="container">

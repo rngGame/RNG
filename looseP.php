@@ -79,6 +79,14 @@ WHERE `User` = '$User2'";
 $result = mysqli_query($db, $order);	
 $result = mysqli_query($db, $order2);	
 	
+	//death count
+$dedNr = $ACC[7] + 1;
+	
+$order2 = "UPDATE characters
+		SET Deaths = '$dedNr'
+		WHERE `User` = '$User'";
+$result = mysqli_query($db, $order2);
+	
 echo "You Loose ! Lost $r points.";
 echo '<section class="container">
     <div class="Back">

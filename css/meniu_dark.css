@@ -749,6 +749,7 @@ position: absolute;
    /* height:200px; */
     width: 200px;
 	border-bottom: 1px solid black;
+	font-size: 15px;
 }
 #chat{
     position: absolute;
@@ -985,12 +986,56 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 
 
 
+.DEAD{
+	background: black;
+    height: 100%;
+    width: 100%;
+}
 
+.DEADTEXT{
+	position: absolute;
+    top: 40%;
+    left: 35%;
+    color: RED;
+    font-size: 78px;	
+	-webkit-animation-name: dead;
+	-webkit-animation-duration: 5s;
+}
 
+@-webkit-keyframes dead {
+    0% {opacity: 0.1;}
+	100% {opacity: 1.0;}
+}
 
+.DEADINFO{
+	position: absolute;
+    top: 50%;
+    left: 39%;
+    font-size: 21px;
+	-webkit-animation-name: deadinf;
+	-webkit-animation-duration: 3s;
+}
 
+@-webkit-keyframes deadinf {
+    0% {opacity: 0.0;}
+	80% {opacity: 0.0;}
+	100% {opacity: 1.0;}
+}
 
+.DEADlog{
+	position: absolute;
+    top: 80%;
+    left: 43%;
+    transform: scale(3);
+	-webkit-animation-name: buttondead;
+	-webkit-animation-duration: 4s;
+}
 
+@-webkit-keyframes buttondead {
+    0% {opacity: 0.0;}
+	80% {opacity: 0.0;}
+	100% {opacity: 1.0;}
+}
 
 
 

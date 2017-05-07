@@ -365,7 +365,7 @@ if ($ENCAL[2] > 0){
 $enchtexAL = "<font color='#F59100'>Ench. power: <b>$ENCAL[2] %</b></font>";
 $ARMBOOTSlvl = round($ARMBOOTS["ilvl"]* $ENCAL[2]/100);
 $ARMBOOTSp = round($ARMBOOTS["pDEF"]* $ENCAL[2]/100);
-$ARMBOOTSm = round($ARMBOOTS["mDEF"]* $ENCAL[2]/100);
+$ARMBOOTSm = round($ARMBOOTS["mDEF"]* $ENCALT[2]/100);
 }
 
 //amuLet
@@ -439,9 +439,35 @@ $HP = $HP + ($HP * ($PNT[2])/100);
 $Parmor = round(($tottalParmordef )*$CLS[4]);
 $Marmor = round(($tottalMarmordef)*$CLS[4]);
 
-
-
+//real hp for some reason
 $HP2 = $HP + ($HP * $tottalHPBonus / 100);
+
+//Hardocre check stuff
+if ($ACC[1] == 1){
+	$hardcore = "<font color='red'><b>(Hardcore)</b></font>";
+	
+	if ($ACC[7] >= 1){
+		echo'		<title>World of RNG</title>
+		<link rel="stylesheet" "type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
+		<link rel="icon" href="favicon.png">';
+		echo "
+		<div class='DEAD'>
+		<b class='DEADTEXT'>YOU DIED</b>
+		<p class='DEADINFO'>You reached $lwa ilvl!</p>
+		</div>
+		";
+		echo '
+			<div class="DEADlog">
+				<section class="container">
+				    <form method="post" action="log.php">
+				       	<input type="submit" name="commit3" value="Logout">
+				  	</form>
+				</section>
+			</div>';
+		
+		die();
+	}
+}
 
 if ($WEPn["skill"] == 0){
 	$skillTemplate="";
@@ -1433,7 +1459,7 @@ $statsTemplate = "
 <font class='stats'>User:</font>
 <div class='tooltip'>
 	<font color='$ACC[12]'>
-		<b class='$uniqCLS'>$User</b>
+		<b class='$uniqCLS'>$User $hardcore</b>
 		<span class='tooltiptext'>$ACC[13]</span>
 	</font>
 </div> 
@@ -1581,6 +1607,17 @@ if ($unseen >= 1){
 	$AchTezt = "<div class='achiev' >You have $unseen new Achiev!</div><br>";
 }
 
+//Hardcore Lead
+$hardcoreCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore = '1' ORDER BY ILVL DESC LIMIT 1");
+$hardcoreCHAR = mysqli_fetch_row($hardcoreCHAR);
+
+if ($hardcoreCHAR[7] >= 1){
+	$deadalive = "<font color='red'>(Dead)</font>";
+}
+else{
+	$deadalive = "<font color='green'>(Alive)</font>";
+}
+
 $socialTemplate="
 <div id='personal'>
 Totall Kills
@@ -1601,9 +1638,13 @@ $onlineText
 
 </div>
 <div id='leaderboard'>
-	Highest item lvl: <b>$ILVL[9] - by <font color='$ILVL[12]'>$ILVL[0]</font></b>
+	Strongest softcore player: <font color='$ILVL[12]'>$ILVL[0]</font></b>
 	<br>
-	Most kills: <b>$KIL[6] - by <font color='$KIL[12]'>$KIL[0]</font></b>
+	<br>
+	Strongest hardcore player: <font color='$hardcoreCHAR[12]'>$hardcoreCHAR[0]$deadalive</font></b>
+	<br>
+	<br>
+	Most kills: <b>$KIL[6] - <font color='$KIL[12]'>$KIL[0]</font></b>
 	<br>
 	
 </div>

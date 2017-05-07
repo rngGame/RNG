@@ -365,7 +365,7 @@ if ($ENCAL[2] > 0){
 $enchtexAL = "<font color='#F59100'>Ench. power: <b>$ENCAL[2] %</b></font>";
 $ARMBOOTSlvl = round($ARMBOOTS["ilvl"]* $ENCAL[2]/100);
 $ARMBOOTSp = round($ARMBOOTS["pDEF"]* $ENCAL[2]/100);
-$ARMBOOTSm = round($ARMBOOTS["mDEF"]* $ENCALT[2]/100);
+$ARMBOOTSm = round($ARMBOOTS["mDEF"]* $ENCAL[2]/100);
 }
 
 //amuLet

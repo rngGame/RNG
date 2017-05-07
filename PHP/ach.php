@@ -450,7 +450,7 @@ if ($rar[2] > 9){
 		$result = mysqli_query($db, $order);}}	
 		
 //Full equipment
-	$rar = mysqli_query($db,"SELECT count(*) from Equiped WHERE User = '$User' ");
+	$rar = mysqli_query($db,"SELECT count(*) from Equiped WHERE User = '$User' and Equiped = '1'");
 	$rar = mysqli_fetch_row($rar);
 if ($rar[0] == 6){
 		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'On the house'");
@@ -576,5 +576,21 @@ if ($rar[2] == 1){
 		$order = "INSERT INTO Achievments (Name, Title, User)
 		VALUES ('Change tittle for the first time', 'First time', '$User')";
 		$result = mysqli_query($db, $order);}}	
+
+//100 Hadcore kills
+if ($ACC[6] > 99 and $ACC[6] == 1){
+	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'The Hard Way'");
+	$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){
+				$newP = $PNT[1] + 1;
+		
+			$order3 = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$User'";
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Killed 100 Monsters playng in Hardcore', 'The Hard Way', '$User')";
+		$result = mysqli_query($db, $order);}}
 
 ?>

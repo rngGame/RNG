@@ -67,6 +67,39 @@ if (rand(1,300) == 100){
        $Drop *= rand(5,15);
        $_SESSION["MonsR"] = 1;
 }
+	else{
+		unset($_SESSION["MonsR"]);
+	}
+	
+//for hardcore
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
+if ($ACC[1] == 1){
+	if ($mLVL > 10){
+		$HP *= 1.1;
+		$PDMG *= 1.1;
+		$MDMG *= 1.1;}
+	if ($mLVL > 50){
+		$HP *= 1.2;
+		$PDMG *= 1.1;
+		$MDMG *= 1.1;}
+	if ($mLVL > 100){
+		$HP *= 1.3;
+		$PDMG *= 1.2;
+		$MDMG *= 1.2;}
+	if ($mLVL > 200){
+		$HP *= 1.4;
+		$PDMG *= 1.2;
+		$MDMG *= 1.2;}
+	if ($mLVL > 400){
+		$HP *= 1.5;
+	  	$PDMG *= 1.3;
+		$MDMG *= 1.3;}
+}
+	
+		$HP = round($HP);
+	  	$PDMG = round($PDMG);
+		$MDMG = round($MDMG);
 
 
 

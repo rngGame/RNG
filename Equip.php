@@ -311,7 +311,7 @@ if ($Type == "ACS"){
 	$sell = ($WEPn["ilvl"] + $ACC[3]) *10;
 
 	if ($Type == "ITM"){
-		$sell = ($WEPn["Value"] * $ACC[3]) * 5;
+		$sell = ($WEPn["Value"] * $ACC[3]);
 	}
 	
 	$sell = round($ACC[4] + $sell);

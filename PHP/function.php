@@ -24,7 +24,7 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
-function itemDrop($db,$user,$drop,$MLVL, $isTest){
+function itemDrop($db,$user,$drop,$MLVL){
     $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
     if(!$isTest){
         $orderBy="RAND()";
@@ -278,9 +278,9 @@ function itemDrop($db,$user,$drop,$MLVL, $isTest){
 
             //hashing item
             $hashClaimed = 0;
-            $HASH = rand(-90000000,900000000);
+            $HASH = rand(-999999999,99999999999);
             $HASH = $HASH * $iLVL;
-            $HASH = $HASH + rand(-1000,1000);
+            $HASH = $HASH + rand(-1999,9999);
             $result = mysqli_query($db,"SELECT * FROM Equiped WHERE HASH = '$HASH'");
             $count = mysqli_num_rows($result);
             if($count==1){ //if hash claimed, we will redo this
@@ -410,26 +410,34 @@ function itemDrop($db,$user,$drop,$MLVL, $isTest){
 			}
 
             //creating lowest weapon, best weapon acording to level
-            $rngValueMax = $MLVL*1.2;
             $rngValueMin = $MLVL/1.5;
-            $textMessage.="Limits are $rngValueMin - $rngValueMax \r\n";
+			$rngValueMax = $MLVL*1.3;
+			
+			//by player
+			$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$user' ");
+			$ACC = mysqli_fetch_row($ACC);
+		
+			$maxforPlayerLVL = round($ACC[3]*($ACC[3] / 5) + ($ACC[3] * 2)+($MLVL/5));
+			$minforPlayerLVL = round($ACC[3]*($ACC[3] / 6) + ($ACC[3])+($MLVL/10));
+			
+            $textMessage.="Limits are $minforPlayerLVL and Player max $maxforPlayerLVL\r\n";
 			
 			
 
         if($drop=="armor"){
-            if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $valueArmorP >= 1 and $valueArmorM >= 1 and $apsorb >= 1){
+            if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $valueArmorP >= 1 and $valueArmorM >= 1 and $apsorb >= 1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
 			}
 
         }
         if($drop=="talisman"){
-			if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $apsorb >= 1 and $hpBonus >= 1 and $xpBonus >= 1 and $dmgBonus >= 1){
+			if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $apsorb >= 1 and $hpBonus >= 1 and $xpBonus >= 1 and $dmgBonus >= 1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
 			}
 
         }
         if($drop=="weapon"){
-            if($iLVL < $rngValueMax and $iLVL > $rngValueMin  and $hashClaimed != 1 and $weaponCrit >= 1){
+            if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $weaponCrit >= 1 and $weaponPhysMin >= 1 and $weaponMagMin >=1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
 			}
         }

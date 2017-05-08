@@ -139,7 +139,7 @@ $_SESSION["CURRENTARMBODY"] = $ARMBODY["HASH"];
 	}
 	if ($ARMBODY["effect"] == "NO"){
 		$bonusNO += $ARMBODY["efstat"];
-		$eftBODY = "Chanse not die: $ARMBODY[efstat] %";
+		$eftBODY = "Chance not die: $ARMBODY[efstat] %";
 	}
 	if ($ARMBODY["effect"] == "TR"){
 		$bonusTR += $ARMBODY["efstat"];
@@ -166,7 +166,7 @@ $_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES["HASH"];
 	}
 	if ($ARMGLOVES["effect"] == "NO"){
 		$bonusNO += $ARMGLOVES["efstat"];
-		$eftGLOVES = "Chanse not die: $ARMGLOVES[efstat] %";
+		$eftGLOVES = "Chance not die: $ARMGLOVES[efstat] %";
 	}
 	if ($ARMGLOVES["effect"] == "TR"){
 		$bonusTR += $ARMGLOVES["efstat"];
@@ -194,7 +194,7 @@ $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 	}
 	if ($ARMBOOTS["effect"] == "NO"){
 		$bonusNO += $ARMBOOTS["efstat"];
-		$eftBOTS = "Chanse not die: $ARMBOOTS[efstat] %";
+		$eftBOTS = "Chance not die: $ARMBOOTS[efstat] %";
 	}
 	if ($ARMBOOTS["effect"] == "TR"){
 		$bonusTR += $ARMBOOTS["efstat"];
@@ -624,22 +624,22 @@ if ($WEPn["efstat"]<>0){
 	$efftype = "Life Leach";
 	}
 		if ($WEPn["effect"] == "BL"){
-	$efftype = "Bleed Chanse";
+	$efftype = "Bleed Chance";
 	}
 		if ($WEPn["effect"] == "BR"){
-	$efftype = "Burn Chanse";
+	$efftype = "Burn Chance";
 	}
 		if ($WEPn["effect"] == "FR"){
-	$efftype = "Freez Chanse";
+	$efftype = "Freez Chance";
 	}
 		if ($WEPn["effect"] == "ST"){
-	$efftype = "Stun Chanse";
+	$efftype = "Stun Chance";
 	}
 		if ($WEPn["effect"] == "SH"){
-	$efftype = "Shock Chanse";
+	$efftype = "Shock Chance";
 	}
 		if ($WEPn["effect"] == "BK"){
-	$efftype = "Block Chanse";
+	$efftype = "Block Chance";
 	}
 		if ($WEPn["effect"] == "SM"){
 	$efftype = "Summon increase";
@@ -648,7 +648,7 @@ if ($WEPn["efstat"]<>0){
 	$efftype = "Poision increase";
 	}
 		if ($WEPn["effect"] == "CF"){
-	$efftype = "Confusion chanse";
+	$efftype = "Confusion chance";
 	}
 		if ($WEPn["effect"] == "CS"){
 	$efftype = "Cursed Soul";
@@ -685,9 +685,9 @@ if ($WEPn["Name"] != ""){
 			<b>M.dmg: $WEPn[mmin] ~ $WEPn[mmax]</b>
 		</a>
 		<br>
-		Cryt chanse: $WEPn[cryt]
+		Cryt chance: $WEPn[cryt]
 		<br>
-		Hit Chanse: $WEPn[HitChanse]
+		Hit Chance: $WEPn[HitChanse]
 		<br>
 		$eft $enchtex
 	</span></form>";}
@@ -893,22 +893,22 @@ while ($List1 = mysqli_fetch_array($List)){
 			$efapras[$eft] = "Life Leach";
 			}
 				if ($WEPIn["effect"] == "BL"){
-			$efapras[$eft] = "Bleed Chanse";
+			$efapras[$eft] = "Bleed Chance";
 			}
 				if ($WEPIn["effect"] == "BR"){
-			$efapras[$eft] = "Burn Chanse";
+			$efapras[$eft] = "Burn Chance";
 			}
 				if ($WEPIn["effect"] == "FR"){
-			$efapras[$eft] = "Freez Chanse";
+			$efapras[$eft] = "Freez Chance";
 			}
 				if ($WEPIn["effect"] == "ST"){
-			$efapras[$eft] = "Stun Chanse";
+			$efapras[$eft] = "Stun Chance";
 			}
 				if ($WEPIn["effect"] == "SH"){
-			$efapras[$eft] = "Shock Chanse";
+			$efapras[$eft] = "Shock Chance";
 			}
 				if ($WEPIn["effect"] == "BK"){
-			$efapras[$eft] = "Block Chanse";
+			$efapras[$eft] = "Block Chance";
 			}
 				if ($WEPIn["effect"] == "SM"){
 			$efapras[$eft] = "Summon increase";
@@ -917,7 +917,7 @@ while ($List1 = mysqli_fetch_array($List)){
 			$efapras[$eft] = "Poision increase";
 			}
 				if ($WEPIn["effect"] == "CF"){
-			$efapras[$eft] = "Confusion chanse";
+			$efapras[$eft] = "Confusion Chance";
 			}
 				if ($WEPIn["effect"] == "CS"){
 			$efapras[$eft] = "Cursed Soul";
@@ -995,9 +995,9 @@ while ($List1 = mysqli_fetch_array($List)){
 						<br>
 						M. dmg: <span class='$wepCompMagMin'>$WEPIn[mmin]</span> ~ <span class='$wepCompMagMax'>$WEPIn[mmax]</span>
 						<br>
-						Cryt chanse: <span class='$wepCompCryt'>$WEPIn[cryt]</span>
+						Cryt chance: <span class='$wepCompCryt'>$WEPIn[cryt]</span>
 						<br>
-						Hit Chanse: <span class='$wepCompHit'>$WEPIn[HitChanse]</span>
+						Hit Chance: <span class='$wepCompHit'>$WEPIn[HitChanse]</span>
 						<br>
 						$efto[$eft] $sklu[$eft]
 					</div>
@@ -1099,7 +1099,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$eftchek[$eft]  = "Helth per turn $ARMIn[efstat]<br>";
 	}
 	if ($ARMIn["effect"] == "NO"){
-		$eftchek[$eft] = "Chanse not die: $ARMIn[efstat] %<br>";
+		$eftchek[$eft] = "Chance not die: $ARMIn[efstat] %<br>";
 	}
 	if ($ARMIn["effect"] == "TR"){
 		$eftchek[$eft] = "Thorns Damage: $ARMIn[efstat]<br>";
@@ -1538,7 +1538,7 @@ $leveltext
 		<br>
 		XP: $PAS[1]/$plvl1[1]
 		<br>
-		$PAS[2]% Cryt chanse
+		$PAS[2]% Cryt chance
 	</span>
 </div>
 <div class='tooltip'>

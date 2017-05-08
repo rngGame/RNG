@@ -40,7 +40,18 @@ else{
 	$deadalive = "<font color='green'>(Alive)</font>";
 }
 
-echo "TOP $NR1 - <font color='$hardcoreCHARlist[12]'>$hardcoreCHARlist[0]</font>, ILVL: $hardcoreCHARlist[9]$deadalive <br>";
+	//class icon...
+if ($hardcoreCHARlist[10] < 10){
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$hardcoreCHARlist[10]' ");
+$CLS = mysqli_fetch_row($CLS);
+}
+if ($hardcoreCHARlist[10] > 10){
+$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$hardcoreCHARlist[10]' ");
+$SUB = mysqli_fetch_row($SUB);
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
+$CLS = mysqli_fetch_row($CLS);
+}
+echo "<div class='tooltip'>TOP $NR1 - <font color='$hardcoreCHARlist[12]'>$hardcoreCHARlist[0]</font>, ILVL: $hardcoreCHARlist[9]$deadalive<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$hardcoreCHARlist[13]</span></div> <br>";
 }
 echo "</div>";
 
@@ -51,9 +62,21 @@ $hardcoreCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore = '0' 
 while ($hardcoreCHARlist = mysqli_fetch_array($hardcoreCHAR) and $NR2 <> 10){	
 
 $NR2 += 1;
+	
+	//class icon...
+if ($hardcoreCHARlist[10] < 10){
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$hardcoreCHARlist[10]' ");
+$CLS = mysqli_fetch_row($CLS);
+}
+if ($hardcoreCHARlist[10] > 10){
+$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$hardcoreCHARlist[10]' ");
+$SUB = mysqli_fetch_row($SUB);
+$CLS = mysqli_query($db,"SELECT * FROM class where ID = '$SUB[2]' ");
+$CLS = mysqli_fetch_row($CLS);
+}
 
 
-echo "TOP $NR2 - <font color='$hardcoreCHARlist[12]'>$hardcoreCHARlist[0]</font>, ILVL: $hardcoreCHARlist[9] <br>";
+echo "<div class='tooltip'>TOP $NR2 - <font color='$hardcoreCHARlist[12]'>$hardcoreCHARlist[0]</font>, ILVL: $hardcoreCHARlist[9]<span class='tooltiptext'><img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'><br>$hardcoreCHARlist[13]</span></div> <br>";
 }
 echo "</div>";
 

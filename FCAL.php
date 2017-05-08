@@ -466,10 +466,10 @@ $_SESSION["LOG"] = "";
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$shieldDMG $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$shieldDMG $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
 	}
 
 

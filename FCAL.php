@@ -61,6 +61,8 @@ $CRYTD = $_SESSION["CRYTD"]; //cryt dmg
 $APS = $_SESSION["APS"]; //apsorb
 $ENG2 = $_SESSION["ENG2"]; //energy regen bonus
 $HPO = $_SESSION["HPO"]; //base hp of player
+$ESS = $_SESSION["ESshield"]; //ES shield
+$ESR = $_SESSION["ESregen"]; // ES regen
 
 $SKL = $_POST["skl"]; //skill ID
 
@@ -154,7 +156,7 @@ if ($WEPn["effect"] == "CS"){
 	$physDMG += $pbon;
 	$magDMG += $mbon;
 	$HPin -= $hpdmg;
-	$CursedText= "Dmg increased by <font color='red'>$pbon</font>/<font color='#0066ff'>$mbon</font><br>But cursed soul consumed <b>$hpdmg</b> your health<br>";
+	$CursedText= "Dmg increased by <font color='red'>$pbon</font>/<font color='#0066ff'>$mbon</font><br>But cursed soul consumed <b><font color='darkred'>$hpdmg</font></b> your health<br>";
 }
 
 
@@ -186,6 +188,9 @@ $monDMG = ($monDMG - $Armor);
 $monDMGmag = ($monDMGmag - $ArmorM);
 if ($monDMG < 0){
 	$monDMG = 1;}
+if ($monDMGmag < 0){
+	$monDMGmag = 1;}
+	
 	
 	
 //apsorb
@@ -194,7 +199,7 @@ $apsv = round($apsv,0);
 $monDMG = $monDMG - $apsv;
 $apsvM = ($monDMGmag*$APS/100);
 $apsvM = round($apsvM,0);
-$monDMGmag = $monDMGmag - $apsv;
+$monDMGmag = $monDMGmag - $apsvM;
 
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'APS'");
 	$ACH = mysqli_fetch_row($ACH);
@@ -358,12 +363,51 @@ if (rand(1,100) >= 75){
 	$monDMGmag = round($monDMGmag * rand(110,150) /100);
 	if ($monDMGmag <= 0){
 		$monDMGmag = 0;}
+
+//ES shield
+if (isset($_SESSION["ESshield"])){
+	
+	if ($ESS >= 1){
+		$ESStemp = $ESS;
+		$ESS -= $monDMGmag;
+		if ($ESS < 0){
+			$ESStemp = $monDMGmag - ($ESS * -1);
+			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESStemp</font> dmg.<br>";
+			$monDMGmag =$ESS * -1;}
+		else{
+			$ESdmg = $_SESSION["ESshield"] - $ESS;
+			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESdmg</font> dmg.<br>";
+			$monDMGmag  = 0;}
+	}
+
+}
+	
 	$finalPlayerHP = $HPin - $monDMGmag;
 	$tM = $monDMGmag ;
 	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag dmg.</b><br>";
 }
 // if no skill used by mob
 else{
+	
+//ES shield
+if (isset($_SESSION["ESshield"])){
+	
+	if ($ESS >= 1){
+		$ESStemp = $ESS;
+		$ESS -= $monDMG;
+		if ($ESS < 0){
+			$ESStemp = $monDMG - ($ESS * -1);
+			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESStemp</font> dmg.<br>";
+			$monDMG =$ESS * -1;}
+		else{
+			$ESdmg = $_SESSION["ESshield"] - $ESS;
+			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESdmg</font> dmg.<br>";
+			$monDMG  = 0;}
+	}
+
+
+}	
+	
 $finalPlayerHP = $HPin - $monDMG;
 $BasicAtackByMob = "Monster did $monDMG dmg.<br>";
 }
@@ -378,6 +422,14 @@ $monSkillText="$mobmagskill $BasicAtackByMob" ;
 else{
 	$finalPlayerHP = $HPin ;
 }
+
+//ES STUFF
+	if ($ESS <= 0){
+		$ESS = 0;}
+	$ESS += round($ESR); 
+	if ($ESS > $_SESSION["ESshieldO"]){
+		$ESS = $_SESSION["ESshieldO"];}
+	$_SESSION["ESshield"] = $ESS;
 
 $finalPlayerDMG= round($finalPlayerDMG,0);
 $finalPlayerHP= round($finalPlayerHP,0);
@@ -414,10 +466,10 @@ $_SESSION["LOG"] = "";
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$shieldDMG $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$shieldDMG $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$mont<br><br><hr>$LOG<br>";
 	}
 
 

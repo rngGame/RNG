@@ -31,10 +31,8 @@ $hashed_password = crypt($password); // let the salt be automatically generated
 		
 $result = mysqli_query($db,"SELECT * FROM account WHERE user = '$username'");
 $count = mysqli_num_rows($result);
-$result2 = mysqli_query($db,"SELECT * FROM drops WHERE HASH = '0001'");
+$result2 = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '0001'");
 $count2 = mysqli_num_rows($result2);	
-$result3 = mysqli_query($db,"SELECT * FROM dropst WHERE LVL = '0'");
-$count3 = mysqli_num_rows($result3);	
 $result4 = mysqli_query($db,"SELECT * FROM Gems WHERE Type = 'None'");
 $count4 = mysqli_num_rows($result4);
 if(!$count==1){
@@ -49,7 +47,7 @@ if(!$count==1){
 		}
 
 
-if ($count2 == 1){
+if ($count2 >= 1){
 	 }
 else {
 $order2 = "INSERT INTO DropsWep

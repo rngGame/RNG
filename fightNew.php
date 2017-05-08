@@ -25,11 +25,19 @@ $Armor = $_SESSION["ARM"];
 $ArmorM = $_SESSION["MARM"];
 $eng = $_SESSION["ENG"];
 
+//energie Shield
+if (isset($_SESSION["ESshield"])){
+	$ESSO = round($_SESSION["ESshieldO"]);
+	$ESS = round($_SESSION["ESshield"]);
+	$ESR = round($_SESSION["ESregen"]);
+	$ESStext = "ES Shield:<font color='lightblue'>$ESS / $ESSO <font size='-2'>($ESR/t)</font> </font>";
+}
+
 echo "World Of RNG";
 echo "</header>";
-echo "<p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
+echo "<font size='-1'><p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$DMGp</font>/<font size='3' color='#0066ff'>~$DMGm  </font>";
-echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> </p>";
+echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> $ESStext</p></font>";
 
 
 $User = $_SESSION["User"];

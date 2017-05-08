@@ -65,6 +65,9 @@ $ACSi = mysqli_fetch_assoc($ACS);
 	if ($ACSi["effect"] == "TR"){
 		$eftCur = "Thorns damage: <b>$ACSi[efstat] </b>";
 	}
+	if ($ACSi["effect"] == "ES"){
+		$eftCur = "Energie Shield: <b>$ACSi[efstat] </b>";
+	}
 
 
 //money calculates
@@ -90,6 +93,9 @@ if ($EffectChance <> 0){
 	}
 		if ($Effect == "TR"){
 	$efftype = "Thorns damage:";
+	}
+		if ($Effect == "ES"){
+	$efftype = "Energie Shield:";
 	}
 	$eft = "Effect: $efftype <b>$EffectChance </b> <span><br>";}
 

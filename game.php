@@ -145,6 +145,10 @@ $_SESSION["CURRENTARMBODY"] = $ARMBODY["HASH"];
 		$bonusTR += $ARMBODY["efstat"];
 		$eftBODY = "Thorns damage: $ARMBODY[efstat]";
 	}
+	if ($ARMBODY["effect"] == "ES"){
+		$bonusES += $ARMBODY["efstat"];
+		$eftBODY = "Energie Shield: $ARMBODY[efstat]";
+	}
 }
 
 if (!isset($ARMGLOVES)){
@@ -171,6 +175,10 @@ $_SESSION["CURRENTARMGLOVES"] = $ARMGLOVES["HASH"];
 	if ($ARMGLOVES["effect"] == "TR"){
 		$bonusTR += $ARMGLOVES["efstat"];
 		$eftGLOVES = "Thorns damage: $ARMGLOVES[efstat]";
+	}
+	if ($ARMGLOVES["effect"] == "ES"){
+		$bonusES += $ARMGLOVES["efstat"];
+		$eftGLOVES = "Energie Shield: $ARMGLOVES[efstat]";
 	}
 }
 
@@ -200,6 +208,10 @@ $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 		$bonusTR += $ARMBOOTS["efstat"];
 		$eftBOTS = "Thorns damage: $ARMBOOTS[efstat]";
 	}
+	if ($ARMBOOTS["effect"] == "ES"){
+		$bonusES += $ARMBOOTS["efstat"];
+		$eftBOTS = "Energie Shield: $ARMBOOTS[efstat]";
+	}
 }
 
 }
@@ -209,6 +221,16 @@ $_SESSION["HealthTurn"] = $bonusHL;
 $_SESSION["Undeadth"] = $bonusNO;
 $_SESSION["Thorns"] = $bonusTR;
 
+$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$User' ");
+$PNT = mysqli_fetch_row($PNT); //pasive points
+
+//energie shield
+$_SESSION["ESshield"] = $bonusES;
+$_SESSION["ESshieldO"] = $bonusES;
+$ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
+if ($ESregen <= 1){
+	$ESregen = 1;}
+$_SESSION["ESregen"] = $ESregen;
 
 
 //new  accesories
@@ -260,8 +282,6 @@ else{
 	$Skil = mysqli_fetch_row($Skil);
 };
 
-$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$User' ");
-$PNT = mysqli_fetch_row($PNT); //pasive points
 
 
 if ($PNT[1] >= 1){
@@ -1104,6 +1124,12 @@ while ($List1 = mysqli_fetch_array($List)){
 	if ($ARMIn["effect"] == "TR"){
 		$eftchek[$eft] = "Thorns Damage: $ARMIn[efstat]<br>";
 	}
+	if ($ARMIn["effect"] == "ES"){
+		$eftchek[$eft] = "Energie Shield: $ARMIn[efstat]<br>";
+	}
+	if ($ARMIn["effect"] == ""){
+		$eftchek[$eft] = "";
+	}
 
 		
 		$backpackTemplateAR.= "
@@ -1610,7 +1636,7 @@ $result = mysqli_query($db, "SELECT * FROM Achievments where User = '$User' AND 
 $unseen = mysqli_num_rows($result);
 
 if ($unseen >= 1){
-	$AchTezt = "<div class='achiev' >You have $unseen new Achiev!</div><br>";
+	$AchTezt = "<div class='achiev' >You have $unseen new Achiev!</div>";
 }
 
 //Hardcore Lead

@@ -81,6 +81,13 @@ if (!isset($_SESSION["HPM"])){
 if (!isset($_SESSION["LOG"])){
 	$LOG = $_SESSION["LOG"];
 }
+//energie Shield
+if (isset($_SESSION["ESshield"])){
+	$ESSO = round($_SESSION["ESshieldO"]);
+	$ESS = round($_SESSION["ESshield"]);
+	$ESR = round($_SESSION["ESregen"]);
+	$ESStext = "ES Shield:<font color='lightblue'>$ESS / $ESSO <font size='-2'>($ESR/t)</font> </font>";
+}
 
 if ($HPin > $_SESSION["HPO"]){
 	$HPin = $_SESSION["HPO"];} 
@@ -108,10 +115,11 @@ include 'PHP/skillclas.php';
 
 echo "World Of RNG";
 echo "</header>";
-echo "<p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
+echo "<font size='-1'><p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066ff'>~$avgM  </font>";
 echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> ";
-echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font></p>";
+echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font>";
+echo "$ESStext </p></font>";
 
 $panel = "right-panel"; //set panel for log
 

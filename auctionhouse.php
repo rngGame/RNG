@@ -193,6 +193,9 @@ $icon = "IMG/pack/Icon.3_84.png";
 	if ($ITM["effect"] == "TR"){
 		$eftchk[$eft] = "Thorns Damage: $ITM[efstat]<br>";
 	}
+	if ($ITM["effect"] == "ES"){
+		$eftchk[$eft] = "Energie Shield: $ITM[efstat]<br>";
+	}
 	if ($ITM["effect"] == ""){
 		$eftchk[$eft] ="";
 	}

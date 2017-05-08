@@ -413,7 +413,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			
 			//deciding on effect ARMOR
             if (rand(0,100) < 25 and $drop=="armor"){
-                $rngEffect = rand(1,5);
+                $rngEffect = rand(1,6);
                 if ($rngEffect == 1){
                     $effectName = "HP Bonuss";
                     $Effect = "HP";
@@ -444,6 +444,11 @@ function itemDrop($db,$user,$drop,$MLVL){
                     $effectName = "Thorn DMG";
                     $Effect = "TR";
                     $EffectChance = round(rand($MLVL*1.3,($MLVL*3.3)));
+                }
+				if ($rngEffect == 6){
+                    $effectName = "Energie Shield";
+                    $Effect = "ES";
+                    $EffectChance = round(rand($MLVL*0.5,($MLVL*2)));
                 }
 				$effect = "Effect: $effectName $EffectChance <br>";
                 $textMessage.="Choose Effect $effectName $EffectChance \r\n";

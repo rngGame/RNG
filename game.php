@@ -264,9 +264,17 @@ $ONL = mysqli_num_rows($ONL2);
 while($users2=mysqli_fetch_array($ONL2)){
 	$USR2 = mysqli_query($db,"SELECT * FROM characters where user = '$users2[0]' ");
 	$USR2 = mysqli_fetch_row($USR2);
+	
+if ($USR2[1] == 1){
+	$deadaliveON = "<font color='red' size='-2'>(Hard.)</font>";
+}
+else{
+	$deadaliveON = "";
+}
+	
 	$CLS2 = mysqli_query($db,"SELECT * FROM class where ID = '$USR2[10]' ");
 	$CLS2 = mysqli_fetch_row($CLS2);
-          	$UsersO = "<b>$UsersO  <font color='$USR2[12]'>$users2[0]</font> </b><br>";
+          	$UsersO = "<b>$UsersO  <font color='$USR2[12]'>$users2[0] $deadaliveON</font> </b><br>";
          }
 if ($ONL == 0){
 	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'>>$User</font></span></div>";}
@@ -484,6 +492,9 @@ if ($ACC[1] == 1){
 				  	</form>
 				</section>
 			</div>';
+		
+		$sqldel="DELETE FROM Party WHERE PL1='$User'";
+		mysqli_query($db,$sqldel);
 		
 		die();
 	}

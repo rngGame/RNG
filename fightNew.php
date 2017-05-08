@@ -92,17 +92,17 @@ if ($ACC[1] == 1){
 		$PDMG *= 1.1;
 		$MDMG *= 1.1;}
 	if ($mLVL > 100){
-		$HP *= 1.3;
-		$PDMG *= 1.2;
-		$MDMG *= 1.2;}
+		$HP *= 1.2;
+		$PDMG *= 1.1;
+		$MDMG *= 1.1;}
 	if ($mLVL > 200){
-		$HP *= 1.4;
-		$PDMG *= 1.2;
-		$MDMG *= 1.2;}
+		$HP *= 1.2;
+		$PDMG *= 1.1;
+		$MDMG *= 1.1;}
 	if ($mLVL > 400){
-		$HP *= 1.5;
-	  	$PDMG *= 1.3;
-		$MDMG *= 1.3;}
+		$HP *= 1.3;
+	  	$PDMG *= 1.2;
+		$MDMG *= 1.2;}
 }
 	
 		$HP = round($HP);

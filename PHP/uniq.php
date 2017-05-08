@@ -127,7 +127,7 @@ if ($uniqRO == 17){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'End Game Madness', 'Unique','350', '3200', '3200', '20', '5000', '5000', '95', '10', 'CS', '250', '0', '800')";
+	   ('$HASH', 'End Game Madness', 'Unique','350', '3000', '3000', '20', '3000', '3000', '95', '10', 'CS', '250', '0', '800')";
 }
 
 ?>

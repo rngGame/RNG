@@ -1,7 +1,7 @@
 <?php
 
 //select uniq weapon
-$uniqRO = rand(1,16);
+$uniqRO = rand(1,17);
 
 //hash
 $HitChanse = 0;
@@ -78,7 +78,7 @@ if ($uniqRO == 10){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Shiny coin picker', 'Unique', '100', '90', '110', '15', '65', '130', '86', '', '', '', '30', '550')";
+	   ('$HASH', 'Shiny coin picker', 'Unique', '100', '90', '110', '15', '65', '130', '86', '', '', '', '29', '550')";
 }
 
 //arminas Uniq
@@ -122,6 +122,12 @@ if ($uniqRO == 16){
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
 	   ('$HASH', 'Blade of mad warrior', 'Unique','200', '400', '700', '10', '300', '400', '95', '10', 'CS', '100', '0', '550')";
+}
+if ($uniqRO == 17){
+	$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	  VALUES
+	   ('$HASH', 'End Game Madness', 'Unique','350', '3200', '3200', '20', '5000', '5000', '95', '10', 'CS', '250', '0', '800')";
 }
 
 ?>

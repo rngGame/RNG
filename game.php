@@ -1647,6 +1647,14 @@ $onlineText
 	Most kills: <b>$KIL[6] - <font color='$KIL[12]'>$KIL[0]</font></b>
 	<br>
 	
+	<div class='Leader'>
+				<section>
+				    <form method='post' action='top.php'>
+				    	<input type='submit' name='commit3' value='Leader Board'>
+					</form>
+				</section>
+			</div>
+	
 </div>
 <div id='chat'>
 	<iframe height='45px' width='176px' src='message.php'></iframe>

@@ -246,7 +246,7 @@ if ($WEPa[11] == 30){
 			
 			$result = mysqli_query($db, $order3);
 		$order = "INSERT INTO Achievments (Name, Title, User)
-		VALUES ('Enchant weapon to Nobelium', 'Maximum!!!', '$User')";
+		VALUES ('Enchant weapon to +30', 'Maximum!!!', '$User')";
 		$result = mysqli_query($db, $order);}}
 
 	//Kill World boss

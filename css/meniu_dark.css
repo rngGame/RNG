@@ -1037,6 +1037,23 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	100% {opacity: 1.0;}
 }
 
+.Leader{
+	position: relative;
+    left: 49px;
+    margin-top: 10px;
+}
+
+.HARD{
+	position: absolute;
+    border: red solid 1px;
+}
+
+.SOFT{
+	position: absolute;
+    border: green solid 1px;
+    left: 340px;
+}
+
 
 
 

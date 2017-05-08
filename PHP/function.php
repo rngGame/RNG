@@ -69,14 +69,25 @@ function itemDrop($db,$user,$drop,$MLVL){
 			$part = "WEP";
         }
         $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
+		
+		//for faster calculation
+		$LVL = round($MLVL / 20);
 
 
         $rel = 0;
+		$times = 0;
 
-        while ($rel == 0){
+        while ($rel == 0 and $times <> 600){
+			
+			if ($times == 10 and $MLVL <= 249){
+				$times = 1;
+			}
+			
+			$times += 1;
+			
             $textMessage.="Starting While for Creation |<>|";
             //get info from db general
-            $Base = mysqli_query($db,"SELECT * FROM $baseTable Order by $orderBy Limit     1");
+            $Base = mysqli_query($db,"SELECT * FROM $baseTable where LVL > $LVL Order by $orderBy Limit     1");
             $Base = mysqli_fetch_row($Base);
             $Pre = mysqli_query($db,"SELECT * FROM $preTable Order by $orderBy Limit   1");
             $Pre = mysqli_fetch_row($Pre);
@@ -90,7 +101,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             $Sub2 = mysqli_fetch_row($Sub2);
             $Skill = mysqli_query($db,"SELECT * FROM iskills Order by $orderBy Limit  1");
             $Skill = mysqli_fetch_row($Skill);
-            $Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
 
             //Nulify vars
             $typeName = "";    
@@ -169,6 +179,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueArmorP += $Sub[3]/2;
 				$valueArmorM += $Sub[3]/2;
                 $iLVL += $Sub[2];
+				
                 if($rngSub > 3000){ //checks for second Sub rng
                     $nameSub2 ="and $Sub2[1]";
                     $valueArmorP += $Sub2[3]/2;
@@ -217,26 +228,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             $textMessage.="Skills done for $drop $skillName Chosen \r\n";
 
-            //check how many enchants rng
-            /*while($Ench = mysqli_fetch_array($Enchant) and $drop!="weapon") {
-                
-                if($Ench[1] > rand(-200,400-$MLVL)){
-                    $enchantLVL += 1;
-                    }
-                else{break;}
-            }*/
-            //$textMessage.="Enchanting $enchantLVL \r\n";
-            /*if($enchantLVL > 0){
-                $textMessage.="Doing Enchant";
-                $Plius = mysqli_query($db,"SELECT * FROM enchantdrop WHERE `Enchant` = '$enchantLVL'");
-                $Plius = mysqli_fetch_row($Plius);
-                $nameEnchant = "+ $enchantLVL";
-                $valueDMG += $valueDMG * $Plius[2] / 100;
-                $valueArmor += $valueArmor * $Plius[2] / 100;
-                $valueHP += $valueHP * $Plius[2] / 100;
-                $iLVL += $iLVL * $Plius[2] / 100;
-                $textMessage.="Result of enchant : Name $nameEnchant >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
-            }*/
 
             //Creating weapon values
             $weaponPhysMin = round($valueDMG * rand(80,100)/100);
@@ -248,12 +239,61 @@ function itemDrop($db,$user,$drop,$MLVL){
             $textMessage.="Creating Weapon Stats Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
 
             //finnishing up values
-            $iLVL = round($iLVL, 0);
             $dmgBonus = round($valueDMG/10);
             $valueArmorP = round($valueArmorP + ($valueArmorP * rand(-20,15) / 100));
 			$valueArmorM = round($valueArmorM + ($valueArmorM * rand(-5,30) / 100));
             $hpBonus = round($valueHP/50);
             $xpBonus = round($valueXP*10);
+			
+			//armor-tali below 249lvl
+			if($MLVL > 200 and $MLVL < 250 and ($drop=="armor" or $drop=="talisman")){ 
+				$iLVL *= 1.3;
+				$valueArmorP *= 1.3;
+				$valueArmorM  *= 1.3;
+				$dmgBonus *= 1.2;
+				$hpBonus *= 1.2;
+				$xpBonus *= 1.2;
+			}
+			
+			//if don't find itm in 300 tries
+			$max = round($ACC[3]*($ACC[3] / 4) + ($ACC[3] * 2)+($MLVL/2));
+			$min = round($ACC[3]*($ACC[3] / 7) + ($ACC[3])+($MLVL/10));
+			
+			if ($times > 300 and $MLVL >= 250){
+								
+				$weaponPhysMin *= 2;
+				$weaponPhysMax *= 2;
+				$weaponMagMin *= 2;
+				$weaponMagMax *= 2;
+				$iLVL *= 1.5;
+				$dmgBonus *= 1.2;
+				$valueArmorP *= 1.5;
+				$valueArmorM  *= 1.5;
+				$hpBonus *= 1.3;
+				$xpBonus *= 1.2;
+				$Evol = "-Evolved-";
+			
+				if ($iLVL >= $min and $iLVL <= $max){
+					$ev = 1;
+				}
+				else {$times = 301; $ev = 0;}
+				}
+				
+			else{
+				unset($Evol);
+				}
+			
+			//ROUND
+			$weaponPhysMin = round($weaponPhysMin);
+            $weaponPhysMax = round($weaponPhysMax);
+            $weaponMagMin = round($weaponMagMin);
+            $weaponMagMax = round($weaponMagMax);  
+			$iLVL = round($iLVL);
+            $dmgBonus = round($dmgBonus);
+            $valueArmorP = round($valueArmorP);
+			$valueArmorM = round($valueArmorM);
+            $hpBonus = round($hpBonus);
+            $xpBonus = round($xpBonus);
 			
 			
 			
@@ -290,7 +330,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             $textMessage.="Hashing Complete \r\n";
 
 
-            $name="$namePre $nameBase $nameSub $nameSub2 $nameEnchant";
+            $name="$Evol $namePre $nameBase $nameSub $nameSub2 $nameEnchant";
 
 
             if(!$typeName == ""){ //coloring the name, if needed
@@ -384,14 +424,14 @@ function itemDrop($db,$user,$drop,$MLVL){
 				if ($rngEffect == 2){
                     $effectName = "EN Bonuss";
                     $Effect = "EN";
-                    $EffectChance = round(rand($MLVL/10,($MLVL/4)));
+                    $EffectChance = round(rand($MLVL/8,($MLVL/3)));
 					if ($EffectChance < 1){
 						  $EffectChance = 1;}
                 }
 				if ($rngEffect == 3){
                     $effectName = "Heal per turn";
                     $Effect = "HL";
-                    $EffectChance = round(rand($MLVL/8,($MLVL/3)));
+                    $EffectChance = round(rand($MLVL/5,($MLVL/1.5)));
 					if ($EffectChance < 1){
 						  $EffectChance = 1;}
                 }
@@ -403,7 +443,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 				if ($rngEffect == 5){
                     $effectName = "Thorn DMG";
                     $Effect = "TR";
-                    $EffectChance = round(rand($MLVL*1.5,($MLVL*3)));
+                    $EffectChance = round(rand($MLVL*1.3,($MLVL*3.3)));
                 }
 				$effect = "Effect: $effectName $EffectChance <br>";
                 $textMessage.="Choose Effect $effectName $EffectChance \r\n";
@@ -418,7 +458,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			$ACC = mysqli_fetch_row($ACC);
 		
 			$maxforPlayerLVL = round($ACC[3]*($ACC[3] / 5) + ($ACC[3] * 2)+($MLVL/5));
-			$minforPlayerLVL = round($ACC[3]*($ACC[3] / 6) + ($ACC[3])+($MLVL/10));
+			$minforPlayerLVL = round($ACC[3]*($ACC[3] / 7) + ($ACC[3])+($MLVL/15));
 			
             $textMessage.="Limits are $minforPlayerLVL and Player max $maxforPlayerLVL\r\n";
 			
@@ -427,6 +467,10 @@ function itemDrop($db,$user,$drop,$MLVL){
         if($drop=="armor"){
             if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $valueArmorP >= 1 and $valueArmorM >= 1 and $apsorb >= 1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
+				 
+			}
+			else if($ev == 1 and $iLVL > $min  and $hashClaimed != 1 and $valueArmorP >= 1 and $valueArmorM >= 1 and $apsorb >= 1 and $max >= $iLVL){
+				$rel = 1;
 			}
 
         }
@@ -434,11 +478,17 @@ function itemDrop($db,$user,$drop,$MLVL){
 			if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $apsorb >= 1 and $hpBonus >= 1 and $xpBonus >= 1 and $dmgBonus >= 1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
 			}
+			else if($ev == 1 and $iLVL > $min  and $hashClaimed != 1 and $apsorb >= 1 and $hpBonus >= 1 and $xpBonus >= 1 and $dmgBonus >= 1 and $max >= $iLVL){
+				$rel = 1;
+			}
 
         }
         if($drop=="weapon"){
             if($iLVL > $minforPlayerLVL  and $hashClaimed != 1 and $weaponCrit >= 1 and $weaponPhysMin >= 1 and $weaponMagMin >=1 and $maxforPlayerLVL >= $iLVL){
 				 $rel = 1;
+			}
+			else if($ev == 1 and $iLVL > $min  and $hashClaimed != 1 and $weaponCrit >= 1 and $weaponPhysMin >= 1 and $weaponMagMin >=1 and $max >= $iLVL){
+				$rel = 1;
 			}
         }
 		

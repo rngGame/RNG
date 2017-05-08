@@ -132,6 +132,9 @@ if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "HT"){
 	$effapras[$eft] = "Health per turn";
 	}	
+		if ($ITM["effect"] == "WK"){
+	$effapras[$eft] = "Weaken monster";
+	}	
 	
 	$efto[$eft] = "$effapras[$eft] $ITM[efstat] %<br>";}
 

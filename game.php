@@ -656,6 +656,9 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "HT"){
 	$efftype = "Health per turn";
 	}
+			if ($WEPn["effect"] == "WK"){
+	$efftype = "Weaknen monster";
+	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
 	//check for uniq
@@ -921,6 +924,9 @@ while ($List1 = mysqli_fetch_array($List)){
 			}
 				if ($WEPIn["effect"] == "HT"){
 			$efapras[$eft] = "Health per turn";
+			}	
+				if ($WEPIn["effect"] == "WK"){
+			$efapras[$eft] = "Weaken monster";
 			}	
 			$efto[$eft] = "$efapras[$eft] $WEPIn[efstat] %<br>";}
 

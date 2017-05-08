@@ -92,6 +92,9 @@ if ($EffectChance <> 0){
 		if ($Effect == "CS"){
 	$efftype = "Cursed Soul";
 	}
+		if ($Effect == "WK"){
+	$efftype = "Weaken monster";
+	}
 	
 	$eft = "Effect: $efftype <b>$EffectChance %</b><br>";}
 	
@@ -126,6 +129,12 @@ if ($WEPi["efstat"]<>0){
 	}
 		if ($WEPi["effect"] == "CF"){
 	$efftype = "Confusion chanse";
+	}
+		if ($WEPi["effect"] == "CS"){
+	$efftype = "Cursed soul";
+	}
+		if ($WEPi["effect"] == "WK"){
+	$efftype = "Weaken monster";
 	}
 	$eft2 = "Effect: $efftype $WEPi[efstat] %<br>";}
 	

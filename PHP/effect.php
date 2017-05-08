@@ -124,7 +124,7 @@ if ($SUB[6] == "WK" or $WEPn["effect"] == "WK"){
 	if ($WEPn["effect"] == "WK"){
 	$weak = round($monDMG * $WEPn["efstat"] / 100);}
 	$monDMG = round($monDMG - $weak);
-	$weakt= "Monsted damage decreased by $weak damage !<br>";
+	$weakt= "Monster damage decreased by $weak damage !<br>";
 
 }
 

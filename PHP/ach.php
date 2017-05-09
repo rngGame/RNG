@@ -592,5 +592,23 @@ if ($ACC[6] > 99 and $ACC[6] == 1){
 		$order = "INSERT INTO Achievments (Name, Title, User)
 		VALUES ('Killed 100 Monsters playng in Hardcore', 'The Hard Way', '$User')";
 		$result = mysqli_query($db, $order);}}
-
+		
+//Make 10x combo
+	$rar = mysqli_query($db,"SELECT * FROM aStatus where User = '$User' and Name = '10x' ");
+	$rar = mysqli_fetch_row($rar);
+if ($rar[2] == 1){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$User' and Title = 'CooO0o0oobmO'");
+	$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){
+				$newP = $PNT[1] + 1;
+		
+			$order3 = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$User'";
+			
+			$result = mysqli_query($db, $order3);
+		
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Reach 10 x combo', 'CooO0o0oobmO', '$User')";
+		$result = mysqli_query($db, $order);}}	
 ?>

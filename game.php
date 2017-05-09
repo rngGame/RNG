@@ -224,15 +224,6 @@ $_SESSION["Thorns"] = $bonusTR;
 $PNT = mysqli_query($db,"SELECT * FROM Points where User = '$User' ");
 $PNT = mysqli_fetch_row($PNT); //pasive points
 
-//energie shield
-$_SESSION["ESshield"] = $bonusES;
-$_SESSION["ESshieldO"] = $bonusES;
-$ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
-if ($ESregen <= 1){
-	$ESregen = 1;}
-$_SESSION["ESregen"] = $ESregen;
-
-
 //new  accesories
 $EQPacs = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ACS' AND Equiped = '1' ");
 while ($EQPAC = mysqli_fetch_array($EQPacs)){	
@@ -560,9 +551,24 @@ if(isset($MODE[1])){
 		$PAS[5] = $PAS[5]+($PAS[5]*$MODE[$mc2]/100);	
 		$PAS[5] = round($PAS[5],0);
 	}
+	if($MODT[$mc2] == "THR" and $bonusTR >= 1){
+		$bonusTR += round($bonusTR*$MODE[$mc2]/100);	
+		$_SESSION["Thorns"] = $bonusTR;
+	}
+	if($MODT[$mc2] == "ES" and $bonusES >= 1){
+		$bonusES += round($bonusES*$MODE[$mc2]/100);	
+	}
 	$mc2 = $mc2 + 2;
 }
 }
+
+//energie shield
+$_SESSION["ESshield"] = $bonusES;
+$_SESSION["ESshieldO"] = $bonusES;
+$ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
+if ($ESregen <= 1){
+	$ESregen = 1;}
+$_SESSION["ESregen"] = $ESregen;
 
 // average dmg
 $avgP = round(($minPdmg + $maxPdmg) / 2);
@@ -839,7 +845,7 @@ $WPN = mysqli_query($db,"SELECT * from DropsWep ORDER BY Worth DESC LIMIT 1");
 $WPN = mysqli_fetch_row($WPN);
 $KIL = mysqli_query($db,"SELECT * from characters ORDER BY kills DESC LIMIT 1");
 $KIL = mysqli_fetch_row($KIL);
-$ILVL = mysqli_query($db,"SELECT * from characters ORDER BY ILVL DESC LIMIT 1");
+$ILVL = mysqli_query($db,"SELECT * from characters WHERE Hardcore = '0' ORDER BY ILVL DESC LIMIT 1");
 $ILVL = mysqli_fetch_row($ILVL);
 $RANK = mysqli_query($db,"SELECT * from characters ORDER BY Rank DESC LIMIT 1");
 $RANK = mysqli_fetch_row($RANK);

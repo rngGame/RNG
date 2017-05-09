@@ -334,7 +334,14 @@ if ($mis <> 1){
 		$com += 0.2+($skr / 10);
 		$_SESSION["Combo"] = $com;
 		if ($com >= 10 ){
-			$_SESSION["Combo"] == 10;
+			$_SESSION["Combo"] = 10;
+			//achievment fox 10x combo
+			$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = '10x'");
+			$ACH = mysqli_fetch_row($ACH);
+			if ($ACH[1]==""){
+				$order = "INSERT INTO aStatus (User, Name, Status)
+				VALUES ('$User', '10x', '1')";
+				$result = mysqli_query($db, $order);}
 		}
 	}
 }

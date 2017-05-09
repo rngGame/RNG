@@ -100,6 +100,12 @@ if ($SUB[3] == "ENR"){
 
 }
 
+//Thorns if TANK
+if ($CLS[7] == "THR"){
+	$bonusTR += round($ACC[3]*10);
+	
+}
+
 
 //new wep
 $EQPW = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'WEP' AND Equiped = '1' ");
@@ -572,13 +578,7 @@ if(isset($MODE[1])){
 }
 }
 
-//energie shield
-$_SESSION["ESshield"] = $bonusES;
-$_SESSION["ESshieldO"] = $bonusES;
-$ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
-if ($ESregen <= 1){
-	$ESregen = 1;}
-$_SESSION["ESregen"] = $ESregen;
+
 
 // average dmg
 $avgP = round(($minPdmg + $maxPdmg) / 2);
@@ -665,6 +665,20 @@ if (isset($enrsub)){
 $_SESSION["ENERGY"] = $ENR;
 $_SESSION["ENERGYM"] = $ENR;
 $_SESSION["ENREGEN"] = $enr;
+
+//ES if mage
+if ($CLS[7] == "ES"){
+	$bonusES += round(($ENR/4));
+	
+}
+
+//energie shield
+$_SESSION["ESshield"] = $bonusES;
+$_SESSION["ESshieldO"] = $bonusES;
+$ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
+if ($ESregen <= 1){
+	$ESregen = 1;}
+$_SESSION["ESregen"] = $ESregen;
 
 if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "LL"){

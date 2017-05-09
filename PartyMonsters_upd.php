@@ -26,6 +26,16 @@ if ($PL["PL3"] == $User){
 	$PLnr = "PL3";}
 if ($PL["PL4"] == $User){
 	$PLnr = "PL4";}
+	
+		$plCount = 0;
+	if ($Party["PL1"] <> ""){
+		$plCount += 1 ;}
+	if ($Party["PL2"] <> ""){
+		$plCount += 1 ;}
+	if ($Party["PL3"] <> ""){
+		$plCount += 1 ;}
+	if ($Party["PL4"] <> ""){
+		$plCount += 1 ;}
 
 
 //average dmg recalculate
@@ -40,24 +50,50 @@ $MonsterS = mysqli_fetch_assoc($Monster); //GLOVES by colum name
 if ($MonsterS["PL1"] > 0){ //plasyer 1
 	$PL1 = mysqli_query($db,"SELECT * FROM Party where ID = '$Party[ID]' ");
 	$PL1s = mysqli_fetch_assoc($PL1); //GLOVES by colum name
-	$playersDMG .= "$PL1s[PL1] did $MonsterS[PL1] dmg. ";}
+	$playersDMG .= "$PL1s[PL1] did $MonsterS[PL1] dmg. ";
+	;}
 	
 if ($MonsterS["PL2"] > 0){ //player 2
 	$PL2 = mysqli_query($db,"SELECT * FROM Party where ID = '$Party[ID]' ");
 	$PL2s = mysqli_fetch_assoc($PL2); //GLOVES by colum name
-	$playersDMG .= "/ $PL2s[PL2] did $MonsterS[PL2] dmg. ";}
+	$playersDMG .= "/ $PL2s[PL2] did $MonsterS[PL2] dmg. ";
+	;}
 	
 if ($MonsterS["PL3"] > 0){ //player 3
 	$PL3 = mysqli_query($db,"SELECT * FROM Party where ID = '$Party[ID]' ");
 	$PL3s = mysqli_fetch_assoc($PL3); //GLOVES by colum name
-	$playersDMG .= "/ $PL3s[PL3] did $MonsterS[PL3] dmg. ";}
+	$playersDMG .= "/ $PL3s[PL3] did $MonsterS[PL3] dmg. ";
+	;}
 	
 if ($MonsterS["PL4"] > 0){ //player 4
 	$PL4 = mysqli_query($db,"SELECT * FROM  Party where ID = '$Party[ID]' ");
 	$PL4s = mysqli_fetch_assoc($PL4); //GLOVES by colum name
-	$playersDMG .= "/ $PL4s[PL4] did $MonsterS[PL4] dmg. ";}
+	$playersDMG .= "/ $PL4s[PL4] did $MonsterS[PL4] dmg. ";
+	;}
+	
+// mob have def
+$DEF = $MonsterS["MonsterLVL"]/2;
+$DEF = round($DEF + ($DEF * ($plCount * 30)));
+$defMon = " Armor:<font color='#FF804C'> $DEF</font>, ";
 
-$Chat = "<img src='IMG/Mon/2.jpg' width='60' height='60'><br>Monster Name: <b>$MonsterS[MonsterName]</b><br>HP: $MonsterS[MonsterHP], DMG: <font color='red'>~$MonsterS[MonsterPhyDMG]</font>/<font color='0066ff'>~$MonsterS[MonsterMagDMG]</font>, XP: $MonsterS[MonsterRew], Lvl: $MonsterS[MonsterLVL]<br><br>$playersDMG";
+//k,kk,kkk
+	$mHPN = $MonsterS[MonsterHP];
+	$mHPN = "$MonsterS[MonsterHP]";
+if ($MonsterS[MonsterHP] > 1000){
+	$mHPN = round($MonsterS[MonsterHP]/1000,1);
+	$mHPN = "$mHPN k.";
+}
+if ($MonsterS[MonsterHP] > 1000000){
+	$mHPN = round($MonsterS[MonsterHP]/1000000,1);
+	$mHPN = "$mHPN kk.";
+}
+if ($MonsterS[MonsterHP] > 10000000000){
+	$mHPN = round($MonsterS[MonsterHP]/1000000000,1);
+	$mHPN = "$mHPN kkk.";
+}
+
+
+$Chat = "<img src='IMG/Mon/2.jpg' width='60' height='60'><br>Monster Name: <b>$MonsterS[MonsterName]</b><br>HP: $mHPN, DMG: <font color='red'>~$MonsterS[MonsterPhyDMG]</font>/<font color='0066ff'>~$MonsterS[MonsterMagDMG]</font>,$defMon XP: $MonsterS[MonsterRew], Lvl: $MonsterS[MonsterLVL]<br><br>$playersDMG";
 
 
 

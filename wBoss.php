@@ -50,12 +50,28 @@ echo "<b>$List1[1]</b> - $List1[2] Dmg.<br>";
 	
 		
   echo '</div>';
+  
+ //k,kk,kkk
+	$mHPN = $BOS[4];
+	$mHPN = "$BOS[4]";
+if ($BOS[4] > 1000){
+	$mHPN = round($BOS[4]/1000,1);
+	$mHPN = "$mHPN k.";
+}
+if ($BOS[4] > 1000000){
+	$mHPN = round($BOS[4]/1000000,1);
+	$mHPN = "$mHPN kk.";
+}
+if ($BOS[4] > 10000000000){
+	$mHPN = round($BOS[4]/1000000000,1);
+	$mHPN = "$mHPN kkk.";
+}
  
 if (!$BOS[4] <= 0){
 	echo "<font size='4' color='#ff0055'>WORLD BOSS</font><br>";
 	echo "<img src='IMG/Mon/boss.jpg' width='80' height='80'><br>";
 	echo "Monster Name: <b>$BOS[1]</b><br>";
-	echo " HP: $BOS[4], DMG: $BOS[3], Lvl: $BOS[2]";
+	echo " HP: $mHPN, DMG: $BOS[3], Lvl: $BOS[2]";
 	$_SESSION["MonsName"] = $BOS[1];
 	$_SESSION["MonsHP"] = $BOS[4];
 	$_SESSION["MonsHP2"] = $BOS[4];

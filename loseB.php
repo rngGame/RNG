@@ -42,12 +42,16 @@ $dmg = $MHP2 - $MHP;
 $HPL = $MHP2 - $dmg;
 	
 //death count
+if(isset($_POST["FLEE"])){
+}
+else{
 $dedNr = $ACC[7] + 1;
 	
 $order2 = "UPDATE characters
 		SET Deaths = '$dedNr'
 		WHERE `User` = '$User'";
 $result = mysqli_query($db, $order2);
+}
 	
 echo "You did <font color='#ff0000'>$dmg dmg. </font><br>";
 echo '

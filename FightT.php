@@ -89,6 +89,13 @@ if (isset($_SESSION["ESshield"])){
 	$ESStext = "ES Shield:<font color='lightblue'>$ESS / $ESSO <font size='-2'>($ESR/t)</font> </font>";
 }
 
+
+//if mob have def
+if (isset($_SESSION["MonsDEF"])){
+	$mobDef = $_SESSION["MonsDEF"];
+	$defMon = " Armor:<font color='#FF804C'> $mobDef</font>, ";
+}
+
 if ($HPin > $_SESSION["HPO"]){
 	$HPin = $_SESSION["HPO"];} 
 
@@ -139,10 +146,26 @@ echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 
+//k,kk,kkk
+	$mHPN = $mHP;
+	$mHPN = "$mHP";
+if ($mHP > 1000){
+	$mHPN = round($mHP/1000,1);
+	$mHPN = "$mHPN k.";
+}
+if ($mHP > 1000000){
+	$mHPN = round($mHP/1000000,1);
+	$mHPN = "$mHPN kk.";
+}
+if ($mHP > 10000000000){
+	$mHPN = round($mHP/1000000000,1);
+	$mHPN = "$mHPN kkk.";
+}
+
 
 echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
 echo "Monster Name: <b>$mName</b><br>";
-echo " HP: $mHP, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>, XP: $mDRP, Lvl: $mLVL";
+echo " HP: $mHPN, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>,$defMon XP: $mDRP, Lvl: $mLVL";
 
 
 	

@@ -57,6 +57,12 @@ if (isset($_SESSION["ESshield"])){
 	$ESStext = "ES Shield:<font color='lightblue'>$ESS / $ESSO <font size='-2'>($ESR/t)</font> </font>";
 }
 
+//if mob have def
+if (isset($_SESSION["MonsDEF"])){
+	$mobDef = $_SESSION["MonsDEF"];
+	$defMon = " Armor:<font color='#FF804C'> $mobDef</font>, ";
+}
+
 if ($HPin > $_SESSION["HPO"]){
 	$HPin = $_SESSION["HPO"];}
 
@@ -103,13 +109,28 @@ if (isset($_SESSION["PET"])){
 	Pet Name: <b>$petname</b><br>Pet HP: <font color='Green'>$petHP</font> <br>Pet Dmg: <font size='3' color='#0066ff'>$petminDMG ~ $petmaxDMG</font><br><br>";
 }
 
+//k,kk,kkk
+	$mHPN = $mHP;
+	$mHPN = "$mHP";
+if ($mHP > 1000){
+	$mHPN = round($mHP/1000,1);
+	$mHPN = "$mHPN k.";
+}
+if ($mHP > 1000000){
+	$mHPN = round($mHP/1000000,1);
+	$mHPN = "$mHPN kk.";
+}
+if ($mHP > 10000000000){
+	$mHPN = round($mHP/1000000000,1);
+	$mHPN = "$mHPN kkk.";
+}
 
 echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
 echo "<img src='IMG/Mon/boss.jpg' width='60' height='60'><br>";
 echo "Monster Name: <b>$mName</b><br>";
-echo " HP: $mHP, DMG: $mDMG, Lvl: $mLVL";
+echo " HP: $mHPN, DMG: <font color='#992966'>$mDMG</font>, $defMon Lvl: $mLVL";
 
 
 	
@@ -273,6 +294,7 @@ include 'PHP/SkillsM.php';
   <section class="container3">
     <div class="31-50">
 	      <form method="post" action="loseB.php">
+          <input type="hidden" name="FLEE" value="1">
         <p class="submit"><input type="submit" name="commit" value="Flee"></p>
       </form>
     </div>

@@ -334,7 +334,7 @@ if ($mis <> 1){
 		$com += 0.2+($skr / 10);
 		$_SESSION["Combo"] = $com;
 		if ($com >= 10 ){
-			$_SESSION["Combo"] = 10;
+			//$_SESSION["Combo"] = 10;
 			//achievment fox 10x combo
 			$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = '10x'");
 			$ACH = mysqli_fetch_row($ACH);

@@ -41,10 +41,12 @@ echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#
 
 
 $User = $_SESSION["User"];
+
 $gold = $_SESSION["Gold1"];
 $gl = $_SESSION["Gold2"];
 $BLVL = $_SESSION["fLVL"];
 $iLVL = $_SESSION["ILVL"];
+$plLVL = $_SESSION["plvl"];
 $checkForParty = $_SESSION["PartCreatMOB"];
 
 $bs = $_SESSION["BOSS"];
@@ -88,21 +90,29 @@ if ($ACC[1] == 1){
 		$PDMG *= 1.1;
 		$MDMG *= 1.1;}
 	if ($mLVL > 50){
-		$HP *= 1.2;
+		$HP *= 1.1;
 		$PDMG *= 1.1;
 		$MDMG *= 1.1;}
 	if ($mLVL > 100){
-		$HP *= 1.2;
+		$HP *= 1.1;
 		$PDMG *= 1.1;
 		$MDMG *= 1.1;}
 	if ($mLVL > 200){
-		$HP *= 1.2;
+		$HP *= 1.1;
 		$PDMG *= 1.1;
 		$MDMG *= 1.1;}
 	if ($mLVL > 400){
-		$HP *= 1.3;
-	  	$PDMG *= 1.2;
-		$MDMG *= 1.2;}
+		$HP *= 1.1;
+	  	$PDMG *= 1.1;
+		$MDMG *= 1.1;}
+	if($plLVL >= 20){
+		$HP += $HP * $plLVL / 100;
+		$_SESSION["MonsDEF"] = round($mLVL*($plLVL));}
+	if($plLVL >= 40){
+		$PDMG += $PDMG * $plLVL / 100;
+		$MDMG += $MDMG * $plLVL / 100;}
+		
+	
 }
 	
 		$HP = round($HP);
@@ -136,7 +146,7 @@ if ($checkForParty == 1){
 	$PartyID = $_SESSION["PartyID"];
 	$plCount = $_SESSION["PLCount"];
 	
-	$DEF = $iLVL / 10;
+	$DEF = $mLVL / 2;
 	
 	if ($plCount == 2){
 	$MobHP= $HP + ($HP * (80) / 100);}
@@ -148,7 +158,7 @@ if ($checkForParty == 1){
 	$MobDrop = round($Drop + ($Drop * ($plCount * 50) / 100));
 	$MobDMGP = round($PDMG + ($PDMG * ($plCount * 10) / 100));
 	$MobDMGM = round($MDMG + ($MDMG * ($plCount * 10) / 100));
-	$DEF = round($DEF + ($DEF * ($plCount * 30) / 100));
+	$DEF = round($DEF + ($DEF * ($plCount * 30)));
 	
 	$order = "INSERT INTO PartyMonsters
 	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew, StartingHP)

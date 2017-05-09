@@ -391,7 +391,7 @@ if (isset($_SESSION["ESshield"])){
 	
 	$finalPlayerHP = $HPin - $monDMGmag;
 	$tM = $monDMGmag ;
-	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag dmg.</b><br>";
+	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b>";
 }
 // if no skill used by mob
 else{
@@ -416,7 +416,9 @@ if (isset($_SESSION["ESshield"])){
 }	
 	
 $finalPlayerHP = $HPin - $monDMG;
-$BasicAtackByMob = "Monster did $monDMG dmg.<br>";
+$BasicAtackByMob = "Monster did $monDMG";
+if ($citM == 1){
+	$BasicAtackByMob = "Monster did<font color='red'><b> $monDMG </font>cryt.</b>";}
 }
 
 $monSkillText="$mobmagskill $BasicAtackByMob" ;
@@ -455,7 +457,7 @@ if (!isset($_SESSION["LOG"])){
 $_SESSION["LOG"] = "";
 }
 	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
-		$mont = "$monSkillText";
+		$mont = "$monSkillText dmg.";
 	}
 	else{
 		if ($stun == 1){
@@ -475,8 +477,6 @@ $_SESSION["LOG"] = "";
 		$tP = "$xt tottal of <font color='red'><b>$finalPlayerDMG cryt.</b></font> ";}
 	if ($SKL ==4){
 		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
-	if ($citM == 1){
-		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
 	$_SESSION["LOG"] = "$shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}

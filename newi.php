@@ -187,6 +187,16 @@ if($magAVG1<=$magAVG2){
 	$compareMAG="less";
 }
 
+//skill for new
+if ($weaponSkill >= 1){
+	$SKILL = mysqli_query($db,"SELECT * FROM iskills where ID = '$weaponSkill' ");
+	$SKILLS = mysqli_fetch_assoc($SKILL);
+	$img = "<img src='IMG/$SKILLS[pic]' style='width:33px'><br>";}
+//skill for old
+if ($WEPi["skill"] >= 1){
+	$SKILL = mysqli_query($db,"SELECT * FROM iskills where ID = '$WEPi[skill]' ");
+	$SKILLS = mysqli_fetch_assoc($SKILL);
+	$img2 = "<img src='IMG/$SKILLS[pic]' style='width:33px'>";}
 
 
 $reward = "<b><font color='red'><br> -WEAPON !-</font><br><br>DROP:</b><br><br>Name: $name<br>
@@ -195,7 +205,7 @@ Physical Dmg: <b><span class='$comparePHYS1'>$weaponPhysMin</span> ~ <span class
 Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='$compareMAG2'>$weaponMagMax</span> <font size='2'>(Avg. <span class='$compareMAG'>$magAVG1</span>)</font></b><br>
 Cryt chanse: <span class='$compareCRYT'>$weaponCrit %</span><br>
 Hit chanse: <span class='$compareHIT'>$weaponHit %</span><br>
-$eft
+$eft $img
 Worth: $moneySel gold<br>
 <br><b>Current item:</b><br><br>
 Name: $Current <br>
@@ -204,7 +214,7 @@ Physical Dmg: <b>$WEPi[pmin] ~ $WEPi[pmax] <font size='2'>(Avg. $phyAVG2)</font>
 Magickal Dmg: <b>$WEPi[mmin] ~ $WEPi[mmax] <font size='2'>(Avg. $magAVG2)</font></b><br>
 Cryt chanse: $WEPi[cryt] %<br>
 Hit chanse: $WEPi[HitChanse] %<br>
-$eft2<br>";
+$eft2 $img2 <br>";
 
 $_SESSION["Reward"] = "$reward";
 $_SESSION["HASH"] = "$HASH";

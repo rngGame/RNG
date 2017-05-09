@@ -107,8 +107,9 @@ if ($ACC[1] == 1){
 		$MDMG *= 1.1;}
 	if($plLVL >= 20){
 		$HP += $HP * $plLVL / 100;
-		$_SESSION["MonsDEF"] = round($mLVL*($plLVL));}
+		$_SESSION["MonsDEF"] = round($mLVL*(($plLVL/10)));}
 	if($plLVL >= 40){
+		$_SESSION["MonsDEF"] = round($mLVL*($plLVL));
 		$PDMG += $PDMG * $plLVL / 100;
 		$MDMG += $MDMG * $plLVL / 100;}
 		

@@ -159,7 +159,7 @@ if (isset($_POST['ITMS'])) {
 	if ($ITM[2] == "JOKE"){
 		
 
-		if (rand(1,1000) <= 100){ //create mosnter
+		if (rand(1,1000) <= 200){ //create monster
 		
 				$iLVL = $_SESSION["ILVL"];
 				$iLvL = $iLVL + rand(200,400);

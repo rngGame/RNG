@@ -128,10 +128,26 @@ if ($mLVL < 1 or $HP < 1 or $PDMG < 1 or $Drop < 1){
   	die();
 }
 else {
+	
+	//k,kk,kkk
+	$mHPN = $HP;
+	$mHPN = "$HP";
+if ($HP > 1000){
+	$mHPN = round($HP/1000,1);
+	$mHPN = "$mHPN k.";
+}
+if ($HP > 1000000){
+	$mHPN = round($HP/1000000,1);
+	$mHPN = "$mHPN kk.";
+}
+if ($HP > 10000000000){
+	$mHPN = round($HP/1000000000,1);
+	$mHPN = "$mHPN kkk.";
+}
 
     echo "<img src='IMG/Mon/$monsterIMG.jpg' width='60' height='60'><br>";
     echo "Monster Name: <b>$name</b><br>";
-    echo " HP: $HP, DMG: <font color='red'>~$PDMG</font>/<font color='0066ff'>~$MDMG</font>, XP: $Drop, Lvl: $mLVL";
+    echo " HP: $mHPN, DMG: <font color='red'>~$PDMG</font>/<font color='0066ff'>~$MDMG</font>, XP: $Drop, Lvl: $mLVL";
     $_SESSION["MonsName"] = "$name";
     $_SESSION["MonsHP"] = round($HP);
     $_SESSION["MonsDMG"] = round($PDMG);

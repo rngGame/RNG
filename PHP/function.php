@@ -220,7 +220,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Skill for Weapon
-            if($rngSkill>9600){
+            if($rngSkill>8500){
                 $iLVL+=$Skill[7];
                 $skillName = $Skill[1];
                 $weaponSkill = $Skill[0];

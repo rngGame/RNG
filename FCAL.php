@@ -434,6 +434,11 @@ else{
 	if ($ESS <= 0){
 		$ESS = 0;}
 	$ESS += round($ESR); 
+	if (isset($_SESSION["ESSteal"])){
+		$EST = round($_SESSION["ESSteal"]);
+		$ESS += $EST;
+		$shieldREC = "Recovered extra <font color='lightblue'>$EST</font> ES<br>";
+	}
 	if ($ESS > $_SESSION["ESshieldO"]){
 		$ESS = $_SESSION["ESshieldO"];}
 	$_SESSION["ESshield"] = $ESS;
@@ -473,10 +478,10 @@ $_SESSION["LOG"] = "";
 	if ($citM == 1){
 		$tM = "$xt <font color='red'>$tM cryt.</font>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
 	}
 
 

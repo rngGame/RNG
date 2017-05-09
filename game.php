@@ -500,12 +500,22 @@ else{
 	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
 </div>";
 	if ($Skil[2] == "DMG"){
-		$dmg = $dmg + ($dmg*$Skil[3]/100);}
+		$minPdmg += ($minPdmg*$Skil[3]/100);
+		$maxPdmg += ($maxPdmg*$Skil[3]/100);
+		$minMdmg += ($minMdmg*$Skil[3]/100);
+		$maxMdmg += ($maxMdmg*$Skil[3]/100);}
 	if ($Skil[2] == "ARM"){
 		$Parmor = $Parmor + ($Parmor*$Skil[4]/100);
 		$Marmor = $Marmor + ($Marmor*$Skil[4]/100);}
 	if ($Skil[2] == "HP"){
 		$HP2 = $HP2 + ($HP2*$Skil[5]/100);}
+	if ($Skil[2] == "THR"){
+		$bonusTR += round((($WEPn["pmin"]+$WEPn["pmax"])/2)*$Skil[3]/100);	
+		$_SESSION["Thorns"] = $bonusTR;}
+	if ($Skil[2] == "ES"){
+		$ESSteal += round((($WEPn["mmin"]+$WEPn["mmax"])/2)*$Skil[3]/100);	
+		$_SESSION["ESSteal"] = $ESSteal;
+		}
 }
 
 

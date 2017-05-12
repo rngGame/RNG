@@ -19,7 +19,6 @@ World Of RNG
      <input id="password" type="password" name="password" placeholder="password" />
      <p><label>Character Name : </label>
     <input id="username" type="text" name="char" placeholder="character" /></p>
-     Hardcore:<input id="hardcore" type="checkbox" name="Hardcore"><p>
     <input class="btn register" type="submit" name="submit" value="Register" /></p>
     </form>
 </div>

@@ -4,6 +4,7 @@ ob_start();
 
 include_once 'PHP/db.php';
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 
 
 
@@ -1881,6 +1882,17 @@ $opt
 	</div>
 </div>	
 ";
+
+//account characters
+$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+while ($Chars = mysqli_fetch_array($chars)){
+	if ($Chars[1] == 1 and $Chars[7] >= 1){}
+	else{
+$options .='<option value="'.$Chars[0].'">'.$Chars[0].'</option>';
+	}
+}
+
+
 mysqli_close($db);
 include('template.php');
 ?>

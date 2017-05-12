@@ -4,8 +4,9 @@ ob_start();
 include_once 'PHP/db.php';
 
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 
-$AC = mysqli_query($db,"SELECT * FROM account where user = '$User' ");
+$AC = mysqli_query($db,"SELECT * FROM account where user = '$Account' ");
 $AC = mysqli_fetch_row($AC);
 
 
@@ -20,6 +21,31 @@ if ($User == ""){
 	}
 else{
 $send="location:game.php";
+}
+
+if (isset($_POST["Character"])){
+	$char = $_POST["Character"];
+	
+	if ($char == "CR"){
+			echo'
+			<div class="register-form">
+			<h1>Char Name</h1>
+ 			<form method="post" action="create.php">
+			 <p><label>Character Name : </label>
+    <input id="username" type="text" name="char" placeholder="character" /></p>
+     Hardcore:<input id="hardcore" type="checkbox" name="Hardcore"><p>
+    <input class="btn register" type="submit" name="submit" value="Register" /></p>
+    </form>
+	</div>';
+	$_SESSION["HAVE"] = 1;
+			die();
+	}
+	
+	$_SESSION["User"] = $char;
+	$last = "UPDATE account SET last_char = '$char' WHERE `User` = '$Account'";
+	$last = mysqli_query($db, $last);	
+	header("location:sync.php");
+	die();
 }
 
 
@@ -246,6 +272,7 @@ else{
 	session_destroy();
 	session_start();
 	$_SESSION["User"] = $User;
+	$_SESSION["Account"] = $Account;
 	
 if ($ACC[3] > 19 and $ACC[10] == 0){
 	header("location:class.php");

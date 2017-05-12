@@ -12,6 +12,15 @@ echo '
 		<header>
 			<div id="title">World of RNG</div>
 			<div id="settings">
+				<form method="post"action="sync.php" >
+    				<select name="Character"  onchange="this.form.submit();">
+        				<option></option>
+        				'.$options.'
+						<option value="CR">New Character</option>
+  				 	 </select>
+				</form>
+				</div>
+			<div id="settings">
 				<section class="container">
 				    <form method="post" action="settings.php">
 				    	<input type="submit" name="commit3" value="Settings">
@@ -64,7 +73,7 @@ echo '
 	</body>
 	<footer class="linksB">
 		<br>
-		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.7.5)</b></a><br>
+		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.8)</b></a><br>
 		<a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 		<script>
 		

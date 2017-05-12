@@ -19,6 +19,8 @@ include_once 'PHP/db.php';
     // If the values are posted, insert them into the database.
 	    $username = $_POST['username'];
         $password = $_POST['password'];
+		$char = $_POST['char'];
+		
 		
 	//hardcore char
 	$hc = 0;
@@ -26,21 +28,59 @@ include_once 'PHP/db.php';
 		$hc = 1;
 	}
 		
-		
+//ONLY CHAR CREATE
+if(isset($_SESSION["HAVE"])){	
+
+$Account = $_SESSION["Account"];
+
+$result = mysqli_query($db, "SELECT * FROM Achievments where User = '$Account'");
+$points = mysqli_num_rows($result);
+
+$query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$char', '$points', '0', '0')";
+$result = mysqli_query($db,$query2);
+
+$order3 = "INSERT INTO Equiped
+(User, Part, HASH, Equiped)
+VALUES
+('$char', 'WEP', '0001', '1')";	
+
+$result = mysqli_query($db, $order3);	
+
+
+$order2 = "INSERT INTO characters
+	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards )
+	  VALUES
+	   ('$char','$hc','5','1', '100', '1', '', '$Account', '0', '1000', '0004', '0')";
+	   
+$result = mysqli_query($db, $order2);		
+			
+			
+			$_SESSION["User"] = $char;
+			
+			header("location:sync.php");
+			die();
+        
+
+
+}
+
+//NEW ACCOUNT AND CHAR
 $hashed_password = crypt($password); // let the salt be automatically generated
 		
-$result = mysqli_query($db,"SELECT * FROM account WHERE user = '$username'");
+$result = mysqli_query($db,"SELECT * FROM account WHERE user = '$username'"); //account check
 $count = mysqli_num_rows($result);
+$results = mysqli_query($db,"SELECT * FROM characters WHERE User = '$char'"); //character check
+$countCH = mysqli_num_rows($results);
 $result2 = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '0001'");
 $count2 = mysqli_num_rows($result2);	
 $result4 = mysqli_query($db,"SELECT * FROM Gems WHERE Type = 'None'");
 $count4 = mysqli_num_rows($result4);
-if(!$count==1){
+if(!$count==1 and !$countCH ==1){
 	
     if (isset($_POST['username']) && isset($_POST['password'])){
-        $query = "INSERT INTO account (User, Psw, Theme) VALUES ('$username', '$hashed_password', 'meniu_dark')";
+        $query = "INSERT INTO account (User, Psw, Theme, last_char) VALUES ('$username', '$hashed_password', 'meniu_dark', '$char')";
         $result = mysqli_query($db,$query);}
-		$query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$username', '1', '0', '0')";
+		$query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$char', '1', '0', '0')";
         $result = mysqli_query($db,$query2);
         if($result){
             $msg = "User Created Successfully.";
@@ -61,15 +101,15 @@ $order2 = "INSERT INTO DropsWep
 $order3 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
 VALUES
-('$username', 'WEP', '0001', '1')";	
+('$char', 'WEP', '0001', '1')";	
 
 $result = mysqli_query($db, $order3);	
 
 
 $order2 = "INSERT INTO characters
-	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Tali_h, Class, Rank, Gem_h, Shards )
+	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards )
 	  VALUES
-	   ('$username','$hc','5','1', '100', '1', '', '', '0', '1000', '0004', '0')";
+	   ('$char','$hc','5','1', '100', '1', '', '$username', '0', '1000', '0004', '0')";
 	   
 $result = mysqli_query($db, $order2);		
 			

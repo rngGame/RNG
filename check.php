@@ -18,8 +18,11 @@ $login = mysqli_query($db,"SELECT * FROM account WHERE user = '$User'");
 $login = mysqli_fetch_row($login);
 
 if (hash_equals($login[2], crypt($Psw, $login[2]))) {
+	
+	
    echo "Password verified! $hashed_password";
-   $_SESSION["User"] = "$User";
+   $_SESSION["User"] = "$login[4]";
+   $_SESSION["Account"] = "$login[1]";
 
 	mysqli_close($db);
 	header("location:sync.php");

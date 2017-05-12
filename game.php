@@ -260,19 +260,22 @@ $ONL = mysqli_num_rows($ONL2);
 
 
 while($users2=mysqli_fetch_array($ONL2)){
-	$USR2 = mysqli_query($db,"SELECT * FROM characters where user = '$users2[0]' ");
+	$USR2 = mysqli_query($db,"SELECT * FROM account where user = '$users2[0]' ");
 	$USR2 = mysqli_fetch_row($USR2);
 	
-if ($USR2[1] == 1){
+	$USR3 = mysqli_query($db,"SELECT * FROM characters where user = '$USR2[4]' ");
+	$USR3 = mysqli_fetch_row($USR3);
+	
+if ($USR3[1] == 1){
 	$deadaliveON = "<font color='red' size='-2'>(Hard.)</font>";
 }
 else{
 	$deadaliveON = "";
 }
 	
-	$CLS2 = mysqli_query($db,"SELECT * FROM class where ID = '$USR2[10]' ");
+	$CLS2 = mysqli_query($db,"SELECT * FROM class where ID = '$USR3[10]' ");
 	$CLS2 = mysqli_fetch_row($CLS2);
-          	$UsersO = "<b>$UsersO  <font color='$USR2[12]'>$users2[0] $deadaliveON</font> </b><br>";
+          	$UsersO = "<b>$UsersO  <font color='$USR3[12]'>$USR3[0] $deadaliveON</font> </b><br>";
          }
 if ($ONL == 0){
 	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'>>$User</font></span></div>";}
@@ -1674,7 +1677,7 @@ $equipTemplate ="
 /*Highest PVP Rank: <font color='$RANK[12]'><b>$RANK[11]</font> - by <font color='$RANK[12]'>$RANK[0]</font></b>*/
 
 //achievment check
-$result = mysqli_query($db, "SELECT * FROM Achievments where User = '$User' AND Seen is null");
+$result = mysqli_query($db, "SELECT * FROM Achievments where User = '$Account' AND Seen is null");
 $unseen = mysqli_num_rows($result);
 
 if ($unseen >= 1){
@@ -1690,6 +1693,9 @@ if ($hardcoreCHAR[7] >= 1){
 }
 else{
 	$deadalive = "<font color='green'>(Alive)</font>";
+}
+if ($hardcoreCHAR == 0){
+	$deadalive = "";
 }
 
 $socialTemplate="

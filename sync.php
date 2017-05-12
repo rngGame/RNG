@@ -26,6 +26,11 @@ $send="location:game.php";
 if (isset($_POST["Character"])){
 	$char = $_POST["Character"];
 	
+	if ($char == "EMPTY"){
+			header("location:sync.php");
+	die();
+	}
+	
 	if ($char == "CR"){
 			echo'
 			<div class="register-form">
@@ -252,13 +257,13 @@ $datetime = $datetime+300;
 $datetime = date('Y-m-d H:i:s',$datetime);
 
 
-$ONL = mysqli_query($db,"SELECT * FROM Online where user = '$User' Order by RAND() Limit 	1");
+$ONL = mysqli_query($db,"SELECT * FROM Online where user = '$Account' Order by RAND() Limit 	1");
 $ONL = mysqli_fetch_row($ONL);
 
-if ($ONL[0] == "$User"){
+if ($ONL[0] == "$Account"){
 	$order = "UPDATE Online
 	SET Time = '$datetime'
-	WHERE `User` = '$User'";
+	WHERE `User` = '$Account'";
 	$result = mysqli_query($db, $order);	
 }
 else{
@@ -266,7 +271,7 @@ else{
 	$order = "INSERT INTO Online
 	  (User, Time)
 	 	VALUES
-	   ('$User', '$datetime')";
+	   ('$Account', '$datetime')";
 	  	$result = mysqli_query($db, $order);	}
 	
 	session_destroy();

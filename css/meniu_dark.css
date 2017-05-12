@@ -1054,6 +1054,11 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     left: 340px;
 }
 
+.Character {
+    position: absolute;
+    left: 218px;
+}
+
 
 
 

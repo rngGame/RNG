@@ -12,15 +12,6 @@ echo '
 		<header>
 			<div id="title">World of RNG</div>
 			<div id="settings">
-				<form method="post"action="sync.php" >
-    				<select name="Character"  onchange="this.form.submit();">
-        				<option></option>
-        				'.$options.'
-						<option value="CR">New Character</option>
-  				 	 </select>
-				</form>
-				</div>
-			<div id="settings">
 				<section class="container">
 				    <form method="post" action="settings.php">
 				    	<input type="submit" name="commit3" value="Settings">
@@ -52,6 +43,16 @@ echo '
 			</div>
 			<div id="equip">
 				'.$equipTemplate.'
+				<div class="Character">
+				<form method="post"action="sync.php" >
+    				<select name="Character"  onchange="this.form.submit();">
+        				<option>Select character...</option>
+        				'.$options.'
+						<option value="EMPTY"></option>
+						<option value="CR">New Character</option>
+  				 	 </select>
+				</form>
+				</div>
 			</div>
 			<div id="inventory">
 				'.$inventoryTemplate.'

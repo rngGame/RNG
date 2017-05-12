@@ -31,6 +31,11 @@ include_once 'PHP/db.php';
 //ONLY CHAR CREATE
 if(isset($_SESSION["HAVE"])){	
 
+$results = mysqli_query($db,"SELECT * FROM characters WHERE User = '$char'"); //character check
+$countCH = mysqli_num_rows($results);
+
+if(!$countCH ==1){
+
 $Account = $_SESSION["Account"];
 
 $result = mysqli_query($db, "SELECT * FROM Achievments where User = '$Account'");
@@ -62,6 +67,10 @@ $result = mysqli_query($db, $order2);
         
 
 
+}
+else{
+				header("location:sync.php");
+			die();}
 }
 
 //NEW ACCOUNT AND CHAR

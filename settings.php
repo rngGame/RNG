@@ -20,6 +20,7 @@ World Of RNG
 include_once 'PHP/db.php';
 
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
@@ -36,9 +37,35 @@ Select game theme
   <option value='LIG'>Light</option>
   <option value='DAR'>Dark</option>
 </select>
-</p><input type='submit' value='Saugoti'></form>";
+</p><input type='submit' value='Save'></form>";
 
 
+$results = mysqli_query($db,"SELECT * FROM characters WHERE Account = '$Account'"); //character check
+$countCH = mysqli_num_rows($results);
+
+
+if($countCH >= 2){
+	echo"
+<form action='sett.php'>
+<p>
+Delete character:
+<select name='formDelete'>
+  <option value=''>Select...</option>";
+  
+  $chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+while ($Chars = mysqli_fetch_array($chars)){
+	if ($Chars[1] == 1 and $Chars[7] >= 1 ){}
+	else{
+		if ($Chars[0] == "$User"){}
+		else{
+echo"<option value='$Chars[0]'>$Chars[0]</option>";}
+	}
+}
+
+
+echo"</select>
+</p><input type='submit' value='Delete'></form>";
+}
 
 
     ?>

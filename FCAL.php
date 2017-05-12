@@ -16,6 +16,7 @@ ob_start();
 
 include_once 'PHP/db.php';
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 $mName = $_SESSION["MonsName"];
 
 //page name
@@ -133,17 +134,17 @@ if (rand(1,100) <= $CRYT and $SKL < 20 and $SKL <> 2){
 	$physDMGc = ($physDMGc*2)+$CRYTD;
 }
 	
-	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'CRYT'");
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'CRYT'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', 'CRYT', '1')";
+	VALUES ('$Account', 'CRYT', '1')";
 	$result = mysqli_query($db, $order);}
 		else{
 			$CCount = $ACH[2] + 1;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
-			WHERE `User` = '$User' and `Name` = 'CRYT'";
+			WHERE `User` = '$Account' and `Name` = 'CRYT'";
 			$result = mysqli_query($db, $order);
 		}
 }
@@ -201,17 +202,17 @@ $apsvM = ($monDMGmag*$APS/100);
 $apsvM = round($apsvM,0);
 $monDMGmag = $monDMGmag - $apsvM;
 
-	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'APS'");
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'APS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', 'APS', '$apsv')";
+	VALUES ('$Account', 'APS', '$apsv')";
 	$result = mysqli_query($db, $order);}
 		else{
 			$CCount = $ACH[2] + $apsv + $apsvM;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
-			WHERE `User` = '$User' and `Name` = 'APS'";
+			WHERE `Account` = '$User' and `Name` = 'APS'";
 			$result = mysqli_query($db, $order);
 		}
 		
@@ -252,17 +253,17 @@ if ($SKL ==7 or $pos == 1){
 		$poison = 0;}
 		
 	$poison = round($poison,0);
-	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'POS'");
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'POS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', 'POS', '$poison')";
+	VALUES ('$Account', 'POS', '$poison')";
 	$result = mysqli_query($db, $order);}
 		else{
 			$CCount = $ACH[2] + $poison;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
-			WHERE `User` = '$User' and `Name` = 'POS'";
+			WHERE `User` = '$Account' and `Name` = 'POS'";
 			$result = mysqli_query($db, $order);
 		}
 	$_SESSION["pois"] = 1;
@@ -336,11 +337,11 @@ if ($mis <> 1){
 		if ($com >= 10 ){
 			//$_SESSION["Combo"] = 10;
 			//achievment fox 10x combo
-			$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = '10x'");
+			$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = '10x'");
 			$ACH = mysqli_fetch_row($ACH);
 			if ($ACH[1]==""){
 				$order = "INSERT INTO aStatus (User, Name, Status)
-				VALUES ('$User', '10x', '1')";
+				VALUES ('$Account', '10x', '1')";
 				$result = mysqli_query($db, $order);}
 		}
 	}
@@ -541,22 +542,22 @@ $result = mysqli_query($db, $op2);
 
 //for 100k dmg achiev
 if ($finalPlayerDMG >= 100000){
-$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = '100K'");
+$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = '100K'");
 $ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', '100K', '1')";
+	VALUES ('$Account', '100K', '1')";
 	$result = mysqli_query($db, $order);}
 }
 
 //mons has <0hp
 if ($finalMonsHP <= 0){	
 	if (isset($_SESSION["MonsR"])){
-		$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'RARE'");
+		$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'RARE'");
 		$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', 'RARE', '1')";
+	VALUES ('$Account', 'RARE', '1')";
 	$result = mysqli_query($db, $order);}}
 	header($page); //reward
 	die();

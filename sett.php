@@ -3,6 +3,7 @@ session_start();
 ob_start();
 
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 
 include_once 'PHP/db.php';
 
@@ -27,7 +28,26 @@ if(isset($_GET['formTheme'])){
 	
 
 }
-header("location:sync.php");
 
+//delete character
+if(isset($_GET['formDelete'])){
+	$char = $_GET['formDelete'];
+	
+	$sql2="DELETE FROM characters WHERE User ='$char' and Account = '$Account'";
+	mysqli_query($db,$sql2);
+	
+	$sqldel="DELETE FROM Party WHERE PL1='$char'";
+	mysqli_query($db,$sqldel);
+	
+	$sql1="DELETE FROM Equiped WHERE User ='$char'";
+	mysqli_query($db,$sql1);
+	
+	
+	
+
+}
+
+header("location:sync.php");
+die();
 
 ?>

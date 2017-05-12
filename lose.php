@@ -20,6 +20,7 @@ World Of RNG
 include_once 'PHP/db.php';
 
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 $sell = $_SESSION["Sell"];
 $Money = $_SESSION["Money"];
 
@@ -35,17 +36,17 @@ $order2 = "UPDATE characters
 $result = mysqli_query($db, $order2);
 
 
-	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'LOS'");
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'LOS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$User', 'LOS', '1')";
+	VALUES ('$Account', 'LOS', '1')";
 	$result = mysqli_query($db, $order);}
 		else{
 			$CCount = $ACH[2] + 1;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
-			WHERE `User` = '$User' and `Name` = 'LOS'";
+			WHERE `User` = '$Account' and `Name` = 'LOS'";
 			$result = mysqli_query($db, $order);
 		}
 	

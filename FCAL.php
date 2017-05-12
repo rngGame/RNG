@@ -434,6 +434,7 @@ else{
 }
 
 //ES STUFF
+if (isset($_SESSION["ESshield"])){
 	if ($ESS <= 0){
 		$ESS = 0;}
 	$ESS += round($ESR); 
@@ -445,6 +446,7 @@ else{
 	if ($ESS > $_SESSION["ESshieldO"]){
 		$ESS = $_SESSION["ESshieldO"];}
 	$_SESSION["ESshield"] = $ESS;
+}
 
 $finalPlayerDMG= round($finalPlayerDMG,0);
 $finalPlayerHP= round($finalPlayerHP,0);

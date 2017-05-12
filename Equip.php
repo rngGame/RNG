@@ -275,12 +275,12 @@ if ($Type == "ACS"){
 	
 	echo  $order = "UPDATE Equiped
 	SET Equiped = '0'
-	WHERE `HASH` = '$CURR[0]'";
+	WHERE `HASH` = '$CURR[0]' and User='$User'";
 	$result = mysqli_query($db, $order);	
 	
    $order2 = "UPDATE Equiped
 	SET Equiped = '1'
-	WHERE `HASH` = '$new'";
+	WHERE `HASH` = '$new' and User='$User'";
 	$result = mysqli_query($db, $order2);	
 	
 } else if (isset($_POST['Sell'])) {

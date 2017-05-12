@@ -521,9 +521,15 @@ else{
 		$HP2 = $HP2 + ($HP2*$Skil[5]/100);}
 	if ($Skil[2] == "THR"){
 		$bonusTR += round((($WEPn["pmin"]+$WEPn["pmax"])/2)*$Skil[3]/100);	
+		if ($bonusTR <= 1){
+			$bonusTR = 1;
+		}
 		$_SESSION["Thorns"] = $bonusTR;}
 	if ($Skil[2] == "ES"){
-		$ESSteal += round((($WEPn["mmin"]+$WEPn["mmax"])/2)*$Skil[3]/100);	
+		$ESSteal += round((($WEPn["mmin"]+$WEPn["mmax"])/2)*$Skil[3]/100);
+		if ($ESSteal <= 1){
+			$ESSteal = 1;
+		}
 		$_SESSION["ESSteal"] = $ESSteal;
 		}
 }

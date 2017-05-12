@@ -321,7 +321,7 @@ if ($Type == "ACS"){
 	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order);
 	
-$sql="DELETE FROM Equiped WHERE hash='$new'";
+$sql="DELETE FROM Equiped WHERE hash='$new' and User='$User'";
 mysqli_query($db,$sql);
 
 if ($Type == "WEP" and $new <> 0001){

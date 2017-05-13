@@ -355,19 +355,22 @@ if ($SKL == 35){
 		
 //skill 36
 if ($SKL == 36){	
-	$dmgsacr= $HPin * 0.1;
+	round($dmgsacr= $HPin * 0.1);
 	$sacrifrand = rand(150,200);
 	if ($SUB[5] == "CHAM"){
-		$dmgsacr= $HPin * 0.15;
+		$dmgsacr= round($HPin * 0.15);
 		$sacrifrand = rand(220,280);
 		}
 	if ($SUB[5] == "HERO"){
-		$dmgsacr= $HPin * 0.2;
+		$dmgsacr= round($HPin * 0.2);
 		$sacrifrand = rand(250,300);
 		}
 	$HPin = $HPin - $dmgsacr;
 	$finalsacriface = round(($dmgsacr*10) * $sacrifrand / 50);
 	$finaltext = "<b>You sacrificed $dmgsacr and delt $finalsacriface damage !</b><br>";
+	
+	$ene = $ene - 100;
+	$_SESSION["ENERGY"] = $ene;
 }
 
 

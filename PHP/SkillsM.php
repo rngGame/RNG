@@ -133,12 +133,9 @@ if ($ACC[3] >= 35 and $SKL > 100 and $armr == 0){
   ;}  
   
   //Suiced
-   $helth = 5000;
-  if ($SUB[5] == "HERO" ){
-	  $helth = 10000;}
-	if ($SUB[5] == "CHAM" ){
-	  $helth = 3000;}
-if ($ACC[3] >= 42 and $SKL > 200 and $HPin > $helth ){
+
+if (($_SESSION["HPO"]*0.21) < $HPin){
+if ($ACC[3] >= 42 and $SKL > 200){
 	
  echo"
     <div class='tooltip'>
@@ -157,5 +154,6 @@ if ($ACC[3] >= 42 and $SKL > 200 and $HPin > $helth ){
       </form>
     </div>&nbsp;&nbsp;"
   ;}  
+}
 
 ?>

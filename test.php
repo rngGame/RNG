@@ -361,7 +361,7 @@ include 'PHP/ItemsFight.php';
 &nbsp;
   <section class="container3">
     <div class="31-50">
-	      <form method="post" action="Sync3.php">
+	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Flee"></p>
       </form>
     </div>

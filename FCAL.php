@@ -75,7 +75,7 @@ $finalPlayerDMG = 0;
 if (isset($_SESSION["Thorns"])){
 	$Thorns = $_SESSION["Thorns"];
 	$Thorns +=  $Thorns * ($Armor + $ArmorM + $mLVL + ($plvl*15)) /1000; //thorns scales with armor+lvl+monter lvl
-	$Thorns = round($Thorns);
+	$Thorns = round(rand($Thorns*0.9,$Thorns*1.1));
 	$ThorText = "Monster took <font color='#99cc00'>$Thorns </font>of Thorns dmg.<br>";
 }
 

@@ -77,6 +77,20 @@ if (isset($_SESSION["Thorns"])){
 	$Thorns +=  $Thorns * ($Armor + $ArmorM + $mLVL + ($plvl*15)) /1000; //thorns scales with armor+lvl+monter lvl
 	$Thorns = round(rand($Thorns*0.9,$Thorns*1.1));
 	$ThorText = "Monster took <font color='#99cc00'>$Thorns </font>of Thorns dmg.<br>";
+	//achievment
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'THOR'");
+	$ACH = mysqli_fetch_row($ACH);
+		if ($ACH[1]==""){
+	$order = "INSERT INTO aStatus (User, Name, Status)
+	VALUES ('$Account', 'THOR', '1')";
+	$result = mysqli_query($db, $order);}
+		else{
+			$CCount = $ACH[2] + $Thorns;
+			$order = "UPDATE aStatus
+			SET Status = '$CCount'
+			WHERE `User` = '$Account' and `Name` = 'THOR'";
+			$result = mysqli_query($db, $order);
+		}
 }
 
 	
@@ -201,18 +215,19 @@ $monDMG = $monDMG - $apsv;
 $apsvM = ($monDMGmag*$APS/100);
 $apsvM = round($apsvM,0);
 $monDMGmag = $monDMGmag - $apsvM;
-
+	
+	$apsAround = ($apsv + $apsvM)/2;
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'APS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){
 	$order = "INSERT INTO aStatus (User, Name, Status)
-	VALUES ('$Account', 'APS', '$apsv')";
+	VALUES ('$Account', 'APS', '$apsAround')";
 	$result = mysqli_query($db, $order);}
 		else{
-			$CCount = $ACH[2] + $apsv + $apsvM;
+			$CCount = $ACH[2] + $apsAround;
 			$order = "UPDATE aStatus
 			SET Status = '$CCount'
-			WHERE `Account` = '$User' and `Name` = 'APS'";
+			WHERE `User` = '$Account' and `Name` = 'APS'";
 			$result = mysqli_query($db, $order);
 		}
 		
@@ -446,7 +461,18 @@ if (isset($_SESSION["ESshield"])){
 	if ($ESS > $_SESSION["ESshieldO"]){
 		$ESS = $_SESSION["ESshieldO"];}
 	$_SESSION["ESshield"] = $ESS;
+	
+		//achievment
+	if ($_SESSION["ESshield"] >= 1000){
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'ESS'");
+	$ACH = mysqli_fetch_row($ACH);
+		if ($ACH[1]==""){
+	$order = "INSERT INTO aStatus (User, Name, Status)
+	VALUES ('$Account', 'ESS', '1')";
+	$result = mysqli_query($db, $order);}}
+	
 }
+	
 
 $finalPlayerDMG= round($finalPlayerDMG,0);
 $finalPlayerHP= round($finalPlayerHP,0);

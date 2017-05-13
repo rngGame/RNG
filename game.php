@@ -494,6 +494,12 @@ if ($ACC[1] == 1){
 				</section>
 			</div>';
 		
+		$HARDDEAD = mysqli_query($db,"SELECT * from characters WHERE `Account` = '$Account' and Hardcore = 0 LIMIT 1");
+		$HARDDEAD = mysqli_fetch_row($HARDDEAD);
+	
+		$last = "UPDATE account SET last_char = '$HARDDEAD[0]' WHERE `User` = '$Account'";
+		$last = mysqli_query($db, $last);
+		
 		$sqldel="DELETE FROM Party WHERE PL1='$User'";
 		mysqli_query($db,$sqldel);
 		

@@ -20,6 +20,7 @@ World Of RNG
 include_once 'PHP/db.php';
 
 $User = $_SESSION["User"];
+$Account = $_SESSION["Account"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
@@ -45,6 +46,7 @@ else{
 	session_destroy();
 	session_start();
 	$_SESSION["User"] = $User;
+	$_SESSION["Account"] = $Account; 
 	echo "<b>Not Enought Money or you can't enchant this weapon</b>";
 	echo"<div id='fightNewBut'>
 		<section class='actionButtons2'>

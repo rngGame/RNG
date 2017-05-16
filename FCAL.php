@@ -299,6 +299,20 @@ if (isset($_SESSION["MonsDEF"])){
 	$MonDEF = $_SESSION["MonsDEF"];
 }
 
+//if explode
+if (isset($_SESSION["BOOM"])){
+	if ($_SESSION["BOOM"] <= rand(1,100)){
+		$explode += $monHP * 0.05;
+		$explode += ($physDMG + $magDMG) / 3;
+			if ($explode > (500*$mLVL)){
+			$explode = (500*$mLVL);
+		}
+		$explode = round($explode);
+		$exptext = "Weapon <b>exploded</b> for <font color='#996600'>$explode</font> dmg.<br>";
+	}
+	
+}
+
 
 //calculation dmg to mons
 if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or isset($_SESSION["ATTACK"]) ){ //check for physical dmg
@@ -329,7 +343,7 @@ if ($ddam == 1){
 }
 
 //poision + thorns + petdmg
-$finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG;
+$finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode;
 
 //Confusion
 if ($Confusion == 1){
@@ -507,10 +521,10 @@ $_SESSION["LOG"] = "";
 	if ($SKL ==4){
 		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
 	}
 
 

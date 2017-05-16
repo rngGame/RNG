@@ -507,6 +507,7 @@ if ($ACC[1] == 1){
 	}
 }
 
+//ISKILL
 if ($WEPn["skill"] == 0){
 	$skillTemplate="";
 }
@@ -538,6 +539,8 @@ else{
 		}
 		$_SESSION["ESSteal"] = $ESSteal;
 		}
+		if ($Skil[2] == "EXP"){
+		$_SESSION["BOOM"] = $Skil[3];}
 }
 
 

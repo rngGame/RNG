@@ -220,7 +220,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Skill for Weapon
-            if($rngSkill>8500){
+            if($rngSkill>8000){
                 $iLVL+=$Skill[7];
                 $skillName = $Skill[1];
                 $weaponSkill = $Skill[0];
@@ -417,21 +417,21 @@ function itemDrop($db,$user,$drop,$MLVL){
                 if ($rngEffect == 1){
                     $effectName = "HP Bonuss";
                     $Effect = "HP";
-                    $EffectChance = round(rand($MLVL,($MLVL*1.7)));
+                    $EffectChance = round(rand($MLVL*2,($MLVL*4)));
 					if ($EffectChance < 1){
 						  $EffectChance = 1;}
                 }
 				if ($rngEffect == 2){
                     $effectName = "EN Bonuss";
                     $Effect = "EN";
-                    $EffectChance = round(rand($MLVL/8,($MLVL/3)));
+                    $EffectChance = round(rand($MLVL/5,($MLVL/2)));
 					if ($EffectChance < 1){
 						  $EffectChance = 1;}
                 }
 				if ($rngEffect == 3){
                     $effectName = "Heal per turn";
                     $Effect = "HL";
-                    $EffectChance = round(rand($MLVL/5,($MLVL/1.5)));
+                    $EffectChance = round(rand($MLVL/4,($MLVL)));
 					if ($EffectChance < 1){
 						  $EffectChance = 1;}
                 }
@@ -443,12 +443,12 @@ function itemDrop($db,$user,$drop,$MLVL){
 				if ($rngEffect == 5){
                     $effectName = "Thorn DMG";
                     $Effect = "TR";
-                    $EffectChance = round(rand($MLVL*1.3,($MLVL*3.3)));
+                    $EffectChance = round(rand($MLVL*1.5,($MLVL*4)));
                 }
 				if ($rngEffect == 6){
                     $effectName = "Energie Shield";
                     $Effect = "ES";
-                    $EffectChance = round(rand($MLVL*0.5,($MLVL*2)));
+                    $EffectChance = round(rand($MLVL,($MLVL*2)));
                 }
 				$effect = "Effect: $effectName $EffectChance <br>";
                 $textMessage.="Choose Effect $effectName $EffectChance \r\n";

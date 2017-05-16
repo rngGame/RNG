@@ -74,7 +74,7 @@ $finalPlayerDMG = 0;
 //thorns
 if (isset($_SESSION["Thorns"])){
 	$Thorns = $_SESSION["Thorns"];
-	$Thorns +=  $Thorns * ($Armor + $ArmorM + $mLVL + ($plvl*15)) /1000; //thorns scales with armor+lvl+monter lvl
+	$Thorns +=  $Thorns * ($Armor + $ArmorM + ($mLVL*15) + ($plvl*20)) /1000; //thorns scales with armor+lvl+monter lvl
 	$Thorns = round(rand($Thorns*0.9,$Thorns*1.1));
 	$ThorText = "Monster took <font color='#99cc00'>$Thorns </font>of Thorns dmg.<br>";
 	//achievment
@@ -301,7 +301,7 @@ if (isset($_SESSION["MonsDEF"])){
 
 //if explode
 if (isset($_SESSION["BOOM"])){
-	if ($_SESSION["BOOM"] <= rand(1,100)){
+	if ($_SESSION["BOOM"] >= rand(1,100)){
 		$explode += $monHP * 0.05;
 		$explode += ($physDMG + $magDMG) / 3;
 			if ($explode > (500*$mLVL)){

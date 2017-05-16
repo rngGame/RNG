@@ -103,8 +103,7 @@ $order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus)
 	  VALUES
 	   ('0001', 'Wooden Sword', '', '1', '1', '5', '1', '1', '5', '90', '', '', '', '0')";
-	   $result = mysqli_query($db, $order2);	
-	   		
+	   $result = mysqli_query($db, $order2);
 	   }   
 	   
 $order3 = "INSERT INTO Equiped

@@ -417,10 +417,33 @@ if (!isset($_SESSION["Combo"])){
 if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
 
 //monster skill
+
+//health boost
+if (rand(1,100) >= 85){
+	$finalMonsHPlaik = round((2*$mLVL) * (2*$plvl));
+	$finalMonsHP += $finalMonsHPlaik;
+	$monsSkillHP = "Monster boosted its health by <font color='#E44C68'>$finalMonsHPlaik</font> hp. <br>";
+}
+
+//mons reflect
+$monref = 0;
+if (rand(1,100) >= 90){
+	$monref = round($finalPlayerDMG*0.05);
+	if ($monref >= ($HPO/3)){
+		$monref = round($HPO/3);}
+	$finalMonsHP += $monref;
+	$monsSkillREF = "Monster reflected back <font color='#A8181C'>$monref</font> dmg.<br>";
+	
+	
+}
+
+//magick missile
 if (rand(1,100) >= 75){
 	$monDMGmag = round($monDMGmag * rand(110,150) /100);
+	$monDMG = 0; //not phyical
 	if ($monDMGmag <= 0){
 		$monDMGmag = 0;}
+		
 
 //ES shield
 if (isset($_SESSION["ESshield"])){
@@ -437,15 +460,16 @@ if (isset($_SESSION["ESshield"])){
 			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESdmg</font> dmg.<br>";
 			$monDMGmag  = 0;}
 	}
+	
+	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b>";
 
 }
 	
-	$finalPlayerHP = $HPin - $monDMGmag;
-	$tM = $monDMGmag ;
-	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b>";
+	
 }
 // if no skill used by mob
 else{
+	$monDMGmag = 0; //if not magick
 	
 //ES shield
 if (isset($_SESSION["ESshield"])){
@@ -464,15 +488,21 @@ if (isset($_SESSION["ESshield"])){
 	}
 
 
-}	
+}
 	
-$finalPlayerHP = $HPin - $monDMG;
-$BasicAtackByMob = "Monster did $monDMG";
-if ($citM == 1){
-	$BasicAtackByMob = "Monster did<font color='red'><b> $monDMG </font>cryt.</b>";}
+
 }
 
-$monSkillText="$mobmagskill $BasicAtackByMob" ;
+$monDID = $monDMG + $monDMGmag + $monref;
+$finalPlayerHP = $HPin - $monDID;
+if (isset($mobmagskill)){} //if used skill, don't write basic stuff
+else{
+$BasicAtackByMob = "Monster did tottal of $monDID";
+if ($citM == 1){
+	$BasicAtackByMob = "Monster did tottal of <font color='red'><b> $monDID </font>cryt.</b>";}
+}
+
+$monSkillText="$monsSkillREF $monsSkillHP $mobmagskill $BasicAtackByMob" ;
 
 }
 

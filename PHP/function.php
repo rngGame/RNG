@@ -220,7 +220,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
             $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Skill for Weapon
-            if($rngSkill>8000){
+            if($rngSkill>7500){
                 $iLVL+=$Skill[7];
                 $skillName = $Skill[1];
                 $weaponSkill = $Skill[0];
@@ -341,7 +341,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
 			
             //deciding on effect WEAPON
-            if (rand(0,100) < 25 and $drop=="weapon"){
+            if (rand(0,100) < 30 and $drop=="weapon"){
                 $rngEffect = rand(1,11);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
@@ -412,7 +412,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			
 			
 			//deciding on effect ARMOR
-            if (rand(0,100) < 25 and $drop=="armor"){
+            if (rand(0,100) < 30 and $drop=="armor"){
                 $rngEffect = rand(1,6);
                 if ($rngEffect == 1){
                     $effectName = "HP Bonuss";

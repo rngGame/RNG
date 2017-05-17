@@ -373,7 +373,12 @@ if ($SKL == 36){
 	$_SESSION["ENERGY"] = $ene;
 }
 
+//MAG BONUS WEAPON
+$magbonu = 1;
+if(isset($_SESSION["MAG"])){
+	$magbonu = 1.3;
+}
 
-$magick = round($fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra);
+$magick = round(($fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra)*$magbonu);
 $magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext $petSkillText"  ;
 ?>

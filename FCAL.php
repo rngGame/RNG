@@ -332,7 +332,14 @@ if (isset($_SESSION["BOOM"])){
 if ($SKL == 11 or $SKL == 7 or $SKL ==1 or $SKL ==3 or $SKL ==4 or $SKL ==5 or $SKL ==6 or isset($_SESSION["ATTACK"]) ){ //check for physical dmg
 unset($_SESSION["ATTACK"]); 
 if (rand(0,100) <= $WEPn["HitChanse"] ){
-$finalPlayerDMG = ($physDMG + $gemDMG + $monsRef + $effect) - $MonDEF;
+	
+//PHY BONUS WEAPON
+$phybonu = 1;
+if(isset($_SESSION["PHY"])){
+	$phybonu = 1.2;
+}
+	
+$finalPlayerDMG = (($physDMG + $gemDMG + $monsRef + $effect)*$phybonu) - $MonDEF;
 	if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -616,7 +623,7 @@ if ($finalMonsHP <= 0){
 	VALUES ('$Account', 'RARE', '1')";
 	$result = mysqli_query($db, $order);}}
 	if (isset($_SESSION["OVER"])){
-	$_SESSION["OVERdmg"] = round(2*($finalMonsHP * -1));}
+	$_SESSION["OVERdmg"] = round(1.5*($finalMonsHP * -1));}
 	if ($_SESSION["OVERdmg"] >= (5*$plvl*$mLVL)){
 		$_SESSION["OVERdmg"] = 5*$plvl*$mLVL;}
 	header($page); //reward

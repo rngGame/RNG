@@ -503,6 +503,23 @@ if ($ACC[1] == 1){
 		$sqldel="DELETE FROM Party WHERE PL1='$User'";
 		mysqli_query($db,$sqldel);
 		
+		$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+		$Party = mysqli_fetch_assoc($PartyS);
+
+		if ($Party["PL1"] == $User){
+			$PLnr = "PL1";}
+		if ($Party["PL2"] == $User){
+			$PLnr = "PL2";}
+		if ($Party["PL3"] == $User){
+			$PLnr = "PL3";;}
+		if ($Party["PL4"] == $User){
+			$PLnr = "PL4";}
+			
+		$orderChar = "UPDATE Party
+		SET $PLnr = null
+		WHERE `ID` = '$Party[ID]'";
+		$result = mysqli_query($db, $orderChar);
+		
 		die();
 	}
 }
@@ -539,10 +556,28 @@ else{
 		}
 		$_SESSION["ESSteal"] = $ESSteal;
 		}
-		if ($Skil[2] == "EXP"){
+	if ($Skil[2] == "EXP"){
 		$_SESSION["BOOM"] = $Skil[3];}
-		if ($Skil[2] == "OVK"){
+	if ($Skil[2] == "OVK"){
 		$_SESSION["OVER"] = $Skil[3];}
+	if ($Skil[2] == "MAG"){
+		$minPdmg = $minPdmg-($minPdmg*$Skil[3]/100);
+		$maxPdmg = $maxPdmg-($maxPdmg*$Skil[3]/100);
+		$minMdmg = $minMdmg+($minMdmg*$Skil[3]/100);
+		$maxMdmg = $maxMdmg+($maxMdmg*$Skil[3]/100);
+		$Parmor = $Parmor-($Parmor*$Skil[3]/100);
+		$Marmor = $Marmor+($Marmor*$Skil[3]/100);
+		$HP2 = $HP2-($HP2*$Skil[3]/100);
+		$_SESSION["MAG"] = $Skil[3];}
+	if ($Skil[2] == "PHY"){
+		$minPdmg = $minPdmg+($minPdmg*$Skil[3]/100);
+		$maxPdmg = $maxPdmg+($maxPdmg*$Skil[3]/100);
+		$minMdmg = $minMdmg-($minMdmg*$Skil[3]/100);
+		$maxMdmg = $maxMdmg-($maxMdmg*$Skil[3]/100);
+		$Parmor = $Parmor+($Parmor*$Skil[3]/100);
+		$Marmor = $Marmor-($Marmor*$Skil[3]/100);
+		$HP2 = $HP2-($HP2*$Skil[3]/100);
+		$_SESSION["PHY"] = $Skil[3];}
 }
 
 

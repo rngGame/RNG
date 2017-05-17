@@ -147,8 +147,9 @@ WHERE `User` = '$User'";
 $result = mysqli_query($db, $order1);
 }
 
+unset($_SESSION["MODLVL"]);
 header("location:vale.php");
-
+die();
 }
 else{
 ?>

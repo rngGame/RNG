@@ -35,14 +35,14 @@ if ($uniqRO == 4){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt,mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Lord of Magick wand','Unique', '250', '1', '1','1', '1800', '2200', '1', '', '', '', '0', '200')";
+	   ('$HASH', 'Lord of Magick wand','Unique', '250', '1', '1','1', '1800', '2200', '1', '15', '', '', '0', '200')";
 }
 
 if ($uniqRO == 5){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity,ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Ringed Warrior Great Sword', 'Unique','250', '600', '1200', '10','1', '1', '100', '10', 'LL', '5', '0', '200')";
+	   ('$HASH', 'Ringed Warrior Great Sword', 'Unique','250', '600', '1200', '10','1', '1', '100', '16', 'LL', '5', '0', '200')";
 }
 
 //Kompas uniq

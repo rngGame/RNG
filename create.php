@@ -41,6 +41,8 @@ $Account = $_SESSION["Account"];
 $result = mysqli_query($db, "SELECT * FROM Achievments where User = '$Account'");
 $points = mysqli_num_rows($result);
 
+$points = $points + 1;
+
 $query2 = "INSERT INTO Points (User, Free, STR, INTE) VALUES ('$char', '$points', '0', '0')";
 $result = mysqli_query($db,$query2);
 

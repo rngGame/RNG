@@ -558,7 +558,12 @@ $ene = $_SESSION["ENERGY"];
 $reg = $_SESSION["ENREGEN"];
 if ($ene < $SKLm){
 	$enr = $reg;
-$ene = $ene + $enr;}
+	$ene = $ene + $enr;
+	
+	//ARM bonus WEP
+	if(isset($_SESSION["PHY"])){
+	$ene = round($ene * 1.2);}
+}
 $ene = round($ene,0);
 $_SESSION["ENERGY"] = $ene;
 

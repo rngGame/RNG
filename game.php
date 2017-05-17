@@ -578,6 +578,15 @@ else{
 		$Marmor = $Marmor-($Marmor*$Skil[3]/100);
 		$HP2 = $HP2-($HP2*$Skil[3]/100);
 		$_SESSION["PHY"] = $Skil[3];}
+	if ($Skil[2] == "BOD"){
+		$minPdmg = $minPdmg-($minPdmg*$Skil[3]/100);
+		$maxPdmg = $maxPdmg-($maxPdmg*$Skil[3]/100);
+		$minMdmg = $minMdmg-($minMdmg*$Skil[3]/100);
+		$maxMdmg = $maxMdmg-($maxMdmg*$Skil[3]/100);
+		$Parmor = $Parmor+($Parmor*$Skil[3]/100);
+		$Marmor = $Marmor+($Marmor*$Skil[3]/100);
+		$HP2 = $HP2+($HP2*$Skil[3]/100);
+		$_SESSION["BOD"] = $Skil[3];}
 }
 
 

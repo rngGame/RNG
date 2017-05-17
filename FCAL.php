@@ -616,7 +616,9 @@ if ($finalMonsHP <= 0){
 	VALUES ('$Account', 'RARE', '1')";
 	$result = mysqli_query($db, $order);}}
 	if (isset($_SESSION["OVER"])){
-	$_SESSION["OVERdmg"] = round($finalMonsHP * -1);}
+	$_SESSION["OVERdmg"] = round(2*($finalMonsHP * -1));}
+	if ($_SESSION["OVERdmg"] >= (5*$plvl*$mLVL)){
+		$_SESSION["OVERdmg"] = 5*$plvl*$mLVL;}
 	header($page); //reward
 	die();
 

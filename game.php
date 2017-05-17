@@ -541,6 +541,8 @@ else{
 		}
 		if ($Skil[2] == "EXP"){
 		$_SESSION["BOOM"] = $Skil[3];}
+		if ($Skil[2] == "OVK"){
+		$_SESSION["OVER"] = $Skil[3];}
 }
 
 

@@ -199,7 +199,7 @@ if ($WEPi["skill"] >= 1){
 	$img2 = "<img src='IMG/$SKILLS[pic]' style='width:33px'>";}
 
 
-$reward = "<b><font color='red'><br> -WEAPON !-</font><br><br>DROP:</b><br><br>Name: $name<br>
+$reward = "<b><font color='red'>-WEAPON !-</font><br><br>DROP:</b><br><br>Name: $name<br>
 LVL: <b><span class='$compareLVL'>$iLVL</span></b><br>
 Physical Dmg: <b><span class='$comparePHYS1'>$weaponPhysMin</span> ~ <span class='$comparePHYS2'>$weaponPhysMax</span> <font size='2'>(Avg. <span class='$comparePHYS'>$phyAVG1</span>)</font></b><br>
 Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='$compareMAG2'>$weaponMagMax</span> <font size='2'>(Avg. <span class='$compareMAG'>$magAVG1</span>)</font></b><br>

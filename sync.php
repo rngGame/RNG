@@ -6,6 +6,9 @@ include_once 'PHP/db.php';
 $User = $_SESSION["User"];
 $Account = $_SESSION["Account"];
 
+if (isset($_SESSION["OVERdmg"])){
+	$overdmg = $_SESSION["OVERdmg"];}
+
 $AC = mysqli_query($db,"SELECT * FROM account where user = '$Account' ");
 $AC = mysqli_fetch_row($AC);
 
@@ -278,6 +281,9 @@ else{
 	session_start();
 	$_SESSION["User"] = $User;
 	$_SESSION["Account"] = $Account;
+	
+	if (isset($overdmg)){
+		$_SESSION["OVERdmg"] = $overdmg;}
 	
 if ($ACC[3] > 19 and $ACC[10] == 0){
 	header("location:class.php");

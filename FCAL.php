@@ -109,6 +109,16 @@ if ($ACC[10] > 10){
 	$SUB = mysqli_fetch_row($SUB);
 };
 
+
+//overkill wepaon skill
+if (isset($_SESSION["OVER"])){
+	if (isset($_SESSION["OVERdmg"])){
+		$overkillDamage = $_SESSION["OVERdmg"];
+		$overkillText = "You did <font color='#F820D5'>$overkillDamage</font> overkill dmg.<br>";
+		unset($_SESSION["OVERdmg"]);
+	}
+}
+
 //GEM dmg (mag)
 if ($GEM[1] <> ""){
 	$gemDMG = ($magDMG * $GEM[5]/100);
@@ -307,8 +317,12 @@ if (isset($_SESSION["BOOM"])){
 			if ($explode > (500*$mLVL)){
 			$explode = (500*$mLVL);
 		}
+		$seldEXP = round($explode/$mLVL);
+		$HPin -= $seldEXP;
+		if ($HPin <= ($plvl*10)){
+			$HPin = ($plvl*10);}
 		$explode = round($explode);
-		$exptext = "Weapon <b>exploded</b> for <font color='#996600'>$explode</font> dmg.<br>";
+		$exptext = "Weapon <b>exploded</b> for <font color='#996600'>$explode</font> dmg.<br>Explode did <font color='red'>$seldEXP</font> dmg. to player<br>";
 	}
 	
 }
@@ -343,7 +357,7 @@ if ($ddam == 1){
 }
 
 //poision + thorns + petdmg
-$finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode;
+$finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode + $overkillDamage;
 
 //Confusion
 if ($Confusion == 1){
@@ -521,10 +535,10 @@ $_SESSION["LOG"] = "";
 	if ($SKL ==4){
 		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
 	}
 
 
@@ -601,6 +615,8 @@ if ($finalMonsHP <= 0){
 	$order = "INSERT INTO aStatus (User, Name, Status)
 	VALUES ('$Account', 'RARE', '1')";
 	$result = mysqli_query($db, $order);}}
+	if (isset($_SESSION["OVER"])){
+	$_SESSION["OVERdmg"] = round($finalMonsHP * -1);}
 	header($page); //reward
 	die();
 

@@ -122,11 +122,19 @@ include 'PHP/skillclas.php';
 
 echo "World Of RNG";
 echo "</header>";
-echo "<font size='-1'><p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
+echo "<div align='left'><font size='-1'>HP: <font size='3' color='Green'>$HPin  </font>";
 echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066ff'>~$avgM  </font>";
 echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> ";
 echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font>";
-echo "$ESStext </p></font>";
+echo "$ESStext </font>";
+
+if (isset($_SESSION["ISKILL"])){
+	echo " &nbsp &nbsp<div class='tooltip'  style='position: absolute';>
+	$_SESSION[ISKILL]
+	</div>";
+}
+
+echo "</div>";
 
 $panel = "right-panel"; //set panel for log
 

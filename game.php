@@ -533,6 +533,9 @@ else{
 	<img src='IMG/$Skil[6]' style='width:45px'> 
 	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
 </div>";
+	$_SESSION["ISKILL"] = "
+	<img src='IMG/$Skil[6]' style='width:25px'> 
+	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>";
 	if ($Skil[2] == "DMG"){
 		$minPdmg += ($minPdmg*$Skil[3]/100);
 		$maxPdmg += ($maxPdmg*$Skil[3]/100);

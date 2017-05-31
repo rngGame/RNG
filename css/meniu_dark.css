@@ -1065,6 +1065,24 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     left: 8px;
 }
 
+/* TYPE COLORS */
+
+.Fire{
+	color:#ED0E11;
+}
+.Ice{
+	color:#0FEFDD;
+}
+.Lightning{
+	color:#E0E516;
+}
+.Light{
+	color:#B3FFED;
+}
+.Dark{
+	color:#8B0650;
+}
+
 
 
 

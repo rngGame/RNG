@@ -157,6 +157,11 @@ if ($HP > 10000000000){
     $_SESSION["MonsLVL"] = round($mLVL);
     $_SESSION["MonsIMG"] = $monsterIMG;
 	
+	//monster type
+	$sub = array("Fire", "Ice", "Lightning", "Light", "Dark");
+	$subn = array_rand($sub,1);
+	$_SESSION["MonsTYP"] = $sub[$subn];
+	
 //create for party
 if ($checkForParty == 1){
 	

@@ -158,7 +158,7 @@ if ($HP > 10000000000){
     $_SESSION["MonsIMG"] = $monsterIMG;
 	
 	//monster type
-	$sub = array("Fire", "Ice", "Lightning", "Light", "Dark");
+	$sub = array("Fire", "Ice", "Lightning", "Light", "Dark", "Soul");
 	$subn = array_rand($sub,1);
 	$_SESSION["MonsTYP"] = $sub[$subn];
 	

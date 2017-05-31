@@ -131,41 +131,70 @@ if ($GEM[1] <> ""){
 
 if ($GEM[2] == "Fire" and $mTYP == "Ice"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Fire" and $mTYP == "Lightning"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
 if ($GEM[2] == "Ice" and $mTYP == "Lightning"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Ice" and $mTYP == "Fire"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
 if ($GEM[2] == "Lightning" and $mTYP == "Fire"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Lightning" and $mTYP == "Ice"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
 
 if ($GEM[2] == "Light" and $mTYP == "Soul"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Light" and $mTYP == "Dark"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
 if ($GEM[2] == "Soul" and $mTYP == "Dark"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Soul" and $mTYP == "Light"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
 if ($GEM[2] == "Dark" and $mTYP == "Light"){
 	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;}
+	$monDMGmag *= 1.2;
+	$gemDMG *= 0.5;
+	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
 if ($GEM[2] == "Dark" and $mTYP == "Soul"){
 	$physDMG *= 1.2;
-	$magDMG *= 1.2;}
+	$magDMG *= 1.2;
+	$gemDMG *= 2;
+	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
+	
+	//redo text if passis dmg type
+if ($GEM[1] <> ""){
+	$gemDMG = round($gemDMG);
+	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 
 
 	
@@ -617,10 +646,10 @@ $_SESSION["LOG"] = "";
 	if ($SKL ==4){
 		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
 	}
 
 

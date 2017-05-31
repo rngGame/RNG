@@ -37,7 +37,7 @@ function itemDrop($db,$user,$drop,$MLVL){
     
     if($drop=="all"){
         $textMessage.="Drop not decided Choosing one at random \r\n";
-        $check=rand(1,3);
+        $check=rand(1,4);
         if($check==1){
             $drop ="talisman";
         }
@@ -47,9 +47,12 @@ function itemDrop($db,$user,$drop,$MLVL){
         else if($check==3){
             $drop="weapon";
         }
+		 else if($check==4){
+            $drop="skill";
+        }
         $textMessage.="Chosen $drop \r\n";
     }
-    if($drop=="armor"||$drop=="talisman"||$drop=="weapon"){
+    if($drop=="armor"||$drop=="talisman"||$drop=="weapon"||$drop=="skill"){
         $textMessage.="Starting Process \r\n";
 
         $preTable="prefixwep";
@@ -67,6 +70,11 @@ function itemDrop($db,$user,$drop,$MLVL){
             $baseTable="basewep";
 			$preTable="prefixwep";
 			$part = "WEP";
+        }
+		if($drop=="skill"){
+            $baseTable="BaseSkil";
+			$preTable="prefixwep";
+			$part = "SKL";
         }
         $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
 		
@@ -135,6 +143,11 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $iLVL = $Base[2]; //base level
                 $valueDMG = $Base[3]; //base dmg
             }
+			if($drop=="skill"){
+                $iLVL = round(rand($Base[2]*0.8,$Base[2]*1.2)); //base level
+                $Buff = round(rand($Base[2]*0.8,$Base[2]*1.2)); //base buff
+				$SkillID = $Base[3];
+            }
             if($drop=="talisman"){
                 $iLVL = $Base[2];//base lvl
                 $valueDMG = $Base[3];//base dmg 
@@ -161,7 +174,13 @@ function itemDrop($db,$user,$drop,$MLVL){
             //Prefix for weapons
             if($rngPre>3000 && $drop=="weapon"){
                 $namePre=$Pre[1];
-                $valueDMG+=$Pre[3];
+                $Buff+=$Pre[2];
+                $iLVL+=$Pre[2];
+            }
+			//Prefix for skill
+            if($rngPre>3000 && $drop=="skill"){
+                $namePre=$Pre[1];
+                $Buff+=$Pre[3];
                 $iLVL+=$Pre[2];
             }
             $textMessage.="Prefix done for $drop Prefixes: Name $namePre >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
@@ -171,6 +190,12 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueDMG +=$Sub[3];
                 $valueHP +=$valueHP*$Sub[3]/200;
                 $valueXP *=1.2;
+                $iLVL +=$Sub[2];
+            }
+			//Subfix for skill
+            if($rngSub>3000 && $drop=="skill"){
+                $nameSub = "of $Sub[1]";
+                $Buff +=$Sub[2];
                 $iLVL +=$Sub[2];
             }
             //Subfixes for armor
@@ -207,6 +232,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueArmorP += $valueArmorP * $typeBonus;
 				$valueArmorM += $valueArmorM * $typeBonus;
                 $valueHP += $valueHP * $typeBonus;
+				$Buff += $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
             else if($rngType < $Type2[2]*200){ //checks for Type rng second time
@@ -216,6 +242,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $valueArmorP += $valueArmorP * $typeBonus;
 				$valueArmorM += $valueArmorM * $typeBonus;
                 $valueHP += $valueHP * $typeBonus;
+				$Buff += $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
             $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
@@ -495,7 +522,12 @@ function itemDrop($db,$user,$drop,$MLVL){
 			else if($ev == 1 and $iLVL > $min  and $hashClaimed != 1 and $weaponCrit >= 1 and $weaponPhysMin >= 1 and $weaponMagMin >=1 and $max >= $iLVL){
 				$rel = 1;
 			}
-        }
+		}
+		 if($drop=="skill"){
+            if($hashClaimed != 1 and $Buff >= 1 and $iLVL < $max){
+				 $rel = 1;
+			}
+		 }
 		
 
 
@@ -515,6 +547,8 @@ function itemDrop($db,$user,$drop,$MLVL){
 			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $Effect, $EffectChance);}
 		if($drop=="talisman"){ 
 			 return array ($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus);}
+		if($drop=="skill"){ 
+			 return array ($HASH, $name, $typeName, $iLVL, $Buff, $SkillID);}
 		
 		
     }

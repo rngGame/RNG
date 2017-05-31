@@ -16,7 +16,7 @@
 <file name="Equip.php" server="ftp.miniforums.org" local="131393974260940031" remote="131393650200000000" Dst="2" />
 <file name="fcalcp.php" server="ftp.miniforums.org" local="131349460368223201" remote="131308354200000000" Dst="1" />
 <file name="fightP.php" server="ftp.miniforums.org" local="131349460377847455" remote="131309436600000000" Dst="1" />
-<file name="FightT.php" server="ftp.miniforums.org" local="131406952702199391" remote="131406628200000000" Dst="2" />
+<file name="FightT.php" server="ftp.miniforums.org" local="131407018264110242" remote="131406694200000000" Dst="2" />
 <file name="FightTB.php" server="ftp.miniforums.org" local="131387971273375075" remote="131387647200000000" Dst="2" />
 <file name="fightTP.php" server="ftp.miniforums.org" local="131349460383101981" remote="131337154800000000" Dst="1" />
 <file name="index.php" server="ftp.miniforums.org" local="131349460409164759" remote="131299692600000000" Dst="1" />
@@ -61,7 +61,7 @@
 <file name="uniqR.php" server="ftp.miniforums.org" local="131374589948622784" remote="131374265400000000" Dst="2" />
 <file name="auctionhouse.php" server="ftp.miniforums.org" local="131387185123007455" remote="131386860600000000" Dst="2" />
 <file name="buy.php" server="ftp.miniforums.org" local="131365555071502557" remote="131365230600000000" Dst="2" />
-<file name="game.php" server="ftp.miniforums.org" local="131406941540063080" remote="131406617400000000" Dst="2" />
+<file name="game.php" server="ftp.miniforums.org" local="131406995444867554" remote="131406671400000000" Dst="2" />
 <file name="fightNew.php" server="ftp.miniforums.org" local="131406966059103369" remote="131406642000000000" Dst="2" />
 <file name="PartyMonsters_upd.php" server="ftp.miniforums.org" local="131387969842954376" remote="131387645400000000" Dst="2" />
 <file name="template.php" server="ftp.miniforums.org" local="131406911607656437" remote="131406587400000000" Dst="2" />
@@ -71,4 +71,5 @@
 <file name="ItemPass.php" server="ftp.miniforums.org" local="131384652671400978" remote="131384328600000000" Dst="2" />
 <file name="examp.php" server="ftp.miniforums.org" local="131383719650134640" remote="131383395600000000" Dst="2" />
 <file name="top.php" server="ftp.miniforums.org" local="131387409184358458" remote="131387085000000000" Dst="2" />
+<file name="rewskl.php" server="ftp.miniforums.org" local="131407024750499402" remote="131406700200000000" Dst="2" />
 </dwsync>

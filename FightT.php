@@ -29,7 +29,9 @@ $ACC = mysqli_fetch_row($ACC);
 
 //set what type reward to get
 $type = rand(1,200);
-if ($type > 140){
+if ($type > 180){
+	$_SESSION["PAGE"] = "location:rewskl.php";}
+else if ($type > 140){
 	$_SESSION["PAGE"] = "location:newi.php";}
 else if ($type > 60){
 	$_SESSION["PAGE"] = "location:rewarm.php";} 

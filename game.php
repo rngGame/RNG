@@ -119,6 +119,12 @@ $WEP = mysqli_fetch_row($WEP); //by colum number
 
 $_SESSION["CURRENTWHASH"] = $WEP[0];
 
+//SKill item
+$EQPS = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'SKL' AND Equiped = '1' ");
+$EQPS = mysqli_fetch_row($EQPS);
+$SKL = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$EQPS[2]' ");
+$SKLn = mysqli_fetch_assoc($SKL); //by colum name
+
 
 $bonusHL = 0;
 $bonusNO = 0;
@@ -364,6 +370,13 @@ $ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$WEPn[plus]'
 $ENC = mysqli_fetch_row($ENC);
 if ($ENC[2] > 0){
 $enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";
+}
+
+//skill
+$ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$SKLn[plus]'");
+$ENC = mysqli_fetch_row($ENC);
+if ($ENC[2] > 0){
+$enchtexSK = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";
 }
 
 //body
@@ -747,6 +760,21 @@ $ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
 if ($ESregen <= 1){
 	$ESregen = 1;}
 $_SESSION["ESregen"] = $ESregen;
+
+//Skill Item
+if ($SKLn[Name] <> ""){
+	$weaponSkill="<img src='IMG/pack/$SKLn[IMG]' width='45px' height='45px'><span class='tooltiptext'>
+	<b class='item$SKLn[Rarity]'>$SKLn[Name] + $SKLn[plus]</b>
+	<br>
+	<b>$SKLn[ilvl] lvl.</b>
+	<br>
+	<b>$SKLn[Bonus] % buff.</b>
+	$enchtexSK
+	</span>";
+}
+else{
+$weaponSkill="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
+}
 
 if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "LL"){
@@ -1712,6 +1740,9 @@ $equipTemplate ="
 <img src='IMG/body.png' id='equipShadow'>
 <div id='equipWeapon' class='tooltip'>
 	$weaponTemplate
+</div>
+<div id='equipSKill' class='tooltip'>
+	$weaponSkill
 </div>
 <div id='equipBody' class='tooltip'>
 	$bodyTemplate

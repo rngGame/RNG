@@ -50,6 +50,7 @@ $monDMGmag = rand($minMagMondmg,$maxMAgMondmg); //monter m dmg
 
 $monHP = $_SESSION["MonsHP"]; //monster hp
 $mLVL = $_SESSION["MonsLVL"]; //monster lvl
+$mTYP = $_SESSION["MonsTYP"]; //monster type
 
 $HPin = $_SESSION["HP"]; //player hp
 $plvl = $_SESSION["plvl"]; //player lvl
@@ -124,6 +125,50 @@ if ($GEM[1] <> ""){
 	$gemDMG = ($magDMG * $GEM[5]/100);
 	$gemDMG  = round($gemDMG,0);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
+	
+//GEM OTHER STUFF
+
+
+if ($GEM[2] == "Fire" and $mTYP == "Ice"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Fire" and $mTYP == "Lightning"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+if ($GEM[2] == "Ice" and $mTYP == "Lightning"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Ice" and $mTYP == "Fire"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+if ($GEM[2] == "Lightning" and $mTYP == "Fire"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Lightning" and $mTYP == "Ice"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+
+if ($GEM[2] == "Light" and $mTYP == "Soul"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Light" and $mTYP == "Dark"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+if ($GEM[2] == "Soul" and $mTYP == "Dark"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Soul" and $mTYP == "Light"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+if ($GEM[2] == "Dark" and $mTYP == "Light"){
+	$monDMG *= 1.2;
+	$monDMGmag *= 1.2;}
+if ($GEM[2] == "Dark" and $mTYP == "Soul"){
+	$physDMG *= 1.2;
+	$magDMG *= 1.2;}
+
+
+	
 
 
 //add some bonus dmg to cryt skill

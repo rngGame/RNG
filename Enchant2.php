@@ -48,6 +48,10 @@ if ($TYPE == "ACS"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
 }
+if ($TYPE == "SKL"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
 
 if (isset($_SESSION["ENCt"])){
 $_SESSION["ENname"] = $ITM["Name"];
@@ -70,6 +74,11 @@ WHERE `HASH` = '$HASH'";
 }
 if ($TYPE == "ACS"){
 $order2 = "UPDATE DropsAcs
+SET plus = '$enc'
+WHERE `HASH` = '$HASH'";
+}
+if ($TYPE == "SKL"){
+$order2 = "UPDATE DropsSkl
 SET plus = '$enc'
 WHERE `HASH` = '$HASH'";
 }

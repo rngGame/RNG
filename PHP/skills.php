@@ -7,6 +7,9 @@ if ($SKL ==1){
 	if ($SUB[5] == "GLAD"){
 		$sk1v = rand(1.75,2.25);}
 	$physDMG = $physDMG * $sk1v;
+	if ($_SESSION["FRAGID"] == 1){
+		$physDMG +=  round($physDMG * $_SESSION["FRAGPOWER"]);
+	}
 	$ene = $ene - 30;
 	$_SESSION["ENERGY"] = $ene;
 };
@@ -19,6 +22,11 @@ if ($SKL == 2){
 	$perc = 15;}
 	if ($SUB[5] == "HEAL"){
 	$perc = 20;}
+	
+	if ($_SESSION["FRAGID"] == 3){
+		$perc +=  round($perc * $_SESSION["FRAGPOWER"]);
+	}	
+	
 	$HPi = $HPin;
 	$HPin = $HPin + ($HPO*$perc/100);
 	$HPi = $HPin - $HPi;
@@ -36,6 +44,12 @@ if ($SKL ==3){
 		$s = rand(10,25);}
 	$minPdmg = $minPdmg +($minPdmg * $s/100);
 	$maxPdmg = $maxPdmg +($maxPdmg * $s/100);
+	
+	if ($_SESSION["FRAGID"] == 3){
+		$minPdmg +=  round($minPdmg * $_SESSION["FRAGPOWER"]);
+		$maxPdmg +=  round($maxPdmg * $_SESSION["FRAGPOWER"]);
+	}	
+	
 	$minPdmg = round($minPdmg);
 	$maxPdmg = round($maxPdmg);
 	$ene = $ene - 50;
@@ -106,7 +120,9 @@ if ($SUB[5] == "SLASH"){
 		$physDMG = $physDMG + $physDMGc;}
 	}
 		
-		
+	if ($_SESSION["FRAGID"] == 4){
+		$physDMG +=  round($physDMG * $_SESSION["FRAGPOWER"]);
+	}	
 		
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'COM'");
 	$ACH = mysqli_fetch_row($ACH);
@@ -143,6 +159,10 @@ if ($SKL ==5){
 	$monsRef = ($monDMG * $calcref / 100) + (($Armor + $ArmorM) *1.3);
 	$dmgmitig = $calcref;}
 	
+	if ($_SESSION["FRAGID"] == 5){
+		$monsRef +=  round($monsRef * $_SESSION["FRAGPOWER"]);
+	}	
+	
 	$monDMG = round($monDMG - $dmgmitig);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$User' and Name = 'REF'");
 	$ACH = mysqli_fetch_row($ACH);
@@ -171,6 +191,11 @@ if ($SKL ==31){
 		if ($CLS[6] == "FIRE"){
 		$fB = rand(100,140);}
 	$fball = round($magDMG + ($magDMG *  $fB /100));
+	
+	if ($_SESSION["FRAGID"] == 31){
+		$fball +=  round($fball * $_SESSION["FRAGPOWER"]);
+	}
+	
 		$ene = $ene - 30;
 	$_SESSION["ENERGY"] = $ene;
 };
@@ -183,11 +208,16 @@ if ($SKL ==32){
 		if ($SUB[5] == "SWRD" and $CRT <= $CRYT+$WEPn["Cryt"]){
 			$comb = round(($magDMG*2.2) + ($physDMG*1.2));
 			$comb +=($comb*$CRYTD/100);
+		
 			$combtex="<b><font color='red'>Combined damage did crytical strike</font></b><br>";
 		}
 		
-		//if dmgg exceds 30k
-		if ($comb > 150000){
+			if ($_SESSION["FRAGID"] == 32){
+				$comb +=  round($comb * $_SESSION["FRAGPOWER"]);
+			}
+		
+		//if dmgg exceds 300k
+		if ($comb > 300000){
 			$comb = $comb * rand(1,10) /100;
 			$combtex="<b>POWER WAS SO GREAT TO HANDLE !</font></b><br>";
 		}
@@ -208,6 +238,11 @@ if ($SKL ==33){
 			$fmagDMG = (rand($minMdmg,$maxMdmg) * 0.11) + $fmagDMG;
 			$xtim = $xtim + 1;
 		}
+		
+			if ($_SESSION["FRAGID"] == 33){
+				$fmagDMG +=  round($fmagDMG * $_SESSION["FRAGPOWER"]);
+			}		
+		
 		$IC = $IC + 1;
 	}
 		$ene = $ene - 330;
@@ -248,6 +283,14 @@ if ($SKL ==33){
 				$_SESSION["PETMINDMG"] = round($minMdmg * 50 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 50 / 100);
 				}
+				
+		if ($_SESSION["FRAGID"] == 34){
+			$_SESSION["PETHP"] +=  round($_SESSION["PETHP"] * $_SESSION["FRAGPOWER"]);
+			$_SESSION["PETMINDMG"] +=  round($_SESSION["PETMINDMG"] * $_SESSION["FRAGPOWER"]);
+			$_SESSION["PETMAXDMG"] +=  round($_SESSION["PETMAXDMG"] * $_SESSION["FRAGPOWER"]);
+		}		
+
+				
 			$pettext = "Pet summoned !<br>";
 			$_SESSION["PET"] = 1;
 			$extra = $magDMG;
@@ -339,6 +382,13 @@ if ($SKL == 35){
 	$maxPdmg = $maxPdmg + $bonusspowerP;
 	$minMdmg = $minMdmg + $bonusspowerM;
 	$maxMdmg = $maxMdmg + $bonusspowerM;
+	
+	if ($_SESSION["FRAGID"] == 35){
+		$minPdmg +=  round($minPdmg * $_SESSION["FRAGPOWER"]);
+		$maxPdmg +=  round($maxPdmg * $_SESSION["FRAGPOWER"]);
+		$minMdmg +=  round($minMdmg * $_SESSION["FRAGPOWER"]);
+		$maxMdmg +=  round($maxMdmg * $_SESSION["FRAGPOWER"]);
+	}		
 
 	$_SESSION["DMGPmin"] = $minPdmg;
 	$_SESSION["DMGPmax"] = $maxPdmg;
@@ -367,6 +417,11 @@ if ($SKL == 36){
 		}
 	$HPin = $HPin - $dmgsacr;
 	$finalsacriface = round(($dmgsacr*10) * $sacrifrand / 50);
+	
+			if ($_SESSION["FRAGID"] == 36){
+				$finalsacriface +=  round($finalsacriface * $_SESSION["FRAGPOWER"]);
+			}	
+	
 	$finaltext = "<b>You sacrificed $dmgsacr and delt $finalsacriface damage !</b><br>";
 	
 	$ene = $ene - 100;

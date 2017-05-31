@@ -55,6 +55,9 @@ if (isset($_POST['bagsell'])) {
 	if ($ListS[1] == "ITM"){
 	$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$ListS[2]'"); //Item Usega
 	$ITMs = mysqli_fetch_assoc($ITM);}	
+	if ($ListS[1] == "SKL"){
+	$ITM = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$ListS[2]'"); //Item Usega
+	$ITMs = mysqli_fetch_assoc($ITM);}	
 	
 	if ($ITMs["Rarity"] == "Unique"){
 		$shards = 30;
@@ -99,6 +102,9 @@ if (isset($_POST['bagsell'])) {
 	mysqli_query($db,$sql2);}
 	if ($ListS[1] == "ITM"){
 	$sql2="DELETE FROM DropsItm WHERE HASH='$ListS[2]'";
+	mysqli_query($db,$sql2);}
+	if ($ListS[1] == "SKL"){
+	$sql2="DELETE FROM DropsSkl WHERE HASH='$ListS[2]'";
 	mysqli_query($db,$sql2);}
 
 	} //while endas !
@@ -245,6 +251,10 @@ if ($Type == "ACS"){
 	$EQP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$new'"); //select new Accsesories item
 	$EQP = mysqli_fetch_row($EQP);
 }
+if ($Type == "SKL"){
+	$EQP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$new'"); //select new Accsesories item
+	$EQP = mysqli_fetch_row($EQP);
+}
 	
 	
 	
@@ -268,8 +278,12 @@ if ($Type == "ACS"){
 	$CURR = mysqli_fetch_row($CURR);
 	}
 	
+	if ($Type == "SKL" and !isset($CURR)){
+	$CURR = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$EQPs[2]'");
+	$CURR = mysqli_fetch_row($CURR);
 	}
 	
+	}
 
     
 	
@@ -298,6 +312,9 @@ if ($Type == "ACS"){
 	$WEPn = mysqli_fetch_assoc($WEP);}
 	if ($Type == "ITM"){
 	$WEP = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$new' ");
+	$WEPn = mysqli_fetch_assoc($WEP);}
+	if ($Type == "SKL"){
+	$WEP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$new' ");
 	$WEPn = mysqli_fetch_assoc($WEP);}
 	
 	if ($WEPn["Rarity"] == "Unique"){
@@ -342,6 +359,10 @@ mysqli_query($db,$sql2);}
 
 if ($Type == "ITM"){
 $sql2="DELETE FROM DropsItm WHERE HASH='$new'";
+mysqli_query($db,$sql2);}
+
+if ($Type == "SKL"){
+$sql2="DELETE FROM DropsSkl WHERE HASH='$new'";
 mysqli_query($db,$sql2);}
 
 } else {

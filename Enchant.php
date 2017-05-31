@@ -37,7 +37,7 @@ $TYPE = $_SESSION["TYPE"];
 //stuff for enchant dust
 if (isset($_SESSION["ENCt"])){
 
-$ts1 = array("WEP", "ARM", "ACS");
+$ts1 = array("WEP", "SKL", "ARM", "ACS");
 $ts2 = array_rand($ts1,1);
 $TYPE = $ts1[$ts2];
 
@@ -51,6 +51,9 @@ while ($HASH == "" and $l <> 100){
 
 if ($TYPE == "WEP"){
 	$HASH = $_SESSION["CURRENTWHASH"];
+}
+if ($TYPE == "SKL"){
+	$HASH = $_SESSION["CURRENTSKLHASH"];
 }
 if ($TYPE == "ARM"){
 	$so = rand (1,3);
@@ -90,6 +93,10 @@ $ITM = mysqli_fetch_assoc($WEP);
 }
 if ($TYPE == "ACS"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
+if ($TYPE == "SKL"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
 }
 

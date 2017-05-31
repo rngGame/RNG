@@ -59,15 +59,27 @@ $_SESSION["GoldRew"] = $moneyRew;
 $moneySel = ($ACC[3] + $iLVL) * 10; //gold for wep
 $_SESSION["Gold"] = $moneySel;
 
+//current
+if (isset($_SESSION["CURRENTSKLHASH"])){
+$CurrentHASH = $_SESSION["CURRENTSKLHASH"];
 
+$ACS = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$CurrentHASH' ");
+$ACSi = mysqli_fetch_assoc($ACS);
+
+$text = "<br><img src='IMG/pack/$ACSi[IMG]' height='45px'><br>Name: $ACSi[Name]<br>
+Item lvl: <b><span class='$compareLVL'>$ACSi[ilvl]</span></b><br>
+Item Bonus: $ACSi[Bonus]<br>
+<br>";
+}
 
 //create Reward Template
-$reward = "<b><font class='lightblue'><br> -SKILL FRAGMENT !- </font><br><br>DROP:</b><br><img src='IMG/pack/$Icon' height='45px'><br>Name: $name<br>
+$reward = "<b><font color='lightblue'><br> -SKILL FRAGMENT !- </font><br><br>DROP:</b><br><img src='IMG/pack/$Icon' height='45px'><br>Name: $name<br>
 Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
 Item Bonus: $Bonus<br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br>
-<br>";
+$text
+";
 
 
 $_SESSION["Reward"] = "$reward";

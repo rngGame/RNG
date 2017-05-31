@@ -214,6 +214,12 @@ if ($SKL == 6){
 	$CRYTD = $CRYTD + 20;}
 	if ($SUB[5] == "CRYTE"){
 	$CRYTD = $CRYTD + 80;}
+	
+	if ($_SESSION["FRAGID"] == 6){
+		$CRYTD +=  round($CRYTD * $_SESSION["FRAGPOWER"]);
+		$CRYT +=  round($CRYT * $_SESSION["FRAGPOWER"]);
+	}	
+	
 	$ene = $ene - 70;
 	$_SESSION["ENERGY"] = $ene;
 	}
@@ -350,6 +356,10 @@ if ($SKL ==7 or $pos == 1){
 	//if poison dmg <0
 	if ($poison <= 0){
 		$poison = 0;}
+		
+	if ($_SESSION["FRAGID"] == 7){
+		$poison +=  round($poison * $_SESSION["FRAGPOWER"]);
+	}	
 		
 	$poison = round($poison,0);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'POS'");

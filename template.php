@@ -116,51 +116,73 @@ echo '
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("backpackSK").style.display = "block";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
 			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";
 			document.cookie = "backpack=0";}
   			if(elem.value == 1){
      		document.getElementById("backpackWP").style.display = "block";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "inline";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
 			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";
 			document.cookie = "backpack=1";}
 			if(elem.value == 2){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "inline";
 			document.getElementById("sellAC").style.display = "none";
 			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";
 			document.cookie = "backpack=2";}
 			if(elem.value == 3){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "inline";
 			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";
 			document.cookie = "backpack=3";}
 			if(elem.value == 4){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
 			document.getElementById("sellIT").style.display = "inline";
+			document.getElementById("sellSK").style.display = "none";
 			document.cookie = "backpack=4";}
+			if(elem.value == 5){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "block";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "inline";
+			document.cookie = "backpack=5";}
 }
 
 		window.onload = function() {
@@ -169,46 +191,67 @@ echo '
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("backpackSK").style.display = "block";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
-			document.getElementById("sellIT").style.display = "none";}
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";}
    		 if(document.getElementById("test").value == 1){
      		document.getElementById("backpackWP").style.display = "block";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "inline";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
-			document.getElementById("sellIT").style.display = "none";}
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";}
 		 if(document.getElementById("test").value == 2){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "block";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "inline";
 			document.getElementById("sellAC").style.display = "none";
-			document.getElementById("sellIT").style.display = "none";}
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";}
 		 if(document.getElementById("test").value == 3){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "block";
 			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "inline";
-			document.getElementById("sellIT").style.display = "none";}
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "none";}
 		 if(document.getElementById("test").value == 4){
      		document.getElementById("backpackWP").style.display = "none";
 			document.getElementById("backpackAR").style.display = "none";
 			document.getElementById("backpackAC").style.display = "none";
 			document.getElementById("backpackIT").style.display = "block";
+			document.getElementById("backpackSK").style.display = "none";
 			document.getElementById("sellWP").style.display = "none";
 			document.getElementById("sellAR").style.display = "none";
 			document.getElementById("sellAC").style.display = "none";
-			document.getElementById("sellIT").style.display = "inline";}
+			document.getElementById("sellIT").style.display = "inline";
+			document.getElementById("sellSK").style.display = "none";}
+		if(document.getElementById("test").value == 5){
+     		document.getElementById("backpackWP").style.display = "none";
+			document.getElementById("backpackAR").style.display = "none";
+			document.getElementById("backpackAC").style.display = "none";
+			document.getElementById("backpackIT").style.display = "none";
+			document.getElementById("backpackSK").style.display = "block";
+			document.getElementById("sellWP").style.display = "none";
+			document.getElementById("sellAR").style.display = "none";
+			document.getElementById("sellAC").style.display = "none";
+			document.getElementById("sellIT").style.display = "none";
+			document.getElementById("sellSK").style.display = "inline";}
 };
 
    		function submitResult() {

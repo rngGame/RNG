@@ -125,6 +125,9 @@ $EQPS = mysqli_fetch_row($EQPS);
 $SKL = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$EQPS[2]' ");
 $SKLn = mysqli_fetch_assoc($SKL); //by colum name
 
+$_SESSION["CURRENTSKLHASH"] = $SKLn[HASH];
+$_SESSION["FRAGID"] = $SKLn[Skill];
+$_SESSION["FRAGPOWER"] = $SKLn[Bonus]/100;
 
 $bonusHL = 0;
 $bonusNO = 0;
@@ -468,7 +471,7 @@ if (isset($dmgsub)){
 	$maxMdmg = round(($maxMdmg*$dmgsub),0);
 }
 
-$lwa = $ACC[3] + $WEPn["ilvl"] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
+$lwa = $ACC[3] + $WEPn["ilvl"] + $SKLn[ilvl] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
 $order = "UPDATE characters
 SET ILVL = '$lwa'
@@ -763,14 +766,17 @@ $_SESSION["ESregen"] = $ESregen;
 
 //Skill Item
 if ($SKLn[Name] <> ""){
-	$weaponSkill="<img src='IMG/pack/$SKLn[IMG]' width='45px' height='45px'><span class='tooltiptext'>
+	$weaponSkill="<form method='post' action='Enchant.php'>
+		<input type='text' name='HASH' value='$SKLn[HASH]' style='display:none'>
+		<input type='text' name='TYPE' value='SKL' style='display:none'>
+		<input type='image' class='item".$SKLn[Rarity]."' src='IMG/pack/$SKLn[IMG]' width='45px' height='45px'><span class='tooltiptext'>
 	<b class='item$SKLn[Rarity]'>$SKLn[Name] + $SKLn[plus]</b>
 	<br>
 	<b>$SKLn[ilvl] lvl.</b>
 	<br>
 	<b>$SKLn[Bonus] % buff.</b>
 	$enchtexSK
-	</span>";
+	</span></form>";
 }
 else{
 $weaponSkill="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";
@@ -1423,6 +1429,65 @@ while ($List1 = mysqli_fetch_array($List)){
 	}
 	
 }
+//SKIL FRAGMENTS
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='SKL'");
+while ($List1 = mysqli_fetch_array($List)){	
+	if ($List1[1] == "SKL"){
+		$SKLI = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$List1[2]' ");
+		$SKLIn = mysqli_fetch_assoc($SKLI); //armor by colum row
+		$sell = ($SKLIn["ilvl"] + $ACC[3]) *10;
+
+		$eft = 1 + $eft;
+			
+		if ($SKLIn["Rarity"] == "Unique"){
+			$unEf[$eft] = "class='awesome'";
+			$sellText="$sell Gold and 30 Shards.";
+		}
+		else{
+			$unEf[$eft] ="";
+			$sellText="$sell Gold.";
+		}
+
+
+		$backpackTemplateSK.=  "
+		<div class='items'>
+		<div class='tooltip'>
+			<img src='IMG/pack/".$SKLIn[IMG]."' width='45px' height='45px' class='item".$SKLIn[Rarity]."'>
+			<span class='tooltiptext'>
+				<div class='inventoryStats'>
+					<b class='$SKLIn[Rarty]'>$SKLIn[Name]</b>
+					<br>
+					Item lvl: <b><span class='$compareLVL'>$SKLIn[ilvl]</span></b><br>
+					Skill bonus: $SKLIn[Bonus]%
+					<br>
+					Enchant +<span class='$acsCompEnch'>$SKLIn[plus]</span>
+				</div>
+				</span>
+		</div>
+		<div class='inventoryActions'>
+				<form method='post' class='inventor' action='Equip.php'>
+					<input style='display:none' type='submit' name='Eqip' value='$SKLIn[HASH]' placeholder='lvl'>
+					<input type='text' name='TYPE' value='SKL' style='display:none'>
+		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$SKLIn[HASH]'>
+					<input style='display:none' type='submit' name='Sell' value='$SKLIn[HASH]' placeholder='lvl'>
+						<div class='tooltip'>
+							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$SKLIn[HASH]'>
+							<span class='tooltiptext'>$sellText</span>
+						</div>
+				</form>
+				<input id ='button$eft' type='image' class='inventoryButton' src='IMG/pack/TRADE.png' onclick='show($eft)'>			  
+				<form id='asd$eft' style='display:none' method='post'  action='auctionhouse.php' class='auctionbox'>
+					Asking price: <input type='number' name='price' value='0'>
+					<input type='text' name='HASH' value='$SKLIn[HASH]' style='display:none'>
+					<input type='text' name='TYPE' value='SKL' style='display:none'>
+		 			<input type='submit' value='Submit'>
+				</form>
+			</div>
+	</div>";
+	}
+	
+}
+//ITEMS
 $List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Equiped = '0'  AND Part ='ITM'");
 while ($List1 = mysqli_fetch_array($List)){	
 	if ($List1[1] == "ITM"){
@@ -1885,32 +1950,44 @@ if ($selected == 0){
 <option value='1'>Weapons</option>
 <option value='2'>Armors</option>
 <option value='3'>Acsesories</option>
-<option value='4'>Items</option>";}
+<option value='4'>Items</option>
+<option value='5'>Skills frag.</option>";}
 if ($selected == 1){
 	$opt = "<option value='0'>No sorting</option>
 <option value='1' selected>Weapons</option>
 <option value='2'>Armors</option>
 <option value='3'>Acsesories</option>
-<option value='4'>Items</option>";}
+<option value='4'>Items</option>
+<option value='5'>Skills frag.</option>";}
 
 if ($selected == 2){
 	$opt = "<option value='0'>No sorting</option>
 <option value='1'>Weapons</option>
 <option value='2' selected>Armors</option>
 <option value='3'>Acsesories</option>
-<option value='4'>Items</option>";}
+<option value='4'>Items</option>
+<option value='5'>Skills frag.</option>";}
 if ($selected == 3){
 	$opt = "<option value='0'>No sorting</option>
 <option value='1'>Weapons</option>
 <option value='2'>Armors</option>
 <option value='3' selected>Acsesories</option>
-<option value='4'>Items</option>";}
+<option value='4'>Items</option>
+<option value='5'>Skills frag.</option>";}
 if ($selected == 4){
 	$opt = "<option value='0'>No sorting</option>
 <option value='1'>Weapons</option>
 <option value='2'>Armors</option>
 <option value='3'>Acsesories</option>
-<option value='4' selected>Items</option>";}
+<option value='4' selected>Items</option>
+<option value='5'>Skills frag.</option>";}
+if ($selected == 5){
+	$opt = "<option value='0'>No sorting</option>
+<option value='1'>Weapons</option>
+<option value='2'>Armors</option>
+<option value='3'>Acsesories</option>
+<option value='4'>Items</option>
+<option value='5' selected>Skills frag.</option>";}
 
 //sell all buttons
 $sellBut = "<section class='actionButtonsSE'>
@@ -1944,6 +2021,14 @@ $sellBut3 = "<section class='actionButtonsSE'>
 	</form>
 </section>
 ";
+
+$sellBut4 = "<section class='actionButtonsSE'>
+	<form method='post' action='Equip.php' onsubmit='return submitResult();'>
+		<input hidden='' type='text' name='bagsell' value='SKL' placeholder=''>
+		<input type='submit' name='commit' value='Sell all selected'>
+	</form>
+</section>
+";
 	
 
 $inventoryTemplate="
@@ -1966,6 +2051,9 @@ $opt
 		<div id='sellIT' style='display:none;' class='sellall''>
 			$sellBut3
 		</div>
+		<div id='sellSK' style='display:none;' class='sellall''>
+			$sellBut4
+		</div>
 		
 </div>
 <div class='backpack'>
@@ -1980,6 +2068,9 @@ $opt
 	</div>
 	<div id='backpackIT' style='display:none;'>
 		$backpackTemplateIT
+	</div>
+	<div id='backpackSK' style='display:none;'>
+		$backpackTemplateSK
 	</div>
 </div>	
 ";

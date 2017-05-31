@@ -321,6 +321,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			$valueArmorM = round($valueArmorM);
             $hpBonus = round($hpBonus);
             $xpBonus = round($xpBonus);
+			$Buff = round($Buff);
 			
 			
 			

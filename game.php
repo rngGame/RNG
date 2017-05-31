@@ -914,7 +914,7 @@ else{
 
 
 if (!$GEM[3] == ""){
-	$gemTemplate="<img src='IMG/pack/Icon.4_32.png' width='45px' height='45px' class='item".$GEM[3]."'>
+	$gemTemplate="<img src='IMG/pack/GEM.png' width='45px' height='45px' class='item".$GEM[3]."'>
 		<span class='tooltiptext'>
 			<b class='#$GEM[3]'>
 				$GEM[0]
@@ -926,7 +926,7 @@ if (!$GEM[3] == ""){
 			<br>
 			<b>$GEM[4] lvl.</b>
 		</span>
-		<div class='gemtype'><img src='IMG/Types/".$GEM[2].".png' width='22px' height='22px'></div>'
+		<div class='gemtype'><img src='IMG/Types/".$GEM[2].".png' width='30px'></div>'
 			";}
 	else{
 		$gemTemplate="<img src='IMG/pack/none.png' width='45px' height='45px'><span class='tooltiptext'><b>Nothing</b></span>";}

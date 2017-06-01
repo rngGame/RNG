@@ -126,8 +126,7 @@ $SKL = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$EQPS[2]' ");
 $SKLn = mysqli_fetch_assoc($SKL); //by colum name
 
 $_SESSION["CURRENTSKLHASH"] = $SKLn[HASH];
-$_SESSION["FRAGID"] = $SKLn[Skill];
-$_SESSION["FRAGPOWER"] = $SKLn[Bonus]/100;
+
 
 $bonusHL = 0;
 $bonusNO = 0;
@@ -376,11 +375,15 @@ $enchtex = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";
 }
 
 //skill
-$ENC = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$SKLn[plus]'");
-$ENC = mysqli_fetch_row($ENC);
-if ($ENC[2] > 0){
-$enchtexSK = "<font color='#F59100'>Ench. power: <b>$ENC[2] %</b></font>";
+$ENCSK = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$SKLn[plus]'");
+$ENCSK = mysqli_fetch_row($ENCSK);
+if ($ENCSK[2] > 0){
+$enchtexSK = "<font color='#F59100'>Ench. power: <b>$ENCSK[2] %</b></font>";
 }
+
+//skill stats to memmory
+$_SESSION["FRAGID"] = $SKLn[Skill];
+$_SESSION["FRAGPOWER"] = ($SKLn[Bonus]+$ENCSK[2])/100;
 
 //body
 $ENCAB = mysqli_query($db,"SELECT * FROM enchantdrop WHERE Enchant = '$ARMBODY[plus]'");

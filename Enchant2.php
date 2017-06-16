@@ -34,6 +34,23 @@ $c1 = rand(1,100);
 if (isset($_SESSION["ENCt"])){
 	$c1 = 1;
 }
+
+//stuff for coruption stone
+
+if (isset($_POST[COR])){
+	$new = $_POST[ITM];
+	
+	echo "UNDER CONSTRUCT";
+	die();
+	
+	include 'PHP/coruption.php';
+	
+	//deletion of item
+	$sql="DELETE FROM Equiped WHERE hash='$new' and User='$User'";
+	mysqli_query($db,$sql);
+	$sql2="DELETE FROM DropsItm WHERE HASH='$new'";
+	mysqli_query($db,$sql2);
+}
 	
 
 if ($TYPE == "WEP"){

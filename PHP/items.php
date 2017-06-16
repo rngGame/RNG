@@ -53,6 +53,15 @@ if ($base[$baseN] == "Bag"){
 $icon = "Icon.6_37";
 	$sub = array("Gold", "Shards", "XP", "Mod", "Enchant", "Joker");
 	$subn = array_rand($sub,1);
+	
+	if (rand(0,1000) >= 990){ //check for coruption
+		$Name = "Coruption stone";
+		$icon = "Icon.4_86";
+		$EFT = "COR";
+		$value = 1;
+		$sub[$subn] ="";
+	}
+	
 	if ($sub[$subn] == "Gold"){
 		$Name = "$base[$baseN] of $sub[$subn]";
 		$EFT = "GOLD";

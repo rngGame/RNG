@@ -152,6 +152,38 @@ $price = $ITM["ilvl"] * $ENC2[2];
         <p class='submit'><input type='submit' name='commit' value='Upgrade for $price g.'></p>
       </form>
   	</section>";
+	
+echo "</div>";	
+	
+    echo "<br><br><br><div id='mini2'>Items:";
+  
+//ITEMS
+echo "<section class='container2'>";
+
+$List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Part = 'ITM'");
+while ($List1 = mysqli_fetch_array($List)){	
+
+	$ITMs = mysqli_query($db,"SELECT * FROM DropsItm WHERE HASH = '$List1[2]'");
+	$ITMn = mysqli_fetch_assoc($ITMs);
+	
+	
+	if ($ITMn["EFT"] == "COR"){
+echo "
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='Enchant2.php'>
+		  <input type='hidden' name='COR' value='1'>
+          <input type='hidden' name='ITM' value='$ITMn[HASH]'>
+        <p class='submit' onclick='myfunc(this)'><input  img src='IMG/pack/$ITMn[Icon].png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>$ITMn[Name]<br>Can only use once/item</span></p> 
+      </form>
+    </div>&nbsp;&nbsp;";
+	}
+
+}
+
+  
+  echo "</div>";
+
+
   mysqli_close($db);
     ?>
 	  <section class="actionButtons2">

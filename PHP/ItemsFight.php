@@ -1,7 +1,6 @@
 <?php
 
-		echo
-"<section class='container2'>";
+echo "<section class='container2'>";
 
 $List = mysqli_query($db,"SELECT * FROM Equiped WHERE User = '$User' AND Part = 'ITM'");
 while ($List1 = mysqli_fetch_array($List)){	

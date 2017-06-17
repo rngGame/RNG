@@ -61,7 +61,7 @@ if ($TYPE == "WEP"){
 	
 //armors
 if ($TYPE == "ARM"){
-	$corupt = rand(1,7);
+	$corupt = rand(1,5);
 	
 	if ($corupt == 1){
 		$effect2 = "Physical Coruption";
@@ -88,12 +88,43 @@ if ($TYPE == "ARM"){
 		$efstat2 = rand(0.8,1.5);
 		$Name = "Powered";
 	}
-	
 
 
 }
 
+//accsesorys
 
+if ($TYPE == "ACS"){
+	$corupt = rand(1,CRYPT_SHA256);
+	
+	if ($corupt == 1){
+		$effect2 = "Health Coruption";
+		$efstat2 = rand(-5,20);
+		$Name = "Rought";	
+	}
+	if ($corupt == 2){
+		$effect2 = "Damage coruption";
+		$efstat2 = rand(-5,20);
+		$Name = "Magick";	
+	}
+	if ($corupt == 3){
+		$effect2 = "Absorb coruption";
+		$efstat2 = rand(5,15);
+		$Name = "Fluffy";	
+	}
+	if ($corupt == 4){
+		$effect2 = "Enchant coruption";
+		$efstat2 = rand(0,30);
+		$Name = "Enchanted";
+	}
+	if ($corupt == 5){
+		$effect2 = "Experiance coruption";
+		$efstat2 = rand(0.8,1.5);
+		$Name = "Powered";
+	}
+
+
+}
 
 
 

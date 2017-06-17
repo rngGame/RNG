@@ -287,7 +287,7 @@ if ($Type == "SKL"){
 
     
 	
-	echo  $order = "UPDATE Equiped
+	$order = "UPDATE Equiped
 	SET Equiped = '0'
 	WHERE `HASH` = '$CURR[0]' and User='$User'";
 	$result = mysqli_query($db, $order);	

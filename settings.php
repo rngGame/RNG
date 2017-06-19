@@ -68,6 +68,74 @@ echo"</select>
 }
 
 
+
+//admin stuff
+	
+echo "<div class='ADMIN'>";
+	
+echo "Weapon create:<br>";
+echo "<table><td>";
+	
+echo "<tr><th>Prefix:</th><th>Base:</th><th>Subfix 1:</th><th>Subfix 2:</th><th>Rarity:</th><th>Plus:</th><th>Skill:</th></tr><tr>";
+	
+echo "<td><select>";
+$base = mysqli_query($db,"SELECT * FROM prefixwep");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";
+}
+	
+echo "<td><select>";
+$base = mysqli_query($db,"SELECT * FROM basewep");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";
+}
+	
+echo "</select></td>";
+	
+echo "<td><select>";
+$base = mysqli_query($db,"SELECT * FROM subfixwep");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";
+}
+	
+echo "</select></td>";
+	
+echo "<td><select>";
+$base = mysqli_query($db,"SELECT * FROM subfixwep");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";
+}
+	
+echo "</select></td>";
+echo "<td><select>";
+$base = mysqli_query($db,"SELECT * FROM types");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";
+}
+	
+echo "</select></td>";
+	
+echo "<td><select>";	
+$base = mysqli_query($db,"SELECT * FROM enchantdrop");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[0]</option>";}
+echo "</select></td>";
+	
+echo "<td><select>";	
+$base = mysqli_query($db,"SELECT * FROM iskills");
+while ($base2 = mysqli_fetch_array($base)){
+	echo "<option value='$base2[0]''>$base2[1]</option>";}
+echo "</select></td>";
+	
+echo "</tr></table>";	
+	
+echo "</div>";
+	
+	
+	
+	
+	
+	
     ?>
 
 	  <section class="container3">

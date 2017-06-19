@@ -29,6 +29,7 @@ if ($TYPE == "WEP"){
 		
 		$st1 = round($ITM[pmin] * $efstat2);
 		$st2 = round($ITM[pmax] * $efstat2);
+		$_SESSION[info] = "Min P-Dmg: $ITM[pmin] -> $st1<br>Max P-Dmg: $ITM[pmax] -> $st2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -43,6 +44,7 @@ if ($TYPE == "WEP"){
 		
 		$st1 = round($ITM[mmin] * $efstat2);
 		$st2 = round($ITM[mmax] * $efstat2);
+		$_SESSION[info] = "Min M-Dmg: $ITM[mmin] -> $st1<br>Max M-Dmg: $ITM[mmax] -> $st2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -54,7 +56,7 @@ if ($TYPE == "WEP"){
 		$effect2 = "Crit chanse coruption";
 		$efstat2 = rand(0,50);
 		$Name = "Pointy";
-		
+		$_SESSION[info] = "Cryt: $ITM[cryt] -> $efstat2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -66,7 +68,7 @@ if ($TYPE == "WEP"){
 		$effect2 = "Hit chanse coruption";
 		$efstat2 = rand(95,100);
 		$Name = "Marked";
-		
+		$_SESSION[info] = "Hit Chance: $ITM[HitChanse] -> $efstat2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -76,9 +78,9 @@ if ($TYPE == "WEP"){
 	}
 	if ($corupt == 5){
 		$effect2 = "Enchant coruption";
-		$efstat2 = rand(0,30);
+		$efstat2 = rand(0,29);
 		$Name = "Enchanted";
-		
+		$_SESSION[info] = "Enchant: $ITM[plus] -> $efstat2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -91,6 +93,14 @@ if ($TYPE == "WEP"){
 		$efstat2 = rand(1,17);
 		$Name = "Changed";
 		
+		
+		$SKKL = mysqli_query($db,"SELECT * FROM iskills where ID = '$ITM[skill]' ");
+		$SKL = mysqli_fetch_assoc($SKKL);
+		
+		$SKKL2 = mysqli_query($db,"SELECT * FROM iskills where ID = '$efstat2' ");
+		$SKL2 = mysqli_fetch_assoc($SKKL2);
+		
+		$_SESSION[info] = "Skill: $SKL[Name] -> $SKL2[Name]";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
@@ -100,13 +110,15 @@ if ($TYPE == "WEP"){
 	}
 	if ($corupt == 7){
 		$effect2 = "Effect coruption";
-		$efstat2 = rand(1,100);
+		$efstat2 = rand(0.7,1.8);
 		$Name = "Powered";
 		
+		$st1 = round($ITM[efstat] * $efstat2);
+		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsWep
-			SET efstat = '$efstat2', Name = '$NewName', effect2 = '1'
+			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
 			WHERE `HASH` = '$ITM[HASH]'";
 			$result = mysqli_query($db, $order);	
 	}
@@ -122,6 +134,7 @@ if ($TYPE == "ARM"){
 		$Name = "Rought";	
 		
 		$st1 = round($ITM[pDEF] * $efstat2);
+		$_SESSION[info] = "P-Def: $ITM[pDEF] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsArm
@@ -131,10 +144,11 @@ if ($TYPE == "ARM"){
 	}
 	if ($corupt == 2){
 		$effect2 = "Magickal coruption";
-		$efstat2 = rand(-5,20);
+		$efstat2 = rand(0.9,1.3);
 		$Name = "Magick";	
 		
 		$st1 = round($ITM[mDEF] * $efstat2);
+		$_SESSION[info] = "M-Def: $ITM[mDEF] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsArm
@@ -146,7 +160,7 @@ if ($TYPE == "ARM"){
 		$effect2 = "Absorb coruption";
 		$efstat2 = rand(0,15);
 		$Name = "Fluffy";	
-		
+		$_SESSION[info] = "Apsorb: $ITM[Apsorb] -> $efstat2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsArm
@@ -156,9 +170,9 @@ if ($TYPE == "ARM"){
 	}
 	if ($corupt == 4){
 		$effect2 = "Enchant coruption";
-		$efstat2 = rand(0,30);
+		$efstat2 = rand(0,29);
 		$Name = "Enchanted";
-		
+		$_SESSION[info] = "Enchant: $ITM[plus] -> $efstat2";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsArm
@@ -171,7 +185,8 @@ if ($TYPE == "ARM"){
 		$efstat2 = rand(0.8,1.5);
 		$Name = "Powered";
 		
-		$st1 = round($ITM[efstat] * $efstat2);		
+		$st1 = round($ITM[efstat] * $efstat2);	
+		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";	
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsArm
@@ -194,6 +209,7 @@ if ($TYPE == "ACS"){
 		$Name = "Healthy";	
 		
 		$st1 = round($ITM[hpBonus] * $efstat2);
+		$_SESSION[info] = "HP Bonus: $ITM[hpBonus] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsAcs
@@ -207,6 +223,7 @@ if ($TYPE == "ACS"){
 		$Name = "Mighty";	
 		
 		$st1 = round($ITM[dmgBonus] * $efstat2);
+		$_SESSION[info] = "DMG Bonus: $ITM[dmgBonus] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsAcs
@@ -220,6 +237,7 @@ if ($TYPE == "ACS"){
 		$Name = "Fluffy";
 		
 		$NewName = "$Name $ITM[Name]";
+		$_SESSION[info] = "Apsorb: $ITM[Apsorb] -> $efstat2";
 		
 			$order = "UPDATE DropsAcs
 			SET Apsorb = '$efstat2', Name = '$NewName', effect2 = '1'
@@ -228,10 +246,11 @@ if ($TYPE == "ACS"){
 	}
 	if ($corupt == 4){
 		$effect2 = "Enchant coruption";
-		$efstat2 = rand(0,30);
+		$efstat2 = rand(0,29);
 		$Name = "Enchanted";
 		
 		$NewName = "$Name $ITM[Name]";
+		$_SESSION[info] = "Enchant: $ITM[plus] -> $efstat2";
 		
 			$order = "UPDATE DropsAcs
 			SET plus = '$efstat2', Name = '$NewName', effect2 = '1'
@@ -244,6 +263,7 @@ if ($TYPE == "ACS"){
 		$Name = "Shiny";
 		
 		$st1 = round($ITM[xpBonus] * $efstat2);
+		$_SESSION[info] = "XP Bonus: $ITM[xpBonus] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsAcs
@@ -267,6 +287,7 @@ if ($TYPE == "SKL"){
 		$Name = "Effected";	
 		
 		$st1 = round($ITM[Bonus] * $efstat2);
+		$_SESSION[info] = "Bonus: $ITM[Bonus] -> $st1";
 		$NewName = "$Name $ITM[Name]";
 		
 			$order = "UPDATE DropsSkl
@@ -281,6 +302,14 @@ if ($TYPE == "SKL"){
 		
 		$NewName = "$Name $ITM[Name]";
 		
+		$SKKL = mysqli_query($db,"SELECT * FROM BaseSkil where ID = '$ITM[Skill]' ");
+		$SKL = mysqli_fetch_assoc($SKKL);
+		
+		$SKKL2 = mysqli_query($db,"SELECT * FROM BaseSkil where ID = '$efstat2' ");
+		$SKL2 = mysqli_fetch_assoc($SKKL2);
+		
+		$_SESSION[info] = "Skill: $SKL[Name] -> $SKL2[Name]";
+		
 			$order = "UPDATE DropsSkl
 			SET Skill = '$efstat2', Name = '$NewName', effect2 = '1'
 			WHERE `HASH` = '$ITM[HASH]'";
@@ -288,10 +317,11 @@ if ($TYPE == "SKL"){
 	}
 	if ($corupt == 3){
 		$effect2 = "Enchant coruption";
-		$efstat2 = rand(0,30);
+		$efstat2 = rand(0,29);
 		$Name = "Enchanted";
 			
 		$NewName = "$Name $ITM[Name]";
+		$_SESSION[info] = "Enchant: $ITM[plus] -> $efstat2";
 		
 			$order = "UPDATE DropsSkl
 			SET plus = '$efstat2', Name = '$NewName', effect2 = '1'

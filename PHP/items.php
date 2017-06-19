@@ -51,10 +51,10 @@ if ($base[$baseN] == "Potion"){
 //bags
 if ($base[$baseN] == "Bag"){
 $icon = "Icon.6_37";
-	$sub = array("Gold", "Shards", "XP", "Mod", "Enchant", "Joker");
+	$sub = array("Gold", "Shards", "XP", "Mod", "Enchant", "Joker", "Corupt");
 	$subn = array_rand($sub,1);
 	
-	if (rand(0,1000) >= 990){ //check for coruption
+	if ($sub[$subn] == "Corupt"){
 		$Name = "Coruption stone";
 		$icon = "Icon.4_86";
 		$EFT = "COR";

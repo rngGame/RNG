@@ -579,6 +579,12 @@ position: absolute;
 	margin-top: 60px;
 	transform:scale(2.2);
 	}
+	
+.actionButtons3{
+    float: left;
+	margin-top: 120px;
+	transform:scale(2.2);
+	}
 
 #right{
     float:left;
@@ -608,6 +614,12 @@ position: absolute;
 	}
 	
 	.actionButtons2{
+    float: left;
+	margin-top: 0px;
+	transform:scale(1);
+	}
+	
+	.actionButtons3{
     float: left;
 	margin-top: 0px;
 	transform:scale(1);

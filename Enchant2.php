@@ -39,17 +39,19 @@ if (isset($_SESSION["ENCt"])){
 
 if (isset($_POST[COR])){
 	$new = $_POST[ITM];
-	
-	echo "UNDER CONSTRUCT";
-	die();
-	
+		
 	include 'PHP/coruption.php';
 	
-	//deletion of item
+	$_SESSION["rezult2"] = "<br>$effect2</br>";
+	
 	$sql="DELETE FROM Equiped WHERE hash='$new' and User='$User'";
 	mysqli_query($db,$sql);
 	$sql2="DELETE FROM DropsItm WHERE HASH='$new'";
 	mysqli_query($db,$sql2);
+	
+	mysqli_close($db);
+	header("location:rez.php");	
+
 }
 	
 

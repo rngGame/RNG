@@ -153,9 +153,12 @@ $price = $ITM["ilvl"] * $ENC2[2];
       </form>
   	</section>";
 	
-echo "</div>";	
+echo "</div><br><br>";	
+
+if($ITM[effect2] == 1){}
+else{
 	
-    echo "<br><br><br><div id='mini2'>Items:";
+    echo "<br><div id='mini2'>Items:";
   
 //ITEMS
 echo "<section class='container2'>";
@@ -183,10 +186,12 @@ echo "
   
   echo "</div>";
 
+}
 
   mysqli_close($db);
     ?>
-	  <section class="actionButtons2">
+    <div id='fightNewBut'>
+	  <section class="actionButtons3">
 	      <form method="post" action="sync.php">
         <p class="submit"><input type="submit" name="commit" value="Back"></p>
       </form>

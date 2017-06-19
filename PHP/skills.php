@@ -190,6 +190,8 @@ if ($SKL ==31){
 	$fB = rand(50,70);
 		if ($CLS[6] == "FIRE"){
 		$fB = rand(100,140);}
+		if ($SUB[5] == "FIRE"){
+		$fB = rand(150,200);}
 	$fball = round($magDMG + ($magDMG *  $fB /100));
 	
 	if ($_SESSION["FRAGID"] == 31){

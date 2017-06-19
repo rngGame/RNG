@@ -1014,4 +1014,100 @@ if ($rar[2] >= 1000){
 		$order = "INSERT INTO Achievments (Name, Title, User)
 		VALUES ('Have over 1k ES', 'I am Blue', '$Account')";
 		$result = mysqli_query($db, $order);}}	
+
+	//Reach LVL 20 in SpeedRun
+if ($ACC[3] >= 20 and $ACC[6] == 2){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'FAST!'");
+		$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+	while ($Chars = mysqli_fetch_array($chars)){
+		
+		$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$Chars[0]' ");
+		$PNT = mysqli_fetch_row($PNT);
+		
+		$newP = $PNT[1] + 1;
+	
+			$order = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$Chars[0]'";
+			
+			$result = mysqli_query($db, $order);
+	}
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Reach 20 lvl in Speed run', 'FAST!', '$Account')";
+		$result = mysqli_query($db, $order);}}
+
+//Reach LVL 30 in SpeedRun
+if ($ACC[3] >= 30 and $ACC[6] == 2){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Sonic?!'");
+		$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+	while ($Chars = mysqli_fetch_array($chars)){
+		
+		$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$Chars[0]' ");
+		$PNT = mysqli_fetch_row($PNT);
+		
+		$newP = $PNT[1] + 1;
+	
+			$order = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$Chars[0]'";
+			
+			$result = mysqli_query($db, $order);
+	}
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Reach 30 lvl in Speed run', 'Sonic?!', '$Account')";
+		$result = mysqli_query($db, $order);}}
+
+//Reach LVL 40 in SpeedRun
+if ($ACC[3] >= 40 and $ACC[6] == 2){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = '1000kw'");
+		$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+	while ($Chars = mysqli_fetch_array($chars)){
+		
+		$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$Chars[0]' ");
+		$PNT = mysqli_fetch_row($PNT);
+		
+		$newP = $PNT[1] + 1;
+	
+			$order = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$Chars[0]'";
+			
+			$result = mysqli_query($db, $order);
+	}
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Reach 40 lvl in Speed run', '1000kw', '$Account')";
+		$result = mysqli_query($db, $order);}}
+
+//Die in speed run (43)
+if ($ACC[7] >= 1 and $ACC[6] == 2){
+		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'No time to explain !'");
+		$ACH = mysqli_fetch_row($ACH);
+	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+	while ($Chars = mysqli_fetch_array($chars)){
+		
+		$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$Chars[0]' ");
+		$PNT = mysqli_fetch_row($PNT);
+		
+		$newP = $PNT[1] + 1;
+	
+			$order = "UPDATE Points
+			SET Free = '$newP'
+			WHERE `User` = '$Chars[0]'";
+			
+			$result = mysqli_query($db, $order);
+	}
+			
+			$result = mysqli_query($db, $order3);
+		$order = "INSERT INTO Achievments (Name, Title, User)
+		VALUES ('Die in Speed run', 'No time to explain !', '$Account')";
+		$result = mysqli_query($db, $order);}}
 ?>

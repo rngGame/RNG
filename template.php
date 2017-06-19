@@ -10,7 +10,7 @@ echo '
 	</head>
 	<body onload="callFunction()">
 		<header>
-			<div id="title">World of RNG</div>
+			<div id="title">World of RNG '.$timeleft.'</div>
 			<div id="settings">
 				<section class="container">
 				    <form method="post" action="settings.php">
@@ -74,7 +74,7 @@ echo '
 	</body>
 	<footer class="linksB">
 		<br>
-		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.9.2_pre)</b></a><br>
+		<a href="https://docs.google.com/document/d/1-mFNUtG5JPODgaGGs804xrI9LU587AgsUCHiIXmBTkQ/edit?usp=sharing" target="_blank">Change log (0.9.9.2)</b></a>
 		<a href="https://github.com/rngGame/RNG/issues" target="_blank">BUGS? SUGGESTIONS?</a>
 		<script>
 		

@@ -54,7 +54,7 @@ Delete character:
   
   $chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
 while ($Chars = mysqli_fetch_array($chars)){
-	if ($Chars[1] == 1 and $Chars[7] >= 1 ){}
+	if ($Chars[1] == 1 or  $Chars[1] == 2 ){}
 	else{
 		if ($Chars[0] == "$User"){}
 		else{

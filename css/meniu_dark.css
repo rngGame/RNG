@@ -74,7 +74,7 @@ height:255px;
 
 #title{
     position: relative;
-    display: inline;
+    display: inline-grid;
 }
 
 #refresh {
@@ -1014,6 +1014,16 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     top: 40%;
     left: 35%;
     color: RED;
+    font-size: 78px;	
+	-webkit-animation-name: dead;
+	-webkit-animation-duration: 5s;
+}
+
+.SPEEDDTEXT{
+	position: absolute;
+    top: 40%;
+    left: 35%;
+    color:lightskyblue;
     font-size: 78px;	
 	-webkit-animation-name: dead;
 	-webkit-animation-duration: 5s;

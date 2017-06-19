@@ -22,9 +22,51 @@ $ITM = mysqli_fetch_assoc($WEP);
 if ($TYPE == "WEP"){
 	$corupt = rand(1,7);
 	
+	if ($corupt == 7 and $ITM[efstat] <> 0){
+		$effect2 = "Effect coruption";
+		$efstat2 = rand(7,18)/10;
+		$Name = "Powered";
+		
+		$st1 = round($ITM[efstat] * $efstat2);
+		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";
+		$NewName = "$Name $ITM[Name]";
+		
+			$order = "UPDATE DropsWep
+			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
+			WHERE `HASH` = '$ITM[HASH]'";
+			$result = mysqli_query($db, $order);	
+	}
+	else {$corupt = rand (1,6);}
+	
+		if ($corupt == 6 and $ITM[skill] <> ""){
+		$effect2 = "Skill coruption";
+		$efstat2 = rand(1,17);
+		$Name = "Changed";
+		
+		
+		$SKKL = mysqli_query($db,"SELECT * FROM iskills where ID = '$ITM[skill]' ");
+		$SKL = mysqli_fetch_assoc($SKKL);
+		
+		$SKKL2 = mysqli_query($db,"SELECT * FROM iskills where ID = '$efstat2' ");
+		$SKL2 = mysqli_fetch_assoc($SKKL2);
+		
+		$_SESSION[info] = "Skill: $SKL[Name] -> $SKL2[Name]";
+		$NewName = "$Name $ITM[Name]";
+		
+			$order = "UPDATE DropsWep
+			SET skill = '$efstat2', Name = '$NewName', effect2 = '1'
+			WHERE `HASH` = '$ITM[HASH]'";
+			$result = mysqli_query($db, $order);	
+	}
+	else {$corupt = rand (1,5);}
+
+	
+	
+	
+	
 	if ($corupt == 1){
 		$effect2 = "Physical Coruption";
-		$efstat2 = rand(0.95,1.2);
+		$efstat2 = rand(9,12)/10;
 		$Name = "Rought";
 		
 		$st1 = round($ITM[pmin] * $efstat2);
@@ -39,7 +81,7 @@ if ($TYPE == "WEP"){
 	}
 	if ($corupt == 2){
 		$effect2 = "Magickal coruption";
-		$efstat2 = rand(0.95,1.2);
+		$efstat2 = rand(9,12)/10;
 		$Name = "Magick";
 		
 		$st1 = round($ITM[mmin] * $efstat2);
@@ -88,49 +130,33 @@ if ($TYPE == "WEP"){
 			WHERE `HASH` = '$ITM[HASH]'";
 			$result = mysqli_query($db, $order);	
 	}
-	if ($corupt == 6){
-		$effect2 = "Skill coruption";
-		$efstat2 = rand(1,17);
-		$Name = "Changed";
-		
-		
-		$SKKL = mysqli_query($db,"SELECT * FROM iskills where ID = '$ITM[skill]' ");
-		$SKL = mysqli_fetch_assoc($SKKL);
-		
-		$SKKL2 = mysqli_query($db,"SELECT * FROM iskills where ID = '$efstat2' ");
-		$SKL2 = mysqli_fetch_assoc($SKKL2);
-		
-		$_SESSION[info] = "Skill: $SKL[Name] -> $SKL2[Name]";
-		$NewName = "$Name $ITM[Name]";
-		
-			$order = "UPDATE DropsWep
-			SET skill = '$efstat2', Name = '$NewName', effect2 = '1'
-			WHERE `HASH` = '$ITM[HASH]'";
-			$result = mysqli_query($db, $order);	
-	}
-	if ($corupt == 7){
-		$effect2 = "Effect coruption";
-		$efstat2 = rand(0.7,1.8);
-		$Name = "Powered";
-		
-		$st1 = round($ITM[efstat] * $efstat2);
-		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";
-		$NewName = "$Name $ITM[Name]";
-		
-			$order = "UPDATE DropsWep
-			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
-			WHERE `HASH` = '$ITM[HASH]'";
-			$result = mysqli_query($db, $order);	
-	}
+
+
 }
 	
 //armors
 if ($TYPE == "ARM"){
 	$corupt = rand(1,5);
 	
+	if ($corupt == 5 and $ITM[efstat] <> 0){
+		$effect2 = "Effect coruption";
+		$efstat2 = rand(8,15)/10;
+		$Name = "Powered";
+		
+		$st1 = round($ITM[efstat] * $efstat2);	
+		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";	
+		$NewName = "$Name $ITM[Name]";
+		
+			$order = "UPDATE DropsArm
+			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
+			WHERE `HASH` = '$ITM[HASH]'";
+			$result = mysqli_query($db, $order);
+	}
+	else {$corupt = rand (1,4);}
+	
 	if ($corupt == 1){
 		$effect2 = "Physical Coruption";
-		$efstat2 = rand(0.9,1.3);
+		$efstat2 = rand(9,13)/10;
 		$Name = "Rought";	
 		
 		$st1 = round($ITM[pDEF] * $efstat2);
@@ -144,7 +170,7 @@ if ($TYPE == "ARM"){
 	}
 	if ($corupt == 2){
 		$effect2 = "Magickal coruption";
-		$efstat2 = rand(0.9,1.3);
+		$efstat2 = rand(9,13)/10;
 		$Name = "Magick";	
 		
 		$st1 = round($ITM[mDEF] * $efstat2);
@@ -180,20 +206,7 @@ if ($TYPE == "ARM"){
 			WHERE `HASH` = '$ITM[HASH]'";
 			$result = mysqli_query($db, $order);
 	}
-	if ($corupt == 5){
-		$effect2 = "Effect coruption";
-		$efstat2 = rand(0.8,1.5);
-		$Name = "Powered";
-		
-		$st1 = round($ITM[efstat] * $efstat2);	
-		$_SESSION[info] = "Effect: $ITM[efstat] -> $st1";	
-		$NewName = "$Name $ITM[Name]";
-		
-			$order = "UPDATE DropsArm
-			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
-			WHERE `HASH` = '$ITM[HASH]'";
-			$result = mysqli_query($db, $order);
-	}
+
 
 
 }
@@ -205,7 +218,7 @@ if ($TYPE == "ACS"){
 	
 	if ($corupt == 1){
 		$effect2 = "Health Coruption";
-		$efstat2 = rand(0.8,1.5);
+		$efstat2 = rand(8,15)/10;
 		$Name = "Healthy";	
 		
 		$st1 = round($ITM[hpBonus] * $efstat2);
@@ -219,7 +232,7 @@ if ($TYPE == "ACS"){
 	}
 	if ($corupt == 2){
 		$effect2 = "Damage coruption";
-		$efstat2 = rand(-10,50);
+		$efstat2 = rand(9,13)/10;
 		$Name = "Mighty";	
 		
 		$st1 = round($ITM[dmgBonus] * $efstat2);
@@ -259,7 +272,7 @@ if ($TYPE == "ACS"){
 	}
 	if ($corupt == 5){
 		$effect2 = "Experiance coruption";
-		$efstat2 = rand(0.8,2);
+		$efstat2 = rand(8,20)/10;
 		$Name = "Shiny";
 		
 		$st1 = round($ITM[xpBonus] * $efstat2);
@@ -283,7 +296,7 @@ if ($TYPE == "SKL"){
 	
 	if ($corupt == 1){
 		$effect2 = "Bonus Coruption";
-		$efstat2 = rand(0.5,1.5);
+		$efstat2 = rand(5,15)/10;
 		$Name = "Effected";	
 		
 		$st1 = round($ITM[Bonus] * $efstat2);

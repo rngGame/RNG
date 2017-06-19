@@ -39,9 +39,15 @@ if (isset($_POST["Character"])){
 			<div class="register-form">
 			<h1>Char Name</h1>
  			<form method="post" action="create.php">
-			 <p><label>Character Name : </label>
+			 <p><label>Character Name : </label>	
     <input id="username" type="text" name="char" placeholder="character" /></p>
-     Hardcore:<input id="hardcore" type="checkbox" name="Hardcore"><p>
+	
+	<select name="Hardcore">
+	<option value="0">Normal</option>
+  	<option value="1">Hardcore</option>
+    <option value="2">Speed Run</option>
+	</select>
+	
     <input class="btn register" type="submit" name="submit" value="Register" /></p>
     </form>
 	</div>';

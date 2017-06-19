@@ -25,10 +25,17 @@ include_once 'PHP/db.php';
 	//hardcore char
 	$hc = 0;
 	if(isset($_POST['Hardcore'])){
-		$hc = 1;
+		$hc = $_POST['Hardcore'];
 	}
 		
 //ONLY CHAR CREATE
+
+$datetime = date_create()->format('Y-m-d H:i:s');
+$datetime = strtotime($datetime);
+//$datetime = $datetime+300;
+$datetime = date('Y-m-d H:i:s',$datetime); 
+
+
 if(isset($_SESSION["HAVE"])){	
 
 $results = mysqli_query($db,"SELECT * FROM characters WHERE User = '$char'"); //character check
@@ -55,11 +62,24 @@ $result = mysqli_query($db, $order3);
 
 
 $order2 = "INSERT INTO characters
-	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards )
+	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards, Creation )
 	  VALUES
-	   ('$char','$hc','5','1', '100', '1', '', '$Account', '0', '1000', '0004', '0')";
+	   ('$char','$hc','5','1', '100', '1', '', '$Account', '0', '1000', '0004', '0', '$datetime')";
 	   
 $result = mysqli_query($db, $order2);		
+
+$result2 = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '0001'");
+$count2 = mysqli_num_rows($result2);	
+
+if ($count2 >= 1){
+	 }
+else {
+$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus)
+	  VALUES
+	   ('0001', 'Wooden Sword', '', '1', '1', '5', '1', '1', '5', '90', '', '', '', '0')";
+	   $result = mysqli_query($db, $order2);
+	   }   
 			
 			
 			$_SESSION["User"] = $char;

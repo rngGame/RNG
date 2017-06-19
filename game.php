@@ -275,7 +275,14 @@ while($users2=mysqli_fetch_array($ONL2)){
 	$USR3 = mysqli_fetch_row($USR3);
 	
 if ($USR3[1] == 1){
-	$deadaliveON = "<font color='red' size='-2'>(Hard.)</font>";
+	$deadaliveON = "<font color='red' size='-2'>(HC)</font>";
+}
+else{
+	$deadaliveON = "";
+}
+
+if ($USR3[1] == 2){
+	$deadaliveON = "<font color='lightgreen' size='-2'>(SR)</font>";
 }
 else{
 	$deadaliveON = "";
@@ -541,6 +548,83 @@ if ($ACC[1] == 1){
 		
 		die();
 	}
+}
+
+//Speedrun check stuff
+if ($ACC[1] == 2){
+	$hardcore = "<font color='lightgreen'><b>(Speed Run)</b></font>";
+	
+	//Laiko tikrinimas
+	$datetimeS = date_create()->format('Y-m-d H:i:s');
+	$datetimeS = strtotime($datetimeS);
+
+	$datetimeS2 = strtotime($ACC[16]) + 1200;
+	
+	$lefttime = round($datetimeS2 - $datetimeS,1);
+	$typ = "sek.";
+if ($lefttime > 60){
+	$typ = "min.";
+$lefttime = round($lefttime / 60);}
+if ($lefttime > 60 and $typ == "min." ){
+	$typ = "h.";
+$lefttime = round($lefttime / 60);}
+$timeleft = "<font color='RED' size='+3'>$lefttime $typ</font>";
+
+	
+	if ($datetimeS < $datetimeS2){
+		
+	}
+	else{
+		echo'		<title>World of RNG</title>
+		<link rel="stylesheet" "type="text/css" href="css/'.$_COOKIE[Theme].'.css?v=0.1">
+		<link rel="icon" href="favicon.png">';
+		echo "
+		<div class='DEAD'>
+		<b class='SPEEDDTEXT'>Out of time</b>
+		<p class='DEADINFO'>You reached $lwa ilvl!</p>
+		</div>
+		";
+		echo '
+			<div class="DEADlog">
+				<section class="container">
+				    <form method="post" action="log.php">
+				       	<input type="submit" name="commit3" value="Logout">
+				  	</form>
+				</section>
+			</div>';
+			
+			$HARDDEAD = mysqli_query($db,"SELECT * from characters WHERE `Account` = '$Account' and Hardcore = 0 LIMIT 1");
+		$HARDDEAD = mysqli_fetch_row($HARDDEAD);
+	
+		$last = "UPDATE account SET last_char = '$HARDDEAD[0]' WHERE `User` = '$Account'";
+		$last = mysqli_query($db, $last);
+		
+		$out = "UPDATE characters SET Creation = null WHERE `User` = '$User'";
+		$out = mysqli_query($db, $out);
+		
+		$sqldel="DELETE FROM Party WHERE PL1='$User'";
+		mysqli_query($db,$sqldel);
+		
+		$PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
+		$Party = mysqli_fetch_assoc($PartyS);
+
+		if ($Party["PL1"] == $User){
+			$PLnr = "PL1";}
+		if ($Party["PL2"] == $User){
+			$PLnr = "PL2";}
+		if ($Party["PL3"] == $User){
+			$PLnr = "PL3";;}
+		if ($Party["PL4"] == $User){
+			$PLnr = "PL4";}
+			
+		$orderChar = "UPDATE Party
+		SET $PLnr = null
+		WHERE `ID` = '$Party[ID]'";
+		$result = mysqli_query($db, $orderChar);
+		
+		die();
+	}
+	
 }
 
 //ISKILL
@@ -2081,7 +2165,7 @@ $opt
 //account characters
 $chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
 while ($Chars = mysqli_fetch_array($chars)){
-	if ($Chars[1] == 1 and $Chars[7] >= 1){}
+	if ($Chars[1] == 1 and $Chars[7] >= 1 or ($Chars[1] == 2 and $Chars[16] == "")){}
 	else{
 $options .='<option value="'.$Chars[0].'">'.$Chars[0].'</option>';
 	}

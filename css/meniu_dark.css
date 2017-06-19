@@ -102,6 +102,11 @@ height:255px;
     left: 800px;
 }
 
+.floating2{
+	position: absolute;
+    top: 336px;
+}
+
 #mini2 {
 	width:520px;
 	border: 1px solid #222427;
@@ -761,7 +766,7 @@ position: absolute;
 }
 #leaderboard{
     position: absolute;
-    top: 203px;
+    top: 150px;
     left: 0px;
    /* height:200px; */
     width: 200px;
@@ -1075,10 +1080,16 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
     border: red solid 1px;
 }
 
+.SPED{
+	position: absolute;
+    border: green solid 1px;
+    left: 370px;
+}
+
 .SOFT{
 	position: absolute;
     border: green solid 1px;
-    left: 340px;
+    left: 700px;
 }
 
 .Character {

@@ -1637,6 +1637,7 @@ while ($List1 = mysqli_fetch_array($List)){
 }
 
  //Party
+if ($ACC[1] <= 1){
 $PartyS = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' or PL2 = '$User' or PL3 = '$User' or PL4 = '$User'  ");
 $Party = mysqli_fetch_assoc($PartyS);
 
@@ -1754,7 +1755,7 @@ $PartyTemplate="
 	$partyButtonL
 ";
 
-
+}
 
 //gold rounding
 if ($ACC[4] < 1000){
@@ -1935,6 +1936,9 @@ if ($unseen >= 1){
 $hardcoreCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore = '1' ORDER BY ILVL DESC LIMIT 1");
 $hardcoreCHAR = mysqli_fetch_row($hardcoreCHAR);
 
+$SPEEDCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore = '2' ORDER BY ILVL DESC LIMIT 1");
+$SPEEDCHAR = mysqli_fetch_row($SPEEDCHAR);
+
 if ($hardcoreCHAR[7] >= 1){
 	$deadalive = "<font color='red'>(Dead)</font>";
 }
@@ -1951,10 +1955,6 @@ Totall Kills
 <br>
 <b>$ACC[6]</b>
 <br>
-<br>
-<b>PVP Rank:</b>
-<br>
-<b><font class='$ACC[12]'>$ACC[11]</font></b>
 <section class='container'>
     <p class='submit'>
     	<form method='post' action='achv.php'>
@@ -1969,6 +1969,9 @@ $onlineText
 	<br>
 	<br>
 	Strongest hardcore player: <font color='$hardcoreCHAR[12]'>$hardcoreCHAR[0]$deadalive</font></b>
+	<br>
+	<br>
+	Strongest SpeedRun player: <font color='$SPEEDCHAR[12]'>$SPEEDCHAR[0]</font></b>
 	<br>
 	<br>
 	Most kills: <b>$KIL[6] - <font color='$KIL[12]'>$KIL[0]</font></b>
@@ -1991,6 +1994,14 @@ $onlineText
 </div>
 ";
 
+if ($ACC[1] == 0){
+	$AH = "<section class='actionButtons'>
+	<form method='post' action='auctionhouse.php'>
+		<input hidden='' type='text' name='' value='' placeholder='Auction House'>
+		<input type='submit' name='commit' value='Auction House'>
+	</form>
+</section>";
+}
 $actionsTemplate="
 <section class='actionButtons'>
 	<form method='post' action='fightNew.php'>
@@ -2018,12 +2029,7 @@ $actionsTemplate="
 
   	</form>
 </section>
-<section class='actionButtons'>
-	<form method='post' action='auctionhouse.php'>
-		<input hidden='' type='text' name='' value='' placeholder='Auction House'>
-		<input type='submit' name='commit' value='Auction House'>
-	</form>
-</section>
+$AH
 ";
 
 //read last selected

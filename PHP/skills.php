@@ -241,12 +241,13 @@ if ($SKL ==33){
 			$xtim = $xtim + 1;
 		}
 		
-			if ($_SESSION["FRAGID"] == 33){
-				$fmagDMG +=  round($fmagDMG * $_SESSION["FRAGPOWER"]);
-			}		
-		
+
 		$IC = $IC + 1;
 	}
+	
+			if ($_SESSION["FRAGID"] == 33){
+				$fmagDMG +=  round($fmagDMG * $_SESSION["FRAGPOWER"]);
+			}	
 		$ene = $ene - 330;
 	$_SESSION["ENERGY"] = $ene;
 

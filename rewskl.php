@@ -55,7 +55,7 @@ $CurrentHASH = $_SESSION["CURRENTSKLHASH"];
 $ACS = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$CurrentHASH' ");
 $ACSi = mysqli_fetch_assoc($ACS);
 
-$text = "<br><img src='IMG/SKILLS/$ACSi[IMG].png' height='45px'><br>Name: $ACSi[Name]<br>
+$text = "<br><img src='IMG/SKILL/$ACSi[Skill].png' height='45px'><br>Name: $ACSi[Name]<br>
 Item lvl: <b><span class='$compareLVL'>$ACSi[ilvl]</span></b><br>
 Item Bonus: $ACSi[Bonus]<br>
 <br>";

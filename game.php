@@ -633,7 +633,7 @@ if ($WEPn["skill"] == 0){
 }
 else{
 	$skillTemplate="<div class='tooltip'>
-	<img src='IMG/$Skil[6]' style='width:45px'> 
+	<img src='IMG/$Skil[6]' style='width:40px'> 
 	<span class='tooltiptext'>$Skil[3]$Skil[4]$Skil[5]% $Skil[1]</span>
 </div>";
 	$_SESSION["ISKILL"] = "
@@ -1794,7 +1794,7 @@ $pointsLvlUp
 </div>
 <br>
 <div id='picture'>
-	<img src='IMG/av/$CLS[10].jpg' style='width:50px;height:50px;'>
+	<img src='IMG/av/$CLS[10].jpg' style='width:35px;height:35px;'>
 	$pasiveBut
 </div>
 <font class='stats'>LVL:</font> 
@@ -1848,7 +1848,7 @@ $leveltext
 <br>
 
 <div class='tooltip'>
-	<img src='IMG/cryt.jpg' style='width:45px;height:45px;'> 
+	<img src='IMG/cryt.jpg' style='width:40px;height:40px;'> 
 	<span class='tooltiptext'>
 		LVL: $PAS[3]
 		<br>
@@ -1858,7 +1858,7 @@ $leveltext
 	</span>
 </div>
 <div class='tooltip'>
-	<img src='IMG/crytd.jpg' style='width:45px;height:45px;'>
+	<img src='IMG/crytd.jpg' style='width:40px;height:40px;'>
 	<span class='tooltiptext'>
 		LVL: $PAS[12]
 		<br>
@@ -1868,7 +1868,7 @@ $leveltext
 	</span>
 </div>
 <div class='tooltip'>
-	<img src='IMG/apsorb.jpg' style='width:45px;height:45px;'> 
+	<img src='IMG/apsorb.jpg' style='width:40px;height:40px;'> 
 	<span class='tooltiptext'>
 		LVL: $PAS[6]
 		<br>
@@ -1878,7 +1878,7 @@ $leveltext
 	</span>
 </div>
 <div class='tooltip'>
-	<img src='IMG/ener.jpg' style='width:45px;height:45px;'> 
+	<img src='IMG/ener.jpg' style='width:40px;height:40px;'> 
 	<span class='tooltiptext'>
 		LVL: $PAS[9]
 		<br>

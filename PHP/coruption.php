@@ -315,16 +315,16 @@ if ($TYPE == "SKL"){
 		
 		$NewName = "$Name $ITM[Name]";
 		
-		$SKKL = mysqli_query($db,"SELECT * FROM BaseSkil where ID = '$ITM[Skill]' ");
+		$SKKL = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$ITM[HASH]' ");
 		$SKL = mysqli_fetch_assoc($SKKL);
 		
 		$SKKL2 = mysqli_query($db,"SELECT * FROM BaseSkil where ID = '$efstat2' ");
 		$SKL2 = mysqli_fetch_assoc($SKKL2);
 		
-		$_SESSION[info] = "Skill: $SKL[Name] -> $SKL2[Name]";
+		$_SESSION[info] = "Skill: <img src='IMG/SKILL/$SKL[Skill].png' height='45px'> -> <img src='IMG/SKILL/$SKL2[Skill].png' height='45px'>";
 		
 			$order = "UPDATE DropsSkl
-			SET Skill = '$efstat2', Name = '$NewName', effect2 = '1'
+			SET Skill = '$SKL2[Skill]', Name = '$NewName', effect2 = '1'
 			WHERE `HASH` = '$ITM[HASH]'";
 			$result = mysqli_query($db, $order);
 	}

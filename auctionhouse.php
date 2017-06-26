@@ -139,6 +139,9 @@ if ($ITM["efstat"]<>0){
 		if ($ITM["effect"] == "WK"){
 	$effapras[$eft] = "Weaken monster";
 	}	
+		if ($ITM["effect"] == "NS"){
+	$effapras[$eft] = "Nerve Shock";
+	}	
 	
 	$efto[$eft] = "$effapras[$eft] $ITM[efstat] %<br>";}
 

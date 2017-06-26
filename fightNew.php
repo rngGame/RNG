@@ -51,6 +51,9 @@ $checkForParty = $_SESSION["PartCreatMOB"];
 
 $bs = $_SESSION["BOSS"];
 $shitwep = $_SESSION["CURRENTWHASH"];
+	
+$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
+$ACC = mysqli_fetch_row($ACC);
 
 //if basic wep
 if ($shitwep == 0001){
@@ -60,11 +63,11 @@ list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMo
 
 //if monster P damage lower then player defence
 if ($Armor > $PDMG){
-	$PDMG = round($Armor + (($mLVL + $Armor) * rand(-5,40) / 100));}
+	$PDMG = round($Armor + (($mLVL + $Armor) * rand(-10,$ACC[3]) / 100));}
 	
 //if monster M damage lower then player defence
 if ($ArmorM > $MDMG){
-	$MDMG = round($ArmorM + (($mLVL + $ArmorM) * rand(-5,60) / 100));}
+	$MDMG = round($ArmorM + (($mLVL + $ArmorM) * rand(-10,($ACC[3]+5)) / 100));}
 	
 //if rare
 if (rand(1,300) == 100){
@@ -82,8 +85,6 @@ if (rand(1,300) == 100){
 	}
 	
 //for hardcore
-$ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
-$ACC = mysqli_fetch_row($ACC);
 if ($ACC[1] == 1){
 	if ($mLVL > 10){
 		$HP *= 1.1;

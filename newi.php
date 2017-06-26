@@ -95,6 +95,9 @@ if ($EffectChance <> 0){
 		if ($Effect == "WK"){
 	$efftype = "Weaken monster";
 	}
+		if ($Effect == "NS"){
+	$efftype = "Nerve Shock";
+	}
 	
 	$eft = "Effect: $efftype <b>$EffectChance %</b><br>";}
 	
@@ -135,6 +138,9 @@ if ($WEPi["efstat"]<>0){
 	}
 		if ($WEPi["effect"] == "WK"){
 	$efftype = "Weaken monster";
+	}
+		if ($WEPi["effect"] == "NS"){
+	$efftype = "Nerve Shock";
 	}
 	$eft2 = "Effect: $efftype $WEPi[efstat] %<br>";}
 	

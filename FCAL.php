@@ -266,6 +266,7 @@ else{
 if ($SKL ==7 or $pos == 1){
 	$cantmiss = 1;
 	$pois = rand(1,5);
+	$poison = ($mLVL * $plvl) / 2; // base dmg
 	
 	if ($CLS[6] == "POIS"){
 	$pois = rand(3,8);}
@@ -273,7 +274,7 @@ if ($SKL ==7 or $pos == 1){
 	if ($SUB[5] == "POIS"){
 	$pois = rand(8,15);}
 	
-	$poison = ($monHP*$pois/100); 
+	$poison += ($monHP*$pois/100); 
 	
 	if ($SUB[5] == "POIS"){
 		if ($poison > (400*$mLVL)){
@@ -389,8 +390,6 @@ if ($Confusion == 1){
 	$finalPlayerDMG = $finalPlayerDMG + $CFdmg;
 }
 
-//final dmg to monster
-$finalMonsHP = $monHP - $finalPlayerDMG;
 
 //combo calculation
 if ($mis <> 1){
@@ -458,12 +457,17 @@ if (rand(1,1000) >= 950){
 
 
 $sklc = 0;
+$extraREF = 0;
 
 //magick missile Fire
 if (rand(1,1000) >= 800){
 	$sklc = 1;
 	$monDMGmag = round($monDMGmag * rand(120,190) /100);
-	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESF] / 100 )));
+	$monDMGmag2 = round(($monDMGmag *($_SESSION[RESF] / 100 )));
+	if ($monDMGmag2 > $monDMGmag){
+		$extraREF = $monDMGmag - $monDMGmag2;
+	}
+		$monDMGmag =$monDMGmag - $monDMGmag2;
 	$monDMG = 0; //not phyical
 	$typeSKL = "<font color='red'>Fire</font>";
 	if ($monDMGmag <= 0){
@@ -474,7 +478,11 @@ if (rand(1,1000) >= 800){
 if (rand(1,1000) >= 800 and $sklc <> 1){
 	$sklc = 1;
 	$monDMGmag = round($monDMGmag * rand(120,190) /100);
-	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESL] / 100 )));
+	$monDMGmag2 = round(($monDMGmag *($_SESSION[RESL] / 100 )));
+	if ($monDMGmag2 > $monDMGmag){
+		$extraREF = $monDMGmag - $monDMGmag2;
+	}
+		$monDMGmag =$monDMGmag -  $monDMGmag2;
 	$monDMG = 0; //not phyical
 	$typeSKL = "<font color='Yellow'>Ligthining</font>";
 	if ($monDMGmag <= 0){
@@ -485,7 +493,11 @@ if (rand(1,1000) >= 800 and $sklc <> 1){
 if (rand(1,1000) >= 800 and $sklc <> 1){
 	$sklc = 1;
 	$monDMGmag = round($monDMGmag * rand(120,190) /100);
-	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESI] / 100 )));
+	$monDMGmag2 = round(($monDMGmag *($_SESSION[RESI] / 100 )));
+	if ($monDMGmag2 > $monDMGmag){
+		$extraREF = $monDMGmag - $monDMGmag2;
+	}
+		$monDMGmag =$monDMGmag -  $monDMGmag2;
 	$monDMG = 0; //not phyical
 	$typeSKL = "<font color='lightblue'>Ice</font>";
 	if ($monDMGmag <= 0){
@@ -587,12 +599,27 @@ if (isset($_SESSION["ESshield"])){
 	
 }
 	
+	
+	//if resist % higher then 100%
+if ($extraREF <> 0){	
+$extraREF2 = (($extraREF * (-1))*$plvl);
+$extraHP = (($extraREF * (-1)));
+	$resisttex = "<br>Resist reflected back <font color='red'>$extraREF2 dmg.</font><br>Resist healed for <font color='lightgreen'>$extraHP health.</font>";
+}
 
-$finalPlayerDMG= round($finalPlayerDMG,0);
-$finalPlayerHP= round($finalPlayerHP,0);
+$finalPlayerDMG= round($finalPlayerDMG+$extraREF2,0);
+$finalPlayerHP= round($finalPlayerHP+$extraHP ,0);
+	
+if ($NervS == 1){
+	$finalPlayerDMG *= 2;
+}
+	
 $monsRef= round($monsRef,0);
 $tP = "tottal of <b>$finalPlayerDMG </b>";
 
+
+//final dmg to monster !!
+$finalMonsHP = $monHP - $finalPlayerDMG;
 
 
 //logas
@@ -621,10 +648,10 @@ $_SESSION["LOG"] = "";
 	if ($SKL ==4){
 		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br><hr> $LOG<br>";
+	$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br>$resisttex<hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br><br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br>$resisttex<br><hr>$LOG<br>";
 	}
 
 

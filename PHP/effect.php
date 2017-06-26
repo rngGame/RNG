@@ -17,7 +17,8 @@ if ($WEPn["effect"] == "LL"  or $SUB[6] == "LL"){
 if ($WEPn["effect"] == "BL" or isset($_SESSION["bleed"]) or $SUB[6] == "BL"){
 	if (($WEPn["efstat"] >= rand(0,100) and $WEPn["effect"] == "BL") or isset($_SESSION["bleed"]) or ($SUB[7] >= rand(0,100) and $SUB[6] == "BL")){
 	$bl = rand(3,8);
-	$blee = ($monHP * $bl / 100); 
+	$blee = ($mLVL * $plvl); //base
+	$blee += ($monHP * $bl / 100); 
 	if ($blee > (300*$mLVL)){
 		$blee = 300*$mLVL;}
 	$blee = round($blee,0);
@@ -190,9 +191,27 @@ if ($WEPn["effect"] == "CF"){
 }
 }
 
+//nerve shock
+if ($WEPn["effect"] == "NS"){
+	if ($WEPn["efstat"] >= rand(0,100) or $_SESSION["Nerv"] >= 1){
+		if (!isset($_SESSION["Nerv"])){
+			$_SESSION["Nerv"] = rand(2,5);
+		}
+		if ($_SESSION["Nerv"] <= 0){
+			unset($_SESSION["Nerv"]);
+			$NervS = 0;
+		}
+		else{
+		$_SESSION["Nerv"] -= 1;
+		$NervS = 1;	
+		$left = "Nerve Shock left for <font color='#33ff33'>$_SESSION[Nerv]</font> turn(s) !<br>";}
+		
+}
+}
+
 //Damage and text
 
 $effect = $blee + $burn + $freez + $shD + $refcl + $bdam;
-$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart";
+$efftext = "$brn $bleed $leach $fre $shTE $hptex $double $refct $weakt $sleacht $bdamt $berst $doubart $left";
 
 ?>

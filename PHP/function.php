@@ -167,9 +167,9 @@ function itemDrop($db,$user,$drop,$MLVL){
                $ef=rand(1,3);
 			   if ($ef == 1){
 				   $RESISTef = "Fire";}
-			   if ($ef == 1){
+			   if ($ef == 2){
 				   $RESISTef = "Ice";}
-			   if ($ef == 1){
+			   if ($ef == 3){
 				   $RESISTef = "Lightining";}
 				 
 				$RESISTst = round($MLVL/rand(8,15));
@@ -386,7 +386,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			
             //deciding on effect WEAPON
             if (rand(0,100) < 30 and $drop=="weapon"){
-                $rngEffect = rand(1,11);
+                $rngEffect = rand(1,12);
                 if ($rngEffect == 1){
                     $effectName = "Life Leach";
                     $Effect = "LL";
@@ -448,6 +448,12 @@ function itemDrop($db,$user,$drop,$MLVL){
 					$effectName = "Cursed Soul";
                     $Effect = "CS";
                     $EffectChance = rand(10,50);
+
+                }
+				if ($rngEffect == 12){
+					$effectName = "Nerve Shock";
+                    $Effect = "NS";
+                    $EffectChance = rand(5,20);
 
                 }
                 $effect = "Effect: $effectName $EffectChance %<br>";

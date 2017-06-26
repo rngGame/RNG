@@ -924,8 +924,11 @@ if ($WEPn["efstat"]<>0){
 		if ($WEPn["effect"] == "HT"){
 	$efftype = "Health per turn";
 	}
-			if ($WEPn["effect"] == "WK"){
+		if ($WEPn["effect"] == "WK"){
 	$efftype = "Weaknen monster";
+	}
+		if ($WEPn["effect"] == "NS"){
+	$efftype = "Nerve Shock";
 	}
 	$eft = "$efftype $WEPn[efstat] %<br>";}
 	
@@ -1086,9 +1089,9 @@ $apsorb = $tottalarmorApsorb + $PAS[5] + $tottalACCApsorb;
 
 //RESISTS
 
-$RESF += 1 + ($ACC[3] / 2);
-$RESI += 1 + ($ACC[3] / 2);
-$RESL += 1 + ($ACC[3] / 2);
+$RESF += round(1 + $CLS[8] + ($ACC[3] / 2));
+$RESI += round(1 + $CLS[8] + ($ACC[3] / 2));
+$RESL += round(1 + $CLS[8] + ($ACC[3] / 2));
 
 if ($ACSRING["effect"] <> ""){
 	if ($ACSRING["effect"] == "Fire"){
@@ -1220,6 +1223,9 @@ while ($List1 = mysqli_fetch_array($List)){
 			}	
 				if ($WEPIn["effect"] == "WK"){
 			$efapras[$eft] = "Weaken monster";
+			}	
+				if ($WEPIn["effect"] == "NS"){
+			$efapras[$eft] = "Nerve Shock";
 			}	
 			$efto[$eft] = "$efapras[$eft] $WEPIn[efstat] %<br>";}
 
@@ -1941,12 +1947,14 @@ $skillTemplate
 		$RESF % Fire Resist
 	</span>
 </div>
+<br>
 <div class='tooltip'>
 	<img src='IMG/ice.png' style='width:30px;height:30px;'> 
 	<span class='tooltiptext'>
 		$RESI % Ice Resist
 	</span>
 </div>
+<br>
 <div class='tooltip'>
 	<img src='IMG/Light.png' style='width:30px;height:30px;'> 
 	<span class='tooltiptext'>

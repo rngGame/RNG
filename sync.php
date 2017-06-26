@@ -260,6 +260,21 @@ while ( $RNKs = mysqli_fetch_array($RNK)){
 }
 
 
+//recreate basic wep if deleted
+$result2 = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '0001'");
+$count2 = mysqli_num_rows($result2);	
+
+if ($count2 >= 1){
+	 }
+else {
+$order2 = "INSERT INTO DropsWep
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus)
+	  VALUES
+	   ('0001', 'Wooden Sword', '', '1', '1', '5', '1', '1', '5', '90', '', '', '', '0')";
+	   $result = mysqli_query($db, $order2);
+}  
+
+
 $datetime = date_create()->format('Y-m-d H:i:s');
 $datetime = strtotime($datetime);
 $datetime = $datetime+300;

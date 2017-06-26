@@ -96,7 +96,7 @@ Item Dmg. Bonus: <b><span class='$compareDMG'>$dmgBonus %</span></b><br>
 Item HP Bonus <b><span class='$compareHP'>$hpBonus %</span></b><br>
 Item XP Bonus: <b><span class='$compareXP'>$xpBonus %</span></b><br>
 Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
-Resist: <b>$RESISTef - $RESISTst %</b><br>
+Resist: <b>$RESISTef $RESISTst %</b><br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br><br>
 Name: $ACSi[Name]<br>
@@ -106,7 +106,7 @@ Item Dmg. Bonus: <b>$ACSi[dmgBonus] %</b><br>
 Item HP bonuss: <b>$ACSi[hpBonus] %</b><br>
 Item XP Bonus: <b>$ACSi[xpBonus] %</b><br>
 Item Apsorb: <b>$ACSi[Apsorb] %</b><br>
-Resist: $ACSi[effect] - $ACSi[effstat] % ";
+Resist: $ACSi[effect] $ACSi[efstat] % ";
 
 $_SESSION["Reward"] = "$reward";
 $_SESSION["HASH"] = "$HASH";

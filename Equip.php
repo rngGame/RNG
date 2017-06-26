@@ -338,6 +338,8 @@ if ($Type == "SKL"){
 	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order);
 	
+	
+
 $sql="DELETE FROM Equiped WHERE hash='$new' and User='$User'";
 mysqli_query($db,$sql);
 

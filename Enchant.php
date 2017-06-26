@@ -37,15 +37,17 @@ $TYPE = $_SESSION["TYPE"];
 //stuff for enchant dust
 if (isset($_SESSION["ENCt"])){
 
-$ts1 = array("WEP", "SKL", "ARM", "ACS");
-$ts2 = array_rand($ts1,1);
-$TYPE = $ts1[$ts2];
+
 
 $HASH == "";
 
 $l = 1;
 
 while ($HASH == "" and $l <> 100){
+	
+	$ts1 = array("WEP", "SKL", "ARM", "ACS");
+	$ts2 = array_rand($ts1,1);
+	$TYPE = $ts1[$ts2];
 	
 	$l += 1;
 

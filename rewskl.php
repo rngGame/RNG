@@ -19,19 +19,8 @@ list($HASH, $name, $typeName, $iLVL, $Bonus, $SkillID) = itemDrop($db,$User,"ski
 $name .= " fragment";
 
 //find icon for fragment
-if ($SkillID == 1){$Icon = "Icon.6_98.png";}
-if ($SkillID == 7){$Icon = "Icon.1_19.png";}
-if ($SkillID == 5){$Icon = "Icon.3_17.png";}
-if ($SkillID == 3){$Icon = "Icon.6_05.png";}
-if ($SkillID == 4){$Icon = "Icon.1_42.png";}
-if ($SkillID == 6){$Icon = "Icons8_40.png";}
-if ($SkillID == 31){$Icon = "Icon.1_24.png";}
-if ($SkillID == 32){$Icon = "Icon.7_59.png";}
-if ($SkillID == 2){$Icon = "Icon.6_02.png";}
-if ($SkillID == 34){$Icon = "Icon.5_64.png";}
-if ($SkillID == 33){$Icon = "Icon.5_95.png";}
-if ($SkillID == 35){$Icon = "Icon.1_35.png";}
-if ($SkillID == 36){$Icon = "Icons8_30.png";}
+$Icon = $SkillID;
+
 
 
 //insert into db
@@ -66,14 +55,14 @@ $CurrentHASH = $_SESSION["CURRENTSKLHASH"];
 $ACS = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$CurrentHASH' ");
 $ACSi = mysqli_fetch_assoc($ACS);
 
-$text = "<br><img src='IMG/pack/$ACSi[IMG]' height='45px'><br>Name: $ACSi[Name]<br>
+$text = "<br><img src='IMG/SKILLS/$ACSi[IMG].png' height='45px'><br>Name: $ACSi[Name]<br>
 Item lvl: <b><span class='$compareLVL'>$ACSi[ilvl]</span></b><br>
 Item Bonus: $ACSi[Bonus]<br>
 <br>";
 }
 
 //create Reward Template
-$reward = "<b><font color='lightblue'><br> -SKILL FRAGMENT !- </font><br><br>DROP:</b><br><img src='IMG/pack/$Icon' height='45px'><br>Name: $name<br>
+$reward = "<b><font color='lightblue'><br> -SKILL FRAGMENT !- </font><br><br>DROP:</b><br><img src='IMG/SKILL/$Icon.png' height='45px'><br>Name: $name<br>
 Item lvl: <b><span class='$compareLVL'>$iLVL</span></b><br>
 Item Bonus: $Bonus<br>
 Item worth: $moneySel Gold<br>

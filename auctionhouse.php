@@ -60,6 +60,10 @@ if ($TYPE == "ACS"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsAcs where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
 }
+if ($TYPE == "SKL"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$HASH' ");
+$ITM = mysqli_fetch_assoc($WEP);
+}
 
 	
 	$order = "INSERT INTO Trade
@@ -249,6 +253,40 @@ Price: $List1[2]g.
 
 echo "</div></td></td></tr>";
 }
+
+
+if ($List1[5] == "SKL"){
+$WEP = mysqli_query($db,"SELECT * FROM DropsSkl where HASH = '$List1[0]' ");
+$ITM = mysqli_fetch_assoc($WEP);
+$List1[2] = $List1[2] + ($List1[2] * 2 / 100);
+
+	
+echo "<td>";	
+echo "<div class='tooltip'><input type='image' class='item".$ITM[Rarity]."' src='IMG/SKILL/$ITM[IMG].png' width='45px' height='45px'><span class='tooltiptext'>
+	<b class='item$SKLn[Rarity]'>$ITM[Name] + $ITM[plus]</b>
+	<br>
+	<b>$ITM[ilvl] lvl.</b>
+	<br>
+	<b>$ITM[Bonus] % buff.</b>
+	</span></form></div>";
+ 
+echo "<div class='submit'><td     display: inline-flex;>
+Price: $List1[2]g.
+	      <form method='post' class='inventor' action='buy.php'>
+          <input style='display:none' type='submit' name='Buy' value='$ITM[HASH]' placeholder='lvl'>
+        <a class='submit' onclick='myfunc(this)'><button class='showButon' type='submit' name='Buy' value='$ITM[HASH]'><div class='tooltip'>Buy<span class='tooltiptext'> Seller - $List1[1].</span></div></button>
+        </a>
+      </form>";
+	  if ($User == $List1[1]){
+		    echo " <form method='post' class='inventor' action='buy.php'>
+        <a class='submit'><button type='submit' class='showButon' name='Remove' value='$ITM[HASH]' onclick='myfunc(this)'><div class='tooltip'>Remove</div></button>
+        </a>
+      </form>";}
+
+echo "</div></td></td></tr>";
+}
+
+
 } //while end
 ?>
 </table>

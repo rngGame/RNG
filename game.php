@@ -695,6 +695,11 @@ else{
 		$_SESSION["BOD"] = $Skil[3];}
 }
 
+// 0 resists
+		$RESF = 0;
+		$RESI = 0;
+		$RESL = 0;	
+
 
 if(isset($MODE[1])){
 
@@ -732,7 +737,6 @@ if(isset($MODE[1])){
 	}
 	if($MODT[$mc2] == "XP"){
 		$tottalXPBonus = $tottalXPBonus+($tottalXPBonus*$MODE[$mc2]/100);
-		
 	}
 	if($MODT[$mc2] == "ABS"){
 		$PAS[5] = $PAS[5]+($PAS[5]*$MODE[$mc2]/100);	
@@ -744,6 +748,20 @@ if(isset($MODE[1])){
 	}
 	if($MODT[$mc2] == "ES" and $bonusES >= 1){
 		$bonusES += round($bonusES*$MODE[$mc2]/100);	
+	}
+	if($MODT[$mc2] == "FIR"){
+		$RESF += $MODE[$mc2];	
+	}
+	if($MODT[$mc2] == "ICE"){
+		$RESI += $MODE[$mc2];	
+	}
+	if($MODT[$mc2] == "LIGH"){
+		$RESL += $MODE[$mc2];	
+	}
+	if($MODT[$mc2] == "ALR"){
+		$RESF += $MODE[$mc2];
+		$RESI += $MODE[$mc2];
+		$RESL += $MODE[$mc2];	
 	}
 	$mc2 = $mc2 + 2;
 }
@@ -1068,9 +1086,9 @@ $apsorb = $tottalarmorApsorb + $PAS[5] + $tottalACCApsorb;
 
 //RESISTS
 
-$RESF = 1 + ($ACC[3] / 2);
-$RESI = 1 + ($ACC[3] / 2);
-$RESL = 1 + ($ACC[3] / 2);
+$RESF += 1 + ($ACC[3] / 2);
+$RESI += 1 + ($ACC[3] / 2);
+$RESL += 1 + ($ACC[3] / 2);
 
 if ($ACSRING["effect"] <> ""){
 	if ($ACSRING["effect"] == "Fire"){

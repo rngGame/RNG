@@ -238,11 +238,9 @@ if ($monDMGmag < 0){
 $apsv = ($monDMG*$APS/100);
 $apsv = round($apsv,0);
 $monDMG = $monDMG - $apsv;
-$apsvM = ($monDMGmag*$APS/100);
-$apsvM = round($apsvM,0);
-$monDMGmag = $monDMGmag - $apsvM;
+$monDMGmag = $monDMGmag;
 	
-	$apsAround = ($apsv + $apsvM)/2;
+	$apsAround = ($apsv)/2;
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'APS'");
 	$ACH = mysqli_fetch_row($ACH);
 		if ($ACH[1]==""){

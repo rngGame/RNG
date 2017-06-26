@@ -161,6 +161,22 @@ function itemDrop($db,$user,$drop,$MLVL){
 					$part = "AMUL";}
 
             }
+			
+			//resists
+			 if($drop=="talisman"){
+               $ef=rand(1,3);
+			   if ($ef == 1){
+				   $RESISTef = "Fire";}
+			   if ($ef == 1){
+				   $RESISTef = "Ice";}
+			   if ($ef == 1){
+				   $RESISTef = "Lightining";}
+				 
+				$RESISTst = round($MLVL/rand(8,15));
+
+            }
+			
+			
             $textMessage.="Bases done for $drop Bases: Name $nameBase >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Prefix for talismans
             if($rngPre>3000 && $drop=="talisman"){
@@ -547,7 +563,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 		if($drop=="weapon"){
 			  return array ($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $Effect, $EffectChance);}
 		if($drop=="talisman"){ 
-			 return array ($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus);}
+			 return array ($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus, $RESISTef, $RESISTst);}
 		if($drop=="skill"){ 
 			 return array ($HASH, $name, $typeName, $iLVL, $Buff, $SkillID);}
 		

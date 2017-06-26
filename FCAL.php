@@ -122,76 +122,12 @@ if (isset($_SESSION["OVER"])){
 
 //GEM dmg (mag)
 if ($GEM[1] <> ""){
-	$gemDMG = ($magDMG * $GEM[5]/100);
+	$gemDMG = ($magDMG * $GEM[5]/200) + ($physDMG * $GEM[5]/200);
 	$gemDMG  = round($gemDMG,0);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
 	
 //GEM OTHER STUFF
 
-
-if ($GEM[2] == "Fire" and $mTYP == "Ice"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Fire" and $mTYP == "Lightning"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-if ($GEM[2] == "Ice" and $mTYP == "Lightning"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Ice" and $mTYP == "Fire"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-if ($GEM[2] == "Lightning" and $mTYP == "Fire"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Lightning" and $mTYP == "Ice"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-
-if ($GEM[2] == "Light" and $mTYP == "Soul"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Light" and $mTYP == "Dark"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-if ($GEM[2] == "Soul" and $mTYP == "Dark"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Soul" and $mTYP == "Light"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-if ($GEM[2] == "Dark" and $mTYP == "Light"){
-	$monDMG *= 1.2;
-	$monDMGmag *= 1.2;
-	$gemDMG *= 0.5;
-	$gemtxt = "<b class='$mTYP'>Monster empowered</b><br>";}
-if ($GEM[2] == "Dark" and $mTYP == "Soul"){
-	$physDMG *= 1.2;
-	$magDMG *= 1.2;
-	$gemDMG *= 2;
-	$gemtxt = "<b class='$GEM[2]'>$User empowered</b><br>";}
-	
-	//redo text if passis dmg type
 if ($GEM[1] <> ""){
 	$gemDMG = round($gemDMG);
 	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
@@ -521,12 +457,42 @@ if (rand(1,1000) >= 950){
 	
 }
 
-//magick missile
-if (rand(1,1000) >= 750){
-	$monDMGmag = round($monDMGmag * rand(110,150) /100);
+
+
+$sklc = 0;
+
+//magick missile Fire
+if (rand(1,1000) >= 800){
+	$sklc = 1;
+	$monDMGmag = round($monDMGmag * rand(120,190) /100);
+	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESF] / 100 )));
 	$monDMG = 0; //not phyical
+	$typeSKL = "<font color='red'>Fire</font>";
 	if ($monDMGmag <= 0){
 		$monDMGmag = 0;}
+}
+		
+//magick missile Ligthinig
+if (rand(1,1000) >= 800 and $sklc <> 1){
+	$sklc = 1;
+	$monDMGmag = round($monDMGmag * rand(120,190) /100);
+	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESL] / 100 )));
+	$monDMG = 0; //not phyical
+	$typeSKL = "<font color='Yellow'>Ligthining</font>";
+	if ($monDMGmag <= 0){
+		$monDMGmag = 0;}
+}
+		
+//magick missile ICE
+if (rand(1,1000) >= 800 and $sklc <> 1){
+	$sklc = 1;
+	$monDMGmag = round($monDMGmag * rand(120,190) /100);
+	$monDMGmag = round($monDMGmag - ($monDMGmag *($_SESSION[RESI] / 100 )));
+	$monDMG = 0; //not phyical
+	$typeSKL = "<font color='lightblue'>Ice</font>";
+	if ($monDMGmag <= 0){
+		$monDMGmag = 0;}
+}
 		
 
 //ES shield
@@ -545,14 +511,15 @@ if (isset($_SESSION["ESshield"])){
 			$monDMGmag  = 0;}
 	}
 	
-	$mobmagskill="<b>Monster used Magick Missile for $monDMGmag</b>";
+	
 
 }
+
+if ($sklc == 1){
+	$mobmagskill="<b>Monster used $typeSKL Magick Missile for $monDMGmag</b>";}
 	
-	
-}
 // if no skill used by mob
-else{
+if ($sklc == 0){
 	$monDMGmag = 0; //if not magick
 	
 //ES shield

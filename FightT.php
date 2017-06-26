@@ -83,6 +83,12 @@ if (!isset($_SESSION["HPM"])){
 if (!isset($_SESSION["LOG"])){
 	$LOG = $_SESSION["LOG"];
 }
+
+if ($SKL >= $SKLm){
+	$SKL = $SKLm;
+	$_SESSION["ENERGY"] = $SKL;
+}
+
 //energie Shield
 if (isset($_SESSION["ESshield"])){
 	$ESSO = round($_SESSION["ESshieldO"]);
@@ -174,7 +180,7 @@ if ($mHP > 10000000000){
 
 
 echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
-echo "Monster Name: <b>$mName</b> (<b class='$_SESSION[MonsTYP]'>$_SESSION[MonsTYP]</b>)<br>";
+echo "Monster Name: <b>$mName</b><br>";
 echo " HP: $mHPN, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>,$defMon XP: $mDRP, Lvl: $mLVL";
 
 

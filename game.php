@@ -1010,7 +1010,7 @@ if($ACSRING["Name"] <> ""){
 	$ringTemplate= "<form method='post' action='Enchant.php'>
 		<input type='text' name='HASH' value='$ACSRING[HASH]' style='display:none'>
 		<input type='text' name='TYPE' value='ACS' style='display:none'>
-	<input type='image'   src='IMG/pack/Icon.6_75.png' width='45px' height='45px' class='item".$ACSRING['Rarity']."'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Enchant +$ACSRING[plus]<br>$enchtexAR</span>
+	<input type='image'   src='IMG/pack/Icon.6_75.png' width='45px' height='45px' class='item".$ACSRING['Rarity']."'><span class='tooltiptext'><b class='$ACSRING[Rarty]'>$ACSRING[Name]</b><br>Lvl: $ACSRING[ilvl]<br>Apsorb: $ACSRING[Apsorb]%<br>HP Bonus:  $ACSRING[hpBonus]%<br>XP Bonus: $ACSRING[xpBonus]%<br>Dmg. Bonus: $ACSRING[dmgBonus]%<br>Res: $ACSRING[effect] $ACSRING[efstat] %<br>Enchant +$ACSRING[plus]<br>$enchtexAR</span>
 	</form>
 	";
 }
@@ -1023,7 +1023,7 @@ if($ACSAMULET["Name"] <> ""){
 	$amuletTemplate= "<form method='post' action='Enchant.php'>
 		<input type='text' name='HASH' value='$ACSAMULET[HASH]' style='display:none'>
 		<input type='text' name='TYPE' value='ACS' style='display:none'>
-	<input type='image'   src='IMG/pack/Icon.6_53.png' width='45px' height='45px' class='item".$ACSAMULET['Rarity']."'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Enchant +$ACSAMULET[plus]<br>$enchtexAA</span>
+	<input type='image'   src='IMG/pack/Icon.6_53.png' width='45px' height='45px' class='item".$ACSAMULET['Rarity']."'><span class='tooltiptext'><b class='$ACSAMULET[Rarty]'>$ACSAMULET[Name]</b><br>Lvl: $ACSAMULET[ilvl]<br>Apsorb: $ACSAMULET[Apsorb]%<br>HP Bonus:  $ACSAMULET[hpBonus]%<br>XP Bonus: $ACSAMULET[xpBonus]%<br>Dmg. Bonus: $ACSAMULET[dmgBonus]%<br>Res: $ACSAMULET[effect] $ACSAMULET[efstat] %<br>Enchant +$ACSAMULET[plus]<br>$enchtexAA</span>
 	</form>
 	";
 }
@@ -1066,8 +1066,33 @@ $RANK = mysqli_fetch_row($RANK);
 $apsorb = $tottalarmorApsorb + $PAS[5] + $tottalACCApsorb;
 
 
+//RESISTS
 
+$RESF = 1 + ($ACC[3] / 2);
+$RESI = 1 + ($ACC[3] / 2);
+$RESL = 1 + ($ACC[3] / 2);
 
+if ($ACSRING["effect"] <> ""){
+	if ($ACSRING["effect"] == "Fire"){
+		$RESF += $ACSRING["efstat"];}
+	if ($ACSRING["effect"] == "Lightining"){
+		$RESL += $ACSRING["efstat"];}
+	if ($ACSRING["effect"] == "Ice"){
+		$RESI += $ACSRING["efstat"];}	
+}
+
+if ($ACSAMULET["effect"] <> ""){
+	if ($ACSAMULET["effect"] == "Fire"){
+		$RESF += $ACSAMULET["efstat"];}
+	if ($ACSAMULET["effect"] == "Lightining"){
+		$RESL += $ACSAMULET["efstat"];}
+	if ($ACSAMULET["effect"] == "Ice"){
+		$RESI += $ACSAMULET["efstat"];}	
+}
+
+$_SESSION[RESF] = $RESF;
+$_SESSION[RESI] = $RESI;
+$_SESSION[RESL] = $RESL;
 
 	
 if ($WPN[3] == "ff6633"){
@@ -1489,6 +1514,8 @@ while ($List1 = mysqli_fetch_array($List)){
 					<br>
 					Dmg. Bonus: <span class='$acsCompDmg'>$ACSIn[dmgBonus]%</span>
 					<br>
+					Res: $ACSIn[effect] $ACSIn[efstat] %
+					<br>
 					Enchant +<span class='$acsCompEnch'>$ACSIn[plus]</span>
 				</div>
 				</span>
@@ -1888,7 +1915,31 @@ $leveltext
 	</span>
 </div>
 $skillTemplate
+
+<div class='resist'>
+<div class='tooltip'>
+	<img src='IMG/Fire.png' style='width:30px;height:30px;'> 
+	<span class='tooltiptext'>
+		$RESF % Fire Resist
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/ice.png' style='width:30px;height:30px;'> 
+	<span class='tooltiptext'>
+		$RESI % Ice Resist
+	</span>
+</div>
+<div class='tooltip'>
+	<img src='IMG/Light.png' style='width:30px;height:30px;'> 
+	<span class='tooltiptext'>
+		$RESL % Lightining Resist
+	</span>
+</div>
+</div>
 ";
+
+// ^ RESISTS !!!!!
+
 $equipTemplate ="
 <img src='IMG/body.png' id='equipShadow'>
 <div id='equipWeapon' class='tooltip'>

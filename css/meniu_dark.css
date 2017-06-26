@@ -1123,6 +1123,12 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	color:#CC3F00;
 }
 
+.resist{
+	position: absolute;
+    top: 288px;
+    left: 61px;
+}
+
 
 
 

@@ -214,7 +214,7 @@ if ($TYPE == "ARM"){
 //accsesorys
 
 if ($TYPE == "ACS"){
-	$corupt = rand(1,5);
+	$corupt = rand(1,6);
 	
 	if ($corupt == 1){
 		$effect2 = "Health Coruption";
@@ -281,6 +281,23 @@ if ($TYPE == "ACS"){
 		
 			$order = "UPDATE DropsAcs
 			SET xpBonus = '$st1', Name = '$NewName', effect2 = '1'
+			WHERE `HASH` = '$ITM[HASH]'";
+			$result = mysqli_query($db, $order);
+	}
+	if ($corupt == 6){
+		$effect2 = "Resist coruption";
+		$efstat2 = rand(8,20)/10;
+		$Name = "Resisting";
+		
+		if (rand(0,100) > 80){
+			$efstat2 = $efstat2 * -1;}
+		
+		$st1 = round($ITM[efstat] * $efstat2);
+		$_SESSION[info] = "Resist: $ITM[efstat] -> $st1";
+		$NewName = "$Name $ITM[Name]";
+		
+			$order = "UPDATE DropsAcs
+			SET efstat = '$st1', Name = '$NewName', effect2 = '1'
 			WHERE `HASH` = '$ITM[HASH]'";
 			$result = mysqli_query($db, $order);
 	}

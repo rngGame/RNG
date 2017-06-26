@@ -10,7 +10,7 @@ $sell = $_SESSION["Sell"];
 $Drop = $_SESSION["MonsDrop"];
 $FightFee = $_SESSION["Money"];
 
-list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus) = itemDrop($db,$User,"talisman",$MLVL);
+list($HASH, $part, $name, $typeName, $iLVL, $apsorb, $hpBonus, $xpBonus, $dmgBonus, $RESISTef, $RESISTst) = itemDrop($db,$User,"talisman",$MLVL);
 $cash = $iLVL*$sell;
 
 $_SESSION["REWARDTYPE"] = "TAL";
@@ -19,9 +19,9 @@ $worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
 //insert into db
 
 $order = "INSERT INTO DropsAcs
-	   (HASH, Part, Name, Rarity, ilvl, Apsorb, hpBonus, xpBonus, dmgBonus, plus, Worth)
+	   (HASH, Part, Name, Rarity, ilvl, Apsorb, hpBonus, xpBonus, dmgBonus, plus, Worth, effect, efstat)
 	  VALUES
-	   ('$HASH', '$part', '$name', '$typeName', '$iLVL', '$apsorb', '$hpBonus', '$xpBonus', '$dmgBonus','0', '$worth')";
+	   ('$HASH', '$part', '$name', '$typeName', '$iLVL', '$apsorb', '$hpBonus', '$xpBonus', '$dmgBonus','0', '$worth','$RESISTef', '$RESISTst')";
 	   
 $order2 = "INSERT INTO Equiped
 (User, Part, HASH, Equiped)
@@ -96,6 +96,7 @@ Item Dmg. Bonus: <b><span class='$compareDMG'>$dmgBonus %</span></b><br>
 Item HP Bonus <b><span class='$compareHP'>$hpBonus %</span></b><br>
 Item XP Bonus: <b><span class='$compareXP'>$xpBonus %</span></b><br>
 Item Apsorb: <b><span class='$compareAPS'>$apsorb %</span></b><br>
+Resist: <b>$RESISTef - $RESISTst %</b><br>
 Item worth: $moneySel Gold<br>
 <br><b>Current item:</b><br><br>
 Name: $ACSi[Name]<br>
@@ -104,7 +105,8 @@ Item Part: $part<br>
 Item Dmg. Bonus: <b>$ACSi[dmgBonus] %</b><br>
 Item HP bonuss: <b>$ACSi[hpBonus] %</b><br>
 Item XP Bonus: <b>$ACSi[xpBonus] %</b><br>
-Item Apsorb: <b>$ACSi[Apsorb] %</b><br>";
+Item Apsorb: <b>$ACSi[Apsorb] %</b><br>
+Resist: $ACSi[effect] - $ACSi[effstat] % ";
 
 $_SESSION["Reward"] = "$reward";
 $_SESSION["HASH"] = "$HASH";

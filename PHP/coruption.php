@@ -1,5 +1,12 @@
 <?php
 
+if ($_POST[COR] == 3){
+	
+	
+	
+	
+}
+
 
 if ($TYPE == "WEP"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");

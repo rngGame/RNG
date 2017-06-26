@@ -669,6 +669,17 @@ position: absolute;
     height: 205px;
       
 }
+
+#mini4 {
+    width: 520px;
+    border: 1px solid #222427;
+    margin: 20px 0px 0px 0px;
+    background-color: #26292c;
+    text-align: left;
+    position: absolute;
+	top: 209px;
+}
+
 #veil {
 
     position: absolute;

@@ -856,7 +856,7 @@ if ($SKLn[Name] <> ""){
 	$weaponSkill="<form method='post' action='Enchant.php'>
 		<input type='text' name='HASH' value='$SKLn[HASH]' style='display:none'>
 		<input type='text' name='TYPE' value='SKL' style='display:none'>
-		<input type='image' class='item".$SKLn[Rarity]."' src='IMG/SKILL/$SKLn[IMG].png' width='45px' height='45px'><span class='tooltiptext'>
+		<input type='image' class='item".$SKLn[Rarity]."' src='IMG/SKILL/$SKLn[Skill].png' width='45px' height='45px'><span class='tooltiptext'>
 	<b class='item$SKLn[Rarity]'>$SKLn[Name] + $SKLn[plus]</b>
 	<br>
 	<b>$SKLn[ilvl] lvl.</b>
@@ -1539,7 +1539,7 @@ while ($List1 = mysqli_fetch_array($List)){
 		$backpackTemplateSK.=  "
 		<div class='items'>
 		<div class='tooltip'>
-			<img src='IMG/SKILL/".$SKLIn[IMG].".png' width='45px' height='45px' class='item".$SKLIn[Rarity]."'>
+			<img src='IMG/SKILL/".$SKLIn[Skill].".png' width='45px' height='45px' class='item".$SKLIn[Rarity]."'>
 			<span class='tooltiptext'>
 				<div class='inventoryStats'>
 					<b class='$SKLIn[Rarty]'>$SKLIn[Name]</b>

@@ -262,7 +262,7 @@ $List1[2] = $List1[2] + ($List1[2] * 2 / 100);
 
 	
 echo "<td>";	
-echo "<div class='tooltip'><input type='image' class='item".$ITM[Rarity]."' src='IMG/SKILL/$ITM[IMG].png' width='45px' height='45px'><span class='tooltiptext'>
+echo "<div class='tooltip'><input type='image' class='item".$ITM[Rarity]."' src='IMG/SKILL/$ITM[Skill].png' width='45px' height='45px'><span class='tooltiptext'>
 	<b class='item$SKLn[Rarity]'>$ITM[Name] + $ITM[plus]</b>
 	<br>
 	<b>$ITM[ilvl] lvl.</b>

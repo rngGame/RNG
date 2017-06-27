@@ -57,7 +57,7 @@ else {
 	$MODT = array();
 	$modc = 1;
 	$mc = 1;
-	while ($modc <= 4){
+	while ($modc <= 6){
 		$MDC = mysqli_query($db,"SELECT * FROM mods where ID = '$MOD[$mc]' ");
 		$MDC = mysqli_fetch_row($MDC);	
 		if ($MDC[1] != ""){
@@ -65,21 +65,33 @@ else {
 			$MODT[$mc] = $MDC[2];
 			$MODE[$mc] = $MOD[$mc+1];	
 			$mc = $mc + 2;
-			$modc = $modc + 1;		
+			$modc = $modc + 1;
+			
+			if($modc == 5 and $MOD[10] > 1){	
+			$mc = $mc + 1;}
+			
 		}
 		else{
-			$modc = 5;
+			$modc = 7;
 		}	
 }
 }
 
 echo "<div id='wrapperv'>";
 if(isset($mc)){
-$img = $mc - 2;}
+$img = $mc - 2;
+if($mc == 11 and $MOD[10] == ""){
+				$img = $img - 2;}
+}
 else{
-	$img = 1;}
+	$img = 1;
+	}
+	
 if ($img < 1){
 	$img = 1;}
+	
+if ($img > 10){
+	$img = 10;}
 
 
 echo "<div id='miniv'><img src='IMG/$img.png'></div>";
@@ -108,6 +120,11 @@ if(isset($MODN[7])){
 	$n4 = $MODN[7];
 	$e4 = $MODE[7];
 	echo "$e4% $n4<br>";
+}
+if(isset($MODN[10])){
+	$n5 = $MODN[10];
+	$e5 = $MODE[10];
+	echo "$e5% $n5<br>";
 }
 echo "</div>";
 }
@@ -154,6 +171,7 @@ echo "
 	      <form method='post' id='yourFormId' action='reroll.php'>
 		  <input type='hidden' name='COR' value='3'>
           <input type='hidden' name='ITM' value='$User'>
+		  <input type='hidden' name='HSH' value='$ITMn[HASH]'>
         <p class='submit' onclick='myfunc(this)'><input  img src='IMG/pack/$ITMn[Icon].png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>$ITMn[Name]<br>Can only use once/item</span></p> 
       </form>
     </div>&nbsp;&nbsp;";

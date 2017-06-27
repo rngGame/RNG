@@ -112,6 +112,7 @@ $MDL = mysqli_fetch_row($MDL);
 //coruption stuff
 if (isset($_POST[COR])){
 	$USR = $_POST[ITM];
+	$new = $_POST[HSH];
 		
 	include 'PHP/coruption.php';
 	
@@ -139,7 +140,10 @@ $order = "UPDATE modlist
 	   S3 = '$S3',
 	   E4 = '$E4',
 	   S4 = '$S4',
-	   LVL = '$LVL'
+	   LVL = '$LVL',
+	   CE1 = '',
+	   CE2 = '',
+	   COR = ''
 	  WHERE `User` = '$User'";
 $result = mysqli_query($db, $order);}
 

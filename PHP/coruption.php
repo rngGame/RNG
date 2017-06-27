@@ -19,12 +19,11 @@ $S4 = $E4r;
 	$ITM = mysqli_fetch_assoc($MDL);
 	
 	
-	if ($ITM[E1] <> ""){$modNR = 2;}
-	if ($ITM[E2] <> ""){$modNR = 3;}
-	if ($ITM[E3] <> ""){$modNR = 4;}
-	if ($ITM[E4] <> ""){$modNR = 5;}
+	if ($ITM[E1] > 1){$modNR = 2;}
+	if ($ITM[E2] > 1){$modNR = 3;}
+	if ($ITM[E3] > 1){$modNR = 4;}
+	if ($ITM[E4] > 1){$modNR = 5;}
 	$modNR = rand(1,$modNR);
-	$modNR = 5;
 	
 	if ($modNR == 1){
 		

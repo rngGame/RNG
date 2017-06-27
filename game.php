@@ -45,8 +45,11 @@ else {
 			$mc = $mc + 2;
 			$modc = $modc + 1;
 			
-			if($modc == 5 and $MOD[12] == 1){	
+			if($modc == 5 and $MOD[10] > 1){	
 			$mc = $mc + 1;}
+			else if($modc == 5){
+				$mc = $mc - 3;}
+
 			
 		}
 		else{
@@ -770,7 +773,7 @@ if(isset($MODE[1])){
 	$mc2 = $mc2 + 2;
 	
 	//if corupted
-	if ($MOD[12] == 1 and $mc2 < 10){
+	if ($MOD[10] > 1 and $mc2 < 10){
 		$mc2 = 10;
 	}
 }

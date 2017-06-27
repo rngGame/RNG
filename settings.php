@@ -70,7 +70,7 @@ echo"</select>
 
 
 //admin stuff
-	
+/*	
 echo "<div class='ADMIN'>";
 	
 echo "Weapon create:<br>";
@@ -131,7 +131,7 @@ echo "</tr></table>";
 	
 echo "</div>";
 	
-	
+	*/
 	
 	
 	

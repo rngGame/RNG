@@ -2,10 +2,125 @@
 
 if ($_POST[COR] == 3){
 	
+$E1 = $MOD1[0];
+$S1 = $E1r;
+
+$E2 = $MOD2[0];
+$S2 = $E2r;
+
+$E3 = $MOD3[0];
+$S3 = $E3r;
+
+$E4 = $MOD4[0];
+$S4 = $E4r;
+
 	
+	$MDL = mysqli_query($db,"SELECT * FROM modlist where User = '$User' ");
+	$ITM = mysqli_fetch_assoc($MDL);
+	
+	
+	if ($ITM[E1] <> ""){$modNR = 2;}
+	if ($ITM[E2] <> ""){$modNR = 3;}
+	if ($ITM[E3] <> ""){$modNR = 4;}
+	if ($ITM[E4] <> ""){$modNR = 5;}
+	$modNR = rand(1,$modNR);
+	$modNR = 5;
+	
+	if ($modNR == 1){
+		
+		$MDC1 = mysqli_query($db,"SELECT * FROM mods where ID = '$ITM[E1]' ");
+		$MDC1 = mysqli_fetch_row($MDC1);	
+		
+		$MDC2 = mysqli_query($db,"SELECT * FROM mods where ID = '$E1' ");
+		$MDC2 = mysqli_fetch_row($MDC2);
+		
+		$_SESSION[info] = "Changed: $MDC1[1] $ITM[S1] -> $MDC2[1] $S1 %";
+		
+		$order = "UPDATE modlist
+	  	SET S1 = '$S1', E1 = '$E1', COR = '1'
+	  	WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order);
+		
+	}
+	if ($modNR == 2){
+
+		$MDC1 = mysqli_query($db,"SELECT * FROM mods where ID = '$ITM[E2]' ");
+		$MDC1 = mysqli_fetch_row($MDC1);	
+		
+		$MDC2 = mysqli_query($db,"SELECT * FROM mods where ID = '$E2' ");
+		$MDC2 = mysqli_fetch_row($MDC2);
+		
+		$_SESSION[info] = "Changed: $MDC1[1] $ITM[S2] -> $MDC2[1] $S2 %";
+		
+		$order = "UPDATE modlist
+	  	SET S2 = '$S2', E2 = '$E2', COR = '1'
+	  	WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order);
+		
+	}
+	if ($modNR == 3){
+		
+		$MDC1 = mysqli_query($db,"SELECT * FROM mods where ID = '$ITM[E3]' ");
+		$MDC1 = mysqli_fetch_row($MDC1);	
+		
+		$MDC2 = mysqli_query($db,"SELECT * FROM mods where ID = '$E3' ");
+		$MDC2 = mysqli_fetch_row($MDC2);
+		
+		$_SESSION[info] = "Changed: $MDC1[1] $ITM[S3] -> $MDC2[1] $S3 %";
+		
+		$order = "UPDATE modlist
+	  	SET S3 = '$S3', E3 = '$E3', COR = '1'
+	  	WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order);
+		
+	}
+	if ($modNR == 4){
+		
+		$MDC1 = mysqli_query($db,"SELECT * FROM mods where ID = '$ITM[E4]' ");
+		$MDC1 = mysqli_fetch_row($MDC1);	
+		
+		$MDC2 = mysqli_query($db,"SELECT * FROM mods where ID = '$E4' ");
+		$MDC2 = mysqli_fetch_row($MDC2);
+		
+		$_SESSION[info] = "Changed: $MDC1[1] $ITM[S4] -> $MDC2[1] $S4 %";
+		
+		$order = "UPDATE modlist
+	  	SET S4 = '$S4', E4 = '$E4', COR = '1'
+	  	WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order);
+		
+	}
+	if ($modNR == 5){
+		
+		$nrm = rand(1,4);
+		$exm[1] = $S1;
+		$exm[2] = $S2;
+		$exm[3] = $S3;
+		$exm[4] = $S4;
+		
+		$exmn[1] = $E1;
+		$exmn[2] = $E2;
+		$exmn[3] = $E3;
+		$exmn[4] = $E4;
+		
+		$MDC1 = mysqli_query($db,"SELECT * FROM mods where ID = '$exmn[$nrm]' ");
+		$MDC1 = mysqli_fetch_row($MDC1);	
+		
+
+		$_SESSION[info] = "Added 5th mod: $MDC1[1] $exm[$nrm] %";
+		
+		$order = "UPDATE modlist
+	  	SET CE2 = '$exm[$nrm]', CE1 = '$exmn[$nrm]', COR = '1'
+	  	WHERE `User` = '$User'";
+		$result = mysqli_query($db, $order);
+		
+	}
 	
 	
 }
+
+//if item corupt
+else{
 
 
 if ($TYPE == "WEP"){
@@ -369,6 +484,7 @@ if ($TYPE == "SKL"){
 
 
 
+}
 }
 
 

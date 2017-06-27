@@ -35,7 +35,7 @@ else {
 	$MODT = array();
 	$modc = 1;
 	$mc = 1;
-	while ($modc <= 4){
+	while ($modc <= 6){
 		$MDC = mysqli_query($db,"SELECT * FROM mods where ID = '$MOD[$mc]' ");
 		$MDC = mysqli_fetch_row($MDC);	
 		if ($MDC[1] != ""){
@@ -43,10 +43,14 @@ else {
 			$MODT[$mc] = $MDC[2];
 			$MODE[$mc] = $MOD[$mc+1];	
 			$mc = $mc + 2;
-			$modc = $modc + 1;		
+			$modc = $modc + 1;
+			
+			if($modc == 5 and $MOD[12] == 1){	
+			$mc = $mc + 1;}
+			
 		}
 		else{
-			$modc = 5;
+			$modc = 7;
 		}	
 }
 }
@@ -764,6 +768,11 @@ if(isset($MODE[1])){
 		$RESL += $MODE[$mc2];	
 	}
 	$mc2 = $mc2 + 2;
+	
+	//if corupted
+	if ($MOD[12] == 1 and $mc2 < 10){
+		$mc2 = 10;
+	}
 }
 }
 
@@ -1155,6 +1164,11 @@ if(isset($MODN[7])){
 	$n4 = $MODN[7];
 	$e4 = $MODE[7];
 	$modTemplate.= "$e4% $n4<br>";
+}
+if(isset($MODN[10])){
+	$n5 = $MODN[10];
+	$e5 = $MODE[10];
+	$modTemplate.= "$e5% $n5<br>";
 }
 $modTemplate.= "</div>";
 }

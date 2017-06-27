@@ -104,8 +104,28 @@ if ($LVL >= $minLVL ){
 	$rel = 1;}
 }
 
+
+
 $MDL = mysqli_query($db,"SELECT * FROM modlist where User = '$User' ");
 $MDL = mysqli_fetch_row($MDL);
+
+//coruption stuff
+if (isset($_POST[COR])){
+	$USR = $_POST[ITM];
+		
+	include 'PHP/coruption.php';
+	
+	$_SESSION["rezult2"] = "<br>$effect2</br>";
+	
+	$sql="DELETE FROM Equiped WHERE hash='$new' and User='$User'";
+	mysqli_query($db,$sql);
+	$sql2="DELETE FROM DropsItm WHERE HASH='$new'";
+	mysqli_query($db,$sql2);
+	
+	mysqli_close($db);
+	header("location:vale.php");	
+
+}
 
 if(isset($MDL[0])){
 	

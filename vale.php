@@ -29,6 +29,25 @@ $ACC = mysqli_fetch_row($ACC);
 $MOD = mysqli_query($db,"SELECT * FROM modlist where User = '$User' ");
 $MOD = mysqli_fetch_row($MOD);
 
+//coruption
+if (isset($_SESSION["rezult2"])){
+	
+	$rez2 = $_SESSION["rezult2"];
+	
+	
+	echo "<b style='color:red'><h2>$rez2</h2></b>";
+	echo "<br><b>$_SESSION[info]</b><br>";
+	
+	echo "<section class='actionButtons2'>
+	      <form method='post' action='sync.php'>
+        <p class='submit'><input type='submit' name='commit' value='Back'></p>
+      </form>
+  </section>
+  </div>";
+  die();
+	
+}
+
 if ($MOD[0] == ""){
 	echo "";
 	}
@@ -132,7 +151,7 @@ while ($List1 = mysqli_fetch_array($List)){
 	if ($ITMn["EFT"] == "COR"){
 echo "
     <div class='tooltip'>
-	      <form method='post' id='yourFormId' action='Enchant2.php'>
+	      <form method='post' id='yourFormId' action='reroll.php'>
 		  <input type='hidden' name='COR' value='3'>
           <input type='hidden' name='ITM' value='$User'>
         <p class='submit' onclick='myfunc(this)'><input  img src='IMG/pack/$ITMn[Icon].png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>$ITMn[Name]<br>Can only use once/item</span></p> 

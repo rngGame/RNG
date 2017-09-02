@@ -85,7 +85,7 @@ if ($shitwep == 0001){
 	$iLVL = 1;}
 
 //raid lvl adjustemnts per mob killed
-$iLVL = $iLVL+($iLVL/25*(-8+$raid));
+$iLVL = $iLVL+($iLVL/25*(-10+$raid));
 	
 list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMonster($db,$iLVL);
 
@@ -185,6 +185,14 @@ if ($HP > 10000000000){
     $_SESSION["MonsDrop"] = round($Drop);
     $_SESSION["MonsLVL"] = round($mLVL);
     $_SESSION["MonsIMG"] = $monsterIMG;
+	
+	//calculate all rewards
+	if (isset($_SESSION["MonsDropDung"])){
+		$_SESSION["MonsDropDung"] = $_SESSION["MonsDropDung"] + $_SESSION["MonsDrop"];
+	}
+	else{
+		$_SESSION["MonsDropDung"] = $_SESSION["MonsDrop"];
+	}
 	
 	//monster type
 	$sub = array("Fire", "Ice", "Lightning", "Light", "Dark", "Soul");

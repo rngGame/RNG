@@ -20,6 +20,12 @@ include_once 'PHP/db.php';
 
 $_SESSION["PAGE2"] = "location:FightT.php";
 $_SESSION["LOSE"] = "location:lose.php";
+	
+	//if dungeon run
+	if (isset($_SESSION["RAIDKILLS"])){
+		$_SESSION["LOSE"] = "location:dungdone.php";
+	}
+	
 $_SESSION["ITEM"] = 1; //set for reward item
 
 $User = $_SESSION["User"]; //user

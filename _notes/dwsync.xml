@@ -16,7 +16,7 @@
 <file name="Equip.php" server="ftp.miniforums.org" local="131429662572091237" remote="131429374200000000" Dst="2" />
 <file name="fcalcp.php" server="ftp.miniforums.org" local="131349460368223201" remote="131308354200000000" Dst="1" />
 <file name="fightP.php" server="ftp.miniforums.org" local="131349460377847455" remote="131309436600000000" Dst="1" />
-<file name="FightT.php" server="ftp.miniforums.org" local="131488268105175413" remote="131487982200000000" Dst="2" />
+<file name="FightT.php" server="ftp.miniforums.org" local="131488351436292204" remote="131488063200000000" Dst="2" />
 <file name="FightTB.php" server="ftp.miniforums.org" local="131387971273375075" remote="131387647200000000" Dst="2" />
 <file name="fightTP.php" server="ftp.miniforums.org" local="131349460383101981" remote="131337154800000000" Dst="1" />
 <file name="index.php" server="ftp.miniforums.org" local="131349460409164759" remote="131299692600000000" Dst="1" />
@@ -74,5 +74,5 @@
 <file name="rewskl.php" server="ftp.miniforums.org" local="131429520196925676" remote="131429232000000000" Dst="2" />
 <file name="Version.php" server="ftp.miniforums.org" local="131487835055706105" remote="131487550200000000" Dst="2" />
 <file name="fightDung.php" server="ftp.miniforums.org" local="131488280232808544" remote="131487991800000000" Dst="2" />
-<file name="dungdone.php" server="ftp.miniforums.org" local="131488317836451468" remote="131488029600000000" Dst="2" />
+<file name="dungdone.php" server="ftp.miniforums.org" local="131488353473704466" remote="131488065000000000" Dst="2" />
 </dwsync>

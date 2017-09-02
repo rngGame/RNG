@@ -9,6 +9,11 @@ $HASHIT = "$HASH ITM";
 $base = array("Potion", "Bag");
 $baseN = array_rand($base,1);
 
+//if corupted guareantee
+if (isset($CI)){
+	$base[$baseN] = "Bag";
+}
+
 //potions
 if ($base[$baseN] == "Potion"){
 	$icon = "Icon.1_69";
@@ -53,6 +58,11 @@ if ($base[$baseN] == "Bag"){
 $icon = "Icon.6_37";
 	$sub = array("Gold", "Shards", "XP", "Mod", "Enchant", "Joker", "Corupt");
 	$subn = array_rand($sub,1);
+	
+	//if corupted guareantee
+	if (isset($CI)){
+		$sub[$subn] = "Corupt";
+	}
 	
 	if ($sub[$subn] == "Corupt"){
 		$Name = "Coruption stone";

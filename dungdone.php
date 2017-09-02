@@ -27,7 +27,8 @@ $Money = $_SESSION["Money"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 	
-//death count
+//death count if died
+if ($_SESSION["HP"] <= 0){
 $dedNr = $ACC[7] + 1;
 	
 $order2 = "UPDATE characters
@@ -49,6 +50,9 @@ $result = mysqli_query($db, $order2);
 			WHERE `User` = '$Account' and `Name` = 'LOS'";
 			$result = mysqli_query($db, $order);
 		}
+	
+	echo 'You died !<br>';
+}
 	
 $panel = "right-panel"; //set panel for log
 	
@@ -80,16 +84,47 @@ else{
 	WHERE `User` = '$Account'";
 	$result = mysqli_query($db, $order3);
 	
+	//bonus coruption stones
+	if ($kills >= 10){
+		$bonusCO = round($kills / 10);
+		$a2 = 1;
+		
+		while ($bonusCO >= $a2){
+			
+			$CI = 1;
+			include 'PHP/items.php';
+			
+			$order4 = "INSERT INTO DropsItm
+			(HASH, Name, EFT, Value, Icon )
+			VALUES
+			('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
+	   
+			$order5 = "INSERT INTO Equiped
+			(User, Part, HASH, Equiped)
+			VALUES
+			('$User', 'ITM', '$HASHIT', '0')";	
+			
+			$result = mysqli_query($db, $order4);
+			$result = mysqli_query($db, $order5);	
+			
+			$a2 = $a2 + 1;
+		}
+	
+	$text .="<b style='color:#00ffff'>You got $bonusCO extra Coruption stone !!!</b><br><br>";
+		
+	}
+	
+	
 	
 	$a1 = 1;
-/*	while ($kills > $a1){
+	while ($kills > $a1){
 		
-	if (rand(1,1000) <  (100+$kills)){
+	if (rand(1,1000) <  (50+$kills)){
   	$rngShardsAmmount += rand(1,5);
-	$ShardText ="And $rngShardsAmmount shard(-s)<br>";}
+	$ShardText ="Also recived <font color='#40ff00'>$rngShardsAmmount shards</font><br>";}
 		
 	
-	if (rand(1,1000) < (300+$kills)){
+	if (rand(1,1000) < (200+$kills)){
 	include 'PHP/items.php';
 	
 	$order4 = "INSERT INTO DropsItm
@@ -110,14 +145,37 @@ else{
 		
 	$a1 = $a1 + 1;
 		
-	}*/
+	}
+	
+	//shards
+	$shrd = $ACC[15] +$rngShardsAmmount;
+	$order6 = "UPDATE characters
+	SET Shards = '$xp'
+	WHERE `User` = '$shrd'";
+	$result = mysqli_query($db, $order6);
+	
 }
 	
-echo 'Lose<br>';
+//xp rounding
+if ($xpDrop < 1000){
+$XPL2r = round($xpDrop);
+}
+if ($xpDrop >= 1000){
+$XPL2r = round($xpDrop/1000,1);
+$XPL2r .= "k.";}
+if ($xpDrop >= 1000000){
+$XPL2r = round($xpDrop/1000000,1);
+$XPL2r .= "kk.";}
+if ($xpDrop >= 1000000000){
+$XPL2r = round($xpDrop/1000000000,1);
+$XPL2r .= "kkk.";}
+	
+	
+
 	
 echo "You killed: $kills <br>";
 	
-echo "And recived: $xpDrop XP<br>$text $ShardText"; //NOT DONE
+echo "And recived: $XPL2r XP<br><br>$text $ShardText"; //NOT DONE
 
 echo " <br><br><div class='$panel'>";
 echo $_SESSION["LOG"];

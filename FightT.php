@@ -248,15 +248,29 @@ include 'PHP/ItemsFight.php';
   echo "</div>";
   
   mysqli_close($db);
-  ?>
-&nbsp;
-  <section class="container3">
-    <div class="31-50">
-	      <form method="post" action="sync.php">
-        <p class="submit"><input type="submit" name="commit" value="Flee"></p>
+	
+if (isset($_SESSION["RAIDKILLS"])){	
+	echo "&nbsp;
+  <section class='container3'>
+    <div class='31-50'>
+	      <form method='post' action='dungdone.php'>
+        <p class='submit'><input type='submit' name='commit' value='Finish Run'></p>
       </form>
     </div>
-  </section>
+  </section>";
+}
+else{	
+echo "&nbsp;
+  <section class='container3'>
+    <div class='31-50'>
+	      <form method='post' action='sync.php'>
+        <p class='submit'><input type='submit' name='commit' value='Flee'></p>
+      </form>
+    </div>
+  </section>";
+}
+  ?>
+
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">  
 </script>

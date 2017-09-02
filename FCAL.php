@@ -737,6 +737,23 @@ if ($finalMonsHP <= 0){
 	$_SESSION["OVERdmg"] = round(1.5*($finalMonsHP * -1));}
 	if ($_SESSION["OVERdmg"] >= (5*$plvl*$mLVL)){
 		$_SESSION["OVERdmg"] = 5*$plvl*$mLVL;}
+	
+	//if kileld for dungeon
+	if (isset($_SESSION["RAIDKILLS"])){
+	$kills = $_SESSION["RAIDKILLS"];
+	$kills ++;
+	$_SESSION["RAIDKILLS"] = $kills;
+		
+	//if die after killing monster
+	if ($finalPlayerHP <= 0){
+	header($lose);
+	die();
+	}
+		
+	header("location:fightDung.php");
+	die();
+	}
+	
 	header($page); //reward
 	die();
 
@@ -750,7 +767,6 @@ if ($finalPlayerHP <= 0 and rand(0,100) < $_SESSION["Undeadth"]){
 //player hp <0
 if ($finalPlayerHP <= 0){
 	header($lose);
-	"$finalPlayerHP";
 	die();
 }
 

@@ -45,7 +45,7 @@ else {
 			$mc = $mc + 2;
 			$modc = $modc + 1;
 			
-			if($modc == 5 and $MOD[10] > 1){	
+			if($modc == 5 and $MOD[10] >= 1){	
 			$mc = $mc + 1;}
 			else if($modc == 5){
 				$mc = $mc - 3;}
@@ -709,7 +709,8 @@ else{
 
 
 if(isset($MODE[1])){
-
+	
+	$rc = 1;
 	$mc2 = 1;
 	while (isset($MODE[$mc2])){
 
@@ -771,9 +772,10 @@ if(isset($MODE[1])){
 		$RESL += $MODE[$mc2];	
 	}
 	$mc2 = $mc2 + 2;
-	
+	$rc += 1;
+
 	//if corupted
-	if ($MOD[10] > 1 and $mc2 < 10){
+	if ($MOD[10] >= 1 and $mc2 < 10 and $rc == 5){
 		$mc2 = 10;
 	}
 }
@@ -2096,13 +2098,27 @@ if ($ACC[1] == 0){
 	</form>
 </section>";
 }
+
+//if player >30
+
+if ($ACC[3] >= 30){
+	$DungButon = "
+	<section class='actionButtons'>
+	<form method='post' action='fightDung.php'>
+		<input hidden='' type='text' name='lvl' value='100' placeholder='Raid Dungeon'>
+		<input type='submit' name='commit' value='Raid Dungeon'>
+	</form>
+</section>";
+}
+
 $actionsTemplate="
 <section class='actionButtons'>
 	<form method='post' action='fightNew.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
-		<input type='submit' name='commit' value='NewFight'>
+		<input type='submit' name='commit' value='Fight'>
 	</form>
 </section>
+$DungButon
 <section class='actionButtons'>
 	<form method='post' action='wBoss.php'>
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
@@ -2272,7 +2288,33 @@ $options .='<option value="'.$Chars[0].'">'.$Chars[0].'</option>';
 }
 
 
+//extra stats
+
+//thorns
+if ($bonusTR >= 1){
+	$StatBon .= "Thorn Damage: <font color='lightgreen'>$bonusTR</font><br>";
+};
+//energie Shield
+if ($bonusES >= 1){
+	$StatBon .= "Energie Shield: <font color='lightblue'>$bonusES</font><br>";
+};
+//bonus health per turn
+if ($bonusHL >= 1){
+	$StatBon .= "Health per turn: <font color='lightred'>$bonusHL</font><br>";
+};
+//bonus health
+if ($bonusHP >= 1){
+	$StatBon .= "Bonus Health: <font color='red'>$bonusHP</font><br>";
+};
+//bonus energie
+if ($bonusEN >= 1){
+	$StatBon .= "Bonus Energie: <font color='#12A6F5'>$bonusEN</font><br>";
+};
+
+
+
 mysqli_close($db);
+include('Version.php');
 include('template.php');
 ?>
 

@@ -77,7 +77,12 @@ if (isset($_SESSION["Thorns"])){
 	$Thorns = $_SESSION["Thorns"];
 	$Thorns +=  $Thorns * ($Armor + $ArmorM + ($mLVL*15) + ($plvl*20)) /1000; //thorns scales with armor+lvl+monter lvl
 	$Thorns = round(rand($Thorns*0.9,$Thorns*1.1));
-	$ThorText = "Monster took <font color='#99cc00'>$Thorns </font>of Thorns dmg.<br>";
+	
+	$THval = $Thorns;
+		//rounding
+	include 'PHP/rounding.php';
+	
+	$ThorText = "Monster took <font color='#99cc00'>$THval </font>of Thorns dmg.<br>";
 	//achievment
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'THOR'");
 	$ACH = mysqli_fetch_row($ACH);
@@ -130,7 +135,12 @@ if ($GEM[1] <> ""){
 
 if ($GEM[1] <> ""){
 	$gemDMG = round($gemDMG);
-	$tST = "$User did $xt <font color='#$GEM[3]'>$gemDMG $GEM[2] dmg.</font><br>";}
+	
+	$GMval = $gemDMG;
+		//rounding
+	include 'PHP/rounding.php';
+	
+	$tST = "$User did $xt <font color='#$GEM[3]'>$GMval $GEM[2] dmg.</font><br>";}
 
 
 	
@@ -311,7 +321,12 @@ if ($SKL ==7 or $pos == 1){
 			$result = mysqli_query($db, $order);
 		}
 	$_SESSION["pois"] = 1;
-	$poisT = "$User did <font color='#008000'>$poison Poison dmg.</font><br>";
+	
+	$poisonTX = $poison;
+		//rounding
+	include 'PHP/rounding.php';
+	
+	$poisT = "$User did <font color='#008000'>$poisonTX Poison dmg.</font><br>";
 	
 	if ($SKL ==7){
 	$ene = $ene - 35;
@@ -526,7 +541,10 @@ if (isset($_SESSION["ESshield"])){
 }
 
 if ($sklc == 1){
-	$mobmagskill="<b>Monster used $typeSKL Magick Missile for $monDMGmag</b>";}
+	$monDMGmagTXT = $monDMGmag;
+	//rounding
+	include 'PHP/rounding.php';
+	$mobmagskill="<b>Monster used $typeSKL Magick Missile for $monDMGmagTXT</b>";}
 	
 // if no skill used by mob
 if ($sklc == 0){
@@ -556,12 +574,18 @@ if (isset($_SESSION["ESshield"])){
 
 $monDID = $monDMG + $monDMGmag + $monref;
 $finalPlayerHP = $HPin - $monDID;
+	
+	//rounding
+	include 'PHP/rounding.php';
+	
 if (isset($mobmagskill)){} //if used skill, don't write basic stuff
 else{
 $BasicAtackByMob = "Monster did tottal of $monDID";
 if ($citM == 1){
 	$BasicAtackByMob = "Monster did tottal of <font color='red'><b> $monDID </font>cryt.</b>";}
 }
+	
+
 
 $monSkillText="$monsSkillREF $monsSkillHP $mobmagskill $BasicAtackByMob" ;
 
@@ -615,7 +639,7 @@ if ($NervS == 1){
 }
 	
 $monsRef= round($monsRef,0);
-$tP = "tottal of <b>$finalPlayerDMG </b>";
+
 
 
 //final dmg to monster !!
@@ -626,6 +650,14 @@ $finalMonsHP = $monHP - $finalPlayerDMG;
 if (!isset($_SESSION["LOG"])){
 $_SESSION["LOG"] = "";
 }
+	
+//saving values and giinv another for converting to KK..
+$dmgPL = $finalPlayerDMG;
+$physDMGcTX = $physDMGc;
+$monsRefTX = $monsRef;
+
+	
+	
 	if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
 		$mont = "$monSkillText dmg.";
 	}
@@ -639,14 +671,25 @@ $_SESSION["LOG"] = "";
 		if ($Confusion == 1){
 		$mont = "Monster confused and hitted it self for $CFdmg!<br>";}
 	}
+	
+	
+	//rounding
+	include 'PHP/rounding.php';
+	
 	if ($mis <> 1);{
 		
 	if ($SKL ==5){
-		$refT = "$User reflected <font color='#cc6600'>$monsRef dmg. ($mref %)</font><br>";}
+		$refT = "$User reflected <font color='#cc6600'>$monsRefTX dmg. ($mref %)</font><br>";}
 	if ($citP == 1){
-		$tP = "$xt tottal of <font color='red'><b>$finalPlayerDMG cryt.</b></font> ";}
+		$tP = "$xt tottal of <font color='red'><b>$dmgPL cryt.</b></font> ";}
+	else{
+	$tP = "tottal of <b>$dmgPL </b>";		
+	}
 	if ($SKL ==4){
-		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGc</font> dmg.<br>";}
+		
+		$CT = "Combo skill did <font color='#3366ff'>$skr x $physDMGcTX</font> dmg.<br>";}
+
+	
 	$LOG = $_SESSION["LOG"];
 	$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br>$resisttex<hr> $LOG<br>";
 	}
@@ -767,6 +810,7 @@ if ($finalPlayerHP <= 0 and rand(0,100) < $_SESSION["Undeadth"]){
 //player hp <0
 if ($finalPlayerHP <= 0){
 	header($lose);
+	$_SESSION["RAIDKILLSdie"] = 1;
 	die();
 }
 

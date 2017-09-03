@@ -75,7 +75,11 @@ if(isset($_SESSION["REW"])){
 }
 else{
 	$_SESSION["REW"] = 1;
-	$xpDrop =  $_SESSION["MonsDropDung"];
+	if (isset($_SESSION["RAIDKILLSdie"])){
+	$xpDrop =  $_SESSION["MonsDropDung"];}
+	else{
+		$xpDrop =  $_SESSION["MonsDropDung"] - $_SESSION["MonsDrop"];
+	}
 	
 	$xp = $ACC[5] + $xpDrop;
 	
@@ -83,37 +87,6 @@ else{
 	SET XP = '$xp'
 	WHERE `User` = '$Account'";
 	$result = mysqli_query($db, $order3);
-	
-	//bonus coruption stones
-	if ($kills >= 10){
-		$bonusCO = round($kills / 10);
-		$a2 = 1;
-		
-		while ($bonusCO >= $a2){
-			
-			$CI = 1;
-			include 'PHP/items.php';
-			
-			$order4 = "INSERT INTO DropsItm
-			(HASH, Name, EFT, Value, Icon )
-			VALUES
-			('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
-	   
-			$order5 = "INSERT INTO Equiped
-			(User, Part, HASH, Equiped)
-			VALUES
-			('$User', 'ITM', '$HASHIT', '0')";	
-			
-			$result = mysqli_query($db, $order4);
-			$result = mysqli_query($db, $order5);	
-			
-			$a2 = $a2 + 1;
-		}
-	
-	$text .="<b style='color:#00ffff'>You got $bonusCO extra Coruption stone !!!</b><br><br>";
-		
-	}
-	
 	
 	
 	$a1 = 1;
@@ -153,6 +126,36 @@ else{
 	SET Shards = '$xp'
 	WHERE `User` = '$shrd'";
 	$result = mysqli_query($db, $order6);
+	
+	//bonus coruption stones
+	if ($kills >= 10){
+		$bonusCO = round($kills / 10);
+		$a2 = 1;
+		
+		while ($bonusCO >= $a2){
+			
+			$CI = 1;
+			include 'PHP/items.php';
+			
+			$order4 = "INSERT INTO DropsItm
+			(HASH, Name, EFT, Value, Icon )
+			VALUES
+			('$HASHIT', '$Name', '$EFT', '$value', '$icon')";
+	   
+			$order5 = "INSERT INTO Equiped
+			(User, Part, HASH, Equiped)
+			VALUES
+			('$User', 'ITM', '$HASHIT', '0')";	
+			
+			$result = mysqli_query($db, $order4);
+			$result = mysqli_query($db, $order5);	
+			
+			$a2 = $a2 + 1;
+		}
+	
+	$text .="<b style='color:#00ffff'>You got $bonusCO extra Coruption stone !!!</b><br><br>";
+		
+	}
 	
 }
 	

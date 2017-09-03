@@ -708,6 +708,8 @@ else{
 		$RESL = 0;	
 
 
+
+
 if(isset($MODE[1])){
 	
 	$rc = 1;
@@ -754,8 +756,9 @@ if(isset($MODE[1])){
 		$bonusTR += round($bonusTR*$MODE[$mc2]/100);	
 		$_SESSION["Thorns"] = $bonusTR;
 	}
-	if($MODT[$mc2] == "ES" and $bonusES >= 1){
-		$bonusES += round($bonusES*$MODE[$mc2]/100);	
+	if($MODT[$mc2] == "ES"){
+		$bonusEStemp = (($ACC[3]*3)+$CLS[5])/4;
+		$bonusES += round($bonusEStemp*$MODE[$mc2]/100);
 	}
 	if($MODT[$mc2] == "FIR"){
 		$RESF += $MODE[$mc2];	
@@ -864,16 +867,19 @@ if (isset($enrsub)){
 	$ENR=round(($ENR*$enrsub),0);
 }
 
+
+//ES if mage
+if ($CLS[7] == "ES"){
+	if (isset($bonusEStemp)){}
+	else{
+	$bonusES += round(($ENR/4));
+	}
+}
+
 //energy
 $_SESSION["ENERGY"] = $ENR;
 $_SESSION["ENERGYM"] = $ENR;
 $_SESSION["ENREGEN"] = $enr;
-
-//ES if mage
-if ($CLS[7] == "ES"){
-	$bonusES += round(($ENR/4));
-	
-}
 
 //energie shield
 $_SESSION["ESshield"] = $bonusES;
@@ -2295,7 +2301,7 @@ if ($bonusES >= 1){
 };
 //bonus health per turn
 if ($bonusHL >= 1){
-	$StatBon .= "Health per turn: <font color='lightred'>$bonusHL</font><br>";
+	$StatBon .= "Health per turn: <font color='#ff9933'>$bonusHL</font><br>";
 };
 //bonus health
 if ($bonusHP >= 1){

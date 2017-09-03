@@ -57,12 +57,22 @@ if (isset($_SESSION["ESshield"])){
 	$ESR = round($_SESSION["ESregen"]);
 	$ESStext = "ES Shield:<font color='lightblue'>$ESS / $ESSO <font size='-2'>($ESR/t)</font> </font>";
 }
+	
+//saving values
+$HPintx = $HPin;
+$avgPtx = $DMGp;
+$avgMtx = $DMGm;
+$Armortx = $Armor;
+$ArmorMtx = $ArmorM;
+	
+//rounding
+include 'PHP/rounding.php';
 
 echo "World Of RNG";
 echo "</header>";
-echo "<font size='-1'><p align='left'>HP: <font size='3' color='Green'>$HPin  </font>";
-echo "DMG: <font size='3' color='red'>~$DMGp</font>/<font size='3' color='#0066ff'>~$DMGm  </font>";
-echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> $ESStext</p></font>";
+echo "<font size='-1'><p align='left'>HP: <font size='3' color='Green'>$HPintx  </font>";
+echo "DMG: <font size='3' color='red'>~$avgPtx</font>/<font size='3' color='#0066ff'>~$avgMtx  </font>";
+echo "ARMOR: <font size='3' color='gold'>$Armortx</font> / <font size='3' color='#DF01D7'>$ArmorMtx </font> $ESStext</p></font>";
 
 
 $User = $_SESSION["User"];
@@ -88,6 +98,9 @@ if ($shitwep == 0001){
 $iLVL = $iLVL+($iLVL/25*(-10+$raid));
 	
 list($name, $mLVL, $HP, $PDMG, $MDMG, $Drop, $monsterIMG, $testMessage)=createMonster($db,$iLVL);
+
+//nerf XP cus too much	
+$Drop = $Drop / 10;
 
 //if monster P damage lower then player defence
 if ($Armor > $PDMG){
@@ -144,10 +157,6 @@ if ($ACC[1] == 1){
 		
 	
 }
-	
-		$HP = round($HP);
-	  	$PDMG = round($PDMG);
-		$MDMG = round($MDMG);
 
 
 
@@ -159,25 +168,38 @@ if ($mLVL < 1 or $HP < 1 or $PDMG < 1 or $Drop < 1){
 }
 else {
 	
-	//k,kk,kkk
-	$mHPN = $HP;
-	$mHPN = "$HP";
-if ($HP > 1000){
-	$mHPN = round($HP/1000,1);
-	$mHPN = "$mHPN k.";
-}
-if ($HP > 1000000){
-	$mHPN = round($HP/1000000,1);
-	$mHPN = "$mHPN kk.";
-}
-if ($HP > 10000000000){
-	$mHPN = round($HP/1000000000,1);
-	$mHPN = "$mHPN kkk.";
-}
+	//if 10th monster in dungeon
+	unset($_SESSION["MonsBOS"]);
+	if ($raid % 10 == 0){
+		$boss = 1;
+		$HP *= (1.9 +($raid/100));
+		$PDMG *= (0.5 +($raid/100));
+		$MDMG *= (0.5 +($raid/100));
+		$Drop *= (1.5 +($raid/100));
+		$_SESSION["MonsBOS"] = 1;
+	}
+	
+	$HP = round($HP);
+	$PDMG = round($PDMG);
+	$MDMG = round($MDMG);
+	$Drop = round($Drop);
+	
+//saving values
+$mHPNtx = $HP;
+$mDMGtx = $PDMG;
+$mDMGmtx = $MDMG;
+$mDRPtx = $Drop;
+	
+//rounding
+include 'PHP/rounding.php';
 
     echo "<img src='IMG/Mon/$monsterIMG.jpg' width='60' height='60'><br>";
+	if ($boss == 1){
+		echo "<div class='Boss1'>BOSS !</div>";
+	}
     echo "Monster Name: <b>$name</b><br>";
-    echo " HP: $mHPN, DMG: <font color='red'>~$PDMG</font>/<font color='0066ff'>~$MDMG</font>, XP: $Drop, Lvl: $mLVL";
+    echo " HP: $mHPNtx, DMG: <font color='red'>~$mDMGtx</font>/<font color='0066ff'>~$mDMGmtx</font>, XP: $mDRPtx, Lvl: $mLVL";
+
     $_SESSION["MonsName"] = "$name";
     $_SESSION["MonsHP"] = round($HP);
     $_SESSION["MonsDMG"] = round($PDMG);
@@ -185,6 +207,7 @@ if ($HP > 10000000000){
     $_SESSION["MonsDrop"] = round($Drop);
     $_SESSION["MonsLVL"] = round($mLVL);
     $_SESSION["MonsIMG"] = $monsterIMG;
+	
 	
 	//calculate all rewards
 	if (isset($_SESSION["MonsDropDung"])){
@@ -206,14 +229,13 @@ if ($HP > 10000000000){
     echo $testMessage;}
 	}
 	
-	echo "$healText";
+	echo "<font color='lightgreen'>$healText</font><br>";
+	echo "<div class='movingAni'>Moving to battle</div>";
 
   ?>
   
-   <script type="text/JavaScript">
-      setTimeout("location.href = 'FightT.php';",1500);
+ <script type="text/JavaScript">
+      setTimeout("location.href = 'FightT.php';",2000);
  </script>
   
- <br>
- <h3><font color="#F512F2">Moving to battle</font></h3>
   </div>

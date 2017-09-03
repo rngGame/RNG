@@ -1,4 +1,125 @@
 <?php
+//BASIC STUFF
+
+if ($mHPNtx >= 1000000000){
+$mHPNtx = round($mHPNtx/1000000000,1);
+$mHPNtx .= "kkk.";}
+else if ($mHPNtx >= 1000000){
+$mHPNtx = round($mHPNtx/1000000,1);
+$mHPNtx .= "kk.";}
+else if ($mHPNtx >= 1000){
+$mHPNtx = round($mHPNtx/1000,1);
+$mHPNtx .= "k.";}
+else if ($mHPNtx < 1000){
+$mHPNtx = round($mHPNtx);
+}
+
+
+if ($mDMGtx >= 1000000000){
+$mDMGtx = round($mDMGtx/1000000000,1);
+$mDMGtx .= "kkk.";}
+else if ($mDMGtx >= 1000000){
+$mDMGtx = round($mDMGtx/1000000,1);
+$mDMGtx .= "kk.";}
+else if ($mDMGtx >= 1000){
+$mDMGtx = round($mDMGtx/1000,1);
+$mDMGtx .= "k.";}
+else if ($mDMGtx < 1000){
+$mDMGtx = round($mDMGtx);
+}
+
+
+if ($mDMGmtx >= 1000000000){
+$mDMGmtx = round($mDMGmtx/1000000000,1);
+$mDMGmtx .= "kkk.";}
+else if ($mDMGmtx >= 1000000){
+$mDMGmtx = round($mDMGmtx/1000000,1);
+$mDMGmtx .= "kk.";}
+else if ($mDMGmtx >= 1000){
+$mDMGmtx = round($mDMGmtx/1000,1);
+$mDMGmtx .= "k.";}
+else if ($mDMGmtx < 1000){
+$mDMGmtx = round($mDMGmtx);
+}
+
+if ($mDRPtx >= 1000000000){
+$mDRPtx = round($mDRPtx/1000000000,1);
+$mDRPtx .= "kkk.";}
+else if ($mDRPtx >= 1000000){
+$mDRPtx = round($mDRPtx/1000000,1);
+$mDRPtx .= "kk.";}
+else if ($mDRPtx >= 1000){
+$mDRPtx = round($mDRPtx/1000,1);
+$mDRPtx .= "k.";}
+else if ($mDRPtx < 1000){
+$mDRPtx = round($mDRPtx);
+}
+
+if ($HPintx >= 1000000000){
+$HPintx = round($HPintx/1000000000,1);
+$HPintx .= "kkk.";}
+else if ($HPintx >= 1000000){
+$HPintx = round($HPintx/1000000,1);
+$HPintx .= "kk.";}
+else if ($HPintx >= 1000){
+$HPintx = round($HPintx/1000,1);
+$HPintx .= "k.";}
+else if ($HPintx < 1000){
+$HPintx = round($HPintx);
+}
+
+if ($avgPtx >= 1000000000){
+$avgPtx = round($avgPtx/1000000000,1);
+$avgPtx .= "kkk.";}
+else if ($avgPtx >= 1000000){
+$avgPtx = round($avgPtx/1000000,1);
+$avgPtx .= "kk.";}
+else if ($avgPtx >= 1000){
+$avgPtx = round($avgPtx/1000,1);
+$avgPtx .= "k.";}
+else if ($avgPtx < 1000){
+$avgPtx = round($avgPtx);
+}
+
+if ($avgMtx >= 1000000000){
+$avgMtx = round($avgMtx/1000000000,1);
+$avgMtx .= "kkk.";}
+else if ($avgMtx >= 1000000){
+$avgMtx = round($avgMtx/1000000,1);
+$avgMtx .= "kk.";}
+else if ($avgMtx >= 1000){
+$avgMtx = round($avgMtx/1000,1);
+$avgMtx .= "k.";}
+else if ($avgMtx < 1000){
+$avgMtx = round($avgMtx);
+}
+
+if ($Armortx >= 1000000000){
+$Armortx = round($Armortx/1000000000,1);
+$Armortx .= "kkk.";}
+else if ($Armortx >= 1000000){
+$Armortx = round($Armortx/1000000,1);
+$Armortx .= "kk.";}
+else if ($Armortx >= 1000){
+$Armortx = round($Armortx/1000,1);
+$Armortx .= "k.";}
+else if ($Armortx < 1000){
+$Armortx = round($Armortx);
+}
+
+if ($ArmorMtx >= 1000000000){
+$ArmorMtx = round($ArmorMtx/1000000000,1);
+$ArmorMtx .= "kkk.";}
+else if ($ArmorMtx >= 1000000){
+$ArmorMtx = round($ArmorMtx/1000000,1);
+$ArmorMtx .= "kk.";}
+else if ($ArmorMtx >= 1000){
+$ArmorMtx = round($ArmorMtx/1000,1);
+$ArmorMtx .= "k.";}
+else if ($ArmorMtx < 1000){
+$ArmorMtx = round($ArmorMtx);
+}
+
 //DMG ROUNDING
 
 if ($monsRefTX >= 1000000000){

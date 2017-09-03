@@ -133,12 +133,22 @@ $CLS = mysqli_fetch_row($CLS);
 //check what skill get bonusses
 include 'PHP/skillclas.php';
 
+//saving values
+$HPintx = $HPin;
+$avgPtx = $avgP;
+$avgMtx = $avgM;
+$Armortx = $Armor;
+$ArmorMtx = $ArmorM;
+	
+//rounding
+include 'PHP/rounding.php';
+
 
 echo "World Of RNG";
 echo "</header>";
-echo "<div align='left'><font size='-1'>HP: <font size='3' color='Green'>$HPin  </font>";
-echo "DMG: <font size='3' color='red'>~$avgP</font>/<font size='3' color='#0066ff'>~$avgM  </font>";
-echo "ARMOR: <font size='3' color='gold'>$Armor</font> / <font size='3' color='#DF01D7'>$ArmorM </font> ";
+echo "<div align='left'><font size='-1'>HP: <font size='3' color='Green'>$HPintx  </font>";
+echo "DMG: <font size='3' color='red'>~$avgPtx</font>/<font size='3' color='#0066ff'>~$avgMtx  </font>";
+echo "ARMOR: <font size='3' color='gold'>$Armortx</font> / <font size='3' color='#DF01D7'>$ArmorMtx </font> ";
 echo "ENERGY: <font size='3' color='#0066ff'>$SKL / $SKLm  </font>";
 echo "$ESStext </font>";
 
@@ -167,27 +177,24 @@ if (isset($_SESSION["PET"])){
 echo " <div class='$panel'>";
 echo $_SESSION["LOG"];
 echo '</div>';
+	
 
-//k,kk,kkk
-	$mHPN = $mHP;
-	$mHPN = "$mHP";
-if ($mHP > 1000){
-	$mHPN = round($mHP/1000,1);
-	$mHPN = "$mHPN k.";
-}
-if ($mHP > 1000000){
-	$mHPN = round($mHP/1000000,1);
-	$mHPN = "$mHPN kk.";
-}
-if ($mHP > 10000000000){
-	$mHPN = round($mHP/1000000000,1);
-	$mHPN = "$mHPN kkk.";
-}
-
-
+//saving values
+$mHPNtx = $mHP;
+$mDMGtx = $mDMG;
+$mDMGmtx = $mDMGm;
+$mDRPtx = $mDRP;
+	
+//rounding
+include 'PHP/rounding.php';
+	
 echo "<img src='IMG/Mon/$imgm.jpg' width='60' height='60'><br>";
-echo "Monster Name: <b>$mName</b><br>";
-echo " HP: $mHPN, DMG: <font color='red'>~$mDMG</font>/<font color='0066ff'>~$mDMGm</font>,$defMon XP: $mDRP, Lvl: $mLVL";
+	if (isset($_SESSION["MonsBOS"])){
+		echo "<div class='Boss1'>BOSS !</div>";
+	}
+echo "Monster Name: <b>$mName</b>";
+echo "<br>";
+echo " HP: $mHPNtx, DMG: <font color='red'>~$mDMGtx</font>/<font color='0066ff'>~$mDMGmtx</font>,$defMon XP: $mDRPtx, Lvl: $mLVL";
 
 
 	
@@ -199,7 +206,7 @@ if ($combo >= 3){
 	$combtest = "<div class='Combo2'>$combo x Combo !</div>";}
 if ($combo >= 5){
 	$combtest = "<div class='Combo3'>$combo x Combo !</div>";}
-if ($combo == 10){
+if ($combo >= 10){
 	$combtest = "<div class='Combo4'>$combo x Combo !</div>";}
 if ($combo < 1){
 	$combtest = "";}

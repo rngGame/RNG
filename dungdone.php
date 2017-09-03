@@ -63,7 +63,7 @@ if ($kills > $ACC[17]){
 	
 $order3 = "UPDATE characters
 SET Dungeon = '$kills'
-WHERE `User` = '$Account'";
+WHERE `User` = '$User'";
 $result = mysqli_query($db, $order3);
 	
 }
@@ -85,7 +85,7 @@ else{
 	
 	$order3 = "UPDATE characters
 	SET XP = '$xp'
-	WHERE `User` = '$Account'";
+	WHERE `User` = '$User'";
 	$result = mysqli_query($db, $order3);
 	
 	
@@ -128,8 +128,8 @@ else{
 	$result = mysqli_query($db, $order6);
 	
 	//bonus coruption stones
-	if ($kills >= 10){
-		$bonusCO = round($kills / 10);
+	if ($kills >= 20){
+		$bonusCO = round($kills / 20);
 		$a2 = 1;
 		
 		while ($bonusCO >= $a2){

@@ -1135,6 +1135,27 @@ $_SESSION[RESF] = $RESF;
 $_SESSION[RESI] = $RESI;
 $_SESSION[RESL] = $RESL;
 
+//achievemnt for resits
+$ResistTotal = $RESF + $RESI + $RESL;
+if ($ResistTotal >= 100){
+	
+	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'RESISTS'");
+	$ACH = mysqli_fetch_row($ACH);
+		if ($ACH[1]==""){
+	$order = "INSERT INTO aStatus (User, Name, Status)
+	VALUES ('$Account', 'RESISTS', '$ResistTotal')";
+	$result = mysqli_query($db, $order);}
+		else{
+			if ($ACH[2] < $ResistTotal){
+			$order = "UPDATE aStatus
+			SET Status = '$ResistTotal'
+			WHERE `User` = '$Account' and `Name` = 'RESISTS'";
+			$result = mysqli_query($db, $order);
+			}
+		}
+	
+}
+
 	
 if ($WPN[3] == "ff6633"){
 	$WPN[3] = "awesome";}
@@ -1850,6 +1871,16 @@ if ($ACC[12] == "itemUnique"){
 	$uniqCLS = "awesome";
 	$ACC[12] = "#33ccff";}
 
+//saving values
+$HPintx = $HP2;
+$avgPtx = $avgP;
+$avgMtx = $avgM;
+$Armortx = $Parmor;
+$ArmorMtx = $Marmor;
+	
+//rounding
+include 'PHP/rounding.php';
+
 
 $statsTemplate = "
 <font class='stats'>User:</font>
@@ -1877,13 +1908,13 @@ $leveltext
 <br>
 <font class='stats'>Average DMG:</font>
 <b>
-	<font class='physical'>~$avgP</font>
+	<font class='physical'>~$avgPtx</font>
 	/
-	<font class='magic'>~$avgM</font>
+	<font class='magic'>~$avgMtx</font>
 </b>
 <br>
 <font class='stats'>HP:</font> 
-<font class='health'><b>$HP2</b></font>
+<font class='health'><b>$HPintx</b></font>
 <br>
 <font class='stats'>ENR:</font> 
 <b>
@@ -1895,9 +1926,9 @@ $leveltext
 <br>
 <font class='stats'>DEF:</font> 
 <b>
-	<font class='physicalArmor'>$Parmor</font>
+	<font class='physicalArmor'>$Armortx</font>
 	/
-	<font class='magicArmor'>$Marmor</font>
+	<font class='magicArmor'>$ArmorMtx</font>
 </b>
 <br>
 <font class='stats'>Gold:</font> 

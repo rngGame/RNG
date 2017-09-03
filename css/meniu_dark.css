@@ -1015,7 +1015,37 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
 }
 
+.Boss1{
+	position: absolute;
+	margin-left: 76px;
+    margin-top: -54px;
+	color: white;
+	font-size:38px;
+	-webkit-animation-name: combo3;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 3s;
+}
+@-webkit-keyframes combo3 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange;	}
+	70% {	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+}
 
+.movingAni{
+	position: absolute;
+	color: white;
+	font-size:38px;
+	-webkit-animation-name: combo3;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 2s;
+}
+@-webkit-keyframes combo3 {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+	30% {	 text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkorange;	}
+	70% {	 text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkblue;	}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	}
+}
 
 
 .DEAD{

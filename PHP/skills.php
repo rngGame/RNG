@@ -6,6 +6,9 @@ if ($SKL ==1){
 		$sk1v = 1.50;}
 	if ($SUB[5] == "GLAD"){
 		$sk1v = rand(1.75,2.25);}
+	if (isset($_SESSION[SKL1b])){
+		$physDMG = $physDMG + $_SESSION[SKL1b];
+	}
 	$physDMG = $physDMG * $sk1v;
 	if ($_SESSION["FRAGID"] == 1){
 		$physDMG +=  round($physDMG * $_SESSION["FRAGPOWER"]);

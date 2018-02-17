@@ -32,7 +32,7 @@ $User = $_SESSION["User"]; //user
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
-
+	
 //set what type reward to get
 $type = rand(1,200);
 if ($type > 180 and $ACC[3] > 19){

@@ -1,11 +1,25 @@
 <?php
 if ($ACC[3] >= 10 and $SKL > 30){
+	
+	$SKLv = mysqli_query($db,"SELECT * FROM SkLVL where Charac = '$User' and Skill = '1' ");
+	$SKLv = mysqli_fetch_row($SKLv);
+	
+	if ($SKLv[2] >= 1 ){
+	
+	$bonus1 = $SKLv[2] * ($ACC[3] + $SKLv[3]);
+	$bonus1min = round($bonus1 * 0.7);
+		
+	$_SESSION[SKL1b] = rand($bonus1min,$bonus1);
+	
+	$bon1 = "<br>Add:<br>$bonus1min - $bonus1 dmg.";
+	}
+
  echo
   "<section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='FCAL.php'>
           <input type='hidden' name='skl' value='1'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c1 src='IMG/pack/Icon.6_98.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>30En.<br>$t1 to single attack</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c1 src='IMG/pack/Icon.6_98.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>30En.<br>$t1 to single attack $bon1</span></p> 
       </form>
     </div>&nbsp;&nbsp;"
   ;}
@@ -19,10 +33,25 @@ if ($ACC[3] >= 10 and $SKL > 30){
       </form>
     </div>&nbsp;&nbsp;"
   ;}
+
   $pois = 0;
   if (isset($_SESSION["pois"])){
 	  $pois = 1;}
   if ($ACC[3] >= 15 and $SKL > 35 and $pois == 0){
+	  
+	$SKLv7 = mysqli_query($db,"SELECT * FROM SkLVL where Charac = '$User' and Skill = '7' ");
+	$SKLv7 = mysqli_fetch_row($SKLv7);
+	
+	if ($SKLv7[2] >= 1 ){
+	
+	$bonus7 = $SKLv7[2] * (($ACC[3] + $SKLv7[3]) * 0.5);
+	$bonus7min = round($bonus7 * 0.5);
+		
+	$_SESSION[SKL7b] = rand($bonus7min,$bonus7);
+	
+	$bon7 = "<br>Add:<br>$bonus7min - $bonus7 dmg.";
+	}
+	  
  echo
   "
     <div class='tooltip'>
@@ -31,7 +60,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
 		  <option value='7' selected>7/option>
 		  </select>
           <input hidden='' type='text' name='skl' value='7' placeholder='lvl'>
-        <p class='submit' onclick='myfunc(this)'><input img $c2 src='IMG/pack/Icon.1_19.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'><span class='tooltiptext'>35En.<br>Poison enemy $t2</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input img $c2 src='IMG/pack/Icon.1_19.png' style='width:45px;height:45px;' type='image' name='commit' value='(40)Heal'><span class='tooltiptext'>35En.<br>Poison enemy $t2 $bon7</span></p> 
       </form>
     </div>&nbsp;&nbsp;
   ";}

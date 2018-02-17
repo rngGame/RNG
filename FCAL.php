@@ -278,6 +278,10 @@ if ($SKL ==7 or $pos == 1){
 	$pois = rand(1,5);
 	$poison = ($mLVL * $plvl) / 2; // base dmg
 	
+	if(isset($_SESSION[SKL7b])){
+		$poison += $_SESSION[SKL7b];
+	}
+	
 	if ($CLS[6] == "POIS"){
 	$pois = rand(3,8);}
 	

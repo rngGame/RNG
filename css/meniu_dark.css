@@ -468,6 +468,7 @@ input[type="text"]{
 }
 
 .blur {-webkit-filter: blur(4px);filter: blur(4px);}
+.blur2 {-webkit-filter: blur(2px);filter: blur(2px);}
 .brightness {-webkit-filter: brightness(0.30);filter: brightness(0.30);}
 .contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}
 .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
@@ -479,6 +480,11 @@ input[type="text"]{
 .shadow {-webkit-filter: drop-shadow(8px 8px 10px green);filter: drop-shadow(8px 8px 10px green);}
 .test { -webkit-filter: hue-rotate(50deg);}
 .cool {-webkit-filter: drop-shadow(0px 0px 7px #00FF99) invert(100%);filter: drop-shadow(0px 0px 7px #00FF99) invert(100%);}
+
+.test2 {
+    filter: brightness(100%) sepia(1) hue-rotate(45deg) saturate(250%) brightness(90%);
+    -webkit-filter: brightness(100%) sepia(1) hue-rotate(45deg) saturate(250%) brightness(90%); 
+}
 
 .lvltext{
     display: inline;

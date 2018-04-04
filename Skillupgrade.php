@@ -30,12 +30,18 @@ $TRE = mysqli_query($db,"SELECT * FROM passiveTree where Name = '$User' ");
 $TRE = mysqli_fetch_row($TRE);	
 	
 //make every string individual
-$array = str_split($TRE[1]);
+$arrayP = str_split($TRE[1]);
 	
 // $array[0]; - first and so on//
 	
+//26 SKILLS
 	
-	
+if ($arrayP[0] == 0){
+	$c1 = "class='blur2'";
+}
+if ($arrayP[0] == "a"){
+	$c1 = "class='test2'";	
+}
  echo
   "LVL 5:<br>
   <section class='container2'>
@@ -44,21 +50,32 @@ $array = str_split($TRE[1]);
           <input type='hidden' name='skl' value='1'>
         <p class='submit' onclick='myfunc(this)'><input  img $c1 src='IMG/pack/Icons8_61.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+5 STR and INT</span></p> 
       </form>
-    </div>&nbsp;&nbsp
-	
-  <br><br>LVL 10:<br>
+    </div>&nbsp;&nbsp";
+
+if ($arrayP[1] == 0){
+	$c2a = "class='blur2'";
+	$c2b = "class='blur2'";
+}
+if ($arrayP[1] == "a"){
+	$c2a = "class='test2'";	
+}
+if ($arrayP[1] == "b"){
+	$c2b = "class='test2'";	
+}	
+echo	
+  "<br><br>LVL 10:<br>
   <section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='1'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c1 src='IMG/pack/Icon.7_11.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+10% HP</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c2a src='IMG/pack/Icon.7_11.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+10% HP</span></p> 
       </form>
 	  </div>
   <section class='container2'>
   <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='1'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c1 src='IMG/pack/Icons8_03.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+20% MP</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c2b src='IMG/pack/Icons8_03.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+20% MP</span></p> 
       </form>
     </div>&nbsp;&nbsp;
 	 
@@ -164,7 +181,7 @@ $array = str_split($TRE[1]);
       </form>
 	  </div>
 	  
-		<br><br>LVL 30:<br>
+		<br><br>LVL 35:<br>
   <section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
@@ -180,7 +197,7 @@ $array = str_split($TRE[1]);
       </form>
 	  </div>
 	
-		<br><br>LVL 35:<br>
+		<br><br>LVL 40:<br>
   <section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
@@ -204,7 +221,7 @@ $array = str_split($TRE[1]);
 	  </div>	
 
 
-		<br><br>LVL 40:<br>
+		<br><br>LVL 45:<br>
   <section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>

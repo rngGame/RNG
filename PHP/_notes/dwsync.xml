@@ -4,9 +4,9 @@
 <file name="config.php" server="ftp.miniforums.org" local="131349460214176783" remote="131236842600000000" Dst="1" />
 <file name="function.php" server="ftp.miniforums.org" local="131429670745211301" remote="131429382600000000" Dst="2" />
 <file name="info.php" server="ftp.miniforums.org" local="131349460225887539" remote="131236832400000000" Dst="1" />
-<file name="ach.php" server="ftp.miniforums.org" local="131489032698718809" remote="131488744200000000" Dst="2" />
-<file name="skills.php" server="ftp.miniforums.org" local="131633432475684941" remote="131633144400000000" Dst="1" />
-<file name="effect.php" server="ftp.miniforums.org" local="131429712185753057" remote="131429424000000000" Dst="2" />
+<file name="ach.php" server="ftp.miniforums.org" local="131676094359374060" remote="131675770200000000" Dst="2" />
+<file name="skills.php" server="ftp.miniforums.org" local="131676107265542713" remote="131675782800000000" Dst="2" />
+<file name="effect.php" server="ftp.miniforums.org" local="131676066274964527" remote="131675742000000000" Dst="2" />
 <file name="SkillsP.php" server="ftp.miniforums.org" local="131633438600175649" remote="131633150400000000" Dst="1" />
 <file name="SkillsM.php" server="ftp.miniforums.org" local="131391682179588745" remote="131391357600000000" Dst="2" />
 <file name="point.php" server="ftp.miniforums.org" local="131348281072395600" remote="131347992600000000" Dst="1" />
@@ -16,4 +16,5 @@
 <file name="ItemsFight.php" server="ftp.miniforums.org" local="131420833193985068" remote="131420545200000000" Dst="2" />
 <file name="coruption.php" server="ftp.miniforums.org" local="131430242415260057" remote="131429954400000000" Dst="2" />
 <file name="rounding.php" server="ftp.miniforums.org" local="131489056255034622" remote="131488768200000000" Dst="2" />
+<file name="passiveModule.php" server="ftp.miniforums.org" local="131676148558834847" remote="131675824200000000" Dst="2" />
 </dwsync>

@@ -107,6 +107,12 @@ height:255px;
     top: 336px;
 }
 
+.skillback{
+	    position: absolute;
+    top: 15px;
+    left: 500px;
+}
+
 #mini2 {
 	width:520px;
 	border: 1px solid #222427;

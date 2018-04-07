@@ -92,6 +92,12 @@ if ($SUB[6] == "DG"){
 		$Dodge = 1;	
 }
 }
+//dodge passive
+if ($DodgePS > rand(0,100)){
+		$Dodge = 1;	
+}
+
+
 
 //health per turn
 if ($SUB[6] == "HT" or $WEPn["effect"] == "HT"){

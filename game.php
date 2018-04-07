@@ -7,10 +7,10 @@ $User = $_SESSION["User"];
 $Account = $_SESSION["Account"];
 
 
-
 if ($User == ""){
 	header("location:index.php");}
 
+include_once 'PHP/passiveModule.php';
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
@@ -246,6 +246,10 @@ $_SESSION["Thorns"] = $bonusTR;
 $PNT = mysqli_query($db,"SELECT * FROM Points where User = '$User' ");
 $PNT = mysqli_fetch_row($PNT); //pasive points
 
+//pasive points adding from passive tree 
+$PNT[2] += $STRex;
+$PNT[3] += $INTex;
+
 //new  accesories
 $EQPacs = mysqli_query($db,"SELECT * FROM Equiped where User = '$User' AND Part = 'ACS' AND Equiped = '1' ");
 while ($EQPAC = mysqli_fetch_array($EQPacs)){	
@@ -462,7 +466,9 @@ $tottalXPBonus = round($ACSRING["xpBonus"] + $ACSAMULET["xpBonus"]);
 $tottalHPBonus = round($ACSRING["hpBonus"] + $ACSAMULET["hpBonus"]) + $ACSRINGhpBN + $ACSAMULEThpBN;
 $tottalDMGBonus = round($ACSRING["dmgBonus"] + $ACSAMULET["dmgBonus"]) + $ACSRINGdmgBN + $ACSAMULETdmgBN;
 
-
+//pasive armor bonus
+$tottalParmordef += $passiveDEF;
+$tottalMarmordef += $passiveDEF;
 
 // physical dmg
 $minPdmg = round(($WEPn["pmin"] + ($WEPn["pmin"] * $tottalDMGBonus /100 ))*$CLS[3]);
@@ -488,6 +494,33 @@ if (isset($dmgsub)){
 	$maxMdmg = round(($maxMdmg*$dmgsub),0);
 }
 
+//conv. passive skills
+if (isset($PtoM)){
+$minMdmg = round($minMdmg + ($minPdmg*$PtoM));
+$maxMdmg = round($maxMdmg + ($maxPdmg*$PtoM));
+}
+
+if (isset($MtoP)){	
+$minPdmg = round($minPdmg + ($minMdmg*$MtoP));
+$maxPdmg = round($maxPdmg + ($maxMdmg*$MtoP));
+}
+
+//pasive bonuses
+$minPdmg += $pdmgPAS;
+$maxPdmg += $pdmgPAS;
+
+$minMdmg += $mdmgPAS;
+$maxMdmg += $mdmgPAS;
+
+if (isset($mdmgPASmulti)){
+	$minMdmg = $minMdmg * $mdmgPASmulti;
+	$maxMdmg = $maxMdmg * $mdmgPASmulti;
+}
+if (isset($pdmgPASmulti)){
+	$minPdmg = $minPdmg * $pdmgPASmulti;
+	$maxPdmg = $maxPdmg * $pdmgPASmulti;
+}
+
 $lwa = $ACC[3] + $WEPn["ilvl"] + $SKLn[ilvl] + $armorlevel + $acclevel + $PAS[3] + $PAS[6] + $PAS[9] + $PAS[12] + $MOD[9] +$GEM[4];
 
 $order = "UPDATE characters
@@ -501,8 +534,11 @@ $HP = $HP + ($HP * ($PNT[2])/100);
 $Parmor = round(($tottalParmordef )*$CLS[4]);
 $Marmor = round(($tottalMarmordef)*$CLS[4]);
 
-//real hp for some reason
+//real hp for some reason + passive
 $HP2 = $HP + ($HP * $tottalHPBonus / 100);
+if (isset($HPex)){
+$HP2 = $HP2 * $HPex;
+}
 
 //Hardocre check stuff
 if ($ACC[1] == 1){
@@ -707,7 +743,10 @@ else{
 		$RESI = 0;
 		$RESL = 0;	
 
-
+//pasive resistancess
+		$RESF = $pasResist;
+		$RESI = $pasResist;
+		$RESL = $pasResist;
 
 
 if(isset($MODE[1])){
@@ -824,6 +863,8 @@ if (isset($defsub)){
 $dmg = round($dmg,0);
 $HP2 = round($HP2,0)+$bonusHP;
 
+//pasive HP bonus
+$HP2 = $HP2 + $HPpasive;
 
 $_SESSION["HP"] = $HP2;
 $_SESSION["GOLD"] = $ACC[4];
@@ -838,18 +879,19 @@ $_SESSION["DMGMAVE"] =  $avgM;
 $_SESSION["DMGAVE"] =  $avgD;
 
 
+
 $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;
 $_SESSION["MARM"] = $Marmor;
 $_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
 $_SESSION["ENG"] = $CLS[5];
-$_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"];
+$_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"] + $CritCHpas;
 if (isset($crcsub)){
-$_SESSION["CRYT"] = $PAS[2]*$crcsub;
+$_SESSION["CRYT"] = ($PAS[2]+$WEPn)*$crcsub + $CritCHpas;
 }
-$_SESSION["CRYTD"] = $PAS[11];
+$_SESSION["CRYTD"] = $PAS[11]+$CritDMGpas; //crit + pasive bonus
 if (isset($crdsub)){
-$_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub;
+$_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub+$CritDMGpas;
 }
 $_SESSION["APS"] = $PAS[5] + $tottalarmorApsorb + $tottalACCApsorb;
 $_SESSION["ENG2"] = $PAS[8];
@@ -857,10 +899,26 @@ $_SESSION["ILVL"] = $lwa;
 $_SESSION["crytext"] = 0;
 $_SESSION["crytext2"] = 0;
 
+
+//energie stuff
 $ENR = ($ACC[3]*3)+$CLS[5];
 $ENR = $ENR + ($ENR * ($PNT[3]*2)/100)+ $bonusEN;
+// bonus energie
+if (isset($MPex)){
+$ENR = $ENR * $MPex;	
+}
+$ENR = $ENR + $MPpasive;
+
 $enr= 5+(5*$PAS[8]/100);
 $enr= $enr + ($enr * ($PNT[3]*1)/100);
+// bonus enr regen
+if (isset($pasENRregen)){
+$enr = $enr + $pasENRregen;	
+}
+if (isset($energyMore)){
+$enr = $enr * $energyMore;	
+}
+
 $enr=round($enr,0);
 $ENR=round(($ENR),0);
 if (isset($enrsub)){
@@ -881,9 +939,14 @@ $_SESSION["ENERGY"] = $ENR;
 $_SESSION["ENERGYM"] = $ENR;
 $_SESSION["ENREGEN"] = $enr;
 
+//pasive enegrie shield
+if (isset($bonusESpas)){
+$bonusES = round($bonusES * $bonusESpas);
+}
+
 //energie shield
-$_SESSION["ESshield"] = $bonusES;
-$_SESSION["ESshieldO"] = $bonusES;
+$_SESSION["ESshield"] = $bonusES; 
+$_SESSION["ESshieldO"] = $bonusES; 
 $ESregen = ($bonusES * 10 /100)*(($PNT[3]/100)+1);
 if ($ESregen <= 1){
 	$ESregen = 1;}
@@ -1877,6 +1940,7 @@ $avgPtx = $avgP;
 $avgMtx = $avgM;
 $Armortx = $Parmor;
 $ArmorMtx = $Marmor;
+
 	
 //rounding
 include 'PHP/rounding.php';
@@ -1959,7 +2023,7 @@ $leveltext
 		<br>
 		XP: $PAS[1]/$plvl1[1]
 		<br>
-		$PAS[2]% Cryt chance
+		$_SESSION[CRYT]% Cryt chance
 	</span>
 </div>
 <div class='tooltip'>
@@ -1969,7 +2033,7 @@ $leveltext
 		<br>
 		XP: $PAS[10]/$plvl4[1]
 		<br>
-		$PAS[11]% Cryt damage increase
+		$_SESSION[CRYTD]% Cryt damage increase
 	</span>
 </div>
 <div class='tooltip'>
@@ -2156,6 +2220,13 @@ $DungButon
 		<input hidden='' type='text' name='lvl' value='100' placeholder='Fight Boss'>
 		<input type='submit' name='commit' value='World Boss'>
 	</form>
+</section>
+<section class='actionButtons'>
+	<form method='post' action='Skillupgrade.php'>
+		<input hidden='' type='text' name='lvl2' value='Skill Tree='Skill Tree'>
+		<input type='submit' name='commit2' value='Skill Tree'>
+
+  	</form>
 </section>
 <section class='actionButtons'>
 	<form method='post' action='vale.php'>

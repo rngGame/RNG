@@ -259,7 +259,8 @@ if ($SKL ==33){
 };
 
 //skill 34
-	if ($SKL ==34 or isset($_SESSION["PET"])){
+
+	if ($SKL ==34 or isset($_SESSION["PET"]) or $_SESSION["passumon"] == 1){
 		if (!isset($_SESSION["PET"])){ //sukuria nauja
 			$petname = mysqli_query($db,"SELECT * FROM Pets where Class = '$ACC[10]' Order by RAND() Limit 	1");
 			$petname = mysqli_fetch_row($petname);
@@ -353,15 +354,20 @@ if ($SKL ==33){
 			}
 			//if necromancer resumon pet
 			if ($petHP <= 0 and $SUB[5] == "NECR" and $petskl <> 1){
-				if (rand(0,100) < 85){
-				$_SESSION["PETHP"] = round($HPO * 60 / 100);
+				if (rand(0,100) < 50){
+				$_SESSION["PETHP"] = round($HPO * 20 / 100);
 				$petHP = $_SESSION["PETHP"];
-				$_SESSION["PETMINDMG"] = round($minMdmg * 60 / 100);
-				$_SESSION["PETMAXDMG"] = round($maxMdmg * 120 / 100);					
+				$_SESSION["PETMINDMG"] = round($minMdmg * 100 / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * 200 / 100);					
 				$petSkillText = "<b>Pet resumoned after death</b><br>";		
 				}
 			}
 			
+			if ($petHP <= 0 and isset($pasSummon)){
+				$_SESSION["PETHP"] = round($HPO * 20 / 100);
+				$petHP = $_SESSION["PETHP"];
+				$petSkillText = "<b>Pet resumoned after death</b><br>";
+			}
 			
 			//when pet died
 			if ($petHP <= 0){

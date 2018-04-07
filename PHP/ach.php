@@ -1215,9 +1215,10 @@ if ($cor5[10] >= 1){
 	$rarr = mysqli_query($db,"SELECT * FROM aStatus where User = '$Account' and Name = 'RESISTS' ");
 	$rarr = mysqli_fetch_row($rarr);
 if ($rarr[2] >= 150){
-	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting");
-	$ACH = mysqli_fetch_row($ACH);
-	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
+	$ACHs = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting'");
+	$ACHs = mysqli_fetch_row($ACHs);
+	if ($ACHs[1]==""){
+	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
 	while ($Chars = mysqli_fetch_array($chars)){
 		
 		$PNT = mysqli_query($db,"SELECT * FROM Points where User = '$Chars[0]' ");
@@ -1241,7 +1242,7 @@ if ($rarr[2] >= 150){
 	$rarr = mysqli_query($db,"SELECT * FROM aStatus where User = '$Account' and Name = 'Elemental' ");
 	$rarr = mysqli_fetch_row($rarr);
 if ($rarr[2] >= 150){
-	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting");
+	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting'");
 	$ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
 	while ($Chars = mysqli_fetch_array($chars)){
@@ -1267,7 +1268,7 @@ if ($rarr[2] >= 150){
 	$rarr = mysqli_query($db,"SELECT * FROM aStatus where User = '$Account' and Name = 'V O I D' ");
 	$rarr = mysqli_fetch_row($rarr);
 if ($rarr[2] >= 150){
-	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting");
+	$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'Resisting'");
 	$ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");
 	while ($Chars = mysqli_fetch_array($chars)){

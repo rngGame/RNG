@@ -18,6 +18,8 @@ include_once 'PHP/db.php';
 $User = $_SESSION["User"];
 $Account = $_SESSION["Account"];
 $mName = $_SESSION["MonsName"];
+	
+include_once 'PHP/passiveModule.php';
 
 //page name
 $page = $_SESSION["PAGE"];
@@ -71,6 +73,22 @@ $SKL = $_POST["skl"]; //skill ID
 $wepHASH = $_SESSION["CURRENTWHASH"]; //get weapon hash
 	
 $finalPlayerDMG = 0;
+	
+	
+//hp restore from papssive skill
+if (isset($HPpasRES)){
+	$HPinpas = $_SESSION["HPO"] * $HPpasRES;
+	$HPin = $HPin + $HPinpas;
+}
+	
+//pasive chanse to restore
+if (isset($HPpasCH)){
+	if ($HPpasCH > rand(0,100)){
+	$HPinpas = round($_SESSION["HPO"] * $HPpasRESch);
+	$HPin = $HPin + $HPinpas;
+	$restored = "Restored <font color='#66ff33'>$HPinpas</font> HP<br>";
+}
+}	
 
 //thorns
 if (isset($_SESSION["Thorns"])){
@@ -230,9 +248,13 @@ if ($_SESSION["HealthTurn"] >= 1){
 
 
 //monster cryt	
+if (isset($cantCryt)){
+}
+else{
 if (rand(1,100) < 10){
 	$citM = 1;
 $monDMG = $monDMG*2;}
+}
 
 //monster dmg to playerr
 $monDMG = ($monDMG - $Armor);
@@ -404,6 +426,12 @@ if ($ddam == 1){
 //poision + thorns + petdmg
 $finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode + $overkillDamage;
 
+//pasive bonus
+if (isset($passivePLY)){
+$finalPlayerDMG = $finalPlayerDMG * $passivePLY;
+}	
+	
+
 //Confusion
 if ($Confusion == 1){
 	$finalPlayerDMG = $finalPlayerDMG + $CFdmg;
@@ -445,22 +473,43 @@ else {
 if (!isset($_SESSION["Combo"])){
 	$finalPlayerDMG += $finalPlayerDMG * ($_SESSION["Combo"] / 10);
 }
+	
+//add double dmg
+if (isset($PSdmg)){
+	if ($PSdmg > rand(0,100)){
+	$finalPlayerDMG = $finalPlayerDMG * 2;
+	$passiveTEXT = "<font color='#ff00ff'>Double Damage !</font><br>";
+	}
+}
 
-
+//if chaos passive
+if (isset($CHAOS)){	
+	$ChaosDMG = round($finalPlayerDMG * $CHAOS);
+	if ($finalPlayerDMG <= 0){
+		$ChaosDMG = $plvl * 10;
+	}
+	$ChaosTEXT = "<font color='#6600cc'>$ChaosDMG chaos dmg.</font><br>";
+}
+	
 
 //dmg to player----------------------------------
 
 if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
+	
 
 //monster skill
 
 //health boost
+if (isset($cantheal)){
+}
+else{
 if (rand(1,1000) >= 950){
 	$finalMonsHPlaik = round($mLVL * $plvl);
 	$finalMonsHP += $finalMonsHPlaik;
 	$monsSkillHP = "Monster boosted its health by <font color='#E44C68'>$finalMonsHPlaik</font> hp. <br>";
 }
-
+}
+	
 //mons reflect
 $monref = 0;
 if (rand(1,1000) >= 950){
@@ -577,6 +626,28 @@ if (isset($_SESSION["ESshield"])){
 }
 
 $monDID = $monDMG + $monDMGmag + $monref;
+//pasive increase dmg
+if (isset($passiveMOB)){
+$monDID = $monDID * $passiveMOB;
+}
+	
+if (isset($monsoverdmg)){
+	$posbilemax = $_SESSION["HPO"] * $monsoverdmg;
+	if ($monDID > $posbilemax){
+		$monDID = $posbilemax;
+	}
+}
+
+//first turn passive
+if (isset($firstPSV)){
+	if (!isset($_SESSION["1stPASSIVE"])){
+		$monDID = 0;
+		$mobmagskill="Monster did 0";
+		$_SESSION["1stPASSIVE"] = 1;
+	}
+}
+	
+	
 $finalPlayerHP = $HPin - $monDID;
 	
 	//rounding
@@ -647,7 +718,7 @@ $monsRef= round($monsRef,0);
 
 
 //final dmg to monster !!
-$finalMonsHP = $monHP - $finalPlayerDMG;
+$finalMonsHP = $monHP - $finalPlayerDMG - $ChaosDMG;
 
 
 //logas
@@ -695,10 +766,10 @@ $monsRefTX = $monsRef;
 
 	
 	$LOG = $_SESSION["LOG"];
-	$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br>$resisttex<hr> $LOG<br>";
+	$_SESSION["LOG"] = "$gemtxt <br>$restored $ChaosTEXT $passiveTEXT $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $CursedText $magickText $efftext $att $tST $hpT $poisT $refT $CT $User did  $xt $tP  dmg. <br><br>$shieldDMG $mont<br>$resisttex<hr> $LOG<br>";
 	}
 	if ($mis == 1){
-		$_SESSION["LOG"] = "$gemtxt <br> $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br>$resisttex<br><hr>$LOG<br>";
+		$_SESSION["LOG"] = "$gemtxt <br>$restored $ChaosTEXT $overkillText $exptext $shieldREC $ThorText $restoreFromArmor $poisT $CursedText $magickText $efftext $User <b>Missed</b> <br><br>$shieldDMG $mont<br>$resisttex<br><hr>$LOG<br>";
 	}
 
 

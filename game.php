@@ -887,11 +887,11 @@ $_SESSION["XPT"] = (1 + (1 * $tottalXPBonus / 100)) * $EventBonus ; //xp bonus
 $_SESSION["ENG"] = $CLS[5];
 $_SESSION["CRYT"] = $PAS[2]+$WEPn["cryt"] + $CritCHpas;
 if (isset($crcsub)){
-$_SESSION["CRYT"] = ($PAS[2]+$WEPn)*$crcsub + $CritCHpas;
+$_SESSION["CRYT"] = ($PAS[2]+$WEPn["cryt"])*$crcsub + $CritCHpas;
 }
 $_SESSION["CRYTD"] = $PAS[11]+$CritDMGpas; //crit + pasive bonus
 if (isset($crdsub)){
-$_SESSION["CRYTD"] = 1+$PAS[11]*$crdsub+$CritDMGpas;
+$_SESSION["CRYTD"] = 1+$PAS[11]+$CritDMGpas;
 }
 $_SESSION["APS"] = $PAS[5] + $tottalarmorApsorb + $tottalACCApsorb;
 $_SESSION["ENG2"] = $PAS[8];

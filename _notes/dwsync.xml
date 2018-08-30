@@ -77,4 +77,8 @@
 <file name="dungdone.php" server="ftp.miniforums.org" local="131489064192848584" remote="131488776000000000" Dst="2" />
 <file name="Skillupgrade.php" server="ftp.miniforums.org" local="131676160948563771" remote="131675836800000000" Dst="2" />
 <file name="changePassive.php" server="ftp.miniforums.org" local="131676030877224900" remote="131675706600000000" Dst="2" />
+<file name="Version.php" server="miniforums.org" local="131800817082692043" remote="131800528800000000" Dst="2" />
+<file name="create.php" server="miniforums.org" local="131800823576861355" remote="131800535400000000" Dst="2" />
+<file name="Enchant.php" server="miniforums.org" local="131800827429910253" remote="131800539000000000" Dst="2" />
+<file name="reward.php" server="miniforums.org" local="131800839229888205" remote="131800551000000000" Dst="2" />
 </dwsync>

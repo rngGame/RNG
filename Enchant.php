@@ -24,7 +24,6 @@ $User = $_SESSION["User"];
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
 
-
 if (isset($_POST["HASH"])){
 $HASH = $_POST["HASH"];
 $TYPE = $_POST["TYPE"];
@@ -88,6 +87,17 @@ $_SESSION["TYPE"] = $TYPE;
 if ($TYPE == "WEP"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$HASH' ");
 $ITM = mysqli_fetch_assoc($WEP);
+
+if ($HASH == "0001"){
+echo "You can't enchant or corupt this weapon !<br><section class='actionButtons2'>
+	      <form method='post' action='sync.php'>
+        <p class='submit'><input type='submit' name='commit' value='Back'></p>
+      </form>
+  </section>
+  </div>";
+  die();
+}
+
 }
 if ($TYPE == "ARM"){
 $WEP = mysqli_query($db,"SELECT * FROM DropsArm where HASH = '$HASH' ");

@@ -1088,7 +1088,7 @@ if ($ACC[3] >= 40 and $ACC[6] == 2){
 		$result = mysqli_query($db, $order);}}
 
 //Die in speed run (43)
-if ($ACC[7] >= 1 and $ACC[6] == 2){
+if ($ACC[7] >= 1 and $ACC[1] == 2){
 		$ACH = mysqli_query($db,"SELECT * FROM Achievments where user = '$Account' and Title = 'No time to explain !'");
 		$ACH = mysqli_fetch_row($ACH);
 	if ($ACH[1]==""){	$chars = mysqli_query($db,"SELECT * FROM characters where Account = '$Account'");

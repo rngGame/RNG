@@ -4,34 +4,13 @@ ob_start();
 include_once 'PHP/db.php';
 include_once 'PHP/function.php';
 
-?>
-
-
-
-
-
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>World of RNG</title>
-<?php
-echo "<link rel='stylesheet' type='text/css' href='css/$_COOKIE[Theme].css'>";
-?>
-<link rel="icon" href="favicon.png">
-</head>
-<header>
-World Of RNG
-</header>
-<body>
-
-
-<?php
 
 $User = $_SESSION["User"];
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
+	
+
 
 //selling all
 if (isset($_POST['bagsell'])) {
@@ -234,9 +213,12 @@ if (isset($_POST['ITMS'])) {
 
 if (isset($_POST['Eqip'])) {
 	
+	
 
 	$Type = $_POST['TYPE'];
 	$new = $_POST['Eqip'];
+	
+
 
 	
 if ($Type == "WEP"){
@@ -370,6 +352,7 @@ mysqli_query($db,$sql2);}
 } else {
     //no button pressed
 }
-
+	
+	
 header("location:sync.php");
 ?>

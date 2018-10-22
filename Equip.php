@@ -4,6 +4,8 @@ ob_start();
 include_once 'PHP/db.php';
 include_once 'PHP/function.php';
 
+print_r($_POST);
+
 
 $User = $_SESSION["User"];
 
@@ -94,7 +96,6 @@ if (isset($_POST['bagsell'])) {
 
 
 if (isset($_POST['ITMS'])) {
-	
 	
 	$newU = $_POST['ITMS'];
 	$ITM = mysqli_query($db,"SELECT * FROM DropsItm where HASH = '$newU'"); //Item Usega
@@ -352,7 +353,7 @@ mysqli_query($db,$sql2);}
 } else {
     //no button pressed
 }
-	
+
 	
 header("location:sync.php");
 ?>

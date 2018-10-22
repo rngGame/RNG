@@ -362,9 +362,10 @@ function itemDrop($db,$user,$drop,$MLVL){
 
             //hashing item
             $hashClaimed = 0;
-            $HASH = rand(-999999999,99999999999);
+            $HASH = rand(1,9999);
             $HASH = $HASH * $iLVL;
-            $HASH = $HASH + rand(-1999,9999);
+            $HASH = $HASH + rand(1,9999);
+			$HASH = "$HASH $drop";
             $result = mysqli_query($db,"SELECT * FROM Equiped WHERE HASH = '$HASH'");
             $count = mysqli_num_rows($result);
             if($count==1){ //if hash claimed, we will redo this
@@ -555,14 +556,8 @@ function itemDrop($db,$user,$drop,$MLVL){
 
 
 
-				$textMessage.="Function FINISHED by $user at ".date('Y-m-d H:i:s')." \r\n";
-                $textMessage.="Succesfully completed item \r\n Name $name >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Hit $HIT \r\n _______________________________________ \r\n";
             
         }
-        $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "x+");
-        $myfile = fopen("Logs/Logs".date('Y-m-d').".txt", "a+") or die("Unable to open file!");
-        fwrite($myfile, $textMessage);
-        fclose($myfile);
 		//select what aarray to transfer
 		 if($drop=="armor"){
 			  return array ($HASH, $iLVL, $name, $typeName, $valueArmorP, $valueArmorM, $part, $apsorb, $Effect, $EffectChance);}

@@ -304,7 +304,7 @@ else{
           	$UsersO = "<b>$UsersO  <font color='$USR3[12]'>$USR3[0] $deadaliveON</font> </b><br>";
          }
 if ($ONL == 0){
-	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'>>$User</font></span></div>";}
+	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'>$User</font></span></div>";}
 if ($ONL == 1){
 	$onlineText = " <div class='tooltip'>$ONL Player Online<span class='tooltiptext'>$UsersO</span></div>";}
 if ($ONL > 1){
@@ -1411,12 +1411,10 @@ while ($List1 = mysqli_fetch_array($List)){
 			</div>
 			<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
-					<input style='display:none' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='WEP' style='display:none'>
-		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$WEPIn[HASH]'>
-					<input style='display:none' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonE' type='submit' name='Eqip' value='$WEPIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonS' type='submit' name='Sell' value='$WEPIn[HASH]' placeholder='lvl'>
 						<div class='tooltip'>
-							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$WEPIn[HASH]'>
 							<span class='tooltiptext'>$sellText</span>
 						</div>
 				</form>
@@ -1540,13 +1538,11 @@ while ($List1 = mysqli_fetch_array($List)){
 				</span>
 			</div>
 			<div class='inventoryActions'>
-				<form method='post' class='inventor' action='Equip.php'>
-					<input style='display:none' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
+				<form method='post' class='inventor' action='Equip.php' accept-charset='UTF-8'>
 					<input type='text' name='TYPE' value='ARM' style='display:none'>
-		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$ARMIn[HASH]'>
-					<input style='display:none' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonE' type='submit' name='Eqip' value='$ARMIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonS' type='submit' name='Sell' value='$ARMIn[HASH]' placeholder='lvl'>
 						<div class='tooltip'>
-							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ARMIn[HASH]'>
 							<span class='tooltiptext'>$sellText</span>
 						</div>
 				</form>
@@ -1653,12 +1649,10 @@ while ($List1 = mysqli_fetch_array($List)){
 		</div>
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
-					<input style='display:none' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='ACS' style='display:none'>
-		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$ACSIn[HASH]'>
-					<input style='display:none' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonE' type='submit' name='Eqip' value='$ACSIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonS' type='submit' name='Sell' value='$ACSIn[HASH]' placeholder='lvl'>
 						<div class='tooltip'>
-							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ACSIn[HASH]'>
 							<span class='tooltiptext'>$sellText</span>
 						</div>
 				</form>
@@ -1711,12 +1705,10 @@ while ($List1 = mysqli_fetch_array($List)){
 		</div>
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
-					<input style='display:none' type='submit' name='Eqip' value='$SKLIn[HASH]' placeholder='lvl'>
 					<input type='text' name='TYPE' value='SKL' style='display:none'>
-		        	<input type='image' class='inventoryButton' src='IMG/pack/EQUIP.png' name='Eqip' value='$SKLIn[HASH]'>
-					<input style='display:none' type='submit' name='Sell' value='$SKLIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonE' type='submit' name='Eqip' value='$SKLIn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonS' type='submit' name='Sell' value='$SKLIn[HASH]' placeholder='lvl'>
 						<div class='tooltip'>
-							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$SKLIn[HASH]'>
 							<span class='tooltiptext'>$sellText</span>
 						</div>
 				</form>
@@ -1760,10 +1752,9 @@ while ($List1 = mysqli_fetch_array($List)){
 		<div class='inventoryActions'>
 				<form method='post' class='inventor' action='Equip.php'>
 					<input type='text' name='TYPE' value='ITM' style='display:none'>
-					<input type='image' src='IMG/pack/USE.png' width='30px' height='15px' name='ITMS' value='$ITMn[HASH]' class='inventoryButton2'>
+					<input class='inventoryButtonUSE' type='submit' name='ITMS' value='$ITMn[HASH]' placeholder='lvl'>
+					<input class='inventoryButtonS' type='submit' name='Sell' value='$ITMn[HASH]' placeholder='lvl'>
 					<div class='tooltip'>
-						<input type='text' name='TYPE' value='ITM' style='display:none'>
-						<input type='image'  class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
 						<span class='tooltiptext'>$sell</span>
 					</div>
 				</form>
@@ -1783,6 +1774,7 @@ while ($List1 = mysqli_fetch_array($List)){
 				<form method='post' class='inventor' action='Equip.php'>
 						<div class='tooltip'>
 							<input type='text' name='TYPE' value='ITM' style='display:none'>
+							<input type='text' name='Sell' value='$ITMn[HASH]' style='display:none'>
 							<input type='image' class='inventoryButton' src='IMG/pack/SELL.png' name='Sell' value='$ITMn[HASH]'>
 							<span class='tooltiptext'>$sell</span>
 						</div>

@@ -295,7 +295,7 @@ if (!isset($_SESSION["pois"])){
 else{
 	$pos = 1;
 }
-if ($SKL ==7 or $pos == 1){
+if ($SKL ==7 or $pos == 1 or isset($passivePOIS)){
 	$cantmiss = 1;
 	$pois = rand(1,5);
 	$poison = ($mLVL * $plvl) / 2; // base dmg
@@ -331,6 +331,14 @@ if ($SKL ==7 or $pos == 1){
 	if ($_SESSION["FRAGID"] == 7){
 		$poison +=  round($poison * $_SESSION["FRAGPOWER"]);
 	}	
+	
+	if (isset($passivePOIS)){
+		$poison = $poison * $passivePOISdmg;
+		if (rand(1,100) <= 30){
+			$poison = $poison * 2;
+			$poisonCrit = "<font color='#E21947'>Crit.</font>";
+		}
+	}
 		
 	$poison = round($poison,0);
 	$ACH = mysqli_query($db,"SELECT * FROM aStatus where user = '$Account' and Name = 'POS'");
@@ -352,7 +360,7 @@ if ($SKL ==7 or $pos == 1){
 		//rounding
 	include 'PHP/rounding.php';
 	
-	$poisT = "$User did <font color='#008000'>$poisonTX Poison dmg.</font><br>";
+	$poisT = "$User did <font color='#008000'>$poisonTX Poison $poisonCrit dmg.</font><br>";
 	
 	if ($SKL ==7){
 	$ene = $ene - 35;
@@ -426,6 +434,11 @@ if ($ddam == 1){
 //poision + thorns + petdmg
 $finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode + $overkillDamage;
 
+//if pet Passive 
+if (isset($PETMore)){
+	$finalPlayerDMG = $petDMG * $PETMore;
+}
+
 //pasive bonus
 if (isset($passivePLY)){
 $finalPlayerDMG = $finalPlayerDMG * $passivePLY;
@@ -492,7 +505,7 @@ if (isset($CHAOS)){
 }
 	
 
-//dmg to player----------------------------------
+//dmg to player----------------------------------------------------------------------------------------------------
 
 if ($stun <> 1 and $Block <> 1 and $Dodge <> 1 and $Confusion <> 1){
 	
@@ -637,6 +650,14 @@ if (isset($monsoverdmg)){
 		$monDID = $posbilemax;
 	}
 }
+	
+//set curse
+if (isset($curseCH)){
+	if (rand(1,100)<= $curseCH){
+		$monDID = $monDID * $curseEF;
+		$cursTX = "<font color='#2AA6F2'>Monster got cursed !</font><br>";
+	}
+}
 
 //first turn passive
 if (isset($firstPSV)){
@@ -662,7 +683,7 @@ if ($citM == 1){
 	
 
 
-$monSkillText="$monsSkillREF $monsSkillHP $mobmagskill $BasicAtackByMob" ;
+$monSkillText="$cursTX $monsSkillREF $monsSkillHP $mobmagskill $BasicAtackByMob" ;
 
 }
 
@@ -788,12 +809,19 @@ if ($ene < $SKLm){
 	if(isset($_SESSION["PHY"])){
 	$ene = round($ene * 1.2);}
 }
+
+// HP instead on Energie
+	
+if(isset($ENRtoHP) and $SKL <> 11){
+	echo $eneHP = round($ACC[3] + ($finalPlayerHP * 0.1));
+	$ene = $SKLm;
+}
+	
 $ene = round($ene,0);
 $_SESSION["ENERGY"] = $ene;
 
 $_SESSION["MonsHP"] = $finalMonsHP;	
-$_SESSION["HP"] = $finalPlayerHP;
-
+$_SESSION["HP"] = $finalPlayerHP - $eneHP;
 
 //party stuff
 if (isset($_SESSION["Party2"])){

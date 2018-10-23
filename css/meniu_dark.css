@@ -284,7 +284,7 @@ visibility:hidden;
     background-color:#26292c;
     width:30%;
     height:100%;
-	margin: -120px 0px 0px 0px;
+	margin: -110px 0px 0px 0px;
     float:right;
 }
 
@@ -609,6 +609,13 @@ position: absolute;
     background-color: #26292c;
 }
 
+#points{
+    left: 700px;
+    top: 40px;
+    width: 400px;
+    position: absolute;
+}
+
 /* EKRONO DIDIZO KEITIMAS */
  @media screen and (min-width: 1120px) {
   #actions {
@@ -648,6 +655,13 @@ position: absolute;
     background-color: #26292c;
 	}
 	 
+	#points{
+    left: 660px;
+    width: 150px;
+    position: absolute;
+    top: 40px;
+	}
+	 
 	#fightNewBut {
 	position: sticky;
     width: 50px;
@@ -656,6 +670,7 @@ position: absolute;
 		
 }
 }
+
 
 
 #inventory {
@@ -1059,6 +1074,20 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	50% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	color: white;}
 	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
 }
+
+.newpassive{
+	
+	font-size:17px;
+	-webkit-animation-name: achiev;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 5s;
+}
+@-webkit-keyframes achiev {
+    0% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
+	50% {	 text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;	color: white;}
+	100% {	 text-shadow: 1px 1px 2px black, 0 0 0px red, 0 0 5px darkred;	color: red;}
+}
+
 
 .Boss1{
 	position: absolute;

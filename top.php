@@ -89,7 +89,7 @@ echo "</div>";
 //softcore
 echo "<div class='SOFT'><b>Softcore:</b><br>";
 
-$hardcoreCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore = '0' ORDER BY ILVL DESC");
+$hardcoreCHAR = mysqli_query($db,"SELECT * FROM characters WHERE Hardcore is null ORDER BY ILVL DESC");
 while ($hardcoreCHARlist = mysqli_fetch_array($hardcoreCHAR) and $NR2 <> 10){	
 
 $NR2 += 1;

@@ -10,7 +10,7 @@ $Account = $_SESSION["Account"];
 if ($User == ""){
 	header("location:index.php");}
 
-include_once 'PHP/passiveModule.php';
+
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
@@ -24,7 +24,7 @@ $MOD = mysqli_fetch_row($MOD);
 $GEM = mysqli_query($db,"SELECT * FROM Gems where HASH = '$ACC[14]' ");
 $GEM = mysqli_fetch_row($GEM);
 
-
+include_once 'PHP/passiveModule.php';
 
 if ($MOD[0] == ""){
 	echo "";
@@ -823,6 +823,11 @@ if(isset($MODE[1])){
 }
 }
 
+//if HP and thorns passive
+if (isset($HPandThorns )){
+	$bonusTR = round($bonusTR*1.2);	
+	$_SESSION["Thorns"] = $bonusTR;
+}
 
 
 // average dmg
@@ -865,6 +870,16 @@ $HP2 = round($HP2,0)+$bonusHP;
 
 //pasive HP bonus
 $HP2 = $HP2 + $HPpasive;
+
+//if 1 HP passive
+if (isset($HP1)){
+	$HP2 = 1;
+}
+
+//if HP and thorns passive
+if (isset($HPandThorns )){
+	$HP2 = round($HP2 * 1.2);
+}
 
 $_SESSION["HP"] = $HP2;
 $_SESSION["GOLD"] = $ACC[4];
@@ -943,6 +958,17 @@ $_SESSION["ENREGEN"] = $enr;
 if (isset($bonusESpas)){
 $bonusES = round($bonusES * $bonusESpas);
 }
+
+//if 1 HP passive
+if (isset($HP1)){
+	$bonusES = $bonusES * 3;
+}
+
+//if HP and thorns passive
+if (isset($HPandThorns )){
+	$bonusES = 0;
+}
+
 
 //energie shield
 $_SESSION["ESshield"] = $bonusES; 
@@ -2114,6 +2140,11 @@ $unseen = mysqli_num_rows($result);
 
 if ($unseen >= 1){
 	$AchTezt = "<div class='achiev' >You have $unseen new Achiev!</div>";
+}
+
+//check for new passive skill
+if (isset($NEWPASSIVE)){
+	$PointText = "$NEWPASSIVE";
 }
 
 //Hardcore Lead

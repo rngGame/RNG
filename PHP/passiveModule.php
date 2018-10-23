@@ -11,13 +11,57 @@ $arrayP = str_split($TRE[1]);
 //insert if there is no tree-------------------------
 if ($arrayP[0] == ""){
 	$order = "INSERT INTO passiveTree (Name, Passive)
-	VALUES ('$User', '0000000000')";
+	VALUES ('$User', '00000000000')";
 	$result = mysqli_query($db, $order);
 }
 //----------------------------------------------------	
 
 
-
+//new Skill Points
+if ($ACC[3] >= 5 and $arrayP[0] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 10 and $arrayP[1] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 15 and $arrayP[2] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 20 and $arrayP[3] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 23 and $arrayP[4] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 25 and $arrayP[5] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 30 and $arrayP[6] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 35 and $arrayP[7] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 40 and $arrayP[8] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 43 and $arrayP[9] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
+if ($ACC[3] >= 45 and $arrayP[10] == "0"){
+	$pasNR += 1;
+	$NEWPASSIVE = "<div class='newpassive'>Unspend $pasNR Skill Points</div>";
+}
 
 //Skill stuff-----------------------------------------
 
@@ -77,6 +121,9 @@ if ($arrayP[5] == "c"){
 if ($arrayP[5] == "d"){
 	$pasENRregen = 10;
 }
+if ($arrayP[5] == "e"){
+	$ENRtoHP = 1;
+}
 
 //lvl 30
 if ($arrayP[6] == "a"){
@@ -115,6 +162,11 @@ if ($arrayP[8] == "c"){
 	$HPpasRESch = 0.2;
 
 }
+if ($arrayP[8] == "e"){
+	$curseCH = 15;
+	$curseEF = 0.5;
+
+}
 
 //lvl 45 
 if ($arrayP[9] == "a"){
@@ -136,5 +188,20 @@ if ($arrayP[9] == "e"){
 	$mdmgPASmulti = 1.1;
 	$HPex = 1.1;
 	$MPex = 1.1;
+}
+if ($arrayP[9] == "f"){
+	$PETMore = 10.0;
+}
+
+//lvl 47
+if ($arrayP[10] == "a"){
+	$HP1 = 1;
+}
+if ($arrayP[10] == "b"){
+	$HPandThorns = 1;
+}
+if ($arrayP[10] == "c"){
+	$passivePOIS = 1;
+	$passivePOISdmg = 1.3;
 }
 ?>

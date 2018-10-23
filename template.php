@@ -72,6 +72,9 @@ echo '
 		<div id="actions">
 				'.$actionsTemplate.'
 			</div>
+		<div id="points">
+		'.$PointText.'
+		</div>
 	</body>
 	<footer class="linksB">
 		<br>

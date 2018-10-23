@@ -34,7 +34,7 @@ $arrayP = str_split($TRE[1]);
 	
 // $array[0]; - first and so on//
 	
-//26 SKILLS
+//32 SKILLS
 	
 if ($arrayP[0] == 0){
 	$c1a = "class='blur2'";
@@ -193,6 +193,7 @@ if ($arrayP[5] == 0){
 	$c6b = "class='blur2'";
 	$c6c = "class='blur2'";
 	$c6d = "class='blur2'";
+	$c6e = "class='blur2'";
 }
 if ($arrayP[5] == "a"){
 	$c6a = "class='test2'";	
@@ -205,6 +206,9 @@ if ($arrayP[5] == "c"){
 }
 if ($arrayP[5] == "d"){
 	$c6d = "class='test2'";	
+}
+if ($arrayP[5] == "e"){
+	$c6e = "class='test2'";	
 }
 if ($ACC[3]>= 25){
 echo	
@@ -233,6 +237,12 @@ echo
 	      <form method='post' id='yourFormId' action='changePassive.php'> 
           <input type='hidden' name='skl' value='c6d'>
         <p class='submit' onclick='myfunc(this)'><input  img $c6d src='IMG/pack/Icon.1_75.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>10 enr/turn</span></p> 
+      </form>
+    </div>
+	  	<div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'> 
+          <input type='hidden' name='skl' value='c6e'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c6e src='IMG/pack/Icon.4_17.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Spend HP isntead of energie (increased cost)</span></p> 
       </form>
     </div>
 	</section>";
@@ -306,6 +316,7 @@ if ($arrayP[8] == 0){
 	$c9b = "class='blur2'";
 	$c9c = "class='blur2'";
 	$c9d = "class='blur2'";
+	$c9e = "class='blur2'";
 }
 if ($arrayP[8] == "a"){
 	$c9a = "class='test2'";	
@@ -318,6 +329,9 @@ if ($arrayP[8] == "c"){
 }
 if ($arrayP[8] == "d"){
 	$c9d = "class='test2'";	
+}
+if ($arrayP[8] == "e"){
+	$c9e = "class='test2'";	
 }
 if ($ACC[3]>= 40){
 echo
@@ -342,6 +356,12 @@ echo
         <p class='submit' onclick='myfunc(this)'><input  img $c9c src='IMG/pack/Icon.6_86.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>10% chanse to restore 20% of HP</span></p> 
       </form>
 	  </div>
+  <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='c9e'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c9e src='IMG/pack/Icon.1_79.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>15% chanse to set curse on enemy to reduct damage</span></p> 
+      </form>
+	  </div>
 	  </section>";
 }
 	
@@ -351,6 +371,7 @@ if ($arrayP[9] == 0){
 	$cac = "class='blur2'";
 	$cad = "class='blur2'";
 	$cae = "class='blur2'";
+	$caf = "class='blur2'";
 }
 if ($arrayP[9] == "a"){
 	$caa = "class='test2'";	
@@ -368,11 +389,14 @@ if ($arrayP[9] == "d"){
 if ($arrayP[9] == "e"){
 	$cae = "class='test2'";	
 }
-if ($ACC[3]>= 45){
+if ($arrayP[9] == "f"){
+	$caf = "class='test2'";	
+}
+if ($ACC[3]>= 43){
 echo
 
 
-		"<br>LVL 45:<br>
+		"<br>LVL 43:<br>
   <section class='container2'>
     <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
@@ -402,6 +426,54 @@ echo
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='cae'>
         <p class='submit' onclick='myfunc(this)'><input  img $cae src='IMG/pack/Icon.3_77.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>+20 STR and INT, +10% dmg, +10% HP and ENR</span></p> 
+      </form>
+	  </div>
+  <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='caf'>
+        <p class='submit' onclick='myfunc(this)'><input  img $caf src='IMG/pack/Icon.5_16.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Can't deal dmg, but pet does 1000% more dmg.</span></p> 
+      </form>
+	  </div>
+	  </section>
+  ";
+}
+	
+if ($arrayP[10] == 0){
+	$cba = "class='blur2'";
+	$cbb = "class='blur2'";
+	$cbc = "class='blur2'";
+}
+if ($arrayP[10] == "a"){
+	$cba = "class='test2'";	
+}
+if ($arrayP[10] == "b"){
+	$cbb = "class='test2'";	
+}
+if ($arrayP[10] == "c"){
+	$cbc = "class='test2'";	
+}
+if ($ACC[3]>= 45){
+echo
+
+
+		"<br>LVL 45:<br>
+  <section class='container2'>
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='cba'>
+        <p class='submit' onclick='myfunc(this)'><input  img $cba src='IMG/pack/Icon.5_68.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>HP becomes 1, but triple energie shield.</span></p> 
+      </form>
+	  </div>
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='cbb'>
+        <p class='submit' onclick='myfunc(this)'><input  img $cbb src='IMG/pack/Icon.4_94.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Increase HP and Thorns by 20% but no Energie Shield</span></p> 
+      </form>
+	  </div>
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='cbc'>
+        <p class='submit' onclick='myfunc(this)'><input  img $cbc src='IMG/pack/Icon.3_97.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Alwlays posion and deals increase damage and has cryt chanse</span></p> 
       </form>
 	  </div>
 	  </section>

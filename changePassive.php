@@ -29,6 +29,9 @@ echo $skilNR = $skillP[1];
 if ($skilNR == "a"){
 	$skilNR = 10;
 }
+if ($skilNR == "b"){
+	$skilNR = 11;
+}
 $skilNR = $skilNR - 1;	
 
 	

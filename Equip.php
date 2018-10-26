@@ -3,8 +3,20 @@ session_start();
 ob_start();
 include_once 'PHP/db.php';
 include_once 'PHP/function.php';
-
-print_r($_POST);
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>World of RNG</title>
+<?php
+echo "<link rel='stylesheet' type='text/css' href='css/$_COOKIE[Theme].css'>";
+?>
+<link rel="icon" href="favicon.png">
+</head>
+<body>
+<header>
+<?php
 
 
 $User = $_SESSION["User"];

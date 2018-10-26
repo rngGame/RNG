@@ -304,7 +304,7 @@ else{
           	$UsersO = "<b>$UsersO  <font color='$USR3[12]'>$USR3[0] $deadaliveON</font> </b><br>";
          }
 if ($ONL == 0){
-	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'>$User</font></span></div>";}
+	$onlineText = " <div class='tooltip'>1 Player Online<span class='tooltiptext'<font color='$ACC[12]'><br>$User</font></span></div>";}
 if ($ONL == 1){
 	$onlineText = " <div class='tooltip'>$ONL Player Online<span class='tooltiptext'>$UsersO</span></div>";}
 if ($ONL > 1){

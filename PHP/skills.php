@@ -268,6 +268,13 @@ if ($SKL ==33){
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
 			$_SESSION["PETMINDMG"] = round((($minMdmg * 15 / 100)*0.7)+(($minPdmg * 20 / 100)*0.3));
 			$_SESSION["PETMAXDMG"] = round((($maxMdmg * 20 / 100)*0.7)+(($maxPdmg * 25 / 100)*0.3));
+			
+			//pet passive
+			if (isset($PETMore)){
+				$_SESSION["PETMINDMG"] = $_SESSION["PETMINDMG"] * $PETMore;
+				$_SESSION["PETMAXDMG"] = $_SESSION["PETMAXDMG"] * $PETMore;
+			}	
+			
 			$ene = $ene - 100;
 			$_SESSION["ENERGY"] = $ene;
 				if ($SUB[5] == "NECR"){ //if necromance
@@ -446,6 +453,6 @@ if(isset($_SESSION["MAG"])){
 	$magbonu = 1.3;
 }
 
-$magick = round(($fball + $comb + $finallICE + $finalsacriface + $healdmg + $petExtraDMG + $extra)*$magbonu);
+$magick = round(($fball + $comb + $finallICE + $finalsacriface + $healdmg + $extra)*$magbonu);
 $magickText = "$finallICT $combtex $petsumtext $pettext $pettdmgtext $petttanktext $Armortext $finaltext $petSkillText"  ;
 ?>

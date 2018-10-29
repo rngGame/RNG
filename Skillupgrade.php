@@ -230,7 +230,7 @@ echo
   	<div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'> 
           <input type='hidden' name='skl' value='c6c'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c6c src='IMG/pack/Icon.6_62.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Auttomaticaly resummon summon</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c6c src='IMG/pack/Icon.6_62.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Auttomaticaly resummon summon with increased stats</span></p> 
       </form>
     </div>
 	  	<div class='tooltip'>
@@ -317,6 +317,7 @@ if ($arrayP[8] == 0){
 	$c9c = "class='blur2'";
 	$c9d = "class='blur2'";
 	$c9e = "class='blur2'";
+	$c9f = "class='blur2'";
 }
 if ($arrayP[8] == "a"){
 	$c9a = "class='test2'";	
@@ -332,6 +333,9 @@ if ($arrayP[8] == "d"){
 }
 if ($arrayP[8] == "e"){
 	$c9e = "class='test2'";	
+}
+if ($arrayP[8] == "f"){
+	$c9f = "class='test2'";	
 }
 if ($ACC[3]>= 40){
 echo
@@ -360,6 +364,12 @@ echo
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='c9e'>
         <p class='submit' onclick='myfunc(this)'><input  img $c9e src='IMG/pack/Icon.1_79.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>15% chanse to set curse on enemy to reduct damage</span></p> 
+      </form>
+	  </div>
+  <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='c9f'>
+        <p class='submit' onclick='myfunc(this)'><input  img $c9f src='IMG/pack/Icon.4_38.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Summon can use Self Sacrifice Skill</span></p> 
       </form>
 	  </div>
 	  </section>";
@@ -431,7 +441,7 @@ echo
   <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='caf'>
-        <p class='submit' onclick='myfunc(this)'><input  img $caf src='IMG/pack/Icon.5_16.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Can't deal dmg, but pet does 1000% more dmg.</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $caf src='IMG/pack/Icon.5_16.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Can't deal dmg, but summon does 300% more dmg.</span></p> 
       </form>
 	  </div>
 	  </section>
@@ -442,6 +452,7 @@ if ($arrayP[10] == 0){
 	$cba = "class='blur2'";
 	$cbb = "class='blur2'";
 	$cbc = "class='blur2'";
+	$cbd = "class='blur2'";
 }
 if ($arrayP[10] == "a"){
 	$cba = "class='test2'";	
@@ -451,6 +462,9 @@ if ($arrayP[10] == "b"){
 }
 if ($arrayP[10] == "c"){
 	$cbc = "class='test2'";	
+}
+if ($arrayP[10] == "d"){
+	$cbd = "class='test2'";	
 }
 if ($ACC[3]>= 45){
 echo
@@ -474,6 +488,12 @@ echo
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='cbc'>
         <p class='submit' onclick='myfunc(this)'><input  img $cbc src='IMG/pack/Icon.3_97.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Alwlays posion and deals increase damage and has cryt chanse</span></p> 
+      </form>
+	  </div>
+    <div class='tooltip'>
+	      <form method='post' id='yourFormId' action='changePassive.php'>
+          <input type='hidden' name='skl' value='cbd'>
+        <p class='submit' onclick='myfunc(this)'><input  img $cbd src='IMG/pack/Icon.7_64.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Increase defence and summon HP by 30%</span></p> 
       </form>
 	  </div>
 	  </section>

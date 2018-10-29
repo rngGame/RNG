@@ -99,7 +99,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
     </div>&nbsp;&nbsp;
   ";}
   
-   if ($ACC[3] >= 30 and $SKL > 50){
+   if ($ACC[3] >= 30 and $SKL > 50 and !isset($_SESSION["SKill3"])){
 
  echo
   "
@@ -109,7 +109,7 @@ if ($ACC[3] >= 10 and $SKL > 30){
 		  <option value='3' selected>3/option>
 		  </select>
           <input hidden='' type='text' name='skl' value='3' placeholder='lvl'>
-        <p class='submit' onclick='myfunc(this)'><input img $c5 src='IMG/pack/Icon.6_05.png' style='width:45px;height:45px;' type='image' name='commit' value='(50)Dmg Boost'><span class='tooltiptext'>50En.<br>Atack and increase physical DMG for fight<br>$t5</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input img $c5 src='IMG/pack/Icon.6_05.png' style='width:45px;height:45px;' type='image' name='commit' value='(50)Dmg Boost'><span class='tooltiptext'>50En.<br>Increase physical DMG for fight<br>$t5</span></p> 
       </form>
     </div>&nbsp;&nbsp;
   ";}

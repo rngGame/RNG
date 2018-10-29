@@ -423,7 +423,7 @@ else{
 
  //magick
 if ($SKL == 31 or $SKL == 32 or $SKL == 33 or $SKL == 36 or $SKL == 2 or $SKL ==34 or $SKL ==35){ //check for magick dmg
-$finalPlayerDMG = ($magick + $effect + $gemDMG + $finalPlayerDMGandPET + $petExtraDMG) - $MonDEF;
+$finalPlayerDMG = ($magick + $effect + $gemDMG + $finalPlayerDMGandPET + $petExtraDMG + $sacDMG) - $MonDEF;
 if ($finalPlayerDMG < 1 ){
 	$finalPlayerDMG = 1;}	
 if ($ddam == 1){
@@ -436,7 +436,7 @@ $finalPlayerDMG = $finalPlayerDMG + $poison + $Thorns + $petDMG + $explode + $ov
 
 //if pet Passive 
 if (isset($PETMore)){
-	$finalPlayerDMG = $petDMG + $petExtraDMG;
+	$finalPlayerDMG = $petDMG + $petExtraDMG + $sacDMG;
 }
 
 //pasive bonus

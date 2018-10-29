@@ -30,9 +30,9 @@ $c4 = "class='submitBtn'";}
 
 
 if ($CLS[6] == "DMGB"){
-	$t5 = "10 - 25%";
+	$t5 = "40 - 50%";
 		$c5 = "class='invert submitBtn'";}
-else { $t5 = "5 - 20%";
+else { $t5 = "20 - 30%";
 $c5 = "class='submitBtn'";}
 
 

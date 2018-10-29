@@ -137,9 +137,9 @@ $result = mysqli_query($db, $order3);
 
 
 $order2 = "INSERT INTO characters
-	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards )
+	   (User, Hardcore, HP, LVL, Cash, XP, Deaths, Account, Class, Rank, Gem_h, Shards, Creation )
 	  VALUES
-	   ('$char','$hc','5','1', '100', '1', '', '$username', '0', '1000', '0004', '0')";
+	   ('$char','$hc','5','1', '100', '1', '', '$username', '0', '1000', '0004', '0', '$datetime')";
 	   
 $result = mysqli_query($db, $order2);		
 			

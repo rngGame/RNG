@@ -893,7 +893,11 @@ $_SESSION["DMGPAVE"] =  $avgP;
 $_SESSION["DMGMAVE"] =  $avgM;
 $_SESSION["DMGAVE"] =  $avgD;
 
-
+// pet HP and ARmor passive
+if (isset($PetAndArmor)){
+	$Parmor = $Parmor * $PetAndArmor;
+	$Marmor = $Marmor *	$PetAndArmor;
+}
 
 $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;

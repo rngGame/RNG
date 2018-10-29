@@ -40,11 +40,11 @@ if ($SKL == 2){
 	$healdmg = $magDMG;
 };
 
-//skill 3
-if ($SKL ==3){
-	$s = rand(5,20);
+//skill 3 
+if ($SKL == 3 and !isset($_SESSION["SKill3"])){
+	$s = rand(20,30);
 	if ($CLS[6] == "DMGB"){
-		$s = rand(10,25);}
+		$s = rand(40,50);}
 	$minPdmg = $minPdmg +($minPdmg * $s/100);
 	$maxPdmg = $maxPdmg +($maxPdmg * $s/100);
 	
@@ -59,6 +59,7 @@ if ($SKL ==3){
 	$_SESSION["ENERGY"] = $ene;
 	$_SESSION["DMGPmin"] = $minPdmg;
 	$_SESSION["DMGPmax"] = $maxPdmg;
+	$_SESSION["SKill3"] = 1;
 	$physDMG = rand($minPdmg,$maxPdmg);
 };
 
@@ -266,36 +267,46 @@ if ($SKL ==33){
 			$petname = mysqli_fetch_row($petname);
 			$_SESSION["PETNAME"] = $petname[0];
 			$_SESSION["PETHP"] = $HPO * 20 / 100;
-			$_SESSION["PETMINDMG"] = round((($minMdmg * 15 / 100)*0.7)+(($minPdmg * 20 / 100)*0.3));
-			$_SESSION["PETMAXDMG"] = round((($maxMdmg * 20 / 100)*0.7)+(($maxPdmg * 25 / 100)*0.3));
+			$_SESSION["PETMINDMG"] = round(($minMdmg * 25 / 100));
+			$_SESSION["PETMAXDMG"] = round(($maxMdmg * 30 / 100));
+				$_SESSION["petHPmem"] = 20;
+				$_SESSION["minPetdmg"] = 25;
+				$_SESSION["maxPetdmg"] = 30;
 			
-			//pet passive
-			if (isset($PETMore)){
-				$_SESSION["PETMINDMG"] = $_SESSION["PETMINDMG"] * $PETMore;
-				$_SESSION["PETMAXDMG"] = $_SESSION["PETMAXDMG"] * $PETMore;
-			}	
-			
+
 			$ene = $ene - 100;
 			$_SESSION["ENERGY"] = $ene;
 				if ($SUB[5] == "NECR"){ //if necromance
 				$_SESSION["PETHP"] = $HPO * 60 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 60 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 120 / 100);
+				$_SESSION["petHPmem"]= 60;
+				$_SESSION["minPetdmg"] = 60;
+				$_SESSION["maxPetdmg"] = 120;
 				}
 				if ($SUB[5] == "TITA"){ //if Titan
 				$_SESSION["PETHP"] = $HPO * 220 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 10 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 40 / 100);
+				$_SESSION["petHPmem"]= 220;
+				$_SESSION["minPetdmg"] = 10;
+				$_SESSION["maxPetdmg"] = 40;
 				}
 				if ($SUB[5] == "SPELC"){ //if Spelcaster
 				$_SESSION["PETHP"] = $HPO * 130 / 100;
-				$_SESSION["PETMINDMG"] = round($minMdmg * 90 / 100);
+				$_SESSION["PETMNDMG"] = round($minMdmg * 90 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 150 / 100);
+				$_SESSION["petHPmem"]= 130;
+				$_SESSION["minPetdmg"] = 90;
+				$_SESSION["maxPetdmg"] = 150;
 				}
 				if ($SUB[5] == "SMASH"){ //if smasher
 				$_SESSION["PETHP"] = $HPO * 150 / 100;
 				$_SESSION["PETMINDMG"] = round($minMdmg * 50 / 100);
 				$_SESSION["PETMAXDMG"] = round($maxMdmg * 50 / 100);
+				$_SESSION["petHPmem"]= 150;
+				$_SESSION["minPetdmg"] = 50;
+				$_SESSION["maxPetdmg"] = 50;
 				}
 				
 		if ($_SESSION["FRAGID"] == 34){
@@ -309,6 +320,21 @@ if ($SKL ==33){
 			$_SESSION["PET"] = 1;
 			$extra = $magDMG;
 		}
+		
+			//pet passive
+			if (isset($PETMore) and !isset($_SESSION["PETMore1"])){
+				$_SESSION["PETMINDMG"] = $_SESSION["PETMINDMG"] * $PETMore;
+				$_SESSION["PETMAXDMG"] = $_SESSION["PETMAXDMG"] * $PETMore;
+				$_SESSION["PETMore1"] = 1;
+			}	
+		
+		
+			//pet HP passive
+			if (isset($PetAndArmor) and !isset($_SESSION["PetAndArmor1"])){
+				$_SESSION["PETHP"] = $_SESSION["PETHP"] * $PetAndArmor;
+				$_SESSION["PetAndArmor1"] = 1;
+			}
+		
 			//PET DMG CALC
 			$petDMG = rand($_SESSION["PETMINDMG"], $_SESSION["PETMAXDMG"]);
 			$pettdmgtext = "Pet did <b>$petDMG</b> dmg.<br>";
@@ -359,21 +385,43 @@ if ($SKL ==33){
 				$_SESSION["ENERGY"] = $ene;
 				$petSkillText = "Pet <b> Restored you energie </b> by <font color='#0066ff'>$plvl</font> points<br>";
 			}
+			
+		
+			// pet sacrifice skill
+			if ($petHP <= 0 and isset($PetSacrifice)){
+				$sacDMG = round($_SESSION["PETMAXDMG"]*rand(2.0,2.5));
+				$petSkillText = "$petSkillText Summon used Sacrifice and delt <font color='#D8082B'>$sacDMG</font> dmg.<br>";
+			}
+				
+			// pet passive resummon
+			if ($petHP <= 0 and isset($pasSummon)){
+				
+				$_SESSION["PETHP"] = round($HPO * ($_SESSION["petHPmem"] + 10) / 100);		
+				$_SESSION["PETMINDMG"] = round($minMdmg * ($_SESSION["minPetdmg"] + 10) / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * ($_SESSION["maxPetdmg"] + 10)/ 100);	
+					//pet passive
+					if (isset($PETMore)){
+						$_SESSION["PETMINDMG"] = $_SESSION["PETMINDMG"] * $PETMore;
+						$_SESSION["PETMAXDMG"] = $_SESSION["PETMAXDMG"] * $PETMore;
+					}	
+						
+					//pet HP passive
+					if (isset($PetAndArmor)){
+						$_SESSION["PETHP"] = $_SESSION["PETHP"] * $PetAndArmor;
+					}
+				$petHP = $_SESSION["PETHP"];
+				$petSkillText = "$petSkillText<b>Resumoned after death</b><br>";
+			}		
+		
 			//if necromancer resumon pet
 			if ($petHP <= 0 and $SUB[5] == "NECR" and $petskl <> 1){
 				if (rand(0,100) < 50){
-				$_SESSION["PETHP"] = round($HPO * 20 / 100);
+				$_SESSION["PETHP"] = round($HPO * $_SESSION["petHPmem"] / 100);
 				$petHP = $_SESSION["PETHP"];
-				$_SESSION["PETMINDMG"] = round($minMdmg * 100 / 100);
-				$_SESSION["PETMAXDMG"] = round($maxMdmg * 200 / 100);					
-				$petSkillText = "<b>Pet resumoned after death</b><br>";		
+				$_SESSION["PETMINDMG"] = round($minMdmg * $_SESSION["minPetdmg"] / 100);
+				$_SESSION["PETMAXDMG"] = round($maxMdmg * $_SESSION["maxPetdmg"] / 100);					
+				$petSkillText = "$petSkillText<b>Resumoned after death</b><br>";		
 				}
-			}
-			
-			if ($petHP <= 0 and isset($pasSummon)){
-				$_SESSION["PETHP"] = round($HPO * 20 / 100);
-				$petHP = $_SESSION["PETHP"];
-				$petSkillText = "<b>Pet resumoned after death</b><br>";
 			}
 			
 			//when pet died

@@ -167,8 +167,11 @@ if ($arrayP[8] == "e"){
 	$curseEF = 0.5;
 
 }
+if ($arrayP[8] == "f"){
+	$PetSacrifice = 1;
+}
 
-//lvl 45 
+//lvl 43
 if ($arrayP[9] == "a"){
 	$cantCryt = 1;
 }
@@ -190,10 +193,10 @@ if ($arrayP[9] == "e"){
 	$MPex = 1.1;
 }
 if ($arrayP[9] == "f"){
-	$PETMore = 10.0;
+	$PETMore = 3.0;
 }
 
-//lvl 47
+//lvl 45
 if ($arrayP[10] == "a"){
 	$HP1 = 1;
 }
@@ -203,5 +206,8 @@ if ($arrayP[10] == "b"){
 if ($arrayP[10] == "c"){
 	$passivePOIS = 1;
 	$passivePOISdmg = 1.3;
+}
+if ($arrayP[10] == "d"){
+	$PetAndArmor = 1.3;
 }
 ?>

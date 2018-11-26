@@ -19,7 +19,6 @@ setcookie("Theme", $value);
 
 if ($User == ""){
 		session_destroy();
-		echo "NX?";
  $send="location:index.php";
 	}
 else{
@@ -278,11 +277,12 @@ $order2 = "INSERT INTO DropsWep
 $datetime = date_create()->format('Y-m-d H:i:s');
 $datetime = strtotime($datetime);
 $datetime = $datetime+300;
-$datetime = date('Y-m-d H:i:s',$datetime);
+echo $datetime = date('Y-m-d H:i:s',$datetime);
 
 
 $ONL = mysqli_query($db,"SELECT * FROM Online where user = '$Account' Order by RAND() Limit 	1");
 $ONL = mysqli_fetch_row($ONL);
+
 
 if ($ONL[0] == "$Account"){
 	$order = "UPDATE Online

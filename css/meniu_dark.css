@@ -128,7 +128,6 @@ height:255px;
 	
 }
 #chatbox2{
-	width: 100%;
 	height: 60px;
 	background-color: #26292c;
 	
@@ -388,6 +387,7 @@ input[type="text"]{
     border-width: 2px;
     border-style: inset;
     border-color: #2f3236;
+	width: 240px;
 }
 .less{
     color:#FF0000;
@@ -813,8 +813,7 @@ position: absolute;
     position: absolute;
     top: 487px;
     left: 201px;
-    height:30px;
-    width: 20px;
+    width: 250px;
     border:1px solid black;
 
 }
@@ -904,6 +903,7 @@ position: absolute;
     left: 201px;
     top: -1px;
 	border: 1px solid black;
+	width: 250px;
 }
 
 #result2 {

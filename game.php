@@ -2206,7 +2206,7 @@ $onlineText
 	
 </div>
 <div id='chat'>
-	<iframe height='45px' width='176px' src='message.php'></iframe>
+	<iframe height='45px' width='250px' src='message.php'></iframe>
 </div>
 <div id='party'>
 	$PartyTemplate

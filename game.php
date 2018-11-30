@@ -238,10 +238,12 @@ $_SESSION["CURRENTARMBOOTS"] = $ARMBOOTS["HASH"];
 
 }
 
-//effects  to FCALC ->
-$_SESSION["HealthTurn"] = $bonusHL;
-$_SESSION["Undeadth"] = $bonusNO;
-$_SESSION["Thorns"] = $bonusTR;
+//if extra thorns
+if (isset($extraPassive)){
+	$bonusTR = $bonusTR + $extraPassive;
+}
+
+
 
 $PNT = mysqli_query($db,"SELECT * FROM Points where User = '$User' ");
 $PNT = mysqli_fetch_row($PNT); //pasive points
@@ -793,7 +795,6 @@ if(isset($MODE[1])){
 	}
 	if($MODT[$mc2] == "THR" and $bonusTR >= 1){
 		$bonusTR += round($bonusTR*$MODE[$mc2]/100);	
-		$_SESSION["Thorns"] = $bonusTR;
 	}
 	if($MODT[$mc2] == "ES"){
 		$bonusEStemp = (($ACC[3]*3)+$CLS[5])/4;
@@ -826,7 +827,6 @@ if(isset($MODE[1])){
 //if HP and thorns passive
 if (isset($HPandThorns )){
 	$bonusTR = round($bonusTR*1.2);	
-	$_SESSION["Thorns"] = $bonusTR;
 }
 
 
@@ -866,6 +866,13 @@ if (isset($defsub)){
 	$Marmor = round($Marmor*$defsub);
 }
 $dmg = round($dmg,0);
+
+//bonus Hp
+if (isset($extraPassive)){
+	$bonusHP = $bonusHP + $extraPassive;
+}
+
+
 $HP2 = round($HP2,0)+$bonusHP;
 
 //pasive HP bonus
@@ -898,6 +905,10 @@ if (isset($PetAndArmor)){
 	$Parmor = $Parmor * $PetAndArmor;
 	$Marmor = $Marmor *	$PetAndArmor;
 }
+//if def 35lvl pasive
+if (isset($pasiveDefP)){
+	$Parmor = $Parmor * $pasiveDefP;
+}
 
 $_SESSION["plvl"] = $ACC[3];
 $_SESSION["ARM"] = $Parmor;
@@ -925,6 +936,9 @@ $ENR = $ENR + ($ENR * ($PNT[3]*2)/100)+ $bonusEN;
 // bonus energie
 if (isset($MPex)){
 $ENR = $ENR * $MPex;	
+}
+if (isset($MPex2)){
+$ENR = $ENR * $MPex2;	
 }
 $ENR = $ENR + $MPpasive;
 
@@ -963,6 +977,11 @@ if (isset($bonusESpas)){
 $bonusES = round($bonusES * $bonusESpas);
 }
 
+//if extra passive
+if (isset($extraPassive)){
+	$bonusES = $bonusES + $extraPassive;
+}
+
 //if 1 HP passive
 if (isset($HP1)){
 	$bonusES = $bonusES * 3;
@@ -973,6 +992,13 @@ if (isset($HPandThorns )){
 	$bonusES = 0;
 }
 
+
+
+
+//effects  to FCALC ->
+$_SESSION["HealthTurn"] = $bonusHL;
+$_SESSION["Undeadth"] = $bonusNO;
+$_SESSION["Thorns"] = $bonusTR;
 
 //energie shield
 $_SESSION["ESshield"] = $bonusES; 

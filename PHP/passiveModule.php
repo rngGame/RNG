@@ -146,6 +146,13 @@ if ($arrayP[7] == "b"){
 	$CritCHpas = 20;
 	$bonusESpas = 1.3;
 }
+if ($arrayP[7] == "c"){
+	$pasiveDefP = 1.5;
+	$MPex2 = 1.2;
+}
+if ($arrayP[7] == "d"){
+	$extraPassive = 500;
+}
 
 //lvl 40
 if ($arrayP[8] == "a"){
@@ -162,14 +169,12 @@ if ($arrayP[8] == "c"){
 	$HPpasRESch = 0.2;
 
 }
-if ($arrayP[8] == "e"){
+if ($arrayP[8] == "d"){
 	$curseCH = 15;
 	$curseEF = 0.5;
 
 }
-if ($arrayP[8] == "f"){
-	$PetSacrifice = 1;
-}
+
 
 //lvl 43
 if ($arrayP[9] == "a"){
@@ -209,5 +214,8 @@ if ($arrayP[10] == "c"){
 }
 if ($arrayP[10] == "d"){
 	$PetAndArmor = 1.3;
+}
+if ($arrayP[8] == "e"){
+	$PetSacrifice = 1;
 }
 ?>

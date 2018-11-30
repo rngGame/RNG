@@ -109,10 +109,10 @@
 <file name="examp.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
 <file name="favicon.ico" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
 <file name="favicon.png" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
-<file name="FCAL.php" server="ftp.prsp.lt//public_html/rng/" local="131852974357977680" remote="131852974200000000" Dst="1" />
+<file name="FCAL.php" server="ftp.prsp.lt//public_html/rng/" local="131880548841737298" remote="131880548400000000" Dst="1" />
 <file name="fcalcp.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
 <file name="fightDung.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
-<file name="fightNew.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
+<file name="fightNew.php" server="ftp.prsp.lt//public_html/rng/" local="131880566606154101" remote="131880566400000000" Dst="1" />
 <file name="fightP.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
 <file name="FightT.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
 <file name="FightTB.php" server="ftp.prsp.lt//public_html/rng/" local="131846830800000000" remote="131846830800000000" Dst="2" />
@@ -127,7 +127,7 @@
 <file name="looseP.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="loot.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="lose.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
-<file name="loseB.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
+<file name="loseB.php" server="ftp.prsp.lt//public_html/rng/" local="131880597149136856" remote="131880597000000000" Dst="1" />
 <file name="message.php" server="ftp.prsp.lt//public_html/rng/" local="131846903400000000" remote="131846903400000000" Dst="1" />
 <file name="newi.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="newiP.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
@@ -151,14 +151,14 @@
 <file name="show.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="showold.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="Skillupgrade.php" server="ftp.prsp.lt//public_html/rng/" local="131879631375632854" remote="131879631000000000" Dst="1" />
-<file name="sync.php" server="ftp.prsp.lt//public_html/rng/" local="131877045552523085" remote="131877045000000000" Dst="1" />
+<file name="sync.php" server="ftp.prsp.lt//public_html/rng/" local="131880544838298673" remote="131880544800000000" Dst="1" />
 <file name="template.php" server="ftp.prsp.lt//public_html/rng/" local="131847710800597372" remote="131847710400000000" Dst="2" />
 <file name="test.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="testing.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="top.php" server="ftp.prsp.lt//public_html/rng/" local="131850229530960363" remote="131850229200000000" Dst="2" />
 <file name="uniqR.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 <file name="vale.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
-<file name="Version.php" server="ftp.prsp.lt//public_html/rng/" local="131879625171815215" remote="131879625000000000" Dst="1" />
-<file name="wBoss.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
+<file name="Version.php" server="ftp.prsp.lt//public_html/rng/" local="131880544765027536" remote="131880544200000000" Dst="1" />
+<file name="wBoss.php" server="ftp.prsp.lt//public_html/rng/" local="131846903400000000" remote="131846903400000000" Dst="1" />
 <file name="winP.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
 </dwsync>

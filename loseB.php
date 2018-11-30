@@ -76,7 +76,7 @@ $result = mysqli_query($db, $order4);
 
 $DMTB = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$ID' AND ACC = '$ACC[0]'");
 $DMTB = mysqli_fetch_row($DMTB);
-if($DMTB[0] == 0) {
+if($DMTB[1] != $ACC[0]) {
 	$order2 = "INSERT INTO dboss
 	   (MonsID, ACC, DMG)
 	  VALUES	

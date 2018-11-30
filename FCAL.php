@@ -253,7 +253,11 @@ if (isset($cantCryt)){
 else{
 if (rand(1,100) < 10){
 	$citM = 1;
-$monDMG = $monDMG*2;}
+	$monDMG = $monDMG*1.5;
+	if ($ACC[1] == 1){
+		$monDMG = $monDMG*1.2;
+	}
+}
 }
 
 //monster dmg to playerr

@@ -250,13 +250,14 @@ $achCount = mysqli_query($db,"SELECT count(*) from Achievments WHERE User = '$Ac
 $achCount = mysqli_fetch_row($achCount);
 $RNK = mysqli_query($db,"SELECT * FROM Ranks order by Nr desc ");
 while ( $RNKs = mysqli_fetch_array($RNK)){
-	if ($RNKs[1] < $achCount[0] and $achCount[0] < $RNKs[2]){
+	if ($RNKs[1] <= $achCount[0] and $achCount[0] <= $RNKs[2]){
 		$order = "UPDATE characters
 		SET Color = '$RNKs[3]'
 		WHERE `Account` = '$Account'";
 		$result = mysqli_query($db, $order);	
 		}
 }
+
 
 
 //recreate basic wep if deleted

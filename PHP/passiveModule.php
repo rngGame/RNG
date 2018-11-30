@@ -215,7 +215,7 @@ if ($arrayP[10] == "c"){
 if ($arrayP[10] == "d"){
 	$PetAndArmor = 1.3;
 }
-if ($arrayP[8] == "e"){
+if ($arrayP[10] == "e"){
 	$PetSacrifice = 1;
 }
 ?>

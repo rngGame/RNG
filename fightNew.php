@@ -132,12 +132,10 @@ if ($ACC[1] == 1){
 		$MDMG = round($MDMG);
 
 
-
+// if fails generation go back to main page
 if ($mLVL < 1 or $HP < 1 or $PDMG < 1 or $Drop < 1){
-	//header("location:fightNew.php");
-	echo "$name || MLVL: $mLVL || HP: $HP || DMG: $DMG || DROP: $Drop || iLVL: $iLVL";
-	echo $testMessage;
-  	die();
+header("location:sync.php");
+die();
 }
 else {
 	
@@ -217,12 +215,8 @@ die();
           </form>
       </section>
 	  ";
-	  
-	  //Algio keistas stuff !!!!
-	  if ($User == "Algraud"){ 
-    echo $testMessage;}
-	}
 
+}
   ?>
   <section class="actionButtons2">
 	      <form method="post" action="sync.php">

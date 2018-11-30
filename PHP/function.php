@@ -25,7 +25,6 @@ function sec_session_start() {
 }
 
 function itemDrop($db,$user,$drop,$MLVL){
-    $textMessage="Function Starts by $user at ".date('Y-m-d H:i:s')." \r\n";
     if(!$isTest){
         $orderBy="RAND()";
         $orderByType="RAND()";
@@ -36,7 +35,6 @@ function itemDrop($db,$user,$drop,$MLVL){
     }
     
     if($drop=="all"){
-        $textMessage.="Drop not decided Choosing one at random \r\n";
         $check=rand(1,4);
         if($check==1){
             $drop ="talisman";
@@ -50,10 +48,8 @@ function itemDrop($db,$user,$drop,$MLVL){
 		 else if($check==4){
             $drop="skill";
         }
-        $textMessage.="Chosen $drop \r\n";
     }
     if($drop=="armor"||$drop=="talisman"||$drop=="weapon"||$drop=="skill"){
-        $textMessage.="Starting Process \r\n";
 
         $preTable="prefixwep";
         //check which item
@@ -76,7 +72,6 @@ function itemDrop($db,$user,$drop,$MLVL){
 			$preTable="prefixwep";
 			$part = "SKL";
         }
-        $textMessage.="Chosen Tables $baseTable and $preTable \r\n";
 		
 		//for faster calculation
 		$LVL = round($MLVL / 20);
@@ -93,7 +88,6 @@ function itemDrop($db,$user,$drop,$MLVL){
 			
 			$times += 1;
 			
-            $textMessage.="Starting While for Creation |<>|";
             //get info from db general
             $Base = mysqli_query($db,"SELECT * FROM $baseTable where LVL > $LVL Order by $orderBy Limit     1");
             $Base = mysqli_fetch_row($Base);
@@ -122,7 +116,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             $rngSub = rand(1,10000);
             $rngSkill = rand(1,10000);
             $rngType = rand(1,10000);
-            $textMessage.="Deecided on RNG rolls: Pre $rngPre , Sub $rngSub , Skill $rngSkill , Type $rngType \r\n";
 
             //bases set up
             $nameBase = $Base[1]; //takes the base name for the Armor
@@ -177,7 +170,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             }
 			
 			
-            $textMessage.="Bases done for $drop Bases: Name $nameBase >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Prefix for talismans
             if($rngPre>3000 && $drop=="talisman"){
                 $namePre=$Pre[1];
@@ -199,7 +191,6 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $Buff+=$Pre[3];
                 $iLVL+=$Pre[2];
             }
-            $textMessage.="Prefix done for $drop Prefixes: Name $namePre >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Subfix for talismans
             if($rngSub>3000 && $drop=="talisman"){
                 $nameSub = "and $Sub[1]";
@@ -239,7 +230,6 @@ function itemDrop($db,$user,$drop,$MLVL){
                     $iLVL += $Sub2[2];
                 }
             }
-            $textMessage.="Subfixes done for $drop Subfix: Name $nameSub >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Types for drops x2
             if($rngType < $Type[2]*200){ //checks for Type rng first time
                 $typeName ="$Type[1]";
@@ -261,7 +251,6 @@ function itemDrop($db,$user,$drop,$MLVL){
 				$Buff += $typeBonus;
                 $iLVL += $iLVL * $typeBonus;
             }
-            $textMessage.="Types done for $drop Type: Name $typeName >> LVL $iLVL >> DMG $valueDMG >> Armor $valueArmor >> HP $valueHP >> XP $valueXP \r\n";
             //Skill for Weapon
             if($rngSkill>7500){
                 $iLVL+=$Skill[7];
@@ -269,8 +258,7 @@ function itemDrop($db,$user,$drop,$MLVL){
                 $weaponSkill = $Skill[0];
                 $skillText = "Skill : $Skill[1]<br>";
             }
-            $textMessage.="Skills done for $drop $skillName Chosen \r\n";
-
+    
 
             //Creating weapon values
             $weaponPhysMin = round($valueDMG * rand(80,100)/100);
@@ -279,7 +267,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             $weaponMagMin = round($valueDMG *rand(50,100)/100);
             $weaponMagMax = round($valueDMG *rand(150,200)/100);  
             $weaponHit = rand(85,100);
-            $textMessage.="Creating Weapon Stats Phys $valuePhysMin ~ $valuePhysMax >> Mag $valueMagMIN ~ $valueMagMAX >> Crit $CRIT >> Speed $AS >> Hit $HIT \r\n";
 
             //finnishing up values
             $dmgBonus = round($valueDMG/10);
@@ -341,7 +328,6 @@ function itemDrop($db,$user,$drop,$MLVL){
 			
 			
 			
-            $textMessage.="Rounding Orrignal \r\n";
 
             if($valueDMG <= 0){
                 $valueDMG = 1;
@@ -358,7 +344,6 @@ function itemDrop($db,$user,$drop,$MLVL){
             if($valueXP <= 0){
                 $valueXP = 1;
             }
-            $textMessage.="No 0 \r\n";
 
             //hashing item
             $hashClaimed = 0;
@@ -370,9 +355,7 @@ function itemDrop($db,$user,$drop,$MLVL){
             $count = mysqli_num_rows($result);
             if($count==1){ //if hash claimed, we will redo this
                 $hashClaimed = 1;
-                $textMessage.="Hashing Failed \r\n";
             }
-            $textMessage.="Hashing Complete \r\n";
 
 
             $name="$Evol $namePre $nameBase $nameSub $nameSub2 $nameEnchant";
@@ -458,7 +441,6 @@ function itemDrop($db,$user,$drop,$MLVL){
 
                 }
                 $effect = "Effect: $effectName $EffectChance %<br>";
-                $textMessage.="Choose Effect $effectName $EffectChance % \r\n";
             }
 			
 			
@@ -502,7 +484,6 @@ function itemDrop($db,$user,$drop,$MLVL){
                     $EffectChance = round(rand($MLVL,($MLVL*2)));
                 }
 				$effect = "Effect: $effectName $EffectChance <br>";
-                $textMessage.="Choose Effect $effectName $EffectChance \r\n";
 			}
 
             //creating lowest weapon, best weapon acording to level
@@ -516,7 +497,7 @@ function itemDrop($db,$user,$drop,$MLVL){
 			$maxforPlayerLVL = round($ACC[3]*($ACC[3] / 5) + ($ACC[3] * 2)+($MLVL/5));
 			$minforPlayerLVL = round($ACC[3]*($ACC[3] / 7) + ($ACC[3])+($MLVL/15));
 			
-            $textMessage.="Limits are $minforPlayerLVL and Player max $maxforPlayerLVL\r\n";
+ 
 			
 			
 

@@ -78,10 +78,14 @@ $LVL = round($LVL * 2);
 $DMG = round($DMG * 2.5);
 $LVL = round($LVL);
 
-if ($LVL > 160 and $HP > 50000000){
+if ($LVL > 500 and $HP > 50000000){
 	$rel = 1;}
 
 
+}
+
+if ($DMG >= 50000){
+	$DMG = 50000;
 }
 
 $N1 = $Base[0];

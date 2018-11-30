@@ -45,6 +45,7 @@ echo "ARMOR: <font size='3' color='gold'>$Armor  </font></p>";
  echo ' <div class="right-panel">';
  $List = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
 while ($List1 = mysqli_fetch_array($List)){
+	include 'PHP/rounding.php';
 echo "<b>$List1[1]</b> - $List1[2] Dmg.<br>";	
 }
 	

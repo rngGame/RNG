@@ -224,8 +224,8 @@ if ($SKL ==32){
 		
 		//if dmgg exceds 300k
 		if ($comb > 300000){
-			$comb = $comb * rand(1,10) /100;
-			$combtex="<b>POWER WAS SO GREAT TO HANDLE !</font></b><br>";
+			$comb = $comb * rand(90,120) /100;
+			$combtex="<b>POWER GOES THRO YOU !</font></b><br>";
 		}
 		$ene = $ene - 50;
 	$_SESSION["ENERGY"] = $ene;

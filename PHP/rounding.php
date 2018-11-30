@@ -225,4 +225,69 @@ $poisonTX .= "k.";}
 else if ($poisonTX < 1000){
 $poisonTX = round($poisonTX);
 }
+	
+if ($MonsterS[PL1] >= 1000000000){
+$MonsterS[PL1] = round($MonsterS[PL1]/1000000000,1);
+$MonsterS[PL1] .= "kkk.";}
+else if ($MonsterS[PL1] >= 1000000){
+$MonsterS[PL1] = round($MonsterS[PL1]/1000000,1);
+$MonsterS[PL1] .= "kk.";}
+else if ($MonsterS[PL1] >= 1000){
+$MonsterS[PL1] = round($MonsterS[PL1]/1000,1);
+$MonsterS[PL1] .= "k.";}
+else if ($MonsterS[PL1] < 1000){
+$MonsterS[PL1] = round($MonsterS[PL1]);
+}
+
+if ($MonsterS[PL2] >= 1000000000){
+$MonsterS[PL2] = round($MonsterS[PL2]/1000000000,1);
+$MonsterS[PL2] .= "kkk.";}
+else if ($MonsterS[PL2] >= 1000000){
+$MonsterS[PL2] = round($MonsterS[PL2]/1000000,1);
+$MonsterS[PL2] .= "kk.";}
+else if ($MonsterS[PL2] >= 1000){
+$MonsterS[PL2] = round($MonsterS[PL2]/1000,1);
+$MonsterS[PL2] .= "k.";}
+else if ($MonsterS[PL2] < 1000){
+$MonsterS[PL2] = round($MonsterS[PL2]);
+}
+
+if ($MonsterS[PL3] >= 1000000000){
+$MonsterS[PL3] = round($MonsterS[PL3]/1000000000,1);
+$MonsterS[PL3] .= "kkk.";}
+else if ($MonsterS[PL3] >= 1000000){
+$MonsterS[PL3] = round($MonsterS[PL3]/1000000,1);
+$MonsterS[PL3] .= "kk.";}
+else if ($MonsterS[PL3] >= 1000){
+$MonsterS[PL3] = round($MonsterS[PL3]/1000,1);
+$MonsterS[PL3] .= "k.";}
+else if ($MonsterS[PL3] < 1000){
+$MonsterS[PL3] = round($MonsterS[PL3]);
+}
+
+if ($MonsterS[PL4] >= 1000000000){
+$MonsterS[PL4] = round($MonsterS[PL4]/1000000000,1);
+$MonsterS[PL4] .= "kkk.";}
+else if ($MonsterS[PL4] >= 1000000){
+$MonsterS[PL4] = round($MonsterS[PL4]/1000000,1);
+$MonsterS[PL4] .= "kk.";}
+else if ($MonsterS[PL4] >= 1000){
+$MonsterS[PL4] = round($MonsterS[PL4]/1000,1);
+$MonsterS[PL4] .= "k.";}
+else if ($MonsterS[PL4] < 1000){
+$MonsterS[PL4] = round($MonsterS[PL4]);
+}
+
+if ($List1[2] >= 1000000000){
+$List1[2] = round($List1[2]/1000000000,1);
+$List1[2] .= "kkk.";}
+else if ($List1[2] >= 1000000){
+$List1[2] = round($List1[2]/1000000,1);
+$List1[2] .= "kk.";}
+else if ($List1[2] >= 1000){
+$List1[2] = round($List1[2]/1000,1);
+$List1[2] .= "k.";}
+else if ($List1[2] < 1000){
+$List1[2] = round($List1[2]);
+}
 ?>

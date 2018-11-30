@@ -86,7 +86,7 @@ if($rewType == "TAL"){
 echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for energie pasive $Shards<br><br>";
 }
 if($rewType == "SKL"){
-echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for ES pasive $Shards<br><br>";
+echo "You gained $XPS xp. and $Gold Gold<br>You gained $XPP xp for cryt. damage pasive $Shards<br><br>";
 }
 
 

@@ -34,9 +34,12 @@ $Name = $_SESSION["NewN"];
 
 $BOS = mysqli_query($db,"SELECT * FROM wboss ORDER BY ID DESC LIMIT 1 ");
 $BOS = mysqli_fetch_row($BOS);
-
+	
+$List2 = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
+$BOS2 = mysqli_fetch_row($List2);
+	
 echo "$BOS[1] were killed by $User<br><br>";
-echo "Most damage delt by - $TOP1<br><br>";
+echo "Most damage delt by - $BOS2[1]<br><br>";
 echo "Gold recived:<br>";
 $List = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
 while ($List1 = mysqli_fetch_array($List)){

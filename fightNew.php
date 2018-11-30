@@ -173,25 +173,25 @@ if ($checkForParty == 1){
 	$DEF = $mLVL / 2;
 	
 	if ($plCount == 2){
-	$MobHP= $HP + ($HP * (80) / 100);}
+	$MobHP= $HP * 20;}
 	if ($plCount == 3){
-	$MobHP= $HP + ($HP * (150) / 100);}
+	$MobHP= $HP * 50;}
 	if ($plCount == 4){
-	$MobHP= $HP + ($HP * (300) / 100);}
+	$MobHP= $HP * 200;}
 	
-	$MobDrop = round($Drop + ($Drop * ($plCount * 50) / 100));
+	$MobDrop = round($Drop + ($Drop * ($plCount * 10) / 5000));
 	$MobDMGP = round($PDMG + ($PDMG * ($plCount * 10) / 100));
 	$MobDMGM = round($MDMG + ($MDMG * ($plCount * 10) / 100));
 	$DEF = round($DEF + ($DEF * ($plCount * 30)));
 	
-	$order = "INSERT INTO PartyMonsters
+	$order5 = "INSERT INTO PartyMonsters
 	(PartyID, MonsterLVL, MonsterName, MonsterHP, MonsterPhyDMG, MonsterMagDMG, MonsterDEF, MonsterRew, StartingHP)
 	VALUES
-	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '', '$MobDrop', '$MobHP')";	   
+	('$PartyID', '$mLVL', '$name', '$MobHP', '$PDMG', '$MDMG', '', '$MobDrop', '$MobHP')";	  
+	
+	echo $result = mysqli_query($db, $order5);
 
 
-
-$result = mysqli_query($db, $order);
 	header("location:sync.php");
 
 die();

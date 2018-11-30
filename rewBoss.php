@@ -20,203 +20,38 @@ World Of RNG
 $User = $_SESSION["User"];
 
 include_once 'PHP/db.php';
+include_once 'PHP/function.php';
 
 $MLVL = $_SESSION["MonsLVL"];
 $Drop = $_SESSION["MonsDrop"];
 $Money = $_SESSION["Money"];
+	
+//some extra flavor
+$MLVL = $MLVL + 500;
 
 $ACC = mysqli_query($db,"SELECT * FROM characters where user = '$User' ");
 $ACC = mysqli_fetch_row($ACC);
-$WEP = mysqli_query($db,"SELECT * FROM weapondrops where HASH = '$ACC[1]' ");
+$WEP = mysqli_query($db,"SELECT * FROM DropsWep where HASH = '$ACC[1]' ");
 $WEP = mysqli_fetch_row($WEP);
 
-//check for lvl
-$rel = 0;
-while($rel == 0){
+list($HASH, $name, $typeName, $iLVL, $weaponPhysMin, $weaponPhysMax, $weaponCrit, $weaponMagMin, $weaponMagMax, $weaponHit, $weaponSkill, $Effect, $EffectChance)=itemDrop($db, $User, "weapon", $MLVL);
+
+$worth = $iLVL + $weaponPhysMax + $weaponMagMax + $weaponHit;
+
+$_SESSION["REWARDTYPE"] = "WEP";
+
+$enchantplus = rand(15,25);
 	
-$Base = mysqli_query($db,"SELECT * FROM basewep Order by RAND() Limit 	1");
-$Base = mysqli_fetch_row($Base);
-$Pre = mysqli_query($db,"SELECT * FROM prefixwep Order by RAND() Limit 	1");
-$Pre = mysqli_fetch_row($Pre);
-$Sub = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit 	1");
-$Sub = mysqli_fetch_row($Sub);
-$Sub2 = mysqli_query($db,"SELECT * FROM subfixwep Order by RAND() Limit 1");
-$Sub2 = mysqli_fetch_row($Sub2);
-$Type = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit 	1");
-$Type = mysqli_fetch_row($Type);
-$Type2 = mysqli_query($db,"SELECT * FROM types Order by RAND() Limit 	1");
-$Type2 = mysqli_fetch_row($Type2);
-$Skill = mysqli_query($db,"SELECT * FROM iskills Order by RAND() Limit 	1");
-$Skill = mysqli_fetch_row($Skill);
-
-$Enchant = mysqli_query($db,"SELECT * FROM enchantdrop");
-
-$rand = 0;
-$rand2 = 0;
-$rand3 = 0;
-$rand4 = 0;
-
-$rand = rand(0,100);
-$rand2 = rand(0,100);
-$rand3 = rand(0,500);
-$rand4 = rand(0,600);
-
-
-// Beisis
-$Name = $Base[1];
-$bDMG = $Base[3];
-$lvl = $Base[2];
-
-//1st modif
-if ($rand > 30){
-	$Name = "$Pre[1] $Name";
-	$bDMG = $bDMG + $Pre[3];
-	$lvl = $lvl + $Pre[2];
-}
-
-//2nd modif
-if ($rand2 > 50){
-	$Name = "$Name of $Sub[1]";
-	$bDMG = $bDMG + $Sub[3];
-	$lvl = $lvl + $Sub[2];
-//3rd modif inside
-	if ($rand2 > 70){
-		$Name = "$Name and $Sub2[1]";
-		$bDMG = $bDMG + $Sub2[3];
-		$lvl = $lvl + $Sub2[2];
-	}}
-	
-//Type
-
-	$TYPE = "World";
-	$Bonus = 250 / 100;
-	$Color = "e67300";
-	$bDMG = $bDMG * $Bonus;
-	$lvl = $lvl + $Bonus;
-	
-//skill
-
-if ($rand4 < 20){
-	$lvl = $lvl + $Skill[7];
-	$SKL = $Skill[1];
-	$Skil = $Skill[0];
-	$skiln = "Skill : $Skill[1]<br>";
-	}
-
-	
-//Tottal dmg
-
-
-
-
-//min-max
-$dMIN = round($bDMG - ($bDMG*rand(1,20)/100));
-$dMAX = round($bDMG + ($bDMG*rand(1,30)/100));
-$CRIT = round((100 + 1000*$Bonus) / 100);
-$AS = round(rand(80,150)/100,1);
-$maMIN = round($bDMG - ($bDMG*rand(1,50)/100));
-$maMAX = round($bDMG + ($bDMG*rand(1,150)/100));  
-$HIT = rand(85,100);
-$LVL = round($lvl);
-$NAME = "<b style='color:#$Color'>$Name</b>";
-
-//hash
-$HC = 0;
-$Base = mysqli_query($db,"SELECT * FROM basewep Order by RAND() Limit 	1");
-$Base = mysqli_fetch_row($Base);
-$HASH = rand(-90000000,900000000);
-$HASH = $HASH * $LVL;
-$HASH = $HASH + rand(-1000,1000);
-$result = mysqli_query($db,"SELECT * FROM DropsWep WHERE HASH = '$HASH'");
-$count = mysqli_num_rows($result);
-if($count==1){
-	$HC = 1;
-}
-
-
-//Bonus stat
-
-if (rand(0,100) < 55){
-                $rngEffect = rand(1,10);
-                if ($rngEffect == 1){
-                    $effectName = "Life Leach";
-                    $weaponEffect = "LL";
-                    $weaponEffectChance = rand(1,7);
-                }
-                if ($rngEffect == 2){
-                    $weaponEffect = "Bleed";
-                    $effectShort = "BL";
-                    $weaponEffectChance = rand(10,30);
-                }
-                if ($rngEffect == 3){
-                    $effectName = "Burn";
-                    $weaponEffect = "BR";
-                    $weaponEffectChance = rand(1,20);
-                }
-                if ($rngEffect == 4){
-                    $effectName = "Freez";
-                    $weaponEffect = "FR";
-                    $weaponEffectChance = rand(10,20);
-                    
-                }
-                if ($rngEffect == 5){
-                    $effectName = "Stun";
-                    $weaponEffect = "ST";
-                    $weaponEffectChance = rand(5,30);
-                }
-                if ($rngEffect == 6){
-                    $effectName = "Shock";
-                    $weaponEffect = "SH";
-                    $weaponEffectChance = rand(20,50);
-                    
-                }
-                if ($rngEffect == 7){
-                    $effectName = "Block";
-                    $weaponEffect = "BK";
-                    $weaponEffectChance = rand(5,20);
-                    
-                }
-                 if ($rngEffect == 8){
-                    $effectName = "Summon";
-                    $weaponEffect = "SM";
-                    $weaponEffectChance = rand(25,70);
-                    
-                }
-                if ($rngEffect == 9){
-					 $effectName = "Poision buff";
-                    $weaponEffect = "PS";
-                    $weaponEffectChance = rand(5,45);
-                    
-                }
-                
-                if ($rngEffect == 10){
-					$effectName = "Confusion chanse";
-                    $weaponEffect = "CF";
-                    $weaponEffectChance = rand(5,15);                 
-                }
-	$ef = "Effect: $EFNAME $EFC %<br>";
-}
-
-$RMG = $MLVL*2.5;
-$RMGmin = $MLVL/2.5;
-
-if ($lvl < $RMG and $lvl > $RMGmin and $bDMG > 0 and $CRIT >0 and $HC <> 1){
-	$rel = 1;}
-}
-
-$wor = $LVL + $dMAX + $maMAX + $HIT;
-
 //insert into db
 
 $order = "INSERT INTO DropsWep
-	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
+	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, hitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '$Name', 'World', '$LVL', '$dMIN', '$dMAX', '$CRIT', '$maMIN', '$maMAX', '$HIT', '$Skil', '$EFT', '$EFC', '0', '$wor')";
+	   ('$HASH', '$name', '$typeName', '$iLVL', '$weaponPhysMin', '$weaponPhysMax', '$weaponCrit', '$weaponMagMin', '$weaponMagMax', '$weaponHit', '$weaponSkill', '$Effect', '$EffectChance', '$enchantplus', '$worth')";
 	   
 
 
 $result = mysqli_query($db, $order);
-
 
 $MoneyRew = ($ACC[3] + $MLVL) * 10; //gold for mob
 $_SESSION["GoldRew"] = $MoneyRew;
@@ -224,16 +59,65 @@ $_SESSION["GoldRew"] = $MoneyRew;
 $MoneySel = ($ACC[3] + $LVL) * 10; //gold for wep
 $_SESSION["Gold"] = $MoneySel;
 
-$reward = "<b><font color='red'><br> -WEAPON !-</font><br><br>DROP:</b><br><br>Name: $NAME<br>
-LVL: <b>$LVL</b><br>
-Physical Dmg: <b>$dMIN ~ $dMAX</b><br>
-Magickal Dmg: <b>$maMIN ~ $maMAX</b><br>
-Cryt chanse: $CRIT %<br>
-Hit chanse: $HIT %<br>
-$ef $skiln
-Worth: $MoneySel gold<br>";
+if ($EffectChance <> 0){
+		if ($Effect == "LL"){
+	$efftype = "Life Leach";
+	}
+		if ($Effect == "BL"){
+	$efftype = "Bleed Chanse";
+	}
+		if ($Effect == "BR"){
+	$efftype = "Burn Chanse";
+	}
+		if ($Effect == "FR"){
+	$efftype = "Freez Chanse";
+	}
+		if ($Effect == "ST"){
+	$efftype = "Stun Chanse";
+	}
+		if ($Effect == "SH"){
+	$efftype = "Shock Chanse";
+	}
+		if ($Effect == "BK"){
+	$efftype = "Block Chanse";
+	}
+		if ($Effect == "SM"){
+	$efftype = "Summon increase";
+	}
+		if ($Effect == "PS"){
+	$efftype = "Poision increase";
+	}
+		if ($Effect == "CF"){
+	$efftype = "Confusion chanse";
+	}
+		if ($Effect == "CS"){
+	$efftype = "Cursed Soul";
+	}
+		if ($Effect == "WK"){
+	$efftype = "Weaken monster";
+	}
+		if ($Effect == "NS"){
+	$efftype = "Nerve Shock";
+	}
+	
+	$eft = "Effect: $efftype <b>$EffectChance %</b><br>";}
+	
+if ($weaponSkill >= 1){
+	$SKILL = mysqli_query($db,"SELECT * FROM iskills where ID = '$weaponSkill' ");
+	$SKILLS = mysqli_fetch_assoc($SKILL);
+	$img = "<img src='IMG/$SKILLS[pic]' style='width:33px'><br>";}
+	
+	
+$reward = "<b><font color='red'>-WEAPON !-</font><br><br>DROP:</b><br><br>Name: $name<br>
+LVL: <b><span class='$compareLVL'>$iLVL</span></b><br>
+Physical Dmg: <b><span class='$comparePHYS1'>$weaponPhysMin</span> ~ <span class='$comparePHYS2'>$weaponPhysMax</span> <font size='2'>(Avg. <span class='$comparePHYS'>$phyAVG1</span>)</font></b><br>
+Magickal Dmg: <b><span class='$compareMAG1'>$weaponMagMin</span> ~ <span class='$compareMAG2'>$weaponMagMax</span> <font size='2'>(Avg. <span class='$compareMAG'>$magAVG1</span>)</font></b><br>
+Cryt chanse: <span class='$compareCRYT'>$weaponCrit %</span><br>
+Hit chanse: <span class='$compareHIT'>$weaponHit %</span><br>
+Plus: <span class='$compareHIT'>+$enchantplus</span><br>
+$eft $img";	
 
-$_SESSION["WepName"] = $NAME;
+$_SESSION["WepName"] = $reward;
 
 $_SESSION["Reward"] = "$reward";
 $_SESSION["HASH"] = "$HASH";
@@ -299,19 +183,19 @@ else{
 	
 	$order4 = "UPDATE wboss
 	SET `Killer` = '$User'
-	WHERE `ID` = '$IDB'";
+	WHERE `ID` = '$ID'";
 	$result = mysqli_query($db, $order4);	
 
 
 $a = 0;
 
- $List = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
+$List = mysqli_query($db,"SELECT * FROM dboss where MonsID = '$BOS[0]' order by DMG desc ");
 while ($List1 = mysqli_fetch_array($List)){
 	if ($a == 0) {
-	$order2 = "INSERT INTO inventor
-	(User, Hash)
+	$order2 = "INSERT INTO Equiped
+	(User, Part, HASH, Equiped)
 	VALUES
-	('$User','$HASH')";	   
+	('$List1[1]', 'WEP', '$HASH', '0')";	  
 	$result = mysqli_query($db, $order2);
 	$a = $a +1;};
 echo "<b>$List1[1]</b> - $List1[2] Dmg.<br>";

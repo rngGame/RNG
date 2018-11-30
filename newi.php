@@ -264,48 +264,6 @@ $result = mysqli_query($db, $orderChar);
 
 mysqli_close($db);
 header("location:reward.php");
-//TABLE
-/*echo"
-    <table>
-  <tr>
-    <th colspan='3'>$weaponName</th>
-  </tr>
-  <tr>
-   <td colspan='2'>$typeName</td>  
-    <td>LVL: $iLVL</td>
-  </tr>
-  <tr>
-    <td>Physical DMG:</td>
-    <td>$weaponPhysMin</td>
-    <td>$weaponPhysMax</td>
-  </tr>
-  <tr>
-    <td>CRYT Chanse:</td>
- <td colspan='2'>$weaponCrit</td>  
- </tr>
-  <tr>
-    <td>Atack Speed:</td>
- <td colspan='2'>$weaponSpeed</td>
-  </tr>
-    <tr>
-    <td>Magick DMG:</td>
-    <td>$weaponMagMin</td>
-    <td>$weaponMagMax</td>
-  </tr>
-  <tr>
-    <td>Hit chanse:</td>
- <td colspan='2'>$weaponHit</td>
-  </tr>
-  <tr>
-    <td>Skill</td>
-<td colspan='2'>$SKL</td>
-  </tr>
-  <tr>
-    <td>$EFNAME</td>
-<td colspan='2'>$EffectChance</td>
-  </tr>
-
-</table>";*/
     
 	
 	?>

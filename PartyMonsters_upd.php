@@ -5,6 +5,8 @@ session_start();
 
 include_once 'PHP/db.php';
 
+
+
 $User = $_SESSION["User"]; //user
 
 $Player1 = mysqli_query($db,"SELECT * FROM Party where PL1 = '$User' ");
@@ -46,10 +48,11 @@ $avgD = round(($avgP + $avgM) / 2);
 
 $Monster = mysqli_query($db,"SELECT * FROM PartyMonsters where PartyID = '$Party[ID]' ");
 $MonsterS = mysqli_fetch_assoc($Monster); //GLOVES by colum name
-
+include 'PHP/rounding.php';
 if ($MonsterS["PL1"] > 0){ //plasyer 1
 	$PL1 = mysqli_query($db,"SELECT * FROM Party where ID = '$Party[ID]' ");
 	$PL1s = mysqli_fetch_assoc($PL1); //GLOVES by colum name
+
 	$playersDMG .= "$PL1s[PL1] did $MonsterS[PL1] dmg. ";
 	;}
 	

@@ -224,7 +224,7 @@ echo
   <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='c6b'>
-        <p class='submit' onclick='myfunc(this)'><input  img $c6b src='IMG/pack/Icon.2_68.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>First turn monster deal no damage</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $c6b src='IMG/pack/Icon.2_68.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>First turn monster deal no HP damage</span></p> 
       </form>
 	  </div>
   	<div class='tooltip'>
@@ -435,7 +435,7 @@ echo
   <div class='tooltip'>
 	      <form method='post' id='yourFormId' action='changePassive.php'>
           <input type='hidden' name='skl' value='cad'>
-        <p class='submit' onclick='myfunc(this)'><input  img $cad src='IMG/pack/Icon.7_12.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Monsters can't deal more then 15% of your HP/hit</span></p> 
+        <p class='submit' onclick='myfunc(this)'><input  img $cad src='IMG/pack/Icon.7_12.png' style='width:45px;height:45px;' type='image' name='commit' value='(30)DMG Skill'><span class='tooltiptext'>Monsters can't deal more then 30% of your HP/hit</span></p> 
       </form>
 	  </div>
   <div class='tooltip'>

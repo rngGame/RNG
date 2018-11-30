@@ -161,4 +161,16 @@
 <file name="Version.php" server="ftp.prsp.lt//public_html/rng/" local="131880544765027536" remote="131880544200000000" Dst="1" />
 <file name="wBoss.php" server="ftp.prsp.lt//public_html/rng/" local="131846903400000000" remote="131846903400000000" Dst="1" />
 <file name="winP.php" server="ftp.prsp.lt//public_html/rng/" local="131846831400000000" remote="131846831400000000" Dst="2" />
+<file name="reward.php" server="www.prsp.lt//public_html/rng/" local="131880639996750027" remote="131880642600000000" Dst="1" />
+<file name="rewskl.php" server="www.prsp.lt//public_html/rng/" local="131880639493957314" remote="131880643800000000" Dst="1" />
+<file name="FCAL.php" server="www.prsp.lt//public_html/rng/" local="131880841210000000" remote="131880841200000000" Dst="1" />
+<file name="Skillupgrade.php" server="www.prsp.lt//public_html/rng/" local="131880832408867398" remote="131880832200000000" Dst="1" />
+<file name="fightNew.php" server="www.prsp.lt//public_html/rng/" local="131880857163568802" remote="131880856800000000" Dst="1" />
+<file name="PartyMonsters_upd.php" server="www.prsp.lt//public_html/rng/" local="131880865883173135" remote="131880865800000000" Dst="1" />
+<file name="wBoss.php" server="www.prsp.lt//public_html/rng/" local="131880868707728702" remote="131880868200000000" Dst="1" />
+<file name="FightTB.php" server="www.prsp.lt//public_html/rng/" local="131880897951390843" remote="131880897600000000" Dst="1" />
+<file name="newi.php" server="www.prsp.lt//public_html/rng/" local="131880891170876665" remote="131880891000000000" Dst="1" />
+<file name="rewBoss.php" server="www.prsp.lt//public_html/rng/" local="131880914278323786" remote="131880913800000000" Dst="1" />
+<file name="show.php" server="www.prsp.lt//public_html/rng/" local="131880902729513877" remote="131880902400000000" Dst="1" />
+<file name="cBoss.php" server="www.prsp.lt//public_html/rng/" local="131880917189415435" remote="131880916800000000" Dst="1" />
 </dwsync>

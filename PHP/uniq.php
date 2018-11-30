@@ -64,7 +64,7 @@ if ($uniqRO == 8){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', 'Health over matter', 'Unique', '175', '185', '305', '5', '305', '505', '95', '9', 'HT', '15', '0', '150')";
+	   ('$HASH', 'Health over matter', 'Unique', '175', '185', '305', '5', '305', '505', '95', '9', 'HT', '5', '0', '150')";
 }
 
 if ($uniqRO == 9){
@@ -115,7 +115,7 @@ if ($uniqRO == 15){
 	$order2 = "INSERT INTO DropsWep
 	   (HASH, Name, Rarity, ilvl, pmin, pmax, cryt, mmin, mmax, HitChanse, skill, effect, efstat, plus, Worth)
 	  VALUES
-	   ('$HASH', '/Shrug', 'Unique','100', '1', '10', '1', '1', '10', '100', '', 'CF', '90', '0', '550')";
+	   ('$HASH', '/Shrug', 'Unique','100', '1', '10', '1', '1', '10', '100', '', 'CF', '50', '0', '550')";
 }
 if ($uniqRO == 16){
 	$order2 = "INSERT INTO DropsWep

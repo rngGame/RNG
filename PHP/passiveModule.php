@@ -187,7 +187,7 @@ if ($arrayP[9] == "c"){
 	$cantheal = 1;
 }
 if ($arrayP[9] == "d"){
-	$monsoverdmg = 0.15;
+	$monsoverdmg = 0.30;
 }
 if ($arrayP[9] == "e"){
 	$STRex = $STRex + 20;

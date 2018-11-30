@@ -132,6 +132,8 @@ if ($ACC[10] > 10){
 	$SUB = mysqli_query($db,"SELECT * FROM Subclass where ID = '$ACC[10]' ");
 	$SUB = mysqli_fetch_row($SUB);
 };
+	
+	
 
 
 //overkill wepaon skill
@@ -166,7 +168,7 @@ if ($GEM[1] <> ""){
 
 //add some bonus dmg to cryt skill
 if ($SKL == 4){
-	$physDMG += $physDMG * rand(10,30) / 100;
+	$physDMG += $physDMG * rand(20,50) / 100;
 }
 
 //skill 6 
@@ -540,6 +542,9 @@ if (rand(1,1000) >= 950){
 }
 
 
+//refelct added to mons dmg
+$monDMGmag = $monDMGmag + ($monref/2);
+$monDMG = $monDMG + ($monref/2);
 
 $sklc = 0;
 $extraREF = 0;
@@ -588,12 +593,20 @@ if (rand(1,1000) >= 800 and $sklc <> 1){
 	if ($monDMGmag <= 0){
 		$monDMGmag = 0;}
 }
+	
+//passive can't deal % more dmg
+if (isset($monsoverdmg)){
+	$posbilemax = ($_SESSION["HPO"] + $_SESSION["ESshieldO"]) * $monsoverdmg;
+	if ($monDMG > $posbilemax){
+		$monDMG = $posbilemax;}
+	if ($monDMGmag > $posbilemax){
+		$monDMGmag = $posbilemax;}
+}
 		
-
 //ES shield
 if (isset($_SESSION["ESshield"])){
 	
-	if ($ESS >= 1){
+	if ($ESS >= 1 and $sklc != 0){
 		$ESStemp = $ESS;
 		$ESS -= $monDMGmag;
 		if ($ESS < 0){
@@ -616,44 +629,47 @@ if ($sklc == 1){
 	include 'PHP/rounding.php';
 	$mobmagskill="<b>Monster used $typeSKL Magick Missile for $monDMGmagTXT</b>";}
 	
-// if no skill used by mob
-if ($sklc == 0){
-	$monDMGmag = 0; //if not magick
-	
+		
+
 //ES shield
 if (isset($_SESSION["ESshield"])){
 	
-	if ($ESS >= 1){
-		$ESStemp = $ESS;
-		$ESS -= $monDMG;
-		if ($ESS < 0){
-			$ESStemp = $monDMG - ($ESS * -1);
-			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESStemp</font> dmg.<br>";
-			$monDMG =$ESS * -1;}
-		else{
-			$ESdmg = $_SESSION["ESshield"] - $ESS;
-			$shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESdmg</font> dmg.<br>";
-			$monDMG  = 0;}
-	}
+    
+    if ($ESS >= 1 and $sklc == 0){
+        $ESStemp = $ESS;
+        $ESS -= $monDMG;
+        if ($ESS < 0){
+            $ESStemp = $monDMG - ($ESS * -1);
+            $shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESStemp</font> dmg.<br>";
+            $monDMG =$ESS * -1;}
+        else{
+            $ESdmg = $_SESSION["ESshield"] - $ESS;
+            $shieldDMG ="Energie Shield absorbed: <font color='lightblue'>$ESdmg</font> dmg.<br>";
+            $monDMG  = 0;}
+    }
 
 
 }
 	
+	
 
+
+// if no skill used by mob
+if ($sklc == 0){
+	$monDMGmag = 0;}
+if ($sklc == 1){
+	$monDMG = 0;
 }
 
+
 $monDID = $monDMG + $monDMGmag + $monref;
+	
 //pasive increase dmg
 if (isset($passiveMOB)){
 $monDID = $monDID * $passiveMOB;
 }
-	
-if (isset($monsoverdmg)){
-	$posbilemax = $_SESSION["HPO"] * $monsoverdmg;
-	if ($monDID > $posbilemax){
-		$monDID = $posbilemax;
-	}
-}
+
+
 	
 //set curse
 if (isset($curseCH)){
@@ -670,11 +686,18 @@ if (isset($firstPSV)){
 		$mobmagskill="Monster did 0";
 		$_SESSION["1stPASSIVE"] = 1;
 	}
+
 }
-	
+
+//if HP 1 (FFS....)
+if (isset($HP1)){
+	$HPin = 1;
+}
+
+
 	
 $finalPlayerHP = $HPin - $monDID;
-	
+
 	//rounding
 	include 'PHP/rounding.php';
 	
@@ -916,8 +939,8 @@ if ($finalPlayerHP <= 0 and rand(0,100) < $_SESSION["Undeadth"]){
 	
 //player hp <0
 if ($finalPlayerHP <= 0){
-	header($lose);
 	$_SESSION["RAIDKILLSdie"] = 1;
+	header($lose);
 	die();
 }
 

@@ -1285,3 +1285,15 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 }
 	
 
+.Cards{
+	width: 180px;
+    padding: 0px 5px 0px 0px;
+}
+
+.CardFrame{
+	display: flex;
+}
+
+.CrdText{
+	
+}

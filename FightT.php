@@ -254,7 +254,7 @@ include 'PHP/ItemsFight.php';
   
   echo "</div>";
   
-  mysqli_close($db);
+
 	
 if (isset($_SESSION["RAIDKILLS"])){	
 	echo "&nbsp;
@@ -276,6 +276,10 @@ echo "&nbsp;
     </div>
   </section>";
 }
+	
+include 'PHP/CardSelect.php';
+echo $Cards;
+  mysqli_close($db);
   ?>
 
   

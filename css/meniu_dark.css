@@ -1294,6 +1294,29 @@ brightness(50%) sepia(1) this makes it hsl(38, 24%, 57%)
 	display: flex;
 }
 
-.CrdText{
-	
+.CardText1{
+    position: relative;
+    top: -365px;
+    text-align: center;
+    text-decoration: underline;
+    color: papayawhip;
+    font-size: larger;
+}
+
+.CardText2{
+position: relative;
+    top: -365px;
+    width: 165px;
+    left: 10px;
+    font-size: small;
+}
+.CardsTOP{
+    position: relative;
+    width: 180px;
+    z-index: 500;
+    top: -255px;
+}
+
+.cardalign{
+	width: 185px;
 }

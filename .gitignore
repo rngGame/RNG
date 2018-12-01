@@ -16,7 +16,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-\RNG\PHP\config.php
 
 # =========================
 # Operating System Files
